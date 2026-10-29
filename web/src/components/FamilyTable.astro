@@ -17,7 +17,7 @@ const { families, showBrand = true, id } = Astro.props as { families: Family[]; 
     const cells = regCells(f);
     return (
       <tr data-b={f.brand} data-c={f.class} data-n={s.conn.join(" ")} data-ha={s.ha} data-ev={s.evcc}
-          data-w={s.control ? "1" : "0"} data-r={Object.keys(cells).filter((k) => cells[k]).join(" ")}>
+          data-w={s.control ? "1" : "0"} data-r={Object.keys(cells).filter((k) => cells[k] === "listed" || cells[k] === "restricted").join(" ")}>
         <td class="fam"><a href={familyUrl(f)}>{showBrand && <span class="b">{f.brand}</span>}{f.name}</a></td>
         <td>{CLASS[f.class]}</td>
         <td data-l="HA"><Status kind={s.ha} /></td>

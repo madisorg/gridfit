@@ -1,0 +1,1 @@
+[{"name": "avaleht-tabel", "url": "", "js": "document.getElementById(\"list\").scrollIntoView();"}, {"name": "pere-wallbox", "url": "deye/sun-evse-wallboxes/"}, {"name": "pere-arvesti", "url": "sungrow/dtsu666-80-a/"}, {"name": "legend", "url": "", "js": "var h=[...document.querySelectorAll(\"h2\")].find(e=>/marks mean/i.test(e.textContent)); if(h) h.scrollIntoView();"}]

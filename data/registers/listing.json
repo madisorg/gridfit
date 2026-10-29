@@ -3,32 +3,88 @@
 "AT": {
 "name": "Austria - Wechselrichterliste TOR Erzeuger Typ A",
 "url": "https://www.wechselrichterliste.at/tor-sea-typ-a",
-"snapshot": "2026-10-23"
+"snapshot": "2026-10-23",
+"scope": {
+"inverter": "list",
+"hybrid": "list",
+"battery": "list",
+"plug-in": "list",
+"wallbox": "list",
+"meter": "free"
+},
+"scope_note": {}
 },
 "CZ": {
 "name": "Czechia - Seznam schválených střídačů a otestovaných ochran",
 "url": "https://www.cezdistribuce.cz/cs/pro-vyrobce/overeni-souladu-s-rfg",
-"snapshot": "2026-08-21"
+"snapshot": "2026-08-21",
+"scope": {
+"inverter": "list",
+"hybrid": "list",
+"battery": "list",
+"plug-in": "list",
+"wallbox": "unknown",
+"meter": "free"
+},
+"scope_note": {}
 },
 "EE": {
 "name": "Estonia - Inverterite nimekiri (Elektrilevi)",
 "url": "https://elektrilevi.ee/et/inverterite-nimekiri",
-"snapshot": "2026-10-29"
+"snapshot": "2026-10-29",
+"scope": {
+"inverter": "list",
+"hybrid": "list",
+"battery": "list",
+"plug-in": "list",
+"wallbox": "free",
+"meter": "free"
+},
+"scope_note": {
+"wallbox": "Elektrilevi's list covers inverters only; a charger is a load, there is nothing to list"
+}
 },
 "NL": {
 "name": "Netherlands - Goedgekeurde omvormers type A (opwek + opslag)",
 "url": "https://www.energieleveren.nl/",
-"snapshot": "2026-10-28"
+"snapshot": "2026-10-28",
+"scope": {
+"inverter": "list",
+"hybrid": "list",
+"battery": "list",
+"plug-in": "list",
+"wallbox": "unknown",
+"meter": "free"
+},
+"scope_note": {}
 },
 "PL": {
 "name": "Poland - Wykaz urządzeń (WiPWC 1.3)",
 "url": "https://ptpiree.pl/kodeksy-sieci/wykaz-certyfikatow/",
-"snapshot": "2026-10-26"
+"snapshot": "2026-10-26",
+"scope": {
+"inverter": "list",
+"hybrid": "list",
+"battery": "list",
+"plug-in": "list",
+"wallbox": "unknown",
+"meter": "free"
+},
+"scope_note": {}
 },
 "SE": {
 "name": "Sweden - Rikta Rätt — växelriktare för solceller",
 "url": "https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller",
-"snapshot": "2026-10-23"
+"snapshot": "2026-10-23",
+"scope": {
+"inverter": "list",
+"hybrid": "list",
+"battery": "list",
+"plug-in": "list",
+"wallbox": "unknown",
+"meter": "free"
+},
+"scope_note": {}
 }
 },
 "models": [

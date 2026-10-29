@@ -411,6 +411,25 @@ def best(cell):
 
 
 # ---------------------------------------------------------------- v1 family pages
+# What each list covers, by GridFit device class. "list": the list covers this class, so an empty cell on a
+# family page means "no model matched". "free": the country has no listing for this class - a consumer
+# device (a wallbox is a load, not a generating unit), nothing to check against a list. "unknown": not yet
+# confirmed whether the country lists or otherwise gates this class. Wallboxes are listed only in AT (the
+# OVE R 37 charger list); BE's C10/26 lists bidirectional chargers only. Meters and energy managers are
+# not grid-connection units anywhere. AT-EV folds into AT on the family pages.
+SCOPE = {
+    "AT": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "list", "meter": "free"},
+    "CZ": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
+    "EE": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "free", "meter": "free"},
+    "NL": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
+    "PL": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
+    "SE": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
+}
+SCOPE_NOTE = {
+    "EE": {"wallbox": "Elektrilevi's list covers inverters only; a charger is a load, there is nothing to list"},
+}
+
+
 def listing(devs, snap, brands, root: Path):
     """Membership only, for the v1 family pages: no BE (personal-use terms), no Nein, no unmatched rows."""
     v1 = {"listed": "listed", "restricted": "listed with restrictions", "limited": "listed, time-limited",
@@ -442,7 +461,8 @@ def listing(devs, snap, brands, root: Path):
             continue
         m = snap["meta"].get(c, {})
         regs[c] = {"name": f"{REGISTERS[c]['country']} - {REGISTERS[c]['name']}", "url": REGISTERS[c]["url"],
-                   "snapshot": m.get("source_date") or snap["date"]}
+                   "snapshot": m.get("source_date") or snap["date"],
+                   "scope": SCOPE.get(c, {}), "scope_note": SCOPE_NOTE.get(c, {})}
     models.sort(key=lambda x: (x["brand"].lower(), x["norm"]))
     (root / "data/registers/listing.json").write_text(
         json.dumps({"registers": regs, "models": models}, ensure_ascii=False, indent=0) + "\n", encoding="utf-8")

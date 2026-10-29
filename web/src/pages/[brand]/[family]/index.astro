@@ -52,7 +52,9 @@ const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
       <div><dt>evcc</dt><dd><Status kind={s.evcc} />{ev.length > 0 && <Status kind={ctl(ev) ? "write" : "read"} />}
         {ev.length > 0 && ev.every((r) => r.sponsor) && <Status kind="sponsor" />}</dd></div>
       <div><dt>Grid registers</dt><dd><Matrix cells={cells} /></dd></div>
-      <div><dt>Register match</dt><dd>{f.models.length ? <span>model-code pattern{trust && `, brand ${trust}`} — a pointer, confirm in the register</span> : <span class="muted">no register model matched</span>}</dd></div>
+      <div><dt>Register match</dt><dd>{f.models.length ? <span>model-code pattern{trust && `, brand ${trust}`} — a pointer, confirm in the register</span>
+        : Object.values(cells).every((v) => v === "free") ? <span class="muted">no country here lists this class — nothing to check</span>
+        : <span class="muted">no register model matched</span>}</dd></div>
       <div><dt>Checked</dt><dd><span class="code">{data.seen}</span></dd></div>
     </dl>
     <div class="faq">

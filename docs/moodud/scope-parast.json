@@ -1,0 +1,174 @@
+{
+ "scope2--pere-wallbox--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3202,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 31
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 34,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {
+   "2px": 4
+  },
+  "kontrast": {
+   "n": 34,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope2--pere-wallbox--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3202,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 31
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 34,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {
+   "2px": 4
+  },
+  "kontrast": {
+   "n": 34,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope2--legend--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 114894,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 25
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 4,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 27,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 27,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope2--legend--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 114894,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 25
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 4,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 27,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 27,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

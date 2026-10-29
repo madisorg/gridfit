@@ -1,18 +1,26 @@
 ---
 // The register matrix: one fixed cell per register, always in the same order.
-// Filled = listed, outlined + * = listed with the register's own restriction word, faint = no listing found (never "no").
+// Filled = listed; outlined + * = listed with the register's own restriction word; faint = the list covers the
+// class but no model matched (never "no"); dotted green = the country has no listing for this class, nothing to
+// check; faint + ? = not confirmed whether the country lists this class.
 import { REG_KEYS, data } from "../lib/data";
 const { cells, titled = true } = Astro.props as { cells: Record<string, string>; titled?: boolean };
-// short label: what is listed, not five "no listing found" phrases per row
-const on = REG_KEYS.filter((k) => cells[k] === "listed"), part = REG_KEYS.filter((k) => cells[k] === "restricted");
-const label = !on.length && !part.length ? "No register listing found" :
-  [on.length && `Listed in ${on.join(", ")}`, part.length && `with restrictions in ${part.join(", ")}`].filter(Boolean).join("; ");
-const word = (k: string, v: string) => `${k}: ${v === "listed" ? "listed" : v === "restricted" ? "listed with restrictions or time-limited" : "no listing found"}`;
+const pick = (v: string) => REG_KEYS.filter((k) => cells[k] === v);
+const on = pick("listed"), part = pick("restricted"), free = pick("free"), unk = pick("unknown");
+const none = REG_KEYS.filter((k) => !cells[k]);
+const WORD: Record<string, string> = {
+  listed: "listed", restricted: "listed with restrictions or time-limited", free: "no listing for this class, nothing to check",
+  unknown: "not confirmed whether this country lists this class", "": "list covers this class, no model found",
+};
+const label = [on.length && `Listed in ${on.join(", ")}`, part.length && `with restrictions in ${part.join(", ")}`,
+  none.length && `no model found in ${none.join(", ")}`, free.length && `no listing needed in ${free.join(", ")}`,
+  unk.length && `not confirmed for ${unk.join(", ")}`].filter(Boolean).join("; ");
+const word = (k: string, v: string) => `${k}: ${WORD[v] ?? WORD[""]}`;
 ---
 <span class="mx" role="img" aria-label={label}>
   {REG_KEYS.map((k) => (
     <span class={cells[k] || "no"} title={titled ? `${word(k, cells[k] ?? "")} — ${data.registers[k].name}, snapshot ${data.registers[k].snapshot}` : undefined}>
-      {k}{cells[k] === "restricted" ? "*" : ""}
+      {k}{cells[k] === "restricted" ? "*" : cells[k] === "unknown" ? "?" : ""}
     </span>
   ))}
 </span>
