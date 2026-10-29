@@ -1,0 +1,129 @@
+---
+import Base from "../../../layouts/Base.astro";
+import Status from "../../../components/Status.astro";
+import Matrix from "../../../components/Matrix.astro";
+import Timeline from "../../../components/Timeline.astro";
+import Ext from "../../../components/Ext.astro";
+import { data, CLASS, CONN, SOURCE, REPO, REG_KEYS, summary, regCells, type Family, type Row } from "../../../lib/data";
+
+export function getStaticPaths() {
+  return data.families.map((f) => ({ params: { brand: f.brand_slug, family: f.slug }, props: { f } }));
+}
+const { f } = Astro.props as { f: Family };
+const s = summary(f);
+const cells = regCells(f);
+const ha = f.rows.filter((r) => r.source !== "evcc");
+const ev = f.rows.filter((r) => r.source === "evcc");
+const order = { ha_core: 0, hacs: 1, evcc: 2 };
+const rows = [...f.rows].sort((a, b) => order[a.source] - order[b.source] || (b.stars ?? 0) - (a.stars ?? 0));
+const ctl = (rs: Row[]) => rs.some((r) => r.local && r.control === "write");
+const trust = [...new Set(f.models.map((m) => m.trust))].join(" / ");
+const title = `${f.brand} ${f.name}`;
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: f.faq.q, acceptedAnswer: { "@type": "Answer", text: f.faq.a } }] },
+    { "@type": "ProductGroup", name: title, brand: { "@type": "Brand", name: f.brand }, category: CLASS[f.class] },
+  ],
+};
+const items = [
+  ...f.rows.filter((r) => r.source === "hacs" && r.updated).map((r) => ({ label: `${r.name} — last release/commit`, href: r.url, date: r.updated!, kind: "ha" as const })),
+  ...REG_KEYS.filter((k) => cells[k]).map((k) => ({ label: `${k} register snapshot`, href: data.registers[k].url, date: data.registers[k].snapshot, kind: "reg" as const })),
+  { label: "Sources read by GridFit", date: data.seen, kind: "check" as const },
+];
+const issue = `${REPO}/issues/new?title=${encodeURIComponent(title)}`;
+const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
+---
+<Base title={`${title}: local control with Home Assistant and evcc`} description={f.faq.a}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
+
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All families</a><span aria-hidden="true">/</span><a href={`/${f.brand_slug}/`}>{f.brand}</a></nav>
+  <header class="head">
+    <h1>{title}</h1>
+    <p class="kind"><span>{CLASS[f.class]}</span><span aria-hidden="true">·</span>
+      <span>{f.rows.length} integration route{f.rows.length === 1 ? "" : "s"}</span><span aria-hidden="true">·</span>
+      <span>{f.models.length} register model{f.models.length === 1 ? "" : "s"}</span></p>
+  </header>
+
+  <section class="answer sec" aria-label="Answer">
+    <dl class="verdict">
+      <div><dt>Home Assistant</dt><dd><Status kind={s.ha} />{ha.length > 0 && <Status kind={ctl(ha) ? "write" : "read"} />}
+        {ha.length > 0 && <span class="muted">{ha.length} integration{ha.length === 1 ? "" : "s"}</span>}</dd></div>
+      <div><dt>evcc</dt><dd><Status kind={s.evcc} />{ev.length > 0 && <Status kind={ctl(ev) ? "write" : "read"} />}
+        {ev.length > 0 && ev.every((r) => r.sponsor) && <Status kind="sponsor" />}</dd></div>
+      <div><dt>Grid registers</dt><dd><Matrix cells={cells} /></dd></div>
+      <div><dt>Register match</dt><dd>{f.models.length ? <span>model-code pattern{trust && `, brand ${trust}`} — a pointer, confirm in the register</span> : <span class="muted">no register model matched</span>}</dd></div>
+      <div><dt>Checked</dt><dd><span class="code">{data.seen}</span></dd></div>
+    </dl>
+    <div class="faq">
+      <h2>{f.faq.q}</h2>
+      <p class="a">{f.faq.a}</p>
+      <p class="caveat">Checked {data.seen} against the sources below. Firmware updates can open or close local access — check the
+        integration's own page before you buy, and your installer before software changes export limits or charges a battery from the grid.</p>
+    </div>
+  </section>
+
+  {rows.length > 0 && (
+    <section class="sec" aria-labelledby="ev-h">
+      <header><h2 id="ev-h">Evidence: integrations and templates</h2><p>One row per way to talk to it. Each links to the source the claim comes from.</p></header>
+      <table class="tbl ev">
+        <thead><tr><th scope="col">Integration</th><th scope="col">Source</th><th scope="col">Link</th><th scope="col">Read or control</th>
+          <th scope="col">Connection</th><th scope="col" class="num">Repo</th><th scope="col">Seen</th></tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr>
+              <td class="fam nm"><a href={r.url}>{r.name}</a>{r.source === "hacs" && <span class="b small muted"> {r.ref}</span>}
+                {r.note && <span class="note small">{r.note}</span>}</td>
+              <td class="src" data-l="">{SOURCE[r.source]}</td>
+              <td data-l=""><Status kind={r.local ? "local" : r.local === false ? "cloud" : "none"} label={r.local === null ? "unknown" : undefined} /></td>
+              <td class="wide"><Status kind={r.control === "write" ? "write" : "read"} /> <span class="detail">{r.control_detail}</span>
+                {r.sponsor && <> <Status kind="sponsor" /></>}</td>
+              <td data-l="via">{conn(r) || "–"}{r.iot_class && <span class="muted"> ({r.iot_class})</span>}</td>
+              <td class="num" data-l="repo">{r.source === "hacs" ? <span>★ {r.stars ?? 0} · {r.updated ?? "?"}</span> : "–"}</td>
+              <td data-l="seen"><Ext href={r.source_url}>{r.seen}</Ext></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {ha.some((r) => r.source === "ha_core") && (
+        <p class="small muted">Core integrations ship with Home Assistant. For the exact {f.brand} models that Home Assistant users report, see the
+          <Ext href={ha.find((r) => r.source === "ha_core")!.ohf_url!}>Open Home Foundation Device Database</Ext> (preview) — GridFit does not copy it.</p>
+      )}
+    </section>
+  )}
+
+  {f.see_also.length > 0 && (
+    <section class="sec" aria-labelledby="sa-h">
+      <header><h2 id="sa-h">Other community routes</h2><p>Not an integration; not counted as “works locally”.</p></header>
+      <ul class="prose">{f.see_also.map((x) => <li><a href={x.url}>{x.name}</a> — {x.note}</li>)}</ul>
+    </section>
+  )}
+
+  {rows.length === 0 && <p class="sec">We found no Home Assistant or evcc support for this family yet. Know one? <a href={issue}>Add it</a>.</p>}
+
+  <section class="sec" aria-labelledby="tl-h">
+    <header><h2 id="tl-h">How old the evidence is</h2><p>Last 12 months. ◂ = older than the axis.</p></header>
+    <Timeline items={items} end={data.seen} />
+  </section>
+
+  <section class="sec" aria-labelledby="rg-h">
+    <header><h2 id="rg-h">Grid register models</h2>
+      <p>{f.models.length ? "Matched by model-code pattern — treat as a pointer and confirm in the register." : "No register model is matched to this family. That says nothing about approval."}</p></header>
+    {f.models.length > 0 && (
+      <table class="tbl models">
+        <thead><tr><th scope="col">Model, as the register writes it</th><th scope="col">Listed in</th><th scope="col">Brand match</th></tr></thead>
+        <tbody>
+          {f.models.map((m) => {
+            const c = Object.fromEntries(Object.entries(m.registers).map(([k, v]) => [k, v === "listed" ? "listed" : "restricted"]));
+            return <tr><td class="fam code">{m.page ? <a href={`/${m.page}`}>{m.model}</a> : m.model}</td><td class="wide"><Matrix cells={c} titled={false} /></td><td data-l="match" class="muted">{m.trust}</td></tr>;
+          })}
+        </tbody>
+      </table>
+    )}
+    <p class="small muted">Registers: {REG_KEYS.map((k, i) => <>{i > 0 && " · "}<a href={data.registers[k].url}>{k}</a> {data.registers[k].snapshot}</>)}. * = the register's own restriction or time limit.</p>
+  </section>
+
+  <section class="sec" aria-label="Corrections">
+    <p><a class="correct" href={issue}><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13l1-3 7-7 2 2-7 7z M10 4l2 2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Something wrong for your device? Open an issue</a></p>
+  </section>
+</Base>

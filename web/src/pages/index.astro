@@ -1,0 +1,139 @@
+---
+import Base from "../layouts/Base.astro";
+import FamilyTable from "../components/FamilyTable.astro";
+import Matrix from "../components/Matrix.astro";
+import Timeline from "../components/Timeline.astro";
+import { data, brands, CLASS, CONN, REG_KEYS, TAGLINE, summary } from "../lib/data";
+
+// curated families (the brands people ask about) first, the long tail after — same order as v1
+const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
+const fams = [...data.families].sort((a, b) =>
+  (a.curated === b.curated ? 0 : a.curated ? -1 : 1) || cmp(a.brand.toLowerCase(), b.brand.toLowerCase()) || cmp(a.name.toLowerCase(), b.name.toLowerCase()));
+const conns = Object.keys(CONN).filter((c) => fams.some((f) => summary(f).conn.includes(c)));
+const nModels = data.families.reduce((n, f) => n + f.models.length, 0);
+const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
+const sources = [
+  ...REG_KEYS.map((k) => ({ label: `${k} register snapshot`, href: data.registers[k].url, date: data.registers[k].snapshot, kind: "reg" as const })),
+  { label: "HA core, HACS, evcc read", date: data.seen, kind: "check" as const },
+];
+---
+<Base>
+  <section class="ask" aria-labelledby="q-h">
+    <h1 id="q-h">{TAGLINE}</h1>
+    <form class="search" role="search" onsubmit="return false">
+      <label class="vh" for="q">Model code, brand or family</label>
+      <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
+    </form>
+    <div class="hits" id="hits" aria-live="polite"></div>
+    <p class="lede">Solar inverters, hybrids, home batteries and wallboxes: which Home Assistant and evcc integrations talk to them on your
+      network, whether they can <em>control</em> them or only read, and which EU grid registers list their models. Every row links to its source.</p>
+    <p class="facts"><span><b>{nf(data.families.length)}</b> families</span><span><b>{nf(brands().length)}</b> brands</span>
+      <span><b>{nf(data.rows.length)}</b> integration rows</span><span><b>{nf(nModels)}</b> register models matched</span><span>checked <b>{data.seen}</b></span></p>
+  </section>
+
+  <div class="layout">
+    <fieldset class="filters" id="filters">
+      <legend>Narrow down</legend>
+      <label><span>Brand</span><select id="brand"><option value="">All brands</option>{brands().map(([b]) => <option>{b}</option>)}</select></label>
+      <label><span>Device class</span><select id="cls"><option value="">All classes</option>{Object.entries(CLASS).map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
+      <label><span>Works locally with</span><select id="ctl"><option value="">Anything</option>
+        <option value="ha">Home Assistant</option><option value="any">Home Assistant or evcc</option><option value="write">Local control, not only read</option></select></label>
+      <label><span>Connection</span><select id="conn"><option value="">Any connection</option>{conns.map((c) => <option value={c}>{CONN[c]}</option>)}</select></label>
+      <label><span>Listed in register</span><select id="reg"><option value="">Any or none</option>{REG_KEYS.map((k) => <option value={k}>{k} — {data.registers[k].name.split(" - ")[0]}</option>)}</select></label>
+      <button type="button" id="reset" hidden>Clear filters</button>
+    </fieldset>
+
+    <div>
+      <p class="count" id="count" aria-live="polite"><b>{fams.length}</b> families</p>
+      <FamilyTable families={fams} id="list" />
+      <div class="sec">
+        <header><h2>What the marks mean</h2></header>
+        <div class="legend">
+          <span><Matrix cells={{ AT: "listed", CZ: "restricted" }} titled={false} /></span>
+          <span>filled = the register lists a model of this family · outlined * = listed with restrictions or time-limited ·
+            faint = no listing found, which is <strong>not</strong> “not approved”</span>
+        </div>
+        <p class="small muted">Local = the integration talks to the device on your network. Control = it exposes settable entities (HA) or
+          evcc drives it. A HA row without a family name applies to every family of that brand.</p>
+      </div>
+      <div class="sec">
+        <header><h2>How fresh the sources are</h2><p>One row per source on one axis. A register is only as current as its last published list.</p></header>
+        <Timeline items={sources} end={data.seen} months={6} />
+      </div>
+    </div>
+  </div>
+</Base>
+
+<script>
+  // Filters the table in place (the table is plain HTML and works without JS) and, for anything that
+  // contains a digit, looks it up in /models.json (every register model code), fetched only on first use.
+  const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
+  const rows = [...document.querySelectorAll<HTMLTableRowElement>("#list tbody tr")];
+  let text: string[] | null = null; // built on the first search, not on load
+  const ids = ["brand", "cls", "ctl", "conn", "reg"];
+  const q = $<HTMLInputElement>("q");
+  const has = (list: string | undefined, v: string) => (" " + (list ?? "") + " ").includes(" " + v + " ");
+
+  function apply() {
+    const v = Object.fromEntries(ids.map((id) => [id, $<HTMLSelectElement>(id).value]));
+    const s = q.value.trim().toLowerCase();
+    let shown = 0;
+    rows.forEach((r, i) => {
+      const d = r.dataset;
+      const ok = (!s || (text ??= rows.map((r) => r.textContent!.toLowerCase()))[i].includes(s)) && (!v.brand || d.b === v.brand) && (!v.cls || d.c === v.cls) &&
+        (!v.conn || has(d.n, v.conn)) && (!v.reg || has(d.r, v.reg)) &&
+        (!v.ctl || (v.ctl === "ha" && d.ha === "local") || (v.ctl === "any" && (d.ha === "local" || d.ev === "local")) || (v.ctl === "write" && d.w === "1"));
+      r.hidden = !ok;
+      if (ok) shown++;
+    });
+    $("count").innerHTML = `<b>${shown}</b> ${shown === 1 ? "family" : "families"}`;
+    ids.forEach((id) => $(id).classList.toggle("on", !!v[id]));
+    $("reset").hidden = !ids.some((id) => v[id]);
+    const p = new URLSearchParams();
+    ids.forEach((id) => v[id] && p.set(id, v[id]));
+    if (q.value.trim()) p.set("q", q.value.trim());
+    history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
+  }
+
+  type Idx = { pages: string[]; titles: string[]; models: [string, string, number][] };
+  let idx: Promise<Idx> | null = null;
+  const norm = (t: string) => t.toUpperCase().replace(/[\s\-_./,()+]/g, "");
+  async function models() {
+    const s = q.value.trim(), box = $("hits"), n = norm(s);
+    if (n.length < 3 || !/\d/.test(n)) { box.replaceChildren(); return; }
+    try {
+      idx ??= fetch("/models.json").then((r) => r.json());
+      const { pages, titles, models: ms } = await idx;
+      if (q.value.trim() !== s) return;
+      const hit = new Map<number, string[]>();
+      for (const [code, shown, i] of ms) if (code.includes(n)) (hit.get(i) ?? hit.set(i, []).get(i)!).push(shown);
+      // exact and prefix matches first, then by how many models of the family match
+      const rank = (i: number) => (hit.get(i)!.some((c) => norm(c) === n) ? 0 : hit.get(i)!.some((c) => norm(c).startsWith(n)) ? 1 : 2);
+      const top = [...hit.keys()].sort((a, b) => rank(a) - rank(b) || hit.get(b)!.length - hit.get(a)!.length).slice(0, 8);
+      const ol = document.createElement("ol");
+      for (const i of top) {
+        const li = document.createElement("li"), a = document.createElement("a"), t = document.createElement("span"), c = document.createElement("span");
+        a.href = pages[i]; t.textContent = titles[i];
+        const codes = hit.get(i)!;
+        c.className = "code muted"; c.textContent = codes.slice(0, 2).join(", ") + (codes.length > 2 ? ` +${codes.length - 2}` : "");
+        a.append(t, c); li.append(a); ol.append(li);
+      }
+      const p = document.createElement("p");
+      p.className = "muted";
+      p.textContent = top.length ? `Register models matching “${s}”:` : `No register model matches “${s}”. That is not a “no” — the register may spell it differently.`;
+      box.replaceChildren(p, ...(top.length ? [ol] : []));
+    } catch { box.replaceChildren(); }
+  }
+
+  const init = new URLSearchParams(location.search);
+  ids.forEach((id) => {
+    const el = $<HTMLSelectElement>(id);
+    if (init.get(id)) el.value = init.get(id)!;
+    el.addEventListener("change", apply);
+  });
+  if (init.get("q")) q.value = init.get("q")!;
+  q.addEventListener("input", () => { apply(); models(); });
+  $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLSelectElement>(id).value = "")); apply(); });
+  if (q.value || ids.some((id) => init.get(id))) apply();
+  if (q.value) models();
+</script>

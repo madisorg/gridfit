@@ -1,0 +1,23 @@
+---
+import Base from "../../layouts/Base.astro";
+import { REPO, DATA } from "../../lib/data";
+import { readFileSync } from "node:fs";
+const log: any[] = JSON.parse(readFileSync(DATA + "dataset/changelog.json", "utf-8"));
+---
+<Base title="Changes" current="/changelog/">
+  <header class="head"><h1>Changes</h1>
+    <p class="prose muted">Each rebuild compares the new dataset with the previous one: rows that appeared, disappeared, or changed local/cloud,
+      read/control, connection, class or sponsor status. The full history is the <a href={`${REPO}/commits/main/data/dataset`}>dataset's git log</a>.</p></header>
+  {log.map((e) => (
+    <section class="sec">
+      <header><h2 class="code">{e.date}</h2><p>{e.added.length} added · {e.removed.length} removed · {e.changed.length} changed</p></header>
+      {e.note && <p>{e.note}</p>}
+      {e.changed.length > 0 && (
+        <table class="tbl"><thead><tr><th scope="col">Row</th><th scope="col">Field</th><th scope="col">Was</th><th scope="col">Now</th></tr></thead>
+          <tbody>{e.changed.slice(0, 300).map((x: any) => <tr><td class="fam code">{x.row}</td><td data-l="field">{x.field}</td><td data-l="was">{String(x.old)}</td><td data-l="now">{String(x.new)}</td></tr>)}</tbody></table>
+      )}
+      {e.added.length > 0 && <details class="more"><summary>Added ({e.added.length})</summary><ul class="small">{e.added.slice(0, 300).map((x: string) => <li class="code">{x}</li>)}</ul></details>}
+      {e.removed.length > 0 && <details class="more"><summary>Removed ({e.removed.length})</summary><ul class="small">{e.removed.slice(0, 300).map((x: string) => <li class="code">{x}</li>)}</ul></details>}
+    </section>
+  ))}
+</Base>

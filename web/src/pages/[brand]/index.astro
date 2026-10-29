@@ -1,0 +1,41 @@
+---
+import Base from "../../layouts/Base.astro";
+import FamilyTable from "../../components/FamilyTable.astro";
+import Matrix from "../../components/Matrix.astro";
+import { brands, data, REPO, summary, type Family } from "../../lib/data";
+
+export function getStaticPaths() {
+  return brands().map(([brand, families]) => ({ params: { brand: families[0].brand_slug }, props: { brand, families } }));
+}
+const { brand, families } = Astro.props as { brand: string; families: Family[] };
+const unmatched = data.unmatched.get(brand) ?? [];
+const local = families.filter((f) => summary(f).ha === "local" || summary(f).evcc === "local").length;
+const ctl = families.filter((f) => summary(f).control).length;
+---
+<Base title={`${brand}: local control with Home Assistant and evcc`}
+      description={`Which ${brand} inverters, batteries and chargers work locally with Home Assistant and evcc, and which EU grid registers list them.`}>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All families</a></nav>
+  <header class="head">
+    <h1>{brand}</h1>
+    <p class="kind"><span>{families.length} famil{families.length === 1 ? "y" : "ies"}</span><span aria-hidden="true">·</span>
+      <span>{local} with a local route</span><span aria-hidden="true">·</span><span>{ctl} with local control</span></p>
+  </header>
+  <div class="sec">
+    <FamilyTable families={families} showBrand={false} />
+  </div>
+  {unmatched.length > 0 && (
+    <details class="more sec">
+      <summary>{unmatched.length} more {brand} model{unmatched.length === 1 ? "" : "s"} in grid registers, not matched to a family</summary>
+      <p class="small muted">Shown so you can see the register entries; no family rule claims them yet. Know which family a model belongs to? <a href={`${REPO}/issues/new`}>Tell us</a>.</p>
+      <table class="tbl models">
+        <thead><tr><th scope="col">Model, as the register writes it</th><th scope="col">Listed in</th><th scope="col">Brand match</th></tr></thead>
+        <tbody>
+          {unmatched.map((m) => {
+            const c = Object.fromEntries(Object.entries(m.registers).map(([k, v]) => [k, v === "listed" ? "listed" : "restricted"]));
+            return <tr><td class="fam code">{m.page ? <a href={`/${m.page}`}>{m.model}</a> : m.model}</td><td class="wide"><Matrix cells={c} titled={false} /></td><td data-l="match" class="muted">{m.trust}</td></tr>;
+          })}
+        </tbody>
+      </table>
+    </details>
+  )}
+</Base>

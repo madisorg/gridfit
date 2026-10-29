@@ -1,0 +1,15 @@
+JS = page script bytes (inline + external, excl. JSON-LD); HTML = raw bytes; gz = gzip of the HTML.
+Python site CSS is a separate 6 KB file; Astro CSS (18 KB, ~4 KB gz) is inlined in every page.
+
+page                                                      before JS/HTML/gz       after JS/HTML/gz
+index.html                                                1577/280978/23389      2458/548252/33141
+deye/index.html                                                0/11923/2118           0/36239/6773
+deye/sun-sg-lp3-three-phase-lv-hybrid/index.html                0/8357/2612           0/44130/8712
+about/index.html                                                0/5878/2494           0/25693/7170
+registers/index.html                                       3544/47804/10725       2298/87780/20879
+registers/brand/deye/index.html                              0/249590/10248         0/307869/15427
+registers/brand/deye/gb-s10k-eu/index.html                      0/7558/2414           0/28407/7306
+registers/country/at/index.html                                 0/8503/2479           0/30368/7456
+
+loaded on demand: before registers/index.json 1197669/147094 gz; after registers/index.json 1357719/149012 gz, models.json 315839/60122 gz (first query with a digit)
+fonts after: 6 woff2 files; the three Latin files a page loads = 69824 B (before: system fonts, 0 B)

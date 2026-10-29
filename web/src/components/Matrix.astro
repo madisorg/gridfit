@@ -1,0 +1,18 @@
+---
+// The register matrix: one fixed cell per register, always in the same order.
+// Filled = listed, outlined + * = listed with the register's own restriction word, faint = no listing found (never "no").
+import { REG_KEYS, data } from "../lib/data";
+const { cells, titled = true } = Astro.props as { cells: Record<string, string>; titled?: boolean };
+// short label: what is listed, not five "no listing found" phrases per row
+const on = REG_KEYS.filter((k) => cells[k] === "listed"), part = REG_KEYS.filter((k) => cells[k] === "restricted");
+const label = !on.length && !part.length ? "No register listing found" :
+  [on.length && `Listed in ${on.join(", ")}`, part.length && `with restrictions in ${part.join(", ")}`].filter(Boolean).join("; ");
+const word = (k: string, v: string) => `${k}: ${v === "listed" ? "listed" : v === "restricted" ? "listed with restrictions or time-limited" : "no listing found"}`;
+---
+<span class="mx" role="img" aria-label={label}>
+  {REG_KEYS.map((k) => (
+    <span class={cells[k] || "no"} title={titled ? `${word(k, cells[k] ?? "")} — ${data.registers[k].name}, snapshot ${data.registers[k].snapshot}` : undefined}>
+      {k}{cells[k] === "restricted" ? "*" : ""}
+    </span>
+  ))}
+</span>

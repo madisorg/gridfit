@@ -1,0 +1,27 @@
+---
+// Evidence timeline: when each source behind a page was last read or last changed.
+// One row per source on one shared axis, so stale evidence is visible at a glance.
+type Item = { label: string; href?: string; date: string; kind: "reg" | "ha" | "check" | "src" };
+const { items, months = 12, end } = Astro.props as { items: Item[]; months?: number; end: string };
+const day = (s: string) => Date.parse(s + "T00:00:00Z");
+const t1 = day(end);
+const t0 = Date.UTC(new Date(t1).getUTCFullYear(), new Date(t1).getUTCMonth() - months, 1);
+const x = (s: string) => Math.max(0, Math.min(100, ((day(s) - t0) / (t1 - t0)) * 100));
+const fmt = (t: number) => new Date(t).toISOString().slice(0, 7);
+const mid = t0 + (t1 - t0) / 2;
+const sorted = [...items].sort((a, b) => (a.date < b.date ? 1 : -1));
+---
+<div class="tl" role="table" aria-label={`Evidence dates, last ${months} months`}>
+  <div class="axis" role="row">
+    <span role="columnheader">Source</span>
+    <span class="ticks" aria-hidden="true"><span style="left:0">{fmt(t0)}</span><span style={`left:50%`}>{fmt(mid)}</span><span style="left:100%">{end}</span></span>
+    <span role="columnheader" class="d">Date</span>
+  </div>
+  {sorted.map((it) => (
+    <div class="ev-row" role="row">
+      <span class="lbl" role="cell">{it.href ? <a href={it.href}>{it.label}</a> : it.label}</span>
+      <span class="track" aria-hidden="true"><span class:list={["dot", it.kind, day(it.date) < t0 && "old"]} style={`left:${x(it.date)}%`}></span></span>
+      <span class="d" role="cell">{it.date}{day(it.date) < t0 ? " ◂" : ""}</span>
+    </div>
+  ))}
+</div>

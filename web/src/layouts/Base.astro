@@ -1,0 +1,58 @@
+---
+import "../styles/site.css";
+import { SITE, TAGLINE, REPO, data } from "../lib/data";
+// the two faces every page paints first: preloaded so text does not reflow when they arrive
+import textFont from "../fonts/ibm-plex-sans-latin-400-normal.woff2?url";
+import headFont from "../fonts/barlow-semi-condensed-latin-600-normal.woff2?url";
+interface Props { title?: string; description?: string; current?: string }
+const { title, description, current } = Astro.props;
+const analytics = process.env.GRIDFIT_ANALYTICS ?? "";
+const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
+const nav = [["/about/", "How we know"], ["/registers/", "Registers"], ["/changelog/", "Changes"]];
+---
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{title ? `${title} — ${SITE}` : `${SITE} — ${TAGLINE}`}</title>
+<meta name="description" content={description ?? "Which solar inverters, home batteries and wallboxes work locally with Home Assistant and evcc — and which EU grid registers list them. Built only from open sources, every row linked to its source."}>
+{canonical && <link rel="canonical" href={canonical}>}
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preload" href={textFont} as="font" type="font/woff2" crossorigin>
+<link rel="preload" href={headFont} as="font" type="font/woff2" crossorigin>
+<meta name="color-scheme" content="light dark">
+{analytics.startsWith("plausible:") && <script is:inline defer data-domain={analytics.split(":")[1]} src="https://plausible.io/js/script.js"></script>}
+{analytics.startsWith("cloudflare:") && <script is:inline defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: analytics.split(":")[1] })}></script>}
+<slot name="head" />
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="/">{SITE}</a>
+    <nav class="nav" aria-label="Site">
+      {nav.map(([href, label]) => <a href={href} aria-current={current === href ? "page" : undefined}>{label}</a>)}
+      <a class="fix" href={REPO}>Fix a row</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <div class="wrap"><slot /></div>
+</main>
+<footer class="foot">
+  <div class="wrap">
+    <div class="legal">
+      <p>Built only from open sources: <a href="https://github.com/home-assistant/core">Home Assistant core</a> (Apache-2.0),
+      the <a href="https://hacs.xyz/">HACS</a> default list and integration manifests, <a href="https://github.com/evcc-io/evcc">evcc</a> templates (MIT)
+      and seven public grid-connection lists (AT, BE, CZ, EE, NL, PL, SE). Last checked {data.seen}.</p>
+      <p>An empty cell means “not found”, never “does not work” or “not approved”. Firmware updates open and close local access;
+      check the integration's own page before you buy, and your installer before software changes export limits or charges a battery from the grid.
+      Independent project — not affiliated with the Open Home Foundation, Nabu Casa, evcc, HACS, any manufacturer or grid operator; names are used only to say what works with what.</p>
+    </div>
+    <p>Dataset <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+      (<a href={`${REPO}/blob/main/data/dataset/rows.csv`}>CSV</a>, <a href={`${REPO}/blob/main/data/dataset/rows.json`}>JSON</a>) ·
+      code MIT · <a href={REPO}>corrections on GitHub</a> · <a href="/llms.txt">llms.txt</a> · no cookies.</p>
+  </div>
+</footer>
+</body>
+</html>

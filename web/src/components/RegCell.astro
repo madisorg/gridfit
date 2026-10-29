@@ -1,0 +1,12 @@
+---
+// One register cell in the cross-view: the list's status as a symbol (✓ ✓* ⏱ ⏱! exp Nein), the words in the title.
+// Empty = no matching entry found, never "not approved".
+import { best, RSHORT, RS, REGS, META, SNAP_DATE, type Entry } from "../lib/registers";
+const { c, cell } = Astro.props as { c: string; cell?: Entry[] };
+const b = cell ? best(cell) : "";
+const e = cell?.[0];
+const title = !e ? `${c}: no matching entry found` :
+  `${c}: ${e.reg !== "BE" ? e.word : RS[b]}${e.valid ? ` until ${e.valid}` : ""}${e.fw && e.reg !== "BE" ? ` · ${REGS[e.reg].fw_label} ${e.fw.slice(0, 60)}` : ""}` +
+  ` · as written: ${e.maker_raw} ${e.model_raw} · match ${e.trust} · list dated ${META[e.reg]?.source_date ?? ""} · seen ${SNAP_DATE}`;
+---
+<td class={`rs rs-${b || "none"}`} title={title}>{b && RSHORT[b]}{cell && cell.length > 1 && <sup>{cell.length}</sup>}{!b && <span class="vh">not found</span>}</td>

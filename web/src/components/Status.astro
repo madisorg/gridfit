@@ -1,0 +1,8 @@
+---
+// One status mark: a shape and a word. Colour only repeats what the shape and word already say.
+// The shapes are drawn in CSS (site.css .st::before) so a 731-row table carries no SVG per cell.
+type Kind = "local" | "cloud" | "none" | "write" | "read" | "sponsor";
+const { kind, label } = Astro.props as { kind: Kind; label?: string };
+const WORD: Record<Kind, string> = { local: "local", cloud: "cloud", none: "not found", write: "control", read: "read only", sponsor: "sponsor token" };
+---
+<span class={`st ${kind}`}>{label ?? WORD[kind]}</span>

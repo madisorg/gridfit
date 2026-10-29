@@ -1,0 +1,16 @@
+[
+ {"name": "avaleht", "url": ""},
+ {"name": "avaleht-tabel", "url": "", "js": "document.getElementById('list').scrollIntoView();"},
+ {"name": "otsing", "url": "?q=GEN24", "wait": 1.5},
+ {"name": "filter", "url": "?ctl=write&reg=NL&cls=hybrid", "js": "document.getElementById('count').scrollIntoView();"},
+ {"name": "pere", "url": "deye/sun-sg-lp3-three-phase-lv-hybrid/"},
+ {"name": "pere-tõendid", "url": "deye/sun-sg-lp3-three-phase-lv-hybrid/", "js": "(document.getElementById('ev-h')||document.querySelectorAll('h2')[1]).scrollIntoView();"},
+ {"name": "pere-registrid", "url": "deye/sun-sg-lp3-three-phase-lv-hybrid/", "js": "var h=[...document.querySelectorAll('h2')].find(e=>/register/i.test(e.textContent)); if(h) h.scrollIntoView();"},
+ {"name": "bränd", "url": "deye/"},
+ {"name": "bränd-pikk", "url": "victron-energy/"},
+ {"name": "kuidas", "url": "about/"},
+ {"name": "reg-hub", "url": "registers/?q=SUN-12K", "wait": 2.5},
+ {"name": "reg-bränd", "url": "registers/brand/deye/"},
+ {"name": "reg-mudel", "url": "registers/brand/deye/gb-s10k-eu/"},
+ {"name": "reg-riik", "url": "registers/country/at/"}
+]

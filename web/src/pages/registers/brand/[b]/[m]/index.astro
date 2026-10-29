@@ -1,0 +1,96 @@
+---
+import Base from "../../../../../layouts/Base.astro";
+import Ext from "../../../../../components/Ext.astro";
+import { devices, COUNTRIES, REGS, RC, RS, RSHORT, META, faq, familyOf, best, type Device } from "../../../../../lib/registers";
+import { REPO } from "../../../../../lib/data";
+
+export function getStaticPaths() {
+  return devices.filter((d) => d.page).map((d) => ({ params: { b: d.brand_slug, m: d.slug! }, props: { d } }));
+}
+const { d } = Astro.props as { d: Device };
+const listed = COUNTRIES.filter((c) => d.cells[c]);
+const qa = faq(d);
+const fam = familyOf(d);
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "FAQPage", mainEntity: qa.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+    { "@type": "Product", name: `${d.brand} ${d.model}`, model: d.model, brand: { "@type": "Brand", name: d.brand }, category: RC[d.cls] },
+  ],
+};
+const idLabel = (r: string) => (r === "SE" ? "Running no." : r === "PL" ? "Lp (row no.)" : "ID");
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+---
+<Base title={`${d.brand} ${d.model}: grid registers ${listed.join(", ")}`} current="/registers/"
+      description={`${qa[0] ? qa[0].a + " " : ""}Status, firmware and dates of the ${d.brand} ${d.model} in ${listed.length} EU grid-connection lists, side by side.`}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/registers/">Grid registers</a><span aria-hidden="true">/</span><a href="../">{d.brand}</a></nav>
+  <header class="head">
+    <h1>{d.brand} {d.model}</h1>
+    <p class="kind"><span>{RC[d.cls]}</span><span aria-hidden="true">·</span><span>in {listed.length} of {COUNTRIES.length} lists</span></p>
+  </header>
+
+  <section class="answer sec" aria-label="Answer">
+    <dl class="verdict">
+      {COUNTRIES.map((c) => {
+        const b = d.cells[c] ? best(d.cells[c]) : "";
+        return (
+          <div><dt>{c} — {REGS[c].country}</dt>
+            <dd>{b ? <><span class={`rs rs-${b}`}>{RSHORT[b]}</span><span>{RS[b]}</span></> : <><span class="rs rs-none"></span><span class="muted">no matching entry</span></>}</dd></div>
+        );
+      })}
+      {fam && <div><dt>Local control</dt><dd><a href={fam.url}>{fam.title}</a></dd></div>}
+    </dl>
+    <div class="faq">
+      {qa.map((f) => <><h2>{f.q}</h2><p class="a">{f.a}</p>{f.de && <p lang="de" class="small muted">{f.de}</p>}</>)}
+      <p class="caveat"><strong>The register is the authority; this is a cross-reference.</strong> Rows are matched by maker and a normalised
+        model code; the “as written” line shows exactly what each list says. Check the list itself, and your grid operator, before you install.</p>
+    </div>
+  </section>
+
+  <section class="sec" aria-labelledby="ll-h">
+    <header><h2 id="ll-h">List by list</h2></header>
+    <div class="lists">
+      {COUNTRIES.map((c) => (
+        <article class:list={["panel", !d.cells[c] && "empty"]}>
+          <h3>{c} — {REGS[c].country}</h3>
+          {d.cells[c] ? d.cells[c].map((e) => {
+            const r = REGS[e.reg];
+            return (
+              <dl class="facts-dl">
+                <dt>List</dt><dd><Ext href={r.url}>{r.name}</Ext> (dated {META[e.reg]?.source_date})</dd>
+                <dt>Status</dt><dd><span class={`rs rs-${e.show}`}>{RSHORT[e.show]}</span> {RS[e.show]}{e.reg !== "BE" && e.word && e.word.toLowerCase() !== RS[e.show] && <> — “{e.word}”</>}</dd>
+                <dt>As written</dt><dd class="code">{e.maker_raw} · {e.model_raw}</dd>
+                {e.extra.list && <><dt>Part</dt><dd>{e.extra.list} list</dd></>}
+                {e.extra.battery && <><dt>Battery can be connected</dt><dd>{e.extra.battery} <span class="muted">(the list's “Aku” column)</span></dd></>}
+                {e.reg === "BE" ? (
+                  <><dt>Details</dt><dd>Firmware, homologation reference and dates are in <a href={r.url}>Synergrid's list</a>; its terms allow personal use only, so only whether the model is listed is shown.</dd></>
+                ) : (
+                  <>
+                    {e.id && <><dt>{idLabel(e.reg)}</dt><dd class="code">{e.id}</dd></>}
+                    {e.cert && <><dt>{e.reg === "PL" ? "Document no." : "Evidence"}</dt><dd class="code">{e.cert}</dd></>}
+                    {e.fw && <><dt>{cap(r.fw_label)}</dt><dd><code>{e.fw}</code></dd></>}
+                    {e.valid && <><dt>Time-limited until</dt><dd>{e.valid}{e.show === "limited-past" && " — this date has passed; check the list"}</dd></>}
+                    {e.date && <><dt>Date</dt><dd>{e.date} <span class="muted">({r.date_label})</span></dd></>}
+                    {e.extra.setup && <><dt>Settings profile</dt><dd>{e.extra.setup}</dd></>}
+                    {e.extra.comment && <><dt>Comment</dt><dd>{e.extra.comment}</dd></>}
+                    {e.extra.note && <><dt>Note</dt><dd>{e.extra.note}</dd></>}
+                  </>
+                )}
+                <dt>Match</dt><dd>{e.trust} · seen {META[e.reg]?.seen}</dd>
+              </dl>
+            );
+          }) : (
+            <p class="small muted">No matching entry found in the <a href={REGS[c].url}>{REGS[c].short}</a>. That is not a “no” —
+              the model may be listed under another name{c === "NL" && " (the Dutch list has brand and type only)"}.</p>
+          )}
+        </article>
+      ))}
+    </div>
+    {d.variants.length > 1 && <p class="small muted">Spellings joined on this page: {d.variants.join(" · ")}.</p>}
+  </section>
+  <section class="sec" aria-label="Corrections">
+    <p><a class="correct" href={`${REPO}/issues/new?title=${encodeURIComponent("Registers: " + d.brand + " " + d.model)}`}>Wrong match or a newer list? Open an issue</a></p>
+    <p class="small"><a href="/registers/changes/">What changed in the lists</a></p>
+  </section>
+</Base>

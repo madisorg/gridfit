@@ -1,0 +1,52 @@
+{
+ "kirjaproov--leht--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3010,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"Times New Roman\"",
+  "fam": {
+   "monospace": 2,
+   "Barlow Semi Condensed": 1,
+   "IBM Plex Sans": 109,
+   "IBM Plex Sans Condensed": 1
+  },
+  "loaded": [
+   "Barlow Semi Condensed",
+   "IBM Plex Sans",
+   "IBM Plex Sans Condensed",
+   "Source Sans 3",
+   "Archivo Narrow",
+   "Public Sans"
+  ],
+  "small": [],
+  "nhit": 0,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12,
+  "fs12": 0,
+  "nfs": 113,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 113,
+   "min": 16.94,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [
+   "HTTP 404 http://127.0.0.1:8397/favicon.ico"
+  ],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

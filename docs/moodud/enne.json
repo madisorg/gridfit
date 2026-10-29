@@ -1,0 +1,6216 @@
+{
+ "enne--avaleht--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 23008,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 185
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    180,
+    43,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    180,
+    43,
+    "#reg. Any register\nListe"
+   ],
+   [
+    339,
+    25,
+    ". Alfen Eve Single /"
+   ],
+   [
+    339,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". APsystems DS3 / QS"
+   ],
+   [
+    339,
+    25,
+    ". APsystems EZ1 plug"
+   ],
+   [
+    339,
+    25,
+    ". BYD Battery-Box / "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-EVSE wall"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-G string "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-M / SUN-G"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    339,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow STREAM / P"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ Battery"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ microin"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS AC EV char"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS Avocado / "
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS T / S / F "
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo Hybri"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto / Ta"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto Plus"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Wattpilot"
+   ]
+  ],
+  "nhit": 41,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 185,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6,
+   "8px": 30,
+   "999px": 59,
+   "4px": 55
+  },
+  "kontrast": {
+   "n": 185,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [
+   "HTTP 404 http://127.0.0.1:8395/favicon.ico"
+  ],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 23008,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 185
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    180,
+    43,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    180,
+    43,
+    "#reg. Any register\nListe"
+   ],
+   [
+    339,
+    25,
+    ". Alfen Eve Single /"
+   ],
+   [
+    339,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". APsystems DS3 / QS"
+   ],
+   [
+    339,
+    25,
+    ". APsystems EZ1 plug"
+   ],
+   [
+    339,
+    25,
+    ". BYD Battery-Box / "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-EVSE wall"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-G string "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-M / SUN-G"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    339,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow STREAM / P"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ Battery"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ microin"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS AC EV char"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS Avocado / "
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS T / S / F "
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo Hybri"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto / Ta"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto Plus"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Wattpilot"
+   ]
+  ],
+  "nhit": 41,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 185,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6,
+   "8px": 30,
+   "999px": 59,
+   "4px": 55
+  },
+  "kontrast": {
+   "n": 185,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 66557,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 11
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    358,
+    43,
+    "#q. "
+   ],
+   [
+    358,
+    42,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    358,
+    42,
+    "#cls. All device classes"
+   ],
+   [
+    358,
+    42,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    358,
+    42,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    358,
+    42,
+    "#reg. Any register\nListe"
+   ]
+  ],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 11,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 11,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 66557,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 11
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    358,
+    43,
+    "#q. "
+   ],
+   [
+    358,
+    42,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    358,
+    42,
+    "#cls. All device classes"
+   ],
+   [
+    358,
+    42,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    358,
+    42,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    358,
+    42,
+    "#reg. Any register\nListe"
+   ]
+  ],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 11,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 11,
+   "min": 6.95,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht-tabel--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 23008,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 230
+  },
+  "loaded": [],
+  "small": [
+   [
+    339,
+    25,
+    ". Alfen Eve Single /"
+   ],
+   [
+    339,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". APsystems DS3 / QS"
+   ],
+   [
+    339,
+    25,
+    ". APsystems EZ1 plug"
+   ],
+   [
+    339,
+    25,
+    ". BYD Battery-Box / "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-EVSE wall"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-G string "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-M / SUN-G"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    339,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow STREAM / P"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ Battery"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ microin"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS AC EV char"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS Avocado / "
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS T / S / F "
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo Hybri"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto / Ta"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto Plus"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Wattpilot"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe DT/SDT/MS/X"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ES/EM/EMS h"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ET/EH/BT/BH"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe HCA wallbox"
+   ],
+   [
+    339,
+    25,
+    ". Hoymiles HM / HMS "
+   ],
+   [
+    339,
+    25,
+    ". Hoymiles HYS / HiO"
+   ],
+   [
+    339,
+    25,
+    ". Huawei LUNA2000 ba"
+   ]
+  ],
+  "nhit": 39,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 230,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 42,
+   "999px": 79,
+   "4px": 73
+  },
+  "kontrast": {
+   "n": 230,
+   "min": 5.67,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht-tabel--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 23008,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 230
+  },
+  "loaded": [],
+  "small": [
+   [
+    339,
+    25,
+    ". Alfen Eve Single /"
+   ],
+   [
+    339,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". APsystems DS3 / QS"
+   ],
+   [
+    339,
+    25,
+    ". APsystems EZ1 plug"
+   ],
+   [
+    339,
+    25,
+    ". BYD Battery-Box / "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-EVSE wall"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-G string "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-M / SUN-G"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    339,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow STREAM / P"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ Battery"
+   ],
+   [
+    339,
+    25,
+    ". Enphase IQ microin"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS AC EV char"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS Avocado / "
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS T / S / F "
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo Hybri"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto / Ta"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Verto Plus"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Wattpilot"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe DT/SDT/MS/X"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ES/EM/EMS h"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ET/EH/BT/BH"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe HCA wallbox"
+   ],
+   [
+    339,
+    25,
+    ". Hoymiles HM / HMS "
+   ],
+   [
+    339,
+    25,
+    ". Hoymiles HYS / HiO"
+   ],
+   [
+    339,
+    25,
+    ". Huawei LUNA2000 ba"
+   ]
+  ],
+  "nhit": 39,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 230,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 42,
+   "999px": 79,
+   "4px": 73
+  },
+  "kontrast": {
+   "n": 230,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht-tabel--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 66557,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 53
+  },
+  "loaded": [],
+  "small": [
+   [
+    330,
+    25,
+    ". Alfen Eve Single /"
+   ],
+   [
+    330,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    330,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    330,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    330,
+    25,
+    ". APsystems EZ1 plug"
+   ],
+   [
+    330,
+    25,
+    ". BYD Battery-Box / "
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-EVSE wall"
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-G string "
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 53,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 10,
+   "999px": 18,
+   "4px": 17
+  },
+  "kontrast": {
+   "n": 53,
+   "min": 5.67,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--avaleht-tabel--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 66557,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 53
+  },
+  "loaded": [],
+  "small": [
+   [
+    330,
+    25,
+    ". Alfen Eve Single /"
+   ],
+   [
+    330,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    330,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    330,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    330,
+    25,
+    ". APsystems EZ1 plug"
+   ],
+   [
+    330,
+    25,
+    ". BYD Battery-Box / "
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-EVSE wall"
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-G string "
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 53,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 10,
+   "999px": 18,
+   "4px": 17
+  },
+  "kontrast": {
+   "n": 53,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--otsing--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 24
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    180,
+    43,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    180,
+    43,
+    "#reg. Any register\nListe"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ]
+  ],
+  "nhit": 12,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 24,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6,
+   "8px": 1,
+   "999px": 2,
+   "4px": 2
+  },
+  "kontrast": {
+   "n": 24,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--otsing--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 24
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    180,
+    43,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    180,
+    43,
+    "#reg. Any register\nListe"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ]
+  ],
+  "nhit": 12,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 24,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6,
+   "8px": 1,
+   "999px": 2,
+   "4px": 2
+  },
+  "kontrast": {
+   "n": 24,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--otsing--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1315,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 11
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    358,
+    43,
+    "#q. "
+   ],
+   [
+    358,
+    42,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    358,
+    42,
+    "#cls. All device classes"
+   ],
+   [
+    358,
+    42,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    358,
+    42,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    358,
+    42,
+    "#reg. Any register\nListe"
+   ]
+  ],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 11,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 11,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--otsing--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1315,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 11
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    358,
+    43,
+    "#q. "
+   ],
+   [
+    358,
+    42,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    358,
+    42,
+    "#cls. All device classes"
+   ],
+   [
+    358,
+    42,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    358,
+    42,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    358,
+    42,
+    "#reg. Any register\nListe"
+   ]
+  ],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 11,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 11,
+   "min": 6.95,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--filter--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1687,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 172
+  },
+  "loaded": [],
+  "small": [
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    180,
+    43,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    180,
+    43,
+    "#reg. Any register\nListe"
+   ],
+   [
+    339,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    339,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo Hybri"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ES/EM/EMS h"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ET/EH/BT/BH"
+   ],
+   [
+    339,
+    25,
+    ". Huawei SUN2000 inv"
+   ],
+   [
+    339,
+    25,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    339,
+    25,
+    ". RCT Power Power In"
+   ],
+   [
+    339,
+    25,
+    ". SAJ H1 / H2 / HS2 "
+   ],
+   [
+    339,
+    25,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    339,
+    25,
+    ". Sofar HYD hybrids"
+   ],
+   [
+    339,
+    25,
+    ". Sofar PowerAll ESI"
+   ],
+   [
+    339,
+    25,
+    ". SolarEdge Home Hub"
+   ],
+   [
+    339,
+    25,
+    ". SolaX X1/X3 Hybrid"
+   ],
+   [
+    339,
+    25,
+    ". SolaX X3-Ultra"
+   ],
+   [
+    339,
+    25,
+    ". Solis RHI / S5-EH "
+   ],
+   [
+    339,
+    25,
+    ". Sungrow SH hybrid "
+   ]
+  ],
+  "nhit": 33,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 172,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6,
+   "8px": 27,
+   "999px": 54,
+   "4px": 54
+  },
+  "kontrast": {
+   "n": 172,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--filter--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1687,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 172
+  },
+  "loaded": [],
+  "small": [
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands\nA-Troni"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#conn. Any connection\nMod"
+   ],
+   [
+    180,
+    43,
+    "#ctl. Local or cloud\n   "
+   ],
+   [
+    180,
+    43,
+    "#reg. Any register\nListe"
+   ],
+   [
+    339,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    339,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    339,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    339,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    339,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    339,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo Hybri"
+   ],
+   [
+    339,
+    25,
+    ". Fronius Symo/Primo"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ES/EM/EMS h"
+   ],
+   [
+    339,
+    25,
+    ". GoodWe ET/EH/BT/BH"
+   ],
+   [
+    339,
+    25,
+    ". Huawei SUN2000 inv"
+   ],
+   [
+    339,
+    25,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    339,
+    25,
+    ". RCT Power Power In"
+   ],
+   [
+    339,
+    25,
+    ". SAJ H1 / H2 / HS2 "
+   ],
+   [
+    339,
+    25,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    339,
+    25,
+    ". Sofar HYD hybrids"
+   ],
+   [
+    339,
+    25,
+    ". Sofar PowerAll ESI"
+   ],
+   [
+    339,
+    25,
+    ". SolarEdge Home Hub"
+   ],
+   [
+    339,
+    25,
+    ". SolaX X1/X3 Hybrid"
+   ],
+   [
+    339,
+    25,
+    ". SolaX X3-Ultra"
+   ],
+   [
+    339,
+    25,
+    ". Solis RHI / S5-EH "
+   ],
+   [
+    339,
+    25,
+    ". Sungrow SH hybrid "
+   ]
+  ],
+  "nhit": 33,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 172,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "6px": 6,
+   "8px": 27,
+   "999px": 54,
+   "4px": 54
+  },
+  "kontrast": {
+   "n": 172,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--filter--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4106,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 49
+  },
+  "loaded": [],
+  "small": [
+   [
+    330,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    330,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    330,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    330,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    330,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ]
+  ],
+  "nhit": 8,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 49,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 9,
+   "999px": 16,
+   "4px": 16
+  },
+  "kontrast": {
+   "n": 49,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--filter--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4106,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 49
+  },
+  "loaded": [],
+  "small": [
+   [
+    330,
+    25,
+    ". Alpha ESS SMILE / "
+   ],
+   [
+    330,
+    25,
+    ". Anker SOLIX SOLIX "
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-SG HP3 th"
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-SG LP1 si"
+   ],
+   [
+    330,
+    25,
+    ". Deye SUN-SG LP3 th"
+   ],
+   [
+    330,
+    25,
+    ". E3/DC S10 / S20 ho"
+   ],
+   [
+    330,
+    25,
+    ". EcoFlow PowerOcean"
+   ],
+   [
+    330,
+    25,
+    ". Fox ESS H1 / AC1 /"
+   ]
+  ],
+  "nhit": 8,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 49,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 9,
+   "999px": 16,
+   "4px": 16
+  },
+  "kontrast": {
+   "n": 49,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2271,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 83
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    71,
+    21,
+    ". Solarman"
+   ],
+   [
+    223,
+    21,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    86,
+    21,
+    ". Deye Cloud"
+   ],
+   [
+    81,
+    21,
+    ". Deye Local"
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 83,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 5,
+   "4px": 8
+  },
+  "kontrast": {
+   "n": 83,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2271,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 83
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    71,
+    21,
+    ". Solarman"
+   ],
+   [
+    223,
+    21,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    86,
+    21,
+    ". Deye Cloud"
+   ],
+   [
+    81,
+    21,
+    ". Deye Local"
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 83,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 5,
+   "4px": 8
+  },
+  "kontrast": {
+   "n": 83,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3665,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 20
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    71,
+    21,
+    ". Solarman"
+   ]
+  ],
+  "nhit": 6,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 20,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 2,
+   "4px": 1
+  },
+  "kontrast": {
+   "n": 20,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3665,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 20
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    71,
+    21,
+    ". Solarman"
+   ]
+  ],
+  "nhit": 6,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 20,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 2,
+   "4px": 1
+  },
+  "kontrast": {
+   "n": 20,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-tõendid--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2271,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 86
+  },
+  "loaded": [],
+  "small": [
+   [
+    71,
+    21,
+    ". Solarman"
+   ],
+   [
+    223,
+    21,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    86,
+    21,
+    ". Deye Cloud"
+   ],
+   [
+    81,
+    21,
+    ". Deye Local"
+   ],
+   [
+    269,
+    21,
+    ". deye-hybrid-3p (3p"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.72,
+  "fs12": 0,
+  "nfs": 86,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 5,
+   "4px": 10
+  },
+  "kontrast": {
+   "n": 86,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-tõendid--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2271,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 86
+  },
+  "loaded": [],
+  "small": [
+   [
+    71,
+    21,
+    ". Solarman"
+   ],
+   [
+    223,
+    21,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    86,
+    21,
+    ". Deye Cloud"
+   ],
+   [
+    81,
+    21,
+    ". Deye Local"
+   ],
+   [
+    269,
+    21,
+    ". deye-hybrid-3p (3p"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.72,
+  "fs12": 0,
+  "nfs": 86,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 5,
+   "4px": 10
+  },
+  "kontrast": {
+   "n": 86,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-tõendid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3665,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 31
+  },
+  "loaded": [],
+  "small": [
+   [
+    71,
+    21,
+    ". Solarman"
+   ],
+   [
+    223,
+    21,
+    ". Sunsynk / Deye Sol"
+   ]
+  ],
+  "nhit": 2,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.72,
+  "fs12": 0,
+  "nfs": 31,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 2,
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 31,
+   "min": 5.63,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-tõendid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3665,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 31
+  },
+  "loaded": [],
+  "small": [
+   [
+    71,
+    21,
+    ". Solarman"
+   ],
+   [
+    223,
+    21,
+    ". Sunsynk / Deye Sol"
+   ]
+  ],
+  "nhit": 2,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.72,
+  "fs12": 0,
+  "nfs": 31,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 2,
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 31,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-registrid--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2271,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 54
+  },
+  "loaded": [],
+  "small": [
+   [
+    81,
+    21,
+    ". Deye Local"
+   ],
+   [
+    269,
+    21,
+    ". deye-hybrid-3p (3p"
+   ]
+  ],
+  "nhit": 2,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 54,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 5,
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 54,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-registrid--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2271,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 54
+  },
+  "loaded": [],
+  "small": [
+   [
+    81,
+    21,
+    ". Deye Local"
+   ],
+   [
+    269,
+    21,
+    ". deye-hybrid-3p (3p"
+   ]
+  ],
+  "nhit": 2,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 54,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 5,
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 54,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-registrid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3665,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 21
+  },
+  "loaded": [],
+  "small": [],
+  "nhit": 0,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 21,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 21,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--pere-registrid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3665,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 21
+  },
+  "loaded": [],
+  "small": [],
+  "nhit": 0,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 21,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 21,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 122
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    339,
+    25,
+    ". SUN-EVSE wallboxes"
+   ],
+   [
+    339,
+    25,
+    ". SUN-G string inver"
+   ],
+   [
+    339,
+    25,
+    ". SUN-M / SUN-G3 mic"
+   ],
+   [
+    339,
+    25,
+    ". SUN-SG HP3 three-p"
+   ],
+   [
+    339,
+    25,
+    ". SUN-SG LP1 single-"
+   ],
+   [
+    339,
+    25,
+    ". SUN-SG LP3 three-p"
+   ],
+   [
+    1120,
+    25,
+    ". 25 more Deye model"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    28,
+    19,
+    ".chip CZ"
+   ],
+   [
+    28,
+    19,
+    ".chip CZ"
+   ],
+   [
+    28,
+    19,
+    ".chip CZ"
+   ]
+  ],
+  "nhit": 39,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 122,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 6,
+   "999px": 18,
+   "4px": 27
+  },
+  "kontrast": {
+   "n": 122,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 122
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    339,
+    25,
+    ". SUN-EVSE wallboxes"
+   ],
+   [
+    339,
+    25,
+    ". SUN-G string inver"
+   ],
+   [
+    339,
+    25,
+    ". SUN-M / SUN-G3 mic"
+   ],
+   [
+    339,
+    25,
+    ". SUN-SG HP3 three-p"
+   ],
+   [
+    339,
+    25,
+    ". SUN-SG LP1 single-"
+   ],
+   [
+    339,
+    25,
+    ". SUN-SG LP3 three-p"
+   ],
+   [
+    1120,
+    25,
+    ". 25 more Deye model"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    26,
+    19,
+    ".chip PL"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    25,
+    19,
+    ".chip EE"
+   ],
+   [
+    26,
+    19,
+    ".chip SE"
+   ],
+   [
+    28,
+    19,
+    ".chip CZ"
+   ],
+   [
+    28,
+    19,
+    ".chip CZ"
+   ],
+   [
+    28,
+    19,
+    ".chip CZ"
+   ]
+  ],
+  "nhit": 39,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 122,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 6,
+   "999px": 18,
+   "4px": 27
+  },
+  "kontrast": {
+   "n": 122,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1734,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 28
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    330,
+    25,
+    ". SUN-EVSE wallboxes"
+   ],
+   [
+    330,
+    25,
+    ". SUN-G string inver"
+   ],
+   [
+    330,
+    25,
+    ". SUN-M / SUN-G3 mic"
+   ],
+   [
+    330,
+    25,
+    ". SUN-SG HP3 three-p"
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 28,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 4,
+   "999px": 12
+  },
+  "kontrast": {
+   "n": 28,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1734,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 28
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    330,
+    25,
+    ". SUN-EVSE wallboxes"
+   ],
+   [
+    330,
+    25,
+    ". SUN-G string inver"
+   ],
+   [
+    330,
+    25,
+    ". SUN-M / SUN-G3 mic"
+   ],
+   [
+    330,
+    25,
+    ". SUN-SG HP3 three-p"
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 28,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 4,
+   "999px": 12
+  },
+  "kontrast": {
+   "n": 28,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd-pikk--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 44
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    339,
+    25,
+    ". EV Charging Statio"
+   ],
+   [
+    339,
+    25,
+    ". EM24"
+   ],
+   [
+    339,
+    25,
+    ". EM24_E1"
+   ],
+   [
+    339,
+    25,
+    ". EM530/EM540"
+   ],
+   [
+    339,
+    25,
+    ". ET340"
+   ],
+   [
+    339,
+    25,
+    ". Victron BLE"
+   ]
+  ],
+  "nhit": 12,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 44,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 7,
+   "999px": 15
+  },
+  "kontrast": {
+   "n": 44,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd-pikk--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 44
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    339,
+    25,
+    ". EV Charging Statio"
+   ],
+   [
+    339,
+    25,
+    ". EM24"
+   ],
+   [
+    339,
+    25,
+    ". EM24_E1"
+   ],
+   [
+    339,
+    25,
+    ". EM530/EM540"
+   ],
+   [
+    339,
+    25,
+    ". ET340"
+   ],
+   [
+    339,
+    25,
+    ". Victron BLE"
+   ]
+  ],
+  "nhit": 12,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 44,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 7,
+   "999px": 15
+  },
+  "kontrast": {
+   "n": 44,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd-pikk--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1669,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 25
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    330,
+    25,
+    ". EV Charging Statio"
+   ],
+   [
+    330,
+    25,
+    ". EM24"
+   ],
+   [
+    330,
+    25,
+    ". EM24_E1"
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 25,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 4,
+   "999px": 9
+  },
+  "kontrast": {
+   "n": 25,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--bränd-pikk--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1669,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 25
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    330,
+    25,
+    ". EV Charging Statio"
+   ],
+   [
+    330,
+    25,
+    ". EM24"
+   ],
+   [
+    330,
+    25,
+    ". EM24_E1"
+   ]
+  ],
+  "nhit": 9,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 25,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 4,
+   "999px": 9
+  },
+  "kontrast": {
+   "n": 25,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--kuidas--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1445,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 51,
+   "monospace": 8
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 59,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 59,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--kuidas--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1445,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 51,
+   "monospace": 8
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 59,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 59,
+   "min": 6.95,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--kuidas--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 2865,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 18,
+   "monospace": 7
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 25,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 25,
+   "min": 5.87,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--kuidas--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 2865,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 18,
+   "monospace": 7
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 25,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 25,
+   "min": 9.42,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-hub--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 3834,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 146
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands2G Energ"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#c. Any country\nListed"
+   ],
+   [
+    180,
+    43,
+    "#st. Any status\n    Lis"
+   ],
+   [
+    180,
+    43,
+    "#n. In any number of l"
+   ],
+   [
+    18,
+    20,
+    ". AT"
+   ],
+   [
+    17,
+    20,
+    ". BE"
+   ],
+   [
+    18,
+    20,
+    ". CZ"
+   ],
+   [
+    15,
+    20,
+    ". EE"
+   ],
+   [
+    19,
+    20,
+    ". NL"
+   ],
+   [
+    16,
+    20,
+    ". PL"
+   ],
+   [
+    16,
+    20,
+    ". SE"
+   ],
+   [
+    178,
+    20,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    218,
+    20,
+    ". Deye SUN-12K-SG01H"
+   ],
+   [
+    213,
+    20,
+    ". Deye SUN-12K-SG05L"
+   ],
+   [
+    200,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    221,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    220,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    218,
+    20,
+    ". Deye SUN-12K-SG01H"
+   ],
+   [
+    177,
+    20,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    125,
+    20,
+    ". Deye SUN-12K-G03"
+   ],
+   [
+    156,
+    20,
+    ". Deye SUN-12K-G03/G"
+   ],
+   [
+    125,
+    20,
+    ". Deye SUN-12K-G05"
+   ],
+   [
+    199,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    182,
+    20,
+    ". Deye SUN-12K-SG01H"
+   ],
+   [
+    178,
+    20,
+    ". Deye SUN-12K-SG01L"
+   ],
+   [
+    232,
+    20,
+    ". Deye SUN-12K-SG01L"
+   ],
+   [
+    214,
+    20,
+    ". Deye SUN-12K-SG02L"
+   ],
+   [
+    228,
+    20,
+    ". Deye SUN-12K-SG02L"
+   ],
+   [
+    98,
+    21,
+    ". AT — Austria"
+   ],
+   [
+    152,
+    43,
+    ". Wechselrichterlist"
+   ],
+   [
+    156,
+    43,
+    ". Ladeeinrichtungen "
+   ],
+   [
+    106,
+    21,
+    ". BE — Belgium"
+   ],
+   [
+    101,
+    21,
+    ". CZ — Czechia"
+   ],
+   [
+    188,
+    43,
+    ". Seznam schválených"
+   ],
+   [
+    96,
+    21,
+    ". EE — Estonia"
+   ],
+   [
+    122,
+    43,
+    ". Inverterite nimeki"
+   ],
+   [
+    138,
+    21,
+    ". NL — Netherlands"
+   ],
+   [
+    174,
+    43,
+    ". Goedgekeurde omvor"
+   ],
+   [
+    95,
+    21,
+    ". PL — Poland"
+   ],
+   [
+    190,
+    20,
+    ". Wykaz urządzeń (Wi"
+   ]
+  ],
+  "nhit": 48,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 146,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 7,
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 146,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-hub--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 3834,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 146
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    180,
+    43,
+    "#q. "
+   ],
+   [
+    180,
+    43,
+    "#brand. All brands2G Energ"
+   ],
+   [
+    180,
+    43,
+    "#cls. All device classes"
+   ],
+   [
+    180,
+    43,
+    "#c. Any country\nListed"
+   ],
+   [
+    180,
+    43,
+    "#st. Any status\n    Lis"
+   ],
+   [
+    180,
+    43,
+    "#n. In any number of l"
+   ],
+   [
+    18,
+    20,
+    ". AT"
+   ],
+   [
+    17,
+    20,
+    ". BE"
+   ],
+   [
+    18,
+    20,
+    ". CZ"
+   ],
+   [
+    15,
+    20,
+    ". EE"
+   ],
+   [
+    19,
+    20,
+    ". NL"
+   ],
+   [
+    16,
+    20,
+    ". PL"
+   ],
+   [
+    16,
+    20,
+    ". SE"
+   ],
+   [
+    178,
+    20,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    218,
+    20,
+    ". Deye SUN-12K-SG01H"
+   ],
+   [
+    213,
+    20,
+    ". Deye SUN-12K-SG05L"
+   ],
+   [
+    200,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    221,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    220,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    218,
+    20,
+    ". Deye SUN-12K-SG01H"
+   ],
+   [
+    177,
+    20,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    125,
+    20,
+    ". Deye SUN-12K-G03"
+   ],
+   [
+    156,
+    20,
+    ". Deye SUN-12K-G03/G"
+   ],
+   [
+    125,
+    20,
+    ". Deye SUN-12K-G05"
+   ],
+   [
+    199,
+    20,
+    ". Deye SUN-12K-G06P3"
+   ],
+   [
+    182,
+    20,
+    ". Deye SUN-12K-SG01H"
+   ],
+   [
+    178,
+    20,
+    ". Deye SUN-12K-SG01L"
+   ],
+   [
+    232,
+    20,
+    ". Deye SUN-12K-SG01L"
+   ],
+   [
+    214,
+    20,
+    ". Deye SUN-12K-SG02L"
+   ],
+   [
+    228,
+    20,
+    ". Deye SUN-12K-SG02L"
+   ],
+   [
+    98,
+    21,
+    ". AT — Austria"
+   ],
+   [
+    152,
+    43,
+    ". Wechselrichterlist"
+   ],
+   [
+    156,
+    43,
+    ". Ladeeinrichtungen "
+   ],
+   [
+    106,
+    21,
+    ". BE — Belgium"
+   ],
+   [
+    101,
+    21,
+    ". CZ — Czechia"
+   ],
+   [
+    188,
+    43,
+    ". Seznam schválených"
+   ],
+   [
+    96,
+    21,
+    ". EE — Estonia"
+   ],
+   [
+    122,
+    43,
+    ". Inverterite nimeki"
+   ],
+   [
+    138,
+    21,
+    ". NL — Netherlands"
+   ],
+   [
+    174,
+    43,
+    ". Goedgekeurde omvor"
+   ],
+   [
+    95,
+    21,
+    ". PL — Poland"
+   ],
+   [
+    190,
+    20,
+    ". Wykaz urządzeń (Wi"
+   ]
+  ],
+  "nhit": 48,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 146,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 7,
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 146,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-hub--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 10103,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 10
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    358,
+    43,
+    "#q. "
+   ],
+   [
+    358,
+    42,
+    "#brand. All brands2G Energ"
+   ],
+   [
+    358,
+    42,
+    "#cls. All device classes"
+   ],
+   [
+    358,
+    42,
+    "#c. Any country\nListed"
+   ],
+   [
+    358,
+    42,
+    "#st. Any status\n    Lis"
+   ],
+   [
+    358,
+    42,
+    "#n. In any number of l"
+   ]
+  ],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 15.2,
+  "fs12": 0,
+  "nfs": 10,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1,
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 10,
+   "min": 5.87,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-hub--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 10103,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 10
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    358,
+    43,
+    "#q. "
+   ],
+   [
+    358,
+    42,
+    "#brand. All brands2G Energ"
+   ],
+   [
+    358,
+    42,
+    "#cls. All device classes"
+   ],
+   [
+    358,
+    42,
+    "#c. Any country\nListed"
+   ],
+   [
+    358,
+    42,
+    "#st. Any status\n    Lis"
+   ],
+   [
+    358,
+    42,
+    "#n. In any number of l"
+   ]
+  ],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 15.2,
+  "fs12": 0,
+  "nfs": 10,
+  "fs12ex": [],
+  "inputs": [
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2,
+   15.2
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1,
+   "6px": 6
+  },
+  "kontrast": {
+   "n": 10,
+   "min": 9.42,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-bränd--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 10919,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 139
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    18,
+    20,
+    ". AT"
+   ],
+   [
+    17,
+    20,
+    ". BE"
+   ],
+   [
+    18,
+    20,
+    ". CZ"
+   ],
+   [
+    15,
+    20,
+    ". EE"
+   ],
+   [
+    19,
+    20,
+    ". NL"
+   ],
+   [
+    16,
+    20,
+    ". PL"
+   ],
+   [
+    16,
+    20,
+    ". SE"
+   ],
+   [
+    167,
+    20,
+    ". SUN-1.5K-G04P1-EU-"
+   ],
+   [
+    97,
+    20,
+    ". SUN-100K-G03"
+   ],
+   [
+    89,
+    20,
+    ". SUN-10K-G05"
+   ],
+   [
+    164,
+    20,
+    ". SUN-10K-G06P3-EU-A"
+   ],
+   [
+    185,
+    20,
+    ". SUN-10K-G06P3-EU-A"
+   ],
+   [
+    184,
+    20,
+    ". SUN-10K-G06P3-EU-B"
+   ],
+   [
+    97,
+    20,
+    ". SUN-110K-G03"
+   ],
+   [
+    171,
+    20,
+    ". SUN-120K-G01P3-EU-"
+   ],
+   [
+    171,
+    20,
+    ". SUN-125K-G01P3-EU-"
+   ],
+   [
+    164,
+    20,
+    ". SUN-12K-G06P3-EU-A"
+   ],
+   [
+    185,
+    20,
+    ". SUN-12K-G06P3-EU-A"
+   ],
+   [
+    184,
+    20,
+    ". SUN-12K-G06P3-EU-B"
+   ],
+   [
+    171,
+    20,
+    ". SUN-130K-G01P3-EU-"
+   ],
+   [
+    171,
+    20,
+    ". SUN-135K-G01P3-EU-"
+   ],
+   [
+    171,
+    20,
+    ". SUN-136K-G01P3-EU-"
+   ],
+   [
+    89,
+    20,
+    ". SUN-15K-G05"
+   ],
+   [
+    164,
+    20,
+    ". SUN-15K-G06P3-EU-A"
+   ],
+   [
+    185,
+    20,
+    ". SUN-15K-G06P3-EU-A"
+   ]
+  ],
+  "nhit": 30,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.8,
+  "fs12": 0,
+  "nfs": 139,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 139,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-bränd--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 10919,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 139
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    18,
+    20,
+    ". AT"
+   ],
+   [
+    17,
+    20,
+    ". BE"
+   ],
+   [
+    18,
+    20,
+    ". CZ"
+   ],
+   [
+    15,
+    20,
+    ". EE"
+   ],
+   [
+    19,
+    20,
+    ". NL"
+   ],
+   [
+    16,
+    20,
+    ". PL"
+   ],
+   [
+    16,
+    20,
+    ". SE"
+   ],
+   [
+    167,
+    20,
+    ". SUN-1.5K-G04P1-EU-"
+   ],
+   [
+    97,
+    20,
+    ". SUN-100K-G03"
+   ],
+   [
+    89,
+    20,
+    ". SUN-10K-G05"
+   ],
+   [
+    164,
+    20,
+    ". SUN-10K-G06P3-EU-A"
+   ],
+   [
+    185,
+    20,
+    ". SUN-10K-G06P3-EU-A"
+   ],
+   [
+    184,
+    20,
+    ". SUN-10K-G06P3-EU-B"
+   ],
+   [
+    97,
+    20,
+    ". SUN-110K-G03"
+   ],
+   [
+    171,
+    20,
+    ". SUN-120K-G01P3-EU-"
+   ],
+   [
+    171,
+    20,
+    ". SUN-125K-G01P3-EU-"
+   ],
+   [
+    164,
+    20,
+    ". SUN-12K-G06P3-EU-A"
+   ],
+   [
+    185,
+    20,
+    ". SUN-12K-G06P3-EU-A"
+   ],
+   [
+    184,
+    20,
+    ". SUN-12K-G06P3-EU-B"
+   ],
+   [
+    171,
+    20,
+    ". SUN-130K-G01P3-EU-"
+   ],
+   [
+    171,
+    20,
+    ". SUN-135K-G01P3-EU-"
+   ],
+   [
+    171,
+    20,
+    ". SUN-136K-G01P3-EU-"
+   ],
+   [
+    89,
+    20,
+    ". SUN-15K-G05"
+   ],
+   [
+    164,
+    20,
+    ". SUN-15K-G06P3-EU-A"
+   ],
+   [
+    185,
+    20,
+    ". SUN-15K-G06P3-EU-A"
+   ]
+  ],
+  "nhit": 30,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.8,
+  "fs12": 0,
+  "nfs": 139,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 139,
+   "min": 6.95,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-bränd--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 19553,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 31
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    18,
+    20,
+    ". AT"
+   ],
+   [
+    17,
+    20,
+    ". BE"
+   ],
+   [
+    18,
+    20,
+    ". CZ"
+   ],
+   [
+    15,
+    20,
+    ". EE"
+   ],
+   [
+    19,
+    20,
+    ". NL"
+   ],
+   [
+    16,
+    20,
+    ". PL"
+   ],
+   [
+    16,
+    20,
+    ". SE"
+   ]
+  ],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13.6,
+  "fs12": 0,
+  "nfs": 31,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 31,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-bränd--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 19553,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 31
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    18,
+    20,
+    ". AT"
+   ],
+   [
+    17,
+    20,
+    ". BE"
+   ],
+   [
+    18,
+    20,
+    ". CZ"
+   ],
+   [
+    15,
+    20,
+    ". EE"
+   ],
+   [
+    19,
+    20,
+    ". NL"
+   ],
+   [
+    16,
+    20,
+    ". PL"
+   ],
+   [
+    16,
+    20,
+    ". SE"
+   ]
+  ],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13.6,
+  "fs12": 0,
+  "nfs": 31,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 31,
+   "min": 6.95,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-mudel--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1787,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 69,
+   "monospace": 1
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 70,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 8
+  },
+  "kontrast": {
+   "n": 70,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-mudel--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1787,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 69,
+   "monospace": 1
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 70,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 8
+  },
+  "kontrast": {
+   "n": 70,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-mudel--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 19
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 19,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 19,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-mudel--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 19
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ]
+  ],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 12.48,
+  "fs12": 0,
+  "nfs": 19,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "999px": 2,
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 19,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-riik--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2064,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 83
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    355,
+    26,
+    ". Wechselrichterlist"
+   ],
+   [
+    432,
+    26,
+    ". Ladeeinrichtungen "
+   ]
+  ],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 83,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 2
+  },
+  "kontrast": {
+   "n": 83,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-riik--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2064,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 83
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    355,
+    26,
+    ". Wechselrichterlist"
+   ],
+   [
+    432,
+    26,
+    ". Ladeeinrichtungen "
+   ]
+  ],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.08,
+  "fs12": 0,
+  "nfs": 83,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 2
+  },
+  "kontrast": {
+   "n": 83,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-riik--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3671,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 24
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    355,
+    26,
+    ". Wechselrichterlist"
+   ]
+  ],
+  "nhit": 6,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 24,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 24,
+   "min": 5.47,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "enne--reg-riik--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3671,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "system-ui, -apple-system, \"Segoe UI\", Roboto, sans-serif",
+  "fam": {
+   "system-ui": 24
+  },
+  "loaded": [],
+  "small": [
+   [
+    62,
+    30,
+    ".logo GridFit"
+   ],
+   [
+    94,
+    24,
+    ". How we know"
+   ],
+   [
+    61,
+    24,
+    ". Registers"
+   ],
+   [
+    58,
+    24,
+    ". Changes"
+   ],
+   [
+    59,
+    24,
+    ". Fix a row"
+   ],
+   [
+    355,
+    26,
+    ". Wechselrichterlist"
+   ]
+  ],
+  "nhit": 6,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14.4,
+  "fs12": 0,
+  "nfs": 24,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "8px": 1
+  },
+  "kontrast": {
+   "n": 24,
+   "min": 6.39,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}
