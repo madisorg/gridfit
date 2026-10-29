@@ -7,13 +7,14 @@ const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
 <Base title="Not found" description="This page does not exist. Search the device table or the register cross-view instead.">
   <section class="ask" aria-labelledby="nf-h">
     <h1 id="nf-h">Not found</h1>
-    <p class="lede">There is no page at this address. Family pages are <span class="code">/brand/family/</span>, register model pages
-      <span class="code">/registers/brand/model/</span>; both are listed from the search on the home page.</p>
+    <p class="lede">There is no page at this address. Family pages are <span class="code">/brand/family/</span>, register model pages are
+      <span class="code">/registers/brand/model/</span>. Both are listed from the search on the home page.</p>
     <form class="search" role="search" action="/" method="get">
       <label class="vh" for="q">Model code, brand or family</label>
       <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
     </form>
-    <p class="facts"><span><a href="/">All {nf(data.families.length)} families</a></span><span><a href="/registers/">Grid registers</a></span>
-      <span><a href="/about/">How we know</a></span><span>{nf(brands().length)} brands</span></p>
+    <nav class="crumbs" aria-label="Where to go instead"><a href="/">All {nf(data.families.length)} families</a><span aria-hidden="true">/</span>
+      <a href="/registers/">Grid registers</a><span aria-hidden="true">/</span><a href="/about/">How we know</a></nav>
+    <p class="facts"><span><b>{nf(brands().length)}</b> brands</span></p>
   </section>
 </Base>

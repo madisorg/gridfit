@@ -268,3 +268,14 @@ render the long tail (649 uncurated families) on demand instead of in the page.
 Not done yet: the change log and the evidence timeline show one rebuild only (the first dataset and the
 register baseline are the same day), so the "who fell off a list" view has nothing to show until the
 second register refresh.
+
+## 12. Measured, 2026-10-29 — pre-publish pass
+
+Same tool and routes as §11 plus the new `/404.html` ([`routes-etapp0.json`](docs/moodud/routes-etapp0.json)), 60 pictures:
+[`etapp0.json`](docs/moodud/etapp0.json). The 14 §11 routes are unchanged (0 console errors, 0 overflow, 0 texts
+under 4.5:1, 0 tap targets under 44 px, smallest text 13 px). The 404 page first measured 3 of 9 tap targets under
+44 px on a phone (plain links in a `.facts` line); they became `.crumbs` links and the re-measure
+([`etapp0-404.json`](docs/moodud/etapp0-404.json), pictures `etapp0--404--*.webp`) is 0 of 9. The OG card
+(`web/public/og.png`, 1200×630) is rendered by headless Edge from the same fonts and tokens: paper, ink, the
+signal rule, the three status marks and the seven register cells — no illustration.
+
