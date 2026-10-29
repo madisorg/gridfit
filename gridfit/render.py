@@ -9,9 +9,9 @@ from jinja2 import Environment, FileSystemLoader, select_autoescape
 from .assemble import CLASS_LABEL, CONN_LABEL, SOURCE_LABEL
 from .brands import slug
 
-SITE_NAME = "GridReg"
+SITE_NAME = "GridFit"
 TAGLINE = "Does it work locally with Home Assistant and evcc?"
-REPO_URL = "https://github.com/madisorg/gridreg"
+REPO_URL = "https://github.com/madisorg/gridfit"
 
 
 def _env(root: Path):

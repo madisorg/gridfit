@@ -1,11 +1,11 @@
-"""Build the GridReg dataset and static site in one command.
+"""Build the GridFit dataset and static site in one command.
 
     python build.py              # download what is older than 6 days, then build
     python build.py --refresh    # download everything again
     python build.py --offline    # build from cache/ only
 
 Writes data/dataset/ (committed: the dataset and its change log) and site/ (git-ignored).
-Set GRIDREG_BASE_URL for canonical links and the sitemap, GRIDREG_ANALYTICS to
+Set GRIDFIT_BASE_URL for canonical links and the sitemap, GRIDFIT_ANALYTICS to
 "plausible:<domain>" or "cloudflare:<token>" to include a cookie-free analytics tag.
 """
 import argparse
@@ -20,8 +20,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from gridreg import assemble, fetch, render  # noqa: E402
-from gridreg.brands import Brands  # noqa: E402
+from gridfit import assemble, fetch, render  # noqa: E402
+from gridfit.brands import Brands  # noqa: E402
 
 DATASET = ROOT / "data/dataset"
 FIELDS = ["id", "brand", "family", "class", "source", "name", "ref", "local", "iot_class", "conn",
@@ -72,8 +72,8 @@ def main():
     changes = write_dataset(rows, families, seen)
     stats = report(rows, families, regdata)
     render.site(ROOT, families, rows, unmatched, regdata, changes, stats, seen,
-                base_url=os.environ.get("GRIDREG_BASE_URL", "").rstrip("/"),
-                analytics=os.environ.get("GRIDREG_ANALYTICS", ""))
+                base_url=os.environ.get("GRIDFIT_BASE_URL", "").rstrip("/"),
+                analytics=os.environ.get("GRIDFIT_ANALYTICS", ""))
     print("site written to site/  (preview: python -m http.server 8390 -d site)")
 
 

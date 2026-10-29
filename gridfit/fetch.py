@@ -17,7 +17,7 @@ import urllib.request
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
-UA = "gridreg-build/1.0 (+https://github.com/madisorg/gridreg)"
+UA = "gridfit-build/1.0 (+https://github.com/madisorg/gridfit)"
 RAW = "https://raw.githubusercontent.com"
 HA_RAW = f"{RAW}/home-assistant/core/dev/homeassistant"
 EVCC_TARBALL = "https://codeload.github.com/evcc-io/evcc/tar.gz/refs/heads/master"

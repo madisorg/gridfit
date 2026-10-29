@@ -1,10 +1,10 @@
 # Dataset licence
 
-The GridReg dataset — everything under `data/curated/` and `data/dataset/` — is licensed under the
+The GridFit dataset — everything under `data/curated/` and `data/dataset/` — is licensed under the
 **Creative Commons Attribution 4.0 International** licence (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/legalcode
 
-Attribution: "GridReg (https://github.com/madisorg/gridreg)". Keep the per-row `source_url` and `seen`
+Attribution: "GridFit (https://github.com/madisorg/gridfit)". Keep the per-row `source_url` and `seen`
 fields when you redistribute rows; they are how a reader checks a claim.
 
 ## Third-party facts in the dataset
@@ -21,4 +21,4 @@ The dataset states facts about third-party sources and links to them; it does no
   status word, and a link to the register. No other column of any register is included. Belgium's
   Synergrid list is not used.
 
-The CC BY 4.0 grant covers the selection, arrangement and curated text that are GridReg's own work.
+The CC BY 4.0 grant covers the selection, arrangement and curated text that are GridFit's own work.

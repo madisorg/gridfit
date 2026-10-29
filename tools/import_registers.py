@@ -15,7 +15,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from gridreg.brands import Brands  # noqa: E402
+from gridfit.brands import Brands  # noqa: E402
 
 REGISTERS = {
     "AT": {"name": "Austria - Wechselrichterliste (TOR Erzeuger Typ A) and charger list",
