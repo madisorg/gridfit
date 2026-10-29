@@ -1,0 +1,37 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ brand }} in EU grid registers ({{ countries_listed|join(', ') }}) — {{ SITE }}{% endblock %}
+{% block description %}{{ total|n }} {{ brand }} inverters, batteries and chargers across the national grid-connection lists of {{ countries_listed|join(', ') }}: each list's status, firmware and dates side by side.{% endblock %}
+{% block main %}
+<p class="crumbs"><a href="{{ rel }}registers/">Grid registers</a> › {{ brand }}</p>
+<h1>{{ brand }} in EU grid registers</h1>
+<p>{{ total|n }} {{ brand }} model{{ '' if total == 1 else 's' }} in the lists of {{ countries_listed|join(', ') }}.
+Model names link to a page with every list's details when the model is in two or more lists.
+{% if v1 %}For local control with Home Assistant and evcc, see <a href="{{ rel }}{{ v1 }}/">{{ brand }} on {{ SITE }}</a>.{% endif %}</p>
+<p class="note">The register is the authority; this is a cross-reference. Empty = no matching entry found, never “not approved”.
+Hover or tap a cell for the list's own words. All rows seen {{ snap.date }}.</p>
+<p class="legend muted">✓ listed · ✓* with restrictions · ⏱ time-limited · ⏱! date passed · exp expired · Nein = the Austrian list's own word ·
+match: exact = same spelling in every list, alias = joined after normalising maker or model, unmatched = kept apart (see the page notes).</p>
+
+{% for cls, ds in groups %}
+<h2>{{ RC[cls] }} <span class="muted">({{ ds|length }})</span></h2>
+<div class="xv-wrap">
+<table class="xv">
+  <thead><tr><th scope="col">Model</th>{% for c in COUNTRIES %}<th scope="col"><a href="{{ rel }}registers/country/{{ c|lower }}/">{{ c }}</a></th>{% endfor %}<th scope="col" class="match">Match</th></tr></thead>
+  <tbody>
+  {% for d in ds %}
+    {% set trusts = d.cells.values()|sum(start=[])|map(attribute='trust')|unique|list %}
+    <tr id="m-{{ d.anchor }}"><td>{% if d.page %}<a href="{{ d.slug }}/">{{ d.model }}</a>{% else %}{{ d.model }}{% endif %}</td>
+    {% for c in COUNTRIES %}
+      {% if c in d.cells %}{% set e = d.cells[c][0] %}{% set b = d.cells[c]|best %}
+      <td class="st st-{{ b }}" title="{{ c }}: {{ e.word if e.reg != 'BE' else RS[b] }}{% if e.valid %} until {{ e.valid }}{% endif %}{% if e.fw and e.reg != 'BE' %} · {{ RREG[e.reg].fw_label }} {{ e.fw[:60] }}{% endif %} · as written: {{ e.maker_raw }} {{ e.model_raw }} · match {{ e.trust }} · list dated {{ meta[e.reg].source_date }} · seen {{ snap.date }}">{{ RSHORT[b] }}{% if d.cells[c]|length > 1 %}<sup>{{ d.cells[c]|length }}</sup>{% endif %}</td>
+      {% else %}<td class="st st-none" title="{{ c }}: no matching entry found"></td>{% endif %}
+    {% endfor %}
+    <td class="match muted">{{ 'unmatched' if 'unmatched' in trusts else ('alias' if 'alias' in trusts else 'exact') }}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>
+{% endfor %}
+<p class="muted">A small number after a symbol = the list has several rows for this model (variants, firmware versions); the model page shows each.
+Something wrong? <a href="{{ REPO }}/issues/new?title={{ ('Registers: ' ~ brand)|urlencode }}">Open an issue</a>.</p>
+{% endblock %}

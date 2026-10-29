@@ -1,0 +1,481 @@
+{
+ "_comment": "canonical maker -> raw spellings (case-insensitive, matched after legal-suffix cleanup). OEM pairs such as 'Solarwatt / Fronius' stay their own maker: the register lists them under that name.",
+ "Deye": [
+  "deye",
+  "ningbo deye inverter technology",
+  "ningbo deye",
+  "deye inverter",
+  "ningbo deye inverter",
+  "ningbo deye inverter technology co"
+ ],
+ "Solis": [
+  "solis",
+  "ginlong",
+  "ginlong technologies",
+  "ginlong solis"
+ ],
+ "Fox ESS": [
+  "fox ess",
+  "foxess",
+  "fox-ess",
+  "foxess co"
+ ],
+ "SolaX": [
+  "solax",
+  "solax power",
+  "solax power network technology",
+  "solax power network technology (zhejiang)"
+ ],
+ "Sungrow": [
+  "sungrow",
+  "sungrow power supply",
+  "sungrow deutschland"
+ ],
+ "GoodWe": [
+  "goodwe",
+  "jiangsu goodwe",
+  "goodwe technologies",
+  "jiangsu goodwe power supply technology"
+ ],
+ "Growatt": [
+  "growatt",
+  "shenzhen growatt",
+  "growatt new energy",
+  "shenzhen growatt new energy"
+ ],
+ "Sofar": [
+  "sofar",
+  "sofarsolar",
+  "shenzhen sofarsolar",
+  "sofar solar",
+  "shenzen sofarsolar",
+  "shenzen sofarsolar co"
+ ],
+ "Huawei": [
+  "huawei",
+  "huawei technologies",
+  "huawei digital power",
+  "huawei digital power technologies"
+ ],
+ "SMA": [
+  "sma",
+  "sma solar technology",
+  "sma solar"
+ ],
+ "Fronius": [
+  "fronius",
+  "fronius international"
+ ],
+ "Kostal": [
+  "kostal",
+  "kostal solar electric",
+  "kostal industrie elektrik"
+ ],
+ "Victron": [
+  "victron",
+  "victron energy"
+ ],
+ "Hoymiles": [
+  "hoymiles",
+  "hoymiles power electronics"
+ ],
+ "Enphase": [
+  "enphase",
+  "enphase energy"
+ ],
+ "APsystems": [
+  "apsystems",
+  "altenergy power system",
+  "ap systems",
+  "aps"
+ ],
+ "Anker": [
+  "anker",
+  "anker innovations",
+  "anker solix",
+  "anker innovations limited"
+ ],
+ "EcoFlow": [
+  "ecoflow",
+  "ecoflow technology",
+  "ef ecoflow"
+ ],
+ "Zendure": [
+  "zendure",
+  "zendure technology"
+ ],
+ "Marstek": [
+  "marstek",
+  "hame technology",
+  "shenzhen hame technology"
+ ],
+ "SolarEdge": [
+  "solaredge",
+  "solaredge technologies",
+  "solar edge"
+ ],
+ "Sunsynk": [
+  "sunsynk",
+  "sunsynk ltd"
+ ],
+ "Afore": [
+  "afore",
+  "afore new energy",
+  "afore new energy technology (shanghai)"
+ ],
+ "Dyness": [
+  "dyness",
+  "dyness digital energy technology"
+ ],
+ "BYD": [
+  "byd",
+  "byd company",
+  "byd auto industry"
+ ],
+ "Pylontech": [
+  "pylontech",
+  "pylon technologies"
+ ],
+ "Alpha ESS": [
+  "alpha ess",
+  "alphaess",
+  "alpha-ess",
+  "alpha ess co"
+ ],
+ "Sigenergy": [
+  "sigenergy",
+  "sigenergy technology"
+ ],
+ "Megarevo": [
+  "megarevo",
+  "shenzhen megarevo technology",
+  "shenzhen megarevo"
+ ],
+ "Hypontech": [
+  "hypontech",
+  "hypontech ltd",
+  "suzhou hypontech"
+ ],
+ "Solinteg": [
+  "solinteg",
+  "integ",
+  "wuxi solinteg",
+  "wuxi solinteg power"
+ ],
+ "TSUN": [
+  "tsun",
+  "tsuness",
+  "tsuness co"
+ ],
+ "Envertech": [
+  "envertech",
+  "zhejiang envertech"
+ ],
+ "Deye Sunsynk": [
+  "sunsynk deye"
+ ],
+ "ABB": [
+  "abb",
+  "fimer",
+  "abb fimer"
+ ],
+ "Fimer": [
+  "fimer s.p.a"
+ ],
+ "Delta": [
+  "delta",
+  "delta electronics",
+  "delta electronics (netherlands)"
+ ],
+ "Kaco": [
+  "kaco",
+  "kaco new energy"
+ ],
+ "Ingeteam": [
+  "ingeteam",
+  "ingeteam power technology"
+ ],
+ "Solplanet": [
+  "solplanet",
+  "aiswei",
+  "aiswei technology"
+ ],
+ "Saj": [
+  "saj",
+  "guangzhou sanjing electric",
+  "sanjing"
+ ],
+ "Senec": [
+  "senec",
+  "senec gmbh"
+ ],
+ "E3/DC": [
+  "e3/dc",
+  "e3dc",
+  "hager energy"
+ ],
+ "RCT Power": [
+  "rct power",
+  "rct"
+ ],
+ "Sunways": [
+  "sunways",
+  "sunways (shanghai)"
+ ],
+ "Lux Power": [
+  "lux power",
+  "luxpower",
+  "luxpowertek",
+  "lux power technology",
+  "shenzhen lux power technology",
+  "shenzhen lux"
+ ],
+ "Goodwe-GE": [],
+ "Jinko": [
+  "jinko",
+  "jinkosolar",
+  "zhejiang jinko energy storage",
+  "zhejiang jinko"
+ ],
+ "Chisage": [
+  "chisage",
+  "zhejiang chisage new energy technology",
+  "zhejiang chisage"
+ ],
+ "ACE Battery": [
+  "ace battery",
+  "shenzhen ace battery"
+ ],
+ "AEG": [
+  "aeg",
+  "aeg power solutions"
+ ],
+ "Wallbox": [
+  "wallbox",
+  "wallbox chargers"
+ ],
+ "Alfen": [
+  "alfen",
+  "alfen icu"
+ ],
+ "Keba": [
+  "keba",
+  "keba energy automation"
+ ],
+ "go-e": [
+  "go-e",
+  "goe",
+  "go e"
+ ],
+ "Easee": [
+  "easee",
+  "easee as"
+ ],
+ "Zaptec": [
+  "zaptec"
+ ],
+ "Tesla": [
+  "tesla",
+  "tesla energy",
+  "tesla motors netherlands"
+ ],
+ "BMW": [
+  "bmw",
+  "bmw group",
+  "bmw ag"
+ ],
+ "Mercedes-Benz": [
+  "mercedes-benz",
+  "mercedes benz",
+  "mercedes"
+ ],
+ "Volkswagen": [
+  "volkswagen",
+  "vw",
+  "elli"
+ ],
+ "Kstar": [
+  "kstar",
+  "kstar (vision)",
+  "shenzhen kstar",
+  "shenzhen kstar new energy"
+ ],
+ "Chint": [
+  "chint",
+  "chint power systems"
+ ],
+ "Innotinum": [
+  "innotinum"
+ ],
+ "Bluesun": [
+  "bluesun",
+  "bluesun solar"
+ ],
+ "Cubenergy": [
+  "cubenergy",
+  "shenzhen cubenergy"
+ ],
+ "DAH Solar": [
+  "dah solar",
+  "dah new energy technology",
+  "dah"
+ ],
+ "Eaton": [
+  "eaton",
+  "eaton power quality"
+ ],
+ "Elecod": [
+  "elecod",
+  "shenzhen elecod electric",
+  "shenzhen elecod"
+ ],
+ "Enjoy": [
+  "enjoy",
+  "shenzhen enjoy",
+  "shenzhen enjoy technology"
+ ],
+ "Fairland": [
+  "fairland",
+  "fairland igarden"
+ ],
+ "Felicity Solar": [
+  "felicity solar",
+  "felicity",
+  "guangzhou felicity solar technology"
+ ],
+ "Fenecon": [
+  "fenecon",
+  "fenecon home"
+ ],
+ "Haier": [
+  "haier",
+  "qingdao haier energy technology",
+  "qingdao haier"
+ ],
+ "Hanchu": [
+  "hanchu",
+  "hanchu ess"
+ ],
+ "Hiconics": [
+  "hiconics",
+  "hiconics eco-energy drive technology"
+ ],
+ "Hopewind": [
+  "hopewind",
+  "shenzhen hopewind electric",
+  "shenzhen hopewind technology",
+  "shenzhen hopewind"
+ ],
+ "INVT": [
+  "invt",
+  "invt solar technology",
+  "invt solar"
+ ],
+ "Kehua": [
+  "kehua",
+  "kehua tech",
+  "xiamen kehua digital energy tech",
+  "xiamen kehua"
+ ],
+ "Livoltek": [
+  "livoltek",
+  "livoltek power",
+  "hangzhou livoltek power",
+  "hangzhou livoltek"
+ ],
+ "NGEN": [
+  "ngen",
+  "ngen ess"
+ ],
+ "IN-Power": [
+  "in-power",
+  "langfang in-power electric",
+  "langfang in-power"
+ ],
+ "Poweroad": [
+  "poweroad",
+  "poweroad (xiamen) ess engineering technology",
+  "poweroad ess engineering"
+ ],
+ "Senergy": [
+  "senergy",
+  "shenzhen senergy"
+ ],
+ "Sinexcel": [
+  "sinexcel",
+  "shenzhen sinexcel electric",
+  "shenzhen sinexcel",
+  "shenzhen sinexcel isuna energy technology",
+  "shenzhen sinexcel isuna"
+ ],
+ "SRNE": [
+  "srne",
+  "srne solar"
+ ],
+ "E-star": [
+  "e-star",
+  "xiamen e-star energy",
+  "xiamen e-star"
+ ],
+ "Steca": [
+  "steca",
+  "steca a katek brand"
+ ],
+ "Studer": [
+  "studer",
+  "studer innotec"
+ ],
+ "Sunplus": [
+  "sunplus",
+  "shanghai sunplus new energy technology",
+  "shanghai sunplus"
+ ],
+ "SYL": [
+  "syl",
+  "syl (ningbo) battery",
+  "syl battery"
+ ],
+ "Trumpf": [
+  "trumpf",
+  "trumpf huttinger",
+  "trumpf hüttinger"
+ ],
+ "Voltdeer": [
+  "voltdeer",
+  "shanghai voltdeer technology",
+  "shanghai voltdeer"
+ ],
+ "Volvo": [
+  "volvo",
+  "volvo car corporation",
+  "volvo car"
+ ],
+ "Wattsonic": [
+  "wattsonic",
+  "wuxi wattsonic energy technology",
+  "wuxi wattsonic"
+ ],
+ "Weiheng": [
+  "weiheng",
+  "weiheng intelligent technology",
+  "jiangsu weiheng intelligent technology",
+  "jiangsu weiheng intelligent",
+  "weiheng intelligent"
+ ],
+ "Yunt": [
+  "yunt",
+  "shenzhen yunt digital power",
+  "shenzhen yunt"
+ ],
+ "ZCS Azzurro": [
+  "zcs azzurro",
+  "zcs azurro",
+  "zcs zucchetti centro sistemi",
+  "zcs"
+ ],
+ "LG ESS": [
+  "lg ess",
+  "lg ess home 10",
+  "lg ess home 8"
+ ]
+}

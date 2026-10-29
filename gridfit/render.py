@@ -1,12 +1,13 @@
 """Render the static site from the assembled families with Jinja2."""
 import json
 import shutil
-from collections import defaultdict
+from collections import Counter, defaultdict
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 from .assemble import CLASS_LABEL, CONN_LABEL, SOURCE_LABEL
+from . import registers
 from .brands import slug
 
 SITE_NAME = "GridFit"
@@ -29,7 +30,7 @@ def _write(path: Path, html: str):
     path.write_text(html, encoding="utf-8")
 
 
-def site(root, families, rows, unmatched, regdata, changelog, stats, seen, base_url="", analytics=""):
+def site(root, families, rows, unmatched, regdata, changelog, stats, seen, base_url="", analytics="", reg=None):
     out = root / "site"
     if out.exists():
         shutil.rmtree(out)
@@ -73,7 +74,10 @@ def site(root, families, rows, unmatched, regdata, changelog, stats, seen, base_
                 page=f"{bs}/{f['slug']}/", rel="../../", f=f, **common))
             pages.append(f"{bs}/{f['slug']}/")
 
-    for name in ("about", "changelog", "registers"):
+    if reg:
+        pages += registers_site(env, out, reg, families, common)
+
+    for name in ("about", "changelog"):
         _write(out / name / "index.html", env.get_template(f"{name}.html.j2").render(
             page=f"{name}/", rel="../", changelog=changelog, **common))
         pages.append(f"{name}/")
@@ -86,3 +90,120 @@ def site(root, families, rows, unmatched, regdata, changelog, stats, seen, base_
             '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
             + urls + "</urlset>", encoding="utf-8")
     print(f"  {len(pages)} pages")
+
+
+# ---------------------------------------------------------------- grid-register cross-view
+def registers_site(env, out, reg, families, common):
+    """/registers/: the cross-view hub, one page per brand, model (in >= 2 registers), country, and the change log."""
+    devs, snap, log = reg
+    R = registers
+    env.globals.update(RC=R.CLASS_LABEL, RS=R.STATUS_LABEL, RSHORT=R.STATUS_SHORT, RREG=R.REGISTERS,
+                       COUNTRIES=R.COUNTRIES)
+    env.filters["best"] = R.best
+    env.filters["n"] = lambda v: f"{v:,}"
+    meta, pages = snap["meta"], []
+    shown = [d for d in devs if d["cls"] in R.PAGE_CLASSES]
+    fam_url = {}
+    for f in families:
+        for m in f["models"]:
+            fam_url[(m["brand"], m["norm"])] = (f"{f['brand_slug']}/{f['slug']}/", f"{f['brand']} {f['name']}")
+    v1_brands = {f["brand_slug"] for f in families}
+    rc = dict(common, snap=snap, meta=meta, not_read=R.NOT_READ)
+
+    def url(d):
+        return f"brand/{d['brand_slug']}/{d['slug']}/" if d["page"] else f"brand/{d['brand_slug']}/#m-{_anchor(d)}"
+
+    # hub: a compact JSON index the filter script pages through; the page itself lists brands for no-JS readers
+    code = {"listed": "L", "restricted": "R", "limited": "T", "limited-past": "P", "expired": "E", "nein": "N", "other": "O"}
+    by_brand = defaultdict(list)
+    for d in shown:
+        by_brand[d["brand_slug"]].append(d)
+    brands = sorted(by_brand, key=lambda b: by_brand[b][0]["brand"].lower())
+    bidx = {b: i for i, b in enumerate(brands)}
+    order = sorted(shown, key=lambda d: (-d["n"], d["brand"].lower(), d["model"].lower()))
+    index = {"countries": R.COUNTRIES, "brands": [by_brand[b][0]["brand"] for b in brands],
+             "rows": [[bidx[d["brand_slug"]], d["model"], d["cls"], url(d),
+                       "".join(code[R.best(d["cells"][c])] if c in d["cells"] else "-" for c in R.COUNTRIES)]
+                      for d in order]}
+    (out / "registers").mkdir(parents=True, exist_ok=True)
+    (out / "registers/index.json").write_text(json.dumps(index, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    counts = {c: sum(1 for d in shown if c in d["cells"]) for c in R.COUNTRIES}
+    _write(out / "registers/index.html", env.get_template("registers/hub.html.j2").render(
+        page="registers/", rel="../", devices=len(shown), pages_n=sum(d["page"] for d in shown),
+        multi=sum(1 for d in shown if d["n"] >= 2 and not d["unmatched"]), counts=counts,
+        brand_links=[(b, by_brand[b][0]["brand"], len(by_brand[b])) for b in brands], log=log, **rc))
+    pages.append("registers/")
+
+    for b in brands:
+        ds = sorted(by_brand[b], key=lambda d: (d["model"].lower()))
+        for d in ds:
+            d["anchor"] = _anchor(d)
+        groups = [(c, [d for d in ds if d["cls"] == c]) for c in R.CLASS_LABEL if any(d["cls"] == c for d in ds)]
+        name = ds[0]["brand"]
+        _write(out / "registers/brand" / b / "index.html", env.get_template("registers/brand.html.j2").render(
+            page=f"registers/brand/{b}/", rel="../../../", brand=name, groups=groups, total=len(ds),
+            countries_listed=[c for c in R.COUNTRIES if any(c in d["cells"] for d in ds)],
+            v1=b if b in v1_brands else "", **rc))
+        pages.append(f"registers/brand/{b}/")
+        for d in ds:
+            if not d["page"]:
+                continue
+            fam = fam_url.get((d.get("v1brand"), d["norm"]))
+            faq = _faq(d, meta)
+            _write(out / "registers/brand" / b / d["slug"] / "index.html", env.get_template("registers/model.html.j2").render(
+                page=f"registers/brand/{b}/{d['slug']}/", rel="../../../../", d=d, faq=faq, fam=fam,
+                faq_ld=[{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}}
+                        for f in faq], **rc))
+            pages.append(f"registers/brand/{b}/{d['slug']}/")
+
+    for c in R.COUNTRIES:
+        regs = [r for r in R.REGISTERS if R.COUNTRY_OF.get(r, r) == c]
+        entries = [e for e in snap["entries"] if e["reg"] in regs]
+        words = Counter((e["reg"], e["word"] or e["status"]) for e in entries)
+        here = [d for d in shown if c in d["cells"]]
+        top = Counter(d["brand_slug"] for d in here).most_common(20)
+        _write(out / "registers/country" / c.lower() / "index.html", env.get_template("registers/country.html.j2").render(
+            page=f"registers/country/{c.lower()}/", rel="../../../", c=c, regs=regs, rows=len(entries),
+            words=sorted(words.items(), key=lambda x: -x[1]), devices=len(here),
+            by_class=Counter(d["cls"] for d in here), elsewhere=sum(1 for d in here if d["n"] >= 2),
+            other_rows=sum(1 for e in entries if e["cls"] == "other"),
+            top=[(b, by_brand[b][0]["brand"], n) for b, n in top], **rc))
+        pages.append(f"registers/country/{c.lower()}/")
+
+    _write(out / "registers/changes/index.html", env.get_template("registers/changes.html.j2").render(
+        page="registers/changes/", rel="../../", log=log, **rc))
+    pages.append("registers/changes/")
+    return pages
+
+
+def _anchor(d):
+    return slug(d["model"])[:60]
+
+
+def _faq(d, meta):
+    """One question per register that lists the model, answered in the register's own words."""
+    out = []
+    for c in registers.COUNTRIES:
+        for e in d["cells"].get(c, [])[:1]:
+            r = registers.REGISTERS[e["reg"]]
+            src = meta.get(e["reg"], {}).get("source_date", "")
+            st = registers.STATUS_LABEL[e["show"]]
+            q = f"Is the {d['brand']} {d['model']} on the {r['short']}?"
+            if e["show"] in ("listed", "restricted", "limited"):
+                a = f"Yes — the {r['short']} lists it as “{e['word'] if e['reg'] != 'BE' else 'listed'}”"
+            else:
+                a = f"The {r['short']} shows it as “{e['word'] or st}”"
+            if e["valid"]:
+                a += f", until {e['valid']}"
+            if e["fw"] and e["reg"] != "BE":
+                fw = e["fw"] if len(e["fw"]) <= 80 else e["fw"][:80].rsplit(" ", 1)[0] + " …"
+                a += f"; {r['fw_label']}: {fw}"
+            a += f" (list dated {src}, checked {e['seen'] if e.get('seen') else meta.get(e['reg'], {}).get('seen', '')})."
+            de = ""
+            if c == "AT":
+                de = (f"Steht der {d['brand']} {d['model']} auf der österreichischen "
+                      f"{'Liste der Ladeeinrichtungen' if e['reg'] == 'AT-EV' else 'Wechselrichterliste (TOR Erzeuger Typ A)'}? "
+                      f"Laut Liste vom {src}: „{e['word']}“"
+                      + (f", befristet bis {e['valid']}" if e["valid"] else "") + ".")
+            out.append({"c": c, "q": q, "a": a, "de": de})
+    return out

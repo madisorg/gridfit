@@ -1,0 +1,24 @@
+{% extends "base.html.j2" %}
+{% block title %}What changed in the EU grid registers — {{ SITE }}{% endblock %}
+{% block description %}Which inverters, batteries and chargers were added to, dropped from or changed in the grid-connection lists of AT, BE, CZ, NL, PL and SE, refresh by refresh.{% endblock %}
+{% block main %}
+<p class="crumbs"><a href="{{ rel }}registers/">Grid registers</a> › Changes</p>
+<h1>What changed in the lists</h1>
+<p>Each refresh downloads every list again and compares it with the previous refresh: models added, models dropped, and a changed
+status word, firmware or end date. None of the lists publishes this itself. Dropped models are worth a look before you buy:
+a model can leave a list because its certificate expired, was replaced by a newer firmware, or was renamed.
+The raw history is in <a href="{{ REPO }}/blob/main/data/registers/changelog.json">changelog.json</a>.</p>
+{% for e in log %}
+<section class="block" id="{{ e.date }}">
+  <h2>{{ e.date }}{% if not e.baseline %} <span class="muted">(compared with {{ e.previous }})</span>{% endif %}</h2>
+  {% if e.baseline %}<p>{{ e.note }}</p>{% endif %}
+  {% for r, x in e.registers.items() %}
+  <h3 id="{{ e.date }}-{{ r }}">{{ RREG[r].short }} <span class="muted">— list dated {{ x.previous_source_date or '—' }} → {{ x.source_date or '—' }}</span></h3>
+  <p class="small">{{ x.added|length }} added · {{ x.removed|length }} removed · {{ x.changed|length }} changed</p>
+  {% if x.added %}<details><summary>Added ({{ x.added|length }})</summary><ul class="small">{% for b, m, s in x.added[:500] %}<li>{{ b }} {{ m }} — {{ s }}</li>{% endfor %}{% if x.added|length > 500 %}<li>… and {{ x.added|length - 500 }} more in changelog.json</li>{% endif %}</ul></details>{% endif %}
+  {% if x.removed %}<details><summary>Removed ({{ x.removed|length }})</summary><ul class="small">{% for b, m, s in x.removed[:500] %}<li>{{ b }} {{ m }} — was {{ s }}</li>{% endfor %}{% if x.removed|length > 500 %}<li>… and {{ x.removed|length - 500 }} more in changelog.json</li>{% endif %}</ul></details>{% endif %}
+  {% if x.changed %}<details><summary>Changed ({{ x.changed|length }})</summary><ul class="small">{% for b, m, f, o, n in x.changed[:500] %}<li>{{ b }} {{ m }} — {{ {'status': 'status', 'fw': 'firmware', 'valid': 'end date'}[f] }}: {{ o }} → {{ n }}</li>{% endfor %}{% if x.changed|length > 500 %}<li>… and {{ x.changed|length - 500 }} more in changelog.json</li>{% endif %}</ul></details>{% endif %}
+  {% else %}{% if not e.baseline %}<p>No list changed.</p>{% endif %}{% endfor %}
+</section>
+{% endfor %}
+{% endblock %}

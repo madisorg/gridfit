@@ -1,0 +1,49 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ RREG[c].country }}: {{ RREG[c].name }} — what it lists — {{ SITE }}{% endblock %}
+{% block description %}{{ RREG[c].country }}'s grid-connection list for inverters, batteries{% if c == 'AT' %} and chargers{% endif %}: who publishes it, what it contains, how often it changes, and {{ devices|n }} models from it cross-referenced with other EU lists.{% endblock %}
+{% block main %}
+<p class="crumbs"><a href="{{ rel }}registers/">Grid registers</a> › {{ RREG[c].country }}</p>
+<h1>{{ RREG[c].country }} ({{ c }})</h1>
+{% for r in regs %}{% set x = RREG[r] %}{% set m = meta.get(r, {}) %}
+<section class="block">
+<h2><a href="{{ x.url }}">{{ x.name }}</a></h2>
+<div class="row"><dl>
+  <dt>Published by</dt><dd>{{ x.operator }}</dd>
+  <dt>Basis</dt><dd>{{ x.basis }}</dd>
+  <dt>Is it a gate?</dt><dd>{{ x.gate }}</dd>
+  <dt>What it contains</dt><dd>{{ x.contains }}</dd>
+  <dt>Reuse terms</dt><dd>{{ x.terms }}</dd>
+  <dt>What we show</dt><dd>{{ x.use }}.</dd>
+  <dt>List dated</dt><dd>{{ m.source_date or '—' }}</dd>
+  <dt>Downloaded</dt><dd>{{ m.seen or snap.date }}{% if m.carried_over %} (not reachable at the last refresh; previous rows kept){% endif %}</dd>
+  <dt>Rows read</dt><dd>{{ m.rows|n }}{% if m.unread_lp %} — {{ m.unread_lp|length }} rows of the PDF could not be read (Lp {{ m.unread_lp|join(', ') }}); they are not shown{% endif %}</dd>
+</dl></div>
+</section>
+{% endfor %}
+
+<h2>In numbers</h2>
+<p>{{ rows|n }} rows; {{ devices|n }} inverters, batteries, plug-in units and chargers after joining spellings, of which
+<strong>{{ elsewhere|n }}</strong> also appear in at least one other country's list.
+{% if other_rows %}{{ other_rows|n }} further rows are CHP units, generators, wind turbines, relays and similar — kept in the data, without pages.{% endif %}</p>
+<ul class="small">
+{% for k, n in by_class.most_common() %}<li>{{ RC[k] }}: {{ n }}</li>{% endfor %}
+</ul>
+{% if c != 'BE' %}
+<h3>Status words, as the list writes them</h3>
+<ul class="small">{% for (r, w), n in words %}<li>{{ w }}{% if regs|length > 1 %} <span class="muted">({{ RREG[r].short }})</span>{% endif %}: {{ n }}</li>{% endfor %}</ul>
+{% endif %}
+<p><a href="{{ rel }}registers/?c={{ c }}">Open the cross-view filtered to {{ c }}</a></p>
+
+<h2>Brands with the most models here</h2>
+<p class="brand-list">{% for b, name, n in top %}<a href="{{ rel }}registers/brand/{{ b }}/">{{ name }}</a> <span class="muted">{{ n }}</span>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+
+<h2>Changes in this list</h2>
+<ul class="small">
+{% for e in log %}
+  {% set rs = e.registers.items()|selectattr(0, 'in', regs)|list %}
+  {% if e.baseline %}<li>{{ e.date }} — baseline.</li>
+  {% elif rs %}{% for r, x in rs %}<li>{{ e.date }} — list dated {{ x.source_date }}: {{ x.added|length }} added, {{ x.removed|length }} removed, {{ x.changed|length }} changed (<a href="{{ rel }}registers/changes/#{{ e.date }}-{{ r }}">details</a>)</li>{% endfor %}
+  {% else %}<li>{{ e.date }} — no change.</li>{% endif %}
+{% endfor %}
+</ul>
+{% endblock %}

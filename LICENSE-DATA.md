@@ -1,6 +1,6 @@
 # Dataset licence
 
-The GridFit dataset — everything under `data/curated/` and `data/dataset/` — is licensed under the
+The GridFit dataset — everything under `data/curated/` and `data/dataset/`, plus `data/registers/alias.json` — is licensed under the
 **Creative Commons Attribution 4.0 International** licence (CC BY 4.0):
 https://creativecommons.org/licenses/by/4.0/legalcode
 
@@ -17,8 +17,10 @@ The dataset states facts about third-party sources and links to them; it does no
   require an evcc sponsorship are excluded from evcc's MIT licence; no part of them is copied here.
 - HACS store data and individual repositories: facts about public repositories (names, stars, last update,
   manifest `iot_class`). Each repository keeps its own licence.
-- `data/registers/listing.json`: which public grid-register list names which model, with the register's own
-  status word, and a link to the register. No other column of any register is included. Belgium's
-  Synergrid list is not used.
+- `data/registers/` (snapshots, change log, listing): rows of public grid-connection lists (AT, CZ, NL, PL, SE):
+  maker, model, status word, firmware, row or document number and dates, each with a link to its register.
+  These are the registers' facts. They are **not** licensed by GridFit; the registers state no reuse terms, and
+  the register is the authority. For Belgium's Synergrid list only "listed / expired" is kept (its terms allow
+  personal use only).
 
 The CC BY 4.0 grant covers the selection, arrangement and curated text that are GridFit's own work.

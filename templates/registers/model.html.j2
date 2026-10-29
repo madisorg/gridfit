@@ -1,0 +1,72 @@
+{% extends "base.html.j2" %}
+{% set listed = d.cells.keys()|list %}
+{% block title %}{{ d.brand }} {{ d.model }}: grid registers {{ COUNTRIES|select('in', listed)|join(', ') }} — {{ SITE }}{% endblock %}
+{% block description %}{% if faq %}{{ faq[0].a }} {% endif %}Status, firmware and dates of the {{ d.brand }} {{ d.model }} in {{ listed|length }} EU grid-connection lists, side by side.{% endblock %}
+{% block head %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "FAQPage", "mainEntity": faq_ld},
+    {"@type": "Product", "name": d.brand ~ " " ~ d.model, "model": d.model, "brand": {"@type": "Brand", "name": d.brand},
+     "category": RC[d.cls]}
+  ]} | tojson_ld }}</script>
+{% endblock %}
+{% block main %}
+<p class="crumbs"><a href="{{ rel }}registers/">Grid registers</a> › <a href="../">{{ d.brand }}</a> › {{ d.model }}</p>
+<h1>{{ d.brand }} {{ d.model }}</h1>
+<p class="tags"><span class="tag">{{ RC[d.cls] }}</span>
+  <span class="tag reg">in {{ listed|length }} of {{ COUNTRIES|length }} lists: {{ COUNTRIES|select('in', listed)|join(', ') }}</span></p>
+
+<section class="faq">
+{% for f in faq %}
+  <h2>{{ f.q }}</h2>
+  <p>{{ f.a }}</p>
+  {% if f.de %}<p lang="de" class="muted">{{ f.de }}</p>{% endif %}
+{% endfor %}
+  <p class="muted"><strong>The register is the authority; this is a cross-reference.</strong> Rows are matched by maker and a normalised
+  model code; the “as written” line shows exactly what each list says. Check the list itself, and your grid operator, before you install.</p>
+</section>
+{% if fam %}<p>Local control with Home Assistant and evcc: <a href="{{ rel }}{{ fam[0] }}">{{ fam[1] }}</a>.</p>{% endif %}
+
+<h2>List by list</h2>
+<div class="rows">
+{% for c in COUNTRIES %}
+<article class="row{% if c not in d.cells %} empty{% endif %}"><h3>{{ c }} — {{ RREG[c].country }}</h3>
+{% if c in d.cells %}
+  {% for e in d.cells[c] %}
+  {% set r = RREG[e.reg] %}
+  <dl>
+    <dt>List</dt><dd><a href="{{ r.url }}">{{ r.name }}</a> (dated {{ meta[e.reg].source_date }})</dd>
+    <dt>Status</dt><dd><span class="st st-{{ e.show }}">{{ RS[e.show] }}</span>{% if e.reg != 'BE' and e.word and e.word|lower != RS[e.show] %} — “{{ e.word }}”{% endif %}</dd>
+    <dt>As written</dt><dd>{{ e.maker_raw }} · {{ e.model_raw }}</dd>
+    {% if e.extra.list %}<dt>Part</dt><dd>{{ e.extra.list }} list</dd>{% endif %}
+    {% if e.reg == 'BE' %}
+    <dt>Details</dt><dd>Firmware, homologation reference and dates are in <a href="{{ r.url }}">Synergrid's list</a>; its terms allow
+      personal use only, so we show only whether the model is listed.</dd>
+    {% else %}
+    {% if e.id %}<dt>{{ 'Running no.' if e.reg == 'SE' else 'Lp (row no.)' if e.reg == 'PL' else 'ID' }}</dt><dd>{{ e.id }}</dd>{% endif %}
+    {% if e.cert %}<dt>{{ 'Document no.' if e.reg == 'PL' else 'Evidence' }}</dt><dd>{{ e.cert }}</dd>{% endif %}
+    {% if e.fw %}<dt>{{ r.fw_label|capitalize }}</dt><dd><code>{{ e.fw }}</code></dd>{% endif %}
+    {% if e.valid %}<dt>Time-limited until</dt><dd>{{ e.valid }}{% if e.show == 'limited-past' %} — this date has passed; check the list{% endif %}</dd>{% endif %}
+    {% if e.date %}<dt>Date</dt><dd>{{ e.date }} <span class="muted">({{ r.date_label }})</span></dd>{% endif %}
+    {% if e.extra.setup %}<dt>Settings profile</dt><dd>{{ e.extra.setup }}</dd>{% endif %}
+    {% if e.extra.comment %}<dt>Comment</dt><dd>{{ e.extra.comment }}</dd>{% endif %}
+    {% if e.extra.note %}<dt>Note</dt><dd>{{ e.extra.note }}</dd>{% endif %}
+    {% endif %}
+    <dt>Match</dt><dd>{{ e.trust }} · seen {{ meta[e.reg].seen }}</dd>
+  </dl>
+  {% if not loop.last %}<hr>{% endif %}
+  {% endfor %}
+{% else %}
+  <p class="muted">No matching entry found in the <a href="{{ RREG[c].url }}">{{ RREG[c].short }}</a>. That is not a “no” —
+  the model may be listed under another name{% if c == 'NL' %} (the Dutch list has brand and type only){% endif %}.</p>
+{% endif %}
+</article>
+{% endfor %}
+</div>
+{% if d.variants|length > 1 %}
+<p class="muted">Spellings joined on this page: {{ d.variants|join(' · ') }}.</p>
+{% endif %}
+<p class="muted">Wrong match or a newer list? <a href="{{ REPO }}/issues/new?title={{ ('Registers: ' ~ d.brand ~ ' ' ~ d.model)|urlencode }}">Open an issue</a>.
+See also <a href="{{ rel }}registers/changes/">what changed in the lists</a>.</p>
+{% endblock %}

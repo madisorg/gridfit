@@ -16,9 +16,11 @@
   <li><strong>evcc</strong> — the device templates in <a href="https://github.com/evcc-io/evcc/tree/master/templates/definition">templates/definition</a> (MIT).
   We read brand, product, connection parameters and capabilities. Templates for chargers that need an
   <a href="https://docs.evcc.io/en/docs/sponsorship">evcc sponsor token</a> are marked; we copy no template content, only the fact of support.</li>
-  <li><strong>Grid registers</strong> — the published type-approval lists of {{ registers|length }} registers (see <a href="{{ rel }}registers/">Registers</a>).
-  We keep only “this register lists this model”, never firmware strings, certificate numbers or other columns.
-  Belgium's Synergrid list is <em>not</em> used: its terms allow personal use only.</li>
+  <li><strong>Grid registers</strong> — the published grid-connection lists of six countries (see <a href="{{ rel }}registers/">Registers</a>).
+  On the family pages a chip only says “this list has this model”. The <a href="{{ rel }}registers/">register cross-view</a> also shows each
+  list's status word, firmware and dates for AT, CZ, NL, PL and SE, with a link back to the list. Belgium's Synergrid list appears there
+  only as “listed / not found”, because its terms allow personal use only. None of these lists states an open licence; the register
+  is always the authority.</li>
 </ul>
 
 <h2>What the columns mean</h2>

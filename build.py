@@ -3,6 +3,8 @@
     python build.py              # download what is older than 6 days, then build
     python build.py --refresh    # download everything again
     python build.py --offline    # build from cache/ only
+    python build.py --registers-refresh      # also download the grid registers, parse, snapshot, diff
+    python build.py --registers-from DIR     # parse register files already downloaded into DIR
 
 Writes data/dataset/ (committed: the dataset and its change log) and site/ (git-ignored).
 Set GRIDFIT_BASE_URL for canonical links and the sitemap, GRIDFIT_ANALYTICS to
@@ -20,7 +22,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-from gridfit import assemble, fetch, render  # noqa: E402
+from gridfit import assemble, fetch, registers, render  # noqa: E402
 from gridfit.brands import Brands  # noqa: E402
 
 DATASET = ROOT / "data/dataset"
@@ -33,15 +35,25 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--refresh", action="store_true")
     ap.add_argument("--offline", action="store_true")
+    ap.add_argument("--registers-refresh", action="store_true")
+    ap.add_argument("--registers-from", type=Path)
     args = ap.parse_args()
     seen = time.strftime("%Y-%m-%d")
+    if args.registers_refresh or args.registers_from:
+        print("grid registers ...")
+        raw = args.registers_from.resolve() if args.registers_from else registers.download(ROOT, seen)
+        entry = registers.snapshot(ROOT, registers.parse(ROOT, raw, seen), seen)
+        print("  change log:", entry.get("note") or {r: (len(x["added"]), len(x["removed"]), len(x["changed"]))
+                                                     for r, x in entry["registers"].items()})
     cache = fetch.Cache(ROOT / "cache", args.refresh, args.offline)
     cur = ROOT / "data/curated"
     brands = Brands(cur / "brands.yaml")
     core_cfg = assemble.load_yaml(cur / "ha_core.yaml")
     hacs_cfg = assemble.load_yaml(cur / "hacs.yaml")
     fam_cfg = assemble.load_yaml(cur / "families.yaml")
-    regdata = json.loads((ROOT / "data/registers/listing.json").read_text(encoding="utf-8"))
+    snap = registers.latest(ROOT)
+    reg_devices = registers.devices(snap, ROOT / "data/registers/alias.json", seen)
+    regdata = registers.listing(reg_devices, snap, Brands(cur / "brands.yaml"), ROOT)
 
     print("fetching sources ...")
     integrations = fetch.ha_integrations(cache)
@@ -71,9 +83,11 @@ def main():
 
     changes = write_dataset(rows, families, seen)
     stats = report(rows, families, regdata)
+    reg_log = json.loads((ROOT / "data/registers/changelog.json").read_text(encoding="utf-8"))
     render.site(ROOT, families, rows, unmatched, regdata, changes, stats, seen,
                 base_url=os.environ.get("GRIDFIT_BASE_URL", "").rstrip("/"),
-                analytics=os.environ.get("GRIDFIT_ANALYTICS", ""))
+                analytics=os.environ.get("GRIDFIT_ANALYTICS", ""),
+                reg=(reg_devices, snap, reg_log))
     print("site written to site/  (preview: python -m http.server 8390 -d site)")
 
 

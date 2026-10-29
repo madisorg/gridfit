@@ -1,0 +1,61 @@
+{% extends "base.html.j2" %}
+{% block title %}Which EU grid registers list this inverter, battery or wallbox? — {{ SITE }}{% endblock %}
+{% block description %}One table across six national grid-connection lists (AT, BE, CZ, NL, PL, SE): {{ devices|n }} inverters, hybrids, batteries, plug-in units and wallboxes, with each list's own status, firmware and dates, and a log of what changed.{% endblock %}
+{% block main %}
+<h1>Which EU grid registers list it?</h1>
+<p>Grid operators in several EU countries publish lists of the inverters, batteries and chargers they accept for connection.
+None of the lists refers to the others. This table puts {{ devices|n }} models from six of them side by side —
+{{ multi|n }} appear in two or more — with each list's own status word, firmware and dates, and a
+<a href="changes/">change log</a> of what was added, dropped or changed between refreshes.</p>
+<p class="note"><strong>The register is the authority; this is a cross-reference.</strong> An empty cell means we found no matching
+entry — the model may be listed under another name, or the list may not cover it. It never means “not approved”.
+Check the list itself before you install, and ask your grid operator when in doubt.</p>
+
+<form class="filters" id="xf" onsubmit="return false" hidden>
+  <input type="search" id="q" placeholder="Search model or brand" aria-label="Search model or brand">
+  <select id="brand" aria-label="Brand"><option value="">All brands</option></select>
+  <select id="cls" aria-label="Device class"><option value="">All device classes</option>
+    {% for k, v in RC.items() if k != 'other' %}<option value="{{ k }}">{{ v }}</option>{% endfor %}</select>
+  <select id="c" aria-label="Country"><option value="">Any country</option>
+    {% for c in COUNTRIES %}<option value="{{ c }}">Listed in {{ c }}</option>{% endfor %}</select>
+  <select id="st" aria-label="Status"><option value="">Any status</option>
+    <option value="R">Listed with restrictions</option><option value="T">Time-limited</option>
+    <option value="P">Time-limited, date passed</option><option value="E">Expired</option><option value="N">“Nein” (AT)</option></select>
+  <select id="n" aria-label="Number of registers"><option value="">In any number of lists</option>
+    <option value="2">In 2 or more lists</option><option value="3">In 3 or more</option><option value="4">In 4 or more</option></select>
+</form>
+<p class="count" id="xcount" aria-live="polite"></p>
+<div id="xv" class="xv-wrap"></div>
+<p><button type="button" id="more" class="more" hidden>Show more</button></p>
+<p class="legend muted">✓ listed · ✓* listed with restrictions · ⏱ time-limited · ⏱! time-limited, date passed · exp expired ·
+Nein = the Austrian list's own “Nein” · empty = no matching entry found (not a “no”).</p>
+<noscript><p>The table needs JavaScript. Every model is also on its brand page below.</p></noscript>
+
+<h2>The lists</h2>
+<div class="rows">
+{% for c in COUNTRIES %}
+{% set regs = RREG.keys()|select('in', [c, c ~ '-EV'])|list %}
+<article class="row"><h3><a href="country/{{ c|lower }}/">{{ c }} — {{ RREG[c].country }}</a></h3>
+<dl>
+  <dt>List</dt><dd>{% for r in regs %}<a href="{{ RREG[r].url }}">{{ RREG[r].name }}</a>{% if not loop.last %}; {% endif %}{% endfor %}</dd>
+  <dt>List dated</dt><dd>{% for r in regs %}{{ meta[r].source_date if r in meta else '—' }}{% if not loop.last %}, {% endif %}{% endfor %}</dd>
+  <dt>Models here</dt><dd>{{ counts[c]|n }}</dd>
+  <dt>We show</dt><dd>{{ RREG[c].use }}</dd>
+</dl></article>
+{% endfor %}
+</div>
+<h3>Not read (yet)</h3>
+<ul class="prose small">
+{% for cc, country, name, link, why in not_read %}<li><strong>{{ cc }}</strong> {{ country }} — <a href="{{ link }}">{{ name }}</a>: {{ why }}.</li>{% endfor %}
+</ul>
+<p class="muted">Fourteen of thirty European countries publish no list at all: the grid operator checks an EN 50549-1 (or national) certificate per application.</p>
+
+<h2>Latest changes</h2>
+{% set e = log[0] %}
+<p>{{ e.date }}: {% if e.baseline %}{{ e.note }}{% else %}{% for r, x in e.registers.items() %}{{ r }} +{{ x.added|length }} / −{{ x.removed|length }} / {{ x.changed|length }} changed{% if not loop.last %} · {% endif %}{% else %}no changes{% endfor %}{% endif %}
+— <a href="changes/">all changes</a>.</p>
+
+<h2>Brands</h2>
+<p class="brand-list">{% for b, name, n in brand_links %}<a href="brand/{{ b }}/">{{ name }}</a> <span class="muted">{{ n }}</span>{% if not loop.last %} · {% endif %}{% endfor %}</p>
+<script src="{{ rel }}static/registers.js" defer></script>
+{% endblock %}

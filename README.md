@@ -4,9 +4,13 @@
 
 A static site and an open dataset, built only from open sources. For each product family it shows the
 Home Assistant core and HACS integrations and the evcc templates that support it, whether they talk to the
-device on your network or through a cloud, whether they can *control* it or only read it, and which of five
-national grid registers (AT, NL, CZ, SE, PL) list its models. Every row links to its source and carries the
-date it was last seen.
+device on your network or through a cloud, whether they can *control* it or only read it, and which national
+grid registers list its models. Every row links to its source and carries the date it was last seen.
+
+A second section, **[/registers/](#grid-register-cross-view)**, is a cross-view of six national grid-connection
+lists (AT, BE, CZ, NL, PL, SE): for each inverter, hybrid, battery, plug-in unit and wallbox, every list's own
+status word, firmware, certificate or row number and dates side by side, plus a change log of what each refresh
+added, dropped or changed. It is a hobby section and does not depend on the rest.
 
 Home Assistant core devices are already covered model by model by the
 [Open Home Foundation Device Database](https://device-database-preview.openhomefoundation.org/) (preview);
@@ -20,6 +24,8 @@ pip install -r requirements.txt
 python build.py              # downloads what is older than 6 days into cache/, then builds
 python build.py --refresh    # downloads everything again
 python build.py --offline    # builds from cache/ only
+python build.py --registers-refresh      # also downloads the six grid registers, parses, snapshots, diffs (monthly)
+python build.py --registers-from DIR     # same, from register files already downloaded into DIR
 python -m http.server 8390 -d site   # preview at http://localhost:8390
 ```
 
@@ -45,9 +51,13 @@ Environment variables (both optional):
 | `data/curated/ha_core.yaml` | which HA core integrations are energy devices, and their brand/class |
 | `data/curated/hacs.yaml` | which HACS repos are energy device integrations, what their README says they cover |
 | `data/curated/families.yaml` | product families of the main brands: model-code pattern + evcc templates |
-| `data/registers/listing.json` | register membership snapshot (see below) |
 | `data/dataset/` | **the dataset** (generated, committed): `rows.json` / `rows.csv`, `families.json`, `changelog.json` |
-| `tools/import_registers.py` | refreshes `listing.json` from the register parser's output |
+| `gridfit/registers.py` | register cross-view: download, snapshot, diff, device join, `listing.json` for the family pages |
+| `tools/registers/parse.py` | the register parser (runs as `python -I`, never inside the download directory) |
+| `data/registers/alias.json` | maker spellings in the registers → one canonical maker |
+| `data/registers/snapshots/<date>.json.gz` | one parsed snapshot per refresh (generated, committed) |
+| `data/registers/changelog.json` | added / removed / changed rows between snapshots (generated, committed) |
+| `data/registers/listing.json` | membership only, read by the family pages (generated, committed) |
 
 ## Sources and licences
 
@@ -57,12 +67,12 @@ Environment variables (both optional):
 | [HACS](https://hacs.xyz/) store data (`data-v2.hacs.xyz/integration/data.json`) | repo name, domain, stars, last update | facts about public repos |
 | each listed HACS repo's `manifest.json`, platform files, README | `iot_class`, settable platforms; the curated "covers" text | facts only; each repo has its own licence |
 | [evcc-io/evcc](https://github.com/evcc-io/evcc) `templates/definition/{meter,charger}` | brand, product, connection params, capabilities, sponsor flag | MIT; components needing an evcc sponsorship are excluded from MIT (`LICENSES/exclusions.md`) — the exclusion header sits only in Go driver files, not in the YAML templates. GridFit copies no template content, only the fact of support, and marks sponsor-only templates |
-| grid registers AT, NL, CZ, SE, PL | "this register lists this model" + the register's own status word | the registers publish the lists; GridFit keeps the membership fact only, never firmware strings, certificate numbers or other columns, and links back |
-| Belgium, Synergrid C10/26 | **not used** | its terms allow personal use only |
+| grid registers AT, CZ, NL, PL, SE | family pages: "this register lists this model". `/registers/`: also each row's status word, firmware, row/document number and dates | the registers publish the lists but **none states reuse terms**; GridFit links every row back and says the register is the authority. These columns are the registers' facts, not GridFit's work, and are not under GridFit's CC BY |
+| Belgium, Synergrid C10/26 | `/registers/` only: "listed" / "expired" + link; nothing else of a row is stored | its terms allow personal use only; a permission letter is drafted. Family pages do not use it |
 
-The register snapshot comes from a separate parser (six xlsx/csv/pdf downloads, 2026-08-21 … 2026-10-28).
-`python tools/import_registers.py <parser-output-dir>` rewrites `data/registers/listing.json`; it drops
-Belgium, drops Austria's "Nein" rows (an empty cell, never a negative) and keeps no other column.
+Database right: copying most of a list's columns is the kind of extraction a database maker can object to.
+GridFit is a non-commercial cross-reference with a link on every row; if a register asks, its columns go
+back to membership only (one switch in `gridfit/registers.py`, as Belgium already is).
 
 **Dataset licence:** [CC BY 4.0](LICENSE-DATA.md) — attribute "GridFit" and keep the per-row source links.
 **Code licence:** [MIT](LICENSE).
@@ -80,7 +90,63 @@ Belgium, drops Austria's "Nein" rows (an empty cell, never a negative) and keeps
   the site shows each model's brand-match trust (exact / alias).
 - The site never says "does not work" or "not approved": an empty cell is an empty cell.
 
-## Hand check, 2026-10-29
+## Grid register cross-view
+
+**Refresh, about once a month:** `python build.py --registers-refresh`, then commit `data/registers/`.
+
+1. `gridfit/registers.py` finds each list's current file on its page (the file names carry dates) and downloads
+   it with `curl` and a browser user agent into a new, empty `cache/registers/raw/<date>/`. A file that is not
+   a real xlsx/PDF/CSV is rejected.
+2. `tools/registers/parse.py` reads them, isolated (`python -I`), into `cache/registers/parsed/<date>/`:
+   one entry per register row, the list's source date, and the rows it could not read.
+3. The entries become `data/registers/snapshots/<date>.json.gz`. The build compares that file with the previous
+   snapshot and writes `changelog.json`: rows added, rows removed, and changes to a row's status word,
+   firmware or end date, per register. A list that cannot be downloaded or comes back empty keeps its
+   previous rows. It never shows up as "every model removed".
+4. The site reads only the committed files, so a plain `python build.py` never contacts the registers.
+
+**Matching.** A device = canonical maker (`alias.json`, then legal suffixes removed) + a normalised model code
+(upper case; separators, a trailing `-EU`/`-SM2` and notes such as "(Connected in Delta)" removed; `10.0` = `10`;
+a power in brackets, e.g. "(5.0 kW)", is kept because it names a different unit). Every cell says how it was
+matched: **exact** (the same maker and model spelling as the page title), **alias** (joined after
+normalising) or **unmatched** (kept apart, never joined). Rows are marked unmatched when a PL row's maker cell
+holds an address (the PDF columns shifted; 251 rows, nearly all generators and CHP), when a word crosses a PDF
+column (29) or when the "model" is a pattern such as `IPES-3A-XXXX-H2-10K` (134). An empty cell means no
+matching entry was found. It never means "not approved".
+
+**Pages.** Classes with pages: PV inverter, hybrid, battery / AC inverter, plug-in (≤ 800 VA, from the lists' own
+power columns; PL "mikro"), wallbox (the Austrian charger list). CHP, generators, wind, relays and EZA controllers
+stay in the snapshot without pages. Every brand gets a page. A model gets its own page when it is in two or
+more countries' lists; the brand table carries the rest.
+
+**Baseline 2026-10-29:** 26,945 rows (AT 3,517 + 610 chargers, BE 9,013, NL 7,021, SE 3,502, PL 2,461, CZ 821)
+→ 13,823 devices in the page classes from 478 makers. 5,456 devices are in ≥ 2 countries' lists and get a model
+page; 2,128 are in ≥ 3. Cells: exact 18,656, alias 6,302, unmatched 144.
+
+**Known gaps.**
+- PL: 30 of 2,491 rows are unread (Lp 176–181, 1127–1136, 2051–2056, 2078–2086: generators, turbines, and
+  8 Sigenergy SigenMate rows where the address column runs into the model column). They are listed on the PL
+  country page.
+- Names that pack several models into one cell (`SUN2000-17KTL-M0/M2/M3`, 463 single-list devices) are not split,
+  so they do not join the same model in another list.
+- NL lists brand and type only. CZ gives the kind of evidence (protocol/certificate and issuer), not a number.
+  Only PL prints a document number.
+- PL's date column is headed "Document acceptance date", but its dates lie mostly in 2029–2031. The page shows
+  the date with that caveat and does not call it an expiry.
+
+## Hand check, 2026-10-29 — registers
+
+Deye, SolaX and Huawei against the raw AT, CZ and SE files, read by a separate script that does not use the parser.
+For each brand and register, three random raw rows were compared with the snapshot: the model spelling, AT's
+status word and the firmware text. **27 / 27 matched**, and the row counts per brand and register are identical
+(AT: Deye 48, SolaX 183, Huawei 61; CZ: 50, 74, 19; SE: 108, 148, 59). Join check: Deye SUN-12K-SG04LP3-EU is on
+one page with AT "Ja - mit Einschränkung" (firmware 1150 note), BE listed, CZ (firmware 2005/2006-1160-1807), NL
+(generation and storage lists) and SE (Ver >= 1090). It has no PL entry, which matches the PDF.
+In the three brands: Deye 238 devices (136 in ≥ 2 lists), SolaX 518 (255), Huawei 129 (73).
+SolaX cells all show "alias" because every list writes the maker differently ("SolaX Power", "SolaX Power
+Network Technology (Zhejiang) Co., Ltd.").
+
+## Hand check, 2026-10-29 — HA / evcc
 
 Three brands were checked against the sources themselves (READMEs, HA docs, evcc template files, register rows):
 

@@ -65,3 +65,29 @@ footer { margin-top: 3rem; padding-top: 1rem; padding-bottom: 2rem; border-top: 
   .row dl { grid-template-columns: 1fr; }
   .row dt { margin-top: .3rem; }
 }
+/* grid-register cross-view */
+.note { background: var(--card); border: 1px solid var(--line); border-left: 4px solid var(--reg); border-radius: 8px; padding: .5rem .8rem; }
+.legend { font-size: .85rem; }
+.xv-wrap { max-width: 100%; overflow-x: auto; }
+table.xv { border-collapse: collapse; width: 100%; font-size: .9rem; table-layout: fixed; }
+.xv th, .xv td { padding: .3rem .25rem; border-bottom: 1px solid var(--line); vertical-align: top; text-align: center; }
+.xv th:first-child, .xv td:first-child { text-align: left; width: auto; overflow-wrap: anywhere; }
+.xv th:not(:first-child) { width: 3rem; }
+.xv th.match, .xv td.match { width: 4.5rem; font-size: .8rem; }
+.xv .brand { color: var(--muted); }
+.xv .cls { font-size: .78rem; white-space: nowrap; }
+.xv td a { text-decoration: none; }
+.st { white-space: nowrap; }
+.st-L, .st-listed { color: var(--ok); }
+.st-R, .st-restricted, .st-T, .st-limited { color: var(--warn); }
+.st-P, .st-limited-past, .st-E, .st-expired, .st-N, .st-nein { color: var(--muted); font-weight: 600; }
+.row.empty { opacity: .8; }
+.row hr { border: 0; border-top: 1px dashed var(--line); margin: .5rem 0; }
+.brand-list { line-height: 1.9; font-size: .92rem; }
+.more { font: inherit; padding: .45rem .9rem; border: 1px solid var(--line); border-radius: 6px; background: var(--card); color: var(--fg); cursor: pointer; }
+@media (max-width: 30rem) {
+  .xv { font-size: .82rem; }
+  .xv th:not(:first-child) { width: 2.3rem; }
+  .xv th.match, .xv td.match { display: none; }
+  .xv .cls { display: none; }
+}
