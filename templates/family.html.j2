@@ -1,0 +1,78 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ f.brand }} {{ f.name }} — local control with Home Assistant and evcc — {{ SITE }}{% endblock %}
+{% block description %}{{ f.faq.a }}{% endblock %}
+{% block head %}
+<script type="application/ld+json">{{ {
+  "@context": "https://schema.org",
+  "@graph": [
+    {"@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": f.faq.q,
+      "acceptedAnswer": {"@type": "Answer", "text": f.faq.a}}]},
+    {"@type": "ProductGroup", "name": f.brand ~ " " ~ f.name, "brand": {"@type": "Brand", "name": f.brand},
+      "category": CLASS[f.class]}
+  ]} | tojson_ld }}</script>
+{% endblock %}
+{% block main %}
+<p class="crumbs"><a href="{{ rel }}">All brands</a> › <a href="{{ rel }}{{ f.brand_slug }}/">{{ f.brand }}</a> › {{ f.name }}</p>
+<h1>{{ f.brand }} {{ f.name }}</h1>
+<p class="tags"><span class="tag">{{ CLASS[f.class] }}</span>
+  {% if f.registers %}<span class="tag reg">listed in {{ f.registers|join(', ') }}</span>{% endif %}</p>
+
+<section class="faq">
+  <h2>{{ f.faq.q }}</h2>
+  <p>{{ f.faq.a }}</p>
+  <p class="muted">Checked {{ seen }} against the sources linked below. Firmware updates can open or close local access —
+  check the integration's own page before you buy, and check with your installer before you let software change
+  export limits or charge a battery from the grid.</p>
+</section>
+
+{% set core = f.rows | selectattr('source', 'equalto', 'ha_core') | list %}
+{% set hacs = f.rows | selectattr('source', 'equalto', 'hacs') | list %}
+{% set evcc = f.rows | selectattr('source', 'equalto', 'evcc') | list %}
+
+{% if core %}
+<h2>Home Assistant core</h2>
+<div class="rows">
+{% for r in core %}{% include "_row.html.j2" %}{% endfor %}
+</div>
+<p class="muted">Core integrations ship with Home Assistant. For the exact models that Home Assistant users report with
+{{ f.brand }}, see the <a href="{{ core[0].ohf_url }}">Open Home Foundation Device Database</a> (preview) — we do not copy it.</p>
+{% endif %}
+
+{% if hacs %}
+<h2>HACS custom integrations</h2>
+<div class="rows">
+{% for r in hacs|sort(attribute='stars', reverse=true) %}{% include "_row.html.j2" %}{% endfor %}
+</div>
+<p class="muted">Community-maintained; install through <a href="https://hacs.xyz/">HACS</a>. Stars and last update are from the HACS store data.</p>
+{% endif %}
+
+{% if evcc %}
+<h2>evcc</h2>
+<div class="rows">
+{% for r in evcc %}{% include "_row.html.j2" %}{% endfor %}
+</div>
+{% endif %}
+
+{% if f.see_also %}
+<h2>Other community routes</h2>
+<ul class="prose">
+{% for x in f.see_also %}<li><a href="{{ x.url }}">{{ x.name }}</a> — {{ x.note }}</li>{% endfor %}
+</ul>
+{% endif %}
+
+{% if not f.rows %}
+<p>We found no Home Assistant or evcc support for this family yet. Know one? <a href="{{ REPO }}/issues/new">Add it</a>.</p>
+{% endif %}
+
+<h2>Grid registers</h2>
+{% if f.models %}
+<p>Models of this family in the national grid registers we read (AT, NL, CZ, SE, PL). A chip means the register lists the model;
+<strong>no chip does not mean “not approved”</strong> — the model may be listed under another name, or the register may not cover it.
+* = listed with restrictions or time-limited. The matching is by model-code pattern, so treat it as a pointer and confirm in the register.</p>
+{% include "_models.html.j2" %}
+{% else %}
+<p class="muted">No register models are matched to this family. That says nothing about approval — check the
+<a href="{{ rel }}registers/">registers</a> directly.</p>
+{% endif %}
+<p class="muted">Found a mistake? <a href="{{ REPO }}/issues/new?title={{ (f.brand ~ ' ' ~ f.name)|urlencode }}">Open an issue</a> — corrections are the point.</p>
+{% endblock %}

@@ -1,0 +1,14 @@
+<article class="row">
+  <h3><a href="{{ r.url }}">{{ r.name }}</a>{% if r.source == 'hacs' %} <span class="muted">{{ r.ref }}</span>{% endif %}</h3>
+  <dl>
+    <dt>Connection</dt><dd>{% if r.local %}<span class="ok">local</span>{% elif r.local is sameas false %}<span class="warn">cloud</span>{% else %}unknown{% endif %}
+      {% if r.conn %} · {{ r.conn | conn }}{% endif %}{% if r.iot_class %} <span class="muted">({{ r.iot_class }})</span>{% endif %}</dd>
+    <dt>Read or control</dt><dd>{% if r.control == 'write' %}<span class="ok">control</span>{% elif r.control == 'read' %}read{% else %}unknown{% endif %} — {{ r.control_detail }}</dd>
+    {% if r.source == 'hacs' %}<dt>Repo</dt><dd>★ {{ r.stars or 0 }} · updated {{ r.updated or '?' }}</dd>{% endif %}
+    {% if r.source == 'ha_core' and r.quality %}<dt>Quality scale</dt><dd>{{ r.quality }}</dd>{% endif %}
+    {% if r.source == 'evcc' %}<dt>Template</dt><dd><a href="{{ r.source_url }}">{{ r.template }}</a>{% if r.product %} · {{ r.product }}{% endif %}{% if r.sponsor %} · <span class="warn">needs evcc sponsor token</span>{% endif %}</dd>{% endif %}
+    {% if r.family_hint and r.source == 'hacs' %}<dt>Covers</dt><dd>{{ r.family_hint }}</dd>{% endif %}
+    {% if r.note %}<dt>Note</dt><dd>{{ r.note }}</dd>{% endif %}
+    <dt>Source</dt><dd><a href="{{ r.source_url }}">{{ SOURCE[r.source] }}</a> · seen {{ r.seen }}</dd>
+  </dl>
+</article>

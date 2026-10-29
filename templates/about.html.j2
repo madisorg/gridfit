@@ -1,0 +1,47 @@
+{% extends "base.html.j2" %}
+{% block title %}How we get the data, and what we do not guarantee — {{ SITE }}{% endblock %}
+{% block main %}
+<h1>How we get the data, and what we do not guarantee</h1>
+
+<h2>Sources</h2>
+<ul class="prose">
+  <li><strong>Home Assistant core</strong> — <a href="https://github.com/home-assistant/core/blob/dev/homeassistant/generated/integrations.json">integrations.json</a>
+  and each integration's <code>manifest.json</code> (Apache-2.0). We take the integration name, its <code>iot_class</code>
+  (local_polling / local_push = local; cloud_* = cloud) and check whether it has settable entity platforms
+  (<code>number</code>, <code>select</code>, <code>switch</code>, <code>button</code>). We do not list core models: the
+  <a href="https://device-database-preview.openhomefoundation.org/">Open Home Foundation Device Database</a> does that from real installations, and we link to it.</li>
+  <li><strong>HACS custom integrations</strong> — picked by hand from the <a href="https://hacs.xyz/">HACS</a> default store
+  (energy devices only; generic protocol bridges such as OCPP or SunSpec and automation helpers are left out). Stars and last update come from the HACS store data,
+  <code>iot_class</code> from the repo's manifest, the platforms from the repo itself. What a repo covers is written from its README, in its own words.</li>
+  <li><strong>evcc</strong> — the device templates in <a href="https://github.com/evcc-io/evcc/tree/master/templates/definition">templates/definition</a> (MIT).
+  We read brand, product, connection parameters and capabilities. Templates for chargers that need an
+  <a href="https://docs.evcc.io/en/docs/sponsorship">evcc sponsor token</a> are marked; we copy no template content, only the fact of support.</li>
+  <li><strong>Grid registers</strong> — the published type-approval lists of {{ registers|length }} registers (see <a href="{{ rel }}registers/">Registers</a>).
+  We keep only “this register lists this model”, never firmware strings, certificate numbers or other columns.
+  Belgium's Synergrid list is <em>not</em> used: its terms allow personal use only.</li>
+</ul>
+
+<h2>What the columns mean</h2>
+<ul class="prose">
+  <li><strong>Local</strong> — the integration or template talks to the device (or its logger) on your network. It says nothing about whether the device <em>also</em> needs the internet for setup or updates.</li>
+  <li><strong>Control</strong> — for Home Assistant: the integration has entities you can set (a number, a select, a switch or a button). That can be anything from a battery charge limit to a restart button; read the integration's docs for what exactly. For evcc: chargers are controlled by definition; meters only when the template has <code>battery-control</code>.</li>
+  <li><strong>Listed in</strong> — a register lists a model whose code matches this family's pattern. The match is a pattern, not a confirmation, and each model shows how its brand name was matched (exact / alias).</li>
+</ul>
+
+<h2>What we do not guarantee</h2>
+<ul class="prose">
+  <li><strong>An empty cell is not a “no”.</strong> We never say a device does not work or is not approved — only what a source says.</li>
+  <li><strong>Firmware changes things.</strong> Vendors have closed local APIs with an update before. Every row shows the date we last saw it.</li>
+  <li><strong>Grid rules are yours to check.</strong> Changing export limits or charging a battery from the grid can break your connection agreement. Ask your installer or grid operator.</li>
+  <li>Nothing here is a purchase recommendation, and no manufacturer pays for a listing.</li>
+</ul>
+
+<h2>Corrections</h2>
+<p>The dataset lives in a public <a href="{{ REPO }}">GitHub repository</a> (data CC BY 4.0, code MIT).
+Open an issue or a pull request — “my Deye does Modbus TCP from firmware X” is exactly what we need.
+The site rebuilds from the sources weekly; <a href="{{ rel }}changelog/">Changes</a> lists what moved.</p>
+
+<h2>Trademarks</h2>
+<p>Home Assistant is a trademark of the Open Home Foundation; evcc, HACS and all product and company names are trademarks of their owners,
+used here only to say what works with what. This site is not affiliated with any of them.</p>
+{% endblock %}

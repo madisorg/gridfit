@@ -1,0 +1,46 @@
+{% extends "base.html.j2" %}
+{% block main %}
+<section class="hero">
+  <h1>{{ TAGLINE }}</h1>
+  <p>{{ stats.families }} product families from {{ stats.brands }} brands — solar inverters, hybrids, home batteries,
+  plug-in solar and wallboxes. For each: the Home Assistant core and HACS integrations and evcc templates that support it,
+  whether they talk to the device on your network or through a cloud, whether they can <em>control</em> it or only read it,
+  and which EU grid registers list its models. Every row links to its source.</p>
+  <p class="muted">Home Assistant core devices: the
+  <a href="https://device-database-preview.openhomefoundation.org/">Open Home Foundation Device Database</a> already lists
+  models reported by real installations — we link to it instead of copying it, and add what it does not cover yet:
+  HACS custom integrations, evcc and register listings.</p>
+</section>
+
+<form class="filters" id="filters" onsubmit="return false">
+  <input type="search" id="q" placeholder="Search brand or model family" aria-label="Search">
+  <select id="brand" aria-label="Brand"><option value="">All brands</option>
+    {% for b in brands %}<option>{{ b }}</option>{% endfor %}</select>
+  <select id="cls" aria-label="Device class"><option value="">All device classes</option>
+    {% for k, v in CLASS.items() %}<option value="{{ k }}">{{ v }}</option>{% endfor %}</select>
+  <select id="conn" aria-label="Connection"><option value="">Any connection</option>
+    {% for c in conns %}<option value="{{ c }}">{{ CONN[c] }}</option>{% endfor %}</select>
+  <select id="ctl" aria-label="Local control"><option value="">Local or cloud</option>
+    <option value="ha">Local with Home Assistant</option>
+    <option value="any">Local (HA or evcc)</option>
+    <option value="write">Local control (not only read)</option></select>
+  <select id="reg" aria-label="Grid register"><option value="">Any register</option>
+    {% for k, v in registers.items() %}<option value="{{ k }}">Listed in {{ k }}</option>{% endfor %}</select>
+</form>
+<p class="count" id="count" aria-live="polite">{{ total }} families</p>
+
+<ul class="cards" id="list">
+{% for x in rows %}
+  <li data-b="{{ x.b }}" data-c="{{ x.c }}" data-n="{{ x.n|join(' ') }}" data-l="{{ x.l }}" data-w="{{ x.w }}" data-r="{{ x.r|join(' ') }}">
+    <a href="{{ x.u }}"><span class="brand">{{ x.b }}</span> <span class="fam">{{ x.f }}</span></a>
+    <span class="tags">
+      <span class="tag">{{ CLASS[x.c] }}</span>
+      {% if x.l == 2 %}<span class="tag ok">local · HA</span>{% elif x.l == 1 %}<span class="tag ok">local · evcc</span>{% else %}<span class="tag">cloud / unknown</span>{% endif %}
+      {% if x.w %}<span class="tag ok">control</span>{% endif %}
+      {% if x.r %}<span class="tag reg">{{ x.r|join(' · ') }}</span>{% endif %}
+    </span>
+  </li>
+{% endfor %}
+</ul>
+<script src="static/filter.js" defer></script>
+{% endblock %}

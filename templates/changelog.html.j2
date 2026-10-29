@@ -1,0 +1,17 @@
+{% extends "base.html.j2" %}
+{% block title %}Changes — {{ SITE }}{% endblock %}
+{% block main %}
+<h1>Changes</h1>
+<p>Each rebuild compares the new dataset with the previous one: rows that appeared, disappeared, or changed local/cloud,
+read/control, connection, class or sponsor status. The full history is in the
+<a href="{{ REPO }}/commits/main/data/dataset">dataset's git log</a>.</p>
+{% for e in changelog %}
+<section class="block">
+  <h2>{{ e.date }}</h2>
+  {% if e.note %}<p>{{ e.note }}</p>{% endif %}
+  {% if e.added %}<h3>Added ({{ e.added|length }})</h3><ul class="small">{% for x in e.added[:200] %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  {% if e.removed %}<h3>Removed ({{ e.removed|length }})</h3><ul class="small">{% for x in e.removed[:200] %}<li>{{ x }}</li>{% endfor %}</ul>{% endif %}
+  {% if e.changed %}<h3>Changed ({{ e.changed|length }})</h3><ul class="small">{% for x in e.changed[:200] %}<li>{{ x.row }}: {{ x.field }} {{ x.old }} → {{ x.new }}</li>{% endfor %}</ul>{% endif %}
+</section>
+{% endfor %}
+{% endblock %}

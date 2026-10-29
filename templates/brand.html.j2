@@ -1,0 +1,24 @@
+{% extends "base.html.j2" %}
+{% block title %}{{ brand }}: local control with Home Assistant and evcc — {{ SITE }}{% endblock %}
+{% block description %}Which {{ brand }} inverters, batteries and chargers work locally with Home Assistant and evcc, and which EU grid registers list them.{% endblock %}
+{% block main %}
+<p class="crumbs"><a href="{{ rel }}">All brands</a> › {{ brand }}</p>
+<h1>{{ brand }}</h1>
+<ul class="cards">
+{% for f in families %}
+  <li><a href="{{ f.slug }}/"><span class="fam">{{ f.name }}</span></a>
+    <span class="tags"><span class="tag">{{ CLASS[f.class] }}</span>
+    <span class="tag">{{ f.rows|length }} integration{{ '' if f.rows|length == 1 else 's' }}</span>
+    {% if f.models %}<span class="tag reg">{{ f.models|length }} register model{{ '' if f.models|length == 1 else 's' }}</span>{% endif %}</span>
+    <p class="faq-a">{{ f.faq.a }}</p>
+  </li>
+{% endfor %}
+</ul>
+{% if unmatched %}
+<details class="block">
+  <summary>{{ unmatched|length }} more {{ brand }} model{{ '' if unmatched|length == 1 else 's' }} in grid registers, not matched to a family above</summary>
+  <p class="muted">We list these so you can see the register entries; no family rule claims them yet. If you know which family a model belongs to, <a href="{{ REPO }}/issues/new">tell us</a>.</p>
+  {% with models=unmatched %}{% include "_models.html.j2" %}{% endwith %}
+</details>
+{% endif %}
+{% endblock %}

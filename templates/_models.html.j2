@@ -1,0 +1,12 @@
+<div class="scroll">
+<table class="models">
+  <thead><tr><th>Model (as the register writes it)</th><th>Listed in</th><th>Match</th></tr></thead>
+  <tbody>
+  {% for m in models %}
+    <tr><td>{{ m.model }}</td>
+      <td>{% for k, st in m.registers.items() %}<a class="chip" href="{{ registers[k].url }}" title="{{ registers[k].name }}: {{ st }} (snapshot {{ registers[k].snapshot }})">{{ k }}{% if st != 'listed' %}*{% endif %}</a> {% endfor %}</td>
+      <td class="muted">{{ m.trust }}{% if f is defined and f.curated %} · family pattern{% endif %}</td></tr>
+  {% endfor %}
+  </tbody>
+</table>
+</div>

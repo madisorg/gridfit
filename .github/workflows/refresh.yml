@@ -1,0 +1,26 @@
+# Weekly: rebuild from the sources and commit the dataset when something changed.
+# The push then triggers the Cloudflare Pages build of the site.
+name: refresh
+on:
+  schedule:
+    - cron: "17 4 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python build.py --refresh
+      - name: commit dataset if it changed
+        run: |
+          git config user.name "gridreg-bot"
+          git config user.email "gridreg-bot@users.noreply.github.com"
+          git add data/dataset
+          git diff --cached --quiet || git commit -m "dataset: weekly refresh $(date -u +%F)"
+          git push

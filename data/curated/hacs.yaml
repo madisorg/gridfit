@@ -1,0 +1,209 @@
+# HACS (default store) custom integrations for energy devices, picked by hand from the
+# HACS integration list. Stars, last update and description come from HACS's own data;
+# iot_class (local/cloud) from the repo's manifest.json; settable-entity platforms are
+# probed in the repo. This file says only what the repo is FOR:
+#   repo:     owner/name on GitHub (must be in the HACS default list)
+#   brands:   canonical brands (brands.yaml) the README names as supported
+#   class:    inverter | hybrid | battery | wallbox | meter | plug-in
+#   family:   what the README says it covers, in its own words (short)
+#   conn:     modbus_tcp | modbus_rtu | http | mqtt | ble | udp | ocpp | cloud | other
+#   families: optional - limit to these curated families (families.yaml) of the brand
+#   note:     optional caveat shown on the row
+# Generic protocol bridges (OCPP, SunSpec, BLE-BMS) and automations/optimisers are left out on purpose.
+
+# --- inverters / hybrids ---
+- {repo: wlcrs/huawei_solar, brands: [Huawei], class: hybrid, family: "SUN2000 inverters, LUNA2000 batteries, EMMA", conn: [modbus_tcp, modbus_rtu]}
+- {repo: tijsverkoyen/HomeAssistant-FusionSolar, brands: [Huawei], class: hybrid, family: "FusionSolar plants", conn: [cloud]}
+- {repo: JortvanSchijndel/FusionSolarPlus, brands: [Huawei], class: hybrid, family: "FusionSolar plants", conn: [cloud]}
+- {repo: davidrapan/ha-solarman, brands: [Deye, Sunsynk, Sofar, Solis, Afore, Kstar], class: hybrid, family: "Inverters with a Solarman Wi-Fi/LAN logger stick", conn: [other, modbus_tcp], note: "Talks to the Solarman logger stick over the LAN (Solarman V5, port 8899) or to a Modbus TCP gateway. Newer Deye WiBLE loggers (firmware DYDA_WiBLE_*) close ports 8899 and 502, says the Deye Local README - check your logger before relying on this."}
+- {repo: maxbanton/hass-deye-local, brands: [Deye], class: hybrid, family: "Hybrid inverters with the WiBLE Bluetooth logger", conn: [ble], families: ["SUN-SG LP1 single-phase LV hybrid", "SUN-SG LP3 three-phase LV hybrid", "SUN-SG HP3 three-phase HV hybrid"], note: "README: single-phase LP1 supported with settings; three-phase LP3/HP3 experimental. Uses an undocumented logger protocol."}
+- {repo: maxbanton/hass-deye-cloud, brands: [Deye], class: hybrid, family: "Deye Cloud plants", conn: [cloud]}
+- {repo: MarcinG81/SunSynk_HA_Integration, brands: [Sunsynk, Deye], class: hybrid, family: "Hybrid inverters on Sunsynk Cloud", conn: [cloud]}
+- {repo: wills106/homeassistant-solax-modbus, brands: [SolaX, Growatt, Sofar, Solis, Q CELLS, Solinteg], class: hybrid, family: "SolaX Gen2-Gen5 hybrids, AC/retrofit, X1/X3 string; some Growatt, Sofar, Solis models", conn: [modbus_tcp, modbus_rtu]}
+- {repo: NoUsername10/Solax-Cloud-API-for-Home-assistant, brands: [SolaX], class: hybrid, family: "SolaX Cloud API 2.0 sites", conn: [cloud]}
+- {repo: NoUsername10/Solax-Developer-API-for-Home-assistant, brands: [SolaX], class: hybrid, family: "SolaX Developer Portal API", conn: [cloud]}
+- {repo: Knetus56/solax_local_x1_micro, brands: [SolaX], class: plug-in, family: "X1 Micro inverters", conn: [http], families: []}
+- {repo: binsentsu/home-assistant-solaredge-modbus, brands: [SolarEdge], class: hybrid, family: "SolarEdge inverters via Modbus TCP", conn: [modbus_tcp]}
+- {repo: WillCodeForCats/solaredge-modbus-multi, brands: [SolarEdge], class: hybrid, family: "SolarEdge inverters, meters, batteries (multi-device)", conn: [modbus_tcp]}
+- {repo: TypQxQ/Sigenergy-Local-Modbus, brands: [Sigenergy], class: hybrid, family: "SigenStor / Sigen Hybrid / PV systems", conn: [modbus_tcp]}
+- {repo: nathanmarlor/foxess_modbus, brands: [Fox ESS], class: hybrid, family: "H1, H3, AC1, AC3, AIO, KH series", conn: [modbus_tcp, modbus_rtu]}
+- {repo: LucasTor/FoxESS-T-series, brands: [Fox ESS], class: inverter, family: "T series three-phase string inverters", conn: [modbus_tcp, modbus_rtu], families: ["T / S / F string inverters"]}
+- {repo: macxq/foxess-ha, brands: [Fox ESS], class: hybrid, family: "FoxESS Cloud sites", conn: [cloud]}
+- {repo: SoftXperience/home-assistant-foxess-api, brands: [Fox ESS], class: hybrid, family: "FoxESS Cloud API", conn: [cloud]}
+- {repo: fruffin/home-assistant-foxess-openapi, brands: [Fox ESS], class: hybrid, family: "FoxESS Open API", conn: [cloud]}
+- {repo: nicois/foxess-control, brands: [Fox ESS], class: hybrid, family: "Charge/discharge mode control via FoxESS Cloud", conn: [cloud]}
+- {repo: MrHC1983/FoxESS-Export-Control, brands: [Fox ESS], class: hybrid, family: "Export limit control via FoxESS Cloud", conn: [cloud]}
+- {repo: hultenvp/solis-sensor, brands: [Solis], class: hybrid, family: "SolisCloud monitoring", conn: [cloud]}
+- {repo: Pho3niX90/solis_modbus, brands: [Solis], class: hybrid, family: "Solis string and hybrid inverters", conn: [modbus_tcp, modbus_rtu]}
+- {repo: mkuthan/solis-cloud-control, brands: [Solis], class: hybrid, family: "Solis Cloud Control API", conn: [cloud]}
+- {repo: john-lazarus/HomeAssistant-SolisCloudMonitoring, brands: [Solis], class: hybrid, family: "SolisCloud telemetry", conn: [cloud]}
+- {repo: mletenay/home-assistant-goodwe-inverter, brands: [GoodWe], class: hybrid, family: "ET/EH/BT/BH, ES/EM, DT/MS/D-NS/XS (experimental version of the core integration)", conn: [udp, modbus_tcp]}
+- {repo: TimSoethout/goodwe-sems-home-assistant, brands: [GoodWe], class: hybrid, family: "SEMS portal sites", conn: [cloud]}
+- {repo: jozef-moravcik-homeassistant/GoodWe-SEC1000S, brands: [GoodWe], class: meter, family: "SEC1000/S smart energy controller", conn: [other]}
+- {repo: prezervos/goodwe-wallbox-sems-home-assistant, brands: [GoodWe], class: wallbox, family: "GoodWe EV chargers via SEMS", conn: [cloud]}
+- {repo: 0xAHA/Growatt_ModbusTCP, brands: [Growatt], class: hybrid, family: "Growatt inverters via Modbus TCP", conn: [modbus_tcp]}
+- {repo: jacobbjerregaard/homeassistant-growatt-modbus, brands: [Growatt], class: hybrid, family: "Growatt inverters via Modbus", conn: [modbus_tcp, modbus_rtu]}
+- {repo: Lu-Fi/ha-growatt-modbus, brands: [Growatt], class: hybrid, family: "SPH hybrid inverters", conn: [modbus_tcp, modbus_rtu]}
+- {repo: StewartRyan/GrowattSolar, brands: [Growatt], class: hybrid, family: "Hybrid inverters via Modbus TCP", conn: [modbus_tcp]}
+- {repo: bobbesnl/growatt_thor, brands: [Growatt], class: wallbox, family: "THOR EV charger", conn: [other]}
+- {repo: littleyoda/ha-pysmaplus, brands: [SMA], class: hybrid, family: "SMA inverters, Energy Meter, Home Manager (pysma-plus)", conn: [http, other]}
+- {repo: shadow578/homeassistant_sma-ennexos, brands: [SMA], class: inverter, family: "ennexOS: Data Manager M, Sunny Tripower X", conn: [http], families: ["Sunny Tripower (incl. Smart Energy, X)"]}
+- {repo: alengwenus/ha-sma-ev-charger, brands: [SMA], class: wallbox, family: "SMA EV Charger", conn: [http]}
+- {repo: MauroDruwel/SMA-ennexOS-cloud-HA, brands: [SMA], class: inverter, family: "Sunny Portal / ennexOS cloud", conn: [cloud]}
+- {repo: redpomodoro/fronius_modbus, brands: [Fronius], class: hybrid, family: "GEN24 inverters, smart meters, batteries", conn: [modbus_tcp], families: ["Symo/Primo GEN24 (hybrid)"], note: "README: enable Modbus with 'Allow control' on the inverter; GEN24 firmware 1.34.6-1 or later recommended."}
+- {repo: drc38/Fronius_solarweb, brands: [Fronius], class: hybrid, family: "Solar.web cloud", conn: [cloud]}
+- {repo: mk-maddin/wattpilot-HA, brands: [Fronius], class: wallbox, family: "Wattpilot, Wattpilot V2, Wattpilot flex", conn: [other, cloud], note: "README: connects over the local LAN or via cloud; unofficial, reverse-engineered protocol."}
+- {repo: sfstar/hass-victron, brands: [Victron Energy], class: hybrid, family: "GX device (Cerbo, Venus) via Modbus TCP", conn: [modbus_tcp]}
+- {repo: tomer-w/ha-victron-mqtt, brands: [Victron Energy], class: hybrid, family: "GX device via MQTT", conn: [mqtt]}
+- {repo: jayjojayson/hass-victron-vrm-api, brands: [Victron Energy], class: hybrid, family: "VRM portal API", conn: [cloud]}
+- {repo: j9brown/victron-mk3-hass, brands: [Victron Energy], class: hybrid, family: "VE.Bus inverters via MK3 interface", conn: [other]}
+- {repo: Brazen00/victron-evse-homeassistant, brands: [Victron Energy], class: wallbox, family: "EV Charging Station", conn: [modbus_tcp]}
+- {repo: weltenwort/home-assistant-rct-power-integration, brands: [RCT Power], class: hybrid, family: "Power Inverter / Power Storage", conn: [other]}
+- {repo: tobias-terhaar/e3dc_rscp_connect, brands: [E3/DC], class: hybrid, family: "S10 systems via RSCP", conn: [other]}
+- {repo: marq24/ha-senec-v3, brands: [SENEC], class: battery, family: "SENEC.Home V2.x, V3, V4/P4", conn: [http, cloud]}
+- {repo: mchwalisz/home-assistant-senec, brands: [SENEC], class: battery, family: "SENEC.Home", conn: [http]}
+- {repo: senalse/ha-alphaess-modbus, brands: [Alpha ESS], class: hybrid, family: "SMILE / Storion via Modbus TCP", conn: [modbus_tcp]}
+- {repo: CharlesGillanders/homeassistant-alphaESS, brands: [Alpha ESS], class: hybrid, family: "Alpha ESS Open API", conn: [cloud]}
+- {repo: wimb0/home-assistant-saj-r5-modbus, brands: [SAJ], class: inverter, family: "R5 string inverters", conn: [modbus_tcp], families: ["R5 / R6 / Suntrio / Sununo string inverters"]}
+- {repo: stanus74/home-assistant-saj-h2-modbus, brands: [SAJ], class: hybrid, family: "H2 hybrid inverters", conn: [modbus_tcp], families: ["H1 / H2 / HS2 / HS3 / HS5 / AS hybrids"]}
+- {repo: djansen1987/SAJeSolar, brands: [SAJ], class: hybrid, family: "SAJ eSolar portal", conn: [cloud]}
+- {repo: faanskit/ha-esolar, brands: [SAJ], class: hybrid, family: "SAJ eSolar portal", conn: [cloud]}
+- {repo: Bargemanos/ha-saj-esolar-ble, brands: [SAJ], class: hybrid, family: "SAJ inverters over Bluetooth", conn: [ble]}
+- {repo: KoljaWindeler/kaco, brands: [KACO], class: inverter, family: "KACO inverters (web interface)", conn: [http]}
+- {repo: Multigestern/Kostal-Piko-Solar-Monitor, brands: [Kostal], class: inverter, family: "PIKO inverters", conn: [http], families: ["PIKO (string)"]}
+- {repo: soso1999/ha-kostal-ksem-websocket, brands: [Kostal], class: meter, family: "KSEM smart energy meter", conn: [other]}
+- {repo: HAEdwin/homeassistant-apsystems_ecu_reader, brands: [APsystems], class: plug-in, family: "Microinverters via ECU-B/R/C", conn: [other]}
+- {repo: christianvaes/homeassistant-apsystems_modbus, brands: [APsystems], class: plug-in, family: "Microinverters via ECU Modbus TCP", conn: [modbus_tcp]}
+- {repo: HQJaTu/hass-hoymiles-solarpv, brands: [Hoymiles], class: plug-in, family: "Hoymiles microinverters", conn: [other]}
+- {repo: jptstar/tsun-local, brands: [TSUN], class: plug-in, family: "TSUN microinverters (read-only)", conn: [http]}
+- {repo: caveman2024/sossen-ha, brands: [SOSSEN], class: plug-in, family: "SOSSEN microinverters", conn: [other]}
+- {repo: jimmybonesde/envertech_solar, brands: [Envertech], class: plug-in, family: "Envertech microinverters", conn: [cloud]}
+- {repo: jimmybonesde/Envertech_local, brands: [Envertech], class: plug-in, family: "Envertech microinverters (local)", conn: [other]}
+- {repo: zbigniewmotyka/home-assistant-solplanet, brands: [Solplanet], class: inverter, family: "Solplanet inverters", conn: [http]}
+- {repo: robbinjanssen/home-assistant-omnik-inverter, brands: [Omnik], class: inverter, family: "Omnik inverters", conn: [http]}
+- {repo: josh-sanders/home-assistant-omnik-trannergy-pv-inverter, brands: [Omnik], class: inverter, family: "Omnik / Trannergy inverters", conn: [other]}
+- {repo: smcneece/ha-esunpower, brands: [SunPower], class: inverter, family: "PVS5/PVS6 gateways", conn: [http]}
+- {repo: alexdelprete/ha-abb-fimer-pvi-vsn-rest, brands: [ABB / FIMER], class: inverter, family: "PVI inverters via VSN300/VSN700", conn: [http]}
+- {repo: volschin/Danfoss-TLX-2-HA, brands: [Danfoss], class: inverter, family: "TLX Pro series", conn: [other]}
+- {repo: ludgerbeckmann/ha_solarmax, brands: [SolarMax], class: inverter, family: "SolarMax inverters (MaxComm)", conn: [other]}
+- {repo: RMoria/solfron, brands: [Solar Frontier], class: inverter, family: "SF-WR series", conn: [http]}
+- {repo: dewet22/givenergy-hass, brands: [GivEnergy], class: hybrid, family: "GivEnergy inverters and batteries", conn: [modbus_tcp]}
+- {repo: derolli1976/enpal, brands: [Enpal], class: hybrid, family: "Enpal systems", conn: [http]}
+- {repo: joyfulhouse/eg4_web_monitor, brands: [EG4, Luxpower], class: hybrid, family: "EG4 and Luxpower inverters (local RS485 or cloud)", conn: [modbus_rtu, cloud]}
+- {repo: poldim/EG4-Inverter-Modbus, brands: [EG4], class: hybrid, family: "EG4 inverters via Modbus", conn: [modbus_tcp]}
+- {repo: snell-evan-itt/EG4-Inverter, brands: [EG4], class: hybrid, family: "EG4 web portal", conn: [cloud]}
+- {repo: ant0nkr/luxpower-ha-integration, brands: [Luxpower], class: hybrid, family: "Luxpower inverters via dongle", conn: [modbus_tcp]}
+- {repo: BeardedTech0o/ha-luxcloud, brands: [Luxpower], class: hybrid, family: "LuxCloud API", conn: [cloud]}
+- {repo: mukaschultze/ha-must-inverter, brands: [Must], class: hybrid, family: "Must off-grid/hybrid inverters", conn: [modbus_rtu]}
+- {repo: mkbodanu4/ha-must-ep30, brands: [Must], class: hybrid, family: "EP30 Pro / EP3000 Plus", conn: [other]}
+- {repo: ArnyminerZ/ha-axpert-inverter, brands: [Voltronic Power], class: hybrid, family: "Axpert inverters", conn: [other]}
+- {repo: Antoxa1081/home-assistant-dess-monitor, brands: [Voltronic Power], class: hybrid, family: "Inverters on DESS Monitor", conn: [cloud]}
+- {repo: andreas-glaser/ha-dessmonitor, brands: [Voltronic Power], class: hybrid, family: "Inverters on DessMonitor", conn: [cloud]}
+- {repo: partach/ha_felicity, brands: [Felicity Solar], class: hybrid, family: "Felicity inverters", conn: [modbus_tcp, modbus_rtu]}
+- {repo: zegioni/felicity-ha, brands: [Felicity Solar], class: hybrid, family: "Felicity Solar cloud", conn: [cloud]}
+- {repo: anakinch75/Studer-Innotec-next3-HA, brands: [Studer Innotec], class: hybrid, family: "Next1 / Next3", conn: [other]}
+- {repo: juicejuice/homeassistant_redback, brands: [Redback], class: hybrid, family: "Redback portal", conn: [cloud]}
+- {repo: cabberley/HA_RedbackTech, brands: [Redback], class: hybrid, family: "Redback inverters and batteries", conn: [cloud]}
+- {repo: guoxiatech/hanchu-ess-ha, brands: [Hanchu], class: hybrid, family: "Hanchu ESS", conn: [cloud]}
+- {repo: Veldkornet/ha-hyxi-cloud, brands: [HYXiPower], class: hybrid, family: "HYXi cloud", conn: [cloud]}
+- {repo: jnctech/hinen-solar-homeassistant, brands: [Hinen], class: hybrid, family: "Hinen inverters and batteries", conn: [cloud]}
+- {repo: PiotrMachowski/Home-Assistant-custom-components-GNE-PV-Monitoring, brands: [GNE], class: inverter, family: "GNE PV monitoring", conn: [cloud]}
+- {repo: KRoperUK/sungrow-hass, brands: [Sungrow], class: hybrid, family: "iSolarCloud API", conn: [cloud]}
+- {repo: SunnySkye/sungrow-local, brands: [Sungrow], class: inverter, family: "SG5K-D with WiFi V31 (read-only)", conn: [http], families: ["SG string inverters"]}
+- {repo: thokaro/solarwatt-manager-homeassistant, brands: [Solarwatt], class: meter, family: "SOLARWATT Manager flex/rail", conn: [http]}
+# --- batteries / storage ---
+- {repo: bbr111/byd_hvs, brands: [BYD], class: battery, family: "Battery-Box HVS/HVM", conn: [other]}
+- {repo: jtubb/HA-Pylontech-BMS, brands: [Pylontech], class: battery, family: "Pylontech BMS", conn: [other]}
+- {repo: matfroh/sax_battery_ha, brands: [SAX Power], class: battery, family: "SAX batteries", conn: [modbus_tcp]}
+- {repo: hAr1x/ha-franklinwh-modbus, brands: [FranklinWH], class: battery, family: "FranklinWH aPower", conn: [modbus_tcp]}
+- {repo: alpenfun/fems-diagnostics, brands: [FENECON], class: battery, family: "FEMS diagnostics", conn: [other]}
+- {repo: PimDoos/ha-sessy, brands: [Sessy], class: battery, family: "Sessy home battery", conn: [http]}
+- {repo: JohNan/homeassistant-homevolt-local, brands: [Homevolt], class: battery, family: "Homevolt (local)", conn: [http]}
+- {repo: adammcdonagh/home-assistant-powervault, brands: [Powervault], class: battery, family: "Powervault", conn: [cloud]}
+- {repo: pacorola/Atmoce_battery_HA, brands: [Atmoce], class: battery, family: "Atmoce battery", conn: [other]}
+- {repo: azimut-energy/azimut-ha-integration, brands: [Azimut Energy], class: battery, family: "Azimut batteries", conn: [other]}
+- {repo: wimb0/home-assistant-nextenergy-battery-modbus, brands: [NextEnergy], class: battery, family: "NextEnergy battery", conn: [modbus_tcp]}
+- {repo: geeks-r-us/maxstorage_ultimate, brands: [MaxStorage], class: battery, family: "Max.Storage Ultimate", conn: [other]}
+- {repo: SkiLtY/ha-ep-cube, brands: [Canadian Solar], class: battery, family: "EP Cube", conn: [cloud]}
+- {repo: iPeel/HA-Eleven-Energy, brands: [Eleven Energy], class: battery, family: "Eleven Energy systems", conn: [cloud]}
+- {repo: jerrit/ha-base-power, brands: [Base Power], class: battery, family: "Base Power home battery", conn: [cloud]}
+- {repo: jackrayner/ha-pypowerwall, brands: [Tesla], class: battery, family: "Powerwall (gateway or cloud)", conn: [http, cloud]}
+- {repo: treee111/hagerFlow, brands: [Hager], class: battery, family: "hagerFlow / energy manager", conn: [other]}
+- {repo: fabiomatavelli/ha-felicity-solar-local, brands: [Felicity Solar], class: battery, family: "Felicity batteries (local)", conn: [other]}
+- {repo: GImDX/huawei-esm48100-home-assistant, brands: [Huawei], class: battery, family: "ESM-48100 batteries", conn: [modbus_rtu], families: []}
+- {repo: shuette42/ecoflow-energy-ha, brands: [EcoFlow], class: hybrid, family: "PowerOcean, Delta, Stream, Smart Plug", conn: [cloud, mqtt], families: ["PowerOcean (hybrid)", "STREAM / PowerStream (plug-in)"]}
+- {repo: jensfr1/ha-ecoflow-ocean2, brands: [EcoFlow], class: hybrid, family: "PowerOcean / Ocean 2 (app MQTT)", conn: [mqtt, cloud], families: ["PowerOcean (hybrid)"]}
+- {repo: niltrip/powerocean, brands: [EcoFlow], class: hybrid, family: "PowerOcean", conn: [cloud], families: ["PowerOcean (hybrid)"]}
+- {repo: MaxGrmm/EF-PowerOcean-TcpModbus, brands: [EcoFlow], class: hybrid, family: "PowerOcean via Modbus TCP", conn: [modbus_tcp], families: ["PowerOcean (hybrid)"]}
+- {repo: MichelFR/ha-ecoflow-iot, brands: [EcoFlow], class: battery, family: "EcoFlow devices via Developer API", conn: [cloud, mqtt], families: []}
+- {repo: rabits/ha-ef-ble, brands: [EcoFlow], class: battery, family: "EcoFlow devices over Bluetooth", conn: [ble], families: []}
+- {repo: makerwolf/ecoflow-river3-plus-usb, brands: [EcoFlow], class: battery, family: "River 3 Plus over USB", conn: [other], families: []}
+- {repo: snell-evan-itt/hassio-ecoflow-cloud-US, brands: [EcoFlow], class: battery, family: "EcoFlow cloud (US accounts)", conn: [cloud], families: []}
+- {repo: Patrick762/hassio-bluetti-bt, brands: [Bluetti], class: battery, family: "Bluetti power stations over Bluetooth", conn: [ble]}
+- {repo: zuyan9/ha-dji-power-ble, brands: [DJI], class: battery, family: "DJI Power stations", conn: [ble]}
+- {repo: VictorCV-DAM/ha-oukitel, brands: [Oukitel], class: battery, family: "Oukitel power stations", conn: [other]}
+- {repo: MortUK/Aferiy-PS240-Local-, brands: [Aferiy], class: battery, family: "PS240", conn: [other]}
+- {repo: IAmTheMitchell/renogy-ha, brands: [Renogy], class: battery, family: "Renogy devices over BLE", conn: [ble]}
+# --- plug-in / balcony storage ---
+- {repo: thomluther/ha-anker-solix, brands: [Anker SOLIX], class: plug-in, family: "Solarbank, power stations, X1 (Anker cloud API)", conn: [cloud]}
+- {repo: anker-charging/ha-anker-solix-official, brands: [Anker SOLIX], class: plug-in, family: "SOLIX devices via local Modbus TCP (official)", conn: [modbus_tcp]}
+- {repo: Zendure/Zendure-HA, brands: [Zendure], class: plug-in, family: "SolarFlow, Hyper, ACE (official)", conn: [http, mqtt, cloud]}
+- {repo: ffunes/Omnibattery, brands: [Marstek, Zendure], class: plug-in, family: "Marstek Venus and Zendure batteries", conn: [modbus_tcp]}
+- {repo: ffunes/Marstek-Venus-Energy-Manager, brands: [Marstek], class: plug-in, family: "Venus E v2/v3, Venus A, Venus D", conn: [modbus_tcp]}
+- {repo: sphings79/marstek-modbus-suite, brands: [Marstek], class: plug-in, family: "Venus A, D, E", conn: [modbus_tcp]}
+- {repo: Cappa83/marstek-ble-ha, brands: [Marstek], class: plug-in, family: "CT002 meter and Venus E V3 over BLE", conn: [ble]}
+- {repo: cedricziel/ha-sunlit, brands: [SunEnergyXT], class: plug-in, family: "SunEnergyXT (Sunlit) batteries", conn: [cloud]}
+- {repo: sunology-tech/sunology-ha, brands: [Sunology], class: plug-in, family: "Sunology plug-in kits", conn: [cloud]}
+# --- wallboxes ---
+- {repo: nordicopen/easee_hass, brands: [Easee], class: wallbox, family: "Easee Home / Charge", conn: [cloud]}
+- {repo: custom-components/zaptec, brands: [Zaptec], class: wallbox, family: "Zaptec Go / Pro", conn: [cloud]}
+- {repo: marq24/ha-goecharger-api2, brands: [go-e, Fronius], class: wallbox, family: "go-eCharger (API v2), Fronius Wattpilot, go-e Controller", conn: [http]}
+- {repo: syssi/homeassistant-goecharger-mqtt, brands: [go-e], class: wallbox, family: "go-eCharger via MQTT", conn: [mqtt]}
+- {repo: cathiele/homeassistant-goecharger, brands: [go-e], class: wallbox, family: "go-eCharger (API v1)", conn: [http]}
+- {repo: CJNE/ha-myenergi, brands: [myenergi], class: wallbox, family: "zappi, eddi, harvi, libbi", conn: [cloud]}
+- {repo: ThaStealth/alfen_modbus, brands: [Alfen], class: wallbox, family: "Eve chargers via Modbus TCP", conn: [modbus_tcp]}
+- {repo: Schrolli91/heidelberg_energy_control, brands: [Heidelberg / Amperfied], class: wallbox, family: "Energy Control wallboxes", conn: [modbus_tcp]}
+- {repo: nobelp/mennekes-amtron-ha, brands: [Mennekes], class: wallbox, family: "AMTRON 4Business", conn: [modbus_tcp]}
+- {repo: matfroh/abl_emh1_modbus, brands: [ABL], class: wallbox, family: "eMH1", conn: [modbus_rtu]}
+- {repo: Rschmidt79/home-assistant-keba-p40, brands: [KEBA], class: wallbox, family: "KeContact P40 (REST)", conn: [http]}
+- {repo: mousehome-net/keba_one_ev, brands: [SolarEdge], class: wallbox, family: "SolarEdge ONE EV Charger (KEBA P30 inside)", conn: [udp]}
+- {repo: niktest/solaredge_ev_charger_au, brands: [SolarEdge], class: wallbox, family: "SolarEdge EV Charger (Australia)", conn: [other]}
+- {repo: mb-software/homeassistant-powerbrain, brands: [cFos], class: wallbox, family: "cFos Power Brain", conn: [http]}
+- {repo: sockless-coding/garo_wallbox, brands: [Garo], class: wallbox, family: "Garo wallboxes", conn: [http]}
+- {repo: dingo35/ha-SmartEVSEv3, brands: [SmartEVSE], class: wallbox, family: "SmartEVSE v3", conn: [http]}
+- {repo: alexhaller/Elli-Charger_HA, brands: [Elli], class: wallbox, family: "Elli Charger", conn: [other]}
+- {repo: botts7/hass-wallbox-gateway, brands: [Wallbox], class: wallbox, family: "Wallbox chargers via BLE gateway", conn: [ble]}
+- {repo: JoaoPedroBelo/bmw-wallbox-ha, brands: [BMW], class: wallbox, family: "BMW Wallbox (OCPP 2.0.1)", conn: [ocpp]}
+- {repo: barneyonline/ha-enphase-energy, brands: [Enphase], class: wallbox, family: "IQ EV Charger 2 (cloud)", conn: [cloud]}
+- {repo: gndean/home-assistant-hypervolt-charger, brands: [Hypervolt], class: wallbox, family: "Hypervolt chargers", conn: [cloud]}
+- {repo: mclare/grizzl_e-for-HA, brands: [Grizzl-E], class: wallbox, family: "Grizzl-E", conn: [http]}
+- {repo: hardbyte/ha-evnex, brands: [Evnex], class: wallbox, family: "Evnex chargers", conn: [cloud]}
+- {repo: Bebbssos/ha-defa-power, brands: [DEFA], class: wallbox, family: "DEFA Power / eRange", conn: [cloud]}
+- {repo: mattrayner/pod-point-home-assistant-component, brands: [Pod Point], class: wallbox, family: "Pod Point", conn: [cloud]}
+- {repo: mbillow/ha-chargepoint, brands: [ChargePoint], class: wallbox, family: "ChargePoint Home", conn: [cloud]}
+- {repo: nickknissen/hass-monta, brands: [Monta], class: wallbox, family: "Chargers on Monta", conn: [cloud]}
+- {repo: persuader72/silla-prism-integration, brands: [Silla], class: wallbox, family: "Prism EVSE", conn: [mqtt]}
+- {repo: ABovsh/eveus, brands: [Eveus], class: wallbox, family: "Eveus Pro", conn: [http]}
+- {repo: Jarauvi/beny_wifi, brands: [Beny], class: wallbox, family: "Beny chargers (Wi-Fi)", conn: [other]}
+- {repo: Eunanibus/ha-emporia-ev, brands: [Emporia], class: wallbox, family: "Emporia EV charger", conn: [cloud]}
+- {repo: RafaelSchridi/evsemaster-homeassistant, brands: [EVSEMaster], class: wallbox, family: "EVSEMaster chargers", conn: [udp]}
+- {repo: jbdelavoix/evsemasterudp, brands: [EVSEMaster], class: wallbox, family: "EVSEMaster / Morec chargers", conn: [udp]}
+- {repo: krasnoukhov/homeassistant-oncharger, brands: [Oncharger], class: wallbox, family: "Oncharger", conn: [http]}
+- {repo: oMtQB4/HomeAssistant-Pracht-Alpha-Wallbox-Custom-Component, brands: [Pracht], class: wallbox, family: "Alpha MONO / DUO / XT", conn: [http]}
+- {repo: oMtQB4/HomeAssistant-Tinkerforge-Warp-Wallbox-Custom-Component, brands: [Tinkerforge], class: wallbox, family: "WARP charger", conn: [http]}
+- {repo: werthdavid/homeassistant-pulsatrix-local-mqtt, brands: [pulsatrix], class: wallbox, family: "pulsatrix charger", conn: [mqtt]}
+- {repo: ZaBug/duosida-lan, brands: [Duosida], class: wallbox, family: "Duosida wallboxes", conn: [other]}
+- {repo: danwoodsy/autel-maxicharger-ha, brands: [Autel], class: wallbox, family: "MaxiCharger", conn: [http]}
+- {repo: IONTtech/ha-iont, brands: [IONT], class: wallbox, family: "IONT chargers", conn: [modbus_tcp]}
+- {repo: crryp/joulo-ha, brands: [Joulo], class: wallbox, family: "Joulo chargers", conn: [cloud]}
+- {repo: RowanRamasray/Ratio_Ev_Charger, brands: [Ratio], class: wallbox, family: "Ratio chargers", conn: [other]}
+- {repo: enovates/home-assistant-enovates, brands: [Enovates], class: wallbox, family: "Enovates chargers", conn: [other]}
+- {repo: happydev-ca/evduty-home-assistant, brands: [EVduty], class: wallbox, family: "EVduty stations", conn: [cloud]}
+- {repo: myny-git/smappee_ev, brands: [Smappee], class: wallbox, family: "Smappee EV chargers", conn: [cloud]}
+- {repo: samuelebistoletti/HomeAssistant-V2C-Cloud, brands: [V2C], class: wallbox, family: "V2C Cloud", conn: [cloud]}
+- {repo: lektrico/ha_lektrico, brands: [Lektrico], class: wallbox, family: "Lektrico chargers", conn: [http]}
+- {repo: Sturmi77/solax-cloud-api-ha, brands: [SolaX], class: wallbox, family: "SolaX EV chargers via SolaxCloud", conn: [cloud]}
+- {repo: hebrru/Hager-local, brands: [Hager], class: wallbox, family: "witty solar / flow EMC", conn: [http]}
+# --- meters ---
+- {repo: sphings79/shelly-modbus-home-assistant, brands: [Shelly], class: meter, family: "Pro 3EM, 3EM-63 and relays via Modbus TCP", conn: [modbus_tcp]}
+- {repo: marq24/ha-tibber-pulse-local, brands: [Tibber], class: meter, family: "Pulse IR / Bridge (local)", conn: [http]}

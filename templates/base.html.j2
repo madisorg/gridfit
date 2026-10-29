@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}{{ SITE }} — {{ TAGLINE }}{% endblock %}</title>
+<meta name="description" content="{% block description %}Which solar inverters, home batteries and wallboxes work locally with Home Assistant and evcc — and which EU grid registers list them. Built only from open sources, every row linked to its source.{% endblock %}">
+{% if base_url %}<link rel="canonical" href="{{ base_url }}/{{ page }}">{% endif %}
+<link rel="stylesheet" href="{{ rel }}static/style.css">
+{% if analytics.startswith('plausible:') %}
+<script defer data-domain="{{ analytics.split(':', 1)[1] }}" src="https://plausible.io/js/script.js"></script>
+{% elif analytics.startswith('cloudflare:') %}
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "{{ analytics.split(':', 1)[1] }}"}'></script>
+{% endif %}
+{% block head %}{% endblock %}
+</head>
+<body>
+<header class="top">
+  <a class="logo" href="{{ rel }}">{{ SITE }}</a>
+  <nav>
+    <a href="{{ rel }}about/">How we know</a>
+    <a href="{{ rel }}registers/">Registers</a>
+    <a href="{{ rel }}changelog/">Changes</a>
+    <a href="{{ REPO }}">Fix a row</a>
+  </nav>
+</header>
+<main>
+{% block main %}{% endblock %}
+</main>
+<footer>
+  <p>Data from <a href="https://github.com/home-assistant/core">Home Assistant core</a> (Apache-2.0),
+  <a href="https://github.com/evcc-io/evcc">evcc</a> templates (MIT), the <a href="https://hacs.xyz/">HACS</a> default list and
+  integration manifests, and five public grid registers. Last checked {{ seen }}.
+  Independent project — not affiliated with the Open Home Foundation, Nabu Casa, evcc, HACS, any manufacturer or grid operator.</p>
+  <p>Dataset <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · code MIT ·
+  <a href="{{ REPO }}">source and corrections on GitHub</a> · no cookies.</p>
+</footer>
+</body>
+</html>

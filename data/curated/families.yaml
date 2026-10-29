@@ -1,0 +1,127 @@
+# Product families for the brands people ask about most. A family groups:
+#   - grid-register models, by a regex over the normalised model code
+#     (upper-case, spaces/dashes/dots/slashes removed - "SUN-12K-SG04LP3-EU" -> "SUN12KSG04LP3EU");
+#   - evcc templates, as "template" (all its products) or "template:Product name";
+#   - HA core / HACS rows: a brand-wide row (no `families:` in hacs.yaml) applies to every
+#     family of the same kind (wallbox rows to wallbox families, the rest to the others);
+#   - see_also: community routes that are not an integration (YAML packages and the like),
+#     shown as links, never counted as "works locally".
+# A register model matched by regex is a pattern match, not a confirmation: the site shows
+# its trust level. Brands without an entry here get one family per source row.
+Deye:
+  - {name: "SUN-SG LP1 single-phase LV hybrid", class: hybrid, match: '^SUN\d.*SG\d+LP1', evcc: [deye-storage]}
+  - {name: "SUN-SG LP3 three-phase LV hybrid", class: hybrid, match: '^SUN\d.*SG\d+LP3', evcc: [deye-hybrid-3p]}
+  - {name: "SUN-SG HP3 three-phase HV hybrid", class: hybrid, match: '^SUN\d.*SG\d+HP3', evcc: [deye-hybrid-3p]}
+  - {name: "SUN-G string inverters", class: inverter, match: '^SUN\d+K?G\d', evcc: [deye-string]}
+  - {name: "SUN-M / SUN-G3 microinverters", class: plug-in, match: '^SUN(M\d|\d{3,4}G)', evcc: [deye-mi, deye-mi-solarman]}
+  - {name: "SUN-EVSE wallboxes", class: wallbox, match: '^SUNEVSE', evcc: [deye-evse]}
+SolaX:
+  - {name: "X1/X3 Hybrid (G3/G4)", class: hybrid, match: '^X[13]HYBRID|^X3HYB', evcc: ["solax:Hybrid X1/X3 G3/G4", solax-hybrid-cloud]}
+  - {name: "X1/X3-Fit and AC retrofit", class: battery, match: '^X[13](FIT|AC)'}
+  - {name: "X3-Ultra", class: hybrid, match: '^X3ULT'}
+  - {name: "X1/X3-IES", class: hybrid, match: '^X[13]IES'}
+  - {name: "X1/X3 string inverters (Boost, Mini, Smart, Pro, MIC, Air)", class: inverter, match: '^X[13](BOOST|MINI|SMART|PRO|MIC|AIR|MEGA|FORTH)', evcc: [solax-g2, solax-inverter-cloud]}
+  - {name: "Q.VOLT HYB (Q CELLS edition)", class: hybrid, match: '^QVOLTHYB'}
+  - {name: "X1/X3-HAC and X3-EVC wallboxes", class: wallbox, match: '^X[13](HAC|EVC)', evcc: ["solax-g2:X3-HAC", "solax:X3-EVC"]}
+Fronius:
+  - {name: "Symo/Primo GEN24 (hybrid)", class: hybrid, match: '^(FRONIUS)?(SYMO|PRIMO)GEN24', evcc: [fronius-gen24, fronius-solarapi-v1]}
+  - {name: "Verto Plus (hybrid)", class: hybrid, match: '^(FRONIUS)?VERTOPLUS', evcc: [fronius-vertoplus]}
+  - {name: "Verto / Tauro / Symo / Primo (string)", class: inverter, match: '^(FRONIUS)?(VERTO(?!PLUS)|TAURO|SYMO(?!GEN24|HYBRID)|PRIMO(?!GEN24)|ECO|ARGENO)', evcc: [fronius-argeno, fronius-solarapi-v1]}
+  - {name: "Symo Hybrid (legacy)", class: hybrid, match: '^(FRONIUS)?SYMOHYBRID', evcc: [fronius-solarapi-v1]}
+  - {name: "Wattpilot", class: wallbox, match: 'WATTPILOT', evcc: [fronius-wattpilot, "ocpp-goe:Wattpilot (OCPP)"]}
+Huawei:
+  - {name: "SUN2000 inverters (string and hybrid)", class: hybrid, match: '^SUN(2000|5000)', evcc: [huawei-sun2000-hybrid, huawei-sun2000-inverter, huawei-smartlogger, huawei-emma]}
+  - {name: "LUNA2000 batteries", class: battery, match: '^LUNA', evcc: [huawei-sun2000-hybrid]}
+  - {name: "SCharger wallboxes", class: wallbox, match: '^SCHARGER', evcc: [ocpp-huawei]}
+Sungrow:
+  - {name: "SH hybrid inverters", class: hybrid, match: '^SH\d', evcc: [sungrow-hybrid, sungrow-ihm],
+     see_also: [{name: "Sungrow-SHx-Inverter-Modbus-Home-Assistant (YAML package for HA's Modbus integration)", url: "https://github.com/mkaiser/Sungrow-SHx-Inverter-Modbus-Home-Assistant", note: "README: reads sensors and controls the EMS of many SH inverters over Modbus TCP; primarily tested on SH10RT; not a HACS integration."}]}
+  - {name: "SG string inverters", class: inverter, match: '^SG\d', evcc: [sungrow-inverter]}
+  - {name: "AC wallboxes", class: wallbox, match: '^AC\d', evcc: [sungrow, ocpp-sungrow]}
+GoodWe:
+  - {name: "ET/EH/BT/BH/ETC hybrids", class: hybrid, match: '^GW\d+(K|KN)?(ET|EH|BT|BH|ETC|ETR|BTC|BTR|ESA)', evcc: [goodwe-hybrid, goodwe-wifi-et]}
+  - {name: "ES/EM/EMS hybrids", class: hybrid, match: '^GW\d+(K|KN)?(ES|EM|EMS)', evcc: [goodwe-wifi-es]}
+  - {name: "DT/SDT/MS/XS/DNS string inverters", class: inverter, match: '^GW\d+(K|KT|KN)?(DT|SDT|MS|XS|DNS|NS|DS|MT|SMT|HT)', evcc: [goodwe-dt, goodwe-wifi-dt]}
+  - {name: "HCA wallboxes", class: wallbox, match: '^GW\d+K?HCA', evcc: [goodwe-wallbox]}
+Fox ESS:
+  - {name: "H1 / AC1 / AIO-H1 (single-phase)", class: hybrid, match: '^(H1|AC1|AIOH1|AIOAC1|FOXH1)', evcc: [fox-ess-h1]}
+  - {name: "H3 / H3-Pro / AC3 / AIO-H3 (three-phase)", class: hybrid, match: '^(H3|AC3|AIOH3|AIOAC3|FOXH3|P3)', evcc: [fox-ess-h3, fox-ess-h3-smart]}
+  - {name: "Avocado / MQ2200", class: plug-in, match: '^(AVOCADO|MQ)', evcc: [fox-ess-avocado]}
+  - {name: "T / S / F string inverters", class: inverter, match: '^(T\d|S\d|F\d)'}
+  - {name: "AC EV chargers", class: wallbox, match: '^(A\d+K|FOXEVC)', evcc: [foxess-evc, ocpp-foxess]}
+Solis:
+  - {name: "RHI / S5-EH / S6-EH hybrids", class: hybrid, match: '^(RHI|S\dEH|S\dEO|SOLIS(RHI|EH))'}
+  - {name: "S5/S6-GR and Solis string inverters", class: inverter, match: '^(S\dG[RC]|SOLIS\d|SOLISMINI|SOLIS\d+K)'}
+Sofar:
+  - {name: "HYD hybrids", class: hybrid, match: '^(SOFAR)?HYD', evcc: [sofarsolar-g3, "sofarsolar:Hybrid Inverter"]}
+  - {name: "PowerAll ESI / EBI (all-in-one)", class: hybrid, match: '^(SOFAR)?(POWERALL)?(ESI|EBI)'}
+  - {name: "KTLX / TL string inverters", class: inverter, match: '^(SOFAR)?\d+(KTLX|KTLM|TL|KTL)', evcc: ["sofarsolar:Inverter"]}
+SMA:
+  - {name: "Sunny Tripower (incl. Smart Energy, X)", class: inverter, match: '^(SUNNYTRIPOWER|STP)', evcc: [sma-inverter-modbus, sma-inverter-speedwire, sma-hybrid, sma-hybrid-speedwire]}
+  - {name: "Sunny Boy", class: inverter, match: '^(SUNNYBOY(?!STORAGE)|SB\d)', evcc: [sma-inverter-modbus, sma-inverter-speedwire]}
+  - {name: "Sunny Boy Storage", class: battery, match: '^(SUNNYBOYSTORAGE|SBS)', evcc: [sma-sbs-modbus, sma-sbs-15-25-modbus]}
+  - {name: "Sunny Island", class: battery, match: '^(SUNNYISLAND|SI\d)', evcc: [sma-si-modbus]}
+  - {name: "EV Charger", class: wallbox, match: '^(EVCHARGER|EVC)', evcc: [smaevcharger, semp-sma, bender-cc]}
+Victron Energy:
+  - {name: "MultiPlus / MultiPlus-II / Quattro / EasySolar (ESS)", class: hybrid, match: '^(MULTIPLUS|QUATTRO|EASYSOLAR|MULTIRS)', evcc: [victron-energy, victron-gx]}
+  - {name: "EV Charging Station", class: wallbox, match: '^EVCHARGING', evcc: [victron-evcs, victron]}
+SolarEdge:
+  - {name: "Home Hub / StorEdge hybrids", class: hybrid, match: '^(HOMEHUB|STOREDGE)?SE\d+K?RW|^HOMEHUB|^STOREDGE', evcc: [solaredge-hybrid]}
+  - {name: "HD-Wave / SE / NX string inverters", class: inverter, match: '^(HDWAVE|COMPACT)?SE\d|^NX', evcc: [solaredge-inverter]}
+  - {name: "EV chargers", class: wallbox, match: 'EVCHARGER', evcc: ["keba-modbus:Home EV Charger", ocpp-solaredge]}
+Growatt:
+  - {name: "SPH / SPA / MOD-XH / MIN-XH hybrids", class: hybrid, match: '^(SPH|SPA|MOD\w*XH|MIN\w*XH|MID\w*XH|WIT)', evcc: [growatt-hybrid, growatt-hybrid-tlxh]}
+  - {name: "MIN / MOD / MID / MIC string inverters", class: inverter, match: '^(MIN|MOD|MODA|MID|MIC|MAX|MAC)(?!\w*XH)', evcc: [growatt-min-tlxe]}
+Sigenergy:
+  - {name: "SigenStor / Sigen Hybrid", class: hybrid, match: '^(SIGENSTOR|SIGENHYBRID|HYBRIDINVERTER)', evcc: ["sigenergy:Sigen Hybrid", "sigenergy:SigenStore EC"]}
+  - {name: "Sigen PV / PV Max", class: inverter, match: '^(SIGENPV|PVMAX)', evcc: ["sigenergy:Sigen PV Max"]}
+  - {name: "Sigen EVAC / EVDC chargers", class: wallbox, match: '^SIGEN(EV|CHARGER)', evcc: [sigenergy-evdc, "sigenergy:EVAC series"]}
+Kostal:
+  - {name: "PLENTICORE (hybrid)", class: hybrid, match: '^PLENTICORE', evcc: [kostal-plenticore-gen2, kostal-ksem-inverter]}
+  - {name: "PIKO (string)", class: inverter, match: '^PIKO', evcc: [kostal-piko-pv, kostal-piko-mp-plus, kostal-piko-legacy, kostal-piko-hybrid]}
+  - {name: "ENECTOR wallboxes", class: wallbox, match: '^ENECTOR', evcc: [mennekes-compact]}
+Enphase:
+  - {name: "IQ microinverters with IQ Gateway", class: plug-in, match: '^IQ\d', evcc: [enphase, enphase-modbus]}
+  - {name: "IQ Battery / Encharge", class: battery, match: '^(IQBATTERY|ENCHARGE|B\d)', evcc: [enphase]}
+Hoymiles:
+  - {name: "HM / HMS / HMT microinverters", class: plug-in, match: '^(HM|HMS|HMT|MI|MIS|MIT)\d', evcc: [hoymiles-ahoydtu, hoymiles-opendtu, hoymiles-dtu-mb, hoymiles-dtugateway]}
+  - {name: "HYS / HiOne / HIT / HIS hybrids", class: hybrid, match: '^(HYS|HYT|HIONE|AIONE|HIT|HIS|HB)'}
+APsystems:
+  - {name: "EZ1 plug-in microinverter", class: plug-in, match: '^EZ1', evcc: [apsystems-ez1]}
+  - {name: "DS3 / QS1 / QT2 / YC microinverters", class: plug-in, match: '^(DS3|QS1|QT2|YC)'}
+Anker SOLIX:
+  - {name: "SOLIX Solarbank (plug-in)", class: plug-in, match: '^A17C|^ASPE', evcc: [anker-solix-solarbank-max-ac]}
+  - {name: "SOLIX X1 hybrid", class: hybrid, match: '^X1|^AE', evcc: [anker-solix-x1]}
+Zendure:
+  - {name: "SolarFlow / Hyper / AIO", class: plug-in, match: '^ZD(SF|HYP|A)', evcc: [zendure-hyper, zendure-solarflow-battery, zendure-solarflow-pro]}
+EcoFlow:
+  - {name: "PowerOcean (hybrid)", class: hybrid, match: '^EF(HD|PD)', evcc: [ecoflow-powerocean, ecoflow-powerocean-modbus]}
+  - {name: "STREAM / PowerStream (plug-in)", class: plug-in, match: '^EF(ST|EA|PS)', evcc: [ecoflow-stream]}
+Marstek:
+  - {name: "Venus (plug-in battery)", class: plug-in, match: '^MST(BIE|HIE)|^VENUS', evcc: [marstek-venus-a, marstek-venus-e]}
+  - {name: "Jupiter / micro inverters", class: plug-in, match: '^MSTMI|^JUPITER', evcc: [marstek-jupiterc-plus]}
+Alpha ESS:
+  - {name: "SMILE / Storion", class: hybrid, match: '^(SMILE|STORION|G\d)', evcc: [alpha-ess-smile]}
+SAJ:
+  - {name: "H1 / H2 / HS2 / HS3 / HS5 / AS hybrids", class: hybrid, match: '^(EK\d+)?(H\d|HS\d|AS\d)'}
+  - {name: "R5 / R6 / Suntrio / Sununo string inverters", class: inverter, match: '^(R\d|SUNTRIO|SUNUNO|C\d|CM)'}
+KEBA:
+  - {name: "KeContact P30 / P40", class: wallbox, match: '^KECONTACTP', evcc: [keba-modbus, keba-modbus-p40, keba-udp, keba-kecontact]}
+go-e:
+  - {name: "go-e Charger (Gemini, HOME, CORE, PRO)", class: wallbox, match: '^GOE', evcc: [go-e, go-e-v3, ocpp-goe]}
+Alfen:
+  - {name: "Eve Single / Double", class: wallbox, match: '^EVE', evcc: [alfen, ocpp-alfen]}
+Easee:
+  - {name: "Home / Charge / Charge Lite / Core / Max / Pro", class: wallbox, match: '^(CHARGE|HOME)', evcc: [easee, ocpp-easee]}
+Zaptec:
+  - {name: "Go / Go 2 / Pro", class: wallbox, match: '^ZAPTEC', evcc: [zaptec, ocpp-zaptec]}
+SENEC:
+  - {name: "SENEC.Home V2/V3/V4/P4", class: battery, match: '^SENECHOME', evcc: [senec-home, senec-connect]}
+sonnen:
+  - {name: "sonnenBatterie", class: battery, match: '^(SONNENBATTERIE|SB\d)', evcc: [sonnenbatterie, sonnenbatterie_eco56]}
+E3/DC:
+  - {name: "S10 / S20 home power stations", class: hybrid, match: '^S[12]0|^ONE', evcc: [e3dc-modbus, e3dc-rscp]}
+RCT Power:
+  - {name: "Power Inverter / Power Storage", class: hybrid, match: '^POWER(INVERTER|STORAGE)', evcc: [rct-power]}
+BYD:
+  - {name: "Battery-Box / Power-Box", class: battery, match: '^(BATTERYBOX|POWERBOX|HVS|HVM)'}

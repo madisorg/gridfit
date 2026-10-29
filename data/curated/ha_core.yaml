@@ -1,0 +1,49 @@
+# Home Assistant core integrations for energy devices.
+# The build reads name and iot_class from HA's generated integrations.json and the
+# manifest, and checks which entity platforms exist; this file only says which brand
+# and device class an integration belongs to. Models are NOT copied: core devices link
+# to the Open Home Foundation Device Database and to the integration's docs page.
+#   domain: HA integration domain
+#   brand:  canonical brand (brands.yaml)
+#   class:  inverter | hybrid | battery | wallbox | meter | plug-in
+#   conn:   connection as the integration docs describe it
+- {domain: fronius, brand: Fronius, class: hybrid, conn: [http, modbus_tcp]}
+- {domain: sma, brand: SMA, class: inverter, conn: [http]}
+- {domain: solaredge, brand: SolarEdge, class: inverter, conn: [cloud]}
+- {domain: solaredge_modbus, brand: SolarEdge, class: hybrid, conn: [modbus_tcp]}
+- {domain: enphase_envoy, brand: Enphase, class: inverter, conn: [http]}
+- {domain: goodwe, brand: GoodWe, class: hybrid, conn: [udp, modbus_tcp]}
+- {domain: solax, brand: SolaX, class: hybrid, conn: [http]}
+- {domain: sofar, brand: Sofar, class: hybrid, conn: [modbus_tcp, modbus_rtu]}
+- {domain: saj, brand: SAJ, class: inverter, conn: [http]}
+- {domain: kostal_plenticore, brand: Kostal, class: hybrid, conn: [http]}
+- {domain: kaco_modbus, brand: KACO, class: inverter, conn: [modbus_tcp]}
+- {domain: kaco_rs485, brand: KACO, class: inverter, conn: [modbus_rtu]}
+- {domain: victron_gx, brand: Victron Energy, class: hybrid, conn: [mqtt]}
+- {domain: victron_ble, brand: Victron Energy, class: battery, conn: [ble], families: []}
+- {domain: victron_remote_monitoring, brand: Victron Energy, class: hybrid, conn: [cloud]}
+- {domain: apsystems, brand: APsystems, class: plug-in, conn: [http]}
+- {domain: aurora_abb_powerone, brand: ABB / FIMER, class: inverter, conn: [modbus_rtu]}
+- {domain: imeon_inverter, brand: Imeon, class: hybrid, conn: [http]}
+- {domain: indevolt, brand: Indevolt, class: plug-in, conn: [http]}
+- {domain: homevolt, brand: Homevolt, class: battery, conn: [http]}
+- {domain: bluetti_modbus, brand: Bluetti, class: battery, conn: [modbus_tcp]}
+- {domain: envertech_evt800, brand: Envertech, class: plug-in, conn: [other]}
+- {domain: zeversolar, brand: Zeversolar, class: inverter, conn: [http]}
+- {domain: growatt_server, brand: Growatt, class: hybrid, conn: [cloud]}
+- {domain: sunsynk, brand: Sunsynk, class: hybrid, conn: [cloud]}
+- {domain: powerwall, brand: Tesla, class: battery, conn: [http]}
+- {domain: tesla_wall_connector, brand: Tesla, class: wallbox, conn: [http]}
+- {domain: keba, brand: KEBA, class: wallbox, conn: [udp]}
+- {domain: lektrico, brand: Lektrico, class: wallbox, conn: [http]}
+- {domain: nrgkick, brand: NRGkick, class: wallbox, conn: [http]}
+- {domain: openevse, brand: OpenEVSE, class: wallbox, conn: [http]}
+- {domain: peblar, brand: Peblar, class: wallbox, conn: [http]}
+- {domain: v2c, brand: V2C, class: wallbox, conn: [http]}
+- {domain: wallbox, brand: Wallbox, class: wallbox, conn: [cloud]}
+- {domain: ohme, brand: Ohme, class: wallbox, conn: [cloud]}
+- {domain: blue_current, brand: Blue Current, class: wallbox, conn: [cloud]}
+- {domain: exicom_spin_ble, brand: Exicom, class: wallbox, conn: [ble]}
+- {domain: homewizard, brand: HomeWizard, class: meter, conn: [http]}
+- {domain: powerfox_local, brand: Powerfox, class: meter, conn: [http]}
+- {domain: powerfox, brand: Powerfox, class: meter, conn: [cloud]}
