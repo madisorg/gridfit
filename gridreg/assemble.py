@@ -261,7 +261,7 @@ def build_families(rows, families_cfg, register_models):
     fams = [f for f in fam_by_key.values() if f["rows"] or f["models"]]
     used = defaultdict(set)
     for f in sorted(fams, key=lambda f: (not f["curated"], f["name"].lower())):
-        s = slug(f["name"])
+        s = slug(f["name"])[:48].rstrip("-")  # short URLs; also keeps Windows paths under MAX_PATH
         base, i = s, 2
         while s in used[f["brand"]]:
             s, i = f"{base}-{i}", i + 1
