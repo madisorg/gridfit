@@ -40,6 +40,7 @@
     <dt>Status</dt><dd><span class="st st-{{ e.show }}">{{ RS[e.show] }}</span>{% if e.reg != 'BE' and e.word and e.word|lower != RS[e.show] %} — “{{ e.word }}”{% endif %}</dd>
     <dt>As written</dt><dd>{{ e.maker_raw }} · {{ e.model_raw }}</dd>
     {% if e.extra.list %}<dt>Part</dt><dd>{{ e.extra.list }} list</dd>{% endif %}
+    {% if e.extra.battery %}<dt>Battery can be connected</dt><dd>{{ e.extra.battery }} <span class="muted">(the list's “Aku” column)</span></dd>{% endif %}
     {% if e.reg == 'BE' %}
     <dt>Details</dt><dd>Firmware, homologation reference and dates are in <a href="{{ r.url }}">Synergrid's list</a>; its terms allow
       personal use only, so we show only whether the model is listed.</dd>

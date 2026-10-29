@@ -9,10 +9,13 @@
   "ningbo deye inverter technology co"
  ],
  "Solis": [
-  "solis",
   "ginlong",
+  "ginlong solis",
   "ginlong technologies",
-  "ginlong solis"
+  "ningbo ginlong",
+  "ningbo ginlong ginlong",
+  "ningbo ginlong technologies",
+  "solis"
  ],
  "Fox ESS": [
   "fox ess",
@@ -44,12 +47,13 @@
   "shenzhen growatt new energy"
  ],
  "Sofar": [
-  "sofar",
-  "sofarsolar",
-  "shenzhen sofarsolar",
-  "sofar solar",
   "shenzen sofarsolar",
-  "shenzen sofarsolar co"
+  "shenzen sofarsolar co",
+  "shenzhen sofar solar",
+  "shenzhen sofarsolar",
+  "sofar",
+  "sofar solar",
+  "sofarsolar"
  ],
  "Huawei": [
   "huawei",
@@ -129,8 +133,10 @@
  ],
  "BYD": [
   "byd",
+  "byd auto industry",
   "byd company",
-  "byd auto industry"
+  "shanwei byd",
+  "shanwei byd auto"
  ],
  "Pylontech": [
   "pylontech",
@@ -143,6 +149,8 @@
   "alpha ess co"
  ],
  "Sigenergy": [
+  "shanghai sigen",
+  "shanghai sigen new energy technology",
   "sigenergy",
   "sigenergy technology"
  ],
@@ -219,6 +227,8 @@
   "rct"
  ],
  "Sunways": [
+  "ningbo sunways",
+  "ningbo sunways technologies",
   "sunways",
   "sunways (shanghai)"
  ],
@@ -302,7 +312,9 @@
  ],
  "Chint": [
   "chint",
-  "chint power systems"
+  "chint power systems",
+  "shanghai chint",
+  "shanghai chint power systems"
  ],
  "Innotinum": [
   "innotinum"
@@ -477,5 +489,60 @@
   "lg ess",
   "lg ess home 10",
   "lg ess home 8"
+ ],
+ "Autarco": [
+  "autarco",
+  "autarco b v",
+  "autarco group",
+  "autarco group b v"
+ ],
+ "Atess": [
+  "atess",
+  "shenzhen atess",
+  "shenzhen atess power technology"
+ ],
+ "Lenercom": [
+  "hunan lenercom",
+  "hunan lenercom technology",
+  "lenercom"
+ ],
+ "Renac": [
+  "renac kaisai",
+  "renac power technology co ltd/kaisai"
+ ],
+ "Must": [
+  "must",
+  "must energy (guangdong) technology",
+  "must power",
+  "must power limited"
+ ],
+ "Dunext": [
+  "dunext",
+  "dunext suzhou",
+  "dunext technology suzhou"
+ ],
+ "Midea": [
+  "gd midea air conditioning equipment",
+  "gd midea air-conditioning equipment",
+  "midea"
+ ],
+ "Thinkpower": [
+  "thinkpower",
+  "wuxi thinkpower",
+  "wuxi thinkpower new energy"
+ ],
+ "Tecloman": [
+  "chengdu tecloman",
+  "chengdu tecloman energy storage technology",
+  "tecloman"
+ ],
+ "SolarMax": [
+  "solarmax",
+  "solarmax produktions"
+ ],
+ "Elecnova": [
+  "elecnova",
+  "shanghai elecnova",
+  "shanghai elecnova energy storage"
  ]
 }

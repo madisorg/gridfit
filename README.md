@@ -7,8 +7,8 @@ Home Assistant core and HACS integrations and the evcc templates that support it
 device on your network or through a cloud, whether they can *control* it or only read it, and which national
 grid registers list its models. Every row links to its source and carries the date it was last seen.
 
-A second section, **[/registers/](#grid-register-cross-view)**, is a cross-view of six national grid-connection
-lists (AT, BE, CZ, NL, PL, SE): for each inverter, hybrid, battery, plug-in unit and wallbox, every list's own
+A second section, **[/registers/](#grid-register-cross-view)**, is a cross-view of seven national grid-connection
+lists (AT, BE, CZ, EE, NL, PL, SE): for each inverter, hybrid, battery, plug-in unit and wallbox, every list's own
 status word, firmware, certificate or row number and dates side by side, plus a change log of what each refresh
 added, dropped or changed. It is a hobby section and does not depend on the rest.
 
@@ -24,7 +24,7 @@ pip install -r requirements.txt
 python build.py              # downloads what is older than 6 days into cache/, then builds
 python build.py --refresh    # downloads everything again
 python build.py --offline    # builds from cache/ only
-python build.py --registers-refresh      # also downloads the six grid registers, parses, snapshots, diffs (monthly)
+python build.py --registers-refresh      # also downloads the seven grid registers, parses, snapshots, diffs (monthly)
 python build.py --registers-from DIR     # same, from register files already downloaded into DIR
 python -m http.server 8390 -d site   # preview at http://localhost:8390
 ```
@@ -67,7 +67,7 @@ Environment variables (both optional):
 | [HACS](https://hacs.xyz/) store data (`data-v2.hacs.xyz/integration/data.json`) | repo name, domain, stars, last update | facts about public repos |
 | each listed HACS repo's `manifest.json`, platform files, README | `iot_class`, settable platforms; the curated "covers" text | facts only; each repo has its own licence |
 | [evcc-io/evcc](https://github.com/evcc-io/evcc) `templates/definition/{meter,charger}` | brand, product, connection params, capabilities, sponsor flag | MIT; components needing an evcc sponsorship are excluded from MIT (`LICENSES/exclusions.md`) — the exclusion header sits only in Go driver files, not in the YAML templates. GridFit copies no template content, only the fact of support, and marks sponsor-only templates |
-| grid registers AT, CZ, NL, PL, SE | family pages: "this register lists this model". `/registers/`: also each row's status word, firmware, row/document number and dates | the registers publish the lists but **none states reuse terms**; GridFit links every row back and says the register is the authority. These columns are the registers' facts, not GridFit's work, and are not under GridFit's CC BY |
+| grid registers AT, CZ, EE, NL, PL, SE | family pages: "this register lists this model". `/registers/`: also each row's status word, firmware, row/document number and dates | the registers publish the lists but **none states reuse terms**; GridFit links every row back and says the register is the authority. These columns are the registers' facts, not GridFit's work, and are not under GridFit's CC BY |
 | Belgium, Synergrid C10/26 | `/registers/` only: "listed" / "expired" + link; nothing else of a row is stored | its terms allow personal use only; a permission letter is drafted. Family pages do not use it |
 
 Database right: copying most of a list's columns is the kind of extraction a database maker can object to.
@@ -111,7 +111,7 @@ a power in brackets, e.g. "(5.0 kW)", is kept because it names a different unit)
 matched: **exact** (the same maker and model spelling as the page title), **alias** (joined after
 normalising) or **unmatched** (kept apart, never joined). Rows are marked unmatched when a PL row's maker cell
 holds an address (the PDF columns shifted; 251 rows, nearly all generators and CHP), when a word crosses a PDF
-column (29) or when the "model" is a pattern such as `IPES-3A-XXXX-H2-10K` (134). An empty cell means no
+column (29) or when the "model" is a pattern such as `IPES-3A-XXXX-H2-10K` (135). An empty cell means no
 matching entry was found. It never means "not approved".
 
 **Pages.** Classes with pages: PV inverter, hybrid, battery / AC inverter, plug-in (≤ 800 VA, from the lists' own
@@ -119,18 +119,20 @@ power columns; PL "mikro"), wallbox (the Austrian charger list). CHP, generators
 stay in the snapshot without pages. Every brand gets a page. A model gets its own page when it is in two or
 more countries' lists; the brand table carries the rest.
 
-**Baseline 2026-10-29:** 26,945 rows (AT 3,517 + 610 chargers, BE 9,013, NL 7,021, SE 3,502, PL 2,461, CZ 821)
-→ 13,823 devices in the page classes from 478 makers. 5,456 devices are in ≥ 2 countries' lists and get a model
-page; 2,128 are in ≥ 3. Cells: exact 18,656, alias 6,302, unmatched 144.
+**Baseline 2026-10-29:** 29,184 rows (AT 3,517 + 610 chargers, BE 9,013, NL 7,021, SE 3,502, PL 2,461, EE 2,239,
+CZ 821) → 14,550 devices in the page classes from 503 makers. 5,722 devices are in ≥ 2 countries' lists and get a
+model page; 2,429 are in ≥ 3. Cells: exact 18,767, alias 8,425, unmatched 145. Of the 2,215 Estonian devices,
+1,483 are also in another country's list.
 
 **Known gaps.**
 - PL: 30 of 2,491 rows are unread (Lp 176–181, 1127–1136, 2051–2056, 2078–2086: generators, turbines, and
   8 Sigenergy SigenMate rows where the address column runs into the model column). They are listed on the PL
   country page.
-- Names that pack several models into one cell (`SUN2000-17KTL-M0/M2/M3`, 463 single-list devices) are not split,
+- Names that pack several models into one cell (`SUN2000-17KTL-M0/M2/M3`, 472 single-list devices) are not split,
   so they do not join the same model in another list.
 - NL lists brand and type only. CZ gives the kind of evidence (protocol/certificate and issuer), not a number.
-  Only PL prints a document number.
+  Only PL prints a document number. EE gives maker, model and a battery column only, and its page carries no
+  date, so "list dated" stays empty for EE and a change shows up only as rows added or removed.
 - PL's date column is headed "Document acceptance date", but its dates lie mostly in 2029–2031. The page shows
   the date with that caveat and does not call it an expiry.
 
@@ -141,8 +143,8 @@ For each brand and register, three random raw rows were compared with the snapsh
 status word and the firmware text. **27 / 27 matched**, and the row counts per brand and register are identical
 (AT: Deye 48, SolaX 183, Huawei 61; CZ: 50, 74, 19; SE: 108, 148, 59). Join check: Deye SUN-12K-SG04LP3-EU is on
 one page with AT "Ja - mit Einschränkung" (firmware 1150 note), BE listed, CZ (firmware 2005/2006-1160-1807), NL
-(generation and storage lists) and SE (Ver >= 1090). It has no PL entry, which matches the PDF.
-In the three brands: Deye 238 devices (136 in ≥ 2 lists), SolaX 518 (255), Huawei 129 (73).
+(generation and storage lists), SE (Ver >= 1090) and EE (battery: yes). It has no PL entry, which matches the PDF.
+In the three brands: Deye 296 devices (167 in ≥ 2 lists), SolaX 605 (257), Huawei 144 (81).
 SolaX cells all show "alias" because every list writes the maker differently ("SolaX Power", "SolaX Power
 Network Technology (Zhejiang) Co., Ltd.").
 

@@ -12,6 +12,7 @@ its terms allow personal use only, so nothing else from its rows is ever stored.
 import collections
 import csv
 import datetime
+import html
 import json
 import pathlib
 import re
@@ -254,6 +255,25 @@ def read_se():
             extra={"phases": s(r[5]), "source": s(r[6]), "comment": s(r[8])[:200] if len(r) > 8 else ""})
 
 
+# ---------------------------------------------------------------- EE (HTML: one accordion per maker)
+def read_ee():
+    f = one("ee_*.html")
+    meta["EE"] = {"file": f.name, "source_date": ""}  # the page carries no date
+    t = f.read_text(encoding="utf-8", errors="replace")
+    heads = list(re.finditer(r'accordion-button__text[^>]*>([^<]+)<', t))
+    for i, h in enumerate(heads):
+        block = t[h.end():heads[i + 1].start() if i + 1 < len(heads) else len(t)]
+        maker = html.unescape(h.group(1))
+        for row in re.findall(r"<tr class=\"table__row[^>]*>(.*?)</tr>", block, re.S)[1:]:
+            cells = re.findall(r"<td[^>]*>(.*?)</td>", row, re.S)
+            if len(cells) < 2:
+                continue
+            model = html.unescape(re.sub(r"<[^>]+>", " ", cells[0]))
+            battery = "yes" if "fill-primary" in cells[1] else "no" if "fill-danger" in cells[1] else ""
+            add("EE", maker, model, "hybrid" if battery == "yes" else "inverter", "listed", "listed",
+                extra={"battery": battery})
+
+
 # ---------------------------------------------------------------- PL (PDF, layout mode)
 PL_LABELS = ["Nr dokumentu", "Data akceptacji", "Wersja WOS", "Nazwa producenta", "Adres producenta",
              "Rodzaj Urządzenia", "Typ model", "PPM:", "Wersja"]
@@ -374,7 +394,7 @@ def read_pl():
                   f"{n_bad} text blocks without an Lp number")
 
 
-for fn in (read_at, read_be, read_nl, read_cz, read_se, read_pl):
+for fn in (read_at, read_be, read_nl, read_cz, read_se, read_pl, read_ee):
     before = len(entries)
     try:
         fn()

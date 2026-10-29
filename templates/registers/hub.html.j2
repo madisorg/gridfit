@@ -1,10 +1,10 @@
 {% extends "base.html.j2" %}
 {% block title %}Which EU grid registers list this inverter, battery or wallbox? — {{ SITE }}{% endblock %}
-{% block description %}One table across six national grid-connection lists (AT, BE, CZ, NL, PL, SE): {{ devices|n }} inverters, hybrids, batteries, plug-in units and wallboxes, with each list's own status, firmware and dates, and a log of what changed.{% endblock %}
+{% block description %}One table across seven national grid-connection lists (AT, BE, CZ, EE, NL, PL, SE): {{ devices|n }} inverters, hybrids, batteries, plug-in units and wallboxes, with each list's own status, firmware and dates, and a log of what changed.{% endblock %}
 {% block main %}
 <h1>Which EU grid registers list it?</h1>
 <p>Grid operators in several EU countries publish lists of the inverters, batteries and chargers they accept for connection.
-None of the lists refers to the others. This table puts {{ devices|n }} models from six of them side by side —
+None of the lists refers to the others. This table puts {{ devices|n }} models from seven of them side by side —
 {{ multi|n }} appear in two or more — with each list's own status word, firmware and dates, and a
 <a href="changes/">change log</a> of what was added, dropped or changed between refreshes.</p>
 <p class="note"><strong>The register is the authority; this is a cross-reference.</strong> An empty cell means we found no matching

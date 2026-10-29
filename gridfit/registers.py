@@ -26,7 +26,7 @@ UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like
       "Chrome/130.0 Safari/537.36")
 
 # Column order of the cross-view. AT-EV (the Austrian charger list) shows in the AT column.
-COUNTRIES = ["AT", "BE", "CZ", "NL", "PL", "SE"]
+COUNTRIES = ["AT", "BE", "CZ", "EE", "NL", "PL", "SE"]
 COUNTRY_OF = {"AT-EV": "AT"}
 
 REGISTERS = {
@@ -92,6 +92,20 @@ REGISTERS = {
         "files": [("cz_seznam", "url",
                    "https://www.cezdistribuce.cz/file/edee/distribuce/legislativa/seznam_schvalenych_stridacu.xlsx", "")],
     },
+    "EE": {
+        "country": "Estonia", "short": "Estonian Elektrilevi inverter list",
+        "name": "Inverterite nimekiri (Elektrilevi)",
+        "operator": "Elektrilevi OÜ (the largest distribution grid; Imatra Elekter publishes no list)",
+        "url": "https://elektrilevi.ee/et/inverterite-nimekiri",
+        "basis": "Elektrilevi checks RfG 2016/631 / EN 50549-1, the low-voltage and EMC directives and the CE declaration.",
+        "gate": "De facto: an unlisted inverter means extra documents with the connection application.",
+        "contains": "Grid PV and hybrid inverters by maker, with an \"Aku\" column (can a battery be connected). "
+                    "No firmware, certificate numbers or dates; the page itself is undated.",
+        "terms": "No reuse terms are stated.",
+        "use": "maker, model and the battery column, with a link to the list",
+        "date_label": "", "fw_label": "",
+        "files": [("ee_inverterite-nimekiri", "url", "https://elektrilevi.ee/et/inverterite-nimekiri", "")],
+    },
     "NL": {
         "country": "Netherlands", "short": "Dutch Netbeheer Nederland type-A list",
         "name": "Goedgekeurde omvormers type A (opwek + opslag)",
@@ -147,7 +161,6 @@ REGISTERS = {
 # Registers that exist but are not read, shown on the hub so the gap is visible.
 NOT_READ = [
     ("DE", "Germany", "ZEREZ (FGW)", "https://zerez.net/", "a web app; the public view needs checking and it holds no wallboxes"),
-    ("EE", "Estonia", "Elektrilevi inverter list", "https://www.elektrilevi.ee/", "planned; the page moved in October 2026"),
     ("IE", "Ireland", "ESB Networks LCT register", "https://www.esbnetworks.ie/about-us/projects/low-carbon-technology-register", "planned"),
     ("RO", "Romania", "Rețele Electrice inverter list", "https://www.reteleelectrice.ro/racordare/prosumator/", "planned"),
     ("UK", "United Kingdom", "ENA Type Test Register (Connect Direct)", "https://connect-direct.energynetworks.org/", "a web app; public access unverified"),
@@ -194,12 +207,12 @@ def download(root: Path, seen: str) -> Path:
                 url = href if href.startswith("http") else re.match(r"https?://[^/]+", url)[0] + href
                 name = f"{prefix}__{url.rsplit('/', 1)[-1]}"
             else:
-                ext = {"cz_seznam": ".xlsx", "be_c10_26": ".xlsx"}.get(prefix, ".xlsx")
+                ext = {"ee_inverterite-nimekiri": ".html"}.get(prefix, ".xlsx")
                 name = prefix + ext
             code, err = _curl(url, raw / name)
             size = (raw / name).stat().st_size if (raw / name).exists() else 0
             head = (raw / name).read_bytes()[:4] if size else b""
-            ok = code == "200" and size > 10_000 and (head.startswith(b"PK") or head.startswith(b"%PDF") or name.endswith(".csv"))
+            ok = code == "200" and size > 10_000 and (head.startswith(b"PK") or head.startswith(b"%PDF") or name.endswith((".csv", ".html")))
             print(f"  {reg}: {name} HTTP {code} {size} bytes {'ok' if ok else 'REJECTED'} {err}")
             if not ok and (raw / name).exists():
                 (raw / name).unlink()
