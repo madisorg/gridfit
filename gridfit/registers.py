@@ -411,22 +411,31 @@ def best(cell):
 
 
 # ---------------------------------------------------------------- v1 family pages
-# What each list covers, by GridFit device class. "list": the list covers this class, so an empty cell on a
-# family page means "no model matched". "free": the country has no listing for this class - a consumer
-# device (a wallbox is a load, not a generating unit), nothing to check against a list. "unknown": not yet
-# confirmed whether the country lists or otherwise gates this class. Wallboxes are listed only in AT (the
-# OVE R 37 charger list); BE's C10/26 lists bidirectional chargers only. Meters and energy managers are
-# not grid-connection units anywhere. AT-EV folds into AT on the family pages.
+# What each list covers, by GridFit device class (source: the EU+ grid-connection table of 2026-10-29,
+# kataloogid/reference/gridfit-eu-liitumistabel.md; only rows marked checked or found by search are used here).
+#   "list"    the list covers this class: an empty cell on a family page means "no model matched"
+#   "free"    the country has no listing and no model-level rule for this class: a consumer device
+#             (a wallbox is a load, not a generating unit), nothing to check
+#   "rule"    no list, but a rule applies (a notification, a registration, a ban): see the note
+#   "unknown" not yet confirmed whether the country lists or otherwise gates this class
+# Wallboxes are listed in AT (OVE R 37; TOR chargers > 3.68 kVA), GB and IE; BE's C10/26 lists bidirectional
+# chargers only. Meters and energy managers are not grid-connection units anywhere. AT-EV folds into AT.
 SCOPE = {
     "AT": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "list", "meter": "free"},
-    "CZ": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
-    "EE": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "free", "meter": "free"},
+    "CZ": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "rule", "wallbox": "free", "meter": "free"},
+    "EE": {"inverter": "list", "hybrid": "list", "battery": "rule", "plug-in": "unknown", "wallbox": "free", "meter": "free"},
     "NL": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
-    "PL": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
-    "SE": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "list", "wallbox": "unknown", "meter": "free"},
+    "PL": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "rule", "wallbox": "free", "meter": "free"},
+    "SE": {"inverter": "list", "hybrid": "list", "battery": "list", "plug-in": "rule", "wallbox": "unknown", "meter": "free"},
 }
 SCOPE_NOTE = {
-    "EE": {"wallbox": "Elektrilevi's list covers inverters only; a charger is a load, there is nothing to list"},
+    "CZ": {"plug-in": "no list; each DSO has its own notification rule for plug-in units",
+           "wallbox": "no list and no model-level rule; the connection capacity is what counts"},
+    "EE": {"battery": "Elektrilevi's list has no pure AC-coupled batteries; the connection application still applies",
+           "wallbox": "Elektrilevi's list covers inverters only; a charger is a load, there is nothing to list"},
+    "PL": {"plug-in": "no list; a micro-installation notification to the DSO applies",
+           "wallbox": "no list and no model-level rule"},
+    "SE": {"plug-in": "plug-in (socket-connected) solar is not allowed in Sweden"},
 }
 
 

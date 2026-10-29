@@ -22,11 +22,14 @@
 "inverter": "list",
 "hybrid": "list",
 "battery": "list",
-"plug-in": "list",
-"wallbox": "unknown",
+"plug-in": "rule",
+"wallbox": "free",
 "meter": "free"
 },
-"scope_note": {}
+"scope_note": {
+"plug-in": "no list; each DSO has its own notification rule for plug-in units",
+"wallbox": "no list and no model-level rule; the connection capacity is what counts"
+}
 },
 "EE": {
 "name": "Estonia - Inverterite nimekiri (Elektrilevi)",
@@ -35,12 +38,13 @@
 "scope": {
 "inverter": "list",
 "hybrid": "list",
-"battery": "list",
-"plug-in": "list",
+"battery": "rule",
+"plug-in": "unknown",
 "wallbox": "free",
 "meter": "free"
 },
 "scope_note": {
+"battery": "Elektrilevi's list has no pure AC-coupled batteries; the connection application still applies",
 "wallbox": "Elektrilevi's list covers inverters only; a charger is a load, there is nothing to list"
 }
 },
@@ -66,11 +70,14 @@
 "inverter": "list",
 "hybrid": "list",
 "battery": "list",
-"plug-in": "list",
-"wallbox": "unknown",
+"plug-in": "rule",
+"wallbox": "free",
 "meter": "free"
 },
-"scope_note": {}
+"scope_note": {
+"plug-in": "no list; a micro-installation notification to the DSO applies",
+"wallbox": "no list and no model-level rule"
+}
 },
 "SE": {
 "name": "Sweden - Rikta Rätt — växelriktare för solceller",
@@ -80,11 +87,13 @@
 "inverter": "list",
 "hybrid": "list",
 "battery": "list",
-"plug-in": "list",
+"plug-in": "rule",
 "wallbox": "unknown",
 "meter": "free"
 },
-"scope_note": {}
+"scope_note": {
+"plug-in": "plug-in (socket-connected) solar is not allowed in Sweden"
+}
 }
 },
 "models": [

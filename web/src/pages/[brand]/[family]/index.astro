@@ -51,9 +51,11 @@ const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
         {ha.length > 0 && <span class="muted">{ha.length} integration{ha.length === 1 ? "" : "s"}</span>}</dd></div>
       <div><dt>evcc</dt><dd><Status kind={s.evcc} />{ev.length > 0 && <Status kind={ctl(ev) ? "write" : "read"} />}
         {ev.length > 0 && ev.every((r) => r.sponsor) && <Status kind="sponsor" />}</dd></div>
-      <div><dt>Grid registers</dt><dd><Matrix cells={cells} /></dd></div>
+      <div><dt>Grid registers</dt><dd><Matrix cells={cells} cls={f.class} />
+        {REG_KEYS.filter((k) => cells[k] === "rule" && data.registers[k].scope_note?.[f.class]).map((k) => (
+          <span class="note small">{k}: {data.registers[k].scope_note![f.class]}</span>))}</dd></div>
       <div><dt>Register match</dt><dd>{f.models.length ? <span>model-code pattern{trust && `, brand ${trust}`} — a pointer, confirm in the register</span>
-        : Object.values(cells).every((v) => v === "free") ? <span class="muted">no country here lists this class — nothing to check</span>
+        : Object.values(cells).every((v) => v === "free" || v === "rule") ? <span class="muted">no country here lists this class — nothing to check against a list</span>
         : <span class="muted">no register model matched</span>}</dd></div>
       <div><dt>Checked</dt><dd><span class="code">{data.seen}</span></dd></div>
     </dl>

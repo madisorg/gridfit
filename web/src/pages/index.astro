@@ -49,10 +49,11 @@ const sources = [
       <div class="sec">
         <header><h2>What the marks mean</h2></header>
         <div class="legend">
-          <span><Matrix cells={{ AT: "listed", CZ: "restricted", EE: "free", NL: "unknown" }} titled={false} /></span>
+          <span><Matrix cells={{ AT: "listed", CZ: "restricted", EE: "free", NL: "rule", PL: "unknown" }} titled={false} /></span>
           <span>filled = the register lists a model of this family · outlined * = listed with restrictions or time-limited ·
             faint = the list covers this class but no model was found, which is <strong>not</strong> “not approved” ·
             dotted green = the country has no listing for this class (a wallbox is a load, a meter is not a grid unit), nothing to check ·
+            dotted amber = no list, but a rule applies (a notification, a registration, a ban — the family page says which) ·
             ? = not yet confirmed whether the country lists this class</span>
         </div>
         <p class="small muted">Local = the integration talks to the device on your network. Control = it exposes settable entities (HA) or

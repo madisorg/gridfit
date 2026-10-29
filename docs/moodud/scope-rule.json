@@ -1,0 +1,1070 @@
+{
+ "scope3--legend--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 26164,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 273
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    79,
+    17,
+    ". WebastoLive"
+   ],
+   [
+    88,
+    17,
+    ". WebastoNEXT"
+   ],
+   [
+    87,
+    17,
+    ". WebastoUnite"
+   ],
+   [
+    128,
+    17,
+    ". WeidmüllerAC Smart"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM110-RT"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM111-RT"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM120-RT"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM122-RT"
+   ],
+   [
+    140,
+    17,
+    ". YoulessEnergy Moni"
+   ],
+   [
+    64,
+    17,
+    ". YouliqOne"
+   ],
+   [
+    168,
+    17,
+    ". ZCS AzzurroHybrid "
+   ],
+   [
+    124,
+    17,
+    ". ZCS AzzurroInverte"
+   ],
+   [
+    76,
+    17,
+    ". Zendure3CT"
+   ],
+   [
+    130,
+    17,
+    ". ZeversolarZeversol"
+   ],
+   [
+    148,
+    17,
+    ". ZuidwijkSlimmeLeze"
+   ],
+   [
+    240,
+    17,
+    ". ZuidwijkSlimmeLeze"
+   ],
+   [
+    167,
+    17,
+    ". ZuidwijkSlimmeLeze"
+   ],
+   [
+    120,
+    17,
+    ". EE register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". NL register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". PL register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". SE register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". AT register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". CZ register snapsh"
+   ]
+  ],
+  "nhit": 28,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 276,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "4px": 5,
+   "2px": 51
+  },
+  "kontrast": {
+   "n": 276,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--legend--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 26164,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 273
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    79,
+    17,
+    ". WebastoLive"
+   ],
+   [
+    88,
+    17,
+    ". WebastoNEXT"
+   ],
+   [
+    87,
+    17,
+    ". WebastoUnite"
+   ],
+   [
+    128,
+    17,
+    ". WeidmüllerAC Smart"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM110-RT"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM111-RT"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM120-RT"
+   ],
+   [
+    164,
+    17,
+    ". WeidmüllerEM122-RT"
+   ],
+   [
+    140,
+    17,
+    ". YoulessEnergy Moni"
+   ],
+   [
+    64,
+    17,
+    ". YouliqOne"
+   ],
+   [
+    168,
+    17,
+    ". ZCS AzzurroHybrid "
+   ],
+   [
+    124,
+    17,
+    ". ZCS AzzurroInverte"
+   ],
+   [
+    76,
+    17,
+    ". Zendure3CT"
+   ],
+   [
+    130,
+    17,
+    ". ZeversolarZeversol"
+   ],
+   [
+    148,
+    17,
+    ". ZuidwijkSlimmeLeze"
+   ],
+   [
+    240,
+    17,
+    ". ZuidwijkSlimmeLeze"
+   ],
+   [
+    167,
+    17,
+    ". ZuidwijkSlimmeLeze"
+   ],
+   [
+    120,
+    17,
+    ". EE register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". NL register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". PL register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". SE register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". AT register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". CZ register snapsh"
+   ]
+  ],
+  "nhit": 28,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 276,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "4px": 5,
+   "2px": 51
+  },
+  "kontrast": {
+   "n": 276,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--legend--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 114936,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 23
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 3,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 25,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 25,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--legend--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 114936,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 23
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 3,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 25,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {},
+  "kontrast": {
+   "n": 25,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-plugin--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2055,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 118
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    66,
+    17,
+    ". APsystems"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    141,
+    17,
+    ". APsystems ECU Read"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    117,
+    17,
+    ". APsystems Modbus"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    127,
+    17,
+    ". apsystems-ez1 (EZ1"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    120,
+    17,
+    ". EE register snapsh"
+   ],
+   [
+    246,
+    17,
+    ". APsystems Modbus —"
+   ],
+   [
+    120,
+    17,
+    ". NL register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". PL register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". SE register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". AT register snapsh"
+   ],
+   [
+    269,
+    17,
+    ". APsystems ECU Read"
+   ],
+   [
+    120,
+    17,
+    ". CZ register snapsh"
+   ],
+   [
+    32,
+    17,
+    ". EZ1D"
+   ]
+  ],
+  "nhit": 24,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 124,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 6,
+  "radius": {
+   "2px": 12,
+   "50%": 2
+  },
+  "kontrast": {
+   "n": 124,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-plugin--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2055,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 118
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    66,
+    17,
+    ". APsystems"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    141,
+    17,
+    ". APsystems ECU Read"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    117,
+    17,
+    ". APsystems Modbus"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    127,
+    17,
+    ". apsystems-ez1 (EZ1"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    120,
+    17,
+    ". EE register snapsh"
+   ],
+   [
+    246,
+    17,
+    ". APsystems Modbus —"
+   ],
+   [
+    120,
+    17,
+    ". NL register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". PL register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". SE register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". AT register snapsh"
+   ],
+   [
+    269,
+    17,
+    ". APsystems ECU Read"
+   ],
+   [
+    120,
+    17,
+    ". CZ register snapsh"
+   ],
+   [
+    32,
+    17,
+    ". EZ1D"
+   ]
+  ],
+  "nhit": 24,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 124,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 6,
+  "radius": {
+   "2px": 12,
+   "50%": 2
+  },
+  "kontrast": {
+   "n": 124,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-plugin--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4961,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 6,
+  "radius": {
+   "2px": 4
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-plugin--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4961,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 6,
+  "radius": {
+   "2px": 4
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-wallbox--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1669,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 105
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    221,
+    17,
+    ". deye-evse (SUN-EVS"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    221,
+    17,
+    ". deye-evse (SUN-EVS"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    120,
+    17,
+    ". EE register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". NL register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". PL register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". SE register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". AT register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". CZ register snapsh"
+   ],
+   [
+    147,
+    17,
+    ". SUN-EVSE11K01-EU-A"
+   ],
+   [
+    147,
+    17,
+    ". SUN-EVSE22K01-EU-A"
+   ]
+  ],
+  "nhit": 20,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 111,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {
+   "2px": 10,
+   "4px": 1
+  },
+  "kontrast": {
+   "n": 111,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-wallbox--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1669,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 105
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    221,
+    17,
+    ". deye-evse (SUN-EVS"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    221,
+    17,
+    ". deye-evse (SUN-EVS"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    120,
+    17,
+    ". EE register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". NL register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". PL register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". SE register snapsh"
+   ],
+   [
+    119,
+    17,
+    ". AT register snapsh"
+   ],
+   [
+    120,
+    17,
+    ". CZ register snapsh"
+   ],
+   [
+    147,
+    17,
+    ". SUN-EVSE11K01-EU-A"
+   ],
+   [
+    147,
+    17,
+    ". SUN-EVSE22K01-EU-A"
+   ]
+  ],
+  "nhit": 20,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 111,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {
+   "2px": 10,
+   "4px": 1
+  },
+  "kontrast": {
+   "n": 111,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-wallbox--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3202,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 31
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 34,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {
+   "2px": 4
+  },
+  "kontrast": {
+   "n": 34,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "scope3--pere-wallbox--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 3202,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 31
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 34,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {
+   "2px": 4
+  },
+  "kontrast": {
+   "n": 34,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}
