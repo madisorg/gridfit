@@ -109,7 +109,7 @@
 - {repo: jnctech/hinen-solar-homeassistant, brands: [Hinen], class: hybrid, family: "Hinen inverters and batteries", conn: [cloud]}
 - {repo: PiotrMachowski/Home-Assistant-custom-components-GNE-PV-Monitoring, brands: [GNE], class: inverter, family: "GNE PV monitoring", conn: [cloud]}
 - {repo: KRoperUK/sungrow-hass, brands: [Sungrow], class: hybrid, family: "iSolarCloud API", conn: [cloud]}
-- {repo: SunnySkye/sungrow-local, brands: [Sungrow], class: inverter, family: "SG5K-D with WiFi V31 (read-only)", conn: [http], families: ["SG string inverters"]}
+- {repo: SunnySkye/sungrow-local, brands: [Sungrow], class: inverter, family: "SG5K-D with WiFi V31 (read-only)", conn: [modbus_tcp], families: ["SG string inverters"]}
 - {repo: thokaro/solarwatt-manager-homeassistant, brands: [Solarwatt], class: meter, family: "SOLARWATT Manager flex/rail", conn: [http]}
 # --- batteries / storage ---
 - {repo: bbr111/byd_hvs, brands: [BYD], class: battery, family: "Battery-Box HVS/HVM", conn: [other]}

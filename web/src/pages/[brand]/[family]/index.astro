@@ -31,7 +31,7 @@ const items = [
   ...REG_KEYS.filter((k) => cells[k]).map((k) => ({ label: `${k} register snapshot`, href: data.registers[k].url, date: data.registers[k].snapshot, kind: "reg" as const })),
   { label: "Sources read by GridFit", date: data.seen, kind: "check" as const },
 ];
-const issue = `${REPO}/issues/new?title=${encodeURIComponent(title)}`;
+const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURIComponent(title + ": ")}`;
 const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
 ---
 <Base title={`${title}: local control with Home Assistant and evcc`} description={f.faq.a}>

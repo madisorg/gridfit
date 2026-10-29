@@ -7,6 +7,7 @@ import headFont from "../fonts/barlow-semi-condensed-latin-600-normal.woff2?url"
 interface Props { title?: string; description?: string; current?: string }
 const { title, description, current } = Astro.props;
 const analytics = process.env.GRIDFIT_ANALYTICS ?? "";
+const desc = description ?? "Which solar inverters, home batteries and wallboxes work locally with Home Assistant and evcc — and which EU grid registers list them. Built only from open sources, every row linked to its source.";
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const nav = [["/about/", "How we know"], ["/registers/", "Registers"], ["/changelog/", "Changes"]];
 ---
@@ -16,8 +17,17 @@ const nav = [["/about/", "How we know"], ["/registers/", "Registers"], ["/change
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title ? `${title} — ${SITE}` : `${SITE} — ${TAGLINE}`}</title>
-<meta name="description" content={description ?? "Which solar inverters, home batteries and wallboxes work locally with Home Assistant and evcc — and which EU grid registers list them. Built only from open sources, every row linked to its source."}>
+<meta name="description" content={desc}>
 {canonical && <link rel="canonical" href={canonical}>}
+<meta property="og:type" content="website">
+<meta property="og:site_name" content={SITE}>
+<meta property="og:title" content={title ?? `${SITE} — ${TAGLINE}`}>
+<meta property="og:description" content={desc}>
+{canonical && <meta property="og:url" content={canonical}>}
+{Astro.site && <meta property="og:image" content={new URL("/og.png", Astro.site).href}>}
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content={Astro.site ? "summary_large_image" : "summary"}>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preload" href={textFont} as="font" type="font/woff2" crossorigin>
 <link rel="preload" href={headFont} as="font" type="font/woff2" crossorigin>
@@ -32,7 +42,7 @@ const nav = [["/about/", "How we know"], ["/registers/", "Registers"], ["/change
     <a class="mark" href="/">{SITE}</a>
     <nav class="nav" aria-label="Site">
       {nav.map(([href, label]) => <a href={href} aria-current={current === href ? "page" : undefined}>{label}</a>)}
-      <a class="fix" href={REPO}>Fix a row</a>
+      <a class="fix" href={`${REPO}/issues/new/choose`}>Fix a row</a>
     </nav>
   </div>
 </header>

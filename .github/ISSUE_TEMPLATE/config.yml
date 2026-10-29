@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Add a brand or family that is missing
+    url: https://github.com/madisorg/gridfit/blob/main/README.md#how-a-row-is-decided
+    about: How rows are built, and which curated file to edit for a pull request.

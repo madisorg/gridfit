@@ -12,7 +12,7 @@ Deye:
   - {name: "SUN-SG LP1 single-phase LV hybrid", class: hybrid, match: '^SUN\d.*SG\d+LP1', evcc: [deye-storage]}
   - {name: "SUN-SG LP3 three-phase LV hybrid", class: hybrid, match: '^SUN\d.*SG\d+LP3', evcc: [deye-hybrid-3p]}
   - {name: "SUN-SG HP3 three-phase HV hybrid", class: hybrid, match: '^SUN\d.*SG\d+HP3', evcc: [deye-hybrid-3p]}
-  - {name: "SUN-G string inverters", class: inverter, match: '^SUN\d+K?G\d', evcc: [deye-string]}
+  - {name: "SUN-G string inverters", class: inverter, match: '^SUN\d+KG\d', evcc: [deye-string]}  # the K (kW) keeps SUN300G3..SUN2000G3 microinverters out
   - {name: "SUN-M / SUN-G3 microinverters", class: plug-in, match: '^SUN(M\d|\d{3,4}G)', evcc: [deye-mi, deye-mi-solarman]}
   - {name: "SUN-EVSE wallboxes", class: wallbox, match: '^SUNEVSE', evcc: [deye-evse]}
 SolaX:
@@ -84,13 +84,14 @@ Enphase:
   - {name: "IQ microinverters with IQ Gateway", class: plug-in, match: '^IQ\d', evcc: [enphase, enphase-modbus]}
   - {name: "IQ Battery / Encharge", class: battery, match: '^(IQBATTERY|ENCHARGE|B\d)', evcc: [enphase]}
 Hoymiles:
-  - {name: "HM / HMS / HMT microinverters", class: plug-in, match: '^(HM|HMS|HMT|MI|MIS|MIT)\d', evcc: [hoymiles-ahoydtu, hoymiles-opendtu, hoymiles-dtu-mb, hoymiles-dtugateway]}
+  - {name: "HM / HMS / HMT microinverters", class: plug-in, match: '^(HM|HMS|HMT|MI|MIS)\d', evcc: [hoymiles-ahoydtu, hoymiles-opendtu, hoymiles-dtu-mb, hoymiles-dtugateway]}
+  - {name: "MIT three-phase string inverters", class: inverter, match: '^MIT\d'}
   - {name: "HYS / HiOne / HIT / HIS hybrids", class: hybrid, match: '^(HYS|HYT|HIONE|AIONE|HIT|HIS|HB)'}
 APsystems:
   - {name: "EZ1 plug-in microinverter", class: plug-in, match: '^EZ1', evcc: [apsystems-ez1]}
   - {name: "DS3 / QS1 / QT2 / YC microinverters", class: plug-in, match: '^(DS3|QS1|QT2|YC)'}
 Anker SOLIX:
-  - {name: "SOLIX Solarbank (plug-in)", class: plug-in, match: '^A17C|^ASPE', evcc: [anker-solix-solarbank-max-ac]}
+  - {name: "SOLIX Solarbank (plug-in)", class: plug-in, match: '^A17C|^ASPE|^AE103', evcc: [anker-solix-solarbank-max-ac]}  # AE103x = Solarbank 4 (the AT list says so)
   - {name: "SOLIX X1 hybrid", class: hybrid, match: '^X1|^AE', evcc: [anker-solix-x1]}
 Zendure:
   - {name: "SolarFlow / Hyper / AIO", class: plug-in, match: '^ZD(SF|HYP|A)', evcc: [zendure-hyper, zendure-solarflow-battery, zendure-solarflow-pro]}

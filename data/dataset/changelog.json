@@ -1,6 +1,21 @@
 [
  {
   "date": "2026-10-29",
+  "added": [
+   "hacs:HQJaTu/hass-hoymiles-solarpv:Hoymiles | MIT three-phase string inverters"
+  ],
+  "removed": [],
+  "changed": [
+   {
+    "row": "hacs:SunnySkye/sungrow-local:Sungrow | SG string inverters",
+    "field": "conn",
+    "old": "http",
+    "new": "modbus_tcp"
+   }
+  ]
+ },
+ {
+  "date": "2026-10-29",
   "added": [],
   "removed": [],
   "changed": [],

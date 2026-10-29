@@ -988,31 +988,6 @@
     "trust": "exact"
    },
    {
-    "model": "A-SPE",
-    "registers": {
-     "AT": "listed with restrictions"
-    },
-    "trust": "exact"
-   }
-  ]
- },
- {
-  "brand": "Anker SOLIX",
-  "family": "SOLIX X1 hybrid",
-  "class": "hybrid",
-  "curated": true,
-  "faq": {
-   "q": "Does Anker SOLIX SOLIX X1 hybrid work locally with Home Assistant?",
-   "a": "Yes, according to the public sources: the HACS integration “Anker Solix Official” talks to it over the local network and exposes settable entities, not only sensors; evcc supports it locally for metering."
-  },
-  "registers": [
-   "AT",
-   "CZ",
-   "NL",
-   "SE"
-  ],
-  "models": [
-   {
     "model": "AE1033Z1",
     "registers": {
      "AT": "listed with restrictions",
@@ -1042,6 +1017,31 @@
     },
     "trust": "exact"
    },
+   {
+    "model": "A-SPE",
+    "registers": {
+     "AT": "listed with restrictions"
+    },
+    "trust": "exact"
+   }
+  ]
+ },
+ {
+  "brand": "Anker SOLIX",
+  "family": "SOLIX X1 hybrid",
+  "class": "hybrid",
+  "curated": true,
+  "faq": {
+   "q": "Does Anker SOLIX SOLIX X1 hybrid work locally with Home Assistant?",
+   "a": "Yes, according to the public sources: the HACS integration “Anker Solix Official” talks to it over the local network and exposes settable entities, not only sensors; evcc supports it locally for metering."
+  },
+  "registers": [
+   "AT",
+   "CZ",
+   "NL",
+   "SE"
+  ],
+  "models": [
    {
     "model": "AE1113Z1-35",
     "registers": {
@@ -2694,22 +2694,12 @@
    "a": "Yes, according to the public sources: the HACS integration “Solarman” talks to it over the local network and exposes settable entities, not only sensors; evcc supports it locally for metering."
   },
   "registers": [
-   "AT",
    "CZ",
    "EE",
    "NL",
    "SE"
   ],
   "models": [
-   {
-    "model": "SUN1000G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
    {
     "model": "SUN-100K-G03",
     "registers": {
@@ -2846,15 +2836,6 @@
     "trust": "exact"
    },
    {
-    "model": "SUN1300G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
     "model": "SUN-130K-G01P3-EU-AM8",
     "registers": {
      "EE": "listed",
@@ -2931,24 +2912,6 @@
     "trust": "alias"
    },
    {
-    "model": "SUN1600G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "SUN1800G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
     "model": "SUN-18K-G04",
     "registers": {
      "EE": "listed",
@@ -2970,15 +2933,6 @@
      "NL": "listed"
     },
     "trust": "exact"
-   },
-   {
-    "model": "SUN2000G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
    },
    {
     "model": "SUN-20K-G04",
@@ -3030,22 +2984,6 @@
     "model": "SUN-2K-G04P1-EU-AM1",
     "registers": {
      "NL": "listed"
-    },
-    "trust": "exact"
-   },
-   {
-    "model": "SUN300G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "SUN300G3-EU-230 mit SUN-MI-RELAY-01",
-    "registers": {
-     "AT": "listed with restrictions"
     },
     "trust": "exact"
    },
@@ -3163,14 +3101,6 @@
     "trust": "alias"
    },
    {
-    "model": "SUN400G3-EU-230",
-    "registers": {
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "exact"
-   },
-   {
     "model": "Sun-40K-G03",
     "registers": {
      "EE": "listed",
@@ -3253,22 +3183,6 @@
     "trust": "exact"
    },
    {
-    "model": "SUN500G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "SUN500G3-EU-230 mit SUN-MI-RELAY-01",
-    "registers": {
-     "AT": "listed with restrictions"
-    },
-    "trust": "exact"
-   },
-   {
     "model": "Sun-50K-G03",
     "registers": {
      "EE": "listed",
@@ -3339,22 +3253,6 @@
     "model": "SUN-5K-G06P3-EU-BM2-P1",
     "registers": {
      "CZ": "listed"
-    },
-    "trust": "exact"
-   },
-   {
-    "model": "SUN600G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "SUN600G3-EU-230 mit SUN-MI-RELAY-01",
-    "registers": {
-     "AT": "listed with restrictions"
     },
     "trust": "exact"
    },
@@ -3484,22 +3382,6 @@
     "trust": "exact"
    },
    {
-    "model": "SUN800G3-EU-230",
-    "registers": {
-     "EE": "listed",
-     "NL": "listed",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "SUN800G3-EU-230 mit SUN-MI-RELAY-01",
-    "registers": {
-     "AT": "listed with restrictions"
-    },
-    "trust": "exact"
-   },
-   {
     "model": "SUN-80K-G03",
     "registers": {
      "EE": "listed",
@@ -3615,9 +3497,128 @@
   },
   "registers": [
    "AT",
-   "EE"
+   "EE",
+   "NL",
+   "SE"
   ],
   "models": [
+   {
+    "model": "SUN1000G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN1300G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN1600G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN1800G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN2000G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN300G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN300G3-EU-230 mit SUN-MI-RELAY-01",
+    "registers": {
+     "AT": "listed with restrictions"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "SUN400G3-EU-230",
+    "registers": {
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "SUN500G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN500G3-EU-230 mit SUN-MI-RELAY-01",
+    "registers": {
+     "AT": "listed with restrictions"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "SUN600G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN600G3-EU-230 mit SUN-MI-RELAY-01",
+    "registers": {
+     "AT": "listed with restrictions"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "SUN800G3-EU-230",
+    "registers": {
+     "EE": "listed",
+     "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN800G3-EU-230 mit SUN-MI-RELAY-01",
+    "registers": {
+     "AT": "listed with restrictions"
+    },
+    "trust": "exact"
+   },
    {
     "model": "SUN-M130G4-EU-Q0",
     "registers": {
@@ -16069,70 +16070,6 @@
      "AT": "listed with restrictions"
     },
     "trust": "exact"
-   },
-   {
-    "model": "MIT-4000-8T",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-4000-8TL",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-4500-8T",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-4500-8TL",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-5000-8T",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-5000-8TL",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-5500-12T",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "MIT-6000-12T",
-    "registers": {
-     "AT": "listed with restrictions",
-     "SE": "listed"
-    },
-    "trust": "alias"
    }
   ]
  },
@@ -16797,6 +16734,86 @@
      "AT": "listed with restrictions",
      "EE": "listed",
      "NL": "listed",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   }
+  ]
+ },
+ {
+  "brand": "Hoymiles",
+  "family": "MIT three-phase string inverters",
+  "class": "inverter",
+  "curated": true,
+  "faq": {
+   "q": "Does Hoymiles MIT three-phase string inverters work locally with Home Assistant?",
+   "a": "Yes, according to the public sources: the HACS integration “Hoymiles SolarPV” talks to it over the local network, read-only as far as we can tell."
+  },
+  "registers": [
+   "AT",
+   "SE"
+  ],
+  "models": [
+   {
+    "model": "MIT-4000-8T",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-4000-8TL",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-4500-8T",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-4500-8TL",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-5000-8T",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-5000-8TL",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-5500-12T",
+    "registers": {
+     "AT": "listed with restrictions",
+     "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "MIT-6000-12T",
+    "registers": {
+     "AT": "listed with restrictions",
      "SE": "listed"
     },
     "trust": "alias"

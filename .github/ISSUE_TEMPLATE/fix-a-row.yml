@@ -1,0 +1,45 @@
+name: Fix a row
+description: A device row is wrong or missing (local vs cloud, read vs control, connection, register match).
+title: "<brand> <family or model>: "
+labels: ["data"]
+body:
+  - type: input
+    id: model
+    attributes:
+      label: Brand and model
+      description: The model code as printed on the device or in the register, e.g. Deye SUN-12K-SG04LP3-EU.
+    validations:
+      required: true
+  - type: dropdown
+    id: what
+    attributes:
+      label: What is wrong
+      options:
+        - Works locally but the row says cloud (or the other way round)
+        - Can be controlled but the row says read only (or the other way round)
+        - Wrong connection (Modbus TCP / RTU / HTTP / MQTT / BLE / OCPP)
+        - Integration or evcc template missing from the row
+        - Model matched to the wrong family
+        - Register listing wrong or missing
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: What it should say
+      description: One or two sentences. "My X does Modbus TCP since firmware Y" is exactly what is needed.
+    validations:
+      required: true
+  - type: input
+    id: firmware
+    attributes:
+      label: Firmware or logger version (if it matters)
+      placeholder: e.g. WiBLE logger, firmware 1.0.4
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link that shows it — integration docs, a release note, a forum thread, the register row, or "tested on my own device".
+    validations:
+      required: true
