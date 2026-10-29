@@ -3,7 +3,7 @@ import type { APIRoute } from "astro";
 import { data, brands, REPO, SITE, TAGLINE } from "../lib/data";
 
 export const GET: APIRoute = () => new Response([
-  `# ${SITE}`, "", `> ${TAGLINE} An open dataset of which solar inverters, hybrids, home batteries and wallboxes work locally with Home Assistant (core and HACS) and evcc, whether they can be controlled or only read, and which EU grid registers (AT, CZ, EE, NL, PL, SE) list their models; /registers/ cross-references seven national grid-connection lists with each list's own status, firmware and dates.`, "",
+  `# ${SITE}`, "", `> ${TAGLINE} An open dataset with two answers per solar inverter, hybrid, home battery and wallbox: whether it works locally with Home Assistant (core and HACS) and evcc and can be controlled or only read, and which EU grid-connection lists (AT, CZ, EE, NL, PL, SE on family pages; AT, BE, CZ, EE, NL, PL, SE in /registers/) carry its models, with each list's own status, firmware and dates.`, "",
   `- ${data.families.length} product families, ${brands().length} brands, checked ${data.seen}.`,
   "- An empty cell means \"not found\", never \"does not work\" or \"not approved\". Every row carries its source URL and the date it was seen.", "",
   "## Data", "",

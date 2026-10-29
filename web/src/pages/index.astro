@@ -4,6 +4,7 @@ import FamilyTable from "../components/FamilyTable.astro";
 import Matrix from "../components/Matrix.astro";
 import Timeline from "../components/Timeline.astro";
 import { data, brands, CLASS, CONN, REG_KEYS, TAGLINE, summary } from "../lib/data";
+import { devices as regDevices, COUNTRIES } from "../lib/registers";
 
 // curated families (the brands people ask about) first, the long tail after — same order as v1
 const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
@@ -11,6 +12,9 @@ const fams = [...data.families].sort((a, b) =>
   (a.curated === b.curated ? 0 : a.curated ? -1 : 1) || cmp(a.brand.toLowerCase(), b.brand.toLowerCase()) || cmp(a.name.toLowerCase(), b.name.toLowerCase()));
 const conns = Object.keys(CONN).filter((c) => fams.some((f) => summary(f).conn.includes(c)));
 const nModels = data.families.reduce((n, f) => n + f.models.length, 0);
+// two kinds on the home page: everything that feeds the grid under one icon, wallboxes under the other
+const INV = ["inverter", "hybrid", "battery", "plug-in"];
+const nInv = fams.filter((f) => INV.includes(f.class)).length, nEv = fams.filter((f) => f.class === "wallbox").length;
 const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
 const sources = [
   ...REG_KEYS.map((k) => ({ label: `${k} register snapshot`, href: data.registers[k].url, date: data.registers[k].snapshot, kind: "reg" as const })),
@@ -19,16 +23,25 @@ const sources = [
 ---
 <Base>
   <section class="ask" aria-labelledby="q-h">
-    <h1 id="q-h">{TAGLINE}</h1>
+    <h1 id="q-h" class="vh">{TAGLINE}</h1>
+    <div class="kind hero" role="group" aria-label="Device kind">
+      <button type="button" id="kind-inv" data-g="inv" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg>
+        Inverters <b>{nInv}</b></button>
+      <button type="button" id="kind-ev" data-g="ev" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>
+        Wallboxes <b>{nEv}</b></button>
+    </div>
     <form class="search" role="search" onsubmit="return false">
       <label class="vh" for="q">Model code, brand or family</label>
       <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
     </form>
     <div class="hits" id="hits" aria-live="polite"></div>
-    <p class="lede">Solar inverters, hybrids, home batteries and wallboxes: which Home Assistant and evcc integrations talk to them on your
-      network, whether they can <em>control</em> them or only read, and which EU grid registers list their models. Every row links to its source.</p>
+    <p class="lede">Local or cloud, read or control with Home Assistant and evcc — and which EU grid-connection lists carry the model
+      (<a href="/registers/">register cross-view</a>, also for models with no smart-home route yet). Every row links to its source.</p>
     <p class="facts"><span><b>{nf(data.families.length)}</b> families</span><span><b>{nf(brands().length)}</b> brands</span>
-      <span><b>{nf(data.rows.length)}</b> integration rows</span><span><b>{nf(nModels)}</b> register models matched</span><span>checked <b>{data.seen}</b></span></p>
+      <span><b>{nf(data.rows.length)}</b> integration rows</span><span><b>{nf(regDevices.length)}</b> devices in <b>{COUNTRIES.length}</b> grid lists</span>
+      <span>checked <b>{data.seen}</b></span></p>
   </section>
 
   <div class="layout">
@@ -76,6 +89,9 @@ const sources = [
   const ids = ["brand", "cls", "ctl", "conn", "reg"];
   const q = $<HTMLInputElement>("q");
   const has = (list: string | undefined, v: string) => (" " + (list ?? "") + " ").includes(" " + v + " ");
+  const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
+  const kinds = [...document.querySelectorAll<HTMLButtonElement>(".kind button")];
+  let g = ""; // "" = every kind, "inv" = inverters and batteries, "ev" = wallboxes
 
   function apply() {
     const v = Object.fromEntries(ids.map((id) => [id, $<HTMLSelectElement>(id).value]));
@@ -84,6 +100,7 @@ const sources = [
     rows.forEach((r, i) => {
       const d = r.dataset;
       const ok = (!s || (text ??= rows.map((r) => r.textContent!.toLowerCase()))[i].includes(s)) && (!v.brand || d.b === v.brand) && (!v.cls || d.c === v.cls) &&
+        (!g || (g === "inv" ? INV.has(d.c!) : d.c === "wallbox")) &&
         (!v.conn || has(d.n, v.conn)) && (!v.reg || has(d.r, v.reg)) &&
         (!v.ctl || (v.ctl === "ha" && d.ha === "local") || (v.ctl === "any" && (d.ha === "local" || d.ev === "local")) || (v.ctl === "write" && d.w === "1"));
       r.hidden = !ok;
@@ -91,8 +108,10 @@ const sources = [
     });
     $("count").innerHTML = `<b>${shown}</b> ${shown === 1 ? "family" : "families"}`;
     ids.forEach((id) => $(id).classList.toggle("on", !!v[id]));
-    $("reset").hidden = !ids.some((id) => v[id]);
+    kinds.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.g === g)));
+    $("reset").hidden = !ids.some((id) => v[id]) && !g;
     const p = new URLSearchParams();
+    if (g) p.set("g", g);
     ids.forEach((id) => v[id] && p.set(id, v[id]));
     if (q.value.trim()) p.set("q", q.value.trim());
     history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
@@ -135,8 +154,10 @@ const sources = [
     el.addEventListener("change", apply);
   });
   if (init.get("q")) q.value = init.get("q")!;
+  if (init.get("g") === "inv" || init.get("g") === "ev") g = init.get("g")!;
+  kinds.forEach((b) => b.addEventListener("click", () => { g = g === b.dataset.g ? "" : b.dataset.g!; apply(); }));
   q.addEventListener("input", () => { apply(); models(); });
-  $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLSelectElement>(id).value = "")); apply(); });
-  if (q.value || ids.some((id) => init.get(id))) apply();
+  $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLSelectElement>(id).value = "")); g = ""; apply(); });
+  if (q.value || g || ids.some((id) => init.get(id))) apply();
   if (q.value) models();
 </script>

@@ -1,0 +1,1 @@
+[{"name": "avaleht", "url": ""}, {"name": "avaleht-ev", "url": "?g=ev", "js": "document.getElementById(\"count\").scrollIntoView();", "wait": 0.8}]

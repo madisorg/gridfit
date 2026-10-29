@@ -1,13 +1,13 @@
 ---
 import "../styles/site.css";
-import { SITE, TAGLINE, REPO, data } from "../lib/data";
+import { SITE, TITLE, REPO, data } from "../lib/data";
 // the two faces every page paints first: preloaded so text does not reflow when they arrive
 import textFont from "../fonts/ibm-plex-sans-latin-400-normal.woff2?url";
 import headFont from "../fonts/barlow-semi-condensed-latin-600-normal.woff2?url";
 interface Props { title?: string; description?: string; current?: string }
 const { title, description, current } = Astro.props;
 const analytics = process.env.GRIDFIT_ANALYTICS ?? "";
-const desc = description ?? "Which solar inverters, home batteries and wallboxes work locally with Home Assistant and evcc — and which EU grid registers list them. Built only from open sources, every row linked to its source.";
+const desc = description ?? "Two questions per inverter, home battery and wallbox: does it work locally with Home Assistant and evcc (read or control), and which EU grid-connection lists carry the model. Open data, every row linked to its source.";
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
 const nav = [["/about/", "How we know"], ["/registers/", "Registers"], ["/changelog/", "Changes"]];
 ---
@@ -16,12 +16,12 @@ const nav = [["/about/", "How we know"], ["/registers/", "Registers"], ["/change
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{title ? `${title} — ${SITE}` : `${SITE} — ${TAGLINE}`}</title>
+<title>{title ? `${title} — ${SITE}` : `${SITE} — ${TITLE}`}</title>
 <meta name="description" content={desc}>
 {canonical && <link rel="canonical" href={canonical}>}
 <meta property="og:type" content="website">
 <meta property="og:site_name" content={SITE}>
-<meta property="og:title" content={title ?? `${SITE} — ${TAGLINE}`}>
+<meta property="og:title" content={title ?? `${SITE} — ${TITLE}`}>
 <meta property="og:description" content={desc}>
 {canonical && <meta property="og:url" content={canonical}>}
 {Astro.site && <meta property="og:image" content={new URL("/og.png", Astro.site).href}>}

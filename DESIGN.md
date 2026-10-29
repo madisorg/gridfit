@@ -23,7 +23,7 @@ the data itself — the register matrix and the evidence timeline (§7).
 | **1. "I have a model number"** | a prosumer after an offer, or an installer a customer just asked | phone, from a search result | answer before scrolling: local yes/no, read or control, which integration, which registers, seen date, source |
 | **2. "I am still choosing"** | a buyer comparing hybrids, wallboxes, batteries | wide screen | filters on the left, a dense comparison table, the register matrix in every row |
 
-Moment 1 is why the home page **starts with a search box that takes model codes** (`SUN-12K-SG04LP3`,
+Since 2026-10-29 the site answers **two questions for two audiences at once** (Madis: hybrid target groups — local Home Assistant/evcc users and grid-connection compatibility): the home page's heading, lede, facts line and OG card carry both, the register cross-view is the front door for the grid side, and the kind switch (§6) splits inverters from wallboxes. Moment 1 is why the home page **starts with a search box that takes model codes** (`SUN-12K-SG04LP3`,
 `GEN24`, `SH10RT`) and why a family page opens with the verdict block, not a paragraph. Moment 2 is why the
 same table carries brand, class, HA, evcc, control, the five-register matrix and the model count in one
 row, with a sticky head. Second readers are machines — search snippets (`FAQPage` schema on every family
@@ -150,6 +150,7 @@ greyscale, or a reader who cannot tell green from amber, loses nothing.
 |---|---|---|
 | **Shell** (`Base.astro`) | every page | text wordmark (no logo — GridFit is a working name, no new marks), four nav links at 44 px, footer with sources, the empty-cell rule, the not-affiliated line, dataset links and licences |
 | **Search** (`index.astro`) | home | one 48 px input, 2 px ink edge. Brand and family names filter the table; a query with a digit is looked up in `/models.json` (every register model code, normalised like the register parser), fetched on first use. Results list family pages with the matching codes. |
+| **Kind switch** (`.kind`, `.hero` on the home page) | home, the first thing on the page, before the search | two 44 px toggles with a line icon, the word and the count: **Inverters** (string, hybrid, battery and plug-in units — everything that feeds the grid) and **Wallboxes**. Pressed = the `--signal` edge, like an active filter; pressing again shows every kind (meters included). State in the URL (`g=inv` / `g=ev`); the class select narrows further. Madis, 2026-10-29: "all inverters under one icon, a second for wallboxes, that is enough for now" and "the question does not need to be there, just two icons" — the h1 is visually hidden, the two 64 px toggles open the page. |
 | **Filter bar** | home | plain `<select>`s that name themselves ("All brands"); labels above them on wide screens, visually hidden on a phone so the filters take three rows, not a screen. The active filter gets the `--signal` edge; state lives in the URL. Sticky sidebar from 80 rem. |
 | **Family table** (`FamilyTable.astro`) | home, brand pages | sticky head with 2 px rule; 34 px rows; brand in `--ink-2` before the family name; one status per column; matrix; model count right-aligned with tabular numbers. **Under 48 rem it stacks**: one block per family, the name as a 44 px link, the statuses on one line with their column name as a prefix, the matrix on its own line. |
 | **Register matrix cell** (`Matrix.astro`) | every table, verdict | six fixed cells in fixed order (AT CZ EE NL PL SE). Filled = listed; outlined + `*` = listed with the register's own restriction word; faint outline = the list covers this class but no model was found; **dotted `--ok` outline on `--ok-bg` = the country has no listing for this class** (a wallbox is a load; only AT lists chargers), nothing to check; **dotted `--cloud` on `--cloud-bg` = no list, but a rule applies** (a notification, a registration, a ban), the note under the verdict says which; faint + `?` = coverage not confirmed (`SCOPE` in `gridfit/registers.py`, from the EU+ table of 2026-10-29). Shape first, colour second: dotted vs solid, `*` vs `?`. One accessible label reads all six. |
@@ -292,4 +293,12 @@ Same day, a fourth state from the EU+ grid-connection table: dotted `--cloud` = 
 plug-in notifications, the EE AC-battery application, the SE plug-in ban), with the note under the verdict.
 Legend, plug-in family (APsystems EZ1) and wallbox family ([`routes-scope-rule.json`](docs/moodud/routes-scope-rule.json)):
 [`scope-rule.json`](docs/moodud/scope-rule.json), 12 pictures, 0 errors, 0 overflow, 0 under 4.5:1, 0 tap targets under 44 px.
+
+## 14. Measured, 2026-10-29 — kind switch first, the question for machines
+
+Home page with the two toggles (Inverters 250 / Wallboxes 343) as the first thing before the search, the h1 visually
+hidden ([`routes-kind.json`](docs/moodud/routes-kind.json): home, and home with `?g=ev` scrolled to the count):
+[`kind.json`](docs/moodud/kind.json) (switch above the table, first version) and [`positsioon.json`](docs/moodud/positsioon.json)
+(final), 8 pictures each, 0 errors, 0 overflow, 0 texts under 4.5:1 (lowest 5.68), 0 tap targets under 44 px
+(0 of 14 / 0 of 5). The OG card carries the two-question heading.
 
