@@ -1,27 +1,26 @@
 ---
-// The register matrix: one fixed cell per register, always in the same order.
-// Filled = listed; outlined + * = listed with the register's own restriction word; faint = the list covers the
-// class but no model matched (never "no"); dotted green = the country has no listing for this class, nothing to
-// check; dotted amber = no list, but a rule applies (see the note); faint + ? = coverage not confirmed.
-import { REG_KEYS, data } from "../lib/data";
-const { cells, titled = true, cls } = Astro.props as { cells: Record<string, string>; titled?: boolean; cls?: string };
-const pick = (v: string) => REG_KEYS.filter((k) => cells[k] === v);
-const on = pick("listed"), part = pick("restricted"), free = pick("free"), rule = pick("rule"), unk = pick("unknown");
-const none = REG_KEYS.filter((k) => !cells[k]);
-const WORD: Record<string, string> = {
-  listed: "listed", restricted: "listed with restrictions or time-limited", free: "no listing for this class, nothing to check",
-  rule: "no list, but a rule applies", unknown: "not confirmed whether this country lists this class", "": "list covers this class, no model found",
-};
+// The register matrix: one fixed cell per parsed list, always in the same order (AT BE CZ EE NL PL SE).
+// Filled = listed; outlined + * = listed with restrictions or time-limited; amber outline + ! = expired, date
+// passed or "Nein"; faint = the list covers the class but no model matched (never "no"); dotted green = the
+// country has no listing for this class, nothing to check; dotted amber = no list but a rule applies; struck
+// = not allowed; faint + ? = not confirmed. Shape first, colour second.
+import { COUNTRIES, REGS, META, SNAP_DATE } from "../lib/registers";
+import { GRID_WORD, type GridState } from "../lib/devices";
+const { cells, titled = true } = Astro.props as { cells: Record<string, GridState | string>; titled?: boolean };
+const pick = (v: string) => COUNTRIES.filter((k) => cells[k] === v);
+const on = pick("listed"), part = pick("restricted"), exp = pick("expired"), free = pick("free"), rule = pick("rule"), ban = pick("banned"), unk = pick("unknown");
+const none = COUNTRIES.filter((k) => !cells[k]);
 const label = [on.length && `Listed in ${on.join(", ")}`, part.length && `with restrictions in ${part.join(", ")}`,
-  none.length && `no model found in ${none.join(", ")}`, free.length && `no listing needed in ${free.join(", ")}`,
-  rule.length && `no list but a rule in ${rule.join(", ")}`, unk.length && `not confirmed for ${unk.join(", ")}`].filter(Boolean).join("; ");
-const note = (k: string) => (cls && data.registers[k].scope_note?.[cls]) ? ` (${data.registers[k].scope_note![cls]})` : "";
-const word = (k: string, v: string) => `${k}: ${WORD[v] ?? WORD[""]}${v === "free" || v === "rule" ? note(k) : ""}`;
+  exp.length && `expired or “Nein” in ${exp.join(", ")}`, none.length && `no model found in ${none.join(", ")}`,
+  free.length && `no listing needed in ${free.join(", ")}`, rule.length && `no list but a rule in ${rule.join(", ")}`,
+  ban.length && `not allowed in ${ban.join(", ")}`, unk.length && `not confirmed for ${unk.join(", ")}`].filter(Boolean).join("; ");
+const SUFFIX: Record<string, string> = { restricted: "*", expired: "!", unknown: "?" };
+const word = (k: string) => `${k}: ${GRID_WORD[(cells[k] ?? "") as GridState] ?? GRID_WORD[""]}`;
 ---
 <span class="mx" role="img" aria-label={label}>
-  {REG_KEYS.map((k) => (
-    <span class={cells[k] || "no"} title={titled ? `${word(k, cells[k] ?? "")} — ${data.registers[k].name}, snapshot ${data.registers[k].snapshot}` : undefined}>
-      {k}{cells[k] === "restricted" ? "*" : cells[k] === "unknown" ? "?" : ""}
+  {COUNTRIES.map((k) => (
+    <span class={cells[k] || "no"} title={titled ? `${word(k)} — ${REGS[k].name}, list dated ${META[k]?.source_date ?? SNAP_DATE}` : undefined}>
+      {k}{SUFFIX[cells[k] ?? ""] ?? ""}
     </span>
   ))}
 </span>

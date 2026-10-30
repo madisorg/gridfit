@@ -18,8 +18,8 @@ import { REPO, OHF, data } from "../../lib/data";
       <li><strong>evcc</strong> — the device templates in <a href="https://github.com/evcc-io/evcc/tree/master/templates/definition">templates/definition</a> (MIT):
         brand, product, connection parameters and capabilities. Templates that need an <a href="https://docs.evcc.io/en/docs/sponsorship">evcc sponsor token</a>
         are marked; no template content is copied, only the fact of support.</li>
-      <li><strong>Grid registers</strong> — the published type-approval lists of {Object.keys(data.registers).length} registers (see <a href="/registers/">Registers</a>).
-        Family pages keep only “this register lists this model”. The <a href="/registers/">cross-view</a> also shows each row's status word, firmware,
+      <li><strong>Grid registers</strong> — the published type-approval lists of {Object.keys(data.registers).length} registers (see <a href="/grid/">Grid lists</a>).
+        Device pages show every list row for the matched models. The <a href="/grid/">grid lists view</a> also shows each row's status word, firmware,
         row or document number and dates — the registers' facts, not GridFit's work, and not under GridFit's CC BY. None of the lists states reuse terms; every row links back,
         and the register is the authority. Belgium's Synergrid list allows personal use only, so the cross-view shows just “listed” / “expired” with a link, and family pages do not use it.</li>
     </ul>
@@ -41,7 +41,7 @@ import { REPO, OHF, data } from "../../lib/data";
     </ul>
     <h2>Corrections</h2>
     <p>The dataset lives in a public <a href={REPO}>GitHub repository</a> (data CC BY 4.0, code MIT). Open an issue or a pull request —
-      “my Deye does Modbus TCP from firmware X” is exactly what we need. The site rebuilds from the sources weekly; <a href="/changelog/">Changes</a> lists what moved.</p>
+      “my Deye does Modbus TCP from firmware X” is exactly what we need. The site rebuilds from the sources weekly; <a href="/changes/">Changes</a> lists what moved.</p>
     <h2>Trademarks</h2>
     <p>Home Assistant is a trademark of the Open Home Foundation; evcc, HACS and all product and company names are trademarks of their owners,
       used here only to say what works with what. This site is not affiliated with any of them.</p>

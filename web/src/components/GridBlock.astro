@@ -1,0 +1,51 @@
+---
+// The grid half of a device page: one row per parsed list — the list's own status word, firmware, dates and a
+// link — then every other EU+ country for this device class, grouped by what applies there.
+import Ext from "./Ext.astro";
+import { COUNTRIES, REGS, META, RS, RSHORT, best, type Entry } from "../lib/registers";
+import { othersOf, GRID_WORD, type GridState } from "../lib/devices";
+import { COUNTRY_BY, CLASS_WORD, CONF_WORD, type ClassState } from "../lib/countries";
+import { CLASS } from "../lib/data";
+const { cells, entries, cls } = Astro.props as { cells: Record<string, GridState>; entries: Record<string, Entry[]>; cls: string };
+const others = othersOf(cls);
+const ORDER: ClassState[] = ["list", "rule", "free", "banned", "unknown"];
+const groups = ORDER.map((s) => [s, others.filter((o) => o.state === s)] as const).filter(([, l]) => l.length);
+const rsClass = (st: GridState, es: Entry[]) => es.length ? `rs-${best(es)}` : st === "free" ? "rs-free" : st === "rule" ? "rs-rule" : st === "banned" ? "rs-banned" : "rs-none";
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+---
+<ul class="reglist" aria-label="Grid-connection lists">
+  {COUNTRIES.map((cc) => {
+    const es = entries[cc] ?? [];
+    const e = es[0];
+    const r = e ? REGS[e.reg] : REGS[cc];
+    const m = META[e ? e.reg : cc];
+    const st = cells[cc];
+    return (
+      <li id={`grid-${cc.toLowerCase()}`}>
+        <span class="k"><a href={`/grid/${cc.toLowerCase()}/`}>{cc}</a></span>
+        <span>
+          <b>{COUNTRY_BY[cc]?.country ?? REGS[cc].country}</b> —{" "}
+          {e ? (
+            <>{RS[best(es)]}{e.reg !== "BE" && e.word && e.word.toLowerCase() !== RS[best(es)] && <> “{e.word}”</>}
+              {e.valid && <>, until {e.valid}</>}{e.fw && e.reg !== "BE" && <> · {r.fw_label} <code>{e.fw.slice(0, 60)}</code></>}
+              {es.length > 1 && <span class="muted"> · {es.length} rows</span>}</>
+          ) : (
+            <>{cap(GRID_WORD[st])}</>
+          )}
+          <span class="small muted"> · <Ext href={r.url}>{r.short}</Ext>{m?.source_date ? ` dated ${m.source_date}` : ""}{m?.seen ? `, read ${m.seen}` : ""}</span>
+        </span>
+        <span class={`rs ${rsClass(st, es)}`}>{es.length ? RSHORT[best(es)] : st === "unknown" ? "?" : ""}</span>
+      </li>
+    );
+  })}
+</ul>
+<details class="more gb-others">
+  <summary>{others.length} more countries: what applies to a {CLASS[cls]?.toLowerCase() ?? cls} there</summary>
+  <p class="small muted">No model rows for these countries — they publish no usable list, or GridFit has not parsed it yet. The state comes from the EU+ grid-connection table; each country page says more.</p>
+  {groups.map(([s, list]) => (
+    <p class="small"><b>{cap(CLASS_WORD[s])}:</b>
+      {list.map((o) => <a href={`/grid/${o.cc.toLowerCase()}/`} title={`${o.country} — ${CONF_WORD[o.confidence] ?? o.confidence}`}>{o.country}{o.confidence !== "checked" && <sup class="muted">{o.confidence === "search" ? "s" : "?"}</sup>}</a>)}
+    </p>
+  ))}
+  <p class="small muted">s = from search results, ? = unverified; without a mark the page was opened.</p>
+</details>

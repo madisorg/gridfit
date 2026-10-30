@@ -1,0 +1,651 @@
+# One row per EU+ country: does a public grid-connection (type-approval) list exist, and what applies per device class.
+# Source: the EU+ grid-connection table of 2026-10-29 (homelab-kerwel kataloogid/reference/gridfit-eu-liitumistabel.md),
+# rows marked checked / search / unverified there. States: list = a public list covers the class; rule = no list but a
+# notification, registration or certificate rule applies; free = no list and no model-level rule; banned = not allowed;
+# unknown = not confirmed. The 7 parsed lists (AT, BE, CZ, EE, NL, PL, SE) are the ones with model rows on this site.
+
+- cc: AL
+  country: Albania
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: search
+    plug-in: unverified
+    wallbox: unverified
+- cc: AT
+  country: Austria
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: list
+    wallbox: list
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: checked
+    wallbox: checked
+- cc: BA
+  country: Bosnia and Herzegovina
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: unverified
+    wallbox: unverified
+- cc: BE
+  country: Belgium
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: list
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: checked
+    wallbox: search
+- cc: BG
+  country: Bulgaria
+  list: "no"
+  classes:
+    inverter: unknown
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: free
+  confidence:
+    inverter: unverified
+    hybrid: unverified
+    battery: unverified
+    plug-in: search
+    wallbox: checked
+- cc: CH
+  country: Switzerland
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: rule
+    wallbox: rule
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: checked
+    wallbox: search
+- cc: CY
+  country: Cyprus
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: unknown
+    wallbox: rule
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: checked
+- cc: CZ
+  country: Czechia
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: rule
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: checked
+- cc: DE
+  country: Germany
+  list: "partial"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: list
+    wallbox: rule
+  confidence:
+    inverter: search
+    hybrid: search
+    battery: search
+    plug-in: search
+    wallbox: checked
+- cc: DK
+  country: Denmark
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: banned
+    wallbox: rule
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: checked
+    plug-in: search
+    wallbox: search
+- cc: EE
+  country: Estonia
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: rule
+    plug-in: rule
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: unverified
+    wallbox: unverified
+- cc: ES
+  country: Spain
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: rule
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: search
+    battery: unverified
+    plug-in: checked
+    wallbox: search
+- cc: FI
+  country: Finland
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: banned
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: checked
+- cc: FR
+  country: France
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: rule
+    wallbox: free
+  confidence:
+    inverter: search
+    hybrid: search
+    battery: search
+    plug-in: search
+    wallbox: search
+- cc: GB
+  country: Great Britain
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: list
+    wallbox: list
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: checked
+    wallbox: search
+- cc: GE
+  country: Georgia
+  list: "no"
+  classes:
+    inverter: unknown
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: search
+    hybrid: unverified
+    battery: unverified
+    plug-in: unverified
+    wallbox: unverified
+- cc: GR
+  country: Greece
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: rule
+    wallbox: rule
+  confidence:
+    inverter: search
+    hybrid: search
+    battery: search
+    plug-in: search
+    wallbox: search
+- cc: HR
+  country: Croatia
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: unknown
+    wallbox: free
+  confidence:
+    inverter: search
+    hybrid: search
+    battery: unverified
+    plug-in: search
+    wallbox: search
+- cc: HU
+  country: Hungary
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: list
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: unverified
+- cc: IE
+  country: Ireland
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: unknown
+    wallbox: list
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: checked
+- cc: IS
+  country: Iceland
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: unverified
+    wallbox: unverified
+- cc: IT
+  country: Italy
+  list: "partial"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: rule
+    wallbox: rule
+  confidence:
+    inverter: checked
+    hybrid: search
+    battery: checked
+    plug-in: search
+    wallbox: search
+- cc: LI
+  country: Liechtenstein
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: rule
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: checked
+    plug-in: checked
+    wallbox: unverified
+- cc: LT
+  country: Lithuania
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: rule
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: search
+- cc: LU
+  country: Luxembourg
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: free
+    wallbox: rule
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: checked
+    wallbox: checked
+- cc: LV
+  country: Latvia
+  list: "partial"
+  classes:
+    inverter: list
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: unverified
+    wallbox: unverified
+- cc: MD
+  country: Moldova
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: free
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: unverified
+    wallbox: unverified
+- cc: ME
+  country: Montenegro
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: rule
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: checked
+    wallbox: unverified
+- cc: MK
+  country: North Macedonia
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: checked
+    wallbox: unverified
+- cc: MT
+  country: Malta
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: free
+  confidence:
+    inverter: search
+    hybrid: unverified
+    battery: unverified
+    plug-in: search
+    wallbox: search
+- cc: NI
+  country: Northern Ireland
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: checked
+    wallbox: unverified
+- cc: NL
+  country: Netherlands
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: list
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: unverified
+- cc: NO
+  country: Norway
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: rule
+    plug-in: banned
+    wallbox: rule
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: checked
+    wallbox: search
+- cc: PL
+  country: Poland
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: rule
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: search
+- cc: PT
+  country: Portugal
+  list: "partial"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: unknown
+    plug-in: free
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: unverified
+    plug-in: search
+    wallbox: unverified
+- cc: RO
+  country: Romania
+  list: "partial"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: rule
+    plug-in: rule
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: checked
+    plug-in: checked
+    wallbox: unverified
+- cc: RS
+  country: Serbia
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: unverified
+    plug-in: search
+    wallbox: unverified
+- cc: SE
+  country: Sweden
+  list: "yes"
+  classes:
+    inverter: list
+    hybrid: list
+    battery: list
+    plug-in: banned
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: checked
+    plug-in: search
+    wallbox: unverified
+- cc: SI
+  country: Slovenia
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: unknown
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: search
+    battery: unverified
+    plug-in: search
+    wallbox: search
+- cc: SK
+  country: Slovakia
+  list: "partial"
+  classes:
+    inverter: rule
+    hybrid: list
+    battery: unknown
+    plug-in: unknown
+    wallbox: free
+  confidence:
+    inverter: checked
+    hybrid: checked
+    battery: unverified
+    plug-in: unverified
+    wallbox: search
+- cc: TR
+  country: Türkiye
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: rule
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: checked
+    hybrid: unverified
+    battery: checked
+    plug-in: unverified
+    wallbox: unverified
+- cc: UA
+  country: Ukraine
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: search
+    hybrid: unverified
+    battery: unverified
+    plug-in: unverified
+    wallbox: unverified
+- cc: XK
+  country: Kosovo
+  list: "no"
+  classes:
+    inverter: rule
+    hybrid: unknown
+    battery: unknown
+    plug-in: unknown
+    wallbox: unknown
+  confidence:
+    inverter: unverified
+    hybrid: unverified
+    battery: unverified
+    plug-in: search
+    wallbox: unverified

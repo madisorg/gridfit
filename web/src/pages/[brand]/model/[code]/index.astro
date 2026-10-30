@@ -1,0 +1,112 @@
+---
+// /{brand}/model/{code}/ — a register model that no family claims, in two or more lists: both lenses on one
+// page, the grid lens first because that is where its data is.
+import Base from "../../../../layouts/Base.astro";
+import Ext from "../../../../components/Ext.astro";
+import Glance from "../../../../components/Glance.astro";
+import GridBlock from "../../../../components/GridBlock.astro";
+import Status from "../../../../components/Status.astro";
+import { COUNTRIES, REGS, RC, RS, RSHORT, META, SNAP_DATE, faq, best, type Device } from "../../../../lib/registers";
+import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf } from "../../../../lib/devices";
+import { localOf } from "../../../../lib/devices";
+import { familyUrl, REPO } from "../../../../lib/data";
+
+export function getStaticPaths() {
+  return modelPages.map((d) => ({ params: { brand: brandSlugOf(d), code: d.slug! }, props: { d } }));
+}
+const { d } = Astro.props as { d: Device };
+const bslug = brandSlugOf(d);
+const brand = brandOf(bslug);
+const cells = gridOfModel(d);
+const local = localOfModel(d);
+const listed = COUNTRIES.filter((c) => d.cells[c]);
+const qa = faq(d);
+const routes = (brand?.families ?? []).filter((f) => ["control", "read"].includes(localOf(f)));
+const ld = {
+  "@context": "https://schema.org",
+  "@graph": [
+    { "@type": "FAQPage", mainEntity: qa.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })) },
+    { "@type": "Product", name: `${d.brand} ${d.model}`, model: d.model, brand: { "@type": "Brand", name: d.brand }, category: RC[d.cls] },
+  ],
+};
+const idLabel = (r: string) => (r === "SE" ? "Running no." : r === "PL" ? "Lp (row no.)" : "ID");
+const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURIComponent(`${d.brand} ${d.model}: `)}`;
+---
+<Base title={`${d.brand} ${d.model}: grid lists ${listed.join(", ")} and local control`} current="/grid/"
+      description={`${qa[0] ? qa[0].a + " " : ""}Status, firmware and dates of the ${d.brand} ${d.model} in ${listed.length} EU grid-connection lists, and whether Home Assistant or evcc has a local route.`}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/grid/">Grid lists</a><span aria-hidden="true">/</span><a href={`/${bslug}/#grid`}>{d.brand}</a></nav>
+  <header class="head">
+    <h1>{d.brand} {d.model}</h1>
+    <p class="kind"><span>{RC[d.cls]}</span><span aria-hidden="true">·</span><span>in {listed.length} of {COUNTRIES.length} lists</span>
+      <span aria-hidden="true">·</span><span>no product family claims this code yet</span></p>
+    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} seen={SNAP_DATE} />
+    <p class="chips"><a href="#grid">Grid lists</a><a href="#local">Local control</a><a href={`/${bslug}/#grid`}>All {d.brand} models</a></p>
+  </header>
+
+  <div class="device model-first">
+    <section class="sec" id="grid-sec" aria-labelledby="grid">
+      <header><h2 id="grid">Grid-connection lists</h2><p>The list is the authority; this is a cross-reference.</p></header>
+      <div class="faq">
+        {qa.map((f) => <><h3>{f.q}</h3><p class="a">{f.a}</p>{f.de && <p lang="de" class="small muted">{f.de}</p>}</>)}
+      </div>
+      <GridBlock cells={cells} entries={d.cells} cls={d.cls} />
+      <h3>List by list</h3>
+      <div class="lists">
+        {listed.map((c) => (
+          <article class="panel">
+            <h4>{c} — {REGS[c].country}</h4>
+            {d.cells[c].map((e) => {
+              const r = REGS[e.reg];
+              return (
+                <dl class="facts-dl">
+                  <dt>List</dt><dd><Ext href={r.url}>{r.name}</Ext> (dated {META[e.reg]?.source_date})</dd>
+                  <dt>Status</dt><dd><span class={`rs rs-${e.show}`}>{RSHORT[e.show]}</span> {RS[e.show]}{e.reg !== "BE" && e.word && e.word.toLowerCase() !== RS[e.show] && <> — “{e.word}”</>}</dd>
+                  <dt>As written</dt><dd class="code">{e.maker_raw} · {e.model_raw}</dd>
+                  {e.extra.list && <><dt>Part</dt><dd>{e.extra.list} list</dd></>}
+                  {e.extra.battery && <><dt>Battery can be connected</dt><dd>{e.extra.battery} <span class="muted">(the list's “Aku” column)</span></dd></>}
+                  {e.reg === "BE" ? (
+                    <><dt>Details</dt><dd>Firmware, homologation reference and dates are in <a href={r.url}>Synergrid's list</a>; its terms allow personal use only, so only whether the model is listed is shown.</dd></>
+                  ) : (
+                    <>
+                      {e.id && <><dt>{idLabel(e.reg)}</dt><dd class="code">{e.id}</dd></>}
+                      {e.cert && <><dt>{e.reg === "PL" ? "Document no." : "Evidence"}</dt><dd class="code">{e.cert}</dd></>}
+                      {e.fw && <><dt>{cap(r.fw_label)}</dt><dd><code>{e.fw}</code></dd></>}
+                      {e.valid && <><dt>Time-limited until</dt><dd>{e.valid}{e.show === "limited-past" && " — this date has passed; check the list"}</dd></>}
+                      {e.date && <><dt>Date</dt><dd>{e.date} <span class="muted">({r.date_label})</span></dd></>}
+                      {e.extra.setup && <><dt>Settings profile</dt><dd>{e.extra.setup}</dd></>}
+                      {e.extra.comment && <><dt>Comment</dt><dd>{e.extra.comment}</dd></>}
+                      {e.extra.note && <><dt>Note</dt><dd>{e.extra.note}</dd></>}
+                    </>
+                  )}
+                  <dt>Match</dt><dd>{e.trust} · seen {META[e.reg]?.seen}</dd>
+                </dl>
+              );
+            })}
+          </article>
+        ))}
+      </div>
+      {d.variants.length > 1 && <p class="small muted">Spellings joined on this page: {d.variants.join(" · ")}.</p>}
+      <p class="caveat">Rows are matched by maker and a normalised model code; the “as written” line shows exactly what each list says. Check the list itself, and your grid operator, before you install.</p>
+    </section>
+
+    <section class="sec" id="local-sec" aria-labelledby="local">
+      <header><h2 id="local">Local control with Home Assistant and evcc</h2><p>Checked {SNAP_DATE}.</p></header>
+      {local === "brand-route" ? (
+        <div class="prose">
+          <p><Status kind="none" label={LOCAL_WORD[local]} /> No integration or template names this code. {d.brand} has {routes.length} famil{routes.length === 1 ? "y" : "ies"} with a local route; whether this model belongs to one of them is not confirmed:</p>
+          <ul>{routes.map((f) => <li><a href={familyUrl(f)}>{f.name}</a> — {LOCAL_WORD[localOf(f)]}</li>)}</ul>
+          <p class="small muted">Know which family it belongs to? <a href={issue}>Fix the row</a>: the family's model-code pattern then claims it.</p>
+        </div>
+      ) : (
+        <p class="prose"><Status kind="none" label="not found" /> Not found in Home Assistant core, the HACS default list or the evcc templates under this brand (checked {SNAP_DATE}). That is not “does not work” — it means no source we read names it. <a href={issue}>Know a route?</a></p>
+      )}
+    </section>
+
+    <section class="sec" aria-label="Corrections">
+      <p><a class="correct" href={issue}>Wrong match or a newer list? Fix the row</a></p>
+      <p class="small"><a href="/changes/">What changed in the lists</a></p>
+    </section>
+  </div>
+</Base>

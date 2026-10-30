@@ -1,0 +1,134 @@
+// One resolver over both halves of the dataset — integration families (data.ts) and register devices
+// (registers.ts) — so every page reads the same answer for the same device and the two lenses cannot
+// disagree. A device is a family when one claims the model code, else the register model itself.
+import { data, summary, familyUrl, slug, type Family } from "./data";
+import { devices as regDevices, COUNTRIES, best, anchor, type Device as RegDevice, type Entry } from "./registers";
+import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
+
+export type LocalState = "control" | "read" | "cloud" | "brand-route" | "none";
+// grid cell: a match in the list, or what the country's table says for this class when no model matched
+export type GridState = "listed" | "restricted" | "expired" | "" | "rule" | "free" | "banned" | "unknown";
+
+export const LOCAL_WORD: Record<LocalState, string> = {
+  control: "local control", read: "local, read only", cloud: "cloud only", "brand-route": "brand route, model unconfirmed", none: "not found",
+};
+export const GRID_WORD: Record<GridState, string> = {
+  listed: "listed", restricted: "listed with restrictions or time-limited", expired: "expired, date passed or “Nein”",
+  "": "list covers this class, no model found", rule: "no list, a rule applies", free: "no list for this class, nothing to check",
+  banned: "not allowed", unknown: "not confirmed",
+};
+
+const norm = (s: string) => s.toUpperCase().replace(/[\s\-_./,()+]/g, "");
+const lc = (s: string) => s.toLowerCase();
+const cmp = (a: string, b: string) => (a < b ? -1 : a > b ? 1 : 0);
+
+// ---- brands: one slug per brand across both halves; the family brand's slug wins when both exist
+const famsBySlug = new Map<string, Family[]>();
+for (const f of data.families) (famsBySlug.get(f.brand_slug) ?? famsBySlug.set(f.brand_slug, []).get(f.brand_slug)!).push(f);
+export function brandSlugOf(d: RegDevice): string {
+  const v = d.v1brand ? slug(d.v1brand) : "";
+  if (v && famsBySlug.has(v)) return v;
+  return d.brand_slug;
+}
+
+// ---- register device -> family: exact normalised code inside the same brand
+const famByCode = new Map<string, Family>();
+for (const f of data.families) for (const m of f.models) famByCode.set(f.brand_slug + "\u0000" + norm(m.model), f);
+export const familyOf = (d: RegDevice): Family | undefined => famByCode.get(brandSlugOf(d) + "\u0000" + d.norm);
+
+const matched = new Map<Family, RegDevice[]>();
+export const regByBrand = new Map<string, RegDevice[]>();
+for (const d of regDevices) {
+  if (d.unmatched) continue;
+  const f = familyOf(d);
+  if (f) (matched.get(f) ?? matched.set(f, []).get(f)!).push(d);
+  const b = brandSlugOf(d);
+  (regByBrand.get(b) ?? regByBrand.set(b, []).get(b)!).push(d);
+}
+for (const list of matched.values()) list.sort((a, b) => cmp(lc(a.model), lc(b.model)));
+for (const list of regByBrand.values()) list.sort((a, b) => cmp(lc(a.model), lc(b.model)));
+export const modelsOf = (f: Family): RegDevice[] => matched.get(f) ?? [];
+
+// ---- local lens
+export function localOf(f: Family): LocalState {
+  const s = summary(f);
+  if (s.control) return "control";
+  if (s.ha === "local" || s.evcc === "local") return "read";
+  if (s.ha === "cloud" || s.evcc === "cloud") return "cloud";
+  return "none";
+}
+export function localOfModel(d: RegDevice): LocalState {
+  const fams = famsBySlug.get(brandSlugOf(d)) ?? [];
+  return fams.some((f) => ["control", "read"].includes(localOf(f))) ? "brand-route" : "none";
+}
+export const localRoutes = (f: Family) => f.rows.filter((r) => r.local).map((r) => r.name);
+
+// ---- grid lens
+const SHOW_STATE: Record<string, GridState> = {
+  listed: "listed", limited: "restricted", restricted: "restricted", "limited-past": "expired", expired: "expired", nein: "expired", other: "restricted",
+};
+export const stateOfCells = (es: Entry[]): GridState => SHOW_STATE[best(es)] ?? "restricted";
+export function scopeState(cc: string, cls: string): GridState {
+  const key = CLASS_KEY[cls] ?? null;
+  if (!key) return "free";
+  const st: ClassState | undefined = COUNTRY_BY[cc]?.classes[key];
+  return !st ? "unknown" : st === "list" ? "" : st;
+}
+export function gridOfFamily(f: Family): Record<string, GridState> {
+  const out: Record<string, GridState> = {};
+  for (const cc of COUNTRIES) {
+    const sts = modelsOf(f).filter((d) => d.cells[cc]).map((d) => stateOfCells(d.cells[cc]));
+    out[cc] = sts.length ? (sts.includes("listed") ? "listed" : sts.includes("restricted") ? "restricted" : "expired") : scopeState(cc, f.class);
+  }
+  return out;
+}
+export function gridOfModel(d: RegDevice): Record<string, GridState> {
+  const out: Record<string, GridState> = {};
+  for (const cc of COUNTRIES) out[cc] = d.cells[cc] ? stateOfCells(d.cells[cc]) : scopeState(cc, d.cls);
+  return out;
+}
+// entries per parsed country for a family: every matched model's rows, flattened
+export function entriesOfFamily(f: Family): Record<string, Entry[]> {
+  const out: Record<string, Entry[]> = {};
+  for (const d of modelsOf(f)) for (const [cc, es] of Object.entries(d.cells)) (out[cc] ??= []).push(...es);
+  return out;
+}
+export const OTHER_COUNTRIES = COUNTRIES_ALL.filter((c) => !COUNTRIES.includes(c.cc));
+export const othersOf = (cls: string) => OTHER_COUNTRIES.map((c) => {
+  const key = CLASS_KEY[cls] ?? null;
+  return { cc: c.cc, country: c.country, list: c.list, list_url: c.list_url,
+    state: (key ? c.classes[key] : "free") as ClassState, confidence: key ? c.confidence[key] : "checked" };
+});
+
+// ---- urls and pages
+export const modelAnchor = (d: RegDevice) => `m-${anchor(d)}`;
+export function modelUrl(d: RegDevice): string {
+  const f = familyOf(d);
+  if (f) return `${familyUrl(f)}#${modelAnchor(d)}`;
+  const b = brandSlugOf(d);
+  return d.page ? `/${b}/model/${d.slug}/` : `/${b}/#${modelAnchor(d)}`;
+}
+// a register model gets its own page only when no family claims it and it is in two or more lists
+export const modelPages = regDevices.filter((d) => d.page && !d.unmatched && !familyOf(d));
+
+export type Brand = { slug: string; name: string; families: Family[]; models: RegDevice[] };
+const names = new Map<string, string>();
+for (const f of data.families) names.set(f.brand_slug, f.brand);
+for (const [b, ds] of regByBrand) if (!names.has(b)) names.set(b, ds[0].brand);
+export const BRANDS: Brand[] = [...names.entries()]
+  .map(([s, name]) => ({ slug: s, name, families: famsBySlug.get(s) ?? [], models: regByBrand.get(s) ?? [] }))
+  .sort((a, b) => cmp(lc(a.name), lc(b.name)));
+export const brandOf = (s: string) => BRANDS.find((b) => b.slug === s);
+
+// reserved first path segments: a brand slug must never collide with a section
+export const RESERVED = new Set(["local", "grid", "changes", "about", "model", "search", "data", "devices", "sitemap", "404", "llms", "robots", "models"]);
+for (const b of BRANDS) if (RESERVED.has(b.slug)) throw new Error(`brand slug collides with a reserved path: ${b.slug}`);
+for (const f of data.families) if (f.slug === "model") throw new Error(`family slug "model" collides with the model pages: ${f.brand}`);
+
+export const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
+export const COUNTS = {
+  families: data.families.length, brands: BRANDS.length, rows: data.rows.length,
+  regModels: regDevices.filter((d) => !d.unmatched).length, lists: COUNTRIES.length, countries: COUNTRIES_ALL.length,
+  modelPages: modelPages.length,
+  localRoute: data.families.filter((f) => ["control", "read"].includes(localOf(f))).length,
+};

@@ -1,10 +1,9 @@
-// Model-code lookup for the search box: every register model, normalised the way the register
-// parser does it (gridfit/brands.py norm_model), pointing at its family page — or at the brand
-// page when no family claims it. Loaded by the browser only when a query contains a digit.
+// Model-code lookup for the search box: every register model, normalised the way the register parser does it
+// (gridfit/brands.py norm_model), pointing at its device page — the family's page when one claims the code,
+// the model's own page when it is in two or more lists, else its row on the brand page.
 import type { APIRoute } from "astro";
-import { data, familyUrl, slug } from "../lib/data";
-
-const norm = (s: string) => s.toUpperCase().replace(/[\s\-_./,()+]/g, "");
+import { devices } from "../lib/registers";
+import { familyOf, modelUrl } from "../lib/devices";
 
 export const GET: APIRoute = () => {
   const pages: string[] = [], titles: string[] = [], at = new Map<string, number>();
@@ -13,13 +12,12 @@ export const GET: APIRoute = () => {
     return at.get(url)!;
   };
   const models: [string, string, number][] = [];
-  for (const f of data.families) {
-    const i = page(familyUrl(f), `${f.brand} ${f.name}`);
-    for (const m of f.models) models.push([norm(m.model), m.model, i]);
-  }
-  for (const [brand, ms] of data.unmatched) {
-    const i = page(`/${slug(brand)}/`, `${brand} — not matched to a family`);
-    for (const m of ms) models.push([norm(m.model), m.model, i]);
+  for (const d of devices) {
+    if (d.unmatched) continue;
+    const f = familyOf(d);
+    const url = modelUrl(d);
+    const i = page(f ? url.replace(/#.*$/, "") : url, f ? `${f.brand} ${f.name}` : `${d.brand} ${d.model}`);
+    models.push([d.norm, d.model, i]);
   }
   return new Response(JSON.stringify({ pages, titles, models }), { headers: { "Content-Type": "application/json" } });
 };

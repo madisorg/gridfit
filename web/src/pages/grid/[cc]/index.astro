@@ -1,0 +1,116 @@
+---
+// /grid/{cc}/ — one page per EU+ country: what the country publishes, what applies per device class, and —
+// for the 7 parsed lists — the list's facts, its rows by class and its changes.
+import Base from "../../../layouts/Base.astro";
+import Ext from "../../../components/Ext.astro";
+import { devices, COUNTRIES, REGS, RC, META, LOG, STATS, SNAP_DATE, regsOf } from "../../../lib/registers";
+import { COUNTRIES_ALL, LIST_WORD, LIST_LONG, CLASS_WORD, CLASS_LONG, CONF_WORD, COUNTRIES_SOURCE, type Country } from "../../../lib/countries";
+import { BRANDS, brandSlugOf, nf } from "../../../lib/devices";
+
+export function getStaticPaths() {
+  return COUNTRIES_ALL.map((c) => ({ params: { cc: c.cc.toLowerCase() }, props: { c } }));
+}
+const { c } = Astro.props as { c: Country };
+const cc = c.cc;
+const parsed = COUNTRIES.includes(cc);
+const here = parsed ? devices.filter((d) => !d.unmatched && d.cells[cc]) : [];
+const s = parsed ? STATS[cc] : null;
+const byClass = Object.entries(here.reduce((m, d) => ((m[d.cls] = (m[d.cls] ?? 0) + 1), m), {} as Record<string, number>)).sort((a, b) => b[1] - a[1]);
+const elsewhere = here.filter((d) => d.n >= 2).length;
+const top = Object.entries(here.reduce((m, d) => ((m[brandSlugOf(d)] = (m[brandSlugOf(d)] ?? 0) + 1), m), {} as Record<string, number>))
+  .sort((a, b) => b[1] - a[1]).slice(0, 20);
+const brandName = new Map(BRANDS.map((b) => [b.slug, b.name]));
+const CLASSES = ["inverter", "hybrid", "battery", "plug-in", "wallbox"];
+const CLASS_LABEL: Record<string, string> = { inverter: "PV inverter", hybrid: "Hybrid inverter", battery: "Battery / AC inverter", "plug-in": "Plug-in solar / battery (≤ 800 VA)", wallbox: "Wallbox / EV charger" };
+const title = parsed ? `${c.country}: ${REGS[cc].name} — what it lists` : `${c.country}: grid-connection rules for inverters, batteries and wallboxes`;
+const desc = parsed
+  ? `${c.country}'s grid-connection list for inverters, batteries${cc === "AT" ? " and chargers" : ""}: who publishes it, what it contains, how often it changes, and ${nf(here.length)} models from it cross-referenced with other EU lists.`
+  : `${c.country}: ${LIST_LONG[c.list]} What applies per device class, from the EU+ grid-connection table.`;
+---
+<Base title={title} current="/grid/" description={desc} noindex={!parsed}>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/grid/">Grid lists</a></nav>
+  <header class="head">
+    <h1>{c.country} ({cc})</h1>
+    <p class="kind"><span>{LIST_WORD[c.list]}</span>
+      {parsed && s && <><span aria-hidden="true">·</span><span>{nf(s.rows)} rows</span><span aria-hidden="true">·</span><span>{nf(here.length)} models</span>
+        <span aria-hidden="true">·</span><span>{nf(elsewhere)} also in another country's list</span></>}
+      {!parsed && c.list_url && <><span aria-hidden="true">·</span><Ext href={c.list_url}>the list</Ext></>}</p>
+  </header>
+
+  <section class="sec">
+    <header><h2>What applies per device class</h2><p>{COUNTRIES_SOURCE}</p></header>
+    <p class="prose small muted">{LIST_LONG[c.list]}</p>
+    <table class="tbl">
+      <thead><tr><th scope="col">Device class</th><th scope="col">What applies</th><th scope="col">Checked</th></tr></thead>
+      <tbody>{CLASSES.map((k) => <tr><td class="fam">{CLASS_LABEL[k]}</td><td data-l=""><b>{CLASS_WORD[c.classes[k]]}</b> <span class="muted">— {CLASS_LONG[c.classes[k]]}</span></td><td data-l="checked" class="muted">{CONF_WORD[c.confidence[k]] ?? c.confidence[k]}</td></tr>)}</tbody>
+    </table>
+    {!parsed && <p class="small muted">GridFit has no model rows for {c.country}{c.list === "yes" ? " yet — the list exists and is on the parsing queue" : c.list === "partial" ? " — the list is partial; see the note above" : " — there is no list to read"}.
+      Country notes (who files the application, what the certificate must say, thresholds and deadlines) are being written.</p>}
+  </section>
+
+  {parsed && s && regsOf(cc).map((r) => {
+    const x = REGS[r], m = META[r] ?? {};
+    return (
+      <section class="sec">
+        <header><h2><Ext href={x.url}>{x.name}</Ext></h2></header>
+        <dl class="facts-dl panel">
+          <dt>Published by</dt><dd>{x.operator}</dd>
+          <dt>Basis</dt><dd>{x.basis}</dd>
+          <dt>Is it a gate?</dt><dd>{x.gate}</dd>
+          <dt>What it contains</dt><dd>{x.contains}</dd>
+          <dt>Reuse terms</dt><dd>{x.terms}</dd>
+          <dt>What we show</dt><dd>{x.use}.</dd>
+          <dt>List dated</dt><dd>{m.source_date || "—"}</dd>
+          <dt>Downloaded</dt><dd>{m.seen || SNAP_DATE}{m.carried_over && " (not reachable at the last refresh; previous rows kept)"}</dd>
+          <dt>Rows read</dt><dd>{nf(m.rows ?? 0)}{m.unread_lp?.length ? ` — ${m.unread_lp.length} rows of the PDF could not be read (Lp ${m.unread_lp.join(", ")}); they are not shown` : ""}</dd>
+        </dl>
+      </section>
+    );
+  })}
+  {parsed && s && (
+    <section class="sec">
+      <header><h2>In numbers</h2></header>
+      <p class="prose">{nf(s.rows)} rows; {nf(here.length)} inverters, batteries, plug-in units and chargers after joining spellings, of which
+        <strong>{nf(elsewhere)}</strong> also appear in at least one other country's list.
+        {s.other_rows > 0 && ` ${nf(s.other_rows)} further rows are CHP units, generators, wind turbines, relays and similar — kept in the data, without pages.`}</p>
+      <table class="tbl">
+        <thead><tr><th scope="col">Device class</th><th scope="col" class="num">Models</th></tr></thead>
+        <tbody>{byClass.map(([k, n]) => <tr><td class="fam">{RC[k]}</td><td class="num" data-l="models">{nf(n)}</td></tr>)}</tbody>
+      </table>
+      {cc !== "BE" && (
+        <>
+          <h3>Status words, as the list writes them</h3>
+          <table class="tbl">
+            <thead><tr><th scope="col">Word</th>{s.regs.length > 1 && <th scope="col">List</th>}<th scope="col" class="num">Rows</th></tr></thead>
+            <tbody>{s.words.map(([r, w, n]) => <tr><td class="fam" lang={cc === "AT" ? "de" : undefined}>{w}</td>{s.regs.length > 1 && <td data-l="">{REGS[r].short}</td>}<td class="num" data-l="rows">{nf(n)}</td></tr>)}</tbody>
+          </table>
+        </>
+      )}
+      <p><a href={`/grid/?c=${cc}`}>Open the grid lists view filtered to {cc}</a></p>
+    </section>
+  )}
+  {parsed && top.length > 0 && (
+    <section class="sec">
+      <header><h2>Brands with the most models here</h2></header>
+      <p class="brand-list">{top.map(([b, n]) => <a href={`/${b}/#grid`}>{brandName.get(b) ?? b} <span class="muted">{n}</span></a>)}</p>
+    </section>
+  )}
+  {parsed && s && (
+    <section class="sec">
+      <header><h2>Changes in this list</h2></header>
+      <ul class="small">
+        {LOG.map((e) => {
+          const rs = Object.entries(e.registers).filter(([r]) => s.regs.includes(r)) as [string, any][];
+          return e.baseline ? <li>{e.date} — baseline.</li> : rs.length ? rs.map(([r, x]) => (
+            <li>{e.date} — list dated {x.source_date}: {x.added.length} added, {x.removed.length} removed, {x.changed.length} changed
+              (<a href={`/changes/#${e.date}-${r}`}>details</a>)</li>
+          )) : <li>{e.date} — no change.</li>;
+        })}
+      </ul>
+    </section>
+  )}
+  <section class="sec">
+    <header><h2>Other countries</h2></header>
+    <p class="brand-list">{COUNTRIES_ALL.filter((o) => o.cc !== cc).map((o) => <a href={`/grid/${o.cc.toLowerCase()}/`}>{o.cc} <span class="muted">{o.country}</span></a>)}</p>
+  </section>
+</Base>

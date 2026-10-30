@@ -1,59 +1,72 @@
 ---
+// /grid/ — the grid lens: one row per register model across the 7 parsed lists, with the local lens as a column.
 import Base from "../../layouts/Base.astro";
 import RegLegend from "../../components/RegLegend.astro";
 import Timeline from "../../components/Timeline.astro";
 import Ext from "../../components/Ext.astro";
-import { devices, byBrand, COUNTRIES, REGS, RC, META, LOG, NOT_READ, SNAP_DATE, regsOf } from "../../lib/registers";
+import { devices, COUNTRIES, REGS, RC, META, LOG, NOT_READ, SNAP_DATE, regsOf } from "../../lib/registers";
+import { BRANDS, COUNTS, nf } from "../../lib/devices";
+import { COUNTRIES_ALL, LIST_WORD } from "../../lib/countries";
 
-const multi = devices.filter((d) => d.n >= 2 && !d.unmatched).length;
-const counts = Object.fromEntries(COUNTRIES.map((c) => [c, devices.filter((d) => d.cells[c]).length]));
-const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
+const shown = devices.filter((d) => !d.unmatched);
+const multi = shown.filter((d) => d.n >= 2).length;
+const counts = Object.fromEntries(COUNTRIES.map((c) => [c, shown.filter((d) => d.cells[c]).length]));
 const e = LOG[0];
 const dates = Object.keys(META).map((r) => ({ label: `${r} — ${REGS[r]?.short ?? r}`, href: REGS[r]?.url, date: META[r].source_date || SNAP_DATE, kind: "reg" as const }));
+const byFlag = (flag: string) => COUNTRIES_ALL.filter((c) => c.list === flag && !COUNTRIES.includes(c.cc));
+const gridBrands = BRANDS.filter((b) => b.models.length);
 ---
-<Base title="Which EU grid registers list this inverter, battery or wallbox?" current="/registers/"
-      description={`One table across seven national grid-connection lists (${COUNTRIES.join(", ")}): ${nf(devices.length)} inverters, hybrids, batteries, plug-in units and wallboxes, with each list's own status, firmware and dates, and a log of what changed.`}>
+<Base title="EU grid-connection lists: is the model on one?" current="/grid/"
+      description={`One table across ${COUNTRIES.length} national grid-connection lists (${COUNTRIES.join(", ")}): ${nf(shown.length)} inverters, hybrids, batteries, plug-in units and wallboxes with each list's own status, firmware and dates, plus what applies in ${COUNTRIES_ALL.length - COUNTRIES.length} more countries.`}>
   <section class="ask" aria-labelledby="h">
-    <h1 id="h">Which EU grid registers list it?</h1>
+    <h1 id="h">Is it on your grid operator's list?</h1>
     <form class="search" role="search" onsubmit="return false">
       <label class="vh" for="q">Model or brand</label>
       <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model or brand — e.g. SH10RT, X3-Ultra, Wattpilot">
     </form>
-    <p class="lede">Grid operators in several EU countries publish lists of the inverters, batteries and chargers they accept for connection.
-      None refers to the others. This table puts {nf(devices.length)} models from seven of them side by side — {nf(multi)} appear in two or more —
-      with each list's own status word, firmware and dates, and a <a href="changes/">change log</a> of what was added, dropped or changed between refreshes.</p>
-    <p class="note"><strong>The register is the authority; this is a cross-reference.</strong> An empty cell means no matching entry was found — the model may be
+    <p class="lede">Grid operators in {COUNTRIES_ALL.filter((c) => c.list === "yes").length} EU+ countries publish lists of the inverters, batteries and chargers they accept for connection;
+      none refers to the others. This table puts {nf(shown.length)} models from {COUNTRIES.length} of them side by side — {nf(multi)} appear in two or more — with each list's own
+      status word, firmware and dates, a <a href="/changes/">change log</a>, and the <strong>Local</strong> column as the other lens: whether Home Assistant or evcc
+      talks to the model on your network (<a href="/local/">local control view</a>).</p>
+    <p class="note"><strong>The list is the authority; this is a cross-reference.</strong> An empty cell means no matching entry was found — the model may be
       listed under another name, or the list may not cover it. It never means “not approved”. Check the list itself before you install.</p>
+    <p class="facts"><span><b>{nf(shown.length)}</b> models</span><span><b>{COUNTRIES.length}</b> lists read</span><span><b>{COUNTRIES_ALL.length}</b> countries</span>
+      <span>lists dated up to <b>{Object.values(META).map((m) => m.source_date || "").sort().pop()}</b></span><span>read <b>{SNAP_DATE}</b></span></p>
   </section>
 
   <div class="layout">
     <fieldset class="filters" id="xf">
       <legend>Narrow down</legend>
-      <label><span>Brand</span><select id="brand"><option value="">All brands</option>{byBrand.map(([, ds]) => <option>{ds[0].brand}</option>)}</select></label>
+      <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option>{b.name}</option>)}</select></label>
       <label><span>Device class</span><select id="cls"><option value="">All classes</option>{Object.entries(RC).filter(([k]) => k !== "other").map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
       <label><span>Country</span><select id="c"><option value="">Any country</option>{COUNTRIES.map((c) => <option value={c}>Listed in {c} — {REGS[c].country}</option>)}</select></label>
       <label><span>Status</span><select id="st"><option value="">Any status</option><option value="R">Listed with restrictions</option><option value="T">Time-limited</option>
         <option value="P">Time-limited, date passed</option><option value="E">Expired</option><option value="N">“Nein” (AT)</option></select></label>
       <label><span>Lists</span><select id="n"><option value="">In any number of lists</option><option value="2">In 2 or more lists</option>
         <option value="3">In 3 or more</option><option value="4">In 4 or more</option></select></label>
+      <label><span>Local</span><select id="lo"><option value="">Any</option><option value="W">Local control</option><option value="L">Local route (read or control)</option>
+        <option value="B">Brand route, model unconfirmed</option><option value="-">No local route found</option></select></label>
     </fieldset>
     <div>
       <p class="count" id="xcount" aria-live="polite">Loading the table…</p>
       <div id="xv"></div>
       <p><button type="button" id="more" class="xv-more" hidden>Show more</button></p>
-      <noscript><p>The table needs JavaScript. Every model is also on its brand page below.</p></noscript>
+      <noscript><p>The table needs JavaScript. Every model is also on its brand page.</p></noscript>
       <RegLegend />
+      <p class="legend small"><span class="rs-key"><span class="st write">local control</span></span><span class="rs-key"><span class="st local">local</span> read only</span>
+        <span class="rs-key"><span class="st cloud">cloud</span></span><span class="rs-key"><span class="st none">brand route</span> model unconfirmed</span>
+        <span class="rs-key"><span class="st none">not found</span></span></p>
     </div>
   </div>
 
   <section class="sec" aria-labelledby="lists-h">
-    <header><h2 id="lists-h">The lists</h2><p>One per country; the list is dated by its publisher.</p></header>
+    <header><h2 id="lists-h">The lists read</h2><p>One per country; the list is dated by its publisher.</p></header>
     <div class="lists">
       {COUNTRIES.map((c) => {
         const regs = regsOf(c);
         return (
           <article class="panel">
-            <h3><a href={`country/${c.toLowerCase()}/`}>{c} — {REGS[c].country}</a></h3>
+            <h3><a href={`/grid/${c.toLowerCase()}/`}>{c} — {REGS[c].country}</a></h3>
             <dl class="facts-dl">
               <dt>List</dt><dd>{regs.map((r, i) => <>{i > 0 && "; "}<Ext href={REGS[r].url}>{REGS[r].name}</Ext></>)}</dd>
               <dt>List dated</dt><dd>{regs.map((r) => META[r]?.source_date ?? "—").join(", ")}</dd>
@@ -64,41 +77,49 @@ const dates = Object.keys(META).map((r) => ({ label: `${r} — ${REGS[r]?.short 
         );
       })}
     </div>
+  </section>
+
+  <section class="sec" aria-labelledby="cc-h">
+    <header><h2 id="cc-h">The other {COUNTRIES_ALL.length - COUNTRIES.length} countries</h2><p>From the EU+ grid-connection table; each country page says what applies per device class.</p></header>
+    {["yes", "partial", "no"].map((flag) => byFlag(flag).length > 0 && (
+      <p class="small"><b>{LIST_WORD[flag as "yes"]}{flag === "yes" ? ", not read yet" : ""}:</b>{" "}
+        {byFlag(flag).map((c, i) => <>{i > 0 && ", "}<a href={`/grid/${c.cc.toLowerCase()}/`}>{c.country}</a></>)}</p>
+    ))}
     <h3>Not read (yet)</h3>
     <ul class="prose small">{NOT_READ.map(([cc, country, name, link, why]) => <li><strong>{cc}</strong> {country} — <a href={link}>{name}</a>: {why}.</li>)}</ul>
-    <p class="small muted">Fourteen of thirty European countries publish no list at all: the grid operator checks an EN 50549-1 (or national) certificate per application.</p>
   </section>
 
   <section class="sec" aria-labelledby="fresh-h">
-    <header><h2 id="fresh-h">How fresh each list is</h2><p>The date each publisher put on its list. Last {12} months.</p></header>
+    <header><h2 id="fresh-h">How fresh each list is</h2><p>The date each publisher put on its list. Last 12 months.</p></header>
     <Timeline items={[...dates, { label: "Downloaded by GridFit", date: SNAP_DATE, kind: "check" as const }]} end={SNAP_DATE} />
     <p class="small">Latest change: {e.date} — {e.baseline ? e.note : Object.entries(e.registers).map(([r, x]: any) => `${r} +${x.added.length} / −${x.removed.length} / ${x.changed.length} changed`).join(" · ") || "no changes"}
-      — <a href="changes/">all changes</a>.</p>
+      — <a href="/changes/">all changes</a>.</p>
   </section>
 
   <section class="sec" aria-labelledby="br-h">
-    <header><h2 id="br-h">Brands</h2><p>{byBrand.length}</p></header>
-    <p class="brand-list">{byBrand.map(([b, ds]) => <a href={`brand/${b}/`}>{ds[0].brand} <span class="muted">{ds.length}</span></a>)}</p>
+    <header><h2 id="br-h">Brands</h2><p>{gridBrands.length}</p></header>
+    <p class="brand-list">{gridBrands.map((b) => <a href={`/${b.slug}/#grid`}>{b.name} <span class="muted">{b.models.length}</span></a>)}</p>
   </section>
 </Base>
 
 <script>
-  // Cross-view: loads /registers/index.json, filters and pages it in place, 100 rows at a time.
+  // Grid lens: loads /grid/index.json, filters and pages it in place, 100 rows at a time.
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
   const SYM: Record<string, string> = { L: "✓", R: "✓*", T: "⏱", P: "⏱!", E: "exp", N: "Nein", O: "?", "-": "" };
   const CLS: Record<string, string> = { L: "listed", R: "restricted", T: "limited", P: "limited-past", E: "expired", N: "nein", O: "other", "-": "none" };
   const WORD: Record<string, string> = { L: "listed", R: "listed with restrictions", T: "time-limited", P: "time-limited, date passed",
     E: "expired", N: "Nein (the list's own word)", O: "see the list", "-": "no matching entry found" };
+  const LOC: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "local"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "not found"] };
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
-  const ids = ["q", "brand", "cls", "c", "st", "n"];
-  type Idx = { countries: string[]; brands: string[]; rows: [number, string, string, string, string][] };
+  const ids = ["q", "brand", "cls", "c", "st", "n", "lo"];
+  type Idx = { countries: string[]; brands: string[]; rows: [number, string, string, string, string, string, string][] };
   let data: Idx, hits: Idx["rows"] = [], shown = 0;
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
   const val = (id: string) => ($<HTMLInputElement>(id).value || "").trim();
 
   function apply() {
-    const q = val("q").toLowerCase(), b = val("brand"), cls = val("cls"), c = val("c"), st = val("st"), n = +val("n") || 0;
+    const q = val("q").toLowerCase(), b = val("brand"), cls = val("cls"), c = val("c"), st = val("st"), n = +val("n") || 0, lo = val("lo");
     const ci = data.countries.indexOf(c);
     hits = data.rows.filter((r) => {
       const cells = r[4];
@@ -107,15 +128,16 @@ const dates = Object.keys(META).map((r) => ({ label: `${r} — ${REGS[r]?.short 
       if (ci >= 0 && cells[ci] === "-") return false;
       if (st && (ci >= 0 ? cells[ci] !== st : !cells.includes(st))) return false;
       if (n && cells.replace(/-/g, "").length < n) return false;
-      if (q && !(data.brands[r[0]] + " " + r[1]).toLowerCase().includes(q)) return false;
+      if (lo && !(lo === "L" ? r[5] === "L" || r[5] === "W" : r[5] === lo)) return false;
+      if (q && !(data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(q)) return false;
       return true;
     });
     $("xcount").innerHTML = `<b>${hits.length.toLocaleString("en")}</b> ${hits.length === 1 ? "model" : "models"}`;
     shown = 0;
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
-      data.countries.map((k) => `<th scope="col"><a href="country/${k.toLowerCase()}/">${k}</a></th>`).join("") +
-      '</tr></thead><tbody id="xb"></tbody></table>';
-    ["brand", "cls", "c", "st", "n"].forEach((id) => $(id).classList.toggle("on", !!val(id)));
+      data.countries.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/">${k}</a></th>`).join("") +
+      '<th scope="col" class="lo">Local</th></tr></thead><tbody id="xb"></tbody></table>';
+    ["brand", "cls", "c", "st", "n", "lo"].forEach((id) => $(id).classList.toggle("on", !!val(id)));
     more();
     const p = new URLSearchParams();
     ids.forEach((id) => val(id) && p.set(id, val(id)));
@@ -126,7 +148,8 @@ const dates = Object.keys(META).map((r) => ({ label: `${r} — ${REGS[r]?.short 
     const html = hits.slice(shown, shown + PAGE).map((r) => {
       const cells = r[4].split("").map((s, i) =>
         `<td class="rs rs-${CLS[s]}" title="${data.countries[i]}: ${WORD[s]}">${SYM[s] || `<span class="vh">${WORD[s]}</span>`}</td>`).join("");
-      return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}</tr>`;
+      const [lk, lw] = LOC[r[5]] ?? LOC["-"];
+      return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}<td class="lo"><span class="st ${lk}">${lw}</span></td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
     shown = Math.min(shown + PAGE, hits.length);
@@ -134,7 +157,7 @@ const dates = Object.keys(META).map((r) => ({ label: `${r} — ${REGS[r]?.short 
     $("more").textContent = `Show more (${(hits.length - shown).toLocaleString("en")} left)`;
   }
 
-  fetch("/registers/index.json").then((r) => r.json()).then((d: Idx) => {
+  fetch("/grid/index.json").then((r) => r.json()).then((d: Idx) => {
     data = d;
     const init = new URLSearchParams(location.search);
     ids.forEach((id) => {

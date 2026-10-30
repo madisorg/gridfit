@@ -204,6 +204,38 @@ rebuild; the timeline is the per-page view of the same idea.
   other page.** The home table works without JS; the hub says so in a `<noscript>` and every model is on
   its brand page.
 
+## 8b. One database, two lenses (2026-10-30)
+
+The site answers two questions about one set of devices, so it has **one resolver** and **two views**, not two
+sections. `web/src/lib/devices.ts` joins the integration families (`data.ts`) with the register devices
+(`registers.ts`) and is the only place that decides a device's local state (`control / read / cloud / brand route /
+not found`) and its grid cell per country (`listed / restricted / expired / not found / rule / free / banned /
+unknown`; the last five come from `data/countries.yaml`, the EU+ grid-connection table). Every page reads through it.
+
+| path | what | why |
+|---|---|---|
+| `/` | the two kinds, the search (submits to `/local/`), the two doors, the latest changes; no JS | the reader picks a lens or types a code |
+| `/local/` | one row per family: HA, evcc, control, connection, the 7-list matrix | the smart-home lens; the grid lens is a column |
+| `/grid/` | one row per register model (14 411), the 7 lists as cells, the local lens as a column; `index.json` + 100-row paging | the grid lens; the smart-home lens is a column |
+| `/grid/{cc}/` | one page per EU+ country (43): what applies per device class; the 7 parsed lists also get the list's facts, rows by class, status words, changes | "what does my country do?"; unparsed countries are `noindex` until their notes exist |
+| `/{brand}/` | both lenses on one page: `#local` families, `#grid` every list model with an anchor `#m-{code}` | one brand, one URL; 672 brands across both halves (the family slug wins) |
+| `/{brand}/{family}/` | the device page: glance bar, `#local` (verdict, evidence), `#grid` (one row per parsed list with the list's own words, the other 36 countries grouped, the model codes with every cell) | one page per device, both answers |
+| `/{brand}/model/{code}/` | a register model no family claims, in two or more lists (3 595): grid first, local = brand route or not found | the same skeleton, the other way round |
+| `/changes/` | both logs | — |
+
+**Arrival decides the order, not a cookie.** The device page renders the local block first; CSS
+`.device:has(#grid:target, #grid-sec :target)` puts the grid block first when the reader arrives at `#grid`,
+`#grid-{cc}` or `#m-{code}` (`/grid/`, country and brand pages link that way). A model page is grid-first and flips
+on `#local`. The target row or country gets the signal edge. No JavaScript, no referrer sniffing.
+
+**Partial data has words.** A family with no list match shows, per country, what the table says: no list for the class
+(dotted green), a rule without a list (dotted amber), not allowed (struck), not confirmed (`?`) — never a bare
+"not found" when the country has nothing to find. A register model with no integration row shows "brand route, model
+unconfirmed" when the brand has a local family, else "not found", and says which sources were read.
+
+**Reserved first segments** (`local grid changes about model search data devices sitemap 404 llms robots models`): the
+build throws when a brand slug collides, or a family slug is `model`.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components
@@ -301,4 +333,14 @@ hidden ([`routes-kind.json`](docs/moodud/routes-kind.json): home, and home with 
 [`kind.json`](docs/moodud/kind.json) (switch above the table, first version) and [`positsioon.json`](docs/moodud/positsioon.json)
 (final), 8 pictures each, 0 errors, 0 overflow, 0 texts under 4.5:1 (lowest 5.68), 0 tap targets under 44 px
 (0 of 14 / 0 of 5). The OG card carries the two-question heading.
+
+## 15. Measured, 2026-10-30 — one database, two lenses
+
+13 routes ([`routes-arh.json`](docs/moodud/routes-arh.json): home, `/local/` top and table, `/grid/` top and table filtered to EE,
+`/grid/ee/`, `/grid/fr/`, the Deye LP3 device page top and at `#grid-ee`, the Sungrow brand page top and at `#grid`, a register
+model page, 404) × 3440/390 × light/dark = 52 pictures: [`arh.json`](docs/moodud/arh.json). 0 console errors, 0 overflow,
+0 texts under 4.5:1 (lowest 5.68). Two findings on the device page's grid block: the "36 more countries" links were
+sentence links under 44 px on a phone (36 of 48) and the confidence marks were 11.7 px `<sup>`s; both fixed
+(44 px inline-flex links, 13 px marks), re-measure [`arh-parast.json`](docs/moodud/arh-parast.json) 0 of 40 and 0 of 13.
+Pages: 5 048 (732 families, 3 595 model pages, 672 brands, 43 countries) — down from 7 267; `/registers/**` is gone.
 

@@ -1,0 +1,526 @@
+{
+ "arh2--pere-grid--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 9,
+   "GF Text": 197
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 206,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 14
+  },
+  "kontrast": {
+   "n": 206,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--pere-grid--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 9,
+   "GF Text": 197
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 206,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 14
+  },
+  "kontrast": {
+   "n": 206,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--pere-grid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5289,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 105
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 40,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 111,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {},
+  "kontrast": {
+   "n": 111,
+   "min": 6.43,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--pere-grid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5289,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 105
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 40,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 111,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {},
+  "kontrast": {
+   "n": 111,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--mudel--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2506,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 16,
+   "GF Text": 125
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 57,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 141,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 1,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 141,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--mudel--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2506,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 16,
+   "GF Text": 125
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 57,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 141,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 1,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 141,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--mudel--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4581,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 7,
+   "GF Text": 29
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 1,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "arh2--mudel--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4581,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 7,
+   "GF Text": 29
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 1,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

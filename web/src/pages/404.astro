@@ -1,20 +1,18 @@
 ---
 // Cloudflare Pages serves /404.html for any path it cannot find.
 import Base from "../layouts/Base.astro";
-import { data, brands } from "../lib/data";
-const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
+import { COUNTS, nf } from "../lib/devices";
 ---
-<Base title="Not found" description="This page does not exist. Search the device table or the register cross-view instead.">
+<Base title="Not found" description="This page does not exist. Search the device table or the grid lists instead." noindex={true}>
   <section class="ask" aria-labelledby="nf-h">
     <h1 id="nf-h">Not found</h1>
-    <p class="lede">There is no page at this address. Family pages are <span class="code">/brand/family/</span>, register model pages are
-      <span class="code">/registers/brand/model/</span>. Both are listed from the search on the home page.</p>
-    <form class="search" role="search" action="/" method="get">
+    <p class="lede">There is no page at this address. Device pages are <span class="code">/brand/family/</span> or
+      <span class="code">/brand/model/code/</span>, brand pages <span class="code">/brand/</span>, country pages <span class="code">/grid/cc/</span>.</p>
+    <form class="search" role="search" action="/local/" method="get">
       <label class="vh" for="q">Model code, brand or family</label>
       <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
     </form>
-    <nav class="crumbs" aria-label="Where to go instead"><a href="/">All {nf(data.families.length)} families</a><span aria-hidden="true">/</span>
-      <a href="/registers/">Grid registers</a><span aria-hidden="true">/</span><a href="/about/">How we know</a></nav>
-    <p class="facts"><span><b>{nf(brands().length)}</b> brands</span></p>
+    <nav class="crumbs" aria-label="Where to go instead"><a href="/local/">Local control, {nf(COUNTS.families)} families</a><span aria-hidden="true">/</span>
+      <a href="/grid/">Grid lists, {nf(COUNTS.regModels)} models</a><span aria-hidden="true">/</span><a href="/about/">How we know</a></nav>
   </section>
 </Base>

@@ -1,133 +1,159 @@
 ---
+// /{brand}/{family}/ — the device page of a product family: both lenses, always. The glance bar answers both
+// above the fold; the local block comes first unless the reader arrived at #grid, #grid-{cc} or #m-{code}.
 import Base from "../../../layouts/Base.astro";
 import Status from "../../../components/Status.astro";
-import Matrix from "../../../components/Matrix.astro";
 import Timeline from "../../../components/Timeline.astro";
 import Ext from "../../../components/Ext.astro";
-import { data, CLASS, CONN, SOURCE, REPO, REG_KEYS, summary, regCells, type Family, type Row } from "../../../lib/data";
+import Glance from "../../../components/Glance.astro";
+import GridBlock from "../../../components/GridBlock.astro";
+import RegCell from "../../../components/RegCell.astro";
+import { data, CLASS, CONN, SOURCE, REPO, summary, type Family, type Row } from "../../../lib/data";
+import { COUNTRIES, REGS, META, SNAP_DATE, trustOf } from "../../../lib/registers";
+import { gridOfFamily, modelsOf, entriesOfFamily, localOf, localRoutes, modelAnchor, GRID_WORD } from "../../../lib/devices";
 
 export function getStaticPaths() {
   return data.families.map((f) => ({ params: { brand: f.brand_slug, family: f.slug }, props: { f } }));
 }
 const { f } = Astro.props as { f: Family };
 const s = summary(f);
-const cells = regCells(f);
+const cells = gridOfFamily(f);
+const models = modelsOf(f);
+const entries = entriesOfFamily(f);
+const local = localOf(f);
 const ha = f.rows.filter((r) => r.source !== "evcc");
 const ev = f.rows.filter((r) => r.source === "evcc");
 const order = { ha_core: 0, hacs: 1, evcc: 2 };
 const rows = [...f.rows].sort((a, b) => order[a.source] - order[b.source] || (b.stars ?? 0) - (a.stars ?? 0));
 const ctl = (rs: Row[]) => rs.some((r) => r.local && r.control === "write");
-const trust = [...new Set(f.models.map((m) => m.trust))].join(" / ");
+const on = COUNTRIES.filter((k) => ["listed", "restricted", "expired"].includes(cells[k]));
 const title = `${f.brand} ${f.name}`;
+const latestList = Object.values(META).map((m) => m.source_date || "").sort().pop();
+const gridQ = `Is the ${title} on an EU grid-connection list?`;
+const gridA = on.length
+  ? `Yes — models of this family are on the ${on.length === 1 ? "list" : "lists"} of ${on.join(", ")} (lists dated up to ${latestList}, read ${SNAP_DATE}); the other ${COUNTRIES.length - on.length} of the 7 lists read have no matching model, which is not a “no”.`
+  : Object.values(cells).every((v) => v === "free") ? `No country lists this kind of device — nothing to check against a list.`
+  : `No model of this family was found on the 7 lists read (${SNAP_DATE}). That is not “not approved”: the list may spell the model differently, or the family's codes are not collected yet.`;
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
-    { "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: f.faq.q, acceptedAnswer: { "@type": "Answer", text: f.faq.a } }] },
+    { "@type": "FAQPage", mainEntity: [
+      { "@type": "Question", name: f.faq.q, acceptedAnswer: { "@type": "Answer", text: f.faq.a } },
+      { "@type": "Question", name: gridQ, acceptedAnswer: { "@type": "Answer", text: gridA } },
+    ] },
     { "@type": "ProductGroup", name: title, brand: { "@type": "Brand", name: f.brand }, category: CLASS[f.class] },
   ],
 };
 const items = [
   ...f.rows.filter((r) => r.source === "hacs" && r.updated).map((r) => ({ label: `${r.name} — last release/commit`, href: r.url, date: r.updated!, kind: "ha" as const })),
-  ...REG_KEYS.filter((k) => cells[k]).map((k) => ({ label: `${k} register snapshot`, href: data.registers[k].url, date: data.registers[k].snapshot, kind: "reg" as const })),
+  ...COUNTRIES.filter((k) => entries[k]?.length).map((k) => ({ label: `${k} list dated`, href: REGS[k].url, date: META[k]?.source_date || SNAP_DATE, kind: "reg" as const })),
   { label: "Sources read by GridFit", date: data.seen, kind: "check" as const },
 ];
 const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURIComponent(title + ": ")}`;
 const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
+const trust = [...new Set(models.map(trustOf))].join(" / ");
 ---
-<Base title={`${title}: local control with Home Assistant and evcc`} description={f.faq.a}>
+<Base title={`${title}: local control with Home Assistant and evcc, and EU grid lists`} current="/local/" description={`${f.faq.a} ${gridA}`}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
 
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/">All families</a><span aria-hidden="true">/</span><a href={`/${f.brand_slug}/`}>{f.brand}</a></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/local/">Local control</a><span aria-hidden="true">/</span><a href={`/${f.brand_slug}/`}>{f.brand}</a></nav>
   <header class="head">
     <h1>{title}</h1>
     <p class="kind"><span>{CLASS[f.class]}</span><span aria-hidden="true">·</span>
       <span>{f.rows.length} integration route{f.rows.length === 1 ? "" : "s"}</span><span aria-hidden="true">·</span>
-      <span>{f.models.length} register model{f.models.length === 1 ? "" : "s"}</span></p>
+      <span>{models.length} model{models.length === 1 ? "" : "s"} on grid lists</span></p>
+    <Glance local={local} routes={localRoutes(f)} cells={cells} seen={data.seen} listDate={latestList} />
+    <p class="chips"><a href="#local">Local control</a><a href="#grid">Grid lists</a>{models.length > 0 && <a href="#codes">Model codes</a>}</p>
   </header>
 
-  <section class="answer sec" aria-label="Answer">
-    <dl class="verdict">
-      <div><dt>Home Assistant</dt><dd><Status kind={s.ha} />{ha.length > 0 && <Status kind={ctl(ha) ? "write" : "read"} />}
-        {ha.length > 0 && <span class="muted">{ha.length} integration{ha.length === 1 ? "" : "s"}</span>}</dd></div>
-      <div><dt>evcc</dt><dd><Status kind={s.evcc} />{ev.length > 0 && <Status kind={ctl(ev) ? "write" : "read"} />}
-        {ev.length > 0 && ev.every((r) => r.sponsor) && <Status kind="sponsor" />}</dd></div>
-      <div><dt>Grid registers</dt><dd><Matrix cells={cells} cls={f.class} />
-        {REG_KEYS.filter((k) => cells[k] === "rule" && data.registers[k].scope_note?.[f.class]).map((k) => (
-          <span class="note small">{k}: {data.registers[k].scope_note![f.class]}</span>))}</dd></div>
-      <div><dt>Register match</dt><dd>{f.models.length ? <span>model-code pattern{trust && `, brand ${trust}`} — a pointer, confirm in the register</span>
-        : Object.values(cells).every((v) => v === "free" || v === "rule") ? <span class="muted">no country here lists this class — nothing to check against a list</span>
-        : <span class="muted">no register model matched</span>}</dd></div>
-      <div><dt>Checked</dt><dd><span class="code">{data.seen}</span></dd></div>
-    </dl>
-    <div class="faq">
-      <h2>{f.faq.q}</h2>
-      <p class="a">{f.faq.a}</p>
-      <p class="caveat">Checked {data.seen} against the sources below. Firmware updates can open or close local access — check the
-        integration's own page before you buy, and your installer before software changes export limits or charges a battery from the grid.</p>
-    </div>
-  </section>
+  <div class="device">
+    <section class="sec" id="local-sec" aria-labelledby="local">
+      <header><h2 id="local">Local control with Home Assistant and evcc</h2><p>checked {data.seen}</p></header>
+      <div class="answer">
+        <dl class="verdict">
+          <div><dt>Home Assistant</dt><dd><Status kind={s.ha} />{ha.length > 0 && <Status kind={ctl(ha) ? "write" : "read"} />}
+            {ha.length > 0 && <span class="muted">{ha.length} integration{ha.length === 1 ? "" : "s"}</span>}</dd></div>
+          <div><dt>evcc</dt><dd><Status kind={s.evcc} />{ev.length > 0 && <Status kind={ctl(ev) ? "write" : "read"} />}
+            {ev.length > 0 && ev.every((r) => r.sponsor) && <Status kind="sponsor" />}</dd></div>
+          <div><dt>Connection</dt><dd>{s.conn.length ? s.conn.map((c) => CONN[c] ?? c).join(", ") : <span class="muted">—</span>}</dd></div>
+        </dl>
+        <div class="faq">
+          <h3>{f.faq.q}</h3>
+          <p class="a">{f.faq.a}</p>
+          <p class="caveat">Firmware updates can open or close local access — check the integration's own page before you buy, and your installer
+            before software changes export limits or charges a battery from the grid.</p>
+        </div>
+      </div>
+      {rows.length > 0 && (
+        <>
+          <h3 id="ev-h">Evidence: integrations and templates</h3>
+          <table class="tbl ev">
+            <thead><tr><th scope="col">Integration</th><th scope="col">Source</th><th scope="col">Link</th><th scope="col">Read or control</th>
+              <th scope="col">Connection</th><th scope="col" class="num">Repo</th><th scope="col">Seen</th></tr></thead>
+            <tbody>
+              {rows.map((r) => (
+                <tr>
+                  <td class="fam nm"><a href={r.url}>{r.name}</a>{r.source === "hacs" && <span class="b small muted"> {r.ref}</span>}
+                    {r.note && <span class="note small">{r.note}</span>}</td>
+                  <td class="src" data-l="">{SOURCE[r.source]}</td>
+                  <td data-l=""><Status kind={r.local ? "local" : r.local === false ? "cloud" : "none"} label={r.local === null ? "unknown" : undefined} /></td>
+                  <td class="wide"><Status kind={r.control === "write" ? "write" : "read"} /> <span class="detail">{r.control_detail}</span>
+                    {r.sponsor && <> <Status kind="sponsor" /></>}</td>
+                  <td data-l="via">{conn(r) || "–"}{r.iot_class && <span class="muted"> ({r.iot_class})</span>}</td>
+                  <td class="num" data-l="repo">{r.source === "hacs" ? <span>★ {r.stars ?? 0} · {r.updated ?? "?"}</span> : "–"}</td>
+                  <td data-l="seen"><Ext href={r.source_url}>{r.seen}</Ext></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {ha.some((r) => r.source === "ha_core") && (
+            <p class="small muted">Core integrations ship with Home Assistant. For the exact {f.brand} models that Home Assistant users report, see the
+              <Ext href={ha.find((r) => r.source === "ha_core")!.ohf_url!}>Open Home Foundation Device Database</Ext> (preview) — GridFit does not copy it.</p>
+          )}
+        </>
+      )}
+      {f.see_also.length > 0 && (
+        <>
+          <h3>Other community routes</h3>
+          <p class="small muted">Not an integration; not counted as “works locally”.</p>
+          <ul class="prose">{f.see_also.map((x) => <li><a href={x.url}>{x.name}</a> — {x.note}</li>)}</ul>
+        </>
+      )}
+      {rows.length === 0 && <p>We found no Home Assistant or evcc support for this family yet. Know one? <a href={issue}>Add it</a>.</p>}
+    </section>
 
-  {rows.length > 0 && (
-    <section class="sec" aria-labelledby="ev-h">
-      <header><h2 id="ev-h">Evidence: integrations and templates</h2><p>One row per way to talk to it. Each links to the source the claim comes from.</p></header>
-      <table class="tbl ev">
-        <thead><tr><th scope="col">Integration</th><th scope="col">Source</th><th scope="col">Link</th><th scope="col">Read or control</th>
-          <th scope="col">Connection</th><th scope="col" class="num">Repo</th><th scope="col">Seen</th></tr></thead>
-        <tbody>
-          {rows.map((r) => (
-            <tr>
-              <td class="fam nm"><a href={r.url}>{r.name}</a>{r.source === "hacs" && <span class="b small muted"> {r.ref}</span>}
-                {r.note && <span class="note small">{r.note}</span>}</td>
-              <td class="src" data-l="">{SOURCE[r.source]}</td>
-              <td data-l=""><Status kind={r.local ? "local" : r.local === false ? "cloud" : "none"} label={r.local === null ? "unknown" : undefined} /></td>
-              <td class="wide"><Status kind={r.control === "write" ? "write" : "read"} /> <span class="detail">{r.control_detail}</span>
-                {r.sponsor && <> <Status kind="sponsor" /></>}</td>
-              <td data-l="via">{conn(r) || "–"}{r.iot_class && <span class="muted"> ({r.iot_class})</span>}</td>
-              <td class="num" data-l="repo">{r.source === "hacs" ? <span>★ {r.stars ?? 0} · {r.updated ?? "?"}</span> : "–"}</td>
-              <td data-l="seen"><Ext href={r.source_url}>{r.seen}</Ext></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      {ha.some((r) => r.source === "ha_core") && (
-        <p class="small muted">Core integrations ship with Home Assistant. For the exact {f.brand} models that Home Assistant users report, see the
-          <Ext href={ha.find((r) => r.source === "ha_core")!.ohf_url!}>Open Home Foundation Device Database</Ext> (preview) — GridFit does not copy it.</p>
+    <section class="sec" id="grid-sec" aria-labelledby="grid">
+      <header><h2 id="grid">Grid-connection lists</h2><p>The list is the authority; this is a cross-reference.</p></header>
+      <div class="faq">
+        <h3>{gridQ}</h3>
+        <p class="a">{gridA}</p>
+      </div>
+      <GridBlock cells={cells} entries={entries} cls={f.class} />
+      <h3 id="codes">Model codes on the lists</h3>
+      <p class="small muted">{models.length ? `Matched to this family by model-code pattern (brand match ${trust}) — a pointer; confirm in the list. Hover a cell for the list's own words.` : "No list carries a model matched to this family. That says nothing about approval."}</p>
+      {models.length > 0 && (
+        <table class="xv">
+          <thead><tr><th scope="col">Model, as the list writes it</th>{COUNTRIES.map((c) => <th scope="col"><a href={`/grid/${c.toLowerCase()}/`}>{c}</a></th>)}<th scope="col" class="match">Match</th></tr></thead>
+          <tbody>
+            {models.map((d) => (
+              <tr id={modelAnchor(d)}>
+                <td>{d.model}</td>
+                {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} />)}
+                <td class="match">{trustOf(d)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       )}
     </section>
-  )}
 
-  {f.see_also.length > 0 && (
-    <section class="sec" aria-labelledby="sa-h">
-      <header><h2 id="sa-h">Other community routes</h2><p>Not an integration; not counted as “works locally”.</p></header>
-      <ul class="prose">{f.see_also.map((x) => <li><a href={x.url}>{x.name}</a> — {x.note}</li>)}</ul>
+    <section class="sec" aria-labelledby="tl-h">
+      <header><h2 id="tl-h">How old the evidence is</h2><p>Last 12 months. ◂ = older than the axis.</p></header>
+      <Timeline items={items} end={data.seen} />
     </section>
-  )}
 
-  {rows.length === 0 && <p class="sec">We found no Home Assistant or evcc support for this family yet. Know one? <a href={issue}>Add it</a>.</p>}
-
-  <section class="sec" aria-labelledby="tl-h">
-    <header><h2 id="tl-h">How old the evidence is</h2><p>Last 12 months. ◂ = older than the axis.</p></header>
-    <Timeline items={items} end={data.seen} />
-  </section>
-
-  <section class="sec" aria-labelledby="rg-h">
-    <header><h2 id="rg-h">Grid register models</h2>
-      <p>{f.models.length ? "Matched by model-code pattern — treat as a pointer and confirm in the register." : "No register model is matched to this family. That says nothing about approval."}</p></header>
-    {f.models.length > 0 && (
-      <table class="tbl models">
-        <thead><tr><th scope="col">Model, as the register writes it</th><th scope="col">Listed in</th><th scope="col">Brand match</th></tr></thead>
-        <tbody>
-          {f.models.map((m) => {
-            const c = Object.fromEntries(Object.entries(m.registers).map(([k, v]) => [k, v === "listed" ? "listed" : "restricted"]));
-            return <tr><td class="fam code">{m.page ? <a href={`/${m.page}`}>{m.model}</a> : m.model}</td><td class="wide"><Matrix cells={c} titled={false} /></td><td data-l="match" class="muted">{m.trust}</td></tr>;
-          })}
-        </tbody>
-      </table>
-    )}
-    <p class="small muted">Registers: {REG_KEYS.map((k, i) => <>{i > 0 && " · "}<a href={data.registers[k].url}>{k}</a> {data.registers[k].snapshot}</>)}. * = the register's own restriction or time limit.</p>
-  </section>
-
-  <section class="sec" aria-label="Corrections">
-    <p><a class="correct" href={issue}><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13l1-3 7-7 2 2-7 7z M10 4l2 2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Something wrong for your device? Open an issue</a></p>
-  </section>
+    <section class="sec" aria-label="Corrections">
+      <p><a class="correct" href={issue}><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13l1-3 7-7 2 2-7 7z M10 4l2 2" fill="none" stroke="currentColor" stroke-width="1.3"/></svg>Something wrong for your device? Fix the row</a></p>
+    </section>
+  </div>
 </Base>

@@ -1,6 +1,7 @@
 ---
-// Dense family table: one row per product family. Home page and brand pages use the same rows.
-import { CLASS, summary, regCells, familyUrl, type Family } from "../lib/data";
+// Dense family table: one row per product family. /local/ and the brand pages use the same rows.
+import { CLASS, summary, familyUrl, type Family } from "../lib/data";
+import { gridOfFamily, modelsOf } from "../lib/devices";
 import Status from "./Status.astro";
 import Matrix from "./Matrix.astro";
 const { families, showBrand = true, id } = Astro.props as { families: Family[]; showBrand?: boolean; id?: string };
@@ -8,13 +9,14 @@ const { families, showBrand = true, id } = Astro.props as { families: Family[]; 
 <table class="tbl" id={id}>
   <thead><tr>
     <th scope="col">Product family</th><th scope="col">Class</th><th scope="col">Home Assistant</th>
-    <th scope="col">evcc</th><th scope="col">Local control</th><th scope="col">Grid registers</th>
-    <th scope="col" class="num">Register models</th>
+    <th scope="col">evcc</th><th scope="col">Local control</th><th scope="col">Grid lists</th>
+    <th scope="col" class="num">List models</th>
   </tr></thead>
   <tbody>
   {families.map((f) => {
     const s = summary(f);
-    const cells = regCells(f);
+    const cells = gridOfFamily(f);
+    const n = modelsOf(f).length;
     return (
       <tr data-b={f.brand} data-c={f.class} data-n={s.conn.join(" ")} data-ha={s.ha} data-ev={s.evcc}
           data-w={s.control ? "1" : "0"} data-r={Object.keys(cells).filter((k) => cells[k] === "listed" || cells[k] === "restricted").join(" ")}>
@@ -24,7 +26,7 @@ const { families, showBrand = true, id } = Astro.props as { families: Family[]; 
         <td data-l="evcc"><Status kind={s.evcc} /></td>
         <td>{s.control ? <Status kind="write" /> : <Status kind="read" label={s.ha === "none" && s.evcc === "none" ? "not known" : "read only"} />}</td>
         <td class="wide"><Matrix cells={cells} titled={false} /></td>
-        <td class="num" data-l="models">{f.models.length || "–"}</td>
+        <td class="num" data-l="models">{n || "–"}</td>
       </tr>
     );
   })}

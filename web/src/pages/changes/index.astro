@@ -1,0 +1,55 @@
+---
+// /changes/ — both logs on one page: what moved in the grid lists between refreshes, and what moved in the
+// integration dataset between rebuilds.
+import Base from "../../layouts/Base.astro";
+import { REGS, LOG, COUNTRIES } from "../../lib/registers";
+import { REPO, DATA } from "../../lib/data";
+import { readFileSync } from "node:fs";
+const dlog: any[] = JSON.parse(readFileSync(DATA + "dataset/changelog.json", "utf-8"));
+const FIELD: Record<string, string> = { status: "status", fw: "firmware", valid: "end date" };
+---
+<Base title="What changed" current="/changes/"
+      description={`What was added to, dropped from or changed in the grid-connection lists of ${COUNTRIES.join(", ")}, refresh by refresh, and what changed in the Home Assistant and evcc rows between rebuilds.`}>
+  <header class="head">
+    <h1>What changed</h1>
+    <p class="prose muted">Two logs. <a href="#lists">Grid lists</a>: each refresh downloads every list again and compares it with the previous one — models added,
+      models dropped, and a changed status word, firmware or end date; none of the lists publishes this itself. <a href="#rows">Integration rows</a>: each rebuild
+      compares the dataset with the previous one — rows that appeared, disappeared, or changed local/cloud, read/control, connection, class or sponsor status.</p>
+  </header>
+
+  <section class="sec" id="lists" aria-labelledby="lists-h">
+    <header><h2 id="lists-h">Grid lists</h2><p>Raw history: <a href={`${REPO}/blob/main/data/registers/changelog.json`}>registers/changelog.json</a></p></header>
+    {LOG.map((e) => (
+      <section class="sec" id={e.date}>
+        <header><h3 class="code">{e.date}</h3>{!e.baseline && <p>compared with {e.previous}</p>}</header>
+        {e.baseline && <p>{e.note}</p>}
+        {Object.entries(e.registers).map(([r, x]: [string, any]) => (
+          <div class="panel" id={`${e.date}-${r}`}>
+            <h4>{REGS[r].short}</h4>
+            <p class="small muted">list dated {x.previous_source_date || "—"} → {x.source_date || "—"} · {x.added.length} added · {x.removed.length} removed · {x.changed.length} changed</p>
+            {x.added.length > 0 && <details class="more"><summary>Added ({x.added.length})</summary><ul class="small">{x.added.slice(0, 500).map(([b, m, s]: string[]) => <li>{b} <span class="code">{m}</span> — {s}</li>)}</ul></details>}
+            {x.removed.length > 0 && <details class="more"><summary>Removed ({x.removed.length})</summary><ul class="small">{x.removed.slice(0, 500).map(([b, m, s]: string[]) => <li>{b} <span class="code">{m}</span> — was {s}</li>)}</ul></details>}
+            {x.changed.length > 0 && <details class="more"><summary>Changed ({x.changed.length})</summary><ul class="small">{x.changed.slice(0, 500).map(([b, m, f, o, n]: string[]) => <li>{b} <span class="code">{m}</span> — {FIELD[f]}: {o} → {n}</li>)}</ul></details>}
+          </div>
+        ))}
+        {!e.baseline && Object.keys(e.registers).length === 0 && <p>No list changed.</p>}
+      </section>
+    ))}
+  </section>
+
+  <section class="sec" id="rows" aria-labelledby="rows-h">
+    <header><h2 id="rows-h">Integration rows</h2><p>Full history: the <a href={`${REPO}/commits/main/data/dataset`}>dataset's git log</a></p></header>
+    {dlog.map((e) => (
+      <section class="sec">
+        <header><h3 class="code">{e.date}</h3><p>{e.added.length} added · {e.removed.length} removed · {e.changed.length} changed</p></header>
+        {e.note && <p>{e.note}</p>}
+        {e.changed.length > 0 && (
+          <table class="tbl"><thead><tr><th scope="col">Row</th><th scope="col">Field</th><th scope="col">Was</th><th scope="col">Now</th></tr></thead>
+            <tbody>{e.changed.slice(0, 300).map((x: any) => <tr><td class="fam code">{x.row}</td><td data-l="field">{x.field}</td><td data-l="was">{String(x.old)}</td><td data-l="now">{String(x.new)}</td></tr>)}</tbody></table>
+        )}
+        {e.added.length > 0 && <details class="more"><summary>Added ({e.added.length})</summary><ul class="small">{e.added.slice(0, 300).map((x: string) => <li class="code">{x}</li>)}</ul></details>}
+        {e.removed.length > 0 && <details class="more"><summary>Removed ({e.removed.length})</summary><ul class="small">{e.removed.slice(0, 300).map((x: string) => <li class="code">{x}</li>)}</ul></details>}
+      </section>
+    ))}
+  </section>
+</Base>
