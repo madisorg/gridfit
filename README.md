@@ -99,8 +99,8 @@ back to membership only (one switch in `gridfit/registers.py`, as Belgium alread
 - **grid status, one per model and country** — with a list read: on the list / with a condition or end date / refused or expired / not on
   the list. Without a list (or with one not read), in this order: *fit by the maker's document* (`data/evidence/`), *over the type-A limit*
   (the country profile's ceiling; type B is another procedure), *accepted on other EU lists* (a positive entry on at least one list read —
-  a hint about the maker, never an approval there), *nothing known*. A banned class is *not fit*, a class with nothing to check
-  *nothing to check*, an unconfirmed one *not confirmed*. Several countries chosen: the best answer among them, or the worst with
+  a hint about the maker, never an approval there), *nothing known*. A banned class is *not fit*, a class with no list and no rule
+  *nothing to approve* (fit), an unconfirmed one *not confirmed*. The cell is a traffic light: green fit, amber the operator's call, red not fit, grey unknown. Several countries chosen: the best answer among them, or the worst with
   “in every chosen country” ticked.
 
 ## Grid register cross-view

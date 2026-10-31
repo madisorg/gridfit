@@ -18,7 +18,7 @@ export const LOCAL_WORD: Record<LocalState, string> = {
 };
 export const GRID_WORD: Record<GridState, string> = {
   listed: "listed", restricted: "listed, conditions", expired: "expired or date passed", refused: "not accepted",
-  "": "not found on the list", rule: "no list, a requirement applies", free: "nothing to check",
+  "": "not found on the list", rule: "no list, a requirement applies", free: "nothing to approve",
   banned: "not allowed", unknown: "unknown",
 };
 
@@ -180,9 +180,9 @@ export const KVA_BUCKETS: [string, string, number, number][] = [
 export const kindOf = (cls: string) => (cls === "wallbox" ? "ev" : cls === "meter" ? "meter" : "inv");
 
 // ---- three answers per cell; the rest is detail for the hover
-export type Answer = "yes" | "doc" | "no" | "none";
+export type Answer = "yes" | "cond" | "free" | "doc" | "no" | "none";
 export const answerOf = (st: GridState | undefined): Answer =>
-  st === "listed" || st === "restricted" ? "yes" : st === "expired" || st === "refused" || st === "banned" ? "no" : "none";
+  st === "listed" ? "yes" : st === "restricted" ? "cond" : st === "free" ? "free" : st === "expired" || st === "refused" || st === "banned" ? "no" : "none";
 export const RULE_WORD: Record<string, string> = { list: "list", rule: "certificate", free: "—", banned: "not allowed", unknown: "?" };
 export type Tip = { title: string; lines: string[]; href?: string; hrefText?: string };
 export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string): Tip {
@@ -211,7 +211,7 @@ export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string): 
       "the list may spell the model differently \u2014 never \u201cnot approved\u201d"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
   }
   if (state === "rule") return { title: "nothing known: a certificate is required, no document found", lines: [`${country} has no list for this class; the grid operator checks the maker's certificate with the application`], ...there };
-  if (state === "free") return { title: "nothing to check", lines: [`${country} lists no ${cls === "wallbox" ? "chargers" : cls === "meter" ? "meters or energy managers" : "devices of this class"}; nothing to check against a list`], ...there };
+  if (state === "free") return { title: "fit: nothing to approve", lines: [`${country} lists no ${cls === "wallbox" ? "chargers" : cls === "meter" ? "meters or energy managers" : "devices of this class"}; nothing to check against a list`], ...there };
   if (state === "banned") return { title: "not fit: not allowed", lines: [`${country} does not allow this kind of device to be connected`], ...there };
   return { title: "nothing known: not confirmed", lines: [`whether ${country} lists or otherwise gates this class is not confirmed yet`], ...there };
 }
@@ -253,8 +253,8 @@ export const COUNTS = {
 // (web/src/lib/grid-filter.js cellCode): the maker's own document, the type-A ceiling, then what other EU lists say.
 export type Tier = "D" | "K" | "B" | "F" | "?" | "X" | "-";
 export const TIER_WORD: Record<Tier, string> = {
-  D: "fit by the maker's document", K: "accepted on other EU lists", B: "over the type-A limit: type B, a procedure of its own",
-  F: "nothing to check for this class", "?": "not confirmed", X: "not fit: not allowed", "-": "nothing known",
+  D: "likely fit: the maker's document names the country", K: "possibly fit: accepted on other EU lists", B: "other procedure: over the type-A limit",
+  F: "fit: nothing to approve for this kind of device", "?": "unknown: not confirmed", X: "not fit: not allowed", "-": "unknown: nothing known",
 };
 export type Other = { cc: string; country: string; list: string; list_url?: string; state: ClassState; confidence: string; tier: Tier; release: Release | null };
 export function tierOf(cc: string, state: ClassState, positive: string[], releases: Release[], kva: number | null): { tier: Tier; release: Release | null } {

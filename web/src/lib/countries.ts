@@ -24,13 +24,13 @@ export const LIST_LONG: Record<ListFlag, string> = {
   no: "No public list: the grid operator checks the manufacturer's certificate or declaration per application.",
 };
 export const CLASS_WORD: Record<ClassState, string> = {
-  list: "on a public list", rule: "no list, a rule applies", free: "no list and no model-level rule",
+  list: "on a public list", rule: "no list, a rule applies", free: "nothing to approve: no list and no rule",
   banned: "not allowed", unknown: "not confirmed",
 };
 export const CLASS_LONG: Record<ClassState, string> = {
   list: "a public list covers this class; check the model there",
   rule: "no list, but a notification, registration or certificate rule applies — ask the grid operator",
-  free: "no list and no model-level rule: nothing to check against a list",
+  free: "no list and no model-level rule: nothing to approve",
   banned: "this kind of device is not allowed to be connected",
   unknown: "we have not confirmed whether a list or a rule applies",
 };

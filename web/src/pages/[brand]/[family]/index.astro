@@ -33,7 +33,7 @@ const latestList = Object.values(META).map((m) => m.source_date || "").sort().po
 const gridQ = `Is the ${title} on an EU grid-connection list?`;
 const gridA = on.length
   ? `Yes — models of this family are on the ${on.length === 1 ? "list" : "lists"} of ${on.join(", ")} (lists dated up to ${latestList}, read ${SNAP_DATE})${on.length < COUNTRIES.length ? `; the other ${COUNTRIES.length - on.length} of the ${COUNTRIES.length} lists read have no matching model, which is not a “no”` : ", every list read"}.`
-  : Object.values(cells).every((v) => v === "free") ? `No country lists this kind of device — nothing to check against a list.`
+  : Object.values(cells).every((v) => v === "free") ? `No country lists this kind of device — nothing to approve against a list.`
   : `No model of this family was found on the 7 lists read (${SNAP_DATE}). That is not “not approved”: the list may spell the model differently, or the family's codes are not collected yet.`;
 const ld = {
   "@context": "https://schema.org",

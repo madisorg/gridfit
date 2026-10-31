@@ -14,9 +14,9 @@ const { cells, entries, cls, releases = [], kva = null, brand = "" } = Astro.pro
   { cells: Record<string, GridState>; entries: Record<string, Entry[]>; cls: string; releases?: Release[]; kva?: number | null; brand?: string };
 const others = othersTiered(cls, cells, releases, kva);
 const positive = positiveOf(cells);
-const ORDER: Tier[] = ["D", "K", "B", "F", "?", "-", "X"];
+const ORDER: Tier[] = ["F", "D", "K", "B", "?", "-", "X"];
 const groups = ORDER.map((t) => [t, others.filter((o) => o.tier === t)] as const).filter(([, l]) => l.length);
-const GLYPH: Record<Tier, [string, string]> = { D: ["cl-doc", "✓"], K: ["cl-else", "○"], B: ["cl-type", "B"], F: ["cl-free", "—"], "?": ["cl-unk", "?"], "-": ["cl-none", ""], X: ["cl-no", "✕"] };
+const GLYPH: Record<Tier, [string, string]> = { D: ["cl-doc", "✓"], K: ["cl-else", "○"], B: ["cl-type", "B"], F: ["cl-free", "✓"], "?": ["cl-unk", "?"], "-": ["cl-none", ""], X: ["cl-no", "✕"] };
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const docsUsed = [...new Map(releases.map((r) => [r.doc.id, { doc: r.doc, fams: releases.filter((x) => x.doc.id === r.doc.id) }])).values()];
 const n = positive.length;
@@ -24,7 +24,7 @@ const why: Record<Tier, string> = {
   D: `${brand || "The maker"}'s own document names these countries — the grid operator still decides at the application.`,
   K: n ? `On ${n} EU list${n === 1 ? "" : "s"} (${positive.join(", ")}): the maker has had the model certified and ${n === 1 ? "one grid operator accepts" : `${n} grid operators accept`} it. Nothing is checked in these countries themselves: where there is no list the grid operator reads the maker's certificate for that country — ask the maker or installer for it; where a list exists that GridFit has not read, check the model there.` : "",
   B: `Above the type-A ceiling (${[...new Set(others.filter((o) => o.tier === "B").map((o) => `${LIMITS[o.cc]?.max_kw} kW in ${o.country}`))].join(", ")}): type B, a procedure of its own — conformity per installation, not a certificate per model.`,
-  F: "No list and no model-level rule for this class: nothing to check against a list.",
+  F: "No list and no model-level rule for this kind of device: nothing to approve, so the model is fit here as far as a list goes.",
   "?": "Whether a list or a rule applies is not confirmed yet.",
   "-": "No positive listing anywhere GridFit reads (expired or refused only), and no maker's document: nothing known.",
   X: "This kind of device is not allowed to be connected.",

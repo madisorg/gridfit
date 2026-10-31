@@ -191,7 +191,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7520,
+  "sh": 7555,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -200,7 +200,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 330
+   "GF Text": 343
   },
   "loaded": [
    "GF Head",
@@ -368,13 +368,13 @@
     ". Sungrow SG10RT"
    ]
   ],
-  "nhit": 57,
+  "nhit": 60,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 333,
+  "nfs": 346,
   "fs12ex": [],
   "inputs": [
    14,
@@ -382,8 +382,11 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -395,11 +398,11 @@
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 15,
-   "2px": 137
+   "4px": 13,
+   "2px": 142
   },
   "kontrast": {
-   "n": 333,
+   "n": 346,
    "min": 5.29,
    "fail": {}
   },
@@ -412,7 +415,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7520,
+  "sh": 7555,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -421,7 +424,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 330
+   "GF Text": 343
   },
   "loaded": [
    "GF Head",
@@ -589,13 +592,13 @@
     ". Sungrow SG10RT"
    ]
   ],
-  "nhit": 57,
+  "nhit": 60,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 333,
+  "nfs": 346,
   "fs12ex": [],
   "inputs": [
    14,
@@ -603,8 +606,11 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -616,11 +622,11 @@
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 15,
-   "2px": 137
+   "4px": 13,
+   "2px": 142
   },
   "kontrast": {
-   "n": 333,
+   "n": 346,
    "min": 6.15,
    "fail": {}
   },
@@ -633,7 +639,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 14852,
+  "sh": 15102,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -642,20 +648,20 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 29
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 20,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 32,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
@@ -663,19 +669,17 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 10,
-   "2px": 10
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 32,
+   "n": 36,
    "min": 5.29,
    "fail": {}
   },
@@ -688,7 +692,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 14852,
+  "sh": 15102,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -697,20 +701,20 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 29
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 20,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 32,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
@@ -718,19 +722,17 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 10,
-   "2px": 10
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 32,
+   "n": 36,
    "min": 6.62,
    "fail": {}
   },
@@ -743,7 +745,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7520,
+  "sh": 7555,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -752,7 +754,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 331
+   "GF Text": 343
   },
   "loaded": [
    "GF Head",
@@ -920,13 +922,13 @@
     ". Sungrow SG10RT"
    ]
   ],
-  "nhit": 58,
+  "nhit": 60,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 334,
+  "nfs": 346,
   "fs12ex": [],
   "inputs": [
    14,
@@ -934,8 +936,11 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -947,11 +952,11 @@
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 16,
-   "2px": 137
+   "4px": 13,
+   "2px": 142
   },
   "kontrast": {
-   "n": 334,
+   "n": 346,
    "min": 5.29,
    "fail": {}
   },
@@ -964,7 +969,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7520,
+  "sh": 7555,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -973,7 +978,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 331
+   "GF Text": 343
   },
   "loaded": [
    "GF Head",
@@ -1141,13 +1146,13 @@
     ". Sungrow SG10RT"
    ]
   ],
-  "nhit": 58,
+  "nhit": 60,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 334,
+  "nfs": 346,
   "fs12ex": [],
   "inputs": [
    14,
@@ -1155,8 +1160,11 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -1168,11 +1176,11 @@
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 16,
-   "2px": 137
+   "4px": 13,
+   "2px": 142
   },
   "kontrast": {
-   "n": 334,
+   "n": 346,
    "min": 6.15,
    "fail": {}
   },
@@ -1185,7 +1193,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 14831,
+  "sh": 15081,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1194,20 +1202,20 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 29
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 20,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 32,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
@@ -1215,19 +1223,17 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 10,
-   "2px": 10
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 32,
+   "n": 36,
    "min": 5.29,
    "fail": {}
   },
@@ -1240,7 +1246,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 14831,
+  "sh": 15081,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1249,20 +1255,20 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 29
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 20,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 32,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
@@ -1270,19 +1276,17 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 217,
   "radius": {
-   "4px": 10,
-   "2px": 10
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 32,
+   "n": 36,
    "min": 6.62,
    "fail": {}
   },
@@ -1295,7 +1299,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7966,
+  "sh": 7998,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -1304,7 +1308,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 345
+   "GF Text": 364
   },
   "loaded": [
    "GF Head",
@@ -1487,20 +1491,25 @@
     ". EcoFlow EF HD-P3-1"
    ]
   ],
-  "nhit": 58,
+  "nhit": 63,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 348,
+  "nfs": 367,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -1512,11 +1521,11 @@
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 15,
-   "2px": 144
+   "4px": 13,
+   "2px": 151
   },
   "kontrast": {
-   "n": 348,
+   "n": 367,
    "min": 5.29,
    "fail": {}
   },
@@ -1529,7 +1538,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7966,
+  "sh": 7998,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -1538,7 +1547,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 345
+   "GF Text": 364
   },
   "loaded": [
    "GF Head",
@@ -1721,20 +1730,25 @@
     ". EcoFlow EF HD-P3-1"
    ]
   ],
-  "nhit": 58,
+  "nhit": 63,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 348,
+  "nfs": 367,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -1746,11 +1760,11 @@
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 15,
-   "2px": 144
+   "4px": 13,
+   "2px": 151
   },
   "kontrast": {
-   "n": 348,
+   "n": 367,
    "min": 6.15,
    "fail": {}
   },
@@ -1763,7 +1777,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 15511,
+  "sh": 15929,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1772,43 +1786,38 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 28
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 23,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 31,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 15,
-   "2px": 8
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 31,
+   "n": 36,
    "min": 5.29,
    "fail": {}
   },
@@ -1821,7 +1830,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 15511,
+  "sh": 15929,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1830,43 +1839,38 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 28
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 23,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 31,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 15,
-   "2px": 8
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 31,
+   "n": 36,
    "min": 6.62,
    "fail": {}
   },
@@ -1879,7 +1883,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 5722,
+  "sh": 5757,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -1888,7 +1892,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 4,
-   "GF Text": 356
+   "GF Text": 361
   },
   "loaded": [
    "GF Head",
@@ -2036,13 +2040,13 @@
     ". Sungrow SH5.0RT-20"
    ]
   ],
-  "nhit": 58,
+  "nhit": 59,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 360,
+  "nfs": 365,
   "fs12ex": [],
   "inputs": [
    14,
@@ -2054,18 +2058,19 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
+   13.3333,
+   13.3333,
    14,
    14
   ],
   "canvas": 0,
   "svg": 108,
   "radius": {
-   "4px": 13,
-   "2px": 166
+   "4px": 12,
+   "2px": 168
   },
   "kontrast": {
-   "n": 360,
+   "n": 365,
    "min": 5.29,
    "fail": {}
   },
@@ -2078,7 +2083,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 5722,
+  "sh": 5757,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -2087,7 +2092,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 4,
-   "GF Text": 356
+   "GF Text": 361
   },
   "loaded": [
    "GF Head",
@@ -2235,13 +2240,13 @@
     ". Sungrow SH5.0RT-20"
    ]
   ],
-  "nhit": 58,
+  "nhit": 59,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 360,
+  "nfs": 365,
   "fs12ex": [],
   "inputs": [
    14,
@@ -2253,18 +2258,19 @@
    13.3333,
    13.3333,
    13.3333,
-   14,
+   13.3333,
+   13.3333,
    14,
    14
   ],
   "canvas": 0,
   "svg": 108,
   "radius": {
-   "4px": 13,
-   "2px": 166
+   "4px": 12,
+   "2px": 168
   },
   "kontrast": {
-   "n": 360,
+   "n": 365,
    "min": 6.15,
    "fail": {}
   },
@@ -2277,7 +2283,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 17707,
+  "sh": 17825,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -2323,7 +2329,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 17707,
+  "sh": 17825,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -2369,7 +2375,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7525,
+  "sh": 7557,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -2378,7 +2384,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 4,
-   "GF Text": 291
+   "GF Text": 306
   },
   "loaded": [
    "GF Head",
@@ -2556,22 +2562,25 @@
     ". Alpha ESS SMILE-G3"
    ]
   ],
-  "nhit": 59,
+  "nhit": 62,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 295,
+  "nfs": 310,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14
@@ -2579,11 +2588,11 @@
   "canvas": 0,
   "svg": 216,
   "radius": {
-   "4px": 11,
-   "2px": 288
+   "4px": 7,
+   "2px": 294
   },
   "kontrast": {
-   "n": 295,
+   "n": 310,
    "min": 5.29,
    "fail": {}
   },
@@ -2596,7 +2605,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7525,
+  "sh": 7557,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -2605,7 +2614,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 4,
-   "GF Text": 291
+   "GF Text": 306
   },
   "loaded": [
    "GF Head",
@@ -2783,22 +2792,25 @@
     ". Alpha ESS SMILE-G3"
    ]
   ],
-  "nhit": 59,
+  "nhit": 62,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 295,
+  "nfs": 310,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14
@@ -2806,11 +2818,11 @@
   "canvas": 0,
   "svg": 216,
   "radius": {
-   "4px": 11,
-   "2px": 288
+   "4px": 7,
+   "2px": 294
   },
   "kontrast": {
-   "n": 295,
+   "n": 310,
    "min": 6.15,
    "fail": {}
   },
@@ -2823,7 +2835,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 20213,
+  "sh": 20530,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -2870,7 +2882,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 20213,
+  "sh": 20530,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -2917,7 +2929,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7966,
+  "sh": 7998,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -2926,7 +2938,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 346
+   "GF Text": 364
   },
   "loaded": [
    "GF Head",
@@ -3109,20 +3121,25 @@
     ". Elecod Monet-625"
    ]
   ],
-  "nhit": 59,
+  "nhit": 63,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 349,
+  "nfs": 367,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -3134,11 +3151,11 @@
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 16,
-   "2px": 144
+   "4px": 13,
+   "2px": 151
   },
   "kontrast": {
-   "n": 349,
+   "n": 367,
    "min": 5.29,
    "fail": {}
   },
@@ -3151,7 +3168,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7966,
+  "sh": 7998,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -3160,7 +3177,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 346
+   "GF Text": 364
   },
   "loaded": [
    "GF Head",
@@ -3343,20 +3360,25 @@
     ". Elecod Monet-625"
    ]
   ],
-  "nhit": 59,
+  "nhit": 63,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 349,
+  "nfs": 367,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
    14,
    14,
    14,
@@ -3368,11 +3390,11 @@
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 16,
-   "2px": 144
+   "4px": 13,
+   "2px": 151
   },
   "kontrast": {
-   "n": 349,
+   "n": 367,
    "min": 6.15,
    "fail": {}
   },
@@ -3385,7 +3407,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 15511,
+  "sh": 15929,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -3394,43 +3416,38 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 29
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 24,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 32,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 16,
-   "2px": 8
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 32,
+   "n": 36,
    "min": 5.29,
    "fail": {}
   },
@@ -3443,7 +3460,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 15511,
+  "sh": 15929,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -3452,43 +3469,38 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 29
+   "GF Text": 33
   },
   "loaded": [
    "GF Head",
    "GF Text"
   ],
   "small": [],
-  "nhit": 24,
+  "nhit": 18,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 32,
+  "nfs": 36,
   "fs12ex": [],
   "inputs": [
    14,
    13.3333,
    13.3333,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14,
-   14
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
   ],
   "canvas": 0,
   "svg": 218,
   "radius": {
-   "4px": 16,
-   "2px": 8
+   "4px": 6,
+   "2px": 13
   },
   "kontrast": {
-   "n": 32,
+   "n": 36,
    "min": 6.62,
    "fail": {}
   },
@@ -3569,7 +3581,7 @@
   },
   "kontrast": {
    "n": 133,
-   "min": 5.29,
+   "min": 6.26,
    "fail": {}
   },
   "noodatud": 0,
@@ -3649,7 +3661,7 @@
   },
   "kontrast": {
    "n": 133,
-   "min": 6.62,
+   "min": 6.72,
    "fail": {}
   },
   "noodatud": 0,
@@ -3661,7 +3673,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8974,
+  "sh": 8998,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -3705,7 +3717,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8974,
+  "sh": 8998,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -3817,7 +3829,7 @@
   },
   "kontrast": {
    "n": 179,
-   "min": 5.29,
+   "min": 6.13,
    "fail": {}
   },
   "noodatud": 0,
@@ -3897,7 +3909,7 @@
   },
   "kontrast": {
    "n": 179,
-   "min": 6.62,
+   "min": 6.72,
    "fail": {}
   },
   "noodatud": 0,
@@ -3909,7 +3921,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 9154,
+  "sh": 9178,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -3941,7 +3953,7 @@
   },
   "kontrast": {
    "n": 40,
-   "min": 6.98,
+   "min": 6.33,
    "fail": {}
   },
   "noodatud": 0,
@@ -3953,7 +3965,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 9154,
+  "sh": 9178,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4030,7 +4042,7 @@
   },
   "kontrast": {
    "n": 109,
-   "min": 6.26,
+   "min": 6.13,
    "fail": {}
   },
   "noodatud": 0,
@@ -4087,7 +4099,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 10162,
+  "sh": 10138,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4120,7 +4132,7 @@
   },
   "kontrast": {
    "n": 35,
-   "min": 6.26,
+   "min": 6.13,
    "fail": {}
   },
   "noodatud": 0,
@@ -4132,7 +4144,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 10162,
+  "sh": 10138,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4209,7 +4221,7 @@
   },
   "kontrast": {
    "n": 146,
-   "min": 5.29,
+   "min": 6.13,
    "fail": {}
   },
   "noodatud": 0,
@@ -4253,7 +4265,7 @@
   },
   "kontrast": {
    "n": 146,
-   "min": 6.62,
+   "min": 6.72,
    "fail": {}
   },
   "noodatud": 0,
@@ -4265,7 +4277,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 10162,
+  "sh": 10138,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4297,7 +4309,7 @@
   },
   "kontrast": {
    "n": 42,
-   "min": 5.29,
+   "min": 6.26,
    "fail": {}
   },
   "noodatud": 0,
@@ -4309,7 +4321,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 10162,
+  "sh": 10138,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4341,7 +4353,7 @@
   },
   "kontrast": {
    "n": 42,
-   "min": 6.62,
+   "min": 6.72,
    "fail": {}
   },
   "noodatud": 0,
@@ -4353,7 +4365,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 5903,
+  "sh": 5935,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -4362,7 +4374,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 5,
-   "GF Text": 157
+   "GF Text": 189
   },
   "loaded": [
    "GF Head",
@@ -4468,31 +4480,26 @@
     72,
     17,
     ". Piko 36 EPC"
-   ],
-   [
-    77,
-    17,
-    ". Piko 5.5 DCS"
    ]
   ],
-  "nhit": 29,
+  "nhit": 28,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 162,
+  "nfs": 194,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
   "svg": 0,
   "radius": {
    "4px": 2,
-   "2px": 112
+   "2px": 107
   },
   "kontrast": {
-   "n": 162,
-   "min": 5.29,
+   "n": 194,
+   "min": 6.13,
    "fail": {}
   },
   "noodatud": 0,
@@ -4504,7 +4511,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 5903,
+  "sh": 5935,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -4513,7 +4520,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 5,
-   "GF Text": 157
+   "GF Text": 189
   },
   "loaded": [
    "GF Head",
@@ -4619,31 +4626,26 @@
     72,
     17,
     ". Piko 36 EPC"
-   ],
-   [
-    77,
-    17,
-    ". Piko 5.5 DCS"
    ]
   ],
-  "nhit": 29,
+  "nhit": 28,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 162,
+  "nfs": 194,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
   "svg": 0,
   "radius": {
    "4px": 2,
-   "2px": 112
+   "2px": 107
   },
   "kontrast": {
-   "n": 162,
-   "min": 6.62,
+   "n": 194,
+   "min": 6.72,
    "fail": {}
   },
   "noodatud": 0,
@@ -4655,7 +4657,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8809,
+  "sh": 8796,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4664,7 +4666,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 36
+   "GF Text": 41
   },
   "loaded": [
    "GF Head",
@@ -4677,7 +4679,7 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 39,
+  "nfs": 44,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
@@ -4687,7 +4689,7 @@
    "2px": 6
   },
   "kontrast": {
-   "n": 45,
+   "n": 50,
    "min": 6.13,
    "fail": {}
   },
@@ -4700,7 +4702,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8809,
+  "sh": 8796,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4709,7 +4711,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 36
+   "GF Text": 41
   },
   "loaded": [
    "GF Head",
@@ -4722,7 +4724,7 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 39,
+  "nfs": 44,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
@@ -4732,7 +4734,7 @@
    "2px": 6
   },
   "kontrast": {
-   "n": 45,
+   "n": 50,
    "min": 6.72,
    "fail": {}
   },
@@ -4745,7 +4747,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 2336,
+  "sh": 2359,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -4754,7 +4756,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 5,
-   "GF Text": 45
+   "GF Text": 46
   },
   "loaded": [
    "GF Head",
@@ -4767,17 +4769,17 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 50,
+  "nfs": 51,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
   "svg": 0,
   "radius": {
-   "2px": 11
+   "2px": 12
   },
   "kontrast": {
-   "n": 50,
-   "min": 5.29,
+   "n": 51,
+   "min": 6.13,
    "fail": {}
   },
   "noodatud": 0,
@@ -4789,7 +4791,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 2336,
+  "sh": 2359,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -4798,7 +4800,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 5,
-   "GF Text": 45
+   "GF Text": 46
   },
   "loaded": [
    "GF Head",
@@ -4811,17 +4813,17 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 50,
+  "nfs": 51,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
   "svg": 0,
   "radius": {
-   "2px": 11
+   "2px": 12
   },
   "kontrast": {
-   "n": 50,
-   "min": 6.62,
+   "n": 51,
+   "min": 6.72,
    "fail": {}
   },
   "noodatud": 0,
@@ -4833,7 +4835,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 3752,
+  "sh": 3800,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -4875,7 +4877,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 3752,
+  "sh": 3800,
   "pans": [],
   "fitpx": 0,
   "coarse": true,

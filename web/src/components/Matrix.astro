@@ -5,7 +5,7 @@ import { COUNTRIES, type Entry } from "../lib/registers";
 import { answerOf, type GridState } from "../lib/devices";
 const { cells, entries = {}, cls, rich = false } = Astro.props as
   { cells: Record<string, GridState | string>; entries?: Record<string, Entry[]>; cls?: string; rich?: boolean };
-const yes = COUNTRIES.filter((k) => answerOf(cells[k] as GridState) !== "none" && answerOf(cells[k] as GridState) !== "no");
+const yes = COUNTRIES.filter((k) => !["none", "no", "free"].includes(answerOf(cells[k] as GridState)));
 const no = COUNTRIES.filter((k) => answerOf(cells[k] as GridState) === "no");
 const label = [yes.length && `fit in ${yes.join(", ")}`, no.length && `not fit in ${no.join(", ")}`,
   COUNTRIES.length - yes.length - no.length > 0 && `nothing known for the rest`].filter(Boolean).join("; ") || "nothing known";

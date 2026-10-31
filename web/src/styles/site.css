@@ -62,17 +62,18 @@ main { padding: var(--s5) 0 var(--s7); }
 .st.read, .st.none { background: var(--unk-bg); color: var(--unk); font-weight: 400; }
 .st.sponsor { background: var(--cloud-bg); color: var(--cloud); font-weight: 400; }
 
-/* ---- the grid cell: three answers, detail on hover (DESIGN.md §8c) ---- */
+/* ---- the grid cell: a traffic light, detail on hover (DESIGN.md §8c, §8e). Shape repeats colour: filled / outlined /
+   dashed / dotted / empty read in greyscale. green = fit · amber = likely or possibly, the operator decides · red = not fit · grey = unknown */
 .cl { display: inline-grid; place-items: center; width: 1.75rem; height: 1.5rem; border-radius: var(--r1); font-size: var(--fs-xs); font-weight: 600; line-height: 1; position: relative; box-sizing: border-box; }
-.cl-yes { background: var(--reg); color: var(--surface); }
-.cl-doc { background: var(--reg-bg); color: var(--reg); outline: var(--rule-w) dashed var(--reg); outline-offset: calc(-1 * var(--rule-w)); }
-.cl-no { background: var(--cloud-bg); color: var(--cloud); box-shadow: inset 0 0 0 var(--rule-w) var(--cloud); }
+.cl-yes { background: var(--ok); color: var(--surface); }
+.cl-cond { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 var(--rule-w) var(--ok); }
+.cl-free { background: var(--ok-bg); color: var(--ok); outline: var(--rule-w) dotted var(--ok); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
+.cl-doc { background: var(--cloud); color: var(--surface); }
+.cl-else { background: var(--cloud-bg); color: var(--cloud); box-shadow: inset 0 0 0 var(--rule-w) var(--cloud); font-weight: 400; }
+.cl-type { background: var(--cloud-bg); color: var(--cloud); outline: var(--rule-w) dotted var(--cloud); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; font-size: var(--fs-xs); }
+.cl-no { background: var(--no); color: var(--surface); }
+.cl-unk { background: var(--unk-bg); color: var(--unk); box-shadow: inset 0 0 0 var(--rule-w) var(--unk); font-weight: 400; }
 .cl-none { background: transparent; box-shadow: inset 0 0 0 var(--rule-w) var(--rule); }
-/* the two weaker answers of a country without a list, and the three "nothing" states, in greyscale-safe shapes */
-.cl-else { background: transparent; color: var(--ink-2); outline: var(--rule-w) dotted var(--ink-2); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
-.cl-type { background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 var(--rule-w) var(--ink-3); font-weight: 400; font-size: var(--fs-xs); }
-.cl-free { background: transparent; color: var(--ink-3); font-weight: 400; }
-.cl-unk { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 var(--rule-w) var(--rule); font-weight: 400; }
 .cl[tabindex] { cursor: default; }
 .cl .tip { display: none; position: absolute; left: 50%; top: 100%; transform: translateX(-50%); margin-top: var(--s1); width: 18rem; max-width: 80vw; padding: var(--s2) var(--s3); text-align: left;
   background: var(--surface); color: var(--ink); border: var(--rule-w) solid var(--ink); box-shadow: 0 var(--rule-heavy) 0 var(--ink); font-weight: 400; font-size: var(--fs-sm); line-height: var(--lh-text); z-index: 3; gap: 2px; }
@@ -145,6 +146,7 @@ sup { font-size: var(--fs-xs); line-height: 0; }
 .filters .st-pick label > span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
 .st-pick .n { color: var(--ink-3); font-size: var(--fs-xs); white-space: nowrap; }
 .st-pick label[hidden] { display: none; }
+.st-pick label.zero .w, .st-pick label.zero .n { color: var(--ink-3); }
 .st-pick .w { min-width: 0; }
 .ccnote { max-width: var(--measure); margin-bottom: var(--s2); }
 .gb-others { display: grid; gap: var(--s2); margin-top: var(--s4); }
@@ -300,13 +302,13 @@ details.more summary { cursor: pointer; font-weight: 600; min-height: var(--hit)
 .xv .b { color: var(--ink-2); font-weight: 400; }
 .xv .cls { color: var(--ink-2); white-space: nowrap; margin-left: var(--s1); }
 .xv tbody tr:hover td { background: var(--sunk); }
-.xv tbody tr:hover td.rs-listed { background: var(--reg); }
+.xv tbody tr:hover td.rs-listed { background: var(--ok); }
 .rs { font-weight: 600; font-variant-numeric: var(--num); }
 .rs sup { font-size: var(--fs-xs); font-weight: 400; line-height: 0; }
 td.rs, span.rs { box-shadow: inset 0 0 0 1px var(--surface); }
-.rs-listed { background: var(--reg); color: var(--surface); }
-.rs-restricted, .rs-limited { background: var(--reg-bg); color: var(--reg); box-shadow: inset 0 0 0 var(--rule-w) var(--reg); }
-.rs-limited-past, .rs-expired, .rs-nein { background: var(--cloud-bg); color: var(--cloud); box-shadow: inset 0 0 0 var(--rule-w) var(--cloud); }
+.rs-listed { background: var(--ok); color: var(--surface); }
+.rs-restricted, .rs-limited { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 var(--rule-w) var(--ok); }
+.rs-limited-past, .rs-expired, .rs-nein { background: var(--no-bg); color: var(--no); box-shadow: inset 0 0 0 var(--rule-w) var(--no); }
 .rs-other { background: var(--unk-bg); color: var(--unk); }
 .rs-none { background: transparent; }
 span.rs { display: inline-grid; place-items: center; min-width: 2.25rem; height: 1.5rem; padding: 0 var(--s1); }

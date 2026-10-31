@@ -8,7 +8,7 @@ const { cc, state, entries = [], cls, rich = false, label } = Astro.props as
   { cc: string; state: GridState | string; entries?: Entry[]; cls?: string; rich?: boolean; label?: string };
 const a = answerOf(state as GridState);
 const tip = tipOf(cc, state as GridState, entries, cls);
-const GLYPH: Record<string, string> = { yes: "✓", doc: "✓", no: "✕", none: "" };
+const GLYPH: Record<string, string> = { yes: "✓", cond: "✓", free: "✓", doc: "✓", no: "✕", none: "" };
 // the full detail only where the cell is rich (device pages); dense tables get the short title, 5 000 cells a page
 const text = rich ? `${cc}: ${tip.title}${tip.lines.length ? " / " + tip.lines.join("; ") : ""}` : `${cc}: ${tip.title}`;
 ---

@@ -2,13 +2,10 @@
 // The legend for the grid cells: one line per answer, the same words the aria-labels and the status filter use.
 // The three weaker answers belong to a country without a list (DESIGN.md §8d).
 ---
-<p class="legend">
-  <span class="rs-key"><span class="cl cl-yes">✓</span> fit: on the list (the hover says whether with a condition)</span>
-  <span class="rs-key"><span class="cl cl-doc">✓</span> fit by the maker's document — the grid operator decides</span>
-  <span class="rs-key"><span class="cl cl-else">○</span> accepted on other EU lists — nothing checked here</span>
-  <span class="rs-key"><span class="cl cl-type">B</span> over the type-A limit: type B, a procedure of its own</span>
-  <span class="rs-key"><span class="cl cl-no">✕</span> not fit: refused, expired or not allowed</span>
-  <span class="rs-key"><span class="cl cl-free">—</span> nothing to check for this class</span>
-  <span class="rs-key"><span class="cl cl-none"></span> not on the list, or nothing known — never “not approved”</span>
+<p class="legend tl-legend">
+  <span class="rs-key"><b>Green, fit:</b> <span class="cl cl-yes">✓</span> on the list · <span class="cl cl-cond">✓</span> with a condition or end date · <span class="cl cl-free">✓</span> nothing to approve for this kind of device</span>
+  <span class="rs-key"><b>Amber, the operator decides:</b> <span class="cl cl-doc">✓</span> likely — the maker's document names the country · <span class="cl cl-else">○</span> possibly — accepted on other EU lists, nothing checked here · <span class="cl cl-type">B</span> over the type-A limit, a procedure of its own</span>
+  <span class="rs-key"><b>Red:</b> <span class="cl cl-no">✕</span> not fit — refused, expired or not allowed</span>
+  <span class="rs-key"><b>Grey, unknown:</b> <span class="cl cl-unk">?</span> not confirmed · <span class="cl cl-none"></span> not on the list, or nothing known — never “not approved”</span>
   <span class="small muted">Hover or focus a cell for the list's own word, a condition or date, firmware and the row.</span>
 </p>

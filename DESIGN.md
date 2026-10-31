@@ -309,6 +309,26 @@ the two words, nothing else (Madis: the icons wrapped and looked messy); the ico
 A side effect of the walkthrough: the family join re-normalised model codes locally ("3.0" kept its zero, the parser
 drops it), so 400 models that belong to a family had pages of their own; `data.ts` now joins by the parser's `norm`.
 
+## 8e. The traffic light (2026-10-31, late)
+
+Madis, after seeing §8d live: the status categories should all be shown all the time, ordered from highest to lowest
+confidence, "nothing to check for this class" says nothing to a reader, and a traffic light would make sense. So the cell
+and the status group are now one ladder in three colours, shape repeating colour so it reads in greyscale:
+
+| | cell | status word |
+|---|---|---|
+| green — fit | `--ok` filled ✓ · outlined ✓ · dotted ✓ | on the list · with a condition or end date · nothing to approve for this kind of device |
+| amber — the operator decides | `--cloud` filled ✓ · outlined ○ · dotted B | likely fit: the maker's document names the country · possibly fit: accepted on other EU lists · other procedure: over the type-A limit |
+| red — not fit | `--no` filled ✕ (new token, light `#8f1d1d` / dark `#f2a8a8`) | refused, expired or not allowed |
+| grey — unknown | `--unk` outlined ? · empty | not confirmed · not on the list / nothing known |
+
+Green moved from `--reg` (blue, the register colour) to `--ok`; the amber that used to say "not fit" now says "likely /
+possibly", and red says "not fit" — the one place colour semantics changed, so every cell, the device pages' list words
+(`.rs-*`) and the About page moved together. "Nothing to check for this class" became "nothing to approve for this kind of
+device" and sits in green: a wallbox in Estonia is a load, nothing gates it, so it is fit as far as a list goes. The status
+group shows all nine categories always, in this order, zero counts in lighter ink, so the reader sees the whole ladder
+and where the chosen country's models fall on it.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components
@@ -520,3 +540,12 @@ findings by eye between the rounds as well: the sidebar's status counts floated 
 words), and a device page listed the same Kostal document once per family (now once, naming the families). Spain after the
 round: 13 892 inverters, 245 fit by the maker's document, 2 174 over the type-A limit, 10 977 accepted on other EU lists,
 496 nothing known.
+
+## 25. Measured, 2026-10-31 — the traffic light
+
+The same fifteen routes as §24 × 3440/390 × light/dark on the §8e build: [`toode.json`](docs/moodud/toode.json), 60 pictures,
+0 console errors, 0 failed requests, 0 px overflow, 0 texts under 12 px, 0 under 4.5:1 (lowest 5.29 — the new `--no` red on
+`--surface`, the amber `--cloud` fill and the green `--ok` fill all clear it in both themes), 0 tap targets under 44 px.
+One regression caught in the browser before the round, not by the numbers: the status labels start hidden in the HTML for
+the no-JavaScript case and the "always show all" change had dropped the line that un-hides them, so the group showed its
+heading alone. The count test is unchanged (796 checks, 0 failures): colour moved, the partition did not.

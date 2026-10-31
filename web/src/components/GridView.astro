@@ -16,10 +16,11 @@ const gridBrands = BRANDS.filter((b) => b.models.length);
 const groups: [string, string][] = [["read", "Lists read in full"], ["yes", "Public list, not read yet"], ["partial", "Partial list"], ["no", "No public list"]];
 const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNTRIES.includes(c.cc) : !COUNTRIES.includes(c.cc) && c.list === g));
 // the status groups, best to worst (grid-filter.js ORDER); the glyph is the cell's, the word the legend's
+// highest confidence first, always all shown (Madis 31.10): fit · likely · possibly · other procedure · unknown · not fit
 const ST: [string, string, string, string][] = [
-  ["Y", "cl-yes", "✓", "Fit: on the list"], ["C", "cl-yes", "✓", "Fit, with a condition or end date"], ["F", "cl-free", "—", "Nothing to check for this class"],
-  ["D", "cl-doc", "✓", "Fit by the maker's document"], ["K", "cl-else", "○", "Accepted on other EU lists"], ["B", "cl-type", "B", "Type B here: over the type-A limit"],
-  ["?", "cl-unk", "?", "Not confirmed for this class"], ["-", "cl-none", "", "Not on the list"], ["X", "cl-no", "✕", "Not fit: refused, expired or not allowed"]];
+  ["Y", "cl-yes", "✓", "Fit: on the list"], ["C", "cl-cond", "✓", "Fit, with a condition or end date"], ["F", "cl-free", "✓", "Fit: nothing to approve for this kind of device"],
+  ["D", "cl-doc", "✓", "Likely fit: the maker's document names the country"], ["K", "cl-else", "○", "Possibly fit: accepted on other EU lists"], ["B", "cl-type", "B", "Other procedure: over the type-A limit"],
+  ["?", "cl-unk", "?", "Unknown: not confirmed"], ["-", "cl-none", "", "Unknown: not on the list"], ["X", "cl-no", "✕", "Not fit: refused, expired or not allowed"]];
 const ROUTE: [string, string][] = [["W", "local control"], ["L", "local, read only"], ["C", "cloud only"], ["B", "brand route, model unconfirmed"], ["-", "not found"]];
 const LO: Record<string, string> = { W: "Local control", L: "Local, read only", C: "Cloud only", B: "Brand route, model unconfirmed", "-": "No route found" };
 ---
@@ -97,7 +98,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   // the list's own word per cell letter; the hover and the aria-label
   const WORD: Record<string, string> = { L: "on the list", R: "on the list, with a condition", T: "on the list, time-limited", P: "not fit: the end date has passed",
     E: "not fit: expired", N: "not fit: the list says no", O: "on the list (see the list)", "-": "not on the list — the list may spell the model differently; never “not approved”" };
-  const CL: Record<string, [string, string]> = { Y: ["cl-yes", "✓"], C: ["cl-yes", "✓"], F: ["cl-free", "—"], D: ["cl-doc", "✓"], K: ["cl-else", "○"], B: ["cl-type", "B"], "?": ["cl-unk", "?"], "-": ["cl-none", ""], X: ["cl-no", "✕"] };
+  const CL: Record<string, [string, string]> = { Y: ["cl-yes", "✓"], C: ["cl-cond", "✓"], F: ["cl-free", "✓"], D: ["cl-doc", "✓"], K: ["cl-else", "○"], B: ["cl-type", "B"], "?": ["cl-unk", "?"], "-": ["cl-none", ""], X: ["cl-no", "✕"] };
   const RULE: Record<string, string> = { list: "list", rule: "cert.", free: "—", banned: "not allowed", unknown: "?" };
   const MARK: Record<string, string> = { W: "local control", L: "local, read only", C: "cloud only", B: "brand route, model unconfirmed", "-": "not found" };
   const HA = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg>`, EV = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="12" height="11" rx="1.5"/><path d="M8 7V4M12 7V4M16 12h2.5a1.5 1.5 0 0 1 1.5 1.5V17"/><path d="M10 10l-2 3h4l-2 3"/></svg>`;
@@ -176,7 +177,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     if (code === "D") return `${cc}: fit by the maker's document — ${brand} publishes a release table or a certificate naming ${name}'s standard for this model; the grid operator decides (the model page shows the document)`;
     if (code === "K") { const on = positiveLists(r, data); return `${cc}: accepted on ${on.length} other EU list${on.length === 1 ? "" : "s"} (${on.join(", ")}) — nothing checked here; ${noList}`; }
     if (code === "B") return `${cc}: over the type-A limit in ${name} (${data.limits[cc].max_kw} kW) — type B, a procedure of its own`;
-    if (code === "F") return `${cc}: nothing to check for this class in ${name}`;
+    if (code === "F") return `${cc}: fit — nothing to approve: ${name} has no list and no rule for this kind of device`;
     if (code === "?") return `${cc}: not confirmed whether ${name} lists or otherwise gates this class`;
     if (code === "X") return `${cc}: not fit — ${name} does not allow this kind of device`;
     return `${cc}: nothing known — its listings elsewhere are expired or refused; ${noList}`;
@@ -203,9 +204,10 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
       if (id === "st") {
         stBoxes.forEach((b) => {
           const n = counts.get(b.value) ?? 0, lab = b.parentElement!;
-          lab.hidden = !n && !b.checked;
+          lab.hidden = false;
+          lab.classList.toggle("zero", !n);
           lab.querySelector(".n")!.textContent = `(${nf(n)})`;
-          if (b.value === "-") lab.querySelector(".w")!.textContent = scopes.has("list") && scopes.size === 1 ? "Not on the list" : scopes.has("list") ? "Not on the list / nothing known" : "Nothing known";
+          if (b.value === "-") lab.querySelector(".w")!.textContent = scopes.has("list") && scopes.size === 1 ? "Unknown: not on the list" : scopes.has("list") ? "Unknown: not on the list, or nothing known" : "Unknown: nothing known";
         });
         continue;
       }
@@ -227,9 +229,9 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     // a chosen country without a list gets one sentence on how its cells are decided
     const notes = cs.filter((c) => !data.read.includes(c)).slice(0, 2).map((c) => {
       const name = data.names[c] ?? c, s = data.scope[c]?.[rcls], how = data.how.includes(c) ? ` <a href="/grid/${c.toLowerCase()}/#how">How it works in ${name}</a>.` : "";
-      if (s === "rule") return `<b>${name}</b> has no public list: the grid operator checks the maker's certificate. <span class="cl cl-doc" aria-hidden="true">✓</span> = the maker's own document names ${name}; <span class="cl cl-else" aria-hidden="true">○</span> = accepted on other EU lists, nothing checked here; <span class="cl cl-type" aria-hidden="true">B</span> = over the type-A limit, another procedure.${how}`;
-      if (s === "list") return `<b>${name}</b> publishes a list GridFit has not read yet — check the model there. Meanwhile <span class="cl cl-doc" aria-hidden="true">✓</span> = the maker's document names ${name}, <span class="cl cl-else" aria-hidden="true">○</span> = accepted on other EU lists.${how}`;
-      if (s === "free") return `<b>${name}</b>: nothing to check against a list for ${g === "ev" ? "wallboxes" : "this kind of device"}.${how}`;
+      if (s === "rule") return `<b>${name}</b> has no public list: the grid operator checks the maker's certificate. Amber is the operator's call: <span class="cl cl-doc" aria-hidden="true">✓</span> likely — the maker's own document names ${name}; <span class="cl cl-else" aria-hidden="true">○</span> possibly — accepted on other EU lists, nothing checked here; <span class="cl cl-type" aria-hidden="true">B</span> over the type-A limit, another procedure.${how}`;
+      if (s === "list") return `<b>${name}</b> publishes a list GridFit has not read yet — check the model there. Meanwhile amber: <span class="cl cl-doc" aria-hidden="true">✓</span> likely — the maker's document names ${name}, <span class="cl cl-else" aria-hidden="true">○</span> possibly — accepted on other EU lists.${how}`;
+      if (s === "free") return `<b>${name}</b> has no list and no rule for ${g === "ev" ? "wallboxes" : "this kind of device"}: nothing to approve, so every model is fit.${how}`;
       if (s === "banned") return `<b>${name}</b> does not allow ${g === "ev" ? "wallboxes" : "this kind of device"} to be connected.${how}`;
       return `<b>${name}</b>: whether a list or a rule applies is not confirmed yet.${how}`;
     });
