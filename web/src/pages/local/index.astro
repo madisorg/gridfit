@@ -19,27 +19,26 @@ const sources = [
   { label: "HA core, HACS, evcc read", date: data.seen, kind: "check" as const },
 ];
 ---
-<Base title="Local control with Home Assistant and evcc" current="/local/"
+<Base title="Local control with Home Assistant and evcc" current="/local/" nav="bottom"
       description={`${nf(COUNTS.families)} inverter, battery and wallbox families: which Home Assistant and evcc integrations talk to them on your network, read or control, and which EU grid lists carry their models.`}>
   <section class="ask" aria-labelledby="q-h">
-    <h1 id="q-h">Does it work locally with Home Assistant and evcc?</h1>
+    <h1 id="q-h">Does my inverter work locally with Home Assistant and evcc?</h1>
+    <p class="alt"><a id="to-grid" href="/grid/">Is my inverter fit for the grid operator's list in my country?</a></p>
+    <div class="kind kind-icons" role="group" aria-label="Device kind">
+      <button type="button" id="kind-inv" data-g="inv" aria-pressed="true" title="Inverters, hybrids, batteries"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg><span>Inverters <b>{nInv}</b></span></button>
+      <button type="button" id="kind-ev" data-g="ev" aria-pressed="false" title="Wallboxes and EV chargers"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg><span>Wallboxes <b>{nEv}</b></span></button>
+    </div>
     <form class="search" role="search" onsubmit="return false">
       <label class="vh" for="q">Model code, brand or family</label>
       <input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
     </form>
     <div class="hits" id="hits" aria-live="polite"></div>
-    <p class="lede">{nf(COUNTS.families)} product families with a Home Assistant or evcc route: local or cloud, read or control, how it connects.
-      The <strong>Grid lists</strong> column is the other lens — which of the {COUNTRIES.length} parsed national lists carry a model of the family;
-      the <a href="/grid/">grid lists view</a> has every model, also those with no smart-home route yet.</p>
-    <p class="facts"><span><b>{nf(COUNTS.families)}</b> families</span><span><b>{nf(COUNTS.brands)}</b> brands</span>
-      <span><b>{nf(COUNTS.rows)}</b> integration rows</span><span><b>{nf(COUNTS.localRoute)}</b> with a local route</span><span>checked <b>{data.seen}</b></span></p>
   </section>
 
   <div class="layout">
     <fieldset class="filters" id="filters">
       <legend>Narrow down</legend>
       <label><span>Brand</span><select id="brand"><option value="">All brands</option>{brands().map(([b]) => <option>{b}</option>)}</select></label>
-      <label><span>Device class</span><select id="cls"><option value="">All classes</option>{Object.entries(CLASS).map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
       <label><span>Works locally with</span><select id="ctl"><option value="">Anything</option>
         <option value="ha">Home Assistant</option><option value="any">Home Assistant or evcc</option><option value="write">Local control, not only read</option></select></label>
       <label><span>Connection</span><select id="conn"><option value="">Any connection</option>{conns.map((c) => <option value={c}>{CONN[c]}</option>)}</select></label>
@@ -48,14 +47,6 @@ const sources = [
     </fieldset>
 
     <div>
-      <div class="kind" role="group" aria-label="Device kind">
-        <button type="button" id="kind-inv" data-g="inv" aria-pressed="false">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg>
-          Inverters <b>{nInv}</b></button>
-        <button type="button" id="kind-ev" data-g="ev" aria-pressed="false">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>
-          Wallboxes <b>{nEv}</b></button>
-      </div>
       <p class="count" id="count" aria-live="polite"><b>{fams.length}</b> families</p>
       <FamilyTable families={fams} id="list" />
       <div class="sec">
@@ -68,6 +59,14 @@ const sources = [
         <header><h2>How fresh the sources are</h2><p>One row per source on one axis. A list is only as current as its last published version.</p></header>
         <Timeline items={sources} months={6} end={data.seen} />
       </div>
+      <div class="sec" id="about">
+        <header><h2>What this view is</h2></header>
+    <p class="lede">{nf(COUNTS.families)} product families with a Home Assistant or evcc route: local or cloud, read or control, how it connects.
+      The <strong>Grid lists</strong> column is the other lens — which of the {COUNTRIES.length} parsed national lists carry a model of the family;
+      the <a href="/grid/">grid lists view</a> has every model, also those with no smart-home route yet.</p>
+    <p class="facts"><span><b>{nf(COUNTS.families)}</b> families</span><span><b>{nf(COUNTS.brands)}</b> brands</span>
+      <span><b>{nf(COUNTS.rows)}</b> integration rows</span><span><b>{nf(COUNTS.localRoute)}</b> with a local route</span><span>checked <b>{data.seen}</b></span></p>
+      </div>
     </div>
   </div>
 </Base>
@@ -78,12 +77,18 @@ const sources = [
   const $ = <T extends HTMLElement>(id: string) => document.getElementById(id) as T;
   const rows = [...document.querySelectorAll<HTMLTableRowElement>("#list tbody tr")];
   let text: string[] | null = null;
-  const ids = ["brand", "cls", "ctl", "conn", "reg"];
+  const ids = ["brand", "ctl", "conn", "reg"];
   const q = $<HTMLInputElement>("q");
   const has = (list: string | undefined, v: string) => (" " + (list ?? "") + " ").includes(" " + v + " ");
   const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
   const kinds = [...document.querySelectorAll<HTMLButtonElement>(".kind button")];
-  let g = "";
+  let g = "inv";
+  // the other question links to the visitor's own country when one is known (the cookie the front door sets, or the home page's choice)
+  try {
+    const m = /(?:^|;\s*)gf-cc=([a-z]{2})/.exec(document.cookie);
+    const cc = (m && m[1]) || localStorage.getItem("gf-cc") || "";
+    if (/^[a-z]{2}$/.test(cc)) ($("to-grid") as HTMLAnchorElement).href = `/grid/${cc}/`;
+  } catch {}
 
   function apply() {
     const v = Object.fromEntries(ids.map((id) => [id, $<HTMLSelectElement>(id).value]));
@@ -91,7 +96,7 @@ const sources = [
     let shown = 0;
     rows.forEach((r, i) => {
       const d = r.dataset;
-      const ok = (!s || (text ??= rows.map((r) => r.textContent!.toLowerCase()))[i].includes(s)) && (!v.brand || d.b === v.brand) && (!v.cls || d.c === v.cls) &&
+      const ok = (!s || (text ??= rows.map((r) => r.textContent!.toLowerCase()))[i].includes(s)) && (!v.brand || d.b === v.brand) &&
         (!g || (g === "inv" ? INV.has(d.c!) : d.c === "wallbox")) &&
         (!v.conn || has(d.n, v.conn)) && (!v.reg || has(d.r, v.reg)) &&
         (!v.ctl || (v.ctl === "ha" && d.ha === "local") || (v.ctl === "any" && (d.ha === "local" || d.ev === "local")) || (v.ctl === "write" && d.w === "1"));
@@ -101,9 +106,10 @@ const sources = [
     $("count").innerHTML = `<b>${shown}</b> ${shown === 1 ? "family" : "families"}`;
     ids.forEach((id) => $(id).classList.toggle("on", !!v[id]));
     kinds.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.g === g)));
-    $("reset").hidden = !ids.some((id) => v[id]) && !g;
+    document.body.dataset.g = g;
+    $("reset").hidden = !ids.some((id) => v[id]) && g === "inv";
     const p = new URLSearchParams();
-    if (g) p.set("g", g);
+    if (g && g !== "inv") p.set("g", g);
     ids.forEach((id) => v[id] && p.set(id, v[id]));
     if (q.value.trim()) p.set("q", q.value.trim());
     history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
@@ -145,10 +151,10 @@ const sources = [
     el.addEventListener("change", apply);
   });
   if (init.get("q")) q.value = init.get("q")!;
-  if (init.get("g") === "inv" || init.get("g") === "ev") g = init.get("g")!;
-  kinds.forEach((b) => b.addEventListener("click", () => { g = g === b.dataset.g ? "" : b.dataset.g!; apply(); }));
+  if (init.get("g") === "ev") g = "ev";
+  kinds.forEach((b) => b.addEventListener("click", () => { g = b.dataset.g!; apply(); }));
   q.addEventListener("input", () => { apply(); models(); });
-  $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLSelectElement>(id).value = "")); g = ""; apply(); });
+  $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLSelectElement>(id).value = "")); g = "inv"; apply(); });
   if (q.value || g || ids.some((id) => init.get(id))) apply();
   if (q.value) models();
 </script>

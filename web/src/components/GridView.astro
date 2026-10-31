@@ -4,15 +4,15 @@
 // the 7 lists read when nothing is selected. A country without a list shows what applies to the class there.
 // Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
 import CellLegend from "./CellLegend.astro";
-import { COUNTRIES, REGS, RC } from "../lib/registers";
+import { COUNTRIES, REGS } from "../lib/registers";
 import { BRANDS, KVA_BUCKETS, MPPT_OPTS, SPEC_BRANDS } from "../lib/devices";
 import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
-const { preset = "", id = "gv" } = Astro.props as { preset?: string; id?: string };
+const { preset = "", id = "gv", kind = "", kindAt = "here" } = Astro.props as { preset?: string; id?: string; kind?: string; kindAt?: "here" | "top" };
 const gridBrands = BRANDS.filter((b) => b.models.length);
 const groups: [string, string][] = [["read", "Lists read in full"], ["yes", "Public list, not read yet"], ["partial", "Partial list"], ["no", "No public list"]];
 const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNTRIES.includes(c.cc) : !COUNTRIES.includes(c.cc) && c.list === g));
 ---
-<div class="layout gv" id={id} data-preset={preset}>
+<div class="layout gv" id={id} data-preset={preset} data-kind={kind}>
   <fieldset class="filters" id="xf">
     <legend>Narrow down</legend>
     <details class="cc-pick" id="ccpick" open={!!preset}>
@@ -26,13 +26,12 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       ))}
       <button type="button" id="ccclear" class="small">Clear countries</button>
     </details>
-    <div class="kind" role="group" aria-label="Device kind">
+    {kindAt === "here" && <div class="kind" role="group" aria-label="Device kind">
       <button type="button" data-g="inv" aria-pressed="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg>Inverters</button>
       <button type="button" data-g="ev" aria-pressed="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>Wallboxes</button>
-    </div>
-    <label><span>Device class</span><select id="cls"><option value="">All classes</option>{Object.entries(RC).filter(([k]) => k !== "other").map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
+    </div>}
     <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="3">3-phase</option></select></label>
     <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
     <label><span>MPPT</span><select id="mppt"><option value="">Any MPPT count</option>{MPPT_OPTS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
@@ -74,20 +73,21 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
   const BUCKET: Record<string, [number, number]> = { "0-3.7": [0, 3.7], "3.7-6": [3.7, 6], "6-12": [6, 12], "12-30": [12, 30], "30-": [30, Infinity] };
-  const ids = ["cls", "ph", "kva", "mppt", "brand", "st", "n", "lo", "q"];
+  const ids = ["ph", "kva", "mppt", "brand", "st", "n", "lo", "q"];
   type Row = [number, string, string, string, string, string, string, string, number | null, number | null];
   type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; brands: string[]; rows: Row[] };
-  let data: Idx, hits: Row[] = [], shown = 0, g = "";
+  let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "";
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
   const val = (id: string) => ($<HTMLInputElement>(id).value || "").trim();
   const boxes = [...root.querySelectorAll<HTMLInputElement>('input[name="c"]')];
   const sel = () => boxes.filter((b) => b.checked).map((b) => b.value);
-  const kinds = [...root.querySelectorAll<HTMLButtonElement>(".kind button")];
+  // the kind buttons sit in the table's own column, or in the page header (data-for names this view)
+  const kinds = [...document.querySelectorAll<HTMLButtonElement>(`#${root.id} .kind button, .kind[data-for="${root.id}"] button`)];
 
   function apply() {
     const cs = sel(), readSel = cs.filter((c) => data.read.includes(c));
-    const q = val("q").toLowerCase(), b = val("brand"), cls = val("cls"), ph = val("ph"), kv = BUCKET[val("kva")], mp = val("mppt"), st = val("st"), n = +val("n") || 0, lo = val("lo");
+    const q = val("q").toLowerCase(), b = val("brand"), cls = "", ph = val("ph"), kv = BUCKET[val("kva")], mp = val("mppt"), st = val("st"), n = +val("n") || 0, lo = val("lo");
     hits = data.rows.filter((r) => {
       const cells = r[4];
       if (g && (g === "inv" ? !INV.has(r[2]) : r[2] !== "wallbox")) return false;
@@ -113,11 +113,12 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp">MPPT</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
     ids.forEach((id) => $(id).classList.toggle("on", !!val(id)));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
-    $("reset").hidden = !ids.some((id) => val(id)) && !g && !cs.length;
+    $("reset").hidden = !ids.some((id) => val(id)) && g === (root.dataset.kind || "") && !cs.length;
+    document.body.dataset.g = g;
     more();
     const p = new URLSearchParams();
     if (cs.length) p.set("c", cs.join(","));
-    if (g) p.set("g", g);
+    if (g && g !== root.dataset.kind) p.set("g", g);
     ids.forEach((id) => val(id) && p.set(id, val(id)));
     history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
   }
@@ -155,9 +156,10 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       el.addEventListener(id === "q" ? "input" : "change", apply);
     });
     boxes.forEach((b) => b.addEventListener("change", apply));
-    kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g ? "" : k.dataset.g!; apply(); }));
+    // with a default kind the choice is one or the other, never "both"; without one a second click shows every kind
+    kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g && !root.dataset.kind ? "" : k.dataset.g!; apply(); }));
     $("ccclear").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); apply(); });
-    $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLInputElement>(id).value = "")); g = ""; boxes.forEach((b) => (b.checked = false)); apply(); });
+    $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLInputElement>(id).value = "")); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = false)); apply(); });
     $("more").addEventListener("click", more);
     apply();
   });

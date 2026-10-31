@@ -362,3 +362,20 @@ span.rs-none { box-shadow: inset 0 0 0 var(--rule-w) var(--rule); }
 .pick select { min-height: var(--s8); width: 100%; padding: 0 var(--s3); font: inherit; font-size: var(--fs-md); color: var(--ink); background: var(--surface); border: var(--rule-heavy) solid var(--ink); border-radius: var(--r2); }
 .xv th.lo, .xv td.lo { width: 6.5rem; text-align: left; padding-left: var(--s2); }
 @media (max-width: 47.99rem) { .xv th.lo, .xv td.lo, .xv th.sp, .xv td.sp, .xv th.num, .xv td.num { display: none; } .reglist li { grid-template-columns: 2.5rem minmax(0, 1fr) auto; } }
+
+/* the front door of a lens page: one question, one link to the other question; the site nav sits at the foot */
+.ask-top { padding-top: var(--s6); }
+.ask .alt { font-size: var(--fs-sm); }
+.ask .alt a { display: inline-flex; align-items: center; min-height: var(--hit); color: var(--link); }
+.q-ev { display: none; }
+body[data-g="ev"] .q-ev { display: inline; }
+body[data-g="ev"] .q-inv { display: none; }
+.top.at-foot { border-bottom: 0; border-top: var(--rule-w) solid var(--rule); margin-top: var(--s7); }
+
+/* the two kinds as one-line icons beside the question; the active one is ringed and a step larger */
+.kind-icons { gap: var(--s4); margin: var(--s2) 0 0; }
+.kind-icons button { flex-direction: column; gap: var(--s1); min-width: var(--s8); padding: var(--s2) var(--s3); border-color: transparent; background: none; font-weight: 400; color: var(--ink-2); }
+.kind-icons button svg { width: 2rem; height: 2rem; transition: transform 120ms ease-out; }
+.kind-icons button span { font-size: var(--fs-xs); }
+.kind-icons button[aria-pressed="true"] { color: var(--ink); font-weight: 600; background: none; border-color: transparent; outline: var(--rule-heavy) solid var(--ink); outline-offset: 2px; border-radius: var(--r2); }
+.kind-icons button[aria-pressed="true"] svg { transform: scale(1.25); }

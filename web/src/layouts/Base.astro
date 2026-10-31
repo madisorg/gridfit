@@ -4,8 +4,8 @@ import { SITE, TITLE, REPO, data } from "../lib/data";
 // the two faces every page paints first: preloaded so text does not reflow when they arrive
 import textFont from "../fonts/ibm-plex-sans-latin-400-normal.woff2?url";
 import headFont from "../fonts/barlow-semi-condensed-latin-600-normal.woff2?url";
-interface Props { title?: string; description?: string; current?: string; noindex?: boolean }
-const { title, description, current, noindex = false } = Astro.props;
+interface Props { title?: string; description?: string; current?: string; noindex?: boolean; nav?: "top" | "bottom" }
+const { title, description, current, noindex = false, nav: navAt = "top" } = Astro.props;
 const analytics = process.env.GRIDFIT_ANALYTICS ?? "";
 const desc = description ?? "Two questions per inverter, home battery and wallbox: does it work locally with Home Assistant and evcc (read or control), and which EU grid-connection lists carry the model. Open data, every row linked to its source.";
 const canonical = Astro.site ? new URL(Astro.url.pathname, Astro.site).href : undefined;
@@ -39,6 +39,7 @@ const nav = [["/local/", "Local control"], ["/grid/", "Grid lists"], ["/changes/
 <slot name="head" />
 </head>
 <body>
+{navAt === "top" && (
 <header class="top">
   <div class="wrap">
     <a class="mark" href="/">{SITE}</a>
@@ -48,9 +49,21 @@ const nav = [["/local/", "Local control"], ["/grid/", "Grid lists"], ["/changes/
     </nav>
   </div>
 </header>
+)}
 <main>
   <div class="wrap"><slot /></div>
 </main>
+{navAt === "bottom" && (
+<div class="top at-foot">
+  <div class="wrap">
+    <a class="mark" href="/">{SITE}</a>
+    <nav class="nav" aria-label="Site">
+      {nav.map(([href, label]) => <a href={href} aria-current={current === href ? "page" : undefined}>{label}</a>)}
+      <a class="fix" href={`${REPO}/issues/new/choose`}>Fix a row</a>
+    </nav>
+  </div>
+</div>
+)}
 <footer class="foot">
   <div class="wrap">
     <div class="legal">
@@ -63,7 +76,7 @@ const nav = [["/local/", "Local control"], ["/grid/", "Grid lists"], ["/changes/
     </div>
     <p>Dataset <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
       (<a href={`${REPO}/blob/main/data/dataset/rows.csv`}>CSV</a>, <a href={`${REPO}/blob/main/data/dataset/rows.json`}>JSON</a>) ·
-      code MIT · <a href={REPO}>corrections on GitHub</a> · <a href="/llms.txt">llms.txt</a> · no cookies.</p>
+      code MIT · <a href={REPO}>corrections on GitHub</a> · <a href="/llms.txt">llms.txt</a> · no tracking; the one cookie is the country you pick, so the front door opens on it next time.</p>
   </div>
 </footer>
 </body>

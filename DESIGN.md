@@ -414,3 +414,14 @@ on the EE list 51 models answer "2 MPPT".
 `/grid/es/` top and at `#how` ([`routes-es.json`](docs/moodud/routes-es.json)) × 3440/390 × light/dark: [`es.json`](docs/moodud/es.json),
 8 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 6.98), 0 tap targets under 44 px. The profile block's
 headings now follow the country: “How a model is accepted” / “If the model has no certificate” where there is no list.
+
+## 20. Measured, 2026-10-31 — the front door
+
+The country page and `/local/` open on one question (“Is my inverter fit for the grid operator's list in Estonia?” /
+“Does my inverter work locally with Home Assistant and evcc?”), the other question as a small link under it, and the two
+kinds as one-line icons — the active one ringed and a step larger; the wallbox icon swaps the question. The site nav moved
+to the foot; the device-class select is gone (the kind is the class). `/` is a Pages Function: the gf-cc cookie (set when
+a country is picked on the home page) or CF-IPCountry sends the visitor to `/grid/{cc}/`; crawlers and `/?all` get the
+neutral home. `/grid/ee/`, `/grid/ee/?g=ev`, `/grid/es/`, `/local/`, `/local/?g=ev`, `/` ([`routes-uks.json`](docs/moodud/routes-uks.json))
+× 3440/390 × light/dark: [`uks.json`](docs/moodud/uks.json), 24 pictures, 0 console errors, 0 overflow, 0 under 12 px,
+0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px.

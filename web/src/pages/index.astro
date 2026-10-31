@@ -54,7 +54,11 @@ const GROUP = ["Lists read in full", "Public list, not read yet", "Partial list"
   const known = new Set([...sel.options].map((o) => o.value));
   const name = (cc: string) => [...sel.options].find((o) => o.value === cc)?.textContent?.replace(/ \(.*$/, "") ?? cc.toUpperCase();
   let saved = ""; try { saved = localStorage.getItem("gf-cc") ?? ""; } catch {}
-  sel.addEventListener("change", () => { if (!sel.value) return; try { localStorage.setItem("gf-cc", sel.value); } catch {} location.href = `/grid/${sel.value}/`; });
+  sel.addEventListener("change", () => {
+    if (!sel.value) return;
+    try { localStorage.setItem("gf-cc", sel.value); document.cookie = `gf-cc=${sel.value}; path=/; max-age=31536000; samesite=lax`; } catch {}
+    location.href = `/grid/${sel.value}/`;
+  });
   const offer = (cc: string, how: string) => {
     if (!known.has(cc)) return;
     guess.innerHTML = `${how}: <a href="/grid/${cc}/">open the ${name(cc)} view</a>`;

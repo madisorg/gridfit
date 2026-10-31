@@ -1,0 +1,8 @@
+[
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 2.5},
+ {"name": "grid-ee-wallbox", "url": "grid/ee/?g=ev", "wait": 2.5},
+ {"name": "grid-es", "url": "grid/es/", "wait": 2.5},
+ {"name": "local", "url": "local/", "wait": 1.5},
+ {"name": "local-wallbox", "url": "local/?g=ev", "wait": 1.5},
+ {"name": "avaleht", "url": "", "wait": 1.5}
+]

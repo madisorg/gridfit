@@ -25,21 +25,28 @@ const top = Object.entries(here.reduce((m, d) => ((m[brandSlugOf(d)] = (m[brandS
 const brandName = new Map(BRANDS.map((b) => [b.slug, b.name]));
 const CLASSES = ["inverter", "hybrid", "battery", "plug-in", "wallbox"];
 const CLASS_LABEL: Record<string, string> = { inverter: "PV inverter", hybrid: "Hybrid inverter", battery: "Battery / AC inverter", "plug-in": "Plug-in solar / battery (≤ 800 VA)", wallbox: "Wallbox / EV charger" };
+const hasList = parsed || c.list === "yes" || c.list === "partial";
 const title = parsed ? `${c.country}: is it on the ${REGS[cc].short}?` : `${c.country}: is it fit for the grid?`;
 const desc = parsed
   ? `${nf(here.length)} inverters, batteries${cc === "AT" ? ", chargers" : ""} on ${c.country}'s grid-connection list, with phases, rated power and the other EU lists side by side; who publishes the list, what it contains, how it changes.`
   : `${c.country}: ${LIST_LONG[c.list]} What applies per device class, and every model's status on the other EU lists.`;
 ---
-<Base title={title} current="/grid/" description={desc} noindex={!parsed}>
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/grid/">Grid lists</a></nav>
-  <header class="head">
-    <h1>{c.country}: is it fit for the grid?</h1>
-    <p class="kind"><span>{LIST_WORD[c.list]}</span>
-      {parsed && s && <><span aria-hidden="true">·</span><span>{nf(s.rows)} rows</span><span aria-hidden="true">·</span><span>{nf(here.length)} models</span>
-        <span aria-hidden="true">·</span><span>{nf(elsewhere)} also on another country's list</span></>}
-      {c.list_url && <><span aria-hidden="true">·</span><Ext href={c.list_url}>the list</Ext></>}</p>
-    <p class="prose small muted">{LIST_LONG[c.list]}{!parsed && c.list === "yes" ? " GridFit has not read this list yet; the table below shows the models of the lists it has read, with what applies here." : ""}</p>
+<Base title={title} current="/grid/" description={desc} noindex={!parsed} nav="bottom">
+  <header class="ask ask-top" aria-labelledby="q-h">
+    <h1 id="q-h"><span class="q-inv">Is my inverter fit for {hasList ? `the grid operator's list in ${c.country}` : `the grid in ${c.country}`}?</span><span class="q-ev">Is my wallbox fit for the grid in {c.country}?</span></h1>
+    <p class="alt"><a href="/local/">Does my inverter work locally with Home Assistant and evcc?</a></p>
+    <div class="kind kind-icons" role="group" aria-label="Device kind" data-for="gv">
+      <button type="button" data-g="inv" aria-pressed="true" title="Inverters, hybrids, batteries"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg><span>Inverters</span></button>
+      <button type="button" data-g="ev" aria-pressed="false" title="Wallboxes and EV chargers"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg><span>Wallboxes</span></button>
+    </div>
   </header>
+  <GridView preset={cc} kind="inv" kindAt="top" />
+
+  <section class="sec" id="list">
+    <header><h2>{c.country}: {LIST_WORD[c.list]}</h2>
+      <p>{parsed && s ? `${nf(s.rows)} rows · ${nf(here.length)} models · ${nf(elsewhere)} also on another country's list` : ""}{c.list_url && <> · <Ext href={c.list_url}>the list</Ext></>}</p></header>
+    <p class="prose small muted">{LIST_LONG[c.list]}{!parsed && c.list === "yes" ? " GridFit has not read this list yet; the table above shows the models of the lists it has read, with what applies here." : ""}</p>
+  </section>
 
   <section class="sec">
     <header><h2>What applies per device class</h2><p>{COUNTRIES_SOURCE}</p></header>
@@ -75,11 +82,6 @@ const desc = parsed
       <ul class="prose small">{prof.sources.map((x) => <li><Ext href={x.url}>{x.title}</Ext>{x.date ? ` (${x.date})` : ""}{x.seen ? `, read ${x.seen}` : ""}</li>)}</ul>
     </section>
   )}
-  <section class="sec">
-    <header><h2>Models</h2><p>{parsed ? `${c.country} preselected; add countries to find a model that is on every list` : `the lists read, with ${c.country}'s rule as a column; add countries to combine`}</p></header>
-    <GridView preset={cc} />
-  </section>
-
   {parsed && s && regsOf(cc).map((r) => {
     const x = REGS[r], m = META[r] ?? {};
     return (

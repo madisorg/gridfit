@@ -1,0 +1,2630 @@
+{
+ "uks--grid-ee--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7917,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 351
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH10"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH12"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH15"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH5K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH6K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH8K"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-10K-SG04L"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-14K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-15K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-16K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-18K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-20K-SG05L"
+   ],
+   [
+    217,
+    17,
+    ". Deye SUN-29.9K-SG0"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-30K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-35K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-40K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-50K-SG01H"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-6K-SG04LP"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-8K-SG04LP"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    160,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 353,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 3,
+   "2px": 64
+  },
+  "kontrast": {
+   "n": 353,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7917,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 351
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH10"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH12"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH15"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH5K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH6K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH8K"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-10K-SG04L"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-14K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-15K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-16K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-18K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-20K-SG05L"
+   ],
+   [
+    217,
+    17,
+    ". Deye SUN-29.9K-SG0"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-30K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-35K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-40K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-50K-SG01H"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-6K-SG04LP"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-8K-SG04LP"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    160,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 353,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 3,
+   "2px": 64
+  },
+  "kontrast": {
+   "n": 353,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16900,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 28
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 30,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 30,
+   "min": 5.89,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16900,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 28
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 30,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 30,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee-wallbox--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7034,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 81
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ]
+  ],
+  "nhit": 26,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 83,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 3,
+   "2px": 8
+  },
+  "kontrast": {
+   "n": 83,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee-wallbox--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7034,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 81
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ]
+  ],
+  "nhit": 26,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 83,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 3,
+   "2px": 8
+  },
+  "kontrast": {
+   "n": 83,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee-wallbox--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 12356,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 28
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 30,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 30,
+   "min": 5.89,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-ee-wallbox--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 12356,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 28
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 30,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14
+  ],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 30,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-es--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7394,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 319
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". ES"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH10"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH12"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH15"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH5K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH6K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH8K"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-10K-SG04L"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-14K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-15K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-16K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-18K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-20K-SG05L"
+   ],
+   [
+    217,
+    17,
+    ". Deye SUN-29.9K-SG0"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-30K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-35K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-40K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-50K-SG01H"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-6K-SG04LP"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-8K-SG04LP"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    160,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 321,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 11,
+  "radius": {
+   "4px": 3,
+   "2px": 64
+  },
+  "kontrast": {
+   "n": 321,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-es--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7394,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 319
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". ES"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH10"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH12"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH15"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH5K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH6K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH8K"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-10K-SG04L"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-14K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-15K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-16K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-18K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-20K-SG05L"
+   ],
+   [
+    217,
+    17,
+    ". Deye SUN-29.9K-SG0"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-30K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-35K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-40K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-50K-SG01H"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-6K-SG04LP"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-8K-SG04LP"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    160,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 321,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 11,
+  "radius": {
+   "4px": 3,
+   "2px": 64
+  },
+  "kontrast": {
+   "n": 321,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-es--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 15947,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 28
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 30,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14
+  ],
+  "canvas": 0,
+  "svg": 11,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 30,
+   "min": 5.89,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--grid-es--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 15947,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 28
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 30,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14
+  ],
+  "canvas": 0,
+  "svg": 11,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 30,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 10022,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 387
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    157,
+    17,
+    ". Alpha ESSSMILE / S"
+   ],
+   [
+    235,
+    17,
+    ". Anker SOLIXSOLIX S"
+   ],
+   [
+    177,
+    17,
+    ". Anker SOLIXSOLIX X"
+   ],
+   [
+    285,
+    17,
+    ". APsystemsDS3 / QS1"
+   ],
+   [
+    222,
+    17,
+    ". APsystemsEZ1 plug-"
+   ],
+   [
+    179,
+    17,
+    ". BYDBattery-Box / P"
+   ],
+   [
+    169,
+    17,
+    ". DeyeSUN-G string i"
+   ],
+   [
+    227,
+    17,
+    ". DeyeSUN-M / SUN-G3"
+   ],
+   [
+    250,
+    17,
+    ". DeyeSUN-SG HP3 thr"
+   ],
+   [
+    247,
+    17,
+    ". DeyeSUN-SG LP1 sin"
+   ],
+   [
+    244,
+    17,
+    ". DeyeSUN-SG LP3 thr"
+   ],
+   [
+    229,
+    17,
+    ". E3/DCS10 / S20 hom"
+   ],
+   [
+    180,
+    17,
+    ". EcoFlowPowerOcean "
+   ],
+   [
+    253,
+    17,
+    ". EcoFlowSTREAM / Po"
+   ],
+   [
+    185,
+    17,
+    ". EnphaseIQ Battery "
+   ],
+   [
+    264,
+    17,
+    ". EnphaseIQ microinv"
+   ],
+   [
+    165,
+    17,
+    ". Fox ESSAvocado / M"
+   ],
+   [
+    251,
+    17,
+    ". Fox ESSH1 / AC1 / "
+   ],
+   [
+    302,
+    17,
+    ". Fox ESSH3 / H3-Pro"
+   ],
+   [
+    192,
+    17,
+    ". Fox ESST / S / F s"
+   ],
+   [
+    175,
+    17,
+    ". FroniusSymo Hybrid"
+   ],
+   [
+    218,
+    17,
+    ". FroniusSymo/Primo "
+   ],
+   [
+    265,
+    17,
+    ". FroniusVerto / Tau"
+   ],
+   [
+    160,
+    17,
+    ". FroniusVerto Plus "
+   ],
+   [
+    269,
+    17,
+    ". GoodWeDT/SDT/MS/XS"
+   ],
+   [
+    173,
+    17,
+    ". GoodWeES/EM/EMS hy"
+   ],
+   [
+    212,
+    17,
+    ". GoodWeET/EH/BT/BH/"
+   ],
+   [
+    285,
+    17,
+    ". GrowattMIN / MOD /"
+   ],
+   [
+    284,
+    17,
+    ". GrowattSPH / SPA /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHM / HMS /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHYS / HiOn"
+   ]
+  ],
+  "nhit": 39,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 389,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 7,
+   "2px": 93
+  },
+  "kontrast": {
+   "n": 389,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 10022,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 387
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    157,
+    17,
+    ". Alpha ESSSMILE / S"
+   ],
+   [
+    235,
+    17,
+    ". Anker SOLIXSOLIX S"
+   ],
+   [
+    177,
+    17,
+    ". Anker SOLIXSOLIX X"
+   ],
+   [
+    285,
+    17,
+    ". APsystemsDS3 / QS1"
+   ],
+   [
+    222,
+    17,
+    ". APsystemsEZ1 plug-"
+   ],
+   [
+    179,
+    17,
+    ". BYDBattery-Box / P"
+   ],
+   [
+    169,
+    17,
+    ". DeyeSUN-G string i"
+   ],
+   [
+    227,
+    17,
+    ". DeyeSUN-M / SUN-G3"
+   ],
+   [
+    250,
+    17,
+    ". DeyeSUN-SG HP3 thr"
+   ],
+   [
+    247,
+    17,
+    ". DeyeSUN-SG LP1 sin"
+   ],
+   [
+    244,
+    17,
+    ". DeyeSUN-SG LP3 thr"
+   ],
+   [
+    229,
+    17,
+    ". E3/DCS10 / S20 hom"
+   ],
+   [
+    180,
+    17,
+    ". EcoFlowPowerOcean "
+   ],
+   [
+    253,
+    17,
+    ". EcoFlowSTREAM / Po"
+   ],
+   [
+    185,
+    17,
+    ". EnphaseIQ Battery "
+   ],
+   [
+    264,
+    17,
+    ". EnphaseIQ microinv"
+   ],
+   [
+    165,
+    17,
+    ". Fox ESSAvocado / M"
+   ],
+   [
+    251,
+    17,
+    ". Fox ESSH1 / AC1 / "
+   ],
+   [
+    302,
+    17,
+    ". Fox ESSH3 / H3-Pro"
+   ],
+   [
+    192,
+    17,
+    ". Fox ESST / S / F s"
+   ],
+   [
+    175,
+    17,
+    ". FroniusSymo Hybrid"
+   ],
+   [
+    218,
+    17,
+    ". FroniusSymo/Primo "
+   ],
+   [
+    265,
+    17,
+    ". FroniusVerto / Tau"
+   ],
+   [
+    160,
+    17,
+    ". FroniusVerto Plus "
+   ],
+   [
+    269,
+    17,
+    ". GoodWeDT/SDT/MS/XS"
+   ],
+   [
+    173,
+    17,
+    ". GoodWeES/EM/EMS hy"
+   ],
+   [
+    212,
+    17,
+    ". GoodWeET/EH/BT/BH/"
+   ],
+   [
+    285,
+    17,
+    ". GrowattMIN / MOD /"
+   ],
+   [
+    284,
+    17,
+    ". GrowattSPH / SPA /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHM / HMS /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHYS / HiOn"
+   ]
+  ],
+  "nhit": 39,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 389,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 7,
+   "2px": 93
+  },
+  "kontrast": {
+   "n": 389,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 41289,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 43
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 10,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 45,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 7,
+   "2px": 6
+  },
+  "kontrast": {
+   "n": 51,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 41289,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 43
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 10,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 45,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 7,
+   "2px": 6
+  },
+  "kontrast": {
+   "n": 51,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local-wallbox--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 13218,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 254
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    151,
+    17,
+    ". AlfenEve Single / "
+   ],
+   [
+    160,
+    17,
+    ". DeyeSUN-EVSE wallb"
+   ],
+   [
+    317,
+    17,
+    ". EaseeHome / Charge"
+   ],
+   [
+    142,
+    17,
+    ". Fox ESSAC EV charg"
+   ],
+   [
+    104,
+    17,
+    ". FroniusWattpilot"
+   ],
+   [
+    281,
+    17,
+    ". go-ego-e Charger ("
+   ],
+   [
+    144,
+    17,
+    ". GoodWeHCA wallboxe"
+   ],
+   [
+    167,
+    17,
+    ". HuaweiSCharger wal"
+   ],
+   [
+    162,
+    17,
+    ". KEBAKeContact P30 "
+   ],
+   [
+    163,
+    17,
+    ". KostalENECTOR wall"
+   ],
+   [
+    230,
+    17,
+    ". SigenergySigen EVA"
+   ],
+   [
+    97,
+    17,
+    ". SMAEV Charger"
+   ],
+   [
+    134,
+    17,
+    ". SolarEdgeEV charge"
+   ],
+   [
+    245,
+    17,
+    ". SolaXX1/X3-HAC and"
+   ],
+   [
+    136,
+    17,
+    ". SungrowAC wallboxe"
+   ],
+   [
+    208,
+    17,
+    ". Victron EnergyEV C"
+   ],
+   [
+    132,
+    17,
+    ". ZaptecGo / Go 2 / "
+   ],
+   [
+    130,
+    17,
+    ". ABB / FIMERTerra A"
+   ],
+   [
+    177,
+    17,
+    ". ABB / FIMERTerra A"
+   ],
+   [
+    140,
+    17,
+    ". ABLeM4 Single (OCP"
+   ],
+   [
+    137,
+    17,
+    ". ABLeM4 Single (SBC"
+   ],
+   [
+    131,
+    17,
+    ". ABLeM4 Twin (OCPP)"
+   ],
+   [
+    129,
+    17,
+    ". ABLeM4 Twin (SBCx)"
+   ],
+   [
+    62,
+    17,
+    ". ABLeMH1"
+   ],
+   [
+    62,
+    17,
+    ". ABLeMH2"
+   ],
+   [
+    108,
+    17,
+    ". ABLeMH2 (OCPP)"
+   ],
+   [
+    108,
+    17,
+    ". ABLeMH3 (OCPP)"
+   ],
+   [
+    93,
+    17,
+    ". AbsinaWallbox"
+   ],
+   [
+    150,
+    17,
+    ". AlphatecLadesäule "
+   ],
+   [
+    133,
+    17,
+    ". AlphatecWallbox Mi"
+   ],
+   [
+    146,
+    17,
+    ". AlphatecWallbox Po"
+   ]
+  ],
+  "nhit": 40,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 256,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 8,
+   "2px": 93
+  },
+  "kontrast": {
+   "n": 256,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local-wallbox--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 13218,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 254
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    151,
+    17,
+    ". AlfenEve Single / "
+   ],
+   [
+    160,
+    17,
+    ". DeyeSUN-EVSE wallb"
+   ],
+   [
+    317,
+    17,
+    ". EaseeHome / Charge"
+   ],
+   [
+    142,
+    17,
+    ". Fox ESSAC EV charg"
+   ],
+   [
+    104,
+    17,
+    ". FroniusWattpilot"
+   ],
+   [
+    281,
+    17,
+    ". go-ego-e Charger ("
+   ],
+   [
+    144,
+    17,
+    ". GoodWeHCA wallboxe"
+   ],
+   [
+    167,
+    17,
+    ". HuaweiSCharger wal"
+   ],
+   [
+    162,
+    17,
+    ". KEBAKeContact P30 "
+   ],
+   [
+    163,
+    17,
+    ". KostalENECTOR wall"
+   ],
+   [
+    230,
+    17,
+    ". SigenergySigen EVA"
+   ],
+   [
+    97,
+    17,
+    ". SMAEV Charger"
+   ],
+   [
+    134,
+    17,
+    ". SolarEdgeEV charge"
+   ],
+   [
+    245,
+    17,
+    ". SolaXX1/X3-HAC and"
+   ],
+   [
+    136,
+    17,
+    ". SungrowAC wallboxe"
+   ],
+   [
+    208,
+    17,
+    ". Victron EnergyEV C"
+   ],
+   [
+    132,
+    17,
+    ". ZaptecGo / Go 2 / "
+   ],
+   [
+    130,
+    17,
+    ". ABB / FIMERTerra A"
+   ],
+   [
+    177,
+    17,
+    ". ABB / FIMERTerra A"
+   ],
+   [
+    140,
+    17,
+    ". ABLeM4 Single (OCP"
+   ],
+   [
+    137,
+    17,
+    ". ABLeM4 Single (SBC"
+   ],
+   [
+    131,
+    17,
+    ". ABLeM4 Twin (OCPP)"
+   ],
+   [
+    129,
+    17,
+    ". ABLeM4 Twin (SBCx)"
+   ],
+   [
+    62,
+    17,
+    ". ABLeMH1"
+   ],
+   [
+    62,
+    17,
+    ". ABLeMH2"
+   ],
+   [
+    108,
+    17,
+    ". ABLeMH2 (OCPP)"
+   ],
+   [
+    108,
+    17,
+    ". ABLeMH3 (OCPP)"
+   ],
+   [
+    93,
+    17,
+    ". AbsinaWallbox"
+   ],
+   [
+    150,
+    17,
+    ". AlphatecLadesäule "
+   ],
+   [
+    133,
+    17,
+    ". AlphatecWallbox Mi"
+   ],
+   [
+    146,
+    17,
+    ". AlphatecWallbox Po"
+   ]
+  ],
+  "nhit": 40,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 256,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 8,
+   "2px": 93
+  },
+  "kontrast": {
+   "n": 256,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local-wallbox--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 55724,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 35
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 37,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 8,
+   "2px": 6
+  },
+  "kontrast": {
+   "n": 42,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--local-wallbox--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 55724,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 35
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 11,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 37,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 8,
+   "2px": 6
+  },
+  "kontrast": {
+   "n": 42,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--avaleht--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 31
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 10,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14,
+  "fs12": 0,
+  "nfs": 34,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   16
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 34,
+   "min": 6.98,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--avaleht--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1440,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 31
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 10,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14,
+  "fs12": 0,
+  "nfs": 34,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   16
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 34,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--avaleht--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 20
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 10,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14,
+  "fs12": 0,
+  "nfs": 23,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   16
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 23,
+   "min": 6.98,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "uks--avaleht--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 1274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 20
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 10,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 14,
+  "fs12": 0,
+  "nfs": 23,
+  "fs12ex": [],
+  "inputs": [
+   16,
+   16
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 4
+  },
+  "kontrast": {
+   "n": 23,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}
