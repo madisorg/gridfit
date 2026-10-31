@@ -1,0 +1,6 @@
+[
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 2.5},
+ {"name": "grid-ee-typeahead", "url": "grid/ee/", "wait": 2.5, "js": "const q=document.getElementById('ccq'); q.focus(); q.value='sp'; q.dispatchEvent(new Event('input')); 1"},
+ {"name": "grid-ee-dialog", "url": "grid/ee/", "wait": 2.5, "js": "document.getElementById('ccdlg').showModal(); 1"},
+ {"name": "grid-fi-es-pl", "url": "grid/?c=FI,ES,PL&ph=3", "wait": 2.5}
+]

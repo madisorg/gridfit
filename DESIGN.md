@@ -436,3 +436,14 @@ is gone (301 to `/grid/`); the family pages keep the local detail. `/grid/ee/`, 
 page and the 404 ([`routes-sh.json`](docs/moodud/routes-sh.json)) × 3440/390 × light/dark: [`sh.json`](docs/moodud/sh.json),
 20 pictures, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px; the only logged errors are
 the preview server's plain 404 for the 404 route (Pages serves `404.html`).
+
+## 22. Measured, 2026-10-31 — the country picker
+
+The 43 checkboxes left the sidebar. The picker is: chips for the chosen countries (each with a 44 px remove button), a
+typeahead that matches code and name and shows the group word beside each hit (keyboard: arrows, Enter, Escape; combobox
+roles), the 7 read lists as quick toggles, and “All 43 countries…” opening a `<dialog>` with the grouped list, live.
+Pattern after Baymard's truncation findings (≤ 10 visible values, a clearly visible “more” right under them) and the
+GOV.UK / Agriculture DS accessible autocomplete. `/grid/ee/` closed, typeahead open (“sp”), dialog open, and
+`/grid/?c=FI,ES,PL&ph=3` ([`routes-cc.json`](docs/moodud/routes-cc.json)) × 3440/390 × light/dark: [`cc.json`](docs/moodud/cc.json),
+16 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px. One
+finding by eye: the column-head rule word “certificate” clipped in a narrow column at 3440 — now “cert.”.

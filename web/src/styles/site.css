@@ -393,3 +393,33 @@ body[data-g="ev"] .q-inv { display: none; }
 .rs-key .sh { vertical-align: middle; }
 .shc { white-space: nowrap; }
 .shc .sh + .sh { margin-left: var(--s1); }
+
+/* country picker: chips for the chosen countries, a typeahead to add one, the read lists as quick toggles, the full list in a dialog */
+.cc { display: grid; gap: var(--s2); }
+.cc-h { font-family: var(--font-head); font-weight: 600; font-size: var(--fs-md); }
+.cc-chips { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.cc-chips:empty { display: none; }
+.chip { display: inline-flex; align-items: center; gap: var(--s1); min-height: var(--hit); padding: 0 0 0 var(--s2); font-weight: 600; color: var(--ink);
+  background: var(--surface); border: var(--rule-w) solid var(--signal); border-radius: var(--r2); }
+.chip button { min-width: var(--hit); min-height: var(--hit); font: inherit; font-size: var(--fs-md); color: var(--ink-2); background: none; border: 0; cursor: pointer; }
+.chip button:hover { color: var(--ink); }
+.cc-add { position: relative; }
+.cc-add input { width: 100%; min-height: var(--hit); padding: 0 var(--s2); font: inherit; font-size: var(--fs-sm); color: var(--ink); background: var(--surface);
+  border: var(--rule-w) solid var(--ink-2); border-radius: var(--r1); box-sizing: border-box; }
+.cc-add input::placeholder { color: var(--ink-3); }
+.cc-list { position: absolute; left: 0; right: 0; top: 100%; z-index: 4; margin: 2px 0 0; padding: var(--s1) 0; list-style: none; background: var(--surface);
+  border: var(--rule-w) solid var(--ink); border-radius: var(--r1); box-shadow: 0 var(--rule-heavy) 0 var(--ink); font-size: var(--fs-sm); }
+.cc-list li { display: flex; align-items: center; gap: var(--s1); min-height: var(--hit); padding: 0 var(--s2); cursor: pointer; }
+.cc-list li[aria-selected="true"], .cc-list li:hover { background: var(--ok-bg); }
+.cc-quick { display: flex; flex-wrap: wrap; gap: var(--s1); }
+.cc-quick button { min-width: var(--hit); min-height: var(--hit); padding: 0 var(--s2); font: inherit; font-size: var(--fs-sm); font-weight: 600; color: var(--ink-2);
+  background: var(--surface); border: var(--rule-w) solid var(--rule); border-radius: var(--r1); cursor: pointer; }
+.cc-quick button[aria-pressed="true"] { color: var(--ink); border-color: var(--signal); box-shadow: inset 0 0 0 var(--rule-w) var(--signal); }
+.cc-all { justify-self: start; min-height: var(--hit); font: inherit; font-size: var(--fs-sm); color: var(--link); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; }
+.cc-dlg { width: min(44rem, calc(100vw - 2 * var(--gutter))); max-height: 85vh; padding: var(--s4); color: var(--ink); background: var(--surface); border: var(--rule-w) solid var(--ink);
+  border-radius: var(--r2); box-shadow: 0 var(--rule-heavy) 0 var(--ink); }
+.cc-dlg::backdrop { background: color-mix(in srgb, var(--ink) 40%, transparent); }
+.cc-dlg-head { display: flex; justify-content: space-between; align-items: center; gap: var(--s3); margin-bottom: var(--s3); }
+.cc-dlg .cc-group { margin-bottom: var(--s3); }
+.cc-dlg .cc-group label { display: inline-flex; align-items: center; gap: var(--s1); min-height: var(--hit); margin-right: var(--s3); }
+.cc-dlg button.small { min-height: var(--hit); font: inherit; font-size: var(--fs-sm); color: var(--link); background: none; border: var(--rule-w) solid var(--rule); border-radius: var(--r1); padding: 0 var(--s3); cursor: pointer; }
