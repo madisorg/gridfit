@@ -7,11 +7,13 @@ import GridView from "../../../components/GridView.astro";
 import { devices, COUNTRIES, REGS, RC, META, LOG, STATS, SNAP_DATE, regsOf } from "../../../lib/registers";
 import { COUNTRIES_ALL, LIST_WORD, LIST_LONG, CLASS_WORD, CLASS_LONG, CONF_WORD, COUNTRIES_SOURCE, type Country } from "../../../lib/countries";
 import { BRANDS, brandSlugOf, nf } from "../../../lib/devices";
+import { PROFILES } from "../../../lib/profiles";
 
 export function getStaticPaths() {
   return COUNTRIES_ALL.map((c) => ({ params: { cc: c.cc.toLowerCase() }, props: { c } }));
 }
 const { c } = Astro.props as { c: Country };
+const prof = PROFILES[c.cc];
 const cc = c.cc;
 const parsed = COUNTRIES.includes(cc);
 const here = parsed ? devices.filter((d) => !d.unmatched && d.cells[cc]) : [];
@@ -45,9 +47,34 @@ const desc = parsed
       <thead><tr><th scope="col">Device class</th><th scope="col">What applies</th><th scope="col">Checked</th></tr></thead>
       <tbody>{CLASSES.map((k) => <tr><td class="fam">{CLASS_LABEL[k]}</td><td data-l=""><b>{CLASS_WORD[c.classes[k]]}</b> <span class="muted">— {CLASS_LONG[c.classes[k]]}</span></td><td data-l="checked" class="muted">{CONF_WORD[c.confidence[k]] ?? c.confidence[k]}</td></tr>)}</tbody>
     </table>
-    {!parsed && <p class="small muted">Country notes — who files the application, what the certificate must say, how a model gets onto the list, thresholds and deadlines — are being written.</p>}
+    {!parsed && !prof && <p class="small muted">Country notes — who files the application, what the certificate must say, how a model gets onto the list, thresholds and deadlines — are being written.</p>}
   </section>
 
+  {prof && (
+    <section class="sec" id="how">
+      <header><h2>How it works in {c.country}</h2><p>from {prof.decided_by.split(" (")[0]}'s own documents · the grid operator decides</p></header>
+      <dl class="facts-dl panel">
+        <dt>Who decides</dt><dd>{prof.decided_by}</dd>
+        {prof.list && <><dt>The list</dt><dd><Ext href={prof.list.url}>{prof.list.name}</Ext> — {prof.list.meaning}</dd>
+          <dt>Is it a gate?</dt><dd>{prof.list.gate}</dd></>}
+        <dt>Basis</dt><dd><ul class="small">{prof.basis.map((b) => <li>{b}</li>)}</ul></dd>
+        <dt>Thresholds</dt><dd><ul class="small">{prof.thresholds.map((t) => <li>{t}</li>)}</ul></dd>
+        {prof.commissioning && <><dt>Before switching on</dt><dd>{prof.commissioning}</dd></>}
+      </dl>
+      <h3>What the model must meet</h3>
+      <table class="tbl">
+        <thead><tr><th scope="col">Requirement</th><th scope="col">Value</th></tr></thead>
+        <tbody>{prof.must_meet.map((m) => <tr><td class="fam">{m.rule}</td><td data-l="">{m.value}</td></tr>)}</tbody>
+      </table>
+      <h3>How a model gets onto the list</h3>
+      <p class="prose small">{prof.apply?.who ? `Who applies: ${prof.apply.who}. ` : ""}{prof.apply?.how}{prof.apply?.guide_url && <> — <Ext href={prof.apply.guide_url}>the listing guide</Ext>{prof.apply.guide_date ? ` (${prof.apply.guide_date})` : ""}</>}{prof.apply?.processing_time ? `. Processing time: ${prof.apply.processing_time}.` : ""}</p>
+      <ul class="prose small">{prof.documents_for_listing.map((d) => <li>{d}</li>)}</ul>
+      {prof.not_listed && <><h3>If the model is not on the list</h3><p class="prose small">{prof.not_listed}</p></>}
+      {prof.evidence_for_documented && <><h3>What GridFit will show as “fit by the maker's document”</h3><p class="prose small">{prof.evidence_for_documented}</p></>}
+      <h3>Sources</h3>
+      <ul class="prose small">{prof.sources.map((x) => <li><Ext href={x.url}>{x.title}</Ext>{x.date ? ` (${x.date})` : ""}{x.seen ? `, read ${x.seen}` : ""}</li>)}</ul>
+    </section>
+  )}
   <section class="sec">
     <header><h2>Models</h2><p>{parsed ? `${c.country} preselected; add countries to find a model that is on every list` : `the lists read, with ${c.country}'s rule as a column; add countries to combine`}</p></header>
     <GridView preset={cc} />

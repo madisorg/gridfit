@@ -1,0 +1,81 @@
+# Estonia — requirement profile for a grid-connected inverter, battery or hybrid (type A, < 500 kW).
+# What the grid operator checks, what a model must meet, and how a model gets onto the list. Facts only,
+# with the source of each; the grid operator decides. Written 2026-10-31 from Elektrilevi's own documents.
+cc: EE
+country: Estonia
+decided_by: "Elektrilevi OÜ (the distribution grid operator for most of Estonia); Imatra Elekter and VKG Elektrivõrgud publish no list"
+list:
+  name: "Inverterite nimekiri (Elektrilevi)"
+  url: https://elektrilevi.ee/et/inverterite-nimekiri
+  meaning: "Inverters whose use Elektrilevi has approved: for each listed model Elektrilevi has checked the data form, the data sheet, the LVD and EMC certificates, the CE declaration and the RfG / EN 50549 certificate. The page is undated; the Aku column says whether a battery can be connected."
+  gate: "De facto. The small-producer application form says the inverter model is to be chosen from the list on Elektrilevi's site; an older micro-producer form adds that a model not on the list needs an EN 50438:2013 conformity certificate and a type-test protocol attached to the application."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG), article 13 — type A requirements"
+  - "Vabariigi Valitsuse määrus „Elektrisüsteemi toimimise võrgueeskiri“ (the national grid code)"
+  - "EVS-EN 50549-1 (A-type technical conditions, 1 June 2023, section 8.1.2)"
+  - "Directives 2014/35/EU (low voltage) and 2014/30/EU (EMC); CE marking under Regulation (EC) 765/2008"
+must_meet:
+  - rule: "Frequency ranges"
+    value: "47.5–49.0 Hz for 30 min; 49.0–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
+  - rule: "Rate of change of frequency"
+    value: "stay connected up to 2.5 Hz/s"
+  - rule: "Over-frequency response (LFSM-O)"
+    value: "active power reduction from 50.2 Hz with 5 % droop (40 %/Hz)"
+  - rule: "Under-frequency"
+    value: "output may fall at most 2 % of Pmax per Hz below 49 Hz"
+  - rule: "Loss-of-mains protection"
+    value: "U<, U>, U>>, f<, f> functions; 2019 recommended settings: U>> 1.15 Un 0.1–0.2 s, U> 1.11 Un ≥ 3 s, U< 0.85 Un 1.2–1.5 s, f> ≥ 51.6 Hz, f< ≤ 47.4 Hz"
+  - rule: "Reconnection"
+    value: "only after the grid frequency has stayed within 49.0–50.1 Hz for 60 s; ramp at most 10 % of Pmax per minute"
+  - rule: "Voltage-dependent output P(U)"
+    value: "linear reduction from +10 % of nominal voltage, reaching zero at +12 %"
+  - rule: "Reactive power"
+    value: "cos φ = 1 at the connection point by default; the operator may set a fixed cos φ, cos φ(P), fixed Q or Q(U)"
+  - rule: "Export limit"
+    value: "the control system keeps the exported active power under the contracted value, summed per phase; step response within the curve ΔP(t) = ΔP(0)·e^(−1.05·(t−0.8))"
+  - rule: "Storage dynamics"
+    value: "smooth transitions between charging and discharging; power ramps of at most 10 % per minute near the charge limits"
+documents_for_listing:
+  - "a properly completed data form (Elektrilevi's Excel form)"
+  - "the device's technical data sheet"
+  - "type-test reports, certificates and/or factory confirmations that prove the requirements above"
+  - "certificate of compliance with the low-voltage directive 2014/35/EU"
+  - "certificate of compliance with the EMC directive 2014/30/EU and/or the EN 61000 series"
+  - "CE declaration of conformity (Regulation (EC) 765/2008)"
+  - "certificate of compliance with RfG 2016/631 and/or EN 50549-1 (EN 50549-2 for medium voltage)"
+  - "a short description of the inverter settings that make it meet the grid code"
+  - "the manufacturer's contact"
+apply:
+  who: "the manufacturer, importer or installer"
+  how: "send the documents to Elektrilevi's electricity-producers mailbox named in the listing guide (PDF below)"
+  guide_url: https://www.elektrilevi.ee/-/doc/8644141/liitumised/vaiketootjale/failid/inverterite_lisamine_elektrilevi_nimekirja_est.pdf
+  guide_date: "2023-12-06 (an earlier version dated 2019-08-15 has the same requirements without the mailbox)"
+  processing_time: "not stated"
+not_listed: "The small-producer form points to the list; the micro-producer form says a model not on the list needs an EN 50438:2013 conformity certificate and a type-test protocol with the application. In practice the installer applies, and Elektrilevi checks the certificate against the requirements above. The list page says: if needed, contact customer service."
+thresholds:
+  - "≤ 800 W: the A-type technical conditions do not apply (plug-in units); registration still applies (not confirmed)"
+  - "micro-producer: ≤ 15 kW three-phase or ≤ 5 kW single-phase"
+  - "small producer (type A): < 500 kW; type B–D from 500 kW have their own conditions"
+  - "above 1 MW: extra documents with the application"
+commissioning: "Before parallel operation: the inverter settings protocol and, where required, the electrical-installation audit (checked in the TJA register) or the builder's confirmation; the grid contract for a producer must be signed by both sides first."
+evidence_for_documented: "A certificate or test report against EN 50549-1 (any national profile, or none) that shows the parameters above, plus the Estonian settings — this is what Elektrilevi checks for a model that is not on the list. GridFit shows the document; Elektrilevi decides."
+sources:
+  - title: "Inverterite nimekiri (the list page, with the documents checked per listed model)"
+    url: https://elektrilevi.ee/et/inverterite-nimekiri
+    seen: "2026-10-31"
+  - title: "Tootmisseadmete lisamine Elektrilevi nimekirja — tehnilised nõuded ja vastavus"
+    url: https://www.elektrilevi.ee/-/doc/8644141/liitumised/vaiketootjale/failid/inverterite_lisamine_elektrilevi_nimekirja_est.pdf
+    date: "2023-12-06"
+  - title: "A-tüüpi (alla 500 kW) tootmismoodulite tüüpsed tehnilised tingimused"
+    url: https://www.elektrilevi.ee/-/doc/8644141/kliendile/A_tyypi_tootmismoodulite_alla_500_kW_tyypsed_tehnilised_tingimused.pdf
+    date: "2023-06-01"
+  - title: "Tehnilised tingimused alla 500 kW maksimumvõimsusega elektrienergia tootjale (2019; recommended protection settings)"
+    url: https://www.elektrilevi.ee/-/doc/6305157/kliendile/tehnilised_tingimused_elektrienergia_vaiketootjale.pdf
+    date: "2019-04-27"
+  - title: "Elektrilevi OÜ liitumistingimused"
+    url: https://www.elektrilevi.ee/-/doc/8644141/kliendile/liitumistingimused.pdf
+    date: "2023-05-16"
+  - title: "Liitumistaotlus elektrienergia tootjale (small producer form)"
+    url: https://www.elektrilevi.ee/-/doc/8644141/kliendile/el_vorm_liitumistaotlus_vaiketootja.pdf
+  - title: "Liitumistaotlus mikrotootjale (micro-producer form, older)"
+    url: https://www.elektrilevi.ee/-/doc/6305157/kliendile/el_vorm_liitumistaotlus_mikrotootja.doc

@@ -1,0 +1,1 @@
+[{"name": "riik-ee-how", "url": "grid/ee/", "js": "document.getElementById(\"how\").scrollIntoView();", "wait": 1.5}, {"name": "riik-ee-how2", "url": "grid/ee/", "js": "document.querySelector(\"#how h3\").scrollIntoView();", "wait": 1.5}]
