@@ -1,0 +1,31 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Victron Energy
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-multiplus-ii-2026
+  title: SGS Tecnos 2622/0478-B/E2-CER — EN 50549-1 + A1, EN 50549-10 — MultiPlus-II 48/8000, 48/10000, 48/15000
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-EN-50549-1-MultiPlus-II-48V-8kVA-48V-10kVA-48V-15kVA-2026.pdf
+  issuer: SGS Tecnos
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+AC:2019+A1:2023
+  - EN 50549-10:2022
+  cert_no: 2622/0478-B/E2-CER
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - 48/10000/140-100
+  - 48/15000/200-100
+  - 48/8000/110-100
+  families:
+  - name: MultiPlus-II 48/8000, 48/10000, 48/15000
+    match: ^MULTIPLUS-II(230V)?48/(8000/110|10000/140|15000/200)-100
+    countries: []
+    accepted_in: [EE]

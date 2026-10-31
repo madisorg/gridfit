@@ -1,0 +1,98 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: AEG
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-ich02-2022
+  title: TÜV Rheinland A3 50555377 0001 — EN 50549-1 — AS-ICH02 hybrid
+  url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/hybrid-AS-ICH02/Certificate%20AEG%20ICH02%20Series,%20EN%2050549-1-2019.pdf
+  issuer: TÜV Rheinland
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: A3 50555377 0001
+  issued: 15.08.2022
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AS-ICH02-10000-2/HV
+  - AS-ICH02-5000-2/HV
+  - AS-ICH02-6500-2/HV
+  - AS-ICH02-8000-2/HV
+  families:
+  - name: AS-ICH02 hybrid
+    match: ^AS-ICH02-(5000|6500|8000|10000)-2/HV
+    countries: []
+    accepted_in: [EE]
+- id: en50549-ic02-2-2021
+  title: EN 50549-1 — AS-IC02-2 4–15 kW
+  url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/three-phase-AS-IC02-2_(4-15kW)/Certification_AS-IC02-2_4-15kW_EN50549-1-2019+VDE0126-1-1-2006_20210322.pdf
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: 2188AP010310007
+  issued: '2021-03-22'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AS-IC02-10000-2
+  - AS-IC02-12000-2
+  - AS-IC02-15000-2
+  - AS-IC02-4000-2
+  - AS-IC02-5000-2
+  - AS-IC02-6000-2
+  - AS-IC02-8000-2
+  families:
+  - name: AS-IC02-2 three-phase
+    match: ^(AS\-IC02\-10000\-2|AS\-IC02\-12000\-2|AS\-IC02\-15000\-2|AS\-IC02\-4000\-2|AS\-IC02\-5000\-2|AS\-IC02\-6000\-2|AS\-IC02\-8000\-2)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-ir02-2-2021
+  title: EN 50549-1 — AS-IR02-2 3–6 kW
+  url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/three-phase-AS-IR02-2_(3-6kW)/Certification_AS-IR02-2_3-6kW_EN50549-1-2019+VDE01261-1-2006_20210323.pdf
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: 2188AP010310009
+  issued: '2021-03-23'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AS-IR02-3000-2
+  - AS-IR02-3600-2
+  - AS-IR02-4200-2
+  - AS-IR02-5000-2
+  - AS-IR02-6000-2
+  families:
+  - name: AS-IR02-2
+    match: ^(AS\-IR02\-3000\-2|AS\-IR02\-3600\-2|AS\-IR02\-4200\-2|AS\-IR02\-5000\-2|AS\-IR02\-6000\-2)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-ir02-2021
+  title: EN 50549-1 — AS-IR02 0.7–3 kW
+  url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/single-phase_AS-IR02_(700kW-3kW)/Certification_AS-IR02_0.7-3kW_EN50549-1-2019+VDE0126-1-1-2016_20210323.pdf
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: 2188AP010310011
+  issued: '2021-03-23'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AS-IR02-1000
+  - AS-IR02-1500
+  - AS-IR02-2000
+  - AS-IR02-2500
+  - AS-IR02-3000
+  - AS-IR02-700
+  families:
+  - name: AS-IR02 single-phase
+    match: ^(AS\-IR02\-1000|AS\-IR02\-1500|AS\-IR02\-2000|AS\-IR02\-2500|AS\-IR02\-3000|AS\-IR02\-700)$
+    countries: []
+    accepted_in: [EE]
