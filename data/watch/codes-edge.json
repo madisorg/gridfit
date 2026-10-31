@@ -1,0 +1,626 @@
+{
+ "ACE209H2HHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "ACE-209H-2H-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "ACE261H2HHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "ACE-261H-2H-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "APXHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "APX-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "AURA5000": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "AURA-5000",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "AXE3060HHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "AXE-30-60H-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "AXE5060HHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "AXE-50-60H-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "AXE75HHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "AXE-75H-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "AXE88286H2HSS1HV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "AXE-88-286H-2HS-S1-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "AXELV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "AXE-LV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "EUSYN600E30": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "EU-SYN-600E-30",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "FUTUREH": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "FUTURE-H",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "FUTUREV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "FUTURE-V",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "GROHOMEMANAGERX": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "GROHOMEMANAGER-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "GROPLUGX": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "GROPLUG-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "INFINITY1000PRO": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "INFINITY-1000-PRO",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MAC5070KTL3XLVMV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MAC-50-70KTL3-X-LV-MV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MAX100150KTL3X2LVMV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MAX-100-150KTL3-X2-LV-MV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MAX100150KTL3XLV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MAX-100-150KTL3-X-LV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MAX185253KTL3XHV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MAX-185-253KTL3-X-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MAX320350KX": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MAX-320-350K-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MAX5080KTL3LV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MAX-50-80KTL3-LV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "METER": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "METER",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MID1130KTL3XH": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MID-11-30KTL3-XH",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MID1530KTL3XX2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MID-15-30KTL3-X-X2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MID2540KTL3X": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MID-25-40KTL3-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MID3050KTL3X2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MID-30-50KTL3-X2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MID3660KTL3X3": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MID-36-60KTL3-X3",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MIN25005000TLXA": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MIN-2500-5000TL-XA",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MIN25006000TLXH2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MIN-2500-6000TL-XH2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MIN300011400TLXHUS": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MIN-3000-11400TL-XH-US",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MIN700010000TLXX2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MIN-7000-10000TL-X-X2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MINA": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MINA",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MOD300010000TL3XH": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MOD-3000-10000TL3-XH",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MOD315KTL3HU": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MOD-3-15KTL3-HU",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MOD333KTL3X3": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MOD-3-33KTL3-X3",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MODA": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MODA",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "MONITORINGPLATFORM": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "MONITORING-PLATFORM",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "NEO16002500MX2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "NEO-1600-2500M-X2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "NEO2000MX": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "NEO-2000M-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "NEO6001000MX": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "NEO-600-1000M-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "NEXA2000": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "NEXA-2000",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "NOAH2000": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "NOAH-2000",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "RISE261HXH": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "RISE-261H-XH",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SEMXAR": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SEM-XA-R",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SHINELINKX2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SHINELINK-X2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SHINEMASTER4GX": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SHINEMASTER4G-X",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SHINEWIFIFFPRO4GF": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SHINEWIFI-F-F-PRO-4G-F",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SHINEWILANX2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SHINEWILAN-X2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPA400010000TL3BHUP": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPA-4000-10000TL3-BH-UP",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPE15KTL3HVM": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPE-15KTL3-HVM",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPE800012000ES": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPE-8000-12000-ES",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF20005000TLHVM": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-2000-5000TL-HVM",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF30005000ESESLITE": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-3000-5000-ES-ES-LITE",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF30006000THVMG2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-3000-6000T-HVM-G2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF3000TLLVM": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-3000TL-LVM",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF3000TLLVMES": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-3000TL-LVM-ES",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF400018000TDVM": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-4000-18000T-DVM",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF400018000TDVMMPV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-4000-18000T-DVM-MPV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF4000TLHVM24G2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-4000TL-HVM-24G2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF412KTHVMMPV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-4-12KT-HVM-MPV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF6000ES": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-6000-ES",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF6000ESLITE": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-6000-ES-LITE",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPF6000TDVMG2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPF-6000T-DVM-G2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPH30006000TLBLUP": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPH-3000-6000TL-BL-UP",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPH400010000TL3BHUP": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPH-4000-10000TL3-BH-UP",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPHSPA30006000TLHUBAUB": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPH-SPA-3000-6000TL-HUB-AUB",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPHSPM800010000TLHUHU2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPH-SPM-8000-10000TL-HU-HU2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPI300022000": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPI-3000-22000",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPI7504000TL2HV": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPI-750-4000TL2-HV",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPM25006000TLHUHU2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPM-2500-6000TL-HU-HU2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SPM2CTC": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SPM-2CT-C",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SYN100XH30": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SYN-100-XH-30",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "SYN200XHUS": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "SYN-200-XH-US",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR070912ASPUS": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-07-09-12AS-P-US",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR07ADSESEWPEPEW": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-07AD-SE-SEW-PE-PEW",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR07ASSPSEPE": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-07AS-S-P-SE-PE",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR1122ADSESEWPEPEW": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-11-22AD-SE-SEW-PE-PEW",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR1122ASSPSEPE": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-11-22AS-S-P-SE-PE",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR20DSP": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-20DS-P",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR40DSPDDP": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-40DS-P-DD-P",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "THOR60200DDP": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "THOR-60-200DD-P",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "TPMCTE": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "TPM-CT-E-EU",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "TPMCTEUS": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "TPM-CT-E-US",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "VETA2200": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "VETA-2200",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "WIT2855KHUAUUSL2": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "WIT-28-55K-HU-AU-US-L2",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "WIT425KHU": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "WIT-4-25K-HU",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "WIT50100KHUAU": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "WIT-50-100K-HU-AU",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "WIT50150KXHUUS": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "WIT-50-150K-XHU-US",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ },
+ "WIT63125KXHU": {
+  "baseline": true,
+  "brand": "Growatt",
+  "code": "WIT-63-125K-XHU",
+  "first_seen": "2026-10-31",
+  "source": "growatt-products"
+ }
+}

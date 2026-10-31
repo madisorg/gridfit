@@ -1,0 +1,80 @@
+# Sources of the freshness watch (docs/freshness.md explains each choice).
+#
+# kind:
+#   registers the grid lists GridFit reads (see below).
+#   file      one document; changed = new ETag / Last-Modified / content hash. `extract: pdf` reads the model
+#             codes out of it, so a changed document says which codes are new.
+#   link      a page that links the current file of a list under a dated name; changed = a new file name.
+#   sitemap   a sitemap or sitemap index (children followed by `follow`); items = page URLs matching `keep`.
+#             A new product page is the signal; lastmod is ignored (GoodWe rewrites every lastmod daily).
+#   feed      RSS or Atom; items = entries. Press feeds keep only entries naming a known brand and a model code.
+#   keys      a JSON object whose keys are the items (Home Assistant integrations, HACS repositories);
+#             only keys whose name or description reads like an energy device are reported.
+#   page      a plain-HTML product listing; items = the model codes printed on it.
+#   edge      a JavaScript page, rendered by headless Edge (tools/specs/dom.py) - only with --edge, on madis-pc.
+#
+# Deliberately absent (docs/freshness.md, "Not watched"): the Austrian lists (robots.txt disallows every
+# crawler), Huawei (terms forbid automated access), SolarEdge and Sigenergy (bot walls; not bypassed),
+# Sungrow (see below), energy-storage.news (robots.txt answers 403), Reddit, Facebook, ZEREZ, ENF Solar, Geizhals (closed or database right), certificate-body search pages
+# (Certipedia disallows /search; the others are forms).
+
+sources:
+  # ------------------------------------------------------------------ grid lists (between register refreshes)
+  # Every list in gridfit/registers.py REGISTERS whose robots.txt allows this user agent, downloaded and read by
+  # tools/registers/parse.py, then compared with the latest snapshot: rows a list gained since the last refresh.
+  - {id: registers, kind: registers}
+  - {id: reg-ie, kind: link, url: "https://www.esbnetworks.ie/about-us/projects/low-carbon-technology-register",
+     pattern: 'href="([^"]*generation-els-register[^"]*\.xlsx)', note: "Ireland, not read by GridFit yet: a new file only"}
+
+  # ------------------------------------------------------------------ makers
+  # keep / drop: regexes over the page URL. The last URL segment becomes the code (words up to the first generic
+  # one: "sun-12k-sg04lp3-eu" -> SUN-12K-SG04LP3-EU); slug: news = a press-release URL, reported by its title.
+  - {id: kostal-countries, kind: file, brand: Kostal, extract: pdf, line: '^(PLENTICORE|PIKO|KOSTAL|ENECTOR|KSEM|BLUE)',
+     url: "https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Listen/Released-countries-inverter.pdf"}
+  - {id: deye-products, kind: sitemap, brand: Deye, url: "https://deye.com/sitemaps.xml",
+     follow: 'product-sitemap\d*\.xml', keep: '^https://deye\.com/product/[^/]+/?$',
+     drop: '(?i)dehumidif|purifier|pint|dryer|air-con|air-water|cooler|heater|/dyd?-'}  # English pages only; Deye also makes dehumidifiers
+  - {id: goodwe-pages, kind: sitemap, brand: GoodWe, url: "https://en.goodwe.com/sitemap.xml",
+     keep: '/[a-z0-9-]*-series-[a-z0-9-]*$|/bat-[^/]+$'}
+  - {id: solax-products, kind: sitemap, brand: SolaX, url: "https://www.solaxpower.com/sitemap.xml",
+     keep: '/our-products/[^/]+\.html$', drop: '(?i)switching|adapter|parallel|box|cabinet|meter|dongle|accessor|cable'}
+  - {id: foxess-products, kind: sitemap, brand: Fox ESS, url: "https://www.fox-ess.com/sitemap.xml",
+     keep: '/products/[^/]+/[a-z][^/]*$', drop: '(?i)accessor'}
+  - {id: solis-products, kind: sitemap, brand: Solis, url: "https://www.solisinverters.com/sitemap.xml",
+     keep: '/global/[A-Z0-9][^/]*_gl\.html$'}  # one page per model range: S6-EH3P(15-20)K-ND-H_gl.html
+  - {id: hoymiles-releases, kind: sitemap, brand: Hoymiles, url: "https://www.hoymiles.com/sitemap.xml",
+     keep: '/product-release/[^/]+\.html$', slug: news}
+  - {id: sma-products, kind: sitemap, brand: SMA, url: "https://www.sma.de/en/sitemap.xml", follow: 'sitemap=pages',
+     keep: '/en/products/(solar-?inverters|hybrid-inverters|battery-inverters|e-mobility|energy-storage)/[^/]+$'}
+  - {id: fronius-products, kind: sitemap, brand: Fronius, url: "https://www.fronius.com/sitemap-groups.xml?country=home",
+     keep: '/en/help-center/solar-energy/products/(solar-inverters|energy-storage|e-mobility)/[^/]+/[^/]+/[^/]+$',
+     drop: '(?i)adapter|accessor|mounting|cable'}
+  - {id: kostal-pages, kind: sitemap, brand: Kostal, url: "https://www.kostal-solar-electric.com/en/sitemap.xml",
+     follow: '.', keep: '/en/products/[a-z-]*(inverter|storage|batter|wallbox|charg)[a-z-]*/[^/?]+/?$'}
+  # kind page: a plain-HTML product listing; the model codes printed on it are the items.
+  - {id: sofar-storage-inverters, kind: page, brand: Sofar,
+     url: "https://www.sofarsolar.com/product/residentialstorage/storageinverter/list_1.html"}
+  - {id: sofar-pv-inverters, kind: page, brand: Sofar, url: "https://www.sofarsolar.com/product/residentialPV/pvinverter/list_1.html"}
+  - {id: victron-products, kind: sitemap, brand: Victron Energy, url: "https://www.victronenergy.com/sitemap.xml",
+     keep: '^https://www\.victronenergy\.com/(inverters|inverters-chargers|inverter-charger-mppt|inverter-mppt|ev-charging|batteries)/[^/]+$',
+     drop: '(?i)agm|gel|lead|telecom|balancer|opz'}
+
+  # ------------------------------------------------------------------ makers that need a browser (--edge, madis-pc only)
+  # keep: product links in the rendered page; text: true reads the model codes printed on the page instead.
+  # Sungrow is not here: its product pages render without the product list in headless Edge (a consent or region
+  # gate that is not clicked through), and its sitemap.xml is an HTML page. Sungrow arrives through the lists.
+  - {id: growatt-products, kind: edge, brand: Growatt, url: "https://en.growatt.com/products",
+     keep: '/products/[a-z0-9-]+$'}
+
+  # ------------------------------------------------------------------ open-source support (a new device = a new model)
+  - {id: evcc-templates, kind: feed, url: "https://github.com/evcc-io/evcc/commits/master/templates/definition.atom"}
+  - {id: evcc-releases, kind: feed, url: "https://github.com/evcc-io/evcc/releases.atom"}
+  - {id: ha-integrations, kind: keys, path: integration,
+     url: "https://raw.githubusercontent.com/home-assistant/core/dev/homeassistant/generated/integrations.json"}
+  - {id: hacs-integrations, kind: keys, url: "https://data-v2.hacs.xyz/integration/data.json"}
+
+  # ------------------------------------------------------------------ press
+  - {id: pv-magazine, kind: feed, press: true, url: "https://www.pv-magazine.com/feed/"}
+  - {id: pv-magazine-de, kind: feed, press: true, url: "https://www.pv-magazine.de/feed/"}
+  - {id: solarserver, kind: feed, press: true, url: "https://www.solarserver.de/feed/"}
+  - {id: pv-tech, kind: feed, press: true, url: "https://www.pv-tech.org/feed/"}

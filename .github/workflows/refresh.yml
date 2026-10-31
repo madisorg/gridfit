@@ -1,6 +1,8 @@
 # Weekly: rebuild from the sources and commit the dataset. On the 1st of each month the grid
-# registers are downloaded, parsed and diffed too (data/registers/). Each push triggers the Cloudflare
-# Pages build.
+# registers are downloaded, parsed and diffed too (data/registers/); every week when the repository
+# variable REGISTERS_WEEKLY is "true" (docs/freshness.md says what has to be settled first). Then the
+# freshness watch (tools/watch/run.py) looks for new models at makers, in the lists, the integrations
+# and the press, and writes docs/watch-report.md. Each push triggers the Cloudflare Pages build.
 #
 # Two things keep a passive site alive:
 # - data/dataset/REFRESHED is rewritten on every run, so there is a commit every week even when no
@@ -38,7 +40,7 @@ jobs:
       - name: decide whether this run refreshes the registers
         id: mode
         run: |
-          if [ "${{ github.event.schedule }}" = "47 4 1 * *" ] || [ "${{ inputs.registers }}" = "true" ]; then
+          if [ "${{ github.event.schedule }}" = "47 4 1 * *" ] || [ "${{ inputs.registers }}" = "true" ]              || [ "${{ vars.REGISTERS_WEEKLY }}" = "true" ]; then
             echo "registers=true" >> "$GITHUB_OUTPUT"
           else
             echo "registers=false" >> "$GITHUB_OUTPUT"
@@ -50,12 +52,27 @@ jobs:
           else
             python build.py --refresh
           fi
+      - name: watch for new models (makers, lists, integrations, press)
+        # a failing source or a failing watch must not stop the dataset refresh
+        continue-on-error: true
+        run: python tools/watch/run.py
+      - name: keep the watch report as a run artifact
+        if: ${{ always() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: watch-report
+          path: |
+            docs/watch-report.md
+            data/watch/candidates.json
+          if-no-files-found: ignore
+          retention-days: 90
       - name: commit what changed, plus the weekly stamp
         run: |
           git config user.name "gridfit-bot"
           git config user.email "gridfit-bot@users.noreply.github.com"
           printf 'last refresh: %s\nregisters: %s\n' "$(date -u +%FT%TZ)" "${{ steps.mode.outputs.registers }}" > data/dataset/REFRESHED
           git add data/dataset data/registers
+          git add data/watch docs/watch-report.md 2>/dev/null || true
           if [ "${{ steps.mode.outputs.registers }}" = "true" ]; then
             git commit -m "dataset: refresh $(date -u +%F) + grid registers"
           else
