@@ -6,7 +6,7 @@ import { COUNTRIES } from "../lib/registers";
 import { BRANDS, modelPages, brandSlugOf } from "../lib/devices";
 export const GET: APIRoute = ({ site }) => {
   if (!site) return new Response("", { headers: { "Content-Type": "application/xml" } });
-  const paths = ["/", "/local/", "/grid/", "/changes/", "/about/",
+  const paths = ["/", "/grid/", "/changes/", "/about/",
     ...COUNTRIES.map((c) => `/grid/${c.toLowerCase()}/`),
     ...BRANDS.map((b) => `/${b.slug}/`), ...data.families.map(familyUrl),
     ...modelPages.map((d) => `/${brandSlugOf(d)}/model/${d.slug}/`)];

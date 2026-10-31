@@ -21,9 +21,9 @@ const groups = Object.keys(RC).map((c) => [c, models.filter((d) => d.cls === c)]
 const matchedN = models.filter((d) => familyOf(d)).length;
 const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURIComponent(b.name + ": ")}`;
 ---
-<Base title={`${b.name}: local control with Home Assistant and evcc, and EU grid lists`} current={fams.length ? "/local/" : "/grid/"}
+<Base title={`${b.name}: local control with Home Assistant and evcc, and EU grid lists`} current={fams.length ? "/grid/" : "/grid/"}
       description={`${b.name}: ${fams.length} product famil${fams.length === 1 ? "y" : "ies"} with a Home Assistant or evcc route (${local} local), and ${nf(models.length)} models on the grid-connection lists of ${listed.join(", ") || "none of the 7 lists read"}.`}>
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/local/">Local control</a><span aria-hidden="true">/</span><a href="/grid/">Grid lists</a></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/grid/">Grid lists</a></nav>
   <header class="head">
     <h1>{b.name}</h1>
     <p class="kind"><span>{fams.length} famil{fams.length === 1 ? "y" : "ies"} with a smart-home route, {local} local, {ctl} with control</span><span aria-hidden="true">·</span>

@@ -40,8 +40,8 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       <option value="P">Time-limited, date passed</option><option value="E">Expired</option><option value="N">“Nein” (AT)</option></select></label>
     <label><span>Lists</span><select id="n"><option value="">In any number of lists</option><option value="2">In 2 or more lists</option>
       <option value="3">In 3 or more</option><option value="4">In 4 or more</option></select></label>
-    <label><span>Smart home</span><select id="lo"><option value="">Any</option><option value="W">Local control (HA or evcc)</option><option value="L">Local route, read or control</option>
-      <option value="B">Brand route, model unconfirmed</option><option value="-">No local route found</option></select></label>
+    <label><span>Smart home</span><select id="lo"><option value="">Any</option><option value="W">Local control, HA or evcc</option><option value="L">Local route, read or control</option>
+      <option value="HW">Home Assistant: local control</option><option value="EW">evcc: local control</option><option value="B">Brand route, model unconfirmed</option><option value="-">No local route found</option></select></label>
     <label><span>Search</span><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model or brand"></label>
     <button type="button" id="reset" hidden>Clear filters</button>
   </fieldset>
@@ -52,7 +52,10 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     <noscript><p>The table needs JavaScript. Every model is also on its brand page.</p></noscript>
     <CellLegend />
     <p class="legend small"><span class="rs-key">Column head: <b>list</b> = the country has a public list · <b>certificate</b> = no list, the grid operator checks the maker's certificate · <b>—</b> = nothing to check for this class.</span>
-      <span class="rs-key"><span class="st write">control</span> / <span class="st local">local</span> / <span class="st cloud">cloud</span> / <span class="st none">brand route</span> = Home Assistant or evcc on your network</span></p>
+      <span class="rs-key" id="sh-legend"><b>Local</b> = the best route on your network: <span class="st write">control</span> / <span class="st local">read</span> / <span class="st cloud">cloud</span> / <span class="st none">brand route</span>.
+      <b>Smart home</b> = who talks to it, Home Assistant then evcc, each mark coloured by its own route: <span class="sh sh-W" role="img" aria-label="local control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> local control ·
+      <span class="sh sh-L" role="img" aria-label="local, read only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> local, read only · <span class="sh sh-C" role="img" aria-label="cloud only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> cloud only ·
+      <span class="sh sh-B" role="img" aria-label="brand route"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> brand route, model unconfirmed · empty = not found. Marks are GridFit's own glyphs, not the projects' logos.</span></p>
     <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists. No list carries MPPT counts: those are the makers' own datasheets,
       read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); “–” means not collected, never “none”. The list is the authority; this is a cross-reference.</p>
   </div>
@@ -69,7 +72,12 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   const STATE: Record<string, [string, string]> = { list: ["none", "nothing known: public list, not read yet — check the model there"], rule: ["none", "nothing known: a certificate is required; the grid operator checks the maker's document"],
     free: ["none", "nothing to check for this class"], banned: ["no", "not fit: not allowed"], unknown: ["none", "nothing known: not confirmed"] };
   const RULE: Record<string, string> = { list: "list", rule: "certificate", free: "—", banned: "not allowed", unknown: "?" };
-  const LOC: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "local"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "not found"] };
+  const MARK: Record<string, string> = { W: "local control", L: "local, read only", C: "cloud only", B: "brand route, model unconfirmed", "-": "not found" };
+  const HA = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg>`, EV = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="12" height="11" rx="1.5"/><path d="M8 7V4M12 7V4M16 12h2.5a1.5 1.5 0 0 1 1.5 1.5V17"/><path d="M10 10l-2 3h4l-2 3"/></svg>`;
+  const mark = (who: string, icon: string, m: string) => `<span class="sh sh-${m}" role="img" aria-label="${who}: ${MARK[m]}" title="${who}: ${MARK[m]}">${icon}</span>`;
+  // the Local column is the better of the two: control beats read beats cloud beats brand route
+  const LEVEL: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "read"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "–"] };
+  const best = (a: string, b: string) => "WLCB-".indexOf(a) <= "WLCB-".indexOf(b) ? a : b;
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
   const BUCKET: Record<string, [number, number]> = { "0-3.7": [0, 3.7], "3.7-6": [3.7, 6], "6-12": [6, 12], "12-30": [12, 30], "30-": [30, Infinity] };
@@ -99,7 +107,12 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       for (const c of readSel) { const code = cells[data.read.indexOf(c)]; if (code === "-") return false; if (st && code !== st) return false; }
       if (st && !readSel.length && !cells.includes(st)) return false;
       if (n && cells.replace(/-/g, "").length < n) return false;
-      if (lo && !(lo === "L" ? r[5] === "L" || r[5] === "W" : r[5] === lo)) return false;
+      if (lo) {
+        const [h, e] = r[5];
+        const ok = lo === "W" ? h === "W" || e === "W" : lo === "L" ? "WL".includes(h) || "WL".includes(e) : lo === "HW" ? h === "W" : lo === "EW" ? e === "W"
+          : lo === "B" ? (h === "B" || e === "B") && !"WL".includes(h) && !"WL".includes(e) : h === "-" && e === "-";
+        if (!ok) return false;
+      }
       if (q && !(data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(q)) return false;
       return true;
     });
@@ -110,7 +123,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     const rcls = cls || (g === "ev" ? "wallbox" : "inverter");
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
       cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
-      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp">MPPT</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
+      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp">MPPT</th><th scope="col" class="lo">Local</th><th scope="col" class="lo"><span class="shh">' + HA + '</span><span class="shh">' + EV + '</span> Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
     ids.forEach((id) => $(id).classList.toggle("on", !!val(id)));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
     $("reset").hidden = !ids.some((id) => val(id)) && g === (root.dataset.kind || "") && !cs.length;
@@ -134,9 +147,8 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
         return `<td class="c"><span class="cl cl-${a}" role="img" aria-label="${esc(c + ": " + t)}" title="${esc(c + ": " + t)}">${GLYPH[a]}</span></td>`;
       }).join("");
       const nl = r[4].replace(/-/g, "").length;
-      const [lk, lw] = LOC[r[5]] ?? LOC["-"];
       return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}` +
-        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="sp num">${r[9] === null ? "–" : r[9]}</td><td class="lo"><span class="st ${lk}">${lw}</span></td></tr>`;
+        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="sp num">${r[9] === null ? "–" : r[9]}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
     shown = Math.min(shown + PAGE, hits.length);

@@ -379,3 +379,17 @@ body[data-g="ev"] .q-inv { display: none; }
 .kind-icons button span { font-size: var(--fs-xs); }
 .kind-icons button[aria-pressed="true"] { color: var(--ink); font-weight: 600; background: none; border-color: transparent; outline: var(--rule-heavy) solid var(--ink); outline-offset: 2px; border-radius: var(--r2); }
 .kind-icons button[aria-pressed="true"] svg { transform: scale(1.25); }
+
+/* smart-home marks: one glyph per integration; fill and colour carry the state, the title the words */
+.sh { display: inline-grid; place-items: center; width: 1.75rem; height: 1.5rem; border-radius: var(--r1); box-sizing: border-box; border: var(--rule-w) solid transparent; }
+.sh svg { width: 1.1rem; height: 1.1rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.sh-W { background: var(--ok); color: var(--surface); border-color: var(--ok); }
+.sh-L { color: var(--ok); border-color: var(--ok); background: var(--ok-bg); }
+.sh-C { color: var(--cloud); border-color: var(--cloud); background: var(--cloud-bg); }
+.sh-B { color: var(--ink-3); border-style: dotted; border-color: var(--ink-3); }
+.sh-- { color: transparent; }
+.shh { display: inline-flex; align-items: center; gap: var(--s1); }
+.shh svg { width: 1rem; height: 1rem; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.rs-key .sh { vertical-align: middle; }
+.shc { white-space: nowrap; }
+.shc .sh + .sh { margin-left: var(--s1); }

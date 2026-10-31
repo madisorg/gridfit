@@ -8,11 +8,10 @@ import { COUNTS, nf } from "../lib/devices";
     <h1 id="nf-h">Not found</h1>
     <p class="lede">There is no page at this address. Device pages are <span class="code">/brand/family/</span> or
       <span class="code">/brand/model/code/</span>, brand pages <span class="code">/brand/</span>, country pages <span class="code">/grid/cc/</span>.</p>
-    <form class="search" role="search" action="/local/" method="get">
+    <form class="search" role="search" action="/grid/" method="get">
       <label class="vh" for="q">Model code, brand or family</label>
       <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
     </form>
-    <nav class="crumbs" aria-label="Where to go instead"><a href="/local/">Local control, {nf(COUNTS.families)} families</a><span aria-hidden="true">/</span>
-      <a href="/grid/">Grid lists, {nf(COUNTS.regModels)} models</a><span aria-hidden="true">/</span><a href="/about/">How we know</a></nav>
+    <nav class="crumbs" aria-label="Where to go instead"><a href="/grid/">Grid lists, {nf(COUNTS.regModels)} models, {nf(COUNTS.families)} smart-home families</a><span aria-hidden="true">/</span><a href="/about/">How we know</a></nav>
   </section>
 </Base>

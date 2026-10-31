@@ -1,0 +1,7 @@
+[
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 2.5},
+ {"name": "grid-ee-local", "url": "grid/ee/?lo=W", "wait": 2.5},
+ {"name": "grid-ee-legend", "url": "grid/ee/#sh-legend", "wait": 2.5},
+ {"name": "pere-deye", "url": "deye/sun-sg-lp3-three-phase-lv-hybrid/", "wait": 1.0},
+ {"name": "404", "url": "no-such-page/", "wait": 1.0}
+]

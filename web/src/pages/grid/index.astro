@@ -22,7 +22,7 @@ const gridBrands = BRANDS.filter((b) => b.models.length);
     <h1 id="h">Is it fit for the grid in your country?</h1>
     <p class="lede">Pick one country, or several: the table keeps the models that are on <em>every</em> selected list and shows, for a country without a list,
       what applies there. {nf(shown.length)} models from {COUNTRIES.length} lists read in full, {nf(multi)} of them on two or more; phases and rated power where a list carries them;
-      the <strong>Smart home</strong> column is whether Home Assistant or evcc talks to the model on your network (<a href="/local/">that view</a>).</p>
+      the <strong>Smart home</strong> column is whether Home Assistant or evcc talks to the model on your network (the two marks at the right of each row).</p>
     <p class="note"><strong>The list is the authority; this is a cross-reference.</strong> An empty cell means no matching entry was found — the model may be
       listed under another name, or the list may not cover it. It never means “not approved”. Check the list itself before you install.</p>
     <p class="facts"><span><b>{nf(shown.length)}</b> models</span><span><b>{COUNTRIES.length}</b> lists read</span><span><b>{COUNTRIES_ALL.length}</b> countries</span>

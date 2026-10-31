@@ -65,6 +65,23 @@ export function localOfModel(d: RegDevice): LocalState {
 }
 export const localRoutes = (f: Family) => f.rows.filter((r) => r.local).map((r) => r.name);
 
+// ---- the smart-home lens as two marks, Home Assistant and evcc: W local control, L local read, C cloud only,
+// B brand route (another family of the brand has a local route; this model unconfirmed), - nothing found
+export type Mark = "W" | "L" | "C" | "B" | "-";
+export const MARK_WORD: Record<Mark, string> = { W: "local control", L: "local, read only", C: "cloud only", B: "brand route, model unconfirmed", "-": "not found" };
+const markOf = (rows: { local: boolean | null; control: string }[]): Mark =>
+  rows.some((r) => r.local && r.control === "write") ? "W" : rows.some((r) => r.local) ? "L" : rows.length ? "C" : "-";
+export function marksOf(f: Family): { ha: Mark; evcc: Mark } {
+  return { ha: markOf(f.rows.filter((r) => r.source !== "evcc")), evcc: markOf(f.rows.filter((r) => r.source === "evcc")) };
+}
+export function marksOfModel(d: RegDevice): { ha: Mark; evcc: Mark } {
+  const f = familyOf(d);
+  if (f) return marksOf(f);
+  const fams = famsBySlug.get(brandSlugOf(d)) ?? [];
+  const any = (src: "ha" | "evcc") => fams.some((g) => ["W", "L"].includes(marksOf(g)[src]));
+  return { ha: any("ha") ? "B" : "-", evcc: any("evcc") ? "B" : "-" };
+}
+
 // ---- grid lens
 const SHOW_STATE: Record<string, GridState> = {
   listed: "listed", limited: "restricted", restricted: "restricted", "limited-past": "expired", expired: "expired", nein: "refused", other: "restricted",

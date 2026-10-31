@@ -54,10 +54,10 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
 const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
 const trust = [...new Set(models.map(trustOf))].join(" / ");
 ---
-<Base title={`${title}: local control with Home Assistant and evcc, and EU grid lists`} current="/local/" description={`${f.faq.a} ${gridA}`}>
+<Base title={`${title}: local control with Home Assistant and evcc, and EU grid lists`} current="/grid/" description={`${f.faq.a} ${gridA}`}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
 
-  <nav class="crumbs" aria-label="Breadcrumb"><a href="/local/">Local control</a><span aria-hidden="true">/</span><a href={`/${f.brand_slug}/`}>{f.brand}</a></nav>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href={`/${f.brand_slug}/`}>{f.brand}</a></nav>
   <header class="head">
     <h1>{title}</h1>
     <p class="kind"><span>{CLASS[f.class]}</span><span aria-hidden="true">·</span>

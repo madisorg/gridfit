@@ -425,3 +425,14 @@ a country is picked on the home page) or CF-IPCountry sends the visitor to `/gri
 neutral home. `/grid/ee/`, `/grid/ee/?g=ev`, `/grid/es/`, `/local/`, `/local/?g=ev`, `/` ([`routes-uks.json`](docs/moodud/routes-uks.json))
 × 3440/390 × light/dark: [`uks.json`](docs/moodud/uks.json), 24 pictures, 0 console errors, 0 overflow, 0 under 12 px,
 0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px.
+
+## 21. Measured, 2026-10-31 — Local and Smart home columns, /local/ retired
+
+The smart-home lens is two columns in the grid table: **Local** is the best route on the visitor's network (control / read /
+cloud / brand route, the `.st` chips) and **Smart home** is who talks to it — one glyph each for Home Assistant and evcc
+(GridFit's own one-line glyphs, not the projects' logos), filled green for local control, green outline for local read,
+amber for cloud only, dotted grey for a brand route, empty when nothing was found; the title carries the words. `/local/`
+is gone (301 to `/grid/`); the family pages keep the local detail. `/grid/ee/`, `/grid/ee/?lo=W`, the legend, a family
+page and the 404 ([`routes-sh.json`](docs/moodud/routes-sh.json)) × 3440/390 × light/dark: [`sh.json`](docs/moodud/sh.json),
+20 pictures, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px; the only logged errors are
+the preview server's plain 404 for the 404 route (Pages serves `404.html`).

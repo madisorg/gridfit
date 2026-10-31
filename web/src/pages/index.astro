@@ -41,7 +41,7 @@ const GROUP = ["Lists read in full", "Public list, not read yet", "Partial list"
         Wallboxes <b>596</b></a>
     </div>
     <p class="lede">{nf(COUNTS.regModels)} inverters, batteries and wallboxes across {COUNTRIES.length} national grid-connection lists read in full and {COUNTRIES_ALL.length} EU+ countries described;
-      pick several countries to find a model that is on every list. Each device page also says whether <a href="/local/">Home Assistant or evcc</a> talks to it on your network ({nf(COUNTS.families)} families). Every row links to its source.</p>
+      pick several countries to find a model that is on every list. Each device page also says whether Home Assistant or evcc talks to it on your network ({nf(COUNTS.families)} families). Every row links to its source.</p>
     <p class="facts"><span><b>{nf(COUNTS.brands)}</b> brands</span><span>sources read <b>{data.seen}</b></span><span>lists dated up to <b>{latestList}</b></span>
       <span><a href="/changes/">latest changes</a>: lists {r0.date}{r0.baseline ? " (baseline)" : ""} · rows {d0.date} ({d0.added.length} added, {d0.changed.length} changed)</span></p>
   </section>
