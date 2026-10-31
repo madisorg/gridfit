@@ -41,3 +41,75 @@ documents:
     match: ^(STP12\-50|STP15\-50|STP20\-50|STP25\-50)(-BE)?$
     countries:
     - IT
+- id: cei021-sbse-2024
+  title: "Dichiarazione di conformità del generatore ZE_CEI021_SBSEx.x-50_it_10 + BV certificato U24-0196 — CEI 0-21:2022-03 / V1:2022-11 — Sunny Boy Smart Energy 3.6…6.0"
+  url: https://files.sma.de/assets/294910.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00; test lab D-PL-12024-03-04)
+  cert_no: U24-0196
+  issued: '2024-03-22'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V3.08.03.R e superiore
+  families:
+  - name: Sunny Boy Smart Energy SBSE3.6-50 / 4.0-50 / 5.0-50 / 6.0-50 (single-phase hybrid)
+    match: '^SBSE(3\.6|4\.0|5\.0|6\.0)-50'
+    countries:
+    - IT
+    note: "SMA's own declaration (signed Niestetal 25.3.2024) on the Allegato form (Sez. A–L) plus the BV certificate. Test files 23TH0286-CEI0-21_0. SPI integrated; \"idoneo per impianti > 11,08 kW\"; OVRT profiles §8.5.1. Battery listed is BYD Battery-Box Premium."
+- id: cei021-stp-3se-2023
+  title: "Dichiarazione di conformità ZE_CEI021_STPxx-3SE-40_it_12 + TÜV Rheinland A3 50603599 0001 — CEI 0-21:2022-03 / V1:2022-11 — STP 5.0…10.0-3SE-40"
+  url: https://files.sma.de/assets/279472.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd.
+  cert_no: A3 50603599 0001
+  issued: '2023-10-11'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 3.02.20.R or higher (inverter); battery BMS per model in annex
+  families:
+  - name: Sunny Tripower Smart Energy STP5.0/6.0/8.0/10.0-3SE-40 (three-phase hybrid)
+    match: '^(STP5\.0\-3SE\-40|STP6\.0\-3SE\-40|STP8\.0\-3SE\-40|STP10\.0\-3SE\-40)(-BE)?$'
+    countries:
+    - IT
+    note: "SMA declaration signed Niestetal 14.2.2024. Test files CN22S8PL 005/006/008/009. SPI integrated; \"idoneo per impianti > 11,08 kW\". Batteries BYD Battery-Box Premium HVM 11.0–22.1 and others in the 22-page annex."
+- id: cei021-stp-3av-3-6-2023
+  title: "Dichiarazione di conformità ZE_CEI021_STP3.0-6.0-3AV-40_it_16 + BV certificato U23-1089 — CEI 0-21:2022-03 / V1:2022-11 — STP 3.0…6.0-3AV-40"
+  url: https://files.sma.de/assets/271663.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00; test lab D-PL-12024-03-03)
+  cert_no: U23-1089
+  issued: '2023-11-28'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 4.00 e superiore (BV certificate prints 4.00.61.R)
+  families:
+  - name: Sunny Tripower STP3.0/4.0/5.0/6.0-3AV-40 (three-phase string)
+    match: '^(STP3\.0\-3AV\-40|STP4\.0\-3AV\-40|STP5\.0\-3AV\-40|STP6\.0\-3AV\-40)(-BE)?$'
+    countries:
+    - IT
+    note: "SMA declaration signed Niestetal 12.12.2023. Test report 18TH0325-CEI0-21_2. BV states conformity to \"CEI 0-21:2022-03, V1: 2022-11, Allegato A e Allegato B\". U23-1089 covers all six AV-40 sizes."
+- id: cei021-stp-3av-8-10-2023
+  title: "Dichiarazione di conformità (STP8.0/10.0-3AV-40) + BV certificato U23-1089 — CEI 0-21:2022-03 / V1:2022-11"
+  url: https://files.sma.de/assets/271657.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00; test lab D-PL-12024-03-03)
+  cert_no: U23-1089
+  issued: '2023-11-28'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 4.00 e superiore
+  families:
+  - name: Sunny Tripower STP8.0/10.0-3AV-40
+    match: '^(STP8\.0\-3AV\-40|STP10\.0\-3AV\-40)(-BE)?$'
+    countries:
+    - IT
+    note: "Same BV certificate as cei021-stp-3av-3-6-2023; SMA declaration signed 12.12.2023."

@@ -161,3 +161,19 @@ documents:
     countries:
     - IT
     note: With BYD HVS storage.
+- id: cei021-rhi-s5-eh1p-2022
+  title: "TÜV SÜD Compliance Document D 086470 0099 Rev. 01 — CEI 0-21:2022 — RHI-(3-6)K-48ES(-5G)(-NS), RAI-3K-48ES-5G, S5-EH1P(3-6)K-L"
+  url: https://www.ginlong.com/uploads/file/Solis_certificate_CEI_0-21_RHI-(3-5)K-48ES_RHI-(3-6)K-48ES-5G(-NS)_RAI-3K-48ES-5G_S5-EH1P(3-6)K-L_Italy_V02(UZ).pdf
+  issuer: TÜV SÜD Product Service GmbH, Certification Body (Munich)
+  cert_no: D 086470 0099 Rev. 01
+  issued: '2022-09-09'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  families:
+  - name: RHI 48ES / 48ES-5G / 48ES-5G-NS, RAI-3K-48ES-5G, S5-EH1P 3–6K-L (single-phase LV-battery hybrid)
+    match: '^(RHI-(3|3\.6|4\.6|5)K-48ES|RHI-(3|3\.6|4\.6|5|6)K-48ES-5G|RHI-(3|3\.6|4|4\.6|5|6)K-48ES-5G-NS|S5-EH1P(3|3\.6|4\.6|5|6)K-L|RAI-3K-48ES-5G)$'
+    countries:
+    - IT
+    note: "TÜV SÜD calls it \"voluntary\" compliance; test report 704092103634-01. Battery listed is L051100-A / L051100-A1 (Power Lite). Older edition only (2022, no V1/V2)."

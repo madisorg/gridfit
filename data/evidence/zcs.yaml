@@ -1,0 +1,86 @@
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+brand: ZCS Azzurro
+maker_site: https://www.zcsazzurro.com/
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: cei021-3ph-hyd-zp3-2025
+  title: "Kiwa certificato 25-231-00 — CEI 0-21 2022-03; V1:2022-11; V2:2024-01 — AZZURRO 3PH HYD 5000…12000 ZP3"
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certificato-di-conformit%C3%A0-alla-norma-CEI-0-21-V.2022-03V1-2022-11-HYD-5000-12000-ZP3.pdf
+  issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, DIN EN ISO/IEC 17065)
+  cert_no: 25-231-00
+  issued: '2025-07-17'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: V000001
+  families:
+  - name: AZZURRO 3PH HYD 5000/6000/6500/8000/9900/10000/12000 ZP3 (three-phase hybrid 5–12 kW)
+    match: '^(AZZURRO)?3PHHYD(5000|6000|6500|8000|9900|10000|12000)ZP3$'
+    countries:
+    - IT
+    note: "SPI integrated; ticks \"idoneo per impianti > 11,08 kW\". Storage power depends on the module count (1, 3, 4–6 modules). The file name says V1 but the printed text includes V2:2024-01. A companion Dichiarazione is in the same folder."
+- id: cei021-1ph-hyd-zss-hp-2026
+  title: "Kiwa certificato 26-208-00 — CEI 0-21 (to V3:2025-10) — AZZURRO 1PH HYD3000…6000 ZSS HP"
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certificato-di-conformit%C3%A0-alla-norma-CEI-0-21-V.2022-03-HYD-3000-6000-ZSS-HP-5000S.pdf
+  issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, DIN EN ISO/IEC 17065)
+  cert_no: 26-208-00
+  issued: '2026-08-04'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  - CEI 0-21;V3:2025-10
+  firmware: V000001
+  families:
+  - name: AZZURRO 1PH HYD3000/3600/4000/4600/5000/5500/6000 ZSS HP (single-phase hybrid 3–6 kW)
+    match: '^(AZZURRO)?1PHHYD(3000|3600|4000|4600|5000|5500|6000)ZSSHP$'
+    countries:
+    - IT
+    note: "First V3:2025-10 certificate found. SPI integrated; ticks \"idoneo per impianti > 11,08 kW\". The 5500 is rated 5000 W. The batteries are from the file name's \"5000S\" series, and the converter reads the BMS to set PNINV/PMAXINV. It supersedes BV U23-0188 of 2023-01-09 (CEI 0-21:2022-03 only, FW V02000), which is still online as ...HYD-3000-6000-ZSS-HP.pdf."
+- id: cei021-3ph-hyd-zss-2024
+  title: "Certificato di conformità U24-0413 — CEI 0-21:2022-03 / V1:2022-11 — AZZURRO 3PH HYD5000…20000 ZSS (Pylontech / Weco / Azzurro batteries)"
+  url: https://zcsazzurro.com/uploads/documetazione/certificazioni/Certificato-di-conformit%C3%A0-alla-norma-CEI-0-21-V.2022-03-HYD5000-20000-ZSS-Batterie-Pylontech-Weco-Smart.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00; test lab D-PL-12024-03-04)
+  cert_no: U24-0413
+  issued: '2024-09-11'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V2.00 e superiore
+  families:
+  - name: AZZURRO 3PH HYD5000/6000/8000/10000/15000/20000 ZSS (three-phase hybrid 5–20 kW)
+    match: '^(AZZURRO)?3PHHYD(5000|6000|8000|10000|15000|20000)ZSS$'
+    countries:
+    - IT
+    note: 'Test report 22TH0571-CEI 0-21_ZCS_2, programme NSOP-0032-DEU-ZE-V10, conforming to "Allegato A, Allegato B e Allegato Bbis".
+      "Per gli impianti di ogni potenza". Batteries: PYLONTECH H48050, Weco ESS-5K3-HV-LV, Weco 5K3 XP, Azzurro HV Smart 5K.'
+- id: cei021-3ph-ktl-v3-2023
+  title: "Intertek Certificate of Conformity CN-PV-230698 — CEI 0-21:2022-03 + V1:2022-11 — AZZURRO 3PH 3.3…12KTL-V3"
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certificato-di-conformit%C3%A0-alla-norma-CEI-0-21-V.2022-03V1-2022-11-3.3-12KTL-V3.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-230698
+  issued: '2023-12-15'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V000001
+  families:
+  - name: AZZURRO 3PH 3.3/4.4/5.5/6.6/8.8/11/12KTL-V3 and 5/8.8/10/11KTL-V3-A (three-phase string)
+    match: '^(AZZURRO)?3PH(3\.3KTL-V3|4\.4KTL-V3|5KTL-V3-A|5\.5KTL-V3|6\.6KTL-V3|8\.8KTL-V3|8\.8KTL-V3-A|10KTL-V3-A|11KTL-V3|11KTL-V3-A|12KTL-V3)$'
+    countries:
+    - IT
+    note: "Test report 231114026GZU-001 of 05 Dec 2023, Intertek Shenzhen Guangzhou Branch (IAS TL-395, ISO/IEC 17025)."
