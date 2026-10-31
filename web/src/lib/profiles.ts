@@ -6,6 +6,9 @@ import { DATA } from "./data";
 
 export type Profile = {
   cc: string; country: string; decided_by: string; type_a_max_kw?: number;
+  // the rule's own name where people search for it (Italy: CEI 0-21), a first paragraph saying what it asks,
+  // and the page description; all three optional
+  norm?: string; summary?: string; description?: string; changes?: string[];
   list?: { name: string; url: string; meaning: string; gate: string };
   basis: string[];
   must_meet: { rule: string; value: string }[];

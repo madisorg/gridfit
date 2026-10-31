@@ -12,11 +12,20 @@ type Brand = { brand: string; rule: string; documents: (Doc & { families: { name
 
 const idx = new Map<string, { rx: RegExp; rel: Release }[]>();
 export const EVIDENCE_BRANDS: string[] = [];
+// per country: every document that releases at least one family there (the country page lists them)
+const byCountry = new Map<string, { brand: string; families: string[]; doc: Doc }[]>();
 try {
   for (const f of readdirSync(DATA + "evidence")) {
     if (!f.endsWith(".yaml")) continue;
     const b: Brand = parse(readFileSync(DATA + "evidence/" + f, "utf-8"));
     const list: { rx: RegExp; rel: Release }[] = [];
+    for (const d of b.documents) {
+      const { families: fams, ...doc } = d;
+      for (const cc of new Set(fams.flatMap((x) => x.countries))) {
+        if (!byCountry.has(cc)) byCountry.set(cc, []);
+        byCountry.get(cc)!.push({ brand: b.brand, families: fams.filter((x) => x.countries.includes(cc)).map((x) => x.name), doc });
+      }
+    }
     for (const d of b.documents) for (const fam of d.families) {
       if (!fam.match) continue;
       const { families: _f, ...doc } = d;
@@ -26,6 +35,7 @@ try {
     EVIDENCE_BRANDS.push(b.brand);
   }
 } catch { /* no evidence yet */ }
+export const docsFor = (cc: string) => [...(byCountry.get(cc) ?? [])].sort((a, b) => a.brand.localeCompare(b.brand) || (b.doc.issued ?? "").localeCompare(a.doc.issued ?? ""));
 
 const norm = (s: string) => s.toUpperCase().replace(/\s+/g, "").replace(/,/g, ".");
 export function releaseOf(brand: string, model: string): Release | null {

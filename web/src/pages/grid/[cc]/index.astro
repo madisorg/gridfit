@@ -8,12 +8,14 @@ import { devices, COUNTRIES, REGS, RC, META, LOG, STATS, SNAP_DATE, regsOf } fro
 import { COUNTRIES_ALL, LIST_WORD, LIST_LONG, CLASS_WORD, CLASS_LONG, CONF_WORD, COUNTRIES_SOURCE, type Country } from "../../../lib/countries";
 import { BRANDS, brandSlugOf, nf } from "../../../lib/devices";
 import { PROFILES } from "../../../lib/profiles";
+import { docsFor } from "../../../lib/evidence";
 
 export function getStaticPaths() {
   return COUNTRIES_ALL.map((c) => ({ params: { cc: c.cc.toLowerCase() }, props: { c } }));
 }
 const { c } = Astro.props as { c: Country };
 const prof = PROFILES[c.cc];
+const docs = prof ? docsFor(c.cc) : [];
 const cc = c.cc;
 const parsed = COUNTRIES.includes(cc);
 const here = parsed ? devices.filter((d) => !d.unmatched && d.cells[cc]) : [];
@@ -25,13 +27,15 @@ const top = Object.entries(here.reduce((m, d) => ((m[brandSlugOf(d)] = (m[brandS
 const brandName = new Map(BRANDS.map((b) => [b.slug, b.name]));
 const CLASSES = ["inverter", "hybrid", "battery", "plug-in", "wallbox"];
 const CLASS_LABEL: Record<string, string> = { inverter: "PV inverter", hybrid: "Hybrid inverter", battery: "Battery / AC inverter", "plug-in": "Plug-in solar / battery (≤ 800 VA)", wallbox: "Wallbox / EV charger" };
-const hasList = parsed || c.list === "yes" || c.list === "partial";
-const title = parsed ? `${c.country}: is it on the ${REGS[cc].short}?` : `${c.country}: is it fit for the grid?`;
+// a partial list that is not the grid operator's (Italy: a trade association's members list) is not what the page asks about
+const hasList = parsed || c.list === "yes" || (c.list === "partial" && !(prof && !prof.list));
+const title = parsed ? `${c.country}: is it on the ${REGS[cc].short}?`
+  : prof?.norm ? `${prof.norm} in ${c.country}: is my inverter fit for the grid?` : `${c.country}: is it fit for the grid?`;
 const desc = parsed
   ? `${nf(here.length)} inverters, batteries${cc === "AT" ? ", chargers" : ""} on ${c.country}'s grid-connection list, with phases, rated power and the other EU lists side by side; who publishes the list, what it contains, how it changes.`
-  : `${c.country}: ${LIST_LONG[c.list]} What applies per device class, and every model's status on the other EU lists.`;
+  : prof?.description ?? `${c.country}: ${LIST_LONG[c.list]} What applies per device class, and every model's status on the other EU lists.`;
 ---
-<Base title={title} current="/grid/" description={desc} noindex={!parsed} nav="bottom">
+<Base title={title} current="/grid/" description={desc} noindex={!parsed && !prof} nav="bottom">
   <header class="ask ask-top" aria-labelledby="q-h">
     <h1 id="q-h"><span class="q-inv">Is my inverter fit for {hasList ? `the grid operator's list in ${c.country}` : `the grid in ${c.country}`}?</span><span class="q-ev">Is my wallbox fit for the grid in {c.country}?</span></h1>
     <div class="kind kind-icons" role="group" aria-label="Device kind" data-for="gv">
@@ -58,7 +62,8 @@ const desc = parsed
 
   {prof && (
     <section class="sec" id="how">
-      <header><h2>How it works in {c.country}</h2><p>from {prof.decided_by.split(" (")[0]}'s own documents · the grid operator decides</p></header>
+      <header><h2>How it works in {c.country}{prof.norm && `: ${prof.norm}`}</h2><p>from {prof.decided_by.split(" (")[0]}'s own documents · the grid operator decides</p></header>
+      {prof.summary && <p class="prose">{prof.summary}</p>}
       <dl class="facts-dl panel">
         <dt>Who decides</dt><dd>{prof.decided_by}</dd>
         {prof.list && <><dt>The list</dt><dd><Ext href={prof.list.url}>{prof.list.name}</Ext> — {prof.list.meaning}</dd>
@@ -66,6 +71,7 @@ const desc = parsed
         <dt>Basis</dt><dd><ul class="small">{prof.basis.map((b) => <li>{b}</li>)}</ul></dd>
         <dt>Thresholds</dt><dd><ul class="small">{prof.thresholds.map((t) => <li>{t}</li>)}</ul></dd>
         {prof.commissioning && <><dt>Before switching on</dt><dd>{prof.commissioning}</dd></>}
+        {prof.changes && <><dt>What changes</dt><dd><ul class="small">{prof.changes.map((t) => <li>{t}</li>)}</ul></dd></>}
       </dl>
       <h3>What the model must meet</h3>
       <table class="tbl">
@@ -77,6 +83,15 @@ const desc = parsed
       <ul class="prose small">{prof.documents_for_listing.map((d) => <li>{d}</li>)}</ul>
       {prof.not_listed && <><h3>{prof.list ? "If the model is not on the list" : "If the model has no certificate"}</h3><p class="prose small">{prof.not_listed}</p></>}
       {prof.evidence_for_documented && <><h3>What GridFit will show as “fit by the maker's document”</h3><p class="prose small">{prof.evidence_for_documented}</p></>}
+      {docs.length > 0 && <>
+        <h3>The makers' documents read so far</h3>
+        <table class="tbl">
+          <thead><tr><th scope="col">Brand</th><th scope="col">Families</th><th scope="col">Document</th></tr></thead>
+          <tbody>{docs.map((x) => { const slug = BRANDS.find((b) => b.name === x.brand)?.slug; return (
+            <tr><td class="fam">{slug ? <a href={`/${slug}/`}>{x.brand}</a> : x.brand}</td><td data-l="families">{x.families.join("; ")}</td>
+              <td data-l="document"><Ext href={x.doc.url}>{x.doc.cert_no ?? x.doc.kind}</Ext>{x.doc.issuer ? ` · ${x.doc.issuer.split(" (")[0]}` : ""}{x.doc.issued ? ` · ${x.doc.issued}` : ""}{x.doc.standards?.length ? <span class="muted"> · {x.doc.standards.at(-1)}</span> : ""}</td></tr>); })}</tbody>
+        </table>
+      </>}
       <h3>Sources</h3>
       <ul class="prose small">{prof.sources.map((x) => <li><Ext href={x.url}>{x.title}</Ext>{x.date ? ` (${x.date})` : ""}{x.seen ? `, read ${x.seen}` : ""}</li>)}</ul>
     </section>
