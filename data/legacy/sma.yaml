@@ -1,0 +1,155 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: SMA
+maker_site: https://www.sma.de
+documents:
+- id: sma-download-archive-2026-11
+  title: "SMA Download Center — category 'Archive'"
+  url: https://www.sma.de/en/service/downloads
+  seen: "2026-11-01"
+  kind: archive-page
+  note: "The page states: \"Discontinued SMA products can be found in the category 'Archive'.\" The category itself is
+    filled by script and could not be read over plain HTTP, so no model list is transcribed from it; the product pages
+    below are what SMA says per product. SMA America's service portal describes the same category as the place for
+    'all devices that are retired' (my.sma-service.com, Salesforce page, not readable without JavaScript)."
+  models: []
+- id: sma-sunny-boy-storage-37-50-60-2026-11
+  title: "Sunny Boy Storage 3.7 / 5.0 / 6.0 (Successor: SMA Hybrid Inverters)"
+  url: https://www.sma.de/en/products/battery-inverters/sunny-boy-storage-37-50-60
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA no longer sells the Sunny Boy Storage.\" Successor named in the page title: SMA Hybrid Inverters.
+    The page prints the ratings 3.7 / 5.0 / 6.0 only; the type codes SBS3.7-10 / SBS5.0-10 / SBS6.0-10 are SMA's
+    designations for exactly these three ratings, not printed on the page."
+  models:
+  - code: "Sunny Boy Storage 3.7 / 5.0 / 6.0"
+    match: '^(SUNNYBOYSTORAGE)?(SBS)?(3\.7|5\.0|6\.0)-10$'
+    note: "no longer sold; successor SMA Hybrid Inverters"
+- id: sma-sunny-tripower-15000tl-20000tl-25000tl-2026-11
+  title: "Sunny Tripower 15000TL / 20000TL / 25000TL (Successor: Sunny Tripower X)"
+  url: https://www.sma.de/en/products/solarinverters/sunny-tripower-15000tl-20000tl-25000tl
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the SMA Sunny Tripower 15000TL / 20000TL / 25000.\" and \"The Sunny Tripower X
+    is the successor to the SMA Sunny Tripower 15000TL / 20000TL / 25000.\" The 17000TL is not named on the page and is
+    deliberately not matched."
+  models:
+  - code: "Sunny Tripower 15000TL / 20000TL / 25000TL"
+    match: '^(SUNNYTRIPOWER)?(STP)?(15000|20000|25000)TL-\d\d$'
+    note: "no longer sold; successor Sunny Tripower X"
+- id: sma-sunny-tripower-core1-2026-11
+  title: "Sunny Tripower CORE1 (Successor: Sunny Tripower X 60)"
+  url: https://www.sma.de/en/products/solarinverters/sunny-tripower-core1
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"The Sunny Tripower CORE1 is no longer marketed by SMA.\" Successor: Sunny Tripower X 60. The page
+    prints the product name and '50 kW' only; STP 50-40 / STP 50-41 are the CORE1 type codes (the manual link on the page
+    carries 'STP5040')."
+  models:
+  - code: "Sunny Tripower CORE1"
+    match: '^(SUNNYTRIPOWER)?(CORE1/?)?(STP)?50-4[01]$|^CORE1$'
+    note: "no longer marketed; successor Sunny Tripower X 60"
+- id: sma-sunny-tripower-core2-2026-11
+  title: "Sunny Tripower CORE2"
+  url: https://www.sma.de/en/products/solarinverters/sunny-tripower-core2
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"The Sunny Tripower CORE2 is no longer sold by SMA.\" No successor named. The page prints the product
+    name only; STP 110-60 is the CORE2 type code."
+  models:
+  - code: "Sunny Tripower CORE2"
+    match: '^(SUNNYTRIPOWER)?(CORE2/?)?(STP)?110-60$|^CORE2$'
+    note: "no longer sold"
+- id: sma-sunny-tripower-storage-60-2026-11
+  title: "Sunny Tripower Storage 60 (Successor: SMA Commercial Storage Solution)"
+  url: https://www.sma.de/en/products/battery-inverters/sunny-tripower-storage-60
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the Sunny Tripower Storage 60.\" Successor in the page title: SMA Commercial
+    Storage Solution (itself discontinued, see below). Type code STPS60-10 is not printed on the page."
+  models:
+  - code: "Sunny Tripower Storage 60"
+    match: '^(SUNNYTRIPOWER)?(STORAGE60|STPS60-10)$'
+    note: "no longer sold"
+- id: sma-sunny-boy-15-20-25-2026-11
+  title: "Sunny Boy 1.5 / 2.0 / 2.5"
+  url: https://www.sma.de/en/products/solarinverters/sunny-boy-15-20-25
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the Sunny Boy 1.5 / 2.0 / 2.5.\" No successor named. Type codes SB1.5-1VL-40 /
+    SB2.0-1VL-40 / SB2.5-1VL-40 are not printed on the page."
+  models:
+  - code: "Sunny Boy 1.5 / 2.0 / 2.5"
+    match: '^(SUNNYBOY)?(SB)?(1\.5|2\.0|2\.5)-1VL-40$'
+    note: "no longer sold"
+- id: sma-sunny-boy-storage-25-2026-11
+  title: "Sunny Boy Storage 2.5"
+  url: https://www.sma.de/en/products/battery-inverters/sunny-boy-storage-25
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the Sunny Boy Storage 2.5.\" No successor named. Type code SBS2.5-1VL-10 is
+    not printed on the page."
+  models:
+  - code: "Sunny Boy Storage 2.5"
+    match: '^(SUNNYBOYSTORAGE|SBSTORAGE|SBS|SUNNYBOYSTORAGESBS)2\.5(-1VL-10)?$'
+    note: "no longer sold"
+- id: sma-sunny-boy-us-41-2026-11
+  title: "Sunny Boy 3.0-US-41 - 7.7-US-41"
+  url: https://www.sma.de/en/products/solar-inverters/sunny-boy-30-us-41-77-us-41
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the SMA Sunny Boy-US.\" and \"Instead SMA offers the SMA Home Energy Solutions
+    with the new, ground-breaking Sunny Boy Smart Energy hybrid inverter.\" The page names the range 3.0-US-41 to
+    7.7-US-41; the regex covers the whole SBx.x-1SP-US-41 range. US market product."
+  models:
+  - code: "Sunny Boy 3.0-US-41 - 7.7-US-41"
+    match: '^(SUNNYBOY)?(SB)?\d\.\d-1SP-US-41$'
+    note: "no longer sold; SMA points to Sunny Boy Smart Energy"
+- id: sma-sunny-central-2200-2475-2026-11
+  title: "Sunny Central 2200 / 2475 (Successor: SMA Sunny Central Up)"
+  url: https://www.sma.de/en/products/solarinverters/sunny-central-2200-2475
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the SMA Sunny Central 2200 / 2475.\" and \"Its successor is the Sunny Central UP\"."
+  models:
+  - code: "Sunny Central 2200 / 2475"
+    match: '^(SUNNYCENTRAL)?(SC)?(2200|2475)(-US)?$'
+    note: "no longer sold; successor Sunny Central UP"
+- id: sma-com-gateway-2026-11
+  title: "SMA Com Gateway"
+  url: https://www.sma.de/en/products/energy-management/sma-com-gateway
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"The SMA Com Gateway is no longer distributed by SMA.\" and \"Its successor is the SMA Data Manager M.\"
+    Communication accessory, not an inverter."
+  models:
+  - code: "SMA Com Gateway"
+    match: '^(SMA)?COMGATEWAY$|^COMGW-10$'
+    note: "no longer distributed; successor SMA Data Manager M"
+- id: sma-ev-charger-74-22-2026-11
+  title: "SMA EV Charger 7.4 / 22 (Successor: SMA eCharger)"
+  url: https://www.sma.de/en/products/e-mobility-charging-solutions/sma-ev-charger-74-22
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the SMA EV Charger.\" and \"Discover its successor now, the SMA eCharger\".
+    Wallbox. Type codes EVC7.4-3AC-10 / EVC22-3AC-10 appear only inside document links on the page ('EVCxx-10')."
+  models:
+  - code: "SMA EV Charger 7.4 / 22"
+    match: '^(SMA)?EVCHARGER(7\.4|22)$|^EVC(7\.4|22)-3AC-10$'
+    note: "no longer sold; successor SMA eCharger"
+- id: sma-commercial-storage-solution-2026-11
+  title: "SMA Commercial Storage Solution (Discontinued)"
+  url: https://www.sma.de/en/products/system-solutions-packages/sma-commercial-storage-solution
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"The SMA Commercial Storage Solution is no longer sold by SMA.\" and \"Its successor is the SMA Storage XL
+    Package.\" System package without a register code of its own (battery inverter inside: Sunny Tripower Storage X,
+    which is current) — nothing to match."
+  models: []
+- id: sma-storage-business-2026-11
+  title: "SMA Storage Business (successor: SMA Commercial Storage Solution)"
+  url: https://www.sma.de/en/products/commercial-storage/sma-storage-business
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Page text: \"SMA will no longer sell the SMA Storage Business.\" System package without a register code — nothing to match."
+  models: []

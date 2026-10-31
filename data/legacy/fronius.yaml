@@ -1,0 +1,33 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: Fronius
+maker_site: https://www.fronius.com
+documents:
+- id: fronius-snapinverter-discontinued-2025-12
+  title: "SnapINverter Series Discontinued"
+  url: https://www.fronius.com/en-gb/uk/solar-energy/installers-partners/infocentre/blog/snapinverter-discontinued-replacement-guide-1225
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Fronius UK installer blog, dated 19/12/2025 (Milton Keynes). Page text: \"the Fronius SnapINverter series has now
+    been officially discontinued.\" It names no model codes and no date other than its own; replacements are the current
+    GEN24, Verto, Argeno and Tauro families via a 'SnapINverter Replacement Guide' in the download section (file not linked
+    on the page). The earlier August-2025 post (…/snapinverter-discontinuation-0825) now redirects here; search-engine
+    snippets of it gave 31 December 2025 as end of the series and 31 October 2025 as last order date, and said service
+    parts and exchange devices stay available for the existing warranty period — not verifiable on a live page, so not
+    recorded as fact. Which models form the SnapINverter series is taken from Fronius's own SnapINverter support page
+    (https://www.fronius.com/en/help-center/solar-energy/solar-inverters/support-snapinverter): Fronius Primo, Fronius
+    Symo, Fronius Symo Advanced, Fronius Eco, Symo Hybrid. Galvo is not listed there and is not matched. GEN24 codes
+    (Primo GEN24 / Symo GEN24) are excluded by the regexes."
+  models:
+  - code: "Fronius Primo"
+    match: '^(FRONIUS)?PRIMO(?!GEN24)\d'
+    note: "SnapINverter series; discontinued per the 2025-12 notice; successor family GEN24"
+  - code: "Fronius Symo"
+    match: '^(FRONIUS)?SYMO(ADVANCED)?(?!GEN24)\d'
+    note: "SnapINverter series (incl. Symo Advanced); discontinued per the 2025-12 notice; successor families GEN24 / Verto"
+  - code: "Symo Hybrid"
+    match: '^(FRONIUS)?SYMOHYBRID\d'
+    note: "SnapINverter series; discontinued per the 2025-12 notice; successor family GEN24 Plus"
+  - code: "Fronius Eco"
+    match: '^(FRONIUS)?ECO(25|27)\.0-3-S'
+    note: "SnapINverter series; discontinued per the 2025-12 notice; successor families Verto / Argeno"

@@ -1,0 +1,22 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: Growatt
+maker_site: https://en.growatt.com
+documents:
+- id: growatt-us-discontinued-products-2026-11
+  title: "Discontinued Products (Growatt USA product pages)"
+  url: https://us.growatt.com/products/ats-us
+  seen: "2026-11-01"
+  kind: discontinued-list
+  note: "Growatt USA product pages carry a heading \"Discontinued Products\" above the product name. Seen on
+    https://us.growatt.com/products/ats-us (ATS-US) and https://us.growatt.com/products/aro-us-battery (ARO US Battery).
+    The products index (https://us.growatt.com/products) shows no such section, so the full membership of the category
+    is unknown; only the two pages seen are transcribed. US market products. Growatt's global warranty terms
+    (https://en.growatt.com/support/warranty) promise the direct purchaser at least 6 months' written notice before
+    production of a product ends — a policy, no model names."
+  models:
+  - code: "ATS-US"
+    match: '^ATS-US$'
+    note: "listed under 'Discontinued Products'"
+  - code: "ARO US Battery"
+    match: '^ARO-?US(BATTERY)?$'
+    note: "listed under 'Discontinued Products'"

@@ -1,0 +1,18 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: GoodWe
+maker_site: https://en.goodwe.com
+documents:
+- id: goodwe-ge-inverter-info-2024-11
+  title: "Business Update on GE solar inverters"
+  url: https://en.goodwe.com/ge-inverter-info
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Dated 2024-11-19. Page text: \"GoodWe is no longer selling GE-licensed products.\" GoodWe \"will continue to honor
+    warranties and provide customer service\". The page names no model codes. GE-licensed GoodWe inverters are the
+    GE-branded units (GEP / GEH model prefixes) — that mapping is general knowledge of the GE-branded range, not printed
+    on the page; the regex is kept to those prefixes under the brand name GE, which GridFit does not list as a brand.
+    No GoodWe-branded model is marked discontinued anywhere on goodwe.com that could be found."
+  models:
+  - code: "GE-licensed products"
+    match: '^GE[PH]\d+(\.\d+)?-'
+    note: "no longer sold by GoodWe since 2024-11-19; warranty and service continue"

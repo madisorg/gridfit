@@ -1,0 +1,57 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: Deye
+maker_site: https://www.deyeinverter.com
+documents:
+- id: deye-download-discontinued-tag-2026-11
+  title: "Manuals & Video Tutorials / Product Datasheet — PRODUCT SUBCLASS filter 'Discontinued'"
+  url: https://www.deyeinverter.com/download/product-manual/
+  seen: "2026-11-01"
+  kind: discontinued-list
+  note: "Deye's download pages (manuals: /download/product-manual/, datasheets: /download/product-2/) have a PRODUCT SUBCLASS
+    filter value 'Discontinued' and tag individual documents with it. The tag sits on a document, not on a product page,
+    and it sits on the exact type code in the document title: the regexes therefore match only those exact codes (e.g.
+    SUN-12/14/16K-SG01LP1-EU without the -AM3-P suffix, SUN-(3.6-10)K-SG05LP1-EU without -AM2-P), since the suffixed
+    newer variants of the same families have their own, untagged documents. The datasheet page was read to character
+    100000 of 101592; the manual page in full. Codes below are the document titles as written. Deye's warranty terms also
+    promise the direct purchaser 6 months' notice before production of a product ends — a policy, no model names."
+  models:
+  - code: "SUN-12/14/16K-SG01LP1-EU"
+    match: '^SUN-(12|14|16)K-SG01LP1-EU$'
+    note: "manual and datasheet tagged Discontinued"
+  - code: "SUN-7.6/8K-SG01LP1-EU"
+    match: '^SUN-(7\.6|8)K-SG01LP1-EU$'
+    note: "manual and datasheet tagged Discontinued"
+  - code: "SUN-5/6/8/10/12K-SG04LP3-EU"
+    match: '^SUN-(5|6|8|10|12)K-SG04LP3-EU(-BE)?$'
+    note: "manual and datasheet tagged Discontinued"
+  - code: "SUN-(3.6-10)K-SG05LP1-EU"
+    match: '^SUN-(3\.6|5|6|8|10)K-SG05LP1-EU$'
+    note: "datasheet (2026-01-22) tagged Discontinued; the -AM2-P variants are not tagged and not matched"
+  - code: "SUN-5/6K-SG05LP1-EU-SM2"
+    match: '^SUN-(5|6)K-SG05LP1-EU-SM2$'
+    note: "datasheet tagged Discontinued"
+  - code: "SUN-(3.6-6)K-OG01LP1-EU-AM2 / SUN-3/3.6/5/6K-OG01LP1-EU-AM2"
+    match: '^SUN-(3|3\.6|5|6)K-OG01LP1-EU-AM2$'
+    note: "manual and datasheet (with SE-F5 / SE-F5 Plus / SE-F12 / SE-F16 batteries) tagged Discontinued"
+  - code: "SE-F5 & SE-F5 Plus & SE-F12 & SE-F16"
+    match: '^SE-F(5|5PLUS|12|16)$'
+    note: "datasheet tagged Discontinued (batteries)"
+  - code: "SUN-(3-6)K-OG02LP1-EU-AM1"
+    match: '^SUN-(3|3\.6|4|5|6)K-OG02LP1-EU-AM1$'
+    note: "manual tagged Discontinued"
+  - code: "SUN-BK(60-100)SG01-EU-AM2"
+    match: '^SUN-BK(60|80|100)SG01-EU-AM2$'
+    note: "manual and datasheet tagged Discontinued (balcony kit)"
+  - code: "SUN-BK(60-100)-2.0KWH-AM2 / SUN-BK(60-100)-2.0KWH-EU-AM2"
+    match: '^SUN-BK(60|80|100)-2\.0KWH(-EU)?-AM2$'
+    note: "manual and datasheet tagged Discontinued (balcony battery)"
+  - code: "SUN-M220/225G4-EU-Q0"
+    match: '^SUN-M(220|225)G4-EU-Q0$'
+    note: "microinverter manual and datasheet tagged Discontinued"
+  - code: "SUN-M130/160/180/200G4-EU-Q0"
+    match: '^SUN-M(130|160|180|200)G4-EU-Q0$'
+    note: "microinverter manual and datasheet tagged Discontinued"
+  - code: "SUN-3/4/5/6/7/8/9/10/12/15K-G06P3-EU-AM2-P1 / SUN-(3-15)K-G06P3-EU-AM2"
+    match: '^SUN-(3|4|5|6|7|8|9|10|12|15)K-G06P3-EU-AM2(-P1)?$'
+    note: "manual (AM2-P1) and datasheets (AM2 and AM2-P1) tagged Discontinued; the -BM2 variants are not tagged and not matched"

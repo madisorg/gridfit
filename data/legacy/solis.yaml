@@ -1,0 +1,25 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: Solis
+maker_site: https://www.solisinverters.com
+documents:
+- id: solis-na-legacy-products-2026-11
+  title: "Legacy Products (Solis North America knowledge base)"
+  url: https://usservice.solisinverters.com/support/solutions
+  seen: "2026-11-01"
+  kind: discontinued-list
+  note: "Category text: \"For all delisted Solis products no longer being actively sold in the US and Canada.\" Folders
+    under it: 'Legacy Monitoring Devices' (DLS-W WiFi data logger, DLS-C cellular data logger, DLB-WiFi), 'Legacy
+    Accessories' (RSD articles), 'Residential High Voltage Hybrid Inverter RHI-1P(5-10)K-HVES-5G-US'
+    (/support/solutions/folders/73000524449, 38 articles) and 'Commercial 1000VDC String Inverter Solis-(75-100)K-5G-US'.
+    US/Canada statement about -US models only; the EU RHI-3P…K-HVES-5G and Solis-…K-5G families are different type codes
+    and are not matched. No global (ginlong.com / solisinverters.com/global) discontinued list was found."
+  models:
+  - code: "RHI-1P(5-10)K-HVES-5G-US"
+    match: '^RHI-1P(5|6|7\.6|8|10)K-HVES-5G-US$'
+    note: "delisted in US/Canada"
+  - code: "Solis-(75-100)K-5G-US"
+    match: '^SOLIS-(75|80|90|100)K-5G-US$'
+    note: "delisted in US/Canada"
+  - code: "Solis DLS-W / DLS-C / DLB-WiFi data loggers"
+    match: '^(SOLIS)?DL(S-W|S-C|B-WIFI)$'
+    note: "legacy monitoring devices, US/Canada; Solis's logger explainer says the Solarman-made DLS-W, DLS-L and DLS-C are no longer sold in the US"

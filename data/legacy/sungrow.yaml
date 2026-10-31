@@ -1,0 +1,44 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: Sungrow
+maker_site: https://www.sungrowpower.com
+documents:
+- id: sungrow-de-produktarchiv-2026-11
+  title: "Produktarchiv (Sungrow Deutschland)"
+  url: https://ger.sungrowpower.com/ProductArchive
+  seen: "2026-11-01"
+  kind: archive-page
+  note: "The German regional site's product archive, the only regional archive still served on 2026-11-01 (uk./fra./nl./
+    spa./ita.sungrowpower.com/ProductArchive now redirect to the new www.sungrowpower.com regional homes, which have no
+    archive page). The page itself has no text defining the archive; a search-engine snippet of the former Italian variant
+    described it as the documentation of products no longer in production — not verifiable live, so the archive is taken
+    as 'Sungrow's own archive' and nothing more. Names below exactly as the page writes them, in the page's groups.
+    Central inverters, skids and the 1+X modular inverter are listed but not matched (no register codes). The main
+    product catalogue (https://www.sungrowpower.com/de/de/products) carries no 'Auslaufmodell' label on 2026-11-01;
+    search snippets of older ger.sungrowpower.com pages labelled SG5.0/6.0/8.0RT 'AUSLAUFMODELL', SG10/12/15/20RT
+    'AUSVERKAUFT' and SH5.0/6.0/8.0/10RT '(Auslaufmodell)', but those pages now redirect or 404 and the live SG RT page
+    has no label — not transcribed. support.sungrowpower.com says discontinued resources are reachable by serial number only."
+  models:
+  - code: "SG2K-S, SG2K5-S, SG3K-S"
+    match: '^SG(2K|2K5|3K)-S$'
+  - code: "SG3K-D, SG3K6-D, SG4K-D, SG4K6-D, SG5K-D, SG6K-D, SG8K-D"
+    match: '^SG(3K|3K6|4K|4K6|5K|6K|8K)-D$'
+  - code: "SG5KTL-MT, SG6KTL-MT"
+    match: '^SG(5|6)KTL-MT$'
+  - code: "SG8KTL-M, SG10KTL-M, SG12KTL-M, SG15KTL-M, SG20KTL-M"
+    match: '^SG(8|10|12|15|20)KTL-M$'
+  - code: "SG10KTL-MT"
+    match: '^SG10KTL-MT$'
+  - code: "SG125HV, SG125HV-20"
+    match: '^SG125HV(-20)?$'
+  - code: "SG125HX"
+    match: '^SG125HX$'
+  - code: "SG3125_3400HV Series"
+    match: '^SG(3125|3400)HV'
+  - code: "SG3150U_SG2500U Series"
+    match: '^SG(3150|2500)U'
+  - code: "SH3K6, SH4K6"
+    match: '^SH(3K6|4K6)$'
+  - code: "WiFi, E-Net"
+    match: '^(WIFI|E-NET)$'
+    note: "communication modules"

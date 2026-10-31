@@ -1,0 +1,8 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: SolarEdge
+maker_site: https://www.solaredge.com
+documents: []
+# Unreachable: knowledge-center.solaredge.com and www.solaredge.com answer HTTP 403 to a plain fetch, so no page could be
+# read. Search-engine snippets show a firmware-release-notes section headed "Legacy Inverters (with LCD)"
+# (https://www.solaredge.com/en/support/inverters-with-display) and a cellular-plug-in guide saying CDMA and GSM modems
+# are discontinued; no end-of-life notice for an inverter model surfaced. Nothing transcribed.

@@ -1,0 +1,21 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: Delta
+maker_site: https://www.deltaww.com
+documents:
+- id: delta-solivia-monitoring-ends-2024
+  title: "Solivia Monitoring Ends"
+  url: https://www.deltaww.com/en-GB/landing/Solivia-Monitoring-Ends
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Service end, not a product end: \"Delta Electronics is forced to cancel the free Solivia Cloud Monitoring Service\"
+    because of the \"discontinuation of Microsoft Azure Cloud Services as per September 1, 2024\"; \"This change affects
+    the continued operation of our M1G2 gateway products\". Owners of \"old Solivia inverters\" and \"old RPI Home
+    inverters using the Solivia protocol on RS485\" were offered a move to MyDeltaSolar Cloud until August 31, 2025. The
+    inverters themselves are not declared discontinued; only the gateway is matched. The solar-inverter catalogue
+    (https://www.deltaww.com/en-GB/products/solar-inverters/ALL/) carries one sentence under Three-Phase — \"The original
+    product may have been replaced and is now only suitable for limited use cases.\" — attached to no product name, so
+    nothing is transcribed from it. The former solarsolutions.delta-emea.com site redirects there."
+  models:
+  - code: "SOLIVIA Gateway M1G2"
+    match: '^(SOLIVIA)?GATEWAYM1G2$|^M1G2$'
+    note: "cloud service behind it ended 2024-09-01"

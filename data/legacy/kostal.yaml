@@ -1,0 +1,15 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: Kostal
+maker_site: https://www.kostal-solar-electric.com
+documents:
+- id: kostal-download-archive-2026-11
+  title: "Download archive"
+  url: https://www.kostal-solar-electric.com/en/download/archive/
+  seen: "2026-11-01"
+  kind: archive-page
+  note: "The download centre (https://www.kostal-solar-electric.com/en-gb/download/) says only: \"If you can't find the
+    product or document you're looking for, please search the archive.\" The archive page itself has no text saying what
+    it holds (no 'discontinued' / 'Ausgelaufene Produkte' wording), and its Country / Product group / Product / Document
+    type filters are filled by script, so no product list could be read over plain HTTP. No Kostal page saying a PIKO or
+    PLENTICORE model is discontinued was found. Nothing transcribed."
+  models: []

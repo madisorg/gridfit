@@ -1,0 +1,56 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: ABB / FIMER
+maker_site: https://www.fimer.com
+documents:
+- id: fimer-solar-legacy-2026-11
+  title: "Legacy (Products and services > Solar)"
+  url: https://www.fimer.com/products-and-services/solar/legacy
+  seen: "2026-11-01"
+  kind: discontinued-list
+  note: "FIMER's 'Legacy' product section, 4 pages (?page=0 … ?page=3), 35 items, each product page breadcrumbed
+    'Home > Products and services > Solar > Legacy > …' with the label 'Legacy' above the title. The section has no text
+    defining 'legacy' (no 'discontinued' / 'no longer available' sentence on the list or on the UNO-DM-6.0-TL-PLUS-Q page).
+    The old solar.fimer.com/legacy-inverters/…-discontinued pages (PVI-3.0/3.6/4.2, PVI-5000/6000-TL-OUTD, PVI-6.0/8.0-TL-OUTD,
+    TRIO-50.0/60.0-TL, REACT-3.6/4.6-TL, PVS800-MWS) are unreachable — the host serves a certificate for another domain —
+    so those models are NOT transcribed. Names below exactly as the list writes them. Note the EU UNO-DM-…-TL-PLUS (without
+    -Q) and the PVI / TRIO / PVS EU string inverters are not on this list and are not matched."
+  models:
+  - code: "UNO-DM-1.2/2.0/3.0-TL-PLUS-Q"
+    match: '^UNO-DM-(1\.2|2\.0|3\.0)-TL-PLUS-Q$'
+  - code: "UNO-DM-3.3/3.6/4.0/4.6/5.0 TL-PLUS-Q"
+    match: '^UNO-DM-(3\.3|3\.6|4\.0|4\.6|5\.0)-?TL-PLUS-Q$'
+  - code: "UNO-DM-6.0-TL-PLUS-Q"
+    match: '^UNO-DM-6\.0-TL-PLUS-Q$'
+  - code: "UNO-DM-6.0-TL-PLUS-Q-US"
+    match: '^UNO-DM-6\.0-TL-PLUS-Q-US$'
+  - code: "UNO-DM-3.3/3.8/4.6/5.0-TL-PLUS-Q-US"
+    match: '^UNO-DM-(3\.3|3\.8|4\.6|5\.0)-TL-PLUS-Q-US$'
+  - code: "UNO-DM-3.3/3.8/4.6/5.0-TL-PLUS-US"
+    match: '^UNO-DM-(3\.3|3\.8|4\.6|5\.0)-TL-PLUS-US$'
+  - code: "UNO-DM-6.0-TL-PLUS-US"
+    match: '^UNO-DM-6\.0-TL-PLUS-US$'
+  - code: "REACT 2"
+    match: '^REACT-?2(-UNO-(3\.6|5\.0)-TL)?$'
+  - code: "PVS-60-TL-US"
+    match: '^PVS-60-TL-US$'
+  - code: "PVS-166/175-TL-US"
+    match: '^PVS-(166|175)-TL-US$'
+  - code: "PVI-134.0/200.0/267.0/334.0/400.0-TL"
+    match: '^PVI-(134\.0|200\.0|267\.0|334\.0|400\.0)-TL$'
+    note: "central inverter"
+  - code: "R7500 TL, R9000 TL, R10000 TL, R11015 TL, R15615 TL, R16615 TL, R18615 TL"
+    match: '^R(7500|9000|10000|11015|15615|16615|18615)TL$'
+    note: "central inverters / turnkey"
+  - code: "S9000 TL, S9900 TL, S11015 TL, S15015 TL"
+    match: '^S(9000|9900|11015|15015)TL$'
+    note: "central inverters"
+  - code: "MS 2000, MS 2200, MS 4000, MS 6000, MS 7440"
+    match: '^MS(2000|2200|4000|6000|7440)$'
+    note: "turnkey solutions"
+  - code: "PVI-AEC-EVO Data Logger"
+    match: '^PVI-AEC-EVO'
+    note: "monitoring"
+  - code: "FIMER FLEXA AC Wallbox (Inverter Net / Future Net / Stand Alone), FIMER FLEXA AC Station (Future Net / Local Controller / Stand Alone), FIMER ELECTRA DC Station"
+    match: '^(FIMER)?(FLEXAAC(WALLBOX|STATION)|ELECTRADCSTATION)'
+    note: "EV charging"

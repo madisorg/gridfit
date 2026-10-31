@@ -1,0 +1,17 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+brand: KACO
+maker_site: https://kaco-newenergy.com
+documents:
+- id: kaco-download-archive-2026-11
+  title: "Download Archive"
+  url: https://kaco-newenergy.com/downloads/download-archive
+  seen: "2026-11-01"
+  kind: archive-page
+  note: "The downloads page (https://kaco-newenergy.com/downloads/) says: \"Please click the following link for software and
+    documents of discontinued products.\" and links here. The archive page offers Categories (String Inverters, Central
+    Inverters, Hybrid and Battery Inverters, Reactive power compensation unit, PV Monitoring, PV Accessories), Products,
+    Document Type, Languages, Countries filters, all filled by script — no product names readable over plain HTTP. The
+    old per-product archive URLs (e.g. /download/archive/residential-pv-systems/powador-1501xi-5001xi/) now 404. The
+    ALoMCP page (https://kaco-newenergy.com/service/alomcp) sends users to the archive for older software of Powador
+    6.0–20.0 TL3 and 30.0–72.0 TL3, which does not by itself say those models are discontinued. Nothing transcribed."
+  models: []

@@ -594,8 +594,10 @@ line, `/grid/at/?legacy=1&st=X`, `/grid/at/?q=symo+3.0` (an old code found despi
 "Legacy models" section, a family page at its first tagged row) × 3440/390 × light/dark: [`legacy.json`](docs/moodud/legacy.json),
 20 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. The count
 test grew to 936 checks (two legacy states), 0 failures; it also asserts that no tier-A row still has a positive list entry.
-On this date: 535 legacy (all tier A: 495 refused on the Austrian list only, 40 expired on the Belgian list only), 0 tier B,
-0 tier C, 13 925 current.
+On this date: 535 tier A (495 refused on the Austrian list only, 40 expired on the Belgian list only); 190 tier B once the
+makers' own archive pages were read the same night (Fronius's SnapINverter series 49, SMA's "no longer sold" product pages 44,
+Hoymiles's HM series 39, Deye's download tags 38, Sungrow's German archive 17, GoodWe 3; 20 brand files, Enphase's
+North-American EOL table deliberately dropped because it would have flagged European IQ7-INT models); 0 tier C; 13 735 current.
 
 ## 27. Measured, 2026-11-01 — the second level
 

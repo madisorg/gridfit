@@ -1,0 +1,90 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: Victron Energy
+maker_site: https://www.victronenergy.com
+documents:
+- id: victron-ccgx-end-of-life-2025-07
+  title: "Color Control GX - End of life"
+  url: https://professional.victronenergy.com/news/detail/314/
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Victron Professional news, 2025-07-10. Victron has \"decided to retire it\"; \"no longer available for purchase\"
+    (limited stock for OEM use only); warranty replacements from existing stock; recommended firmware v3.55, newer Venus OS
+    not offered. No successor named."
+  models:
+  - code: "Color Control GX"
+    match: '^(VICTRON)?COLORCONTROLGX$|^CCGX$'
+    note: "end of life 2025-07-10"
+- id: victron-multigrid-discontinued-2018-08
+  title: "MultiGrid discontinued in favour of MultiPlus-II"
+  url: https://professional.victronenergy.com/news/detail/112/
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Victron Professional news, 2018-08-02: the MultiGrid \"will soon be discontinued in favour of the MultiPlus-II/MultiGrid-II\"."
+  models:
+  - code: "MultiGrid"
+    match: '^MULTIGRID(?!-?II)'
+    note: "discontinued 2018; successor MultiPlus-II / MultiGrid-II"
+- id: victron-phoenix-inverter-small-discontinued-2026-11
+  title: "Inverting remote on-off cable (compatible products)"
+  url: https://www.victronenergy.com/cables/inverting-remote-on-off-cable
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Product page compatibility list writes: \"(discontinued) (Phoenix) Inverter 12/180, 24/180, 12/350 and 24/350\";
+    the 3 kVA-and-up Phoenix inverters and Multi/MultiPlus/Quattro carry no label."
+  models:
+  - code: "(Phoenix) Inverter 12/180, 24/180, 12/350 and 24/350"
+    match: '^(PHOENIX)?INVERTER(12|24)/(180|350)$'
+    note: "discontinued"
+- id: victron-lynx-discontinued-m8-2026-11
+  title: "Lynx Distributor manual — 2.2. Manuals for discontinued Lynx products"
+  url: https://www.victronenergy.com/media/pg/Lynx_Distributor/en/introduction.html
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Manual text: \"The following products are no longer in production and are no longer described in this manual:\"
+    Lynx Shunt VE.Can (M8), Lynx Smart BMS 500 (M8), Lynx Distributor (M8), Lynx Power In (M8); their manuals stay in the
+    old-manuals section and \"are no longer updated\". DC distribution parts, not inverters."
+  models:
+  - code: "Lynx Shunt VE.Can (M8) / Lynx Smart BMS 500 (M8) / Lynx Distributor (M8) / Lynx Power In (M8)"
+    match: '^LYNX(SHUNTVE\.CAN|SMARTBMS500|DISTRIBUTOR|POWERIN)\(?M8\)?$'
+    note: "no longer in production; M10 versions are current"
+- id: victron-lynx-ion-shunt-phased-out-2017-05
+  title: "Lithium-Ion HE battery and other new products"
+  url: https://professional.victronenergy.com/news/detail/65/
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Victron Professional news, 2017-05-23: \"The Lynx Ion BMS replaces the Lynx Ion+Shunt models. They are being phased
+    out.\"; the Ion Control display is only compatible with the Lynx Ion+Shunt \"which is being discontinued\"; Lithium
+    24V/100Ah BAT524101200 \"is being discontinued. Only a few models left.\""
+  models:
+  - code: "Lynx Ion+Shunt"
+    match: '^LYNXION\+SHUNT'
+    note: "phased out 2017; successor Lynx Ion BMS"
+  - code: "Ion Control"
+    match: '^IONCONTROL$'
+  - code: "BAT524101200"
+    match: '^BAT524101200$'
+    note: "Lithium 24V/100Ah, discontinued 2017"
+- id: victron-lithium-smart-range-2018-05
+  title: "Changes in Lithium Smart battery product range"
+  url: https://professional.victronenergy.com/news/detail/103/
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Victron Professional news, 2018-05-08: current models remain available until sold out — 12.8V/90Ah BAT512090410
+    (last sale expected 2019 Q1), 12.8V/100Ah BAT512110510 (2018 Q2), 12.8V/160Ah BAT512116410 (2019 Q4)."
+  models:
+  - code: "BAT512090410 / BAT512110510 / BAT512116410"
+    match: '^BAT5121(090410|10510|16410)$'
+    note: "sold out 2018–2019 per the notice"
+- id: victron-old-manuals-2026-11
+  title: "Old Manuals"
+  url: https://www.victronenergy.com/old_manuals
+  seen: "2026-11-01"
+  kind: archive-page
+  note: "Manual archive, not a discontinued-products list: its own text is only \"The Victron Energy old manuals describe how
+    a product is used and or provided.\" It holds old revisions of current products too (Cerbo GX, Ekrano GX, Venus GX,
+    SmartSolar MPPT RS 450/100-Tr), so nothing is matched from it. The Cerbo GX manual points here for \"GX devices that
+    are no longer in production\" without naming them. Grid-relevant inverter entries listed there, for reference only:
+    Phoenix Multi 12/1600–24/3000 and 12/1300–24/2500, Phoenix Combi, MultiGrid 3k 230V (firmware xxxx1xx), Quattro 5k
+    (230V, 120-240V, 24 5k 2x30), Phoenix Inverter 3k 5k 230V (firmware xxxx1xx), BlueSolar Grid inverter, Atlas, EcoMulti."
+  models: []

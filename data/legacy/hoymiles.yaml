@@ -1,0 +1,20 @@
+# Legacy layer — facts transcribed from the maker's own pages on the seen date. Research notes of 2026-11-01.
+# `match` is a regex over the register code normalised the way the specs layer does it (upper case, spaces removed).
+brand: Hoymiles
+maker_site: https://www.hoymiles.com
+documents:
+- id: hoymiles-hm-series-discontinued-2026-07
+  title: "Official Statement on the Cybersecurity Issue of Hoymiles HM Microinverters"
+  url: https://www.hoymiles.com/official-statement-cybersecurity-issue-hoymiles-hm-microinverters.html
+  seen: "2026-11-01"
+  kind: eol-notice
+  note: "Statement dated July 9, 2026, about \"the discontinued HM Series microinverters\" (security firmware update
+    scheduled 2026-08-30; installed units keep operating, no replacement required). It names the series only, no model
+    codes and no discontinuation date. On the same date the US product pages for HM-600/700/800NT and HM-1200/1500NT
+    (https://www.hoymiles.com/us/products/hm-600nt-700nt-800nt.html) carry no discontinued label, so the regex covers the
+    classic HM-xxx / -T / -A / -2T / -4T / -2D / -4D codes and leaves the NT variants out. HMS / HMT / MI codes are
+    not touched; no Hoymiles page marks the MI series discontinued."
+  models:
+  - code: "HM Series microinverters"
+    match: '^(HOYMILES)?HM-?\d+(-?[24][TD]|T|A)?$'
+    note: "'discontinued HM Series' per the 2026-07-09 statement; NT variants excluded (live product pages)"

@@ -1,0 +1,21 @@
+# Legacy evidence (data/legacy): Enphase. The North-American compatibility matrix (IQ6/IQ7 EOL) was read but dropped on
+# 2026-11-01: a region table for North America would have flagged 27 European IQ7-INT models still on the lists.
+brand: Enphase
+maker_site: https://enphase.com
+documents:
+- id: enphase-store-legacy-microinverters-2026-11
+  title: Legacy Microinverters | Enphase Historic Models
+  url: https://enphase.com/store/microinverters/legacy
+  seen: '2026-11-01'
+  kind: archive-page
+  note: 'Enphase store category ''Legacy'' with the page title ''Enphase Historic Models''. Products listed exactly: ''M190
+    Microinverter - Standard MC4 DC'', ''M190 Microinverter - Integrated Ground'', ''M210 Microinverter'', ''M190 Microinverter
+    - TE Solarlok DC'', ''M250 Microinverter'', ''M215 Microinverter''. The page has no explanatory text; the M215 and M250
+    items there are replacement kits ''built on the IQ7 Series platform'' (SKU M215240-IQ7-S22-US) for existing M-series systems,
+    so this page is a category label, not a discontinuation statement. The matrix above carries the EOL fact. North-American
+    store page; the M190/M210 (2009–2013) are kept because Enphase calls them historic models, not because of any region table.'
+  models:
+  - code: M190 Microinverter
+    match: ^M190
+  - code: M210 Microinverter
+    match: ^M210
