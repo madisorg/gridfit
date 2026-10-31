@@ -1,0 +1,4282 @@
+{
+ "0162A25": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "0162a25",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "037BE43": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "037be43",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "03D12AF": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "03d12af",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "0544A31": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "0544a31",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "05BD613": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "05bd613",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "064E585": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "064e585",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "08985C1": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "08985c1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "09E195F": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "09e195f",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "0DAA1FE": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "0daa1fe",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "0E4E9F1": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "0e4e9f1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "0FD6548": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "0fd6548",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "0FE103E": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "0fe103e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "128VLITHIUMSUPERPACK": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "12,8V-LITHIUM-SUPERPACK",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "133KTLG3": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "1-3.3KTL-G3",
+  "first_seen": "2026-10-31",
+  "source": "sofar-pv-inverters"
+ },
+ "14KTL2G3": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "1-4KTL2-G3",
+  "first_seen": "2026-10-31",
+  "source": "sofar-pv-inverters"
+ },
+ "15B0195": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "15b0195",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "15EFA95": {
+  "baseline": true,
+  "brand": "E3/DC",
+  "code": "15efa95",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "15KTL3G3": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "1-5KTL3-G3",
+  "first_seen": "2026-10-31",
+  "source": "sofar-pv-inverters"
+ },
+ "15MINUTE": {
+  "baseline": true,
+  "brand": "Must",
+  "code": "15-minute",
+  "first_seen": "2026-10-31",
+  "source": "pv-magazine"
+ },
+ "17A5715": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "17a5715",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "1A61DBE": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "1a61dbe",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "1A8EEAF": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "1a8eeaf",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "1D4AB33": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "1d4ab33",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "1D57696": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "1d57696",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "1P3P": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "1p3p",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "20": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "20",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "212DD03": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "212dd03",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "24HOUR": {
+  "baseline": true,
+  "brand": "Must",
+  "code": "24-hour",
+  "first_seen": "2026-10-31",
+  "source": "pv-magazine"
+ },
+ "259D5FD": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "259d5fd",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "25B6371": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "25b6371",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "2919F74": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "2919f74",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "296F6F1": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "296f6f1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "2A77477": {
+  "baseline": true,
+  "brand": "E3/DC",
+  "code": "2a77477",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "2D2C8C1": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "2d2c8c1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "2E160DA": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "2e160da",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "319CE7E": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "319ce7e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "319DED8": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "319ded8",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "32C86AB": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "32c86ab",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3312KTLXG3": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "3.3-12KTLX-G3",
+  "first_seen": "2026-10-31",
+  "source": "sofar-pv-inverters"
+ },
+ "33I": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "3/3i",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "35B48D1": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "35b48d1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "36BAD45": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "36bad45",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "36KS1": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "3-6K-S1",
+  "first_seen": "2026-10-31",
+  "source": "sofar-storage-inverters"
+ },
+ "36KTLMG3": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "3-6KTLM-G3",
+  "first_seen": "2026-10-31",
+  "source": "sofar-pv-inverters"
+ },
+ "3938F43": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "3938f43",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3AE3411": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "3ae3411",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3D38F43": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "3d38f43",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3E0464E": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "3e0464e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3F8FCD2": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "3f8fcd2",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3FF457F": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "3ff457f",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "41B6389": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "41b6389",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "41FC386": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "41fc386",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "42CC352": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "42cc352",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "44A1154": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "44a1154",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4766C0B": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "4766c0b",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4881B70": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "4881b70",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "49ACE36": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "49ace36",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4BCCFD3": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "4bccfd3",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4BEE189": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "4bee189",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4CA3D04": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "4ca3d04",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4D82901": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "4d82901",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4DB3857": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "4db3857",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4EC1028": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "4ec1028",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "4YOU4BUSINESS": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "4You/4Business",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "50572D9": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "50572d9",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "515CB14": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "515cb14",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "51A95CB": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "51a95cb",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "53061F7": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "53061f7",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "54403E6": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "54403e6",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "582B9B0": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "582b9b0",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "58F7650": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "58f7650",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "5A6E51B": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "5a6e51b",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "5C27C36": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "5c27c36",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "5D20DF4": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "5d20df4",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "5ECE63F": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "5ece63f",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "5ECE95B": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "5ece95b",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "61FE041": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "61fe041",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6268A13": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "6268a13",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "64BIT": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "64-bit",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "68D2F49": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "68d2f49",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "691C77E": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "691c77e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "69B9DA5": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "69b9da5",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6AD2F56": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "6ad2f56",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6BA94D3": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "6ba94d3",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6CA65CA": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "6ca65ca",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6CFFB6C": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "6cffb6c",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6D92CA7": {
+  "baseline": true,
+  "brand": "E3/DC",
+  "code": "6d92ca7",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "6E8CD7D": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "6e8cd7d",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "70F3999": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "70f3999",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7105KTLMG3": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "7-10.5KTLM-G3",
+  "first_seen": "2026-10-31",
+  "source": "sofar-pv-inverters"
+ },
+ "7490B72": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "7490b72",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "77E8284": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "77e8284",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "79B4A8B": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "79b4a8b",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7BF1E85": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "7bf1e85",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7C2F4C5": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "7c2f4c5",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7D61733": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "7d61733",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7D9C733": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "7d9c733",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7DB1259": {
+  "baseline": true,
+  "brand": "E3/DC",
+  "code": "7db1259",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "8174E23": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "8174e23",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "86937D4": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "86937d4",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "87F7613": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "87f7613",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "88DDDC8": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "88dddc8",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "8B19105": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "8b19105",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "8DD67F1": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "8dd67f1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "8FCA47D": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "8fca47d",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "928F2BF": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "928f2bf",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "94730E9": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "94730e9",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "95680C4": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "95680c4",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9582E96": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "9582e96",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9702DE9": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "9702de9",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9AB65FE": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "9ab65fe",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9C2FEB0": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "9c2feb0",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9D13171": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "9d13171",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9DD69A7": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "9dd69a7",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "A1": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "A1",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "A1A4B2C": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "a1a4b2c",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "A1BI200": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "A1-BI-200",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "A1BIPRO": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "A1-BI-PRO",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "A2EC4AF": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "a2ec4af",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "A5A74BA": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "a5a74ba",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "A6E6609": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "a6e6609",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "AA74AEB": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "aa74aeb",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "AC13F5E": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "ac13f5e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "ADA38EF": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "ada38ef",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "AE20C49": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "ae20c49",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "AEGIS": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "AEGIS",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "AELIO": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "AELIO",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "AELIO208261": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "AELIO-208-261",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "AELIO80130": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "AELIO-80-130",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "AF5A01E": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "af5a01e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "AIW51B": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "AI-W5-1-B",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "ALITE": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "A-LITE",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "ALTURE": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "ALTURE",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "ARGENO125": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "ARGENO-125",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "B12193A": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "b12193a",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "B34A989": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "b34a989",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "B4BD05F": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "b4bd05f",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "B4FFB44": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "b4ffb44",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "B79E469": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "b79e469",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "B8C43C0": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "b8c43c0",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "BA510F1": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "ba510f1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "BAT2556": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "BAT-25-56",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "BAT60112": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "BAT-60-112",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "BATC208261KWH": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "BAT-C-208-261KWH",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "BD3AC4C": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "bd3ac4c",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "BF5C276": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "bf5c276",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "BINARY": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "BINARY",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "BOSA": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "BOS-A",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "BOSB": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "BOS-B",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "BOSBPROA3CI": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "BOS-B-PRO-A3-C-I",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "BOSGLBOSGH": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "BOS-GL-BOS-GH",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "BOSGPRO": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "BOS-G-PRO",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "BOSW": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "BOS-W",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "BTC": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "BTC",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "C04CF61": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c04cf61",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C140FC8": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c140fc8",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C1DA727": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "c1da727",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C2683E2": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c2683e2",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C28A1F6": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c28a1f6",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C591A67": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c591a67",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C727EE7": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "c727ee7",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C83D01C": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "c83d01c",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C86CAA5": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "c86caa5",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C90B7D0": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c90b7d0",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C9FA4D9": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "c9fa4d9",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "CC3FEB4": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "cc3feb4",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "CCA3F09": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "cca3f09",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "CF0FD9F": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "cf0fd9f",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "CHARGING": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "CHARGING",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "CQ16": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "CQ16",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "CQ20": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "CQ20",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "CQ6": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "CQ6",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "CQ66": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "CQ6-6",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "CQ7": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "CQ7",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "CUBE": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "CUBE",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "CURRENTTRANSFORMER": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "CURRENT-TRANSFORMER",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "CX6E": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "CX-6e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D107ABF": {
+  "baseline": true,
+  "brand": "Tesla",
+  "code": "d107abf",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D1DC3A7": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "d1dc3a7",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D2941EA": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "d2941ea",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D39CDAB": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "d39cdab",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D4F03E2": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "d4f03e2",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D77D924": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "d77d924",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D90CFFD": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "d90cffd",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "DATAHUB1000": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "DATAHUB1000",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "DC84E11": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "dc84e11",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "DDB1DB8": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "ddb1db8",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "DDBC8F3": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "ddbc8f3",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "DLBSLB": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "DLB-SLB",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "DYHF15MISTFREEHUMIDIFIER": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "DYH-F15-MIST-FREE-HUMIDIFIER",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "DYHH7": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "DYH-H7",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "E11CDEF": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "e11cdef",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E271AB0": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e271ab0",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E2BC3DC": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e2bc3dc",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E3C101D": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e3c101d",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E3DC": {
+  "baseline": true,
+  "brand": "E3/DC",
+  "code": "E3/DC",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E5611AD": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "e5611ad",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E6E333A": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e6e333a",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E74F306": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e74f306",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E7A8E4D": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "e7a8e4d",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E82ACEA": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e82acea",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E8DD245": {
+  "baseline": true,
+  "brand": "ABL",
+  "code": "e8dd245",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E967A35": {
+  "baseline": true,
+  "brand": "Tesla",
+  "code": "e967a35",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "EASYPLUS12V1600VA": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "EASYPLUS-12V-1600VA",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "EASYSOLAR": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "EASYSOLAR",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "EASYSOLARIIGX": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "EASYSOLAR-II-GX",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "ECC": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "ECC",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "ECCPLC": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "ECC-PLC",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "ECE5B74": {
+  "baseline": true,
+  "brand": "Huawei",
+  "code": "ece5b74",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "ECO2503SWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "ECO-25-0-3-S-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "ECO2703SWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "ECO-27-0-3-S-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "ED7828C": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "ed7828c",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "EE3825E": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "ee3825e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "EF82D6E": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "ef82d6e",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "EMS1000": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "EMS1000",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "EMS1000PRO": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "EMS1000PRO",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "ENECTORG1": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "ENECTOR-G1",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "ENECTORG2": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "ENECTOR-G2",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "EP11": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EP11",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EP12": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EP12",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EP5": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EP5",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EP6": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EP6",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EQ3300": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EQ3300",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EQ4800": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EQ4800",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EQ5000": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EQ5000",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EQ5000P": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EQ5000-P",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EQ5500": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EQ5500",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "EQ6000": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "EQ6000",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "ESI512KT1": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "ESI-5-12K-T1",
+  "first_seen": "2026-10-31",
+  "source": "sofar-storage-inverters"
+ },
+ "ESI812KS1": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "ESI-8-12K-S1",
+  "first_seen": "2026-10-31",
+  "source": "sofar-storage-inverters"
+ },
+ "ET": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "ET",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "ET10": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "ET10",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "ET16": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "ET16",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "ETC": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "ETC",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "F0A2D79": {
+  "baseline": true,
+  "brand": "Tesla",
+  "code": "f0a2d79",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F15588C": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "f15588c",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F44E6A1": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "f44e6a1",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F55C2C9": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "f55c2c9",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F56B493": {
+  "baseline": true,
+  "brand": "E3/DC",
+  "code": "f56b493",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F7C4852": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "f7c4852",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F9285D5": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "f9285d5",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F9CF626": {
+  "baseline": true,
+  "brand": "",
+  "code": "f9cf626",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "FAST": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "FAST",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "FDE07F4": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "fde07f4",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "FORTHG3": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "FORTH-G3",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "G2": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "G2",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "GBA": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-A",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GBL": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-L",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GBLLITE": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-L-LITE",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GBLPRO": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-L-PRO",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GBLULTRA": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-L-ULTRA",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GBSLGBSLPRO": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-SL-GB-SL-PRO",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GBW": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GB-W",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GEF1202H23H24H2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GE-F120-2H23H24H2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GEF1202H63H64H6": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GE-F120-2H6-3H6-4H6",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GEF128F240F256": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GE-F128F240F256",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GEF60": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GE-F60",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GEFH60GEFL60": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "GE-FH60-GE-FL60",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "GMAX": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "G-MAX",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "H1AC1": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "H1-AC1",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "H3": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "H3",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "H3PRO": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "H3-PRO",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "H3PROSMART": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "H3-Pro/Smart",
+  "first_seen": "2026-10-31",
+  "source": "evcc-templates"
+ },
+ "HP": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "HP",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "HPBOX": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "HP-BOX",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "HS160PA": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "HS160-PA",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "HS50ED": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "HS50E-D",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "HT": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "HT",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "HYD1012KLS1": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "HYD-10-12K-LS1",
+  "first_seen": "2026-10-31",
+  "source": "sofar-storage-inverters"
+ },
+ "HYD38KLS1PRO": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "HYD-3-8K-LS1-PRO",
+  "first_seen": "2026-10-31",
+  "source": "sofar-storage-inverters"
+ },
+ "HYD520KLT1": {
+  "baseline": true,
+  "brand": "Sofar",
+  "code": "HYD-5-20K-LT1",
+  "first_seen": "2026-10-31",
+  "source": "sofar-storage-inverters"
+ },
+ "I18N": {
+  "baseline": true,
+  "brand": "Chint",
+  "code": "i18n",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "IDW131": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "IDW-131",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "J1": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "J1",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "J1EVC6K": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "J1-EVC-6K",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "J3ULTLV": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "J3-ULT-LV",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "KHKA": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "KH-KA",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "KOSTALHELIVORHV": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "KOSTAL HELIVOR HV (BAT)",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "KSEMKEM": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "KSEM / KEM",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "LC100BESSCONTROLLER": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "LC100-BESS-CONTROLLER",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "LD16": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "LD16",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "LD16LD14": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "LD16-LD14",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "LD32": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "LD32",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "LD5": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "LD5-EU",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "LD51C": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "LD51C",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "LITHIUM": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "LITHIUM",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "LITHIUMNG": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "LITHIUM-NG",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "LITHIUMSUPERPACKNG": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "LITHIUM-SUPERPACK-NG",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "LUXEMBOURGV2": {
+  "baseline": true,
+  "brand": "",
+  "code": "Luxembourg/V2",
+  "first_seen": "2026-10-31",
+  "source": "evcc-templates"
+ },
+ "LVMT": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "LVMT",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "LVSMT": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "LVSMT",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "LYNXAG4": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "LYNX-A-G4",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "MCL4302H2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MC-L430-2H2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MCL4302H3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MC-L430-2H3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MCL5222H2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MC-L522-2H2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MCL5222H3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MC-L522-2H3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MCLC4302H2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MC-LC430-2H2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MCLC4802H2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MC-LC480-2H2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MICG3": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "MIC-G3",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "MIS": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "MIS",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "MISG2": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "MIS-G2",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "MSACC1201": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MS-ACC120-1",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MSACC1202": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MS-ACC120-2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MSG215": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MS-G215",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MSGS2152H3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "MS-GS215-2H3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "MULTI500VA": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTI-500-VA",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTICLUSTERBOXES": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "MULTICLUSTER-BOXES",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "MULTIHS19": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTI-HS19",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIPLUS12V24V48V800VA3KVA": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTIPLUS-12V-24V-48V-800VA-3KVA",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIPLUS2000VA": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTIPLUS-2000-VA",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIPLUSII": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTIPLUS-II",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIPLUSII2X120V": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTIPLUS-II-2X-120V",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIPLUSIIGX": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTIPLUS-II-GX",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIRS": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTI-RS",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "MULTIRS19": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "MULTI-RS19",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "OG": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "OG",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "ORI": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "ORI",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "P100": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "P100",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "P160": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "P160",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "P3": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "P3",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "P3PRO": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "P3-PRO",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "P3S": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "P3-S",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "PEAK": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "PEAK",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "PHASES1P3P": {
+  "baseline": true,
+  "brand": "Anker SOLIX",
+  "code": "phases1p3p",
+  "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "PHOENIX": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "PHOENIX",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "PIKO1020>FW500": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO 10 - 20 > FW 5.00",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PIKOCI": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO-CI",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PIKOCI100": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO CI 100",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PIKOCI30": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO-CI-30",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PIKOCI305060": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO CI 30/50/60",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PIKOCI3050G2": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO CI 30/50 G2",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PIKOCI5060": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO-CI-50-60",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PIKOCIG2": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PIKO-CI-G2",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PLATFORM": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "PLATFORM",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "PLENTICORE": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PLENTICOREBI": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE-BI",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PLENTICOREBIG2": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE BI / G2",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PLENTICOREBIG3": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE BI G3",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PLENTICOREG3": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE G3",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PLENTICOREMP": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE-MP",
+  "first_seen": "2026-10-31",
+  "source": "kostal-pages"
+ },
+ "PLENTICOREMPG3": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE MP G3",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "PLENTICOREPLUSG2": {
+  "baseline": true,
+  "brand": "Kostal",
+  "code": "PLENTICORE plus / G2",
+  "first_seen": "2026-10-31",
+  "source": "kostal-countries"
+ },
+ "POSTOF": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "POST-OF",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "POWERQ": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "POWERQ",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "PRIMO301WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-3-0-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO361WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-3-6-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO401WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-4-0-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO461WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-4-6-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO501SCWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-5-0-1-SC-WLANLANWEB-SERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO501WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-5-0-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO601WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-6-0-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMO821WLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-8-2-1-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN24100": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-10-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN24100208240": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-10-0-208-240",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2430": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-3-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2430SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-3-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2436": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-3-6",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2436SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-3-6-SC",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2438208240": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-3-8-208-240",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2440": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-4-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2440SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-4-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2446": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-4-6",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2446SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-4-6-SC",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2450": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-5-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2450208240": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-5-0-208-240",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2450SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-5-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2460": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-6-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2460208240": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-6-0-208-240",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2460SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-6-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2477208240": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-7-7-208-240",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PRIMOGEN2480": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "PRIMO-GEN24-8-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "PROG3": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "PRO-G3",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "QUATTRO": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "QUATTRO",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "QUATTROII": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "QUATTRO-II",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "QUATTROII2X120V": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "QUATTRO-II-2X-120V",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "ROGOWSKICOIL": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "ROGOWSKI-COIL",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "RS": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "RS",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "RS486000230V": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "RS-48-6000-230V",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "RWF102": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "RW-F10-2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "RWF102B": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "RW-F10-2-B",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "RWF16": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "RW-F16",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "RWF531H3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "RW-F5-3-1H3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "S22": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "S22",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "S28": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "S28",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "S5GR3P1225K": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S5-GR3P(12-25)K(21A)",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EA3P10KAANVNDH": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EA3P10KAA-NV-ND-H",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EA3P510KAANVYDHPRO": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EA3P(5-10)KAA-NV-YD-H-PRO",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P1520KNDH": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(15-20)K-ND-H",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P1530KHLVND": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(15-30)K-H-LV-ND",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P1535KHLV": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(15-35)K-H-LV",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P29960KH": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(29,9-60)K-H",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P3050KHND": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(30-50)K-H-ND",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P30KHLV": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P30K-H-LV",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P6075K10LVYDH": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(60-75)K10-LV-YD-H",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P710K02LVYDL": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(7-10)K02-LV-YD-L",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EH3P812KLVNDH": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EH3P(8-12)K-LV-ND-H",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6EO1P45K48": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-EO1P(4-5)K-48-EU",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "S6GU3P275350K06": {
+  "baseline": true,
+  "brand": "Solis",
+  "code": "S6-GU3P(275-350)K06",
+  "first_seen": "2026-10-31",
+  "source": "solis-products"
+ },
+ "SEF12": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F12",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF12A": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F12-A",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF12LITE": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F12-LITE",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF12MAX": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F12-MAX",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF16": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F16",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF16A": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F16-A",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF16MAX": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F16-MAX",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF5": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F5",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF524A": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F5-24-A",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF5A": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F5-A",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF5LITE": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F5-LITE",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEF5PROADVANCED": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-F5-PRO-ADVANCED",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEG102": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-G10-2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEG51": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-G5-1",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEG51PROB": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SE-G5-1-PRO-B",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SEMS": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "SEMS",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "SEMSPLUS": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "SEMSPLUS",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "SMT": {
+  "baseline": true,
+  "brand": "GoodWe",
+  "code": "SMT",
+  "first_seen": "2026-10-31",
+  "source": "goodwe-pages"
+ },
+ "SUN": {
+  "baseline": true,
+  "brand": "Victron Energy",
+  "code": "SUN",
+  "first_seen": "2026-10-31",
+  "source": "victron-products"
+ },
+ "SUN100125KSG02HP3EUGM10": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-100-125K-SG02HP3-EU-GM10",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN101215KG05LV": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-10-12-15K-G05-LV",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN120125130135136KG01P3EUAM8": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-120-125-130-135-136K-G01P3-EU-AM8",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN121416KSG01LP1": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-12-14-16K-SG01LP1-EU",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN1415161820KSG05LP3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-14-15-16-18-20K-SG05LP3-EU-SM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN182021KG04LV": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-18-20-21K-G04-LV",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN1820222325KG05": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-18-20-22-23-25K-G05",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN232530KG04LV": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-23-25-30K-G04-LV",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN2530KSG02HP3EUAM3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-25-30K-SG02HP3-EU-AM3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN2993035KSG01HP3EUBM3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-29-9-30-35K-SG01HP3-EU-BM3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN30333536KG04": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-30-33-35-36K-G04",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN3335404550KG04P3EUAM4LV": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-33-35-40-45-50K-G04P3-EU-AM4-LV",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN33656KSG04LP1": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-3-6-5-6K-SG04LP1-EU",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN345681012KSG05LP3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-4-5-6-8-10-12K-SG05LP3-EU-SM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN3656776810KSG05LP1EUAM2P": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-6-5-6-7-7-6-8-10K-SG05LP1-EU-AM2-P",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN3656776810KSG05LP1EUSM2P": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-6-5-6-7-7-6-8-10K-SG05LP1-EU-SM2-P",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN366KOG03LP1EUAM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-6-6K-OG03LP1-EU-AM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN36KSG06LP1EUCM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-6K-SG06LP1-EU-CM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN38KSG06LP3EUBM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-8K-SG06LP3-EU-BM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN38KSG06LP3EUCM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3-8K-SG06LP3-EU-CM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN3KSG04LP124EUSM1": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-3K-SG04LP1-24-EU-SM1",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN404550KG04": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-40-45-50K-G04",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN56768KSG01LP1US": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-5-6-7-6-8K-SG01LP1-US",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN5681012152025KSG01HP3EUAM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-5-6-8-10-12-15-20-25K-SG01HP3-EU-AM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN5681012KSG04LP3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-5-6-8-10-12K-SG04LP3-EU",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN60707580KG": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-60-70-75-80K-G",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN60707580KSG02HP3EUEM6": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-60-70-75-80K-SG02HP3-EU-EM6",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN607075KG01P3EUAM8LV": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-60-70-75K-G01P3-EU-AM8-LV",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN68KG06LV": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-6-8K-G06-LV",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN70758090100110KG03": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-70-75-80-90-100-110K-G03",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN712KSG06LP1EUBM3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-7-12K-SG06LP1-EU-BM3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN712KSG06LP1EUCM3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-7-12K-SG06LP1-EU-CM3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN768KSG01LP1": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-7-6-8K-SG01LP1-EU",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN768KSG02LP1EUAM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-7-6-8K-SG02LP1-EU-AM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN7758KG02P1EUAM2DATASHEET": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-7-7-5-8K-G02P1-EU-AM2-DATA-SHEET",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUN910105KG02P1EUAM2": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-9-10-10-5K-G02P1-EU-AM2",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUNBK": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-BK",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUNEVSE11K0122K01": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-EVSE11K01/22K01",
+  "first_seen": "2026-10-31",
+  "source": "evcc-templates"
+ },
+ "SUNM130160180200220G4EUQ0": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-M130-160-180-200-220G4-EU-Q0",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUNM200225G4EUQ0": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-M200-225G4-EU-Q0",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUNM304050G4EUQ0": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-M30-40-50G4-EU-Q0",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUNM6080100G4EUQ0": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUN-M60-80-100G4-EU-Q0",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUNNYBOY": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-BOY",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYBOY152025": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-BOY-15-20-25",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYBOY3036405060": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-BOY-30-36-40-50-60",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYBOY30US4177US41": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-BOY-30-US-41-77-US-41",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYCENTRAL": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-CENTRAL",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYCENTRAL22002475": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-CENTRAL-2200-2475",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYCENTRALUP": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-CENTRAL-UP",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYHIGHPOWER": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-HIGHPOWER",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYHIGHPOWERPEAK3": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-HIGHPOWER-PEAK3",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYISLAND44M60H80H": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-ISLAND-44M-60H-80H",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYISLAND4548US6048US": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-ISLAND-4548-US-6048-US",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYISLANDX": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-ISLAND-X",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWER": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWER125": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-125",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWER15000TL20000TL25000TL": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-15000TL-20000TL-25000TL",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWER30405060": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-30-40-50-60",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWER80100": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-80-100",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWERCORE1": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-CORE1",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWERCORE2": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-CORE2",
+  "first_seen": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWERX25": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-X-25",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUNNYTRIPOWERX60": {
+  "baseline": true,
+  "brand": "SMA",
+  "code": "SUNNY-TRIPOWER-X-60",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "sma-products"
+ },
+ "SUPERTHINCOMPACT12L": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUPER-THIN-COMPACT-12L",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SUPPLIERBOSG": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "SUPPLIER-BOS-G",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "SYMO303MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-3-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO303SWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-3-0-3-S-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO373MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-3-7-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO373SWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-3-7-3-S-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO453MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-4-5-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO453SWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-4-5-3-S-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO503MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-5-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO603MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-6-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO703MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-7-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMO823MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-8-2-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED1003MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-10-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED1203208240REPLACEMENT": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-12-0-3-208-240-REPLACEMENT",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED1253MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-12-5-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED1503480LITE": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-15-0-3-480-LITE",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED1503MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-15-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED1753MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-17-5-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED2003480LITE": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-20-0-3-480-LITE",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED2003MWLANLANWEBSERVER": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-20-0-3-M-WLANLANWEBSERVER",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOADVANCED2403480REPLACEMENT": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-ADVANCED-24-0-3-480-REPLACEMENT",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN24100": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-10-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN24100AUS": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-10-0-AUS",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN24100AUSSC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-10-0-AUS-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN24100SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-10-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN24120": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-12-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN24120SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-12-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2430": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-3-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2430SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-3-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2440": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-4-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2440SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-4-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2450": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-5-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2450SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-5-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2460": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-6-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2460SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-6-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2480": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-8-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "SYMOGEN2480SC": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "SYMO-GEN24-8-0-SC",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAURO503D": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-50-3-D",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAURO503P": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-50-3-P",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAUROECO1003D": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-ECO-100-3-D",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAUROECO1003P": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-ECO-100-3-P",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAUROECO503D": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-ECO-50-3-D",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAUROECO503P": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-ECO-50-3-P",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAUROECO993D": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-ECO-99-3-D",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TAUROECO993P": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "TAURO-ECO-99-3-P",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "TBAT": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHV30": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-3-0",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHV50": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-5-0",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHV58": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-5-8",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHVR25": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-R2-5",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHVR36": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-R3-6",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHVS25": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-S2-5",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSHVS36": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-HV-S3-6",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSLVD150": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-LV-D150",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSLVD53": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-LV-D53",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSLVR25": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-LV-R25",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBATSYSLVR36": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "T-BAT-SYS-LV-R36",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TBHR140": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TB-HR140",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "THERMALR290": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "THERMAL-R290",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TMAX": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "T-MAX",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "TRE261": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TRE261",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TRENE418": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TRENE-418",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TRENEAIRCOOLING": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TRENE-AIR-COOLING",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TRENELIQUIDCOOLING": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TRENE-LIQUID-COOLING",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TSYSHR76": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TSYS-HR76",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TSYSHS51": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TSYS-HS51",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TSYSLD117": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TSYS-LD117",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TSYSLD160TSYSLD143": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TSYS-LD160-TSYS-LD143",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TSYSLD51": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "TSYS-LD51",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "TYPE2": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "TYPE-2",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "US": {
+  "baseline": true,
+  "brand": "Fox ESS",
+  "code": "US",
+  "first_seen": "2026-10-31",
+  "source": "foxess-products"
+ },
+ "VERTO150": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-15-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO175": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-17-5",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO200": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-20-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO250": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-25-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO250400": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-25-0-400",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO250SPD12": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-25-0-SPD-12",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO270SPD12": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-27-0-SPD-12",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO300": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-30-0",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO300SPD12": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-30-0-SPD-12",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO333": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-33-3",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "VERTO333SPD12": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "VERTO-33-3-SPD-12",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WATTPILOT": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "WATTPILOT",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WATTPILOTFLEX": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "WATTPILOT-FLEX",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WATTPILOTFLEXPRO22C6E": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "WATTPILOT-FLEX-PRO-22-C6E",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WATTPILOTGO11J": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "WATTPILOT-GO-11-J",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WATTPILOTGO22J": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "WATTPILOT-GO-22-J",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WATTPILOTGO22JAUS": {
+  "baseline": true,
+  "brand": "Fronius",
+  "code": "WATTPILOT-GO-22-J-AUS",
+  "first_seen": "2026-10-31",
+  "source": "fronius-products"
+ },
+ "WDG12100WDG12200WDG24100": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "WD-G-12100-WD-G12200-WD-G24100",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "WIRELESSBRIDGE": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "WIRELESS-BRIDGE",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "WSGS20002H3": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "WS-GS2000-2H3",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "WSL5000WSMV5000": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "WS-L5000-WS-MV5000",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "WSLLIQUIDCOOLED": {
+  "baseline": true,
+  "brand": "Deye",
+  "code": "WS-L-LIQUID-COOLED",
+  "first_seen": "2026-10-31",
+  "source": "deye-products"
+ },
+ "X1": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1BOOSTG3": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-BOOST-G3",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1BOOSTG4": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-BOOST-G4",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1HYBLV": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-HYB-LV",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1IES": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-IES",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1IESA": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-IES-A",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1LITELV": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-LITE-LV",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1MINI": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-MINI",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1MINIG3": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-MINI-G3",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1MINIG4": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-MINI-G4",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1RENOLV": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-RENO-LV",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1RETROFIT": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-RETRO-FIT",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1SPLIT": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-SPLIT",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1SPT10KW12KW": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-SPT-10KW-12KW",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X1VAST": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X1-VAST",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3AELIO": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-AELIO",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3FORTH": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-FORTH",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3GRANDHV": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-GRAND-HV",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3HYBG4PRO": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-HYB-G4-PRO",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3IES": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-IES",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3IESA": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-IES-A",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3IESP": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-IES-P",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3MEGAG2": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-MEGA-G2",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3MIC": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-MIC",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3NEOLV": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-NEO-LV",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3PROG2": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-PRO-G2",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3RETROFIT": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-RETRO-FIT",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3TRENE125K": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-TRENE-125K",
+  "first_seen": "2026-10-31",
+  "listed": "2026-10-31",
+  "source": "solax-products"
+ },
+ "X3ULTRA": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X3-ULTRA",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "XCB800A": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "XCB800A",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "XHUB": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "XHUB",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "XMS2700": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "X-MS-2700",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "XRSD": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "XRSD",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "XRSDCOREKIT": {
+  "baseline": true,
+  "brand": "SolaX",
+  "code": "XRSD-CORE-KIT",
+  "first_seen": "2026-10-31",
+  "source": "solax-products"
+ }
+}

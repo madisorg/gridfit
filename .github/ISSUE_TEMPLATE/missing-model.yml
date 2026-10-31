@@ -1,0 +1,75 @@
+name: Missing model
+description: A new inverter, battery or wallbox that GridFit does not show yet — for installers, makers and owners.
+title: "<brand> <model>: missing"
+labels: ["data", "missing-model"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks — a model you report here is checked against the grid lists and the maker's datasheet, and added
+        when a source shows it. GridFit lists only what a public source says, so the links below matter most.
+        Please do not put e-mail addresses, phone numbers or names of people in this form; it is public.
+  - type: input
+    id: brand
+    attributes:
+      label: Brand
+      placeholder: e.g. Deye
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model code(s)
+      description: As printed on the device, the datasheet or the grid list. Several codes of one series can go on one line.
+      placeholder: e.g. SUN-12K-SG05LP3-EU, SUN-15K-SG05LP3-EU
+    validations:
+      required: true
+  - type: dropdown
+    id: class
+    attributes:
+      label: Kind of device
+      options:
+        - PV inverter
+        - Hybrid inverter
+        - Battery / AC-coupled battery inverter
+        - Plug-in solar or balcony battery (≤ 800 VA)
+        - Wallbox
+        - Something else
+    validations:
+      required: true
+  - type: checkboxes
+    id: lists
+    attributes:
+      label: Grid lists that carry it (if you know)
+      options:
+        - label: Austria (TOR Erzeuger Typ A / Ladeeinrichtungen)
+        - label: Belgium (Synergrid C10/26)
+        - label: Czechia (ČEZ Distribuce)
+        - label: Estonia (Elektrilevi)
+        - label: Netherlands (Netbeheer Nederland)
+        - label: Poland (PTPiREE)
+        - label: Sweden (Rikta Rätt)
+        - label: Another country's list (name it below)
+        - label: Not on a list yet
+  - type: input
+    id: datasheet
+    attributes:
+      label: Datasheet or product page
+      description: The maker's own page or PDF.
+      placeholder: https://
+    validations:
+      required: true
+  - type: textarea
+    id: support
+    attributes:
+      label: Local control and integrations (optional)
+      description: Home Assistant or HACS integration, evcc template, Modbus register map, or "tested on my own device".
+  - type: dropdown
+    id: who
+    attributes:
+      label: You are
+      options:
+        - An installer
+        - The maker or its distributor
+        - An owner
+        - Someone else
