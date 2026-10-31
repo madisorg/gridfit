@@ -1,0 +1,166 @@
+# Datasheet harvester recipes (tools/specs/harvest.py; docs/freshness.md "Datasheets").
+#
+# mode http  runs on GitHub Actions every Monday (python tools/specs/harvest.py --http)
+# mode edge  runs on madis-pc on Sunday evening (--edge): the page is rendered in headless Edge, the clicks below
+#            are made, and PDF links are read from the DOM and from the browser's network events.
+#
+# kind:
+#   sitemap-pages  a sitemap (or sitemap index, children by `follow`) -> product pages matching keep/drop -> on
+#                  each page the `item` regex (named groups url, title; optional group `type`) finds the sheets.
+#   pages          one listing URL with a {page} placeholder, walked until a page adds nothing (max `pages`).
+#                  `method: POST` with `body` sends a form; `json_field` takes the HTML out of a JSON answer.
+#   hoymiles-api   the hoymiles.com download centre: type tree -> series -> products -> file list -> /downloads/x.html
+#                  pages that refresh to the file.
+#   solis-api      the solisinverters.com download centre API (navbar -> one form per series).
+#   edge-page      one page in Edge: `clicks` (CSS selectors, in order), `paginate` (a selector clicked up to `max`
+#                  times, links collected after each), `item` over the DOM.
+#   edge-sitemap   a sitemap's pages (keep/drop) each rendered in Edge, `item` over the DOM.
+#
+# Every recipe: the sheet's title or file name has to match `keep_title` (default: datasheet-like) and must not match
+# `drop_title`; a URL on a host whose robots.txt disallows this user agent is listed in the manifest but not fetched.
+# `header` is the model-column regex for tools/specs/table.py (default: its own HEADER).
+#
+# Out of scope (docs/freshness.md): Huawei (terms), SolarEdge and Sigenergy (bot walls: knowledge-center.solaredge.com and
+# www.solaredge.com answer 403 to robots.txt behind Cloudflare; sigenergy.com's download centre is a JavaScript app whose
+# /en/download-center-pdf/<id> links answer HTML, not a PDF). They are recorded in the report, never fetched.
+
+ua: "GridFit watch (+https://gridfit.eu)"
+keep_title: '(?i)data ?sheet|datenblatt|fiche technique|flyer|technical data|specification'
+drop_title: '(?i)manual|guide|warranty|certificate|declaration|brochure|catalog|firmware|release note|quick|install|_(zh|cn|fr|de|nl|pl|es|it|pt|cs|hu|ro|tr|ja|th|vi|fi|sv|da|el|ru|uk|he|ar)[_.-]|\b(FR|DE|NL|PL|ES|IT|PT|CS|HU|RO|TR|TH|VI|FI|SV|DA|EL|RU|UK|HE|AR|CN|ZH)\b'
+
+recipes:
+  # ------------------------------------------------------------------ http (GitHub Actions, Monday)
+  - id: deye
+    brand: Deye
+    mode: http
+    kind: sitemap-pages
+    url: https://deye.com/sitemaps.xml
+    follow: 'product-sitemap\d*\.xml'
+    keep: '^https://deye\.com/product/[^/]+/?$'
+    drop: '(?i)dehumidif|purifier|pint|dryer|air-con|air-water|cooler|heater|/dyd?-'
+    item: 'href="(?P<url>https://deye\.com/wp-content/uploads/[^"]+\.pdf)"'
+    keep_title: '(?i)datasheet'
+    header: '^(SUN-|SUN\d|BOS|SE-|RW-|GB-|GE-|AI-|SG\d)'
+
+  - id: goodwe
+    brand: GoodWe
+    mode: http
+    kind: sitemap-pages
+    url: https://en.goodwe.com/sitemap.xml
+    keep: '/[a-z0-9-]*-series-[a-z0-9-]*$|/bat-[^/]+$'
+    # the product page labels a redirecting link: <a href="/Skippower/downloadFileF?id=..&mid=60"> ... <p>Datasheet</p>
+    item: 'href="(?P<url>/Skippower/downloadFileF\?id=\d+&(?:amp;)?mid=\d+)"[^>]*>(?:(?!</a>).){0,400}?<p>\s*(?P<title>Datasheet[^<]*)</p>'
+    item_dotall: true
+    keep_title: '(?i)datasheet'
+    header: '^(GW|ET|EH|ES|EM|BT|BH|SBP|DNS|MS|SDT|SMT|HT|MT|XS|DT|BP|Lynx)'
+
+  - id: sungrow
+    brand: Sungrow
+    mode: http
+    kind: sitemap-pages
+    url: https://www.sungrowpower.com/sitemap.xml
+    keep: '^https://www\.sungrowpower\.com/eu/en/products/[^/]+/[^/]+$'
+    drop: '(?i)/products/(accessory|mlpe|ac-charger|floating|mounting)'
+    # the page embeds its download list as escaped JSON: "title":"Datasheet","description":"SH125CX_Datasheet",...,"buttonLink":"https://info-support..."
+    item: '\\"title\\":\\"(?P<type>Datasheet)\\",\\"description\\":\\"(?P<title>[^\\]*)\\",\\"buttonText\\":\\"[^\\]*\\",\\"buttonLink\\":\\"(?P<url>https://info-support\.sungrowpower\.com/[^\\"]+\.pdf)\\"'
+    keep_title: '.'
+    header: '^(SG\d|SH\d|SH-|ST\d|SBR|SBH|PowerStack|SC\d|SE\d|AC\d|IDC|CDC|SGM|SP\d)'
+
+  - id: foxess
+    brand: Fox ESS
+    mode: http
+    kind: pages
+    url: https://www.fox-ess.com/Index/getRes?p={page}
+    method: POST
+    body: "catid=34&modelid=43&page={page}&cat_type=&lan_type=&pro_type=&kw="
+    json_field: data
+    pages: 30
+    item: '<li class="down-load-inof-nub.*?File Name :</div>\s*<div class="std-text18">\s*(?P<title>[^<]+?)\s*</div>.*?File Type :</div>\s*<div class="std-text18">\s*(?P<type>[^<]+?)\s*</div>.*?<a href="(?P<url>[^"]+\.pdf)"'
+    item_dotall: true
+    type: '(?i)datasheet'
+    keep_title: '.'
+    header: '^(H[13]-|AC[13]-|T\d|S\d|P3-|KH|KL|F[0-9]|G[0-9]|R\d|A\d|Q\d|EP|EQ|ECS|HV|CS|SH|MIRA|ETM|EGM|ENTG|EH)'
+
+  - id: growatt
+    brand: Growatt
+    mode: http
+    kind: pages
+    url: https://en.growatt.com/support/download/datasheet?page={page}
+    pages: 60
+    # en.growatt.com/robots.txt disallows /upload/: the sheets are listed in the manifest and never fetched (docs/freshness.md)
+    item: 'data-href="(?P<url>/upload/file/[^"]+\.pdf)"[^>]*download="(?P<title>[^"]+)"'
+    file_host: https://en.growatt.com/upload/
+    header: '^(MIN|MID|MAX|MOD|MAC|SPH|SPA|SPF|WIT|APX|ARK|AXE|ALP|NEO|NOAH|THOR|TL-X|SPM|TL3|HOPE|ARO|ARB)'
+
+  - id: sofar
+    brand: Sofar
+    mode: http
+    kind: pages
+    # the European download centre (downloads.sofarsolar.eu, WordPress + FacetWP) has static links; sofarsolar.com's
+    # product pages carry none, /download-center is 404, sofarsolar.de answers 403, .it has a broken certificate, .co.uk no DNS
+    url: "https://downloads.sofarsolar.eu/?_download_type=datasheets&_language=en&_paged={page}"
+    pages: 30
+    item: 'href="(?P<url>https://downloads\.sofarsolar\.eu/wp-content/uploads/sofar/Datasheets/EN/[^"]+\.pdf)"'
+    keep_title: '.'
+    header: '^(HYD|SOFAR|\d+(\.\d+)?K?TL|ESI|BTS|GTX|AMASS|PowerAll|PowerMagic|SF-|BT\d|CBS|ME\d|\d+KTLX|ZCS)'
+
+  - id: hoymiles
+    brand: Hoymiles
+    mode: http
+    kind: hoymiles-api
+    url: https://www.hoymiles.com/ysecm_api
+    catid: "53"
+    siteid: "1"
+    sids: ["1", "2", "3", "4"]
+    # the files live on w3oss.hoymiles.com, whose robots.txt answers 403 (= disallowed under the watch's rule, see the report)
+    file_host: https://w3oss.hoymiles.com/
+    keep_title: '(?i)datasheet'
+    drop_title: '(?i)_(ZH|CN|FR|DE|NL|PL|ES|IT|PT|CS|HU|RO|TR|TH|VI|FI|SV|DA|EL|RU|UK|HE|AR|ID|KO|JA)[_.-]|_(ZH|CN|FR|DE|NL|PL|ES|IT|PT|CS|HU|RO|TR|TH|VI|FI|SV|DA|EL|RU|UK|HE|AR|ID|KO|JA)$'
+    header: '^(HMS|HMT|HM-|HYS|HYT|MIT|MIS|MS-|HAT|HAS|DTU|MI-|HiFlow)'
+
+  - id: solis
+    brand: Solis
+    mode: http
+    kind: solis-api
+    url: https://www.solisinverters.com/api/Form/getDownloadcenterNavbar?lang=en
+    form: https://www.solisinverters.com/api/Form/getForm/name/{name}?keyword=&type=
+    keep_title: '(?i)datasheet|flyer'
+    header: '^(S[56]-|RHI|RAI|Solis|\d+K)'
+
+  # ------------------------------------------------------------------ edge (madis-pc, Sunday evening)
+  - id: sma
+    brand: SMA
+    mode: edge
+    kind: edge-sitemap
+    url: https://www.sma.de/en/sitemap.xml?sitemap=pages
+    keep: '/en/products/(solar-?inverters|hybrid-inverters|battery-inverters|energy-storage)/[^/]+$'
+    # the product page's download list is rendered by script; the HTML as served has no files.sma.de datasheet link
+    item: 'href="(?P<url>https://files\.sma\.de/downloads/[^"]+-DS-[a-z_]+-\d+\.pdf)"'
+    keep_title: '-DS-'
+    header: '^(STP|SB|SBS|SBSE|STPS|SI|SHP|SCS|EVC|SBR)'
+
+  - id: kostal
+    brand: Kostal
+    mode: edge
+    kind: edge-page
+    url: https://www.kostal-solar-electric.com/en/download/
+    # DB_ = Datenblatt; the filter links of the download centre are generated by script
+    item: 'href="(?P<url>/fileadmin/downloadcenter/kse/DB/[^"]+\.pdf)"'
+    keep_title: '(?i)_en\.pdf$|_en_|-en\.pdf$'
+    header: '^(PLENTICORE|PIKO|ENECTOR|KSEM)'
+
+  - id: solax
+    brand: SolaX
+    mode: edge
+    kind: edge-page
+    # www.solaxpower.com/robots.txt disallows /ysecm_api, the listing API; the downloads page itself is allowed and is
+    # rendered here like a visitor's browser renders it. The file type "Datasheet" (tid 4) is the page's default;
+    # English is lid 24. Each /downloads-NNNN.html answers a meta refresh to /uploads/file/<name>.pdf (fetched over HTTP).
+    url: https://www.solaxpower.com/downloads.html
+    clicks:
+      - '.ys-select-li[data-id="lid"][data-input-value="24"]'
+    paginate: {next: '.pages a.next, .page-next, a.next, .ys-page-next', max: 15}
+    item: '<a[^>]+href="(?P<url>/downloads-\d+\.html)"[^>]*>(?:(?!</a>).){0,600}?class="dull-name[^"]*">\s*(?P<title>[^<]+?)\s*<'
+    item_dotall: true
+    keep_title: '(?i)datasheet'
+    header: '^(X[13]-|X1|X3|J1-|A1-|T\d|TRENE|HYBRID|ULTRA|MEGA|FORTH|MIC|PRO|BOOST|MINI|AIR|SMART|FIT|IES|TBB|AELIO|T-BAT|TRIPLE|EVC)'

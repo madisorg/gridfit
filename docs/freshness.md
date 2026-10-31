@@ -95,6 +95,8 @@ nothing pending.
 | 1st of the month | the same run also reads every grid list (`--registers-refresh`) | GitHub Actions |
 | weekly, any Monday | grid lists too, once the repository variable `REGISTERS_WEEKLY` is `true` | GitHub Actions |
 | Sunday evening | the watch's Edge pages (`--edge`), committed so Monday's report folds them in | madis-pc, scheduled task |
+| Monday, after the watch | the datasheet harvester's HTTP recipes (`tools/specs/harvest.py --http`): new maker sheets -> manifest + review drafts + `docs/harvest-report.md` | GitHub Actions |
+| Sunday evening, after the watch | the harvester's Edge recipes (`--edge`: SMA, Kostal, SolaX), manifest `harvest-edge.json` committed, folded into Monday's report | madis-pc, the same task |
 
 Weekly is enough because the lists themselves move weekly: AT and BE published their latest files on a Thursday
 and a Friday, so a Monday run sees them within four days. Daily runs would add requests without moving GridFit,
@@ -102,6 +104,35 @@ which is rebuilt on every push anyway. The step that would make GridFit itself f
 weekly instead of monthly** — today a new list row waits on average two weeks. The watch already reads every
 list except Austria each week and says which rows are pending; flipping `REGISTERS_WEEKLY` (Settings → Secrets and
 variables → Actions → Variables) brings them in, after the Austria question above is answered.
+
+## Datasheets
+
+The spec layer (`data/specs/`, README) is fed by `tools/specs/harvest.py`, recipes in `tools/specs/harvest.yaml`.
+
+- **What runs where.** `--http` runs on GitHub Actions right after the watch: maker sitemaps -> product pages
+  (Deye, GoodWe, Sungrow's `www.sungrowpower.com/eu/en/products/`, whose pages embed the "Datasheet" button's
+  info-support URL as JSON), download centres with plain pages (Fox ESS `/Index/getRes`, Growatt
+  `/support/download/datasheet?page=N`, Sofar's European centre `downloads.sofarsolar.eu` with its FacetWP query
+  string), and two APIs (Hoymiles `ysecm_api` type -> series -> product -> file list; Solis `getDownloadcenterNavbar`).
+  `--edge` runs on madis-pc in the Sunday task: SMA product pages (their download list is script-rendered), the Kostal
+  download centre and SolaX's `downloads.html` (its listing API `/ysecm_api` is disallowed by robots.txt; the page
+  itself is allowed and is rendered the way a visitor's browser renders it, the `/downloads-NNNN.html` links then
+  answer a meta refresh to the file). Same politeness as the watch - the watch's own `Net` class: robots.txt per host,
+  one request per second per host, browser-honest user agent, `If-None-Match` / `If-Modified-Since` from the manifest,
+  no retries.
+- **What it writes.** PDFs into `cache/specs/<brand>/` (git-ignored; on Actions they live for the run only, the
+  manifest's sha256 and ETag make the next week's run a set of 304s). `data/specs/harvest.json` (`harvest-edge.json`
+  from madis-pc): per PDF the URL, sha256, size, first/last seen, maker, route (`ok`, `edge`, `robots` = listed but the
+  file host's robots.txt disallows, `failed`) and the model columns `table.py` read. A new or changed sheet becomes
+  rows in **`data/specs/_drafts/<brand>.yaml`** - raw strings kept, `status: draft`, never read by the site.
+  `docs/harvest-report.md`: new, changed, unreadable sheets, failed routes, blocked makers, and how many register
+  models each maker's sheets could cover.
+- **What stays by hand.** The live `data/specs/<brand>.yaml`: a draft row is reviewed against the sheet, the
+  correction is written into `tools/specs/draft.py` (named, with the reason) and that script writes the brand file,
+  as before. Growatt's and Hoymiles' files: their listings are read, their file hosts (`/upload/`, `w3oss.hoymiles.com`)
+  are disallowed or answer 403 to robots.txt, so the manifest names the sheets and they are fetched by hand. Huawei
+  (terms), SolarEdge (Cloudflare 403 on everything) and Sigenergy (download centre is a script app; its PDF links
+  answer HTML) are recorded in the report and never fetched.
 
 ## The incoming channel
 

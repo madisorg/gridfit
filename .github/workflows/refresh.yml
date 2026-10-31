@@ -2,7 +2,9 @@
 # registers are downloaded, parsed and diffed too (data/registers/); every week when the repository
 # variable REGISTERS_WEEKLY is "true" (docs/freshness.md says what has to be settled first). Then the
 # freshness watch (tools/watch/run.py) looks for new models at makers, in the lists, the integrations
-# and the press, and writes docs/watch-report.md. Each push triggers the Cloudflare Pages build.
+# and the press, and writes docs/watch-report.md; the datasheet harvester (tools/specs/harvest.py --http)
+# fetches new maker datasheets and writes review drafts to data/specs/_drafts/ plus docs/harvest-report.md.
+# Each push triggers the Cloudflare Pages build.
 #
 # Two things keep a passive site alive:
 # - data/dataset/REFRESHED is rewritten on every run, so there is a commit every week even when no
@@ -56,14 +58,20 @@ jobs:
         # a failing source or a failing watch must not stop the dataset refresh
         continue-on-error: true
         run: python tools/watch/run.py
-      - name: keep the watch report as a run artifact
+      - name: harvest the makers' datasheets (HTTP recipes; manifest and review drafts are committed, the PDFs are not)
+        # tools/specs/harvest.yaml; docs/freshness.md "Datasheets". A failing route must not stop the dataset refresh.
+        continue-on-error: true
+        run: python tools/specs/harvest.py --http
+      - name: keep the watch and harvest reports as a run artifact
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
         with:
           name: watch-report
           path: |
             docs/watch-report.md
+            docs/harvest-report.md
             data/watch/candidates.json
+            data/specs/harvest.json
           if-no-files-found: ignore
           retention-days: 90
       - name: commit what changed, plus the weekly stamp
@@ -73,6 +81,7 @@ jobs:
           printf 'last refresh: %s\nregisters: %s\n' "$(date -u +%FT%TZ)" "${{ steps.mode.outputs.registers }}" > data/dataset/REFRESHED
           git add data/dataset data/registers
           git add data/watch docs/watch-report.md 2>/dev/null || true
+          for p in data/specs/harvest.json data/specs/_drafts docs/harvest-report.md; do [ -e "$p" ] && git add "$p"; done
           if [ "${{ steps.mode.outputs.registers }}" = "true" ]; then
             git commit -m "dataset: refresh $(date -u +%F) + grid registers"
           else

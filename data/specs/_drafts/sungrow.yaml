@@ -1,0 +1,421 @@
+brand: Sungrow
+status: draft
+rule: DRAFT - every value below was read by tools/specs/table.py from the sheet named in `source` and has not been reviewed.
+  Review each row against the sheet, correct it in tools/specs/draft.py (named, with the reason) and let draft.py write data/specs/<brand>.yaml;
+  this file is never read by the site.
+sources:
+- id: ds_20221121_sg320hx_datasheet_v17_en
+  url: https://info-support.sungrowpower.com/application/pdf/2022/11/30/DS_20221121_SG320HX_Datasheet_V17_EN.pdf
+  file: DS_20221121_SG320HX_Datasheet_V17_EN.pdf
+  title: SG320HX Datasheet
+  sha256: 97791db897521cc01ddeb9caf970d079c6770fff02f74f3a3de137ab32db18ff
+  seen: '2026-11-01'
+- id: ds_20230925_st5015kwh-2500kw-2h_1250kw-4h_v3_en
+  url: https://info-support.sungrowpower.com/application/pdf/2024/02/21/DS_20230925_ST5015kWh-2500kW-2h_1250kW-4h_V3_EN.pdf
+  file: DS_20230925_ST5015kWh-2500kW-2h_1250kW-4h_V3_EN.pdf
+  title: ST5015kWh-2500kW-2h_1250kW-4h Datasheet
+  sha256: e244c8208bedfc5c14191f60f8edd7c608ba83fc7c004aef696a214629d0e8de
+  seen: '2026-11-01'
+- id: ds_20240328_sh15_20_25t_datasheet_v3_en(au)
+  url: https://info-support.sungrowpower.com/application/pdf/2024/03/29/DS_20240328_SH15_20_25T_Datasheet_V3_EN(AU).pdf
+  file: DS_20240328_SH15_20_25T_Datasheet_V3_EN(AU).pdf
+  title: SH15/20/25T Datasheet
+  sha256: 014ece815029a5ac27806ef306fcce0f3b7d115f8d10e6f6f6cff5a87ba030ab
+  seen: '2026-11-01'
+- id: ds_20240329_sbh100_150_200_250_300_350_400_datasheet_v4_en
+  url: https://info-support.sungrowpower.com/application/pdf/2024/08/30/DS_20240329_SBH100_150_200_250_300_350_400_Datasheet_V4_EN.pdf
+  file: DS_20240329_SBH100_150_200_250_300_350_400_Datasheet_V4_EN.pdf
+  title: SBH100/150/200/250/300/350/400 Datasheet
+  sha256: 663a861cd69c4e3fbc87bd479a9b1c0c3ff51614cac3087bef2dbe092a1ce4d0
+  seen: '2026-11-01'
+- id: ds_20231201_sh15_20_25t_datasheet_v3_en
+  url: https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf
+  file: DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf
+  title: SH15/20/25T Datasheet
+  sha256: 9a794c508b8229668df74708b61ca9cb5a65a23465e09232ca68544abd494e83
+  seen: '2026-11-01'
+- id: ds_20240907_sbr064_096_128_160_192_224_256_datasheet_v5_en
+  url: https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20240907_SBR064_096_128_160_192_224_256_Datasheet_V5_EN.pdf
+  file: DS_20240907_SBR064_096_128_160_192_224_256_Datasheet_V5_EN.pdf
+  title: SBR064/096/128/160/192/224/256 Datasheet
+  sha256: 764e9b1937973713dfa3385d5fd03078ba191591f670fb5489e0dad1df583033
+  seen: '2026-11-01'
+- id: ds_20241226_mvs6400-lv_datasheet_v3_en_mea_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/01/06/DS_20241226_MVS6400-LV_Datasheet_V3_EN%EF%BC%88MEA%EF%BC%89.pdf
+  file: DS_20241226_MVS6400-LV_Datasheet_V3_EN_MEA_.pdf
+  title: MVS6400-LV (MEA) Datasheet
+  sha256: 9b20dbc2b29f65c228468f3ba57ddddd3eea2ed76ac0bdb826c71ebc8e2b58c9
+  seen: '2026-11-01'
+- id: ds_20241226_mvs8960-lv_datasheet_v5_en_mea_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/01/06/DS_20241226_MVS8960-LV_Datasheet_V5_EN%EF%BC%88MEA%EF%BC%89.pdf
+  file: DS_20241226_MVS8960-LV_Datasheet_V5_EN_MEA_.pdf
+  title: MVS8960-LV (MEA) Datasheet
+  sha256: bcf3e22bd1895c3d951eb8397f321d8d86f47bc7174c1aa59db67aad9ac9caab
+  seen: '2026-11-01'
+- id: ds_20250108_mvs6400-lv_datasheet_v3_en_apac_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/01/14/DS_20250108_MVS6400-LV_Datasheet_V3_EN%EF%BC%88APAC%EF%BC%89.pdf
+  file: DS_20250108_MVS6400-LV_Datasheet_V3_EN_APAC_.pdf
+  title: MVS6400-LV (APAC) Datasheet
+  sha256: bdc85c90ab8848d2740dbb2d385b90a48c088ecc30c5d077b477627ebdd9c9be
+  seen: '2026-11-01'
+- id: ds_20250108_mvs8960-lv_datasheet_v3_en_apac_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/01/14/DS_20250108_MVS8960-LV_Datasheet_V3_EN%EF%BC%88APAC%EF%BC%89.pdf
+  file: DS_20250108_MVS8960-LV_Datasheet_V3_EN_APAC_.pdf
+  title: MVS8960-LV (APAC) Datasheet
+  sha256: 91ce150218436b18538bb73706493ee6729efd0d5249bdd08d8c105ff9aa2026
+  seen: '2026-11-01'
+- id: ds_20250325_mvs6400-lv_datasheet_v4_en_la_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_MVS6400-LV_Datasheet_V4_EN%EF%BC%88LA%EF%BC%89.pdf
+  file: DS_20250325_MVS6400-LV_Datasheet_V4_EN_LA_.pdf
+  title: MVS6400-LV (LA) Datasheet
+  sha256: efa3930795d6301cd6525ce2b4077925346f805ff69a1185eae12a5a7cfa82bb
+  seen: '2026-11-01'
+- id: ds_20250325_mvs8960-lv_datasheet_v4_en_la_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_MVS8960-LV_Datasheet_V4_EN%EF%BC%88LA%EF%BC%89.pdf
+  file: DS_20250325_MVS8960-LV_Datasheet_V4_EN_LA_.pdf
+  title: MVS8960-LV (LA) Datasheet
+  sha256: 3a794842c4b96212f266327bb88c5d239e60d6e847321e88681f7a58b1575572
+  seen: '2026-11-01'
+- id: ds_20250418_mvs6400-lv_datasheet_v4_en_eur_
+  url: https://info-support.sungrowpower.com/application/pdf/2025/04/23/DS_20250418_MVS6400-LV_Datasheet_V4_EN%EF%BC%88EUR%EF%BC%89.pdf
+  file: DS_20250418_MVS6400-LV_Datasheet_V4_EN_EUR_.pdf
+  title: MVS6400-LV (EUR) Datasheet
+  sha256: ca868f1aa69ab94b26211ef39759fe4dd8bd524b5fe3b244ddf18fe70e4e0a91
+  seen: '2026-11-01'
+- id: ds_20250418_mvs8960-lv_datasheet_v4_en(eur)
+  url: https://info-support.sungrowpower.com/application/pdf/2025/04/23/DS_20250418_MVS8960-LV_Datasheet_V4_EN(EUR).pdf
+  file: DS_20250418_MVS8960-LV_Datasheet_V4_EN(EUR).pdf
+  title: MVS8960-LV (EUR) Datasheet
+  sha256: 0ed1d34472bb19d4085842dd394dc213113ae54627fcbb83f22d99a87578b071
+  seen: '2026-11-01'
+- id: ds_20240320_sh3.0_3.6_4.0_5.0_6.0rs_datasheet_v18_en
+  url: https://info-support.sungrowpower.com/application/pdf/2025/06/30/DS_20240320_SH3.0_3.6_4.0_5.0_6.0RS_Datasheet_V18_EN.pdf
+  file: DS_20240320_SH3.0_3.6_4.0_5.0_6.0RS_Datasheet_V18_EN.pdf
+  title: SH3.0/3.6/4.0/5.0/6.0RS Datasheet
+  sha256: 05bea6190b5515286ec7b42ca1453fa3819079414100c6ddc03fbe9b048e3ea8
+  seen: '2026-11-01'
+- id: 0270ed63-e404-494d-b14f-9234cb9adc73
+  url: https://info-support.sungrowpower.com/datasheet-material/0270ed63-e404-494d-b14f-9234cb9adc73.pdf
+  file: 0270ed63-e404-494d-b14f-9234cb9adc73.pdf
+  title: ST6900UX-4H Datasheet
+  sha256: 8f5cb2ac83b1ef2faa28a9a63d81adc7ed3d51d0a2ff7b303f4addbc1013b2f2
+  seen: '2026-11-01'
+- id: 6d853e57-5fb5-4c73-afb4-ef8cebc99c3f
+  url: https://info-support.sungrowpower.com/datasheet-material/6d853e57-5fb5-4c73-afb4-ef8cebc99c3f.pdf
+  file: 6d853e57-5fb5-4c73-afb4-ef8cebc99c3f.pdf
+  title: ChargeStack1000 Datasheet
+  sha256: d5951abf4c9700494b97b22c60e94356b3378ffa9d1ab0d8a5f24652439cd453
+  seen: '2026-11-01'
+- id: cd0d7912-cdfd-420e-abb1-a0a4d010a12a
+  url: https://info-support.sungrowpower.com/datasheet-material/cd0d7912-cdfd-420e-abb1-a0a4d010a12a.pdf
+  file: cd0d7912-cdfd-420e-abb1-a0a4d010a12a.pdf
+  title: IDC80E
+  sha256: 49154f364d904642df570e046e6b7bc8333a294fec278453af1cc56a55a62326
+  seen: '2026-11-01'
+models:
+- code: SG320HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20221121_sg320hx_datasheet_v17_en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: ST5015kWh-2500kW-2h
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20230925_st5015kwh-2500kw-2h_1250kw-4h_v3_en
+  raw:
+    phases: 6 352 3 3
+- code: ST5015kWh-1250kW-4h
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20230925_st5015kwh-2500kw-2h_1250kw-4h_v3_en
+  raw:
+    phases: 6 352 3 3
+- code: SH15
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20240328_sh15_20_25t_datasheet_v3_en(au)
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SH25T
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20240328_sh15_20_25t_datasheet_v3_en(au)
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SBH100
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20240329_sbh100_150_200_250_300_350_400_datasheet_v4_en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SH15
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20231201_sh15_20_25t_datasheet_v3_en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SH25T
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20231201_sh15_20_25t_datasheet_v3_en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SBR064
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20240907_sbr064_096_128_160_192_224_256_datasheet_v5_en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20241226_mvs6400-lv_datasheet_v3_en_mea_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20241226_mvs6400-lv_datasheet_v3_en_mea_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20241226_mvs8960-lv_datasheet_v5_en_mea_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20241226_mvs8960-lv_datasheet_v5_en_mea_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250108_mvs6400-lv_datasheet_v3_en_apac_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250108_mvs6400-lv_datasheet_v3_en_apac_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250108_mvs8960-lv_datasheet_v3_en_apac_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250108_mvs8960-lv_datasheet_v3_en_apac_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250325_mvs6400-lv_datasheet_v4_en_la_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250325_mvs6400-lv_datasheet_v4_en_la_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250325_mvs8960-lv_datasheet_v4_en_la_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250325_mvs8960-lv_datasheet_v4_en_la_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250418_mvs6400-lv_datasheet_v4_en_eur_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250418_mvs6400-lv_datasheet_v4_en_eur_
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250418_mvs8960-lv_datasheet_v4_en(eur)
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG350HX-20
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ds_20250418_mvs8960-lv_datasheet_v4_en(eur)
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SH4.0RS
+  mppt: 2
+  ac_kw: null
+  ac_kva: 4.0
+  ac_a: null
+  phases: null
+  pv_kw: 6.0
+  source: ds_20240320_sh3.0_3.6_4.0_5.0_6.0rs_datasheet_v18_en
+  raw:
+    mppt: '2'
+    ac_va: '4000'
+    pv_w: '6000'
+    phases: 1 1
+- code: SH5.0RS
+  mppt: 2
+  ac_kw: null
+  ac_kva: 6.0
+  ac_a: null
+  phases: null
+  pv_kw: 7.5
+  source: ds_20240320_sh3.0_3.6_4.0_5.0_6.0rs_datasheet_v18_en
+  raw:
+    mppt: '2'
+    ac_va: '6000'
+    pv_w: 7500 9000
+    phases: 1 1
+- code: ST6900UX-4H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 0270ed63-e404-494d-b14f-9234cb9adc73
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: CDC1000E
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 6d853e57-5fb5-4c73-afb4-ef8cebc99c3f
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: IDC80E
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cd0d7912-cdfd-420e-abb1-a0a4d010a12a
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'

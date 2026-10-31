@@ -1,0 +1,2602 @@
+brand: Deye
+status: draft
+rule: DRAFT - every value below was read by tools/specs/table.py from the sheet named in `source` and has not been reviewed.
+  Review each row against the sheet, correct it in tools/specs/draft.py (named, with the reason) and let draft.py write data/specs/<brand>.yaml;
+  this file is never read by the site.
+sources:
+- id: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-1-4k-g04p1-eu-am1_20260706_en.pdf
+  file: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en.pdf
+  title: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en.pdf
+  sha256: 59f321eb1ad5f06ced921438f71d63faf18436edc5792d200637305d34ee4533
+  seen: '2026-11-01'
+- id: b_datasheet_sun-10-15k-g05-lv_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-10-15k-g05-lv_20260706_en.pdf
+  file: b_datasheet_sun-10-15k-g05-lv_20260706_en.pdf
+  title: b_datasheet_sun-10-15k-g05-lv_20260706_en.pdf
+  sha256: f5506a962b640633b9e9fe2a72159f5b9fc65a34ac60e8ed2b406ab41960ffcf
+  seen: '2026-11-01'
+- id: b_datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en.pdf
+  file: b_datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en.pdf
+  title: b_datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en.pdf
+  sha256: 7842e3d693e6cbcc84aa748602c98414e05447a164182a600d9816764bf051ca
+  seen: '2026-11-01'
+- id: b_datasheet_sun-12-16kk-sg01lp1-eu_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-12-16kk-sg01lp1-eu_20260706_en.pdf
+  file: b_datasheet_sun-12-16kk-sg01lp1-eu_20260706_en.pdf
+  title: b_datasheet_sun-12-16kk-sg01lp1-eu_20260706_en.pdf
+  sha256: 505f83231d7ca0bc565b19003e4fdbc00878ad631c1bb1864434c9dc4fcc141e
+  seen: '2026-11-01'
+- id: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-120-136k-g01p3-eu-am8_20260706_en.pdf
+  file: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en.pdf
+  title: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en.pdf
+  sha256: 685cb7f0e0e118438943e20cbaec55b4ec695d28987f8aa96178cf56f097f366
+  seen: '2026-11-01'
+- id: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en.pdf
+  file: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en.pdf
+  title: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en.pdf
+  sha256: 723acb09ec1537c64d109a150cc98d988d6c469c385b9af043fd1a4cb2043621
+  seen: '2026-11-01'
+- id: b_datasheet_sun-18-21k-g04-lv_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-18-21k-g04-lv_20260706_en.pdf
+  file: b_datasheet_sun-18-21k-g04-lv_20260706_en.pdf
+  title: b_datasheet_sun-18-21k-g04-lv_20260706_en.pdf
+  sha256: fa2195ac5eb8c1b3598c881cf61d8297a880ca968c1f6074f701b02f58ab7c77
+  seen: '2026-11-01'
+- id: b_datasheet_sun-23-30k-g04-lv_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-23-30k-g04-lv_20260706_en.pdf
+  file: b_datasheet_sun-23-30k-g04-lv_20260706_en.pdf
+  title: b_datasheet_sun-23-30k-g04-lv_20260706_en.pdf
+  sha256: a5daae70db74611c76e8e0d2ecbb038418c85e778dc6518a9eaf5ddfa02246c3
+  seen: '2026-11-01'
+- id: b_datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en.pdf
+  file: b_datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en.pdf
+  title: b_datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en.pdf
+  sha256: 5fe6d9d9dcc6cb235e158dc6dc11f76df537a82aa12bc782d3cd9c9ff60850a2
+  seen: '2026-11-01'
+- id: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en.pdf
+  file: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en.pdf
+  title: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en.pdf
+  sha256: 4f66ed8250efb839de5e472ba01486676443f672fb22954a978ee47bb27f3155
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en.pdf
+  file: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en.pdf
+  title: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en.pdf
+  sha256: 5a5f5419a65e6256b2a9ef9d32862ef3a6faad0939b18421ff70341fa7bb4301
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3-6k-sg04lp1_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-6k-sg04lp1_20260706_en.pdf
+  file: b_datasheet_sun-3-6k-sg04lp1_20260706_en.pdf
+  title: b_datasheet_sun-3-6k-sg04lp1_20260706_en.pdf
+  sha256: 909599ce6db7256d5b7d45326bcc052260510e1ec92310283a739f4d70aa0859
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en.pdf
+  file: b_datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en.pdf
+  title: b_datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en.pdf
+  sha256: 38d8b00ad243848dbb3a6f031f63205287a1d6c5eefb53e6910dd643b8e6fec3
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en.pdf
+  file: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en.pdf
+  title: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en.pdf
+  sha256: 8c5e53375513a82bdfa809e227c7d31a0e9eb335147239bfbf1610d4bcfc099f
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en.pdf
+  file: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en.pdf
+  title: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en.pdf
+  sha256: 896d1ec6d1cba5bcd1b1956f99e1ca619afa1e32806dcaf5bf4917665367c7a5
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en.pdf
+  file: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en.pdf
+  title: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en.pdf
+  sha256: b79eafbf4294b3400f86035e15c13424adedcd179ff8d6c4c5d583b161453efc
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en.pdf
+  file: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en.pdf
+  title: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en.pdf
+  sha256: bef89bf446c060726efcd4aba5632eb465de1b659b11eeae68c5111a6c6301f2
+  seen: '2026-11-01'
+- id: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en.pdf
+  file: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en.pdf
+  title: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en.pdf
+  sha256: 698a3cab68d6ef3c897a14a20a0675c314c7e8ca5aeba0c338f373d5b65fb609
+  seen: '2026-11-01'
+- id: b_datasheet_sun-30-36k-g04_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-30-36k-g04_20260706_en.pdf
+  file: b_datasheet_sun-30-36k-g04_20260706_en.pdf
+  title: b_datasheet_sun-30-36k-g04_20260706_en.pdf
+  sha256: aaa37e59c6c218f1d279e04cb6145d226ac80a2b5488d8370f1ad85eb7d1e236
+  seen: '2026-11-01'
+- id: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en.pdf
+  file: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en.pdf
+  title: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en.pdf
+  sha256: 261d12e04b024c2d360a07b82456a7c67b93a34694f7ca56c3614550931d348d
+  seen: '2026-11-01'
+- id: b_datasheet_sun-40-50k-g04_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-40-50k-g04_20260706_en.pdf
+  file: b_datasheet_sun-40-50k-g04_20260706_en.pdf
+  title: b_datasheet_sun-40-50k-g04_20260706_en.pdf
+  sha256: e05c5138fbf403177bdc65552806227bfc5a387a2de836a834367908fe339b97
+  seen: '2026-11-01'
+- id: b_datasheet_sun-5-12k-sg04lp3_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-5-12k-sg04lp3_20260706_en.pdf
+  file: b_datasheet_sun-5-12k-sg04lp3_20260706_en.pdf
+  title: b_datasheet_sun-5-12k-sg04lp3_20260706_en.pdf
+  sha256: 8bdfb779294a81914afe1d47d03d2ea2a1b36be699f578d3c4040c94ce565993
+  seen: '2026-11-01'
+- id: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en.pdf
+  file: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en.pdf
+  title: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en.pdf
+  sha256: b4631f3621330e16f9e39e2d59c1917e7cdcd9881aef19fcea6e9689d15e2820
+  seen: '2026-11-01'
+- id: b_datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en.pdf
+  file: b_datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en.pdf
+  title: b_datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en.pdf
+  sha256: 93f317bef853cb0e5976f1858183137e348679ae626ba83ba3068fee3dac9d66
+  seen: '2026-11-01'
+- id: b_datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en.pdf
+  file: b_datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en.pdf
+  title: b_datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en.pdf
+  sha256: 2846b66f185c3ed275112c9f17ff84d8941b2d8e0b3271c504c59a34c57de54c
+  seen: '2026-11-01'
+- id: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-60-80k-g04p3-eu-am4_20260706_en.pdf
+  file: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en.pdf
+  title: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en.pdf
+  sha256: 0e594b5d835c85ec39cc62c1606efe8cbc84a8486f2469fc612eed59385e04f0
+  seen: '2026-11-01'
+- id: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en.pdf
+  file: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en.pdf
+  title: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en.pdf
+  sha256: 480503886805783db9ac0a39078f4c0806a78db365fb1e07db5449424d99e331
+  seen: '2026-11-01'
+- id: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en.pdf
+  file: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en.pdf
+  title: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en.pdf
+  sha256: eb6d9fe10623cbb50eb217cafd1524cf10c401e40b35e88380e5c881ce799001
+  seen: '2026-11-01'
+- id: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1.pdf
+  file: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1.pdf
+  title: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1.pdf
+  sha256: c8bed66e5ae448943071583cdae65cf9ffc91b3be04010a26e00a717e670f525
+  seen: '2026-11-01'
+- id: b_datasheet_sun-7-8k-g02p1-eu-am2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7-8k-g02p1-eu-am2_20260706_en.pdf
+  file: b_datasheet_sun-7-8k-g02p1-eu-am2_20260706_en.pdf
+  title: b_datasheet_sun-7-8k-g02p1-eu-am2_20260706_en.pdf
+  sha256: 4ab8f8c2e57fab98f6438a823ada13924a0acce7bdb627fd015982017c868e8e
+  seen: '2026-11-01'
+- id: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en.pdf
+  file: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en.pdf
+  title: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en.pdf
+  sha256: 8c9f2aeb2d5ec17afaef8618bdb52da5d17a21816e4dff0977aaacfd90fb2f74
+  seen: '2026-11-01'
+- id: b_datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en.pdf
+  file: b_datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en.pdf
+  title: b_datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en.pdf
+  sha256: d9467485c3b72d81a72364ed2a943997eecc490b0b004fb1616ba79eb09d8602
+  seen: '2026-11-01'
+- id: b_datasheet_sun-70-110k-g03_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-70-110k-g03_20260706_en.pdf
+  file: b_datasheet_sun-70-110k-g03_20260706_en.pdf
+  title: b_datasheet_sun-70-110k-g03_20260706_en.pdf
+  sha256: 2e090808131c3091da6fb93c84600b5c68aa61c222a62ca7b9101c272f51ff27
+  seen: '2026-11-01'
+- id: b_datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en
+  url: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en.pdf
+  file: b_datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en.pdf
+  title: b_datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en.pdf
+  sha256: 0ee5682504f6c66ca1883dc7c37209ae2d9ffadd60b82fcb8d2f5c457780a988
+  seen: '2026-11-01'
+- id: e9d10806_datasheet-sun-3-6k-sg06lp1-eu-bm2-en
+  url: https://deye.com/wp-content/uploads/2026/07/datasheet-sun-3-6k-sg06lp1-eu-bm2-en.pdf
+  file: e9d10806_datasheet-sun-3-6k-sg06lp1-eu-bm2-en.pdf
+  title: datasheet-sun-3-6k-sg06lp1-eu-bm2-en.pdf
+  sha256: e9d108066ba4f18710a1979f110ef1fc67ae0a174bea71a814bbc6d4fdb1320e
+  seen: '2026-11-01'
+models:
+- code: SUN-1K-G04
+  mppt: 1
+  ac_kw: 1.0
+  ac_kva: 1.1
+  ac_a: 4.8
+  phases: 1
+  pv_kw: 1.3
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '1'
+    ac_va: '1.1'
+    ac_a: 5/4.8
+    pv_w: '1.3'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-1.5K-G04
+  mppt: 1
+  ac_kw: 1.5
+  ac_kva: 1.65
+  ac_a: 7.2
+  phases: 1
+  pv_kw: 2.0
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '1.5'
+    ac_va: '1.65'
+    ac_a: 7.5/7.2
+    pv_w: '2'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-2K-G04
+  mppt: 1
+  ac_kw: 2.0
+  ac_kva: 2.2
+  ac_a: 9.6
+  phases: 1
+  pv_kw: 2.6
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '2'
+    ac_va: '2.2'
+    ac_a: 10/9.6
+    pv_w: '2.6'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-2.2K-G04
+  mppt: 1
+  ac_kw: 2.2
+  ac_kva: 2.42
+  ac_a: 10.6
+  phases: 1
+  pv_kw: 2.9
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '2.2'
+    ac_va: '2.42'
+    ac_a: 11/10.6
+    pv_w: '2.9'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-2.5K-G04
+  mppt: 1
+  ac_kw: 2.5
+  ac_kva: 2.75
+  ac_a: 12.0
+  phases: 1
+  pv_kw: 3.3
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '2.5'
+    ac_va: '2.75'
+    ac_a: 12.5/12
+    pv_w: '3.3'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-2.7K-G04
+  mppt: 1
+  ac_kw: 2.7
+  ac_kva: 2.97
+  ac_a: 13.0
+  phases: 1
+  pv_kw: 3.5
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '2.7'
+    ac_va: '2.97'
+    ac_a: 13.5/13
+    pv_w: '3.5'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-3K-G04
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 14.4
+  phases: 1
+  pv_kw: 3.9
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '3'
+    ac_va: '3.3'
+    ac_a: 15/14.4
+    pv_w: '3.9'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-3.3K-G04
+  mppt: 1
+  ac_kw: 3.3
+  ac_kva: 3.63
+  ac_a: 15.8
+  phases: 1
+  pv_kw: 4.3
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '3.3'
+    ac_va: '3.63'
+    ac_a: 16.5/15.8
+    pv_w: '4.3'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-3.6K-G04
+  mppt: 1
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 17.3
+  phases: 1
+  pv_kw: 4.7
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '3.6'
+    ac_va: '3.96'
+    ac_a: 18/17.3
+    pv_w: '4.7'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-4K-G04
+  mppt: 1
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 19.2
+  phases: 1
+  pv_kw: 5.2
+  source: b_datasheet_sun-1-4k-g04p1-eu-am1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '4'
+    ac_va: '4.4'
+    ac_a: 20/19.2
+    pv_w: '5.2'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-10K-G05-LV
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 25.1
+  phases: 3
+  pv_kw: 13.0
+  source: b_datasheet_sun-10-15k-g05-lv_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '10'
+    ac_va: '10'
+    ac_a: 26.3/25.1
+    pv_w: '13'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-12K-G05-LV
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 12.0
+  ac_a: 30.1
+  phases: 3
+  pv_kw: 15.6
+  source: b_datasheet_sun-10-15k-g05-lv_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '12'
+    ac_va: '12'
+    ac_a: 31.5/30.1
+    pv_w: '15.6'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-15K-G05-LV
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 15.0
+  ac_a: 37.6
+  phases: 3
+  pv_kw: 19.5
+  source: b_datasheet_sun-10-15k-g05-lv_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '15'
+    ac_va: '15'
+    ac_a: 39.4/37.6
+    pv_w: '19.5'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-100K-SG02HP3-EU-GM8
+  mppt: 8
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.5
+  phases: 3
+  pv_kw: 160.0
+  source: b_datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en
+  raw:
+    mppt: 8/2+2+2+2+2+2+2+2
+    ac_w: '100000'
+    ac_va: '110000'
+    ac_a: 166.7/159.5
+    pv_w: '160000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-100K-SG02HP3-EU-GM10
+  mppt: 8
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.5
+  phases: 3
+  pv_kw: 160.0
+  source: b_datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en
+  raw:
+    mppt: 8/2+2+2+2+2+2+2+2
+    ac_w: '100000'
+    ac_va: '110000'
+    ac_a: 166.7/159.5
+    pv_w: '160000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-125K-SG02HP3-EU-GM10
+  mppt: 10
+  ac_kw: 125.0
+  ac_kva: 135.0
+  ac_a: 195.7
+  phases: 3
+  pv_kw: 200.0
+  source: b_datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en
+  raw:
+    mppt: 10/2+2+2+2+2+2+2+2+2+2
+    ac_w: '125000'
+    ac_va: '135000'
+    ac_a: 204.6/195.7
+    pv_w: '200000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-12K-SG01LP1-EU
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 57.4
+  phases: 1
+  pv_kw: 19.2
+  source: b_datasheet_sun-12-16kk-sg01lp1-eu_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '12000'
+    ac_va: '13200'
+    ac_a: 60/57.4
+    pv_w: '19200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-14K-SG01LP1-EU
+  mppt: 3
+  ac_kw: 14.0
+  ac_kva: 15.4
+  ac_a: 67.0
+  phases: 1
+  pv_kw: 22.4
+  source: b_datasheet_sun-12-16kk-sg01lp1-eu_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '14000'
+    ac_va: '15400'
+    ac_a: 70/67
+    pv_w: '22400'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-16K-SG01LP1-EU
+  mppt: 3
+  ac_kw: 16.0
+  ac_kva: 17.6
+  ac_a: 76.5
+  phases: 1
+  pv_kw: 25.6
+  source: b_datasheet_sun-12-16kk-sg01lp1-eu_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '16000'
+    ac_va: '17600'
+    ac_a: 80/76.5
+    pv_w: '25600'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-120K-G01P3-EU-AM8
+  mppt: 8
+  ac_kw: 120.0
+  ac_kva: 132.0
+  ac_a: 191.4
+  phases: 3
+  pv_kw: 180.0
+  source: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '120'
+    ac_va: '132'
+    ac_a: 200/191.4
+    pv_w: '180'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-125K-G01P3-EU-AM8
+  mppt: 8
+  ac_kw: 125.0
+  ac_kva: 135.0
+  ac_a: 195.7
+  phases: 3
+  pv_kw: 187.5
+  source: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '125'
+    ac_va: '135'
+    ac_a: 204.6/195.7
+    pv_w: '187.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-130K-G01P3-EU-AM8
+  mppt: 8
+  ac_kw: 130.0
+  ac_kva: 135.0
+  ac_a: 195.7
+  phases: 3
+  pv_kw: 195.0
+  source: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '130'
+    ac_va: '135'
+    ac_a: 204.6/195.7
+    pv_w: '195'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-135K-G01P3-EU-AM8
+  mppt: 8
+  ac_kw: 135.0
+  ac_kva: 135.0
+  ac_a: 195.7
+  phases: 3
+  pv_kw: 202.5
+  source: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '135'
+    ac_va: '135'
+    ac_a: 204.6/195.7
+    pv_w: '202.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-136K-G01P3-EU-AM8
+  mppt: 8
+  ac_kw: 136.0
+  ac_kva: 136.0
+  ac_a: 197.2
+  phases: 3
+  pv_kw: 204.0
+  source: b_datasheet_sun-120-136k-g01p3-eu-am8_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '136'
+    ac_va: '136'
+    ac_a: 206.1/197.2
+    pv_w: '204'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-14K-SG05
+  mppt: 2
+  ac_kw: 14.0
+  ac_kva: 15.4
+  ac_a: 22.4
+  phases: 3
+  pv_kw: 22.4
+  source: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '14000'
+    ac_va: '15400'
+    ac_a: 23.4/22.4
+    pv_w: '22400'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-15K-SG05
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.0
+  phases: 3
+  pv_kw: 24.0
+  source: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '15000'
+    ac_va: '16500'
+    ac_a: 25/24
+    pv_w: '24000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-16K-SG05
+  mppt: 2
+  ac_kw: 16.0
+  ac_kva: 17.6
+  ac_a: 25.6
+  phases: 3
+  pv_kw: 25.6
+  source: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '16000'
+    ac_va: '17600'
+    ac_a: 26.7/25.6
+    pv_w: '25600'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-18K-SG05
+  mppt: 2
+  ac_kw: 18.0
+  ac_kva: 19.8
+  ac_a: 28.7
+  phases: 3
+  pv_kw: 28.8
+  source: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '18000'
+    ac_va: '19800'
+    ac_a: 30/28.7
+    pv_w: '28800'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-20K-SG05
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: 32.0
+  source: b_datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '20000'
+    ac_va: '22000'
+    ac_a: 33.4/31.9
+    pv_w: '32000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-18K-G04-LV
+  mppt: 2
+  ac_kw: 18.0
+  ac_kva: 18.0
+  ac_a: 45.2
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-18-21k-g04-lv_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '18'
+    ac_va: '18'
+    ac_a: 47.3/45.2
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-20K-G04-LV
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 20.0
+  ac_a: 50.2
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-18-21k-g04-lv_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '20'
+    ac_va: '20'
+    ac_a: 52.5/50.2
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-21K-G04-LV
+  mppt: 2
+  ac_kw: 21.0
+  ac_kva: 21.0
+  ac_a: 52.7
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-18-21k-g04-lv_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '21'
+    ac_va: '21'
+    ac_a: 55.2/52.7
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-23K-G04-LV
+  mppt: 3
+  ac_kw: 23.0
+  ac_kva: 23.0
+  ac_a: 57.7
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-23-30k-g04-lv_20260706_en
+  raw:
+    mppt: 3/3+3+3
+    ac_w: '23'
+    ac_va: '23'
+    ac_a: 60.4/57.7
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-25K-G04-LV
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 25.0
+  ac_a: 62.7
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-23-30k-g04-lv_20260706_en
+  raw:
+    mppt: 3/3+3+3
+    ac_w: '25'
+    ac_va: '25'
+    ac_a: 65.7/62.7
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-30K-G04-LV
+  mppt: 4
+  ac_kw: 30.0
+  ac_kva: 30.0
+  ac_a: 75.2
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-23-30k-g04-lv_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '30'
+    ac_va: '30'
+    ac_a: 78.8/75.2
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-25K-SG02HP3-EU-AM3
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 39.9
+  phases: 3
+  pv_kw: 40.0
+  source: b_datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '25000'
+    ac_va: '27500'
+    ac_a: 41.7/39.9
+    pv_w: '40000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-29.9K-SG02HP3-EU-AM3
+  mppt: 3
+  ac_kw: 29.9
+  ac_kva: 29.9
+  ac_a: 43.4
+  phases: 3
+  pv_kw: 47.84
+  source: b_datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '29900'
+    ac_va: '29900'
+    ac_a: 45.4/43.4
+    pv_w: '47840'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-30K-SG02HP3-EU-AM3
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 47.9
+  phases: 3
+  pv_kw: 48.0
+  source: b_datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '30000'
+    ac_va: '33000'
+    ac_a: 50/47.9
+    pv_w: '48000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-29.9K-SG01
+  mppt: 3
+  ac_kw: 29.9
+  ac_kva: 29.9
+  ac_a: 43.4
+  phases: 3
+  pv_kw: 47.84
+  source: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '29900'
+    ac_va: '29900'
+    ac_a: 45.4/43.4
+    pv_w: '47840'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-30K-SG01
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 47.9
+  phases: 3
+  pv_kw: 48.0
+  source: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '30000'
+    ac_va: '33000'
+    ac_a: 50/47.9
+    pv_w: '48000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-35K-SG01
+  mppt: 3
+  ac_kw: 35.0
+  ac_kva: 38.5
+  ac_a: 55.8
+  phases: 3
+  pv_kw: 56.0
+  source: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '35000'
+    ac_va: '38500'
+    ac_a: 58.4/55.8
+    pv_w: '56000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-40K-SG01
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 63.8
+  phases: 3
+  pv_kw: 64.0
+  source: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en
+  raw:
+    mppt: 4/2+2+2+2
+    ac_w: '40000'
+    ac_va: '44000'
+    ac_a: 66.7/63.8
+    pv_w: '64000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-50K-SG01
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 79.8
+  phases: 3
+  pv_kw: 80.0
+  source: b_datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en
+  raw:
+    mppt: 4/2+2+2+2
+    ac_w: '50000'
+    ac_va: '55000'
+    ac_a: 83.4/79.8
+    pv_w: '80000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-3K-G06-P1
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 4.8
+  phases: 3
+  pv_kw: 4.5
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '3'
+    ac_va: '3.3'
+    ac_a: 5/4.8
+    pv_w: '4.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-4K-G06-P1
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.4
+  phases: 3
+  pv_kw: 6.0
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '4'
+    ac_va: '4.4'
+    ac_a: 6.7/6.4
+    pv_w: '6'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-5K-G06-P1
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 7.5
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5'
+    ac_va: '5.5'
+    ac_a: 8.4/8
+    pv_w: '7.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-6K-G06-P1
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 9.0
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6'
+    ac_va: '6.6'
+    ac_a: 10/9.6
+    pv_w: '9'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-7K-G06-P1
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 11.2
+  phases: 3
+  pv_kw: 10.5
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '7'
+    ac_va: '7.7'
+    ac_a: 11.7/11.2
+    pv_w: '10.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-8K-G06-P1
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 12.0
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '8'
+    ac_va: '8.8'
+    ac_a: 13.4/12.8
+    pv_w: '12'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-9K-G06-P1
+  mppt: 2
+  ac_kw: 9.0
+  ac_kva: 9.9
+  ac_a: 14.4
+  phases: 3
+  pv_kw: 13.5
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '9'
+    ac_va: '9.9'
+    ac_a: 15/14.4
+    pv_w: '13.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-10K-G06-P1
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: 15.0
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '10'
+    ac_va: '11'
+    ac_a: 16.7/16
+    pv_w: '15'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-12K-G06-P1
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.2
+  phases: 3
+  pv_kw: 18.0
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '12'
+    ac_va: '13.2'
+    ac_a: 20/19.2
+    pv_w: '18'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-15K-G06-P1
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.0
+  phases: 3
+  pv_kw: 22.5
+  source: b_datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en
+  raw:
+    mppt: 2/1+2
+    ac_w: '15'
+    ac_va: '16.5'
+    ac_a: 25/24
+    pv_w: '22.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-3K-SG04LP1-24-EU
+  mppt: 1
+  ac_kw: 3.6
+  ac_kva: 3.3
+  ac_a: 14.3
+  phases: 1
+  pv_kw: 4.8
+  source: b_datasheet_sun-3-6k-sg04lp1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '3600'
+    ac_va: '3300'
+    ac_a: 15/14.3
+    pv_w: '4800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3K-SG04LP1-EU
+  mppt: 1
+  ac_kw: 3.6
+  ac_kva: 3.3
+  ac_a: 14.3
+  phases: 1
+  pv_kw: 4.8
+  source: b_datasheet_sun-3-6k-sg04lp1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '3600'
+    ac_va: '3300'
+    ac_a: 15/14.3
+    pv_w: '4800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3.6K-SG04LP1-EU
+  mppt: 1
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 17.2
+  phases: 1
+  pv_kw: 5.76
+  source: b_datasheet_sun-3-6k-sg04lp1_20260706_en
+  raw:
+    mppt: 1/1
+    ac_w: '3600'
+    ac_va: '3960'
+    ac_a: 18/17.2*
+    pv_w: '5760'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-5K-SG04LP1-EU
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 23.9
+  phases: 1
+  pv_kw: 8.0
+  source: b_datasheet_sun-3-6k-sg04lp1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5000'
+    ac_a: 25/23.9
+    pv_w: '8000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-6K-SG04LP1-EU
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 9.6
+  source: b_datasheet_sun-3-6k-sg04lp1_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 30/28.7
+    pv_w: '9600'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3K-SG06LP1-24-EU-CM1
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 14.4
+  phases: 1
+  pv_kw: 4.8
+  source: b_datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en
+  raw:
+    mppt: 1/1
+    ac_w: 3000 3000
+    ac_va: 3300 3300
+    ac_a: 15/14.4 15/14.4
+    pv_w: 4800 4800
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3K-SG06LP1-EU-CM1
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 5.76
+  source: b_datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en
+  raw:
+    mppt: 2/1+1
+    ac_w: 3600 4000 4600 5000 6000
+    ac_va: 3960 4400 4600 5500 6600
+    ac_a: 18/17.3 20/19.2 21/20 25.0/24.0 30/28.7
+    pv_w: 5760 6400 7360 8000 9600
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3K-SG06
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 4.8
+  phases: 3
+  pv_kw: 4.8
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '3000'
+    ac_va: '3300'
+    ac_a: 5/4.8
+    pv_w: '4800'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-4K-SG06
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.4
+  phases: 3
+  pv_kw: 6.4
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '4000'
+    ac_va: '4400'
+    ac_a: 6.7/6.4
+    pv_w: '6400'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-5K-SG06
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 8.0
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5500'
+    ac_a: 8.4/8
+    pv_w: '8000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-6K-SG06
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 9.6
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 10/9.6
+    pv_w: '9600'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-8K-SG06
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 12.8
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 13.4/12.8
+    pv_w: '12800'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-3K-SG06
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 4.8
+  phases: 3
+  pv_kw: 4.8
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '3000'
+    ac_va: '3300'
+    ac_a: 5/4.8
+    pv_w: '4800'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-4K-SG06
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.4
+  phases: 3
+  pv_kw: 6.4
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '4000'
+    ac_va: '4400'
+    ac_a: 6.7/6.4
+    pv_w: '6400'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-5K-SG06
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 8.0
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5500'
+    ac_a: 8.4/8
+    pv_w: '8000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-6K-SG06
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 9.6
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 10/9.6
+    pv_w: '9600'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-8K-SG06
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 12.8
+  source: b_datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 13.4/12.8
+    pv_w: '12800'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-3.6K-SG05
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 17.2
+  phases: 1
+  pv_kw: 5.76
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '3600'
+    ac_va: '3960'
+    ac_a: 18/17.2
+    pv_w: '5760'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-5K-SG05
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 23.9
+  phases: 1
+  pv_kw: 8.0
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5500'
+    ac_a: 25/23.9
+    pv_w: '8000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-6K-SG05
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 9.6
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 30/28.7
+    pv_w: '9600'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7K-SG05
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 11.2
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '7000'
+    ac_va: '7700'
+    ac_a: 35/33.5
+    pv_w: '11200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7.6K-SG05
+  mppt: 2
+  ac_kw: 7.6
+  ac_kva: 8.36
+  ac_a: 36.3
+  phases: 1
+  pv_kw: 12.16
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '7600'
+    ac_va: '8360'
+    ac_a: 38/36.3
+    pv_w: '12160'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-8K-SG05
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.8
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 40/38.3
+    pv_w: '12800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-10K-SG05
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 47.9
+  phases: 1
+  pv_kw: 16.0
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 50/47.9
+    pv_w: '16000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3.6K-SG05
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 17.3
+  phases: 1
+  pv_kw: 5.76
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '3600'
+    ac_va: '3960'
+    ac_a: 18/17.3
+    pv_w: '5760'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-5K-SG05
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 24.0
+  phases: 1
+  pv_kw: 8.0
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5500'
+    ac_a: 25/24
+    pv_w: '8000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-6K-SG05
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 9.6
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 30/28.7
+    pv_w: '9600'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7K-SG05
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 11.2
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '7000'
+    ac_va: '7700'
+    ac_a: 35/33.5
+    pv_w: '11200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7.6K-SG05
+  mppt: 2
+  ac_kw: 7.6
+  ac_kva: 8.36
+  ac_a: 36.4
+  phases: 1
+  pv_kw: 12.16
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '7600'
+    ac_va: '8360'
+    ac_a: 38/36.4
+    pv_w: '12160'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-8K-SG05
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.8
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 40/38.3
+    pv_w: '12800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-10K-SG05
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 47.9
+  phases: 1
+  pv_kw: 16.0
+  source: b_datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 50/47.9
+    pv_w: '16000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3.6K-G05
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 17.3
+  phases: 1
+  pv_kw: 5.4
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '3.6'
+    ac_va: '3.96'
+    ac_a: 18/17.3
+    pv_w: '5.4'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-4K-G05
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 19.2
+  phases: 1
+  pv_kw: 6.0
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '4'
+    ac_va: '4.4'
+    ac_a: 20/19.2
+    pv_w: '6'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-4.2K-G05SUN-4.6K-G05
+  mppt: 2
+  ac_kw: 4.2
+  ac_kva: 4.62
+  ac_a: 22.0
+  phases: 1
+  pv_kw: 6.3
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: 4.2 4.6
+    ac_va: 4.62 5.06
+    ac_a: 21/20.1 23/22
+    pv_w: 6.3 6.9
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-5K-G05
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 24.0
+  phases: 1
+  pv_kw: 7.5
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5'
+    ac_va: '5.5'
+    ac_a: 25/24
+    pv_w: '7.5'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-5.2K-G05
+  mppt: 2
+  ac_kw: 5.2
+  ac_kva: 5.72
+  ac_a: 24.9
+  phases: 1
+  pv_kw: 7.8
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5.2'
+    ac_va: '5.72'
+    ac_a: 26/24.9
+    pv_w: '7.8'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-6K-G05
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 9.0
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6'
+    ac_va: '6.6'
+    ac_a: 30/28.7
+    pv_w: '9'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-6.2K-G05
+  mppt: 2
+  ac_kw: 6.2
+  ac_kva: 6.82
+  ac_a: 29.7
+  phases: 1
+  pv_kw: 9.3
+  source: b_datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6.2'
+    ac_va: '6.82'
+    ac_a: 31/29.7
+    pv_w: '9.3'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-30K-G04
+  mppt: 2
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 47.9
+  phases: 3
+  pv_kw: 45.0
+  source: b_datasheet_sun-30-36k-g04_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '30'
+    ac_va: '33'
+    ac_a: 50/47.9
+    pv_w: '45'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-33K-G04
+  mppt: 2
+  ac_kw: 33.0
+  ac_kva: 36.3
+  ac_a: 52.6
+  phases: 3
+  pv_kw: 49.5
+  source: b_datasheet_sun-30-36k-g04_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '33'
+    ac_va: '36.3'
+    ac_a: 55/52.6
+    pv_w: '49.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-35K-G04
+  mppt: 2
+  ac_kw: 35.0
+  ac_kva: 38.5
+  ac_a: 55.8
+  phases: 3
+  pv_kw: 52.5
+  source: b_datasheet_sun-30-36k-g04_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '35'
+    ac_va: '38.5'
+    ac_a: 58.3/55.8
+    pv_w: '52.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-36K-G04
+  mppt: 2
+  ac_kw: 36.0
+  ac_kva: 39.6
+  ac_a: 57.4
+  phases: 3
+  pv_kw: 54.0
+  source: b_datasheet_sun-30-36k-g04_20260706_en
+  raw:
+    mppt: 2/3+3
+    ac_w: '36'
+    ac_va: '39.6'
+    ac_a: 60/57.4
+    pv_w: '54'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-33K-G04P3-EU-AM4-LV
+  mppt: 4
+  ac_kw: 33.0
+  ac_kva: 33.0
+  ac_a: 82.8
+  phases: 3
+  pv_kw: 49.5
+  source: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '33'
+    ac_va: '33'
+    ac_a: 86.7/82.8
+    pv_w: '49.5'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-35K-G04P3-EU-AM4-LV
+  mppt: 4
+  ac_kw: 35.0
+  ac_kva: 35.0
+  ac_a: 87.8
+  phases: 3
+  pv_kw: 52.5
+  source: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '35'
+    ac_va: '35'
+    ac_a: 91.9/87.8
+    pv_w: '52.5'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-40K-G04P3-EU-AM4-LV
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 40.0
+  ac_a: 100.3
+  phases: 3
+  pv_kw: 60.0
+  source: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '40'
+    ac_va: '40'
+    ac_a: 105/100.3
+    pv_w: '60'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-45K-G04P3-EU-AM4-LV
+  mppt: 4
+  ac_kw: 45.0
+  ac_kva: 45.0
+  ac_a: 112.8
+  phases: 3
+  pv_kw: 67.5
+  source: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '45'
+    ac_va: '45'
+    ac_a: 118.2/112.8
+    pv_w: '67.5'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-50K-G04P3-EU-AM4-LV
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 50.0
+  ac_a: 125.4
+  phases: 3
+  pv_kw: 75.0
+  source: b_datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '50'
+    ac_va: '50'
+    ac_a: 131.3/125.4
+    pv_w: '75'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-40K-G04
+  mppt: 3
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 63.8
+  phases: null
+  pv_kw: 52.0
+  source: b_datasheet_sun-40-50k-g04_20260706_en
+  raw:
+    mppt: 3/3+3+3
+    ac_w: '40'
+    ac_va: '44'
+    ac_a: 66.7/63.8
+    pv_w: '52'
+    phases: 50/45-55, 60/55-65
+- code: SUN-45K-G04
+  mppt: 3
+  ac_kw: 45.0
+  ac_kva: 49.5
+  ac_a: 71.7
+  phases: null
+  pv_kw: 58.5
+  source: b_datasheet_sun-40-50k-g04_20260706_en
+  raw:
+    mppt: 3/3+3+3
+    ac_w: '45'
+    ac_va: '49.5'
+    ac_a: 75/71.7
+    pv_w: '58.5'
+    phases: 50/45-55, 60/55-65
+- code: SUN-50K-G04
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 79.7
+  phases: null
+  pv_kw: 65.0
+  source: b_datasheet_sun-40-50k-g04_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '50'
+    ac_va: '55'
+    ac_a: 83.3/79.7
+    pv_w: '65'
+    phases: 50/45-55, 60/55-65
+- code: SUN-5K-SG04LP3-EU
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 7.5
+  source: b_datasheet_sun-5-12k-sg04lp3_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5500'
+    ac_a: 8.4/8
+    pv_w: '7500'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-6K-SG04LP3-EU
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 9.0
+  source: b_datasheet_sun-5-12k-sg04lp3_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 10/9.6
+    pv_w: '9000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-8K-SG04LP3-EU
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 12.0
+  source: b_datasheet_sun-5-12k-sg04lp3_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 13.4/12.8
+    pv_w: '12000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-10K-SG04LP3-EU
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 15.9
+  phases: 3
+  pv_kw: 15.0
+  source: b_datasheet_sun-5-12k-sg04lp3_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 16.7/15.9
+    pv_w: '15000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-12K-SG04LP3-EU
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.1
+  phases: 3
+  pv_kw: 18.0
+  source: b_datasheet_sun-5-12k-sg04lp3_20260706_en
+  raw:
+    mppt: 2/2+1
+    ac_w: '12000'
+    ac_va: '13200'
+    ac_a: 20/19.1
+    pv_w: '18000'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-5K-SG01
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 8.0
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '5000'
+    ac_va: '5500'
+    ac_a: 8.4/8.0
+    pv_w: '8000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-6K-SG01
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 9.6
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '6000'
+    ac_va: '6600'
+    ac_a: 10/9.6
+    pv_w: '9600'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-8K-SG01
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 12.8
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 13.4/12.8
+    pv_w: '12800'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-10K-SG01
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: 16.0
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 16.7/16
+    pv_w: '16000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-12K-SG01
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.2
+  phases: 3
+  pv_kw: 19.2
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+1
+    ac_w: '12000'
+    ac_va: '13200'
+    ac_a: 20/19.2
+    pv_w: '19200'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-15K-SG01
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.0
+  phases: 3
+  pv_kw: 24.0
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+1
+    ac_w: '15000'
+    ac_va: '16500'
+    ac_a: 25/24
+    pv_w: '24000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-20K-SG01
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: 32.0
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+1
+    ac_w: '20000'
+    ac_va: '22000'
+    ac_a: 33.4/31.9
+    pv_w: '32000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-25K-SG01
+  mppt: 2
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 39.9
+  phases: 3
+  pv_kw: 40.0
+  source: b_datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '25000'
+    ac_va: '27500'
+    ac_a: 41.7/39.9
+    pv_w: '40000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-6K-G06P3-EU-BM2-LV-P1
+  mppt: 2
+  ac_kw: 35.0
+  ac_kva: 38.5
+  ac_a: 20.1
+  phases: 3
+  pv_kw: 12.0
+  source: b_datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en
+  raw:
+    mppt: 2/1+2
+    ac_w: '35'
+    ac_va: '38.5'
+    ac_a: 21/20.1
+    pv_w: '12'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-6K-G06P3-EU-BM2-LV-P1
+  mppt: 2
+  ac_kw: 35.0
+  ac_kva: 38.5
+  ac_a: 20.1
+  phases: 3
+  pv_kw: 12.0
+  source: b_datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en
+  raw:
+    mppt: 2/1+2
+    ac_w: '35'
+    ac_va: '38.5'
+    ac_a: 21/20.1
+    pv_w: '12'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-60K-G01P3-EU-AM8-LV
+  mppt: 8
+  ac_kw: 60.0
+  ac_kva: 60.0
+  ac_a: 150.4
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '60'
+    ac_va: '60'
+    ac_a: 157.5/150.4
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-70K-G01P3-EU-AM8-LV
+  mppt: 8
+  ac_kw: 70.0
+  ac_kva: 70.0
+  ac_a: 175.5
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '70'
+    ac_va: '70'
+    ac_a: 183.8/175.5
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-75K-G01P3-EU-AM8-LV
+  mppt: 8
+  ac_kw: 75.0
+  ac_kva: 75.0
+  ac_a: 188.0
+  phases: 3
+  pv_kw: 800.0
+  source: b_datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en
+  raw:
+    mppt: 8/4+4+4+4+4+4+4+4
+    ac_w: '75'
+    ac_va: '75'
+    ac_a: 196.9/188
+    pv_w: '800'
+    phases: 127V/220V, 133V/230V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-60K-G04P3-EU-AM4
+  mppt: 4
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 95.7
+  phases: null
+  pv_kw: 90.0
+  source: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '60'
+    ac_va: '66'
+    ac_a: 100/95.7
+    pv_w: '90'
+    phases: 50/45-55,
+- code: SUN-70K-G04P3-EU-AM4
+  mppt: 4
+  ac_kw: 70.0
+  ac_kva: 77.0
+  ac_a: 111.6
+  phases: null
+  pv_kw: 105.0
+  source: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en
+  raw:
+    mppt: 4/3+3+3+3
+    ac_w: '70'
+    ac_va: '77'
+    ac_a: 116.7/111.6
+    pv_w: '105'
+    phases: 50/45-55,
+- code: SUN-75K-G04P3-EU-AM4
+  mppt: 4
+  ac_kw: 75.0
+  ac_kva: 82.5
+  ac_a: 119.6
+  phases: null
+  pv_kw: 112.5
+  source: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '75'
+    ac_va: '82.5'
+    ac_a: 125/119.6
+    pv_w: '112.5'
+    phases: 60/55-65
+- code: SUN-80K-G04P3-EU-AM4
+  mppt: 4
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 127.5
+  phases: null
+  pv_kw: 120.0
+  source: b_datasheet_sun-60-80k-g04p3-eu-am4_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '80'
+    ac_va: '88'
+    ac_a: 133.3/127.5
+    pv_w: '120'
+    phases: 60/55-65
+- code: SUN-60K-SG02HP3-EU-EM6
+  mppt: 6
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 95.7
+  phases: 3
+  pv_kw: 96.0
+  source: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en
+  raw:
+    mppt: 6/2+2+2+2+2+2
+    ac_w: '60000'
+    ac_va: '66000'
+    ac_a: 100/95.7
+    pv_w: '96000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-70K-SG02HP3-EU-EM6
+  mppt: 6
+  ac_kw: 70.0
+  ac_kva: 77.0
+  ac_a: 111.6
+  phases: 3
+  pv_kw: 112.0
+  source: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en
+  raw:
+    mppt: 6/2+2+2+2+2+2
+    ac_w: '70000'
+    ac_va: '77000'
+    ac_a: 116.7/111.6
+    pv_w: '112000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-75K-SG02HP3-EU-EM6
+  mppt: 6
+  ac_kw: 75.0
+  ac_kva: 82.5
+  ac_a: 119.6
+  phases: 3
+  pv_kw: 120.0
+  source: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en
+  raw:
+    mppt: 6/2+2+2+2+2+2
+    ac_w: '75000'
+    ac_va: '82500'
+    ac_a: 125/119.6
+    pv_w: '120000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-80K-SG02HP3-EU-EM6
+  mppt: 6
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 127.6
+  phases: 3
+  pv_kw: 128.0
+  source: b_datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en
+  raw:
+    mppt: 6/2+2+2+2+2+2
+    ac_w: '80000'
+    ac_va: '88000'
+    ac_a: 133.4/127.6
+    pv_w: '128000'
+    phases: 220/380V,230/400V 0.85Un-1.1Un 3L+N+PE
+- code: SUN-7K-SG06
+  mppt: 3
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 11.2
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '7000'
+    ac_va: '7700'
+    ac_a: 35.0/33.5
+    pv_w: '11200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7.6K-SG06
+  mppt: 3
+  ac_kw: 7.6
+  ac_kva: 8.36
+  ac_a: 36.4
+  phases: 1
+  pv_kw: 12.16
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '7600'
+    ac_va: '8360'
+    ac_a: 38/36.4
+    pv_w: '12160'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-8K-SG06
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.8
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 40/38.3
+    pv_w: '12800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-10K-SG06
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 47.9
+  phases: 1
+  pv_kw: 16.0
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 50/47.9
+    pv_w: '16000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-12K-SG06
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 57.4
+  phases: 1
+  pv_kw: 19.2
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en
+  raw:
+    mppt: 3/2+2+1
+    ac_w: '12000'
+    ac_va: '13200'
+    ac_a: 60/57.4
+    pv_w: '19200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7K-SG06
+  mppt: 3
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 11.2
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '7000'
+    ac_va: '7700'
+    ac_a: 35.0/33.5
+    pv_w: '11200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7.6K-SG06
+  mppt: 3
+  ac_kw: 7.6
+  ac_kva: 8.36
+  ac_a: 36.4
+  phases: 1
+  pv_kw: 12.16
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '7600'
+    ac_va: '8360'
+    ac_a: 38/36.4
+    pv_w: '12160'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-8K-SG06
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.8
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 40/38.3
+    pv_w: '12800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-10K-SG06
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 47.9
+  phases: 1
+  pv_kw: 16.0
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1
+  raw:
+    mppt: 3/2+1+1
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 50/47.9
+    pv_w: '16000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-12K-SG06
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 57.4
+  phases: 1
+  pv_kw: 19.2
+  source: b_datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1
+  raw:
+    mppt: 3/2+2+1
+    ac_w: '12000'
+    ac_va: '13200'
+    ac_a: 60/57.4
+    pv_w: '19200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7K-G02P1-EU-AM2
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 550.0
+  source: b_datasheet_sun-7-8k-g02p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+2
+    ac_w: '7'
+    ac_va: '7.7'
+    ac_a: 35/33.5
+    pv_w: '550'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-7.5K-G02P1-EU-AM2
+  mppt: 2
+  ac_kw: 7.5
+  ac_kva: 8.25
+  ac_a: 35.9
+  phases: 1
+  pv_kw: 550.0
+  source: b_datasheet_sun-7-8k-g02p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+2
+    ac_w: '7.5'
+    ac_va: '8.25'
+    ac_a: 37.5/35.9
+    pv_w: '550'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-8K-G02P1-EU-AM2
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 550.0
+  source: b_datasheet_sun-7-8k-g02p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/1+2
+    ac_w: '8'
+    ac_va: '8.8'
+    ac_a: 40/38.3
+    pv_w: '550'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-7.6K-SG02
+  mppt: 2
+  ac_kw: 7.6
+  ac_kva: 8.36
+  ac_a: 36.4
+  phases: 1
+  pv_kw: 12.16
+  source: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '7600'
+    ac_va: '8360'
+    ac_a: 38/36.4
+    pv_w: '12160'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-8K-SG02
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.8
+  source: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 40/38.3
+    pv_w: '12800'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-10K-SG02
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 47.9
+  phases: 1
+  pv_kw: 16.0
+  source: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '10000'
+    ac_va: '11000'
+    ac_a: 50/47.9
+    pv_w: '16000'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-12K-SG02
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 57.4
+  phases: 1
+  pv_kw: 19.2
+  source: b_datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en
+  raw:
+    mppt: 3/2+2+2
+    ac_w: '12000'
+    ac_va: '13200'
+    ac_a: 60/57.4
+    pv_w: '19200'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-7.6K-SG01LP1-EU
+  mppt: 2
+  ac_kw: 7.6
+  ac_kva: 8.36
+  ac_a: 36.3
+  phases: 1
+  pv_kw: 9.88
+  source: b_datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '7600'
+    ac_va: '8360'
+    ac_a: 38/36.3
+    pv_w: '9880'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-8K-SG01LP1-EU
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 10.4
+  source: b_datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '8000'
+    ac_va: '8800'
+    ac_a: 40/38.3
+    pv_w: '10400'
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-70K-G03
+  mppt: 4
+  ac_kw: 70.0
+  ac_kva: 77.0
+  ac_a: 119.6
+  phases: 3
+  pv_kw: 90.0
+  source: b_datasheet_sun-70-110k-g03_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '70'
+    ac_va: '77'
+    ac_a: 125/119.6
+    pv_w: '90'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-75K-G03
+  mppt: 4
+  ac_kw: 75.0
+  ac_kva: 82.5
+  ac_a: 119.6
+  phases: 3
+  pv_kw: 97.5
+  source: b_datasheet_sun-70-110k-g03_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '75'
+    ac_va: '82.5'
+    ac_a: 125/119.6
+    pv_w: '97.5'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-80K-G03
+  mppt: 4
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 127.5
+  phases: 3
+  pv_kw: 104.0
+  source: b_datasheet_sun-70-110k-g03_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '80'
+    ac_va: '88'
+    ac_a: 133.3/127.5
+    pv_w: '104'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-90K-G03
+  mppt: 4
+  ac_kw: 90.0
+  ac_kva: 99.0
+  ac_a: 143.5
+  phases: 3
+  pv_kw: 135.0
+  source: b_datasheet_sun-70-110k-g03_20260706_en
+  raw:
+    mppt: 4/4+4+4+4
+    ac_w: '90'
+    ac_va: '99'
+    ac_a: 150/143.5
+    pv_w: '135'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-100K-G03
+  mppt: 6
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.4
+  phases: 3
+  pv_kw: 150.0
+  source: b_datasheet_sun-70-110k-g03_20260706_en
+  raw:
+    mppt: 6/4+4+4+4+4+4
+    ac_w: '100'
+    ac_va: '110'
+    ac_a: 166.7/159.4
+    pv_w: '150'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-110K-G03
+  mppt: 6
+  ac_kw: 110.0
+  ac_kva: 121.0
+  ac_a: 175.4
+  phases: 3
+  pv_kw: 150.0
+  source: b_datasheet_sun-70-110k-g03_20260706_en
+  raw:
+    mppt: 6/4+4+4+4+4+4
+    ac_w: '110'
+    ac_va: '121'
+    ac_a: 183.3/175.4
+    pv_w: '150'
+    phases: 220/380V, 230/400V 0.85Un-1.1Un 3L/N/PE
+- code: SUN-9K-G02P1-EU-AM2
+  mppt: 2
+  ac_kw: 9.0
+  ac_kva: 9.9
+  ac_a: 43.1
+  phases: 1
+  pv_kw: 550.0
+  source: b_datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '9'
+    ac_va: '9.9'
+    ac_a: 45/43.1
+    pv_w: '550'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-10K-G02P1-EU-AM2
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 47.9
+  phases: 1
+  pv_kw: 550.0
+  source: b_datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '10'
+    ac_va: '11'
+    ac_a: 50/47.9
+    pv_w: '550'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-10.5K-G02P1-EU-AM2
+  mppt: 2
+  ac_kw: 10.5
+  ac_kva: 11.55
+  ac_a: 50.3
+  phases: 1
+  pv_kw: 550.0
+  source: b_datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en
+  raw:
+    mppt: 2/2+2
+    ac_w: '10.5'
+    ac_va: '11.55'
+    ac_a: 52.5/50.3
+    pv_w: '550'
+    phases: 220/230 0.85Un-1.1Un
+- code: SUN-3K-SG06LP1-24-EU-BM1
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 14.4
+  phases: 1
+  pv_kw: 4.8
+  source: e9d10806_datasheet-sun-3-6k-sg06lp1-eu-bm2-en
+  raw:
+    mppt: 1/1
+    ac_w: 3000 3000
+    ac_va: 3300 3300
+    ac_a: 15/14.4 15/14.4
+    pv_w: 4800 4800
+    phases: 220/230V 0.85Un-1.1Un
+- code: SUN-3K-SG06LP1-EU-BM1
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.96
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 5.76
+  source: e9d10806_datasheet-sun-3-6k-sg06lp1-eu-bm2-en
+  raw:
+    mppt: 2/1+1
+    ac_w: 3600 4000 4600 5000 6000
+    ac_va: 3960 4400 4600 5500 6600
+    ac_a: 18/17.3 20/19.2 21/20 25.0/24.0 30/28.7
+    pv_w: 5760 6400 7360 8000 9600
+    phases: 220/230V 0.85Un-1.1Un

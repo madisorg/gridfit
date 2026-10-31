@@ -1,0 +1,1462 @@
+brand: Sofar
+status: draft
+rule: DRAFT - every value below was read by tools/specs/table.py from the sheet named in `source` and has not been reviewed.
+  Review each row against the sheet, correct it in tools/specs/draft.py (named, with the reason) and let draft.py write data/specs/<brand>.yaml;
+  this file is never read by the site.
+sources:
+- id: bt5000a_datasheet_2026-01-23_v2.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/BT5000A_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  file: BT5000A_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  title: BT5000A_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  sha256: d1549fe68ca743759e25aeeea15c0107e3071aaf5ca69262cdd55323c9e16c37
+  seen: '2026-11-01'
+- id: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/CBS5000-H4-H-H12-H_Datasheet_2026-1-16_V1.0_en-EU.pdf
+  file: CBS5000-H4-H-H12-H_Datasheet_2026-1-16_V1.0_en-EU.pdf
+  title: CBS5000-H4-H-H12-H_Datasheet_2026-1-16_V1.0_en-EU.pdf
+  sha256: b026270e0906c376d2a3308d745c5c7f6ebf1874c45030133f3121d4bef70486
+  seen: '2026-11-01'
+- id: cbs8000-64-96kwh_datasheet_2025-12-09_v1.3_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/CBS8000-64-96KWh_Datasheet_2025-12-09_V1.3_en-EU.pdf
+  file: CBS8000-64-96KWh_Datasheet_2025-12-09_V1.3_en-EU.pdf
+  title: CBS8000-64-96KWh_Datasheet_2025-12-09_V1.3_en-EU.pdf
+  sha256: 52226f46954d4756530cbbde9ff8489cf57ddbfe15d15f336c4c1344727b7df2
+  seen: '2026-11-01'
+- id: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/CBS8000-H4-H12_Datasheet_2025-09-30_V1.5_en-EU.pdf
+  file: CBS8000-H4-H12_Datasheet_2025-09-30_V1.5_en-EU.pdf
+  title: CBS8000-H4-H12_Datasheet_2025-09-30_V1.5_en-EU.pdf
+  sha256: d6981f85486596e942c36038d4fd008d3b5d060897945a579a1649e94c94f8af
+  seen: '2026-11-01'
+- id: esi-5-12k-t1_datasheet_2025-03-04_v1.1_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf
+  file: ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf
+  title: ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf
+  sha256: 924cf094ddd86ff278447df467b63bff815716504f75526fadaf8e505ce5c0cf
+  seen: '2026-11-01'
+- id: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%203000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU.pdf
+  file: HYD_3000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU.pdf
+  title: HYD_3000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU.pdf
+  sha256: 5a5b6e0711b97168d195158d45c9438dfe0ad39eeb2df033d8a8a69c3a7a736a
+  seen: '2026-11-01'
+- id: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%203000-6000-ES_Datasheet_2020-08_V1.0_en-EU.pdf
+  file: HYD_3000-6000-ES_Datasheet_2020-08_V1.0_en-EU.pdf
+  title: HYD_3000-6000-ES_Datasheet_2020-08_V1.0_en-EU.pdf
+  sha256: 3ce7af62609da907cf35755743b3b363c91ca19d687ee962a010154496992184
+  seen: '2026-11-01'
+- id: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%205-20KTL-3PH_Datasheet_with%20SH-20-digit%20SN_2025-11-27%20(Available%20from%202024)_V2.0_en-EU.pdf
+  file: HYD_5-20KTL-3PH_Datasheet_with_SH-20-digit_SN_2025-11-27_(Available_from_2024)_V2.0_en-EU.pdf
+  title: HYD_5-20KTL-3PH_Datasheet_with_SH-20-digit_SN_2025-11-27_(Available_from_2024)_V2.0_en-EU.pdf
+  sha256: 4edb4520fca1bc7274ccfca4e2fbf896d8355bf3fefdbc6760af3d80d04a69a1
+  seen: '2026-11-01'
+- id: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%205-20KTL-3PH_Datasheet_with%20SP-14-digit%20SN_2023-08-31_V5.0_en-EU.pdf
+  file: HYD_5-20KTL-3PH_Datasheet_with_SP-14-digit_SN_2023-08-31_V5.0_en-EU.pdf
+  title: HYD_5-20KTL-3PH_Datasheet_with_SP-14-digit_SN_2023-08-31_V5.0_en-EU.pdf
+  sha256: bd9a749e0110274cd4efbd0f057cdc33afd024e0895bffa550276a37f9412ca6
+  seen: '2026-11-01'
+- id: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU.pdf
+  file: HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU.pdf
+  title: HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU.pdf
+  sha256: d62f2bd1f895afe0b36a2f228d7edb60c1e5f4d8c9a04b4aca1298c3aaf70afa
+  seen: '2026-11-01'
+- id: hyd-40-60k-t1_datasheet_2025-11-26_v1.1_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU.pdf
+  file: HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU.pdf
+  title: HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU.pdf
+  sha256: 602b01359885a1d055b1ff8b5695aeeef6f3e2b4bec2f144e14b076ff27dfdbb
+  seen: '2026-11-01'
+- id: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-5-20K-LT1_Datasheet_2026-08-26_V1.4_en-EU.pdf
+  file: HYD-5-20K-LT1_Datasheet_2026-08-26_V1.4_en-EU.pdf
+  title: HYD-5-20K-LT1_Datasheet_2026-08-26_V1.4_en-EU.pdf
+  sha256: e753df21c255dc60ce96553ccbf526929b9bcc2afc472bc1b986f0fd5a1c41cc
+  seen: '2026-11-01'
+- id: sf-5kwh-l1_datasheet_2026-07-22_v2.3_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SF-5KWH-L1_Datasheet_2026-07-22_V2.3_en-EU.pdf
+  file: SF-5KWH-L1_Datasheet_2026-07-22_V2.3_en-EU.pdf
+  title: SF-5KWH-L1_Datasheet_2026-07-22_V2.3_en-EU.pdf
+  sha256: 63db93b5c571b7f6679d2309d8427f23cb260276fe79c59f086475a944802315
+  seen: '2026-11-01'
+- id: sofar_100-125ktlx-g4_datasheet_2025-11-20_v2.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  file: SOFAR_100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  title: SOFAR_100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  sha256: 0863d913d48ed1d05da54f598fd80770d0dfe508d1d0035e51b00ba7ca5b23a2
+  seen: '2026-11-01'
+- id: sofar_15-25ktlx-g3p_datasheet__2026-08-27_v3.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2015-25KTLX-G3P_Datasheet_%202026-08-27_V3.0_en-EU.pdf
+  file: SOFAR_15-25KTLX-G3P_Datasheet__2026-08-27_V3.0_en-EU.pdf
+  title: SOFAR_15-25KTLX-G3P_Datasheet__2026-08-27_V3.0_en-EU.pdf
+  sha256: 7119546c0ffe7151532431fdacab2c6ed2cf33f18c7c222527b8ad8e289dbbed
+  seen: '2026-11-01'
+- id: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2025-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  file: SOFAR_25-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  title: SOFAR_25-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  sha256: ef66983122a3ff95de3fbe7a84c55714ffe8a4f9b13e2e2531fcfcf8f7c88a38
+  seen: '2026-11-01'
+- id: sofar_250-255ktl-hv_datasheet_2023-05-11_v1.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU.pdf
+  file: SOFAR_250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU.pdf
+  title: SOFAR_250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU.pdf
+  sha256: 95c3a30419622dec8863322cc498fd29d7d51f74708bd3b03180b604c91fc06d
+  seen: '2026-11-01'
+- id: sofar_250-350ktlx0_datasheet_2024-08-02_v1.3_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU.pdf
+  file: SOFAR_250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU.pdf
+  title: SOFAR_250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU.pdf
+  sha256: e9d3b8ef70879125e85a5bc4fba5af88af80a40a4ef5377ac3f6b295e8a6f515
+  seen: '2026-11-01'
+- id: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%203.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  file: SOFAR_3.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  title: SOFAR_3.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  sha256: 9c595364f0d15ada635c5ac6c87939ba522101e0971c0d763c46e56897f5a04d
+  seen: '2026-11-01'
+- id: sofar_60-80ktlx-g3_datasheet_2026-03-10_v2.1_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2060-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU.pdf
+  file: SOFAR_60-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU.pdf
+  title: SOFAR_60-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU.pdf
+  sha256: 975bca007071153e1f54aa896f2b10ad96e7499d89761a911c1c4a69c46573f5
+  seen: '2026-11-01'
+- id: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%207-10.5KTLM-G3_Datasheet_2026-01-22_V2.0_en-EU.pdf
+  file: SOFAR_7-10.5KTLM-G3_Datasheet_2026-01-22_V2.0_en-EU.pdf
+  title: SOFAR_7-10.5KTLM-G3_Datasheet_2026-01-22_V2.0_en-EU.pdf
+  sha256: 0c2c986a9a4815f24b740691fd0366cd82f9fb7d37b841aa28f1528d04388a8e
+  seen: '2026-11-01'
+- id: sofar_80-125ktlx-g4-ess_datasheet_2026-07-27_v2.6_en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2080-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU.pdf
+  file: SOFAR_80-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU.pdf
+  title: SOFAR_80-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU.pdf
+  sha256: 83eda43f9aef6377c6670d8e3507fe2e6943c8dc7e435d4f7294f227f03d714a
+  seen: '2026-11-01'
+models:
+- code: BT5000A
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: bt5000a_datasheet_2026-01-23_v2.0_en-eu
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: CBS5000-H4-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS5000-H5-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS5000-H6-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS5000-H7-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS5000-H8-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS5000-H9-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS5000-H10-HCBS5000-H11-HCBS5000-H12-H
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs5000-h4-h-h12-h_datasheet_2026-1-16_v1.0_en-eu
+  raw: {}
+- code: CBS8000-64KWH
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-64-96kwh_datasheet_2025-12-09_v1.3_en-eu
+  raw: {}
+- code: CBS8000-80KWH
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-64-96kwh_datasheet_2025-12-09_v1.3_en-eu
+  raw: {}
+- code: CBS8000-96KWH
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-64-96kwh_datasheet_2025-12-09_v1.3_en-eu
+  raw: {}
+- code: CBS8000-H4
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H5
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H6
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H7
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H8
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H9
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H10
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H11
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: CBS8000-H12
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: cbs8000-h4-h12_datasheet_2025-09-30_v1.5_en-eu
+  raw: {}
+- code: ESI-5
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: esi-5-12k-t1_datasheet_2025-03-04_v1.1_en-eu
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: 1
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: null
+  phases: null
+  pv_kw: 9.0
+  source: hyd_3000-6000-ep_datasheet_2023-09-19_v5.1_en-eu
+  raw:
+    mppt: 1/1
+    ac_va: '5'
+    pv_w: 9000Wp
+    phases: 4500Wp 5400Wp 6000Wp 6900Wp 7500Wp 7500Wp 9000Wp
+- code: HYD
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 7.98
+  source: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  raw:
+    pv_w: 7980Wp
+    phases: 230V, 50/60Hz
+- code: HYD
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 7.98
+  source: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  raw:
+    pv_w: 7980Wp
+    phases: 230V, 50/60Hz
+- code: HYD
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 7.98
+  source: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  raw:
+    pv_w: 7980Wp
+    phases: 230V, 50/60Hz
+- code: HYD
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 7.98
+  source: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  raw:
+    pv_w: 7980Wp
+    phases: 230V, 50/60Hz
+- code: HYD
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 7.98
+  source: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  raw:
+    pv_w: 7980Wp
+    phases: 230V, 50/60Hz
+- code: HYD
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 7.98
+  source: hyd_3000-6000-es_datasheet_2020-08_v1.0_en-eu
+  raw:
+    pv_w: 7980Wp
+    phases: 230V, 50/60Hz
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sh-20-digit_sn_2025-11-27_(available_from_2024)_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 3N~+PE, 380/400/415
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: null
+  pv_kw: 30.0
+  source: hyd_5-20ktl-3ph_datasheet_with_sp-14-digit_sn_2023-08-31_v5.0_en-eu
+  raw:
+    mppt: 2/2
+    ac_va: '22'
+    pv_w: 30000Wp
+    phases: 25 25 25 25/25 25/25 25/25 25/25
+- code: HYD-14.9K-T1-A
+  mppt: 3
+  ac_kw: null
+  ac_kva: 14.9
+  ac_a: null
+  phases: 3
+  pv_kw: 0.03
+  source: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  raw:
+    mppt: '3'
+    ac_va: '14.9'
+    pv_w: '30'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-15K-T1
+  mppt: 3
+  ac_kw: null
+  ac_kva: 16.5
+  ac_a: null
+  phases: 3
+  pv_kw: 0.03
+  source: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  raw:
+    mppt: '3'
+    ac_va: '16.5'
+    pv_w: '30'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-20K-T1
+  mppt: 3
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.04
+  source: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  raw:
+    mppt: '3'
+    ac_va: '22'
+    pv_w: '40'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-25K-T1
+  mppt: 3
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: 0.05
+  source: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  raw:
+    mppt: '3'
+    ac_va: '27.5'
+    pv_w: '50'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-29.9K-T1-A-PLUS
+  mppt: 3
+  ac_kw: null
+  ac_kva: 29.9
+  ac_a: null
+  phases: 3
+  pv_kw: 0.06
+  source: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  raw:
+    mppt: '3'
+    ac_va: '29.9'
+    pv_w: '60'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-30K-T1-PLUS
+  mppt: 3
+  ac_kw: null
+  ac_kva: 33.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.06
+  source: hyd-14.9-30k-t1_datasheet_2026-09-07_v1.4_en-eu
+  raw:
+    mppt: '3'
+    ac_va: '33'
+    pv_w: '60'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-40K-T1
+  mppt: 4
+  ac_kw: null
+  ac_kva: 44.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.08
+  source: hyd-40-60k-t1_datasheet_2025-11-26_v1.1_en-eu
+  raw:
+    mppt: '4'
+    ac_va: '44'
+    pv_w: '80'
+    phases: 3N~+PE, 380/400/415
+- code: HYD-49.9K-T1-A
+  mppt: 4
+  ac_kw: null
+  ac_kva: 49.9
+  ac_a: null
+  phases: 3
+  pv_kw: 0.1
+  source: hyd-40-60k-t1_datasheet_2025-11-26_v1.1_en-eu
+  raw:
+    mppt: '4'
+    ac_va: '49.9'
+    pv_w: '100'
+    phases: 3N~+PE, 380/400/415
+- code: HYD-50K-T1
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.1
+  source: hyd-40-60k-t1_datasheet_2025-11-26_v1.1_en-eu
+  raw:
+    mppt: '4'
+    ac_va: '55'
+    pv_w: '100'
+    phases: 3N~+PE, 380/400/415
+- code: HYD-60K-T1
+  mppt: 4
+  ac_kw: null
+  ac_kva: 66.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.12
+  source: hyd-40-60k-t1_datasheet_2025-11-26_v1.1_en-eu
+  raw:
+    mppt: '4'
+    ac_va: '66'
+    pv_w: '120'
+    phases: 3N~+PE, 380/400/415
+- code: HYD-5K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.5
+  ac_a: null
+  phases: 3
+  pv_kw: 0.01
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '5.5'
+    pv_w: '10'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-6K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 6.6
+  ac_a: null
+  phases: 3
+  pv_kw: 0.01
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '6.6'
+    pv_w: '12'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-6.5K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 7.15
+  ac_a: null
+  phases: 3
+  pv_kw: 0.01
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '7.15'
+    pv_w: '13'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-8K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 8.8
+  ac_a: null
+  phases: 3
+  pv_kw: 0.02
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '8.8'
+    pv_w: '16'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-9.9K-LT1-A
+  mppt: 2
+  ac_kw: null
+  ac_kva: 9.9
+  ac_a: null
+  phases: 3
+  pv_kw: 0.02
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '9.9'
+    pv_w: '20'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-10K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 11.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.02
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '11'
+    pv_w: '20'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-12K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: 0.02
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '13.2'
+    pv_w: '24'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-15K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 16.5
+  ac_a: null
+  phases: 3
+  pv_kw: 0.03
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '16.5'
+    pv_w: '30'
+    phases: 3N~+PE, 380 400 415
+- code: HYD-20K-LT1
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: 0.04
+  source: hyd-5-20k-lt1_datasheet_2026-08-26_v1.4_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '22'
+    pv_w: '40'
+    phases: 3N~+PE, 380 400 415
+- code: SF-5KWH-L1
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sf-5kwh-l1_datasheet_2026-07-22_v2.3_en-eu
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SOFAR
+  mppt: 10
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_100-125ktlx-g4_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '10'
+    ac_va: 125kVA@45�C 110kVA@50�C
+    phases: 3/N/PE, 380V 400V 415V
+- code: SOFAR
+  mppt: 10
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_100-125ktlx-g4_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '10'
+    ac_va: 125kVA@45�C 110kVA@50�C
+    phases: 3/N/PE, 380V 400V 415V
+- code: SOFAR
+  mppt: 10
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_100-125ktlx-g4_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '10'
+    ac_va: 125kVA@45�C 110kVA@50�C
+    phases: 3/N/PE, 380V 400V 415V
+- code: SOFAR
+  mppt: 10
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_100-125ktlx-g4_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '10'
+    ac_va: 125kVA@45�C 110kVA@50�C
+    phases: 3/N/PE, 380V 400V 415V
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: 37.5
+  source: sofar_15-25ktlx-g3p_datasheet__2026-08-27_v3.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '27500'
+    pv_w: '37500'
+    phases: 3/N/PE, 220/380 230/400 240/415
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: 37.5
+  source: sofar_15-25ktlx-g3p_datasheet__2026-08-27_v3.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '27500'
+    pv_w: '37500'
+    phases: 3/N/PE, 220/380 230/400 240/415
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: 37.5
+  source: sofar_15-25ktlx-g3p_datasheet__2026-08-27_v3.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '27500'
+    pv_w: '37500'
+    phases: 3/N/PE, 220/380 230/400 240/415
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: 37.5
+  source: sofar_15-25ktlx-g3p_datasheet__2026-08-27_v3.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '27500'
+    pv_w: '37500'
+    phases: 3/N/PE, 220/380 230/400 240/415
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: 37.5
+  source: sofar_15-25ktlx-g3p_datasheet__2026-08-27_v3.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: '27500'
+    pv_w: '37500'
+    phases: 3/N/PE, 220/380 230/400 240/415
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 4
+  ac_kw: null
+  ac_kva: 55.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_25-50ktlx-g3_datasheet_2025-11-20_v2.0_en-eu
+  raw:
+    mppt: '4'
+    ac_va: 55000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sofar_250-255ktl-hv_datasheet_2023-05-11_v1.0_en-eu
+  raw:
+    mppt: '9'
+    phases: 3 800V
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sofar_250-255ktl-hv_datasheet_2023-05-11_v1.0_en-eu
+  raw:
+    mppt: '9'
+    phases: 3 800V
+- code: SOFAR
+  mppt: 8
+  ac_kw: null
+  ac_kva: 0.35
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_250-350ktlx0_datasheet_2024-08-02_v1.3_en-eu
+  raw:
+    mppt: '8'
+    ac_va: 352kVA
+    phases: 3/PE, 800V
+- code: SOFAR
+  mppt: 8
+  ac_kw: null
+  ac_kva: 0.35
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_250-350ktlx0_datasheet_2024-08-02_v1.3_en-eu
+  raw:
+    mppt: '8'
+    ac_va: 352kVA
+    phases: 3/PE, 800V
+- code: SOFAR
+  mppt: 8
+  ac_kw: null
+  ac_kva: 0.35
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_250-350ktlx0_datasheet_2024-08-02_v1.3_en-eu
+  raw:
+    mppt: '8'
+    ac_va: 352kVA
+    phases: 3/PE, 800V
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_3.3-12ktlx-g3_datasheet_2026-01-23_v2.0_en-eu
+  raw:
+    mppt: '2'
+    ac_va: 13200VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 6
+  ac_kw: null
+  ac_kva: 66.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_60-80ktlx-g3_datasheet_2026-03-10_v2.1_en-eu
+  raw:
+    mppt: '6'
+    ac_va: 66000VA
+    phases: 3/N/PE, 230/400Vac
+- code: 60KTLX2-G3
+  mppt: 6
+  ac_kw: null
+  ac_kva: 66.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_60-80ktlx-g3_datasheet_2026-03-10_v2.1_en-eu
+  raw:
+    mppt: '6'
+    ac_va: 66000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 6
+  ac_kw: null
+  ac_kva: 66.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_60-80ktlx-g3_datasheet_2026-03-10_v2.1_en-eu
+  raw:
+    mppt: '6'
+    ac_va: 66000VA
+    phases: 3/N/PE, 230/400Vac
+- code: 80KTLX-G3
+  mppt: 6
+  ac_kw: null
+  ac_kva: 88.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: sofar_60-80ktlx-g3_datasheet_2026-03-10_v2.1_en-eu
+  raw:
+    mppt: '6'
+    ac_va: 88000VA
+    phases: 3/N/PE, 230/400Vac
+- code: SOFAR
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  raw:
+    mppt: '3'
+    ac_va: 10500VA
+    phases: 230Vac
+- code: SOFAR
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  raw:
+    mppt: '3'
+    ac_va: 10500VA
+    phases: 230Vac
+- code: SOFAR
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  raw:
+    mppt: '3'
+    ac_va: 10500VA
+    phases: 230Vac
+- code: SOFAR
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  raw:
+    mppt: '3'
+    ac_va: 10500VA
+    phases: 230Vac
+- code: SOFAR
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  raw:
+    mppt: '3'
+    ac_va: 10500VA
+    phases: 230Vac
+- code: SOFAR
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: sofar_7-10.5ktlm-g3_datasheet_2026-01-22_v2.0_en-eu
+  raw:
+    mppt: '3'
+    ac_va: 10500VA
+    phases: 230Vac
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: 0.23
+  source: sofar_80-125ktlx-g4-ess_datasheet_2026-07-27_v2.6_en-eu
+  raw:
+    mppt: '9'
+    ac_va: 125kVA
+    pv_w: 225kWp
+    phases: 3N~+PE, 380/400/415V
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: 0.23
+  source: sofar_80-125ktlx-g4-ess_datasheet_2026-07-27_v2.6_en-eu
+  raw:
+    mppt: '9'
+    ac_va: 125kVA
+    pv_w: 225kWp
+    phases: 3N~+PE, 380/400/415V
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: 0.23
+  source: sofar_80-125ktlx-g4-ess_datasheet_2026-07-27_v2.6_en-eu
+  raw:
+    mppt: '9'
+    ac_va: 125kVA
+    pv_w: 225kWp
+    phases: 3N~+PE, 380/400/415V
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: 0.23
+  source: sofar_80-125ktlx-g4-ess_datasheet_2026-07-27_v2.6_en-eu
+  raw:
+    mppt: '9'
+    ac_va: 125kVA
+    pv_w: 225kWp
+    phases: 3N~+PE, 380/400/415V
+- code: SOFAR
+  mppt: 9
+  ac_kw: null
+  ac_kva: 0.12
+  ac_a: null
+  phases: 3
+  pv_kw: 0.23
+  source: sofar_80-125ktlx-g4-ess_datasheet_2026-07-27_v2.6_en-eu
+  raw:
+    mppt: '9'
+    ac_va: 125kVA
+    pv_w: 225kWp
+    phases: 3N~+PE, 380/400/415V

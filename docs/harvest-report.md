@@ -1,0 +1,765 @@
+# Datasheet harvest
+
+*2026-11-01. Written by `tools/specs/harvest.py`; recipes in `tools/specs/harvest.yaml`, the manifest in `data/specs/harvest.json` (+ `harvest-edge.json` from madis-pc). Drafts: `data/specs/_drafts/<brand>.yaml` - unreviewed, never read by the site.*
+
+## Sheets per maker
+
+| maker | route | run | listed | datasheets | in cache | new this run | changed | listed, not fetched (robots) | failed | table not read | register models a sheet covers |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| Deye | http | 2026-11-01 | 346 | 36 | 36 | 36 | 0 | 0 | 0 | 1 | 140 / 296 |
+| Fox ESS | http | 2026-11-01 | 448 | 61 | 61 | 61 | 0 | 0 | 0 | 37 | 68 / 488 |
+| GoodWe | http | 2026-11-01 | 13 | 13 | 13 | 13 | 0 | 0 | 0 | 9 | 6 / 316 |
+| Growatt | http | 2026-11-01 | 452 | 348 | 0 | 0 | 0 | 348 | 0 | 0 | 0 / 379 |
+| Hoymiles | http | 2026-11-01 | 1095 | 148 | 0 | 0 | 0 | 148 | 0 | 0 | 0 / 264 |
+| Sofar | http | 2026-11-01 | 47 | 47 | 47 | 47 | 0 | 0 | 0 | 28 | 12 / 293 |
+| Solis | http | 2026-11-01 | - | - | 0 | - | - | - | **route failed**: RuntimeError: navbar API HTTP 500 | - | - |
+| Sungrow | http | 2026-11-01 | 50 | 50 | 50 | 50 | 0 | 0 | 0 | 48 | 2 / 190 |
+| Kostal | edge | 2026-11-01 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 / 119 |
+| SMA | edge | 2026-11-01 | 47 | 45 | 45 | 45 | 0 | 0 | 0 | 40 | 30 / 184 |
+| SolaX | edge | 2026-11-01 | 9 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 605 |
+
+"register models a sheet covers": models of that maker in the register snapshot (`web/.data/registers.json`) whose code matches a model column of any harvested sheet - what the drafts could give the site once reviewed. The live `data/specs/` numbers are in the README.
+
+## New sheets (253)
+
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-1-4k-g04p1-eu-am1_20260706_en.pdf - 10 model columns, 10 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-10-15k-g05-lv_20260706_en.pdf - 3 model columns, 3 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-100-125k-sg02hp3-eu-gm10_20260706_en.pdf - 3 model columns, 3 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-12-16kk-sg01lp1-eu_20260706_en.pdf - 3 model columns, 6 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-120-136k-g01p3-eu-am8_20260706_en.pdf - 5 model columns, 5 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-14-20k-sg05lp3-eu-sm2_20260706_en.pdf - 5 model columns, 5 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-18-21k-g04-lv_20260706_en.pdf - 3 model columns, 2 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-23-30k-g04-lv_20260706_en.pdf - 3 model columns, 2 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-25-30k-sg02hp3-eu-am3_20260706_en.pdf - 3 model columns, 6 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-29.9-50k-sg01hp3-eu-bm4_20260706_en.pdf - 5 model columns, 11 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-15k-g06p3-eu-bm2-p1_20260706_en.pdf - 10 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-6k-sg04lp1_20260706_en.pdf - 5 model columns, 10 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-6k-sg06lp1-eu-cm2_20260728_en.pdf - 2 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-8k-sg06lp3-eu-bm2_20260706_en.pdf - 5 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3-8k-sg06lp3-eu-cm2_20260706_en.pdf - 5 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3.6-10k-sg05lp1-eu-am2-p_20260706_en.pdf - 7 model columns, 21 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3.6-10k-sg05lp1-eu-sm2-p_20260706_en.pdf - 7 model columns, 21 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-3.6-6.2k-g05p1-eu-am2_20260706_en.pdf - 7 model columns, 3 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-30-36k-g04_20260706_en.pdf - 4 model columns, 4 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-33-50k-g04p3-eu-am4-lv_20260706_en.pdf - 5 model columns, 5 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-40-50k-g04_20260706_en.pdf - 3 model columns, 3 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-5-12k-sg04lp3_20260706_en.pdf - 5 model columns, 10 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-5-25k-sg01hp3-eu-am2_20260706_en.pdf - 8 model columns, 23 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-5-8kk-sg01lp1-us_20260706_en.pdf - table not read
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-6-8k-g06p3-eu-bm2-lv-p1_20260706_en.pdf - 2 model columns, 1 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-60-75k-g01p3-eu-am8-lv_20260706_en.pdf - 3 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-60-80k-g04p3-eu-am4_20260706_en.pdf - 4 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-60-80k-sg02hp3-eu-em6_20260706_en.pdf - 4 model columns, 4 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7-12k-sg06lp1-eu-bm3_20260706_en.pdf - 5 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7-12k-sg06lp1-eu-cm3_20260706_en-1.pdf - 5 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7-8k-g02p1-eu-am2_20260706_en.pdf - 3 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7.6-12k-sg02lp1-eu-am2_20260706_en.pdf - 4 model columns, 8 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-7.6-8kk-sg01lp1-eu_20260706_en.pdf - 2 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-70-110k-g03_20260706_en.pdf - 6 model columns, 6 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-9-10.5k-g02p1-eu-am2_20260706_en.pdf - 3 model columns, 0 register models
+- Deye: https://deye.com/wp-content/uploads/2026/07/datasheet-sun-3-6k-sg06lp1-eu-bm2-en.pdf - 2 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251204/ENQ4datasheetV1.220250424.pdf - 3 model columns, 3 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251220/USH1AC1DatasheetV4.220251210.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENMEdatasheetV2.220260331.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENHPBOXDatasheetHydroModuleV2.020260601.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENHPBOXEDatasheetHydroBoxV2.020260601.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENHPDatasheetV2.020260601.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH1G2DatasheetV2.220260609.pdf - 7 model columns, 10 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH1G2wlDatasheetV1.320260609.pdf - 7 model columns, 10 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH3PRODatasheetV2.720260605.pdf - 6 model columns, 6 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH3SmartDatasheetV2.020260609.pdf - 7 model columns, 7 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENKHKADatasheetV2.420260609.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENLEVChargerDatasheetV1.320260605.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENF3.0DatasheetV1.220260703.pdf - 6 model columns, 4 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENFG2DatasheetV2.020260703.pdf - 6 model columns, 4 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENGDatasheetV3.820260703.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENGMAXDatasheetV1.620260615.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENRDatasheetV4.820260703.pdf - 3 model columns, 2 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENRG2DatasheetV1.420260703.pdf - 6 model columns, 6 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENSG2DatasheetV3.520260703.pdf - 7 model columns, 7 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENSG3DatasheetV1.420260703.pdf - 7 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENTG3datasheetV2.520260703.pdf - 12 model columns, 12 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENVdatasheetV2.320260703.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/SKGMAXDatasheetV1.020260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260722/ENEPSBOXPROHCDatasheetV1.120260703.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260722/ENEPSBOXSPDatasheetV1.120260703.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENP100EdatasheetV1.420260702.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubeHQ3MEQ3300datasheetDEV1.020260723.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubeHQ3MEQ5000PdatasheetDEV1.220260723.pdf - 8 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ1PlusCQ7datasheetV1.220260723.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ1TQ5000datasheetV1.220260723.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ3MPlusCQ7datasheetV1.220260723.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ3MTQ5000datasheetV1.220260723.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENS22datasheetV1.220260421.pdf - 3 model columns, 2 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENS28V2datasheetV1.220260717.pdf - 3 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENCQ7DatasheetV1.320260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP11DatasheetV1.620260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP12DatasheetV1.320260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP5DatasheetV1.620260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP6DatasheetV1.320260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ3300DatasheetV1.320260710.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ4800DatasheetV1.320260710.pdf - 8 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ5000DatasheetV1.320260710.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ5000PDatasheetV1.320260710.pdf - 8 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ6000PlusDatasheetV1.320260710.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENGMAXPlusACV2DatasheetV1.320260810.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENGMAXPlusHV2DatasheetV1.320260810.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENTMAXPlusHV2DatasheetV1.320260810.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260820/ENTMAXPlusACV2DatasheetV1.320260810.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260910/ENAV2.0EVChargerAEBDatasheetV1.420260908.pdf - 6 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260910/ENCEVChargerDatasheetV1.420260908.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260910/ENLMAXEVChargerDatasheetV1.520260908.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260911/ENEPSBOXPROHCG2DatasheetV1.0.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260920/ENHPBOXEDatasheetControlBoxV2.020260601.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261009/ENET16datasheetV1.020260909.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENGMAXPlusACV1DatasheetV1.420261022.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENGMAXPlusHV1DatasheetV1.420261022.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENTMAXPlusACV1DatasheetV1.420261026-787.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENTMAXPlusHV1DatasheetV1.420261026.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENGMAXPlusHV1EGM241DatasheetV1.420261030.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENPowerBeastseparateH3PlusCQ20DatasheetV1.120261027.pdf - 5 model columns, 5 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENTMAXPlusHV1ETM241DatasheetV1.420261030.pdf - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=3053&mid=60 - 7 model columns, 0 register models
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=3258&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=3622&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=4181&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=4254&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=4382&mid=60 - 6 model columns, 2 register models
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=580&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=581&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=584&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=609&mid=60 - 2 model columns, 2 register models
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=683&mid=60 - 2 model columns, 2 register models
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=979&mid=60 - table not read
+- GoodWe: https://en.goodwe.com/Skippower/downloadFileF?id=980&mid=60 - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/BT5000A_Datasheet_2026-01-23_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/BTS%205K%20(BTS%20E5-E20-DS5)_Datasheet_2026-01-23_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/CBS5000-H4-H-H12-H_Datasheet_2026-1-16_V1.0_en-EU.pdf - 7 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/CBS8000-64-96KWh_Datasheet_2025-12-09_V1.3_en-EU.pdf - 3 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/CBS8000-H4-H12_Datasheet_2025-09-30_V1.5_en-EU.pdf - 9 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI%203-6K-S1_Datasheet_2026-01-27_V2.4_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/EV11k-AC-02_Datasheet_2024-07-02_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/GTX%203000-H4-H10_Datasheet_2023-06-06_V4.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/GTX%205000-PRO_Datasheet_2023-09-28_V4.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HU%2080_Datasheet_2023-06-25_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%203000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU.pdf - 7 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%203000-6000-ES_Datasheet_2020-08_V1.0_en-EU.pdf - 6 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%205-20KTL-3PH_Datasheet_with%20SH-20-digit%20SN_2025-11-27%20(Available%20from%202024)_V2.0_en-EU.pdf - 7 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%205-20KTL-3PH_Datasheet_with%20SP-14-digit%20SN_2023-08-31_V5.0_en-EU.pdf - 7 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU.pdf - 6 model columns, 8 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU.pdf - 4 model columns, 4 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-5-20K-LT1_Datasheet_2026-08-26_V1.4_en-EU.pdf - 9 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ME%205-20KTL-3PH_Datasheet_2023-06-06_V4.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/PowerAll%201PH%20(ESI%203-6K-S1)_Datasheet_2026-01-26_V2.2_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/PowerAll%201PH%20(ESI-8-12K-S1)_Datasheet_2026-08-18_V1.5_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/PowerAll%203PH%20(ESI-5-12K-T1)_Datasheet_2025-10-14_V2.1_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SF-5KWH-L1_Datasheet_2026-07-22_V2.3_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU.pdf - 4 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%201100-3300TL-G3_Datasheet_2023-06-06_V4.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2015-24KTLX-G3_Datasheet_2023-05-29_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2015-25KTLX-G3P_Datasheet_%202026-08-27_V3.0_en-EU.pdf - 5 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2025-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU.pdf - 7 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU.pdf - 2 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU.pdf - 3 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%203.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU.pdf - 8 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2060-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU.pdf - 4 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%207-10.5KTLM-G3_Datasheet_2026-01-22_V2.0_en-EU.pdf - 6 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2080-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU.pdf - 5 model columns, 0 register models
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20Backup%20Cabinet_Datasheet_2025-12-08_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20CH1000_Datasheet_2026-01-23_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20EMS-EU-G1_Datasheet_2026-02-04_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20Junction%20Cabinet%20PAC-750K-H1_Datasheet_2026-01-26_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PSC300_Datasheet_2026-01-26_V2.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%202.0_Datasheet_2026-06-22%20(PCS)_V1.1_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%202.0_Datasheet_2026-09-02%20(Batt)_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%20Cube_Datasheet_2026-02-03_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic_Datasheet_2026-01-26_V2.1_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMaster_Datasheet_2025-12-26_V1.4_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20SAR-100_Datasheet_2023-07-26_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20SofarCloud_Datesheet_2025-03-04_V1.0_en-EU.pdf - table not read
+- Sofar: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/Stick%20Logger_Datasheet_2023-06-25_V2.0_en-EU.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2022/04/25/DS_20200601_PVM1000%20DatasheetV152_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2022/04/25/DS_20210301_WiNet-S%20Datasheet_V1.1.1_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2022/07/14/DS_20220623_Logger4000%20_Datasheet_V12_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2022/11/30/DS_20221121_SG320HX_Datasheet_V17_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2023/06/07/DS_20230227_WiNet-S2_Datasheet_V1_EN(1).pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/02/21/DS_20230925_ST5015kWh-2500kW-2h_1250kW-4h_V3_EN.pdf - 2 model columns, 0 register models
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/03/29/DS_20240328_SH15_20_25T_Datasheet_V3_EN(AU).pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/04/18/DS_20240417_iSolarCloud_Datasheet_V3_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/07/24/DS_20240717_COM100D-EU_Datasheet_V4_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/07/24/DS_20240719_Logger1000A-EU_Datasheet_V4_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/08/01/DS_20240722_IDC30E_AU_Datasheet_V3_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/08/30/DS_20240329_SBH100_150_200_250_300_350_400_Datasheet_V4_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20240907_SBR064_096_128_160_192_224_256_Datasheet_V5_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2024/11/30/DS_20241106_ST455kWh-110kW-4h_Datasheet_V3_EN%EF%BC%88EUR%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/01/06/DS_20241226_MVS6400-LV_Datasheet_V3_EN%EF%BC%88MEA%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/01/06/DS_20241226_MVS8960-LV_Datasheet_V5_EN%EF%BC%88MEA%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/01/14/DS_20250108_MVS6400-LV_Datasheet_V3_EN%EF%BC%88APAC%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/01/14/DS_20250108_MVS8960-LV_Datasheet_V3_EN%EF%BC%88APAC%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/01/17/DS_20250109_SG1100UD-MV_Datasheet_V18_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/01/23/DS_20250121_SG320HX-20_Datasheet_V8_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_MVS6400-LV_Datasheet_V4_EN%EF%BC%88LA%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_MVS8960-LV_Datasheet_V4_EN%EF%BC%88LA%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_SG3300UD-MV_SG4400UD-MV_Datasheet_V21_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_SG6600UD-MV_8800UD-MV_Datasheet_V4_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/04/23/DS_20250418_MVS6400-LV_Datasheet_V4_EN%EF%BC%88EUR%EF%BC%89.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/04/23/DS_20250418_MVS8960-LV_Datasheet_V4_EN(EUR).pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/06/16/DS_20250610_SG3300UD_SG4400UD_Datasheet_V21_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/06/30/DS_20240320_SH3.0_3.6_4.0_5.0_6.0RS_Datasheet_V18_EN.pdf - 2 model columns, 2 register models
+- Sungrow: https://info-support.sungrowpower.com/application/pdf/2025/08/04/DS_20250722_IDC30E_Datasheet_V2_EN.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/0270ed63-e404-494d-b14f-9234cb9adc73.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/38474add-fb82-49d4-9273-8c9d52d2d952.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/6d853e57-5fb5-4c73-afb4-ef8cebc99c3f.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/cd0d7912-cdfd-420e-abb1-a0a4d010a12a.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/d7fb4bb1-1f80-450b-b546-e1cf4d32c6f0.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/f7e849d3-5678-4f65-add9-a972ee806b13.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/009a9a61-3968-4323-8a86-8ca1e443998b.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/1cb442be-4d2c-4a92-b7b4-99527176776c.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/2105e8e5-a1b3-4114-a8b5-854bb4307d1b.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/332d0a52-cc41-4eea-a496-cecfb8e51686.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/42d44310-9504-4921-8aeb-c8e52ac6c1a5.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/441038a7-4336-4a72-b3d6-428777d0e38b.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/4d72c95e-bd08-43d2-b84a-43a18ee00ae2.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/56037c44-9a2d-47fd-b1a8-6faae8393577.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/626b56ee-ec01-4671-b1ac-6f4e014e113b.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/6bc4d1f2-ac9c-4295-8678-edc1ca5357e9.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/a33f2659-00b8-4301-b514-9c3b19937a3d.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/a63ad637-0bdd-4b91-8adf-2d6cf4ded6ec.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/cc37f961-6416-4ad6-b461-bbf9d18afe92.pdf - table not read
+- Sungrow: https://info-support.sungrowpower.com/datasheet-materials/d6ba2e2b-5116-4446-a94d-721ca55c9c26.pdf - table not read
+- Kostal: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/KSEM-KEM/DB_KSEM-G2_en.pdf - table not read
+- SMA: https://files.sma.de/downloads/CELLULARMODEM-DS-en-19.pdf - table not read
+- SMA: https://files.sma.de/downloads/MC-Boxen-DS-en-20.pdf - table not read
+- SMA: https://files.sma.de/downloads/Power%20Limiter-DS-en-10.pdf - 5 model columns, 4 register models
+- SMA: https://files.sma.de/downloads/RGM-DS-en-19.pdf - table not read
+- SMA: https://files.sma.de/downloads/SB30-60-DS-en-61.pdf - 5 model columns, 5 register models
+- SMA: https://files.sma.de/downloads/SBS25-1VL-10-DS-en-30.pdf - table not read
+- SMA: https://files.sma.de/downloads/SBSE36-60-DS-en-18.pdf - 4 model columns, 4 register models
+- SMA: https://files.sma.de/downloads/SBSxx-10-DS-en-31.pdf - table not read
+- SMA: https://files.sma.de/downloads/SBxx-1VL-40-DS-en-52.pdf - table not read
+- SMA: https://files.sma.de/downloads/SBxx-US-DS-en-41.pdf - table not read
+- SMA: https://files.sma.de/downloads/SC2200-2475-DS-en-60.pdf - table not read
+- SMA: https://files.sma.de/downloads/SC2xxxUP-2499kW-DS-en-12.pdf - table not read
+- SMA: https://files.sma.de/downloads/SC2xxxUP-DS-en-23.pdf - table not read
+- SMA: https://files.sma.de/downloads/SC4400UP-JP-DS-en-11.pdf - table not read
+- SMA: https://files.sma.de/downloads/SC4xxxUP-DS-en-33.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS-UP-DS-en-24.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS-UP-S-DS-en-22.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS-UP-XT-2S-3S-DS-en-12.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS-UP-XT-2ST-2499kW-DS-en-10.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS-UP-XT-2ST-DS-en-23.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS-UP-XT-DS-en-23.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCS3450-UP-XT-JP-DS-en-15.pdf - table not read
+- SMA: https://files.sma.de/downloads/SCxxxxUP-2S-3S-DS-en-13.pdf - table not read
+- SMA: https://files.sma.de/downloads/SHP-21-DS-en-20.pdf - table not read
+- SMA: https://files.sma.de/downloads/SHPS-30-DS-en-07.pdf - 4 model columns, 0 register models
+- SMA: https://files.sma.de/downloads/SI44M-80H-13-DS-en-40.pdf - 3 model columns, 3 register models
+- SMA: https://files.sma.de/downloads/SI6048US-DS-en-28.pdf - table not read
+- SMA: https://files.sma.de/downloads/SIxx-20-DS-en-27.pdf - 2 model columns, 2 register models
+- SMA: https://files.sma.de/downloads/SMABackup1P-DS-en-10.pdf - table not read
+- SMA: https://files.sma.de/downloads/SMABackup3PKit-DS-en-10.pdf - table not read
+- SMA: https://files.sma.de/downloads/SMABackupSTPH-DS-en-11.pdf - 6 model columns, 6 register models
+- SMA: https://files.sma.de/downloads/SMASunSpecRSD-DS-en-23.pdf - table not read
+- SMA: https://files.sma.de/downloads/SMASunSpecRSD-DS-en_us-32.pdf - table not read
+- SMA: https://files.sma.de/downloads/STP110-60-AFCI-DS-en-22.pdf - table not read
+- SMA: https://files.sma.de/downloads/STP125-70-DS-en-13.pdf - table not read
+- SMA: https://files.sma.de/downloads/STP15-25TL-30-DS-en-41.pdf - table not read
+- SMA: https://files.sma.de/downloads/STP3-6-3AV-40-DS-en-41.pdf - 4 model columns, 4 register models
+- SMA: https://files.sma.de/downloads/STP50-41-DS-en-20.pdf - table not read
+- SMA: https://files.sma.de/downloads/STP8-10-3AV-40-DS-en-41.pdf - 2 model columns, 2 register models
+- SMA: https://files.sma.de/downloads/STPHxx-60-DS-en-10.pdf - 6 model columns, 6 register models
+- SMA: https://files.sma.de/downloads/STPHxx-70-DS-en-03.pdf - 3 model columns, 0 register models
+- SMA: https://files.sma.de/downloads/STPS60-DS-en-31.pdf - table not read
+- SMA: https://files.sma.de/downloads/STPxx-3SE-40-DS-en-22.pdf - 4 model columns, 4 register models
+- SMA: https://files.sma.de/downloads/STPxx-50-DS-en-24.pdf - table not read
+- SMA: https://files.sma.de/downloads/STPxx-80-DS-en-11.pdf - table not read
+
+## Changed sheets (0)
+
+none
+
+
+## Routes and files that failed (1)
+
+- Solis: route `solis`: RuntimeError: navbar API HTTP 500
+
+## Sheets whose table could not be read (164)
+
+- Deye: b_datasheet_sun-5-8kk-sg01lp1-us_20260706_en.pdf (https://deye.com/wp-content/uploads/2026/07/%E3%80%90b%E3%80%91datasheet_sun-5-8kk-sg01lp1-us_20260706_en.pdf) - no model columns found
+- Fox ESS: 259d3a4f_ENMEdatasheetV2.220260331.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENMEdatasheetV2.220260331.pdf) - no model columns found
+- Fox ESS: ENHPBOXDatasheetHydroModuleV2.020260601.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENHPBOXDatasheetHydroModuleV2.020260601.pdf) - no model columns found
+- Fox ESS: ENHPBOXEDatasheetHydroBoxV2.020260601.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENHPBOXEDatasheetHydroBoxV2.020260601.pdf) - no model columns found
+- Fox ESS: ENHPDatasheetV2.020260601.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260605/ENHPDatasheetV2.020260601.pdf) - no model columns found
+- Fox ESS: ENLEVChargerDatasheetV1.320260605.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENLEVChargerDatasheetV1.320260605.pdf) - no model columns found
+- Fox ESS: 92c94270_ENGDatasheetV3.820260703.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENGDatasheetV3.820260703.pdf) - no model columns found
+- Fox ESS: 6b24a6c3_ENGMAXDatasheetV1.620260615.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENGMAXDatasheetV1.620260615.pdf) - no model columns found
+- Fox ESS: d6f16b5e_ENVdatasheetV2.320260703.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENVdatasheetV2.320260703.pdf) - no model columns found
+- Fox ESS: SKGMAXDatasheetV1.020260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/SKGMAXDatasheetV1.020260710.pdf) - no model columns found
+- Fox ESS: ENEPSBOXPROHCDatasheetV1.120260703.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260722/ENEPSBOXPROHCDatasheetV1.120260703.pdf) - no model columns found
+- Fox ESS: ENEPSBOXSPDatasheetV1.120260703.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260722/ENEPSBOXSPDatasheetV1.120260703.pdf) - no model columns found
+- Fox ESS: 1995f6a2_ENP100EdatasheetV1.420260702.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENP100EdatasheetV1.420260702.pdf) - no model columns found
+- Fox ESS: deacbe51_ENPowerCubePQ1PlusCQ7datasheetV1.220260723.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ1PlusCQ7datasheetV1.220260723.pdf) - no model columns found
+- Fox ESS: c560ebde_ENPowerCubePQ1TQ5000datasheetV1.220260723.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ1TQ5000datasheetV1.220260723.pdf) - no model columns found
+- Fox ESS: 7025f3de_ENPowerCubePQ3MPlusCQ7datasheetV1.220260723.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ3MPlusCQ7datasheetV1.220260723.pdf) - no model columns found
+- Fox ESS: dbd90934_ENPowerCubePQ3MTQ5000datasheetV1.220260723.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubePQ3MTQ5000datasheetV1.220260723.pdf) - no model columns found
+- Fox ESS: ENCQ7DatasheetV1.320260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENCQ7DatasheetV1.320260710.pdf) - no model columns found
+- Fox ESS: ENEP11DatasheetV1.620260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP11DatasheetV1.620260710.pdf) - no model columns found
+- Fox ESS: ENEP12DatasheetV1.320260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP12DatasheetV1.320260710.pdf) - no model columns found
+- Fox ESS: ENEP5DatasheetV1.620260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP5DatasheetV1.620260710.pdf) - no model columns found
+- Fox ESS: ENEP6DatasheetV1.320260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEP6DatasheetV1.320260710.pdf) - no model columns found
+- Fox ESS: ENEQ6000PlusDatasheetV1.320260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ6000PlusDatasheetV1.320260710.pdf) - no model columns found
+- Fox ESS: ENGMAXPlusACV2DatasheetV1.320260810.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENGMAXPlusACV2DatasheetV1.320260810.pdf) - no model columns found
+- Fox ESS: ENGMAXPlusHV2DatasheetV1.320260810.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENGMAXPlusHV2DatasheetV1.320260810.pdf) - no model columns found
+- Fox ESS: ENTMAXPlusHV2DatasheetV1.320260810.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENTMAXPlusHV2DatasheetV1.320260810.pdf) - no model columns found
+- Fox ESS: ENTMAXPlusACV2DatasheetV1.320260810.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260820/ENTMAXPlusACV2DatasheetV1.320260810.pdf) - no model columns found
+- Fox ESS: ENCEVChargerDatasheetV1.420260908.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260910/ENCEVChargerDatasheetV1.420260908.pdf) - no model columns found
+- Fox ESS: ENLMAXEVChargerDatasheetV1.520260908.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260910/ENLMAXEVChargerDatasheetV1.520260908.pdf) - no model columns found
+- Fox ESS: ENEPSBOXPROHCG2DatasheetV1.0.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260911/ENEPSBOXPROHCG2DatasheetV1.0.pdf) - no model columns found
+- Fox ESS: ENHPBOXEDatasheetControlBoxV2.020260601.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260920/ENHPBOXEDatasheetControlBoxV2.020260601.pdf) - no model columns found
+- Fox ESS: ENET16datasheetV1.020260909.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261009/ENET16datasheetV1.020260909.pdf) - no model columns found
+- Fox ESS: ENGMAXPlusACV1DatasheetV1.420261022.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENGMAXPlusACV1DatasheetV1.420261022.pdf) - no model columns found
+- Fox ESS: ENGMAXPlusHV1DatasheetV1.420261022.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENGMAXPlusHV1DatasheetV1.420261022.pdf) - no model columns found
+- Fox ESS: e476991d_ENTMAXPlusACV1DatasheetV1.420261026-787.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENTMAXPlusACV1DatasheetV1.420261026-787.pdf) - no model columns found
+- Fox ESS: d3778f45_ENTMAXPlusHV1DatasheetV1.420261026.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261026/ENTMAXPlusHV1DatasheetV1.420261026.pdf) - no model columns found
+- Fox ESS: ENGMAXPlusHV1EGM241DatasheetV1.420261030.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENGMAXPlusHV1EGM241DatasheetV1.420261030.pdf) - no model columns found
+- Fox ESS: 919f72e1_ENTMAXPlusHV1ETM241DatasheetV1.420261030.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENTMAXPlusHV1ETM241DatasheetV1.420261030.pdf) - no model columns found
+- GoodWe: GW_BAT-60-112_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=3258&mid=60) - no model columns found
+- GoodWe: GW_MIS-2-in-1_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=3622&mid=60) - no model columns found
+- GoodWe: GW_Lynx-A-G4-16kWh_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=4181&mid=60) - no model columns found
+- GoodWe: GW_BAT-C-208-261_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=4254&mid=60) - no model columns found
+- GoodWe: GW_HT_73-120K_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=580&mid=60) - no model columns found
+- GoodWe: GW_HT_1500V_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=581&mid=60) - no model columns found
+- GoodWe: GW_LVMT_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=584&mid=60) - no model columns found
+- GoodWe: GW_SMT_15A_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=979&mid=60) - no model columns found
+- GoodWe: GW_LVSMT_15A_Datasheet-EN.pdf (https://en.goodwe.com/Skippower/downloadFileF?id=980&mid=60) - no model columns found
+- Sofar: BT5000A_Datasheet_2026-01-23_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/BT5000A_Datasheet_2026-01-23_V2.0_en-EU.pdf) - no model columns found
+- Sofar: BTS_5K_(BTS_E5-E20-DS5)_Datasheet_2026-01-23_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/BTS%205K%20(BTS%20E5-E20-DS5)_Datasheet_2026-01-23_V2.0_en-EU.pdf) - no model columns found
+- Sofar: ESI_3-6K-S1_Datasheet_2026-01-27_V2.4_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI%203-6K-S1_Datasheet_2026-01-27_V2.4_en-EU.pdf) - no model columns found
+- Sofar: ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf) - no model columns found
+- Sofar: EV11k-AC-02_Datasheet_2024-07-02_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/EV11k-AC-02_Datasheet_2024-07-02_V2.0_en-EU.pdf) - no model columns found
+- Sofar: GTX_3000-H4-H10_Datasheet_2023-06-06_V4.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/GTX%203000-H4-H10_Datasheet_2023-06-06_V4.0_en-EU.pdf) - no model columns found
+- Sofar: GTX_5000-PRO_Datasheet_2023-09-28_V4.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/GTX%205000-PRO_Datasheet_2023-09-28_V4.0_en-EU.pdf) - no model columns found
+- Sofar: HU_80_Datasheet_2023-06-25_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HU%2080_Datasheet_2023-06-25_V1.0_en-EU.pdf) - no model columns found
+- Sofar: ME_5-20KTL-3PH_Datasheet_2023-06-06_V4.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ME%205-20KTL-3PH_Datasheet_2023-06-06_V4.0_en-EU.pdf) - no model columns found
+- Sofar: PowerAll_1PH_(ESI_3-6K-S1)_Datasheet_2026-01-26_V2.2_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/PowerAll%201PH%20(ESI%203-6K-S1)_Datasheet_2026-01-26_V2.2_en-EU.pdf) - no model columns found
+- Sofar: PowerAll_1PH_(ESI-8-12K-S1)_Datasheet_2026-08-18_V1.5_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/PowerAll%201PH%20(ESI-8-12K-S1)_Datasheet_2026-08-18_V1.5_en-EU.pdf) - no model columns found
+- Sofar: PowerAll_3PH_(ESI-5-12K-T1)_Datasheet_2025-10-14_V2.1_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/PowerAll%203PH%20(ESI-5-12K-T1)_Datasheet_2025-10-14_V2.1_en-EU.pdf) - no model columns found
+- Sofar: SF-5KWH-L1_Datasheet_2026-07-22_V2.3_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SF-5KWH-L1_Datasheet_2026-07-22_V2.3_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_1100-3300TL-G3_Datasheet_2023-06-06_V4.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%201100-3300TL-G3_Datasheet_2023-06-06_V4.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_15-24KTLX-G3_Datasheet_2023-05-29_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2015-24KTLX-G3_Datasheet_2023-05-29_V1.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_Backup_Cabinet_Datasheet_2025-12-08_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20Backup%20Cabinet_Datasheet_2025-12-08_V1.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_CH1000_Datasheet_2026-01-23_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20CH1000_Datasheet_2026-01-23_V2.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_EMS-EU-G1_Datasheet_2026-02-04_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20EMS-EU-G1_Datasheet_2026-02-04_V2.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_Junction_Cabinet_PAC-750K-H1_Datasheet_2026-01-26_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20Junction%20Cabinet%20PAC-750K-H1_Datasheet_2026-01-26_V2.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_PSC300_Datasheet_2026-01-26_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PSC300_Datasheet_2026-01-26_V2.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_PowerMagic_2.0_Datasheet_2026-06-22_(PCS)_V1.1_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%202.0_Datasheet_2026-06-22%20(PCS)_V1.1_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_PowerMagic_2.0_Datasheet_2026-09-02_(Batt)_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%202.0_Datasheet_2026-09-02%20(Batt)_V1.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_PowerMagic_Cube_Datasheet_2026-02-03_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%20Cube_Datasheet_2026-02-03_V1.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_PowerMagic_Datasheet_2026-01-26_V2.1_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic_Datasheet_2026-01-26_V2.1_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_PowerMaster_Datasheet_2025-12-26_V1.4_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMaster_Datasheet_2025-12-26_V1.4_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_SAR-100_Datasheet_2023-07-26_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20SAR-100_Datasheet_2023-07-26_V1.0_en-EU.pdf) - no model columns found
+- Sofar: SOFAR_SofarCloud_Datesheet_2025-03-04_V1.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20SofarCloud_Datesheet_2025-03-04_V1.0_en-EU.pdf) - no model columns found
+- Sofar: Stick_Logger_Datasheet_2023-06-25_V2.0_en-EU.pdf (https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/Stick%20Logger_Datasheet_2023-06-25_V2.0_en-EU.pdf) - no model columns found
+- Sungrow: DS_20200601_PVM1000_DatasheetV152_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2022/04/25/DS_20200601_PVM1000%20DatasheetV152_EN.pdf) - no model columns found
+- Sungrow: DS_20210301_WiNet-S_Datasheet_V1.1.1_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2022/04/25/DS_20210301_WiNet-S%20Datasheet_V1.1.1_EN.pdf) - no model columns found
+- Sungrow: DS_20220623_Logger4000__Datasheet_V12_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2022/07/14/DS_20220623_Logger4000%20_Datasheet_V12_EN.pdf) - no model columns found
+- Sungrow: DS_20221121_SG320HX_Datasheet_V17_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2022/11/30/DS_20221121_SG320HX_Datasheet_V17_EN.pdf) - no model columns found
+- Sungrow: DS_20230227_WiNet-S2_Datasheet_V1_EN(1).pdf (https://info-support.sungrowpower.com/application/pdf/2023/06/07/DS_20230227_WiNet-S2_Datasheet_V1_EN(1).pdf) - no model columns found
+- Sungrow: DS_20240328_SH15_20_25T_Datasheet_V3_EN(AU).pdf (https://info-support.sungrowpower.com/application/pdf/2024/03/29/DS_20240328_SH15_20_25T_Datasheet_V3_EN(AU).pdf) - no model columns found
+- Sungrow: DS_20240417_iSolarCloud_Datasheet_V3_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/04/18/DS_20240417_iSolarCloud_Datasheet_V3_EN.pdf) - no model columns found
+- Sungrow: DS_20240717_COM100D-EU_Datasheet_V4_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/07/24/DS_20240717_COM100D-EU_Datasheet_V4_EN.pdf) - no model columns found
+- Sungrow: DS_20240719_Logger1000A-EU_Datasheet_V4_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/07/24/DS_20240719_Logger1000A-EU_Datasheet_V4_EN.pdf) - no model columns found
+- Sungrow: DS_20240722_IDC30E_AU_Datasheet_V3_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/08/01/DS_20240722_IDC30E_AU_Datasheet_V3_EN.pdf) - no model columns found
+- Sungrow: DS_20240329_SBH100_150_200_250_300_350_400_Datasheet_V4_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/08/30/DS_20240329_SBH100_150_200_250_300_350_400_Datasheet_V4_EN.pdf) - no model columns found
+- Sungrow: DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf) - no model columns found
+- Sungrow: DS_20240907_SBR064_096_128_160_192_224_256_Datasheet_V5_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20240907_SBR064_096_128_160_192_224_256_Datasheet_V5_EN.pdf) - no model columns found
+- Sungrow: DS_20241106_ST455kWh-110kW-4h_Datasheet_V3_EN_EUR_.pdf (https://info-support.sungrowpower.com/application/pdf/2024/11/30/DS_20241106_ST455kWh-110kW-4h_Datasheet_V3_EN%EF%BC%88EUR%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20241226_MVS6400-LV_Datasheet_V3_EN_MEA_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/01/06/DS_20241226_MVS6400-LV_Datasheet_V3_EN%EF%BC%88MEA%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20241226_MVS8960-LV_Datasheet_V5_EN_MEA_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/01/06/DS_20241226_MVS8960-LV_Datasheet_V5_EN%EF%BC%88MEA%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20250108_MVS6400-LV_Datasheet_V3_EN_APAC_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/01/14/DS_20250108_MVS6400-LV_Datasheet_V3_EN%EF%BC%88APAC%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20250108_MVS8960-LV_Datasheet_V3_EN_APAC_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/01/14/DS_20250108_MVS8960-LV_Datasheet_V3_EN%EF%BC%88APAC%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20250109_SG1100UD-MV_Datasheet_V18_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2025/01/17/DS_20250109_SG1100UD-MV_Datasheet_V18_EN.pdf) - no model columns found
+- Sungrow: DS_20250121_SG320HX-20_Datasheet_V8_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2025/01/23/DS_20250121_SG320HX-20_Datasheet_V8_EN.pdf) - no model columns found
+- Sungrow: DS_20250325_MVS6400-LV_Datasheet_V4_EN_LA_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_MVS6400-LV_Datasheet_V4_EN%EF%BC%88LA%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20250325_MVS8960-LV_Datasheet_V4_EN_LA_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_MVS8960-LV_Datasheet_V4_EN%EF%BC%88LA%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20250325_SG3300UD-MV_SG4400UD-MV_Datasheet_V21_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_SG3300UD-MV_SG4400UD-MV_Datasheet_V21_EN.pdf) - no model columns found
+- Sungrow: DS_20250325_SG6600UD-MV_8800UD-MV_Datasheet_V4_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2025/04/11/DS_20250325_SG6600UD-MV_8800UD-MV_Datasheet_V4_EN.pdf) - no model columns found
+- Sungrow: DS_20250418_MVS6400-LV_Datasheet_V4_EN_EUR_.pdf (https://info-support.sungrowpower.com/application/pdf/2025/04/23/DS_20250418_MVS6400-LV_Datasheet_V4_EN%EF%BC%88EUR%EF%BC%89.pdf) - no model columns found
+- Sungrow: DS_20250418_MVS8960-LV_Datasheet_V4_EN(EUR).pdf (https://info-support.sungrowpower.com/application/pdf/2025/04/23/DS_20250418_MVS8960-LV_Datasheet_V4_EN(EUR).pdf) - no model columns found
+- Sungrow: DS_20250610_SG3300UD_SG4400UD_Datasheet_V21_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2025/06/16/DS_20250610_SG3300UD_SG4400UD_Datasheet_V21_EN.pdf) - no model columns found
+- Sungrow: DS_20250722_IDC30E_Datasheet_V2_EN.pdf (https://info-support.sungrowpower.com/application/pdf/2025/08/04/DS_20250722_IDC30E_Datasheet_V2_EN.pdf) - no model columns found
+- Sungrow: 0270ed63-e404-494d-b14f-9234cb9adc73.pdf (https://info-support.sungrowpower.com/datasheet-material/0270ed63-e404-494d-b14f-9234cb9adc73.pdf) - no model columns found
+- Sungrow: 38474add-fb82-49d4-9273-8c9d52d2d952.pdf (https://info-support.sungrowpower.com/datasheet-material/38474add-fb82-49d4-9273-8c9d52d2d952.pdf) - no model columns found
+- Sungrow: 6d853e57-5fb5-4c73-afb4-ef8cebc99c3f.pdf (https://info-support.sungrowpower.com/datasheet-material/6d853e57-5fb5-4c73-afb4-ef8cebc99c3f.pdf) - no model columns found
+- Sungrow: cd0d7912-cdfd-420e-abb1-a0a4d010a12a.pdf (https://info-support.sungrowpower.com/datasheet-material/cd0d7912-cdfd-420e-abb1-a0a4d010a12a.pdf) - no model columns found
+- Sungrow: d7fb4bb1-1f80-450b-b546-e1cf4d32c6f0.pdf (https://info-support.sungrowpower.com/datasheet-material/d7fb4bb1-1f80-450b-b546-e1cf4d32c6f0.pdf) - no model columns found
+- Sungrow: f7e849d3-5678-4f65-add9-a972ee806b13.pdf (https://info-support.sungrowpower.com/datasheet-material/f7e849d3-5678-4f65-add9-a972ee806b13.pdf) - no model columns found
+- Sungrow: 009a9a61-3968-4323-8a86-8ca1e443998b.pdf (https://info-support.sungrowpower.com/datasheet-materials/009a9a61-3968-4323-8a86-8ca1e443998b.pdf) - no model columns found
+- Sungrow: 1cb442be-4d2c-4a92-b7b4-99527176776c.pdf (https://info-support.sungrowpower.com/datasheet-materials/1cb442be-4d2c-4a92-b7b4-99527176776c.pdf) - no model columns found
+- Sungrow: 2105e8e5-a1b3-4114-a8b5-854bb4307d1b.pdf (https://info-support.sungrowpower.com/datasheet-materials/2105e8e5-a1b3-4114-a8b5-854bb4307d1b.pdf) - no model columns found
+- Sungrow: 332d0a52-cc41-4eea-a496-cecfb8e51686.pdf (https://info-support.sungrowpower.com/datasheet-materials/332d0a52-cc41-4eea-a496-cecfb8e51686.pdf) - no model columns found
+- Sungrow: 42d44310-9504-4921-8aeb-c8e52ac6c1a5.pdf (https://info-support.sungrowpower.com/datasheet-materials/42d44310-9504-4921-8aeb-c8e52ac6c1a5.pdf) - no model columns found
+- Sungrow: 441038a7-4336-4a72-b3d6-428777d0e38b.pdf (https://info-support.sungrowpower.com/datasheet-materials/441038a7-4336-4a72-b3d6-428777d0e38b.pdf) - no model columns found
+- Sungrow: 4d72c95e-bd08-43d2-b84a-43a18ee00ae2.pdf (https://info-support.sungrowpower.com/datasheet-materials/4d72c95e-bd08-43d2-b84a-43a18ee00ae2.pdf) - no model columns found
+- Sungrow: 56037c44-9a2d-47fd-b1a8-6faae8393577.pdf (https://info-support.sungrowpower.com/datasheet-materials/56037c44-9a2d-47fd-b1a8-6faae8393577.pdf) - no model columns found
+- Sungrow: 626b56ee-ec01-4671-b1ac-6f4e014e113b.pdf (https://info-support.sungrowpower.com/datasheet-materials/626b56ee-ec01-4671-b1ac-6f4e014e113b.pdf) - no model columns found
+- Sungrow: 6bc4d1f2-ac9c-4295-8678-edc1ca5357e9.pdf (https://info-support.sungrowpower.com/datasheet-materials/6bc4d1f2-ac9c-4295-8678-edc1ca5357e9.pdf) - no model columns found
+- Sungrow: a33f2659-00b8-4301-b514-9c3b19937a3d.pdf (https://info-support.sungrowpower.com/datasheet-materials/a33f2659-00b8-4301-b514-9c3b19937a3d.pdf) - no model columns found
+- Sungrow: a63ad637-0bdd-4b91-8adf-2d6cf4ded6ec.pdf (https://info-support.sungrowpower.com/datasheet-materials/a63ad637-0bdd-4b91-8adf-2d6cf4ded6ec.pdf) - no model columns found
+- Sungrow: cc37f961-6416-4ad6-b461-bbf9d18afe92.pdf (https://info-support.sungrowpower.com/datasheet-materials/cc37f961-6416-4ad6-b461-bbf9d18afe92.pdf) - no model columns found
+- Sungrow: d6ba2e2b-5116-4446-a94d-721ca55c9c26.pdf (https://info-support.sungrowpower.com/datasheet-materials/d6ba2e2b-5116-4446-a94d-721ca55c9c26.pdf) - no model columns found
+- Kostal: DB_KSEM-G2_en.pdf (https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/KSEM-KEM/DB_KSEM-G2_en.pdf) - no model columns found
+- SMA: CELLULARMODEM-DS-en-19.pdf (https://files.sma.de/downloads/CELLULARMODEM-DS-en-19.pdf) - no model columns found
+- SMA: MC-Boxen-DS-en-20.pdf (https://files.sma.de/downloads/MC-Boxen-DS-en-20.pdf) - no model columns found
+- SMA: RGM-DS-en-19.pdf (https://files.sma.de/downloads/RGM-DS-en-19.pdf) - no model columns found
+- SMA: SB30-60-DS-en-61.pdf (https://files.sma.de/downloads/SB30-60-DS-en-61.pdf) - title only, no table columns
+- SMA: SBS25-1VL-10-DS-en-30.pdf (https://files.sma.de/downloads/SBS25-1VL-10-DS-en-30.pdf) - no model columns found
+- SMA: 93b60494_SBSE36-60-DS-en-18.pdf (https://files.sma.de/downloads/SBSE36-60-DS-en-18.pdf) - title only, no table columns
+- SMA: SBSxx-10-DS-en-31.pdf (https://files.sma.de/downloads/SBSxx-10-DS-en-31.pdf) - no model columns found
+- SMA: SBxx-1VL-40-DS-en-52.pdf (https://files.sma.de/downloads/SBxx-1VL-40-DS-en-52.pdf) - no model columns found
+- SMA: SBxx-US-DS-en-41.pdf (https://files.sma.de/downloads/SBxx-US-DS-en-41.pdf) - no model columns found
+- SMA: SC2200-2475-DS-en-60.pdf (https://files.sma.de/downloads/SC2200-2475-DS-en-60.pdf) - no model columns found
+- SMA: SC2xxxUP-2499kW-DS-en-12.pdf (https://files.sma.de/downloads/SC2xxxUP-2499kW-DS-en-12.pdf) - no model columns found
+- SMA: SC2xxxUP-DS-en-23.pdf (https://files.sma.de/downloads/SC2xxxUP-DS-en-23.pdf) - no model columns found
+- SMA: SC4400UP-JP-DS-en-11.pdf (https://files.sma.de/downloads/SC4400UP-JP-DS-en-11.pdf) - no model columns found
+- SMA: SC4xxxUP-DS-en-33.pdf (https://files.sma.de/downloads/SC4xxxUP-DS-en-33.pdf) - no model columns found
+- SMA: SCS-UP-DS-en-24.pdf (https://files.sma.de/downloads/SCS-UP-DS-en-24.pdf) - no model columns found
+- SMA: SCS-UP-S-DS-en-22.pdf (https://files.sma.de/downloads/SCS-UP-S-DS-en-22.pdf) - no model columns found
+- SMA: SCS-UP-XT-2S-3S-DS-en-12.pdf (https://files.sma.de/downloads/SCS-UP-XT-2S-3S-DS-en-12.pdf) - no model columns found
+- SMA: SCS-UP-XT-2ST-2499kW-DS-en-10.pdf (https://files.sma.de/downloads/SCS-UP-XT-2ST-2499kW-DS-en-10.pdf) - no model columns found
+- SMA: SCS-UP-XT-2ST-DS-en-23.pdf (https://files.sma.de/downloads/SCS-UP-XT-2ST-DS-en-23.pdf) - no model columns found
+- SMA: SCS-UP-XT-DS-en-23.pdf (https://files.sma.de/downloads/SCS-UP-XT-DS-en-23.pdf) - no model columns found
+- SMA: SCS3450-UP-XT-JP-DS-en-15.pdf (https://files.sma.de/downloads/SCS3450-UP-XT-JP-DS-en-15.pdf) - no model columns found
+- SMA: SCxxxxUP-2S-3S-DS-en-13.pdf (https://files.sma.de/downloads/SCxxxxUP-2S-3S-DS-en-13.pdf) - no model columns found
+- SMA: SHP-21-DS-en-20.pdf (https://files.sma.de/downloads/SHP-21-DS-en-20.pdf) - no model columns found
+- SMA: SI44M-80H-13-DS-en-40.pdf (https://files.sma.de/downloads/SI44M-80H-13-DS-en-40.pdf) - title only, no table columns
+- SMA: SI6048US-DS-en-28.pdf (https://files.sma.de/downloads/SI6048US-DS-en-28.pdf) - no model columns found
+- SMA: SMABackup1P-DS-en-10.pdf (https://files.sma.de/downloads/SMABackup1P-DS-en-10.pdf) - no model columns found
+- SMA: SMABackup3PKit-DS-en-10.pdf (https://files.sma.de/downloads/SMABackup3PKit-DS-en-10.pdf) - no model columns found
+- SMA: SMASunSpecRSD-DS-en-23.pdf (https://files.sma.de/downloads/SMASunSpecRSD-DS-en-23.pdf) - no model columns found
+- SMA: SMASunSpecRSD-DS-en_us-32.pdf (https://files.sma.de/downloads/SMASunSpecRSD-DS-en_us-32.pdf) - no model columns found
+- SMA: STP110-60-AFCI-DS-en-22.pdf (https://files.sma.de/downloads/STP110-60-AFCI-DS-en-22.pdf) - no model columns found
+- SMA: STP125-70-DS-en-13.pdf (https://files.sma.de/downloads/STP125-70-DS-en-13.pdf) - no model columns found
+- SMA: STP15-25TL-30-DS-en-41.pdf (https://files.sma.de/downloads/STP15-25TL-30-DS-en-41.pdf) - no model columns found
+- SMA: STP3-6-3AV-40-DS-en-41.pdf (https://files.sma.de/downloads/STP3-6-3AV-40-DS-en-41.pdf) - title only, no table columns
+- SMA: cfb0c4a6_STP50-41-DS-en-20.pdf (https://files.sma.de/downloads/STP50-41-DS-en-20.pdf) - no model columns found
+- SMA: STPHxx-60-DS-en-10.pdf (https://files.sma.de/downloads/STPHxx-60-DS-en-10.pdf) - title only, no table columns
+- SMA: STPHxx-70-DS-en-03.pdf (https://files.sma.de/downloads/STPHxx-70-DS-en-03.pdf) - title only, no table columns
+- SMA: STPS60-DS-en-31.pdf (https://files.sma.de/downloads/STPS60-DS-en-31.pdf) - no model columns found
+- SMA: af0e3e5f_STPxx-3SE-40-DS-en-22.pdf (https://files.sma.de/downloads/STPxx-3SE-40-DS-en-22.pdf) - title only, no table columns
+- SMA: c91e26b2_STPxx-50-DS-en-24.pdf (https://files.sma.de/downloads/STPxx-50-DS-en-24.pdf) - no model columns found
+- SMA: STPxx-80-DS-en-11.pdf (https://files.sma.de/downloads/STPxx-80-DS-en-11.pdf) - no model columns found
+
+## Listed, not fetched (robots.txt) (496)
+
+- Growatt: https://en.growatt.com/upload/file/20220808/4e89e43b3290828dc7f7f2edec0e0bbe.pdf
+- Growatt: https://en.growatt.com/upload/file/20220808/68d5ede867aea7484d9687e0745c0536.pdf
+- Growatt: https://en.growatt.com/upload/file/20220808/8287fbe00a1e650a1819a8f79a068785.pdf
+- Growatt: https://en.growatt.com/upload/file/20220808/af734da498d71648a9f45730dfee24fe.pdf
+- Growatt: https://en.growatt.com/upload/file/20220808/c7b2d884f7da8b4668d0bf8ca0681707.pdf
+- Growatt: https://en.growatt.com/upload/file/20220810/00c7a7463ee42de264c4ea151067e418.pdf
+- Growatt: https://en.growatt.com/upload/file/20220810/50aad15b7c0d615142a91967c8f59500.pdf
+- Growatt: https://en.growatt.com/upload/file/20220810/c0db02fc576f4c529471b4bf7215a8a5.pdf
+- Growatt: https://en.growatt.com/upload/file/20220810/f7d8c07ac4390c5ac54917e1f9036b63.pdf
+- Growatt: https://en.growatt.com/upload/file/20220815/4439e28c1f405dc8714fade5d5f51d54.pdf
+- Growatt: https://en.growatt.com/upload/file/20220815/451f0378ba5ed12d1e297df9d2d30d86.pdf
+- Growatt: https://en.growatt.com/upload/file/20220815/9dae7cd405f75fd98271b1ebbdf4b302.pdf
+- Growatt: https://en.growatt.com/upload/file/20220815/a54c6cf629dc9fd752d90ba0d8fb8df1.pdf
+- Growatt: https://en.growatt.com/upload/file/20220815/c37098069a9bbf25017540740daf62ea.pdf
+- Growatt: https://en.growatt.com/upload/file/20220815/fabe102400775706079203866307399e.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/03f5fb5047bd4c69086e0b82497680d6.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/2f350fa52ba113063eab30a031c0b5da.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/40ca289ac035738b6cffe442ef0fda15.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/594f1a13d8b6c6c0f1b12093777f9dbd.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/68c3b3cec16da87c1a93daaa23bdaaec.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/7e05b02071049f524efe9d49d1806154.pdf
+- Growatt: https://en.growatt.com/upload/file/20220816/dc4f69c63c2d7a24e707fcb1b42be033.pdf
+- Growatt: https://en.growatt.com/upload/file/20220817/1b2ced1486df2c5e25044a3a19da5724.pdf
+- Growatt: https://en.growatt.com/upload/file/20220817/5f367702cf310860d42700eecb744c36.pdf
+- Growatt: https://en.growatt.com/upload/file/20220817/80c03ee6209c5544b4b3a59d9c1393f8.pdf
+- Growatt: https://en.growatt.com/upload/file/20220817/c1569dff7fe26c811106077d40698d71.pdf
+- Growatt: https://en.growatt.com/upload/file/20220817/f3f99667da9179aa00cf6fb59d830062.pdf
+- Growatt: https://en.growatt.com/upload/file/20220823/f3b647099a179a292c5dbf5d1ea8d394.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/0210e7d291a337185d1b54533c7c3642.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/0e0fa5f03da67138261b876a9cdd203b.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/145564b9ae88354bdcd62bf6432eb645.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/17c7aaab760ec08e5acdc414eaf5dca7.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/5d7eb880e5e58a75c596a0bec70cfd88.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/61837c696c37b5ee9ea5a2d4274f914a.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/8480bfa505a8823f608470839c5232b1.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/863273b45027b9ff00001af243522610.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/adf6a62d8b003dd95ea8865b10e8b3dc.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/aebc565168ba06b282b2f73355de71de.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/b765faabaa3db69f873b67879d307f2b.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/c16b5efae8c84f9cb8157c8d09f3f904.pdf
+- Growatt: https://en.growatt.com/upload/file/20220829/c543fe2e523f0cebaa2a7974aa973451.pdf
+- Growatt: https://en.growatt.com/upload/file/20220830/a80748ad36e5b7ff5f4b307ad5db5d16.pdf
+- Growatt: https://en.growatt.com/upload/file/20220830/c5eeb6a497d831f2a043d350f231a016.pdf
+- Growatt: https://en.growatt.com/upload/file/20220830/fd17c69ae08eb5b887257991eaf7d03f.pdf
+- Growatt: https://en.growatt.com/upload/file/20220901/d06f9144674e2080c53c1d39a8bc38e2.pdf
+- Growatt: https://en.growatt.com/upload/file/20221227/ab6a0cf334d6c502bd1cf14d9ee18e5e.pdf
+- Growatt: https://en.growatt.com/upload/file/20221227/cec8ced598957d5caa657d3804021d68.pdf
+- Growatt: https://en.growatt.com/upload/file/20230312/f87f6c8de740594c6e09e42b8b340614.pdf
+- Growatt: https://en.growatt.com/upload/file/20230313/673f00f1e562bb73df6df89126401fc3.pdf
+- Growatt: https://en.growatt.com/upload/file/20230409/57eb2452074e051ad31f755fa2c04f7b.pdf
+- Growatt: https://en.growatt.com/upload/file/20230409/cb6215c166576e40064427dd45ea7f6d.pdf
+- Growatt: https://en.growatt.com/upload/file/20230420/f2d2331e6fab8d67c6babb4876632136.pdf
+- Growatt: https://en.growatt.com/upload/file/ACE%20261H-2H_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/ACE_209H-2H_Datasheet_EN_202405.pdf
+- Growatt: https://en.growatt.com/upload/file/ACE_209H-2H_Datasheet_EN_202411.pdf
+- Growatt: https://en.growatt.com/upload/file/ALP_18.0L-B1_Datasheet_Preliminary%20Version_20261012.pdf
+- Growatt: https://en.growatt.com/upload/file/ALP_18.0L-B2_Datasheet_Preliminary%20Version_20261012%20.pdf
+- Growatt: https://en.growatt.com/upload/file/ALP_LV_Battery_Datasheet_EN%20_202606.pdf
+- Growatt: https://en.growatt.com/upload/file/ALP_LV_Battery_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/ALP_LV_Battery_System_Datasheet_EN_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/APX%205.0-30.0M-S3-2.0_Datasheet_202609_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_129-200kWh_EU_Commercial_Battery_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_129-200kWh_US_Datasheet_EN_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_129~200kWh_EU_Datasheet_EN_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_129~200kWh_US_Commercial_Battery_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_71-114kWh_EU_Commercial_Battery_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_71~114kWh_US_Commercial_Battery_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_71~114kWh_US_Datasheet_EN_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_86-114kWh_EU_Datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_86kWh~114kWh_US_Datasheet_EN_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_86~114kWh_US_Commercial_Battery_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_HV_Battery-S0_(MIN-XH)_Datasheet_EN_202405.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_HV_Battery-S1_S2_(MOD-XH(BP)_MID-XH)_Datasheet_EN_202405.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_HV_Battery_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_HV_Battery_V2-S3_Datasheet_EN_202501.pdf
+- Growatt: https://en.growatt.com/upload/file/APX_HV_Battery_V2-S4_Datasheet_EN_202501.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_2.5H-A2_Battery_Datasheet.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_2.5H-A2_Battery_Datasheet_202412.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_2.5H-A2_Battery_Datasheet_202506.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_2.5L-A2_Battery_Datasheet_202412.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_HV_Battery_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_HV_Battery_System_Datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_HV_Battery_System_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_LV_Battery_System_Datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_LV_Battery_System_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_XH_Battery_System_Datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/ARK_XH_Battery_System_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/ARO-US_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/ARO_HV-US_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/ATS-US_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2030.0~60.0H-2HC-S1_EU_Datasheet_EN_202504.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2030.0~60.0H-2HR-S1_EU_Datasheet_EN_202504.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2050.0&60.0H-1HT-S1_EU_Datasheet_EN_202502.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2050.0&60.0H-1HT-S1_EU_Datasheet_EN_202504.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2075.0H-1HR-E1%20_Datasheet_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2080~261H-2HS-S1%20Datasheet_EN_202609.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2088-286H-2HS-S1_Datasheet_EN_202610(AP&MEA&LA%20Ver).pdf
+- Growatt: https://en.growatt.com/upload/file/AXE%2088-286H-2HS-S1_Datasheet_EN_202610(EU%20Ver).pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30.0~60.0H-1HC-E1_EU_Datasheet_EN_202410.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30.0~60.0H-1HR-E1_EU_Datasheet_EN_202410.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30.0~60.0H-2HC-E1_EU_Datasheet_EN_202410.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30.0~60.0H-2HR-E1_EU_Datasheet_EN_202410.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30.0~60.0H-CE1_EU_Datasheet_EN_202409.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30.0~60.0H-RE1_EU_Datasheet_EN_202409.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_30~65H-1H-E1_Datasheet_EN_202403.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_5.0L_Modular_Battery_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_5.0L_Modular_Battery_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_5.0L_Modular_Battery_New_Datasheet_EN_202412.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_5.0L_Modular_Battery_New_Datasheet_EN_202506.pdf
+- Growatt: https://en.growatt.com/upload/file/AXE_50.0&60.0H-1HT-E1_EU_Datasheet_EN_202410.pdf
+- Growatt: https://en.growatt.com/upload/file/C&I%20WIT%2063~125kW%20Hybrid%20Inverter%20+%20AXE%2080~261H-2H%20Battery%20System%20Datasheet_EN_202610.pdf
+- Growatt: https://en.growatt.com/upload/file/C&I%20WIT%2063~125kW%20Hybrid%20Inverter%20+%20AXE%2088~286H-2H%20Battery%20System%20Datasheet_EN_202610.pdf
+- Growatt: https://en.growatt.com/upload/file/Datasheet_AURA%205000_20260409.pdf
+- Growatt: https://en.growatt.com/upload/file/Datasheet_NODE%205000_202606.pdf
+- Growatt: https://en.growatt.com/upload/file/EU_SYN_400E-30_Datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/EU_SYN_450-680U_Datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/EU_SYN_600E-30_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/EU_SYN_600E-30_Datasheet_EN_202409.pdf
+- Growatt: https://en.growatt.com/upload/file/Future-H_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/Future-H_Series_Datasheet-2510.pdf
+- Growatt: https://en.growatt.com/upload/file/Future-H_Series_Datasheet_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/Future-V_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/Future-V_Series_Datasheet_2406.pdf
+- Growatt: https://en.growatt.com/upload/file/GBLI6532_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/GBLI6532_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/GPRS-F_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/GroBoost_Datasheet_202308.pdf
+- Growatt: https://en.growatt.com/upload/file/GroHomeManager-X_Datasheet_202510.pdf
+- Growatt: https://en.growatt.com/upload/file/GroPIug-BR_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/GroPIug-EU_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/GroPIug-X_Datasheet_20250225.pdf
+- Growatt: https://en.growatt.com/upload/file/GroPanel-EU_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/GroPanel-US_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/GroPlug-EK_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/GroThermostat_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/Growatt_ShineMaster-X_DataSheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/Growatt_ShineMaster-X_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/HOPE_16.0LM-A1_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/HOPE_16.0LM-A2_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/HOPE_5.0L-B1_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/HOPE_5.0LW-B1_Datasheet-2506.pdf
+- Growatt: https://en.growatt.com/upload/file/HOPE_5.0LW-B1_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/Hope_14.3L-A1_Datasheet_EN_202409.pdf
+- Growatt: https://en.growatt.com/upload/file/Hope_14.3L-R1_Datasheet.pdf
+- Growatt: https://en.growatt.com/upload/file/Hope_5.0L-B1_Datasheet_2404.pdf
+- Growatt: https://en.growatt.com/upload/file/Hope_5.0L-P1_Datasheet_202412.pdf
+- Growatt: https://en.growatt.com/upload/file/Hope_5.5L-A1_Datasheet_2307.pdf
+- Growatt: https://en.growatt.com/upload/file/Hope_5.5L-A1_Datasheet_EN_202401.pdf
+- Growatt: https://en.growatt.com/upload/file/INFINITY%201000%20Pro_Datasheet.pdf
+- Growatt: https://en.growatt.com/upload/file/INFINITY_1000_Datasheet_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/MAC_50-70KTL3-LV-MV_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_100-125KTL3-X2_LV_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_100-125KTL3-X_LV_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_100~125KTL3-X2_LV_Datasheet_202308.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_124-150KTL3-X2_MV_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_124-150KTL3-X_MV_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_124~150KTL3-X2_MV_Datasheet_202308.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_150KTL3-X_LV_Datasheet_202412.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_185~253K_TL3-X_HV_Datasheet_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_320-350K-X_Datasheet_202601.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_320~350K-X_Datasheet_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_320~350K-X_Datasheet_202609.pdf
+- Growatt: https://en.growatt.com/upload/file/MAX_50-80KTL3_LV_Datasheet_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/MIC_1000~3300TL-X2(Pro)_Datasheet_EN_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/MIC_750~3300TL-X_Datasheet.pdf
+- Growatt: https://en.growatt.com/upload/file/MID%2011-30KTL3-XH_Datasheet_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/MID%2029.9~50K-HU_Datasheet_EN_202607.pdf
+- Growatt: https://en.growatt.com/upload/file/MID%2029.9~50KTL3-HU_Datasheet_Battery%20Compatibility_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_15-25KTL3-X_Datasheet_EN_202309.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_15-25KTL3-X_Datasheet_EN_202505.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_15-36KTL3-X3_LV_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_17-30KTL3-X2_Datasheet_EN_202411.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_25~40KTL3-X_EU_Datasheet_EN_202310.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_30~50KTL3-X2_Datasheet_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_36-60KTL3-X3_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/MID_50-70KTL3-X3_MV_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN%202500~6000%20TL-XH2_Datasheet_202607.pdf
+- Growatt: https://en.growatt.com/upload/file/MINA%20All-In-One%20ESS%20EU_Datasheet_202609_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_2500-6000TL-XA_Datasheet_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_2500-6000TL-X_Datasheet_Jodan.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_2500~6000_TL-XH_Datasheet_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_2500~6000_TL-X_Datasheet_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_3000-7600TL-XH-US_Canada_Version_Datasheet_EN_202502.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_3000-7600TL-XH-US_Datasheet_EN_202502.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_4200~5000TL-X2(Pro%20E)_Datasheet_EN_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_4200~6000TL-X2(Pro)_Datasheet_EN_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_7000-10000_TL-X_Datasheet_202201.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_7000~10000TL-X2_datasheet.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_8200-11400TL-XH-US_Canada_Version_Datasheet_EN_202502.pdf
+- Growatt: https://en.growatt.com/upload/file/MIN_8200-11400TL-XH-US_Datasheet_EN_202502.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD%2010-15KTL3-HU_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD%203000~10000TL3-XH-BP_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD%203000~9000TL3-HU_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/MODA%20All-In-One%20ESS_Datasheet_202609_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_10~15KTL3-X_Datasheet_202111.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_3000-10000TL3-XH_Datasheet_202209.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_3000~6000TL3-X2(Pro)_Datasheet_EN_202411.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_3000~6000TL3-X2(Pro)_Datasheet_EN_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_3000~9000TL3-X_Datasheet_202111.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_7-15KTL3-X2_Pro_Datasheet_EN_202610.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_7~15KTL3-X2(Pro)_Datasheet_EN_202411.pdf
+- Growatt: https://en.growatt.com/upload/file/MOD_7~15KTL3-X2(Pro)_Datasheet_EN_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_1600~2000M-X_Datasheet_EN_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_1600~2500M-X2_LoRa_Datasheet_EN_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_1600~2500M-X2_WiFi_Datasheet_EN_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_2000M-X_datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_600~1000M-X_Datasheet_LoRa_202510.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_600~1000M-X_Datasheet_WiFi_202510.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_600~1000M-X_LoRa_Datasheet_EN_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/NEO_600~1000M-X_WiFi_Datasheet_EN_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/NOAH_2000_Datasheet_EN_202405.pdf
+- Growatt: https://en.growatt.com/upload/file/NOAH_2000_Datasheet_EN_202411.pdf
+- Growatt: https://en.growatt.com/upload/file/NOAH_2000_Datasheet_EN_202509.pdf
+- Growatt: https://en.growatt.com/upload/file/Nexa%202000_Datasheet_202504.pdf
+- Growatt: https://en.growatt.com/upload/file/Nexa%202000_Datasheet_20251009.pdf
+- Growatt: https://en.growatt.com/upload/file/RISE%20261H-XH_Datasheet_EN_202610.pdf
+- Growatt: https://en.growatt.com/upload/file/SC_4860-48120-MPV_Datasheet_EN_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/SC_4860-48120_Datasheet_EN_202109.pdf
+- Growatt: https://en.growatt.com/upload/file/SPA_3000-6000TL-AUB_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/SPA_3000-6000TL-AU_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/SPA_4000-10000TL3_BH-UP_Datasheet_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE%2015KTL3_HVM_Datasheet_2603.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE%203500~7000TL%20HVM-G2%20_Datasheet_2603.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_15KTL3_HVM_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_15KTL3_HVM_Datasheet_EN_202603.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_3500-6000TL_HVM-G2_DataSheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_3500-6000TL_HVM-G2_DataSheet_EN_202409.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_3500-6000TL_HVM-G2_DataSheet_EN_202410.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_3500-7000TL_HVM-G2_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPE_3500~7000TL_HVM-G2_Datasheet-2511.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF%206000ES%20-%20H_datasheet_20260427.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_2000-5000TL_HVM_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_2000-5000TL_HVM_Datasheet_EN_202204.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3000-6000T_HVM-G2_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3000-6000_HVM-G2_Datasheet_202411.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3000TL_LVM-ES_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3000TL_LVM-ES_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3000TL_LVM_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3000TL_LVM_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_3500-5000TL_HVM-Pro_Datasheet_EN_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4-12KT_HVM-MPV_Datasheet_202502.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4-12KT_HVM_Datasheet_EN_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000-12000T_DVM-MPV_Datasheet_EN_202305.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000-12000T_DVM_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000-12000T_HVM-MPV_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000-18000T%20DVM_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000-18000T_DVM-MPV_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000TL_HVM_24G2_Datasheet_2610.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_4000_18000T_DVM_MPV_Datasheet_2303.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_6000T_DVM-G2_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPF_6000T_DVM-G2_Datasheet.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_10000TL-HU_Datasheet_EN_202505.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_3000-6000TL-HUB_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_3000-6000TL-HU_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_3000-6000TL_BL-UP_Datasheet_202303.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_3000-6000TL_BL-UP_Datasheet_202604.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_4000-10000TL3_BH-UP_Datasheet_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/SPH_4000-10000TL3_BH_UP_Datasheet_202208.pdf
+- Growatt: https://en.growatt.com/upload/file/SPI_3000-22000_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPI_3000-22000_Datasheet_EN_202109.pdf
+- Growatt: https://en.growatt.com/upload/file/SPI_750-4000TL2-HV_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/SPI_750-4000TL2-HV_Datasheet_EN_202205.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM-2CT-C_datasheet_202601.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_2500-6000TL-HU2_Datasheet_EN_202608.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_2500-6000TL-HU2_Datasheet_EN_202609.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_2500-6000TL-HU2_Datasheet_EN_202610.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_3000-6000TL-HU_Datasheet_EN_202601.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_3000-6000TL-HU_Datasheet_Pakistan_Version%20201511.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_8000-10000TL-HU2_Datasheet_EN_202609.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_8000-10000TL-HU2_Datasheet_EN_202610.pdf
+- Growatt: https://en.growatt.com/upload/file/SPM_8000-10000TL-HU_Datasheet_EN_202601.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_100-XH-30_Datasheet_EN_202310.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_200-XH-US-13A_Datasheet_EN_202402.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_200-XH-US_Datasheet_EN_202403.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_360-680U-US_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_50-XH-10+Datasheet_EN_202310.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_50-XH-10_Datasheet_EN_202412.pdf
+- Growatt: https://en.growatt.com/upload/file/SYN_50-XH-30_Datasheet_EN_202310.pdf
+- Growatt: https://en.growatt.com/upload/file/Shine4G-F_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/Shine4G-F_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/Shine4G-X_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineGPRS-F_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineGPRS-X_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineLan-X_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineLink-X2_datasheet_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineLink-X_Datasheet_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineLink-X_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineMaster4G-X_Datasheet_EN_202511.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineMaster_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineSEM-X-RM_Datasheet_EN_202307.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineSEM-X-RM_Datasheet_EN_202403.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineSEM-XA-R_Datasheet_EN_202511.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineSEM_XA_R_Datasheet_EN_202409.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWeLink_Datasheet_EN_202507.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWelink_datasheet_EN_202306.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWiFi-F_Datasheet_EN_202108.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWiFi-F_Pro_Datasheet-2509.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWiFi-F_Pro_Datasheet_EN_202408.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWiFi-X2_Datasheet_EN_202211.pdf
+- Growatt: https://en.growatt.com/upload/file/ShineWiFi-X2_datasheet.pdf
+- ... 196 more in the manifest
+
+## Blocked, by rule
+
+- **Huawei** - its terms forbid automated access; never fetched
+- **SolarEdge** - knowledge-center.solaredge.com and www.solaredge.com answer 403 to /robots.txt and to every page (Cloudflare); the watch's rule reads a 403 on robots.txt as disallowed. No PDF path was found that answers without the challenge; not bypassed
+- **Sigenergy** - www.sigenergy.com/robots.txt allows crawling, but /en/support/download is a JavaScript app (the plain URL is 404) and the product pages' /en/download-center-pdf/<id> links answer HTML, not a PDF; no PDF reachable by direct URL. Not pursued
+- **Growatt files** - en.growatt.com/robots.txt disallows /upload/, where every sheet lives; the listing (/support/download/datasheet) is allowed, so the sheets are listed in the manifest with route `robots` and fetched by hand
+- **Hoymiles files** - www.hoymiles.com has no robots.txt (allowed) and its download centre is listed in full; each /downloads/<x>.html refreshes to w3oss.hoymiles.com, whose /robots.txt answers 403 - under the same rule as SolarEdge the file host is disallowed. RFC 9309 reads a 4xx robots.txt as 'unavailable = may crawl'; relaxing the rule in tools/watch/run.py Net.allowed would open this route (an owner's call)

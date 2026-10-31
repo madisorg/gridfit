@@ -1,0 +1,1726 @@
+brand: Fox ESS
+status: draft
+rule: DRAFT - every value below was read by tools/specs/table.py from the sheet named in `source` and has not been reviewed.
+  Review each row against the sheet, correct it in tools/specs/draft.py (named, with the reason) and let draft.py write data/specs/<brand>.yaml;
+  this file is never read by the site.
+sources:
+- id: eneq5000pdatasheetv1.320260710
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ5000PDatasheetV1.320260710.pdf
+  file: ENEQ5000PDatasheetV1.320260710.pdf
+  title: EQ5000-P Datasheet
+  sha256: 0a850b4e8f60b838216527cc99890640f7e87b80f0b69297887bb751ad4b4d70
+  seen: '2026-11-01'
+- id: ens28v2datasheetv1.220260717
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENS28V2datasheetV1.220260717.pdf
+  file: ENS28V2datasheetV1.220260717.pdf
+  title: S28 Datasheet
+  sha256: c247536443d7118170f96c353c9659c0f4d2c04806e7ea4647ae9fe05d77c77f
+  seen: '2026-11-01'
+- id: enpowercubehq3meq3300datasheetdev1.020260723
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubeHQ3MEQ3300datasheetDEV1.020260723.pdf
+  file: ENPowerCubeHQ3MEQ3300datasheetDEV1.020260723.pdf
+  title: Power Cube Datasheet - Three Phase (HQ3 + EQ3300)
+  sha256: 5d3b9c241e7ce4e65f6edc5de79e72637933913fa10f6733a7fd8bfdcaedba55
+  seen: '2026-11-01'
+- id: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENPowerCubeHQ3MEQ5000PdatasheetDEV1.220260723.pdf
+  file: 214f9001_ENPowerCubeHQ3MEQ5000PdatasheetDEV1.220260723.pdf
+  title: Power Cube Datasheet - Three Phase (HQ3 + EQ5000-P)
+  sha256: 214f9001f1b1935989bc4f457cb02afa3f710bb1bce97e1af8e256586fcaca12
+  seen: '2026-11-01'
+- id: eneq4800datasheetv1.320260710
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ4800DatasheetV1.320260710.pdf
+  file: ENEQ4800DatasheetV1.320260710.pdf
+  title: EQ4800 Datasheet
+  sha256: 03f103ca2a2aea28ecf271c762a8d6916ecb4dda56e9ded478dd98026c6c7266
+  seen: '2026-11-01'
+- id: 6f40862d_enh1g2datasheetv2.220260609
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH1G2DatasheetV2.220260609.pdf
+  file: 6f40862d_ENH1G2DatasheetV2.220260609.pdf
+  title: H1(G2)/AC1(G2) Datasheet
+  sha256: 6f40862dedfec1f70bf8d27cfb828dc7c9e8ddbb51e1af36bee2411d920b6bd4
+  seen: '2026-11-01'
+- id: 55fb93ac_entg3datasheetv2.520260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENTG3datasheetV2.520260703.pdf
+  file: 55fb93ac_ENTG3datasheetV2.520260703.pdf
+  title: T Series (G3) Datasheet
+  sha256: 55fb93ac462d9acaaac252aca510abb11fc28af1ef3d9ea84ccd75e93724ccf4
+  seen: '2026-11-01'
+- id: 467877fb_enh3smartdatasheetv2.020260609
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH3SmartDatasheetV2.020260609.pdf
+  file: 467877fb_ENH3SmartDatasheetV2.020260609.pdf
+  title: H3 Smart Datasheet
+  sha256: 467877fb60e3f818cf6f7358f19489c33151127ed16677c85cad46ae7fd6e979
+  seen: '2026-11-01'
+- id: enav2.0evchargeraebdatasheetv1.420260908
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260910/ENAV2.0EVChargerAEBDatasheetV1.420260908.pdf
+  file: ENAV2.0EVChargerAEBDatasheetV1.420260908.pdf
+  title: A Series-EV Charger Datasheet - AEB
+  sha256: 43b4ffd5e97e16f2948cf4dc37e389e92acdf7f681ada64506057b680dd57062
+  seen: '2026-11-01'
+- id: 6066b7e8_ensg2datasheetv3.520260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENSG2DatasheetV3.520260703.pdf
+  file: 6066b7e8_ENSG2DatasheetV3.520260703.pdf
+  title: S Series (G2) Datasheet
+  sha256: 6066b7e8da7ae69915852c19c3066b591e2706e892769bfe1b2fecfff5f1f7ad
+  seen: '2026-11-01'
+- id: d9ca0362_enf3.0datasheetv1.220260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENF3.0DatasheetV1.220260703.pdf
+  file: d9ca0362_ENF3.0DatasheetV1.220260703.pdf
+  title: F Series(3.0) Datasheet
+  sha256: d9ca036280bccbf3faf08f74938173d3b635374daa42e2b8149c4b62874ffd17
+  seen: '2026-11-01'
+- id: ens22datasheetv1.220260421
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260806/ENS22datasheetV1.220260421.pdf
+  file: ENS22datasheetV1.220260421.pdf
+  title: S22 Datasheet
+  sha256: 16600e774eba274d55fcbcef554fa5b8245daed5b1ca5b619ffe0eb841149ef5
+  seen: '2026-11-01'
+- id: 6c2f5125_enh1g2wldatasheetv1.320260609
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH1G2wlDatasheetV1.320260609.pdf
+  file: 6c2f5125_ENH1G2wlDatasheetV1.320260609.pdf
+  title: H1(G2)/AC1(G2)-WL Datasheet
+  sha256: 6c2f51253d2407ad3f562da3b1928e3db55b6a6fc25cdc1f55b31c3587ce42b9
+  seen: '2026-11-01'
+- id: enq4datasheetv1.220250424
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251204/ENQ4datasheetV1.220250424.pdf
+  file: ENQ4datasheetV1.220250424.pdf
+  title: Q Series datasheet
+  sha256: 623332b88add196650b6c5df23f09b7cb9ef984c93268cbcf27e40ee2f72e1de
+  seen: '2026-11-01'
+- id: 4f65c4ba_enrg2datasheetv1.420260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENRG2DatasheetV1.420260703.pdf
+  file: 4f65c4ba_ENRG2DatasheetV1.420260703.pdf
+  title: R Series(G2) Datasheet
+  sha256: 4f65c4ba049853c0acf9680d74b9f2be25c37c7021c2b70944df5453d9fc9b9f
+  seen: '2026-11-01'
+- id: eneq5000datasheetv1.320260710
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ5000DatasheetV1.320260710.pdf
+  file: ENEQ5000DatasheetV1.320260710.pdf
+  title: EQ5000 Datasheet
+  sha256: 623ccf8d10458c031b7aea731d65152aa54414cfb6b81a60adbf1aedb5e552db
+  seen: '2026-11-01'
+- id: eneq3300datasheetv1.320260710
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEQ3300DatasheetV1.320260710.pdf
+  file: ENEQ3300DatasheetV1.320260710.pdf
+  title: EQ3300 Datasheet
+  sha256: a3333cb335c6e034829b53a61a1a638db7064d47ce19102beb329f75ec1fe188
+  seen: '2026-11-01'
+- id: 382b12d5_enfg2datasheetv2.020260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENFG2DatasheetV2.020260703.pdf
+  file: 382b12d5_ENFG2DatasheetV2.020260703.pdf
+  title: F Series (G2) Datasheet
+  sha256: 382b12d52017eabbee18a904f39251b6767030f034d5fe11e4e9919d87c5a919
+  seen: '2026-11-01'
+- id: 79d1f6fd_enh3prodatasheetv2.720260605
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENH3PRODatasheetV2.720260605.pdf
+  file: 79d1f6fd_ENH3PRODatasheetV2.720260605.pdf
+  title: H3 Pro Datasheet
+  sha256: 79d1f6fdc491178d6d64775dd4ee515a829ae6ac91bad25af36cfd08ebcf5e7d
+  seen: '2026-11-01'
+- id: ush1ac1datasheetv4.220251210
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251220/USH1AC1DatasheetV4.220251210.pdf
+  file: USH1AC1DatasheetV4.220251210.pdf
+  title: US Series Datasheet
+  sha256: ff9985825382b255fae9a5547ab18cbc54147dccf6b27a64eefefc89e4beb4b8
+  seen: '2026-11-01'
+- id: 74988bb7_enkhkadatasheetv2.420260609
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENKHKADatasheetV2.420260609.pdf
+  file: 74988bb7_ENKHKADatasheetV2.420260609.pdf
+  title: KH/KA Datasheet
+  sha256: 74988bb7e02af2335192a8cebf64cfa49e2502044ef50558bf426e6e9165a10b
+  seen: '2026-11-01'
+- id: 113ebf16_enrdatasheetv4.820260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENRDatasheetV4.820260703.pdf
+  file: 113ebf16_ENRDatasheetV4.820260703.pdf
+  title: R Series Datasheet
+  sha256: 113ebf16312a363a3480a5bbfeba7e0b367b253f06a295e1eb12b51dc8e440bd
+  seen: '2026-11-01'
+- id: cb57cae6_ensg3datasheetv1.420260703
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260710/ENSG3DatasheetV1.420260703.pdf
+  file: cb57cae6_ENSG3DatasheetV1.420260703.pdf
+  title: S Series (G3) Datasheet
+  sha256: cb57cae6d0c42ec06ba1187f82d4ee952692e455a45882c96898d9e5b3ab2ee9
+  seen: '2026-11-01'
+- id: enpowerbeastseparateh3pluscq20datasheetv1.120261027
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENPowerBeastseparateH3PlusCQ20DatasheetV1.120261027.pdf
+  file: ENPowerBeastseparateH3PlusCQ20DatasheetV1.120261027.pdf
+  title: Power Beast Datasheet - H3 Plus+CQ20
+  sha256: ff4c3b20ccfe65e7150387d9eb33a95724a291970e48bad5aa433dd35c154ff1
+  seen: '2026-11-01'
+models:
+- code: EQ5000-P-L2
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L3
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L4
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L5
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L6
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L7
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L8
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: EQ5000-P-L9
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000pdatasheetv1.320260710
+  raw: {}
+- code: S28-0.8-M
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28v2datasheetv1.220260717
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: S28-2.4-M
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28v2datasheetv1.220260717
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: S28-S
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28v2datasheetv1.220260717
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: EQ3300
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowercubehq3meq3300datasheetdev1.020260723
+  raw: {}
+- code: EQ3300
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowercubehq3meq3300datasheetdev1.020260723
+  raw: {}
+- code: EQ3300
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowercubehq3meq3300datasheetdev1.020260723
+  raw: {}
+- code: EQ3300
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowercubehq3meq3300datasheetdev1.020260723
+  raw: {}
+- code: EQ3300
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowercubehq3meq3300datasheetdev1.020260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ5000-S
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 214f9001_enpowercubehq3meq5000pdatasheetdev1.220260723
+  raw: {}
+- code: EQ4800-L2
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L3
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L4
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L5
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L6
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L7
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L8
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: EQ4800-L9
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq4800datasheetv1.320260710
+  raw: {}
+- code: H1-2.5-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 2.75
+  ac_a: null
+  phases: null
+  pv_kw: 5.0
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: '2750'
+    pv_w: '5000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-3.0-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: null
+  pv_kw: 6.0
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: '3300'
+    pv_w: '6000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-3.7-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 4.05
+  ac_a: null
+  phases: null
+  pv_kw: 7.4
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: 4048/3680*1
+    pv_w: '7400'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-4.0-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 4.4
+  ac_a: null
+  phases: null
+  pv_kw: 8.0
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: '4400'
+    pv_w: '8000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-4.6-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 5.06
+  ac_a: null
+  phases: null
+  pv_kw: 9.2
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: '5060'
+    pv_w: '9200'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-5.0-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 5.5
+  ac_a: null
+  phases: null
+  pv_kw: 10.0
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: '5500'
+    pv_w: '10000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-6.0-E-G2
+  mppt: null
+  ac_kw: null
+  ac_kva: 6.6
+  ac_a: null
+  phases: null
+  pv_kw: 12.0
+  source: 6f40862d_enh1g2datasheetv2.220260609
+  raw:
+    mppt: '6000'
+    ac_va: '6600'
+    pv_w: '12000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: T3-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '3300'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T4-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 4.4
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '4400'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T5-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.5
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '5500'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T6-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 6.6
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '6600'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T8-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 8.8
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '8800'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T10-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 11.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '11000'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T12-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '13200'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T15-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 16.5
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '16500'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T17-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 18.7
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '18700'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T20-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 22.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '22000'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T23-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 25.3
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '25300'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: T25-G3
+  mppt: 2
+  ac_kw: null
+  ac_kva: 27.5
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 55fb93ac_entg3datasheetv2.520260703
+  raw:
+    mppt: '2'
+    ac_va: '27500'
+    phases: 3/N/PE, 220/380, 230/400, 240/415
+- code: H3-5.0-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 11.0
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '11000'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-6.0-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 13.2
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '13200'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-8.0-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 17.6
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '17600'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-9.9-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 18.0
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '18000'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-10.0-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 18.0
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '18000'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-12.0-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 22.5
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '22500'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-15.0-Smart
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 22.5
+  source: 467877fb_enh3smartdatasheetv2.020260609
+  raw:
+    mppt: 20/20/20
+    pv_w: '22500'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: A7300P1-E-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enav2.0evchargeraebdatasheetv1.420260908
+  raw: {}
+- code: A011KP1-E-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enav2.0evchargeraebdatasheetv1.420260908
+  raw: {}
+- code: A022KP1-E-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enav2.0evchargeraebdatasheetv1.420260908
+  raw: {}
+- code: A7300S1-E-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enav2.0evchargeraebdatasheetv1.420260908
+  raw: {}
+- code: A011KS1-E-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enav2.0evchargeraebdatasheetv1.420260908
+  raw: {}
+- code: A022KS1-E-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enav2.0evchargeraebdatasheetv1.420260908
+  raw: {}
+- code: S700-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 0.8
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '800'
+    phases: 220/230/240
+- code: S1000-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 1.1
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '1100'
+    phases: 220/230/240
+- code: S1500-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 1.65
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '1650'
+    phases: 220/230/240
+- code: S2000-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 2.2
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '2200'
+    phases: 220/230/240
+- code: S2500-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 2.75
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '2750'
+    phases: 220/230/240
+- code: S3000-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '3300'
+    phases: 220/230/240
+- code: S3300-G2
+  mppt: 1
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 6066b7e8_ensg2datasheetv3.520260703
+  raw:
+    mppt: '1'
+    ac_va: '3300'
+    phases: 220/230/240
+- code: F3000
+  mppt: 2
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: d9ca0362_enf3.0datasheetv1.220260703
+  raw:
+    mppt: '2'
+    phases: 220/230/240
+- code: F3600
+  mppt: 2
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: d9ca0362_enf3.0datasheetv1.220260703
+  raw:
+    mppt: '2'
+    phases: 220/230/240
+- code: F4600
+  mppt: 2
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: d9ca0362_enf3.0datasheetv1.220260703
+  raw:
+    mppt: '2'
+    phases: 220/230/240
+- code: F5000
+  mppt: 2
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: d9ca0362_enf3.0datasheetv1.220260703
+  raw:
+    mppt: '2'
+    phases: 220/230/240
+- code: F5300
+  mppt: 2
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: d9ca0362_enf3.0datasheetv1.220260703
+  raw:
+    mppt: '2'
+    phases: 220/230/240
+- code: F6000
+  mppt: 2
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: d9ca0362_enf3.0datasheetv1.220260703
+  raw:
+    mppt: '2'
+    phases: 220/230/240
+- code: S22-M-H
+  mppt: 4
+  ac_kw: null
+  ac_kva: 1.2
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens22datasheetv1.220260421
+  raw:
+    mppt: '4'
+    ac_va: '1200'
+- code: S22-M-AC
+  mppt: 4
+  ac_kw: null
+  ac_kva: 1.2
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens22datasheetv1.220260421
+  raw:
+    mppt: '4'
+    ac_va: '1200'
+- code: S22-S
+  mppt: 4
+  ac_kw: null
+  ac_kva: 1.2
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens22datasheetv1.220260421
+  raw:
+    mppt: '4'
+    ac_va: '1200'
+- code: H1-2.5-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 2.75
+  ac_a: null
+  phases: null
+  pv_kw: 5.0
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: '2750'
+    pv_w: '5000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-3.0-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: null
+  pv_kw: 6.0
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: '3300'
+    pv_w: '6000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-3.7-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 4.05
+  ac_a: null
+  phases: null
+  pv_kw: 7.4
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: 4048/3680*1
+    pv_w: '7400'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-4.0-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 4.4
+  ac_a: null
+  phases: null
+  pv_kw: 8.0
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: '4400'
+    pv_w: '8000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-4.6-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 5.06
+  ac_a: null
+  phases: null
+  pv_kw: 9.2
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: '5060'
+    pv_w: '9200'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-5.0-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 5.5
+  ac_a: null
+  phases: null
+  pv_kw: 10.0
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: '5500'
+    pv_w: '10000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: H1-6.0-E-G2-WL
+  mppt: null
+  ac_kw: null
+  ac_kva: 6.6
+  ac_a: null
+  phases: null
+  pv_kw: 12.0
+  source: 6c2f5125_enh1g2wldatasheetv1.320260609
+  raw:
+    mppt: '6000'
+    ac_va: '6600'
+    pv_w: '12000'
+    phases: 13.6 27.3 34.9 36.4 41.8 45.5 54.5
+- code: Q1-1600-E
+  mppt: 4
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: enq4datasheetv1.220250424
+  raw:
+    mppt: '4'
+    phases: 220/230
+- code: Q1-2000-E
+  mppt: 4
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: enq4datasheetv1.220250424
+  raw:
+    mppt: '4'
+    phases: 220/230
+- code: Q1-2400-E
+  mppt: 4
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: enq4datasheetv1.220250424
+  raw:
+    mppt: '4'
+    phases: 220/230
+- code: R75-G2
+  mppt: 9
+  ac_kw: null
+  ac_kva: 75.0
+  ac_a: null
+  phases: 3
+  pv_kw: 150.0
+  source: 4f65c4ba_enrg2datasheetv1.420260703
+  raw:
+    mppt: 9/2
+    ac_va: 75*/82.5
+    pv_w: '150'
+    phases: 400, 3W+N+PE
+- code: R80-G2
+  mppt: 9
+  ac_kw: null
+  ac_kva: 88.0
+  ac_a: null
+  phases: 3
+  pv_kw: 160.0
+  source: 4f65c4ba_enrg2datasheetv1.420260703
+  raw:
+    mppt: 9/2
+    ac_va: '88'
+    pv_w: '160'
+    phases: 400, 3W+N+PE
+- code: R100-G2
+  mppt: 9
+  ac_kw: null
+  ac_kva: 110.0
+  ac_a: null
+  phases: 3
+  pv_kw: 200.0
+  source: 4f65c4ba_enrg2datasheetv1.420260703
+  raw:
+    mppt: 9/2
+    ac_va: '110'
+    pv_w: '200'
+    phases: 400, 3W+N+PE
+- code: R110-G2
+  mppt: 10
+  ac_kw: null
+  ac_kva: 121.0
+  ac_a: null
+  phases: 3
+  pv_kw: 220.0
+  source: 4f65c4ba_enrg2datasheetv1.420260703
+  raw:
+    mppt: 10/2
+    ac_va: '121'
+    pv_w: '220'
+    phases: 400, 3W+N+PE
+- code: R125-G2
+  mppt: 10
+  ac_kw: null
+  ac_kva: 137.5
+  ac_a: null
+  phases: 3
+  pv_kw: 250.0
+  source: 4f65c4ba_enrg2datasheetv1.420260703
+  raw:
+    mppt: 10/2
+    ac_va: '137.5'
+    pv_w: '250'
+    phases: 400, 3W+N+PE
+- code: R136-G2
+  mppt: 10
+  ac_kw: null
+  ac_kva: 138.0
+  ac_a: null
+  phases: 3
+  pv_kw: 272.0
+  source: 4f65c4ba_enrg2datasheetv1.420260703
+  raw:
+    mppt: 10/2
+    ac_va: '138'
+    pv_w: '272'
+    phases: 400, 3W+N+PE
+- code: EQ5000-L2
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000datasheetv1.320260710
+  raw: {}
+- code: EQ5000-L3
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000datasheetv1.320260710
+  raw: {}
+- code: EQ5000-L4
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000datasheetv1.320260710
+  raw: {}
+- code: EQ5000-L5
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000datasheetv1.320260710
+  raw: {}
+- code: EQ5000-L6
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq5000datasheetv1.320260710
+  raw: {}
+- code: EQ3300-L2
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq3300datasheetv1.320260710
+  raw: {}
+- code: EQ3300-L3
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq3300datasheetv1.320260710
+  raw: {}
+- code: EQ3300-L4
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq3300datasheetv1.320260710
+  raw: {}
+- code: EQ3300-L5
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq3300datasheetv1.320260710
+  raw: {}
+- code: EQ3300-L6
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: eneq3300datasheetv1.320260710
+  raw: {}
+- code: F3000-G2
+  mppt: 2
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 382b12d5_enfg2datasheetv2.020260703
+  raw:
+    mppt: '2'
+    ac_va: '3300'
+    phases: 220/ 230/ 240
+- code: F3600-G2
+  mppt: 2
+  ac_kw: null
+  ac_kva: 3.96
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 382b12d5_enfg2datasheetv2.020260703
+  raw:
+    mppt: '2'
+    ac_va: '3960'
+    phases: 220/ 230/ 240
+- code: F4600-G2
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.06
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 382b12d5_enfg2datasheetv2.020260703
+  raw:
+    mppt: '2'
+    ac_va: '5060'
+    phases: 220/ 230/ 240
+- code: F5000-G2
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.5
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 382b12d5_enfg2datasheetv2.020260703
+  raw:
+    mppt: '2'
+    ac_va: '5500'
+    phases: 220/ 230/ 240
+- code: F5300-G2
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.83
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 382b12d5_enfg2datasheetv2.020260703
+  raw:
+    mppt: '2'
+    ac_va: '5830'
+    phases: 220/ 230/ 240
+- code: F6000-G2
+  mppt: 2
+  ac_kw: null
+  ac_kva: 6.0
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 382b12d5_enfg2datasheetv2.020260703
+  raw:
+    mppt: '2'
+    ac_va: '6000'
+    phases: 220/ 230/ 240
+- code: H3-Pro-15.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 79d1f6fd_enh3prodatasheetv2.720260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: H3-Pro-20.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 79d1f6fd_enh3prodatasheetv2.720260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: H3-Pro-24.9
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 79d1f6fd_enh3prodatasheetv2.720260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: H3-Pro-25.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 79d1f6fd_enh3prodatasheetv2.720260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: H3-Pro-29.9
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 79d1f6fd_enh3prodatasheetv2.720260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: H3-Pro-30.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 79d1f6fd_enh3prodatasheetv2.720260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: AC1-3.8-US
+  mppt: 2
+  ac_kw: null
+  ac_kva: 3.8
+  ac_a: 52.3
+  phases: null
+  pv_kw: null
+  source: ush1ac1datasheetv4.220251210
+  raw:
+    mppt: '2'
+    ac_va: '3800'
+    ac_a: '52.3'
+    phases: 240 (211 264)
+- code: AC1-5.7-US
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.7
+  ac_a: 52.3
+  phases: null
+  pv_kw: null
+  source: ush1ac1datasheetv4.220251210
+  raw:
+    mppt: '2'
+    ac_va: '5700'
+    ac_a: '52.3'
+    phases: 240 (211 264)
+- code: AC1-7.6-US
+  mppt: 2
+  ac_kw: null
+  ac_kva: 7.6
+  ac_a: 52.3
+  phases: null
+  pv_kw: null
+  source: ush1ac1datasheetv4.220251210
+  raw:
+    mppt: '2'
+    ac_va: '7600'
+    ac_a: '52.3'
+    phases: 240 (211 264)
+- code: AC1-9.6-US
+  mppt: 3
+  ac_kw: null
+  ac_kva: 9.6
+  ac_a: 52.3
+  phases: null
+  pv_kw: null
+  source: ush1ac1datasheetv4.220251210
+  raw:
+    mppt: '3'
+    ac_va: '9600'
+    ac_a: '52.3'
+    phases: 240 (211 264)
+- code: AC1-11.4-US
+  mppt: 3
+  ac_kw: null
+  ac_kva: 11.4
+  ac_a: 52.3
+  phases: null
+  pv_kw: null
+  source: ush1ac1datasheetv4.220251210
+  raw:
+    mppt: '3'
+    ac_va: '11400'
+    ac_a: '52.3'
+    phases: 240 (211 264)
+- code: KH7
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 74988bb7_enkhkadatasheetv2.420260609
+  raw:
+    mppt: '3'
+    phases: 220 230 240 (180 270)
+- code: KH8
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 74988bb7_enkhkadatasheetv2.420260609
+  raw:
+    mppt: '3'
+    phases: 220 230 240 (180 270)
+- code: KH9
+  mppt: 4
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 74988bb7_enkhkadatasheetv2.420260609
+  raw:
+    mppt: '4'
+    phases: 220 230 240 (180 270)
+- code: KH10
+  mppt: 4
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 74988bb7_enkhkadatasheetv2.420260609
+  raw:
+    mppt: '4'
+    phases: 220 230 240 (180 270)
+- code: KH10.5
+  mppt: 4
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: 74988bb7_enkhkadatasheetv2.420260609
+  raw:
+    mppt: '4'
+    phases: 220 230 240 (180 270)
+- code: R75
+  mppt: 9
+  ac_kw: null
+  ac_kva: 75.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 113ebf16_enrdatasheetv4.820260703
+  raw:
+    mppt: 9/2
+    ac_va: 75*/82.5
+    phases: 380/400, 3W+N+PE
+- code: R100
+  mppt: 9
+  ac_kw: null
+  ac_kva: 110.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 113ebf16_enrdatasheetv4.820260703
+  raw:
+    mppt: 9/2
+    ac_va: '110'
+    phases: 380/400, 3W+N+PE
+- code: R110
+  mppt: 10
+  ac_kw: null
+  ac_kva: 121.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: 113ebf16_enrdatasheetv4.820260703
+  raw:
+    mppt: 10/2
+    ac_va: '121'
+    phases: 380/400, 3W+N+PE
+- code: S700-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 0.8
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '800'
+    phases: 220/230/240
+- code: S1000-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 1.1
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '1100'
+    phases: 220/230/240
+- code: S1500-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 1.65
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '1650'
+    phases: 220/230/240
+- code: S2000-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 2.2
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '2200'
+    phases: 220/230/240
+- code: S2500-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 2.75
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '2750'
+    phases: 220/230/240
+- code: S3000-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 3.3
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '3300'
+    phases: 220/230/240
+- code: S3300-G3
+  mppt: 1
+  ac_kw: null
+  ac_kva: 4.0
+  ac_a: null
+  phases: 1
+  pv_kw: null
+  source: cb57cae6_ensg3datasheetv1.420260703
+  raw:
+    mppt: '1'
+    ac_va: '4000'
+    phases: 220/230/240
+- code: H3-50-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparateh3pluscq20datasheetv1.120261027
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-60-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparateh3pluscq20datasheetv1.120261027
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-80-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparateh3pluscq20datasheetv1.120261027
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-100-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparateh3pluscq20datasheetv1.120261027
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-125-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparateh3pluscq20datasheetv1.120261027
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190

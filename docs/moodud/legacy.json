@@ -3,7 +3,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7416,
+  "sh": 7493,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -12,7 +12,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 366
+   "GF Text": 344
   },
   "loaded": [
    "GF Head",
@@ -135,41 +135,6 @@
     ". SolaX X3-ULT-30K"
    ],
    [
-    131,
-    17,
-    ". Fronius Symo 3.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 3.7-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 4.5-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 5.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 6.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 7.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 8.2-3"
-   ],
-   [
     185,
     17,
     ". Fronius Symo GEN24"
@@ -193,15 +158,35 @@
     177,
     17,
     ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    129,
+    17,
+    ". Hoymiles HIT-10L-G"
+   ],
+   [
+    137,
+    17,
+    ". Hoymiles HIT-10L-G"
+   ],
+   [
+    129,
+    17,
+    ". Hoymiles HIT-12L-G"
    ]
   ],
-  "nhit": 63,
+  "nhit": 59,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 369,
+  "nfs": 347,
   "fs12ex": [],
   "inputs": [
    14,
@@ -219,17 +204,16 @@
    14,
    14,
    14,
-   14,
    14
   ],
   "canvas": 0,
   "svg": 210,
   "radius": {
-   "4px": 12,
-   "2px": 151
+   "4px": 11,
+   "2px": 141
   },
   "kontrast": {
-   "n": 369,
+   "n": 347,
    "min": 5.29,
    "fail": {}
   },
@@ -242,7 +226,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7416,
+  "sh": 7493,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -251,7 +235,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 366
+   "GF Text": 344
   },
   "loaded": [
    "GF Head",
@@ -374,41 +358,6 @@
     ". SolaX X3-ULT-30K"
    ],
    [
-    131,
-    17,
-    ". Fronius Symo 3.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 3.7-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 4.5-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 5.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 6.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 7.0-3"
-   ],
-   [
-    131,
-    17,
-    ". Fronius Symo 8.2-3"
-   ],
-   [
     185,
     17,
     ". Fronius Symo GEN24"
@@ -432,15 +381,35 @@
     177,
     17,
     ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    129,
+    17,
+    ". Hoymiles HIT-10L-G"
+   ],
+   [
+    137,
+    17,
+    ". Hoymiles HIT-10L-G"
+   ],
+   [
+    129,
+    17,
+    ". Hoymiles HIT-12L-G"
    ]
   ],
-  "nhit": 63,
+  "nhit": 59,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 369,
+  "nfs": 347,
   "fs12ex": [],
   "inputs": [
    14,
@@ -458,17 +427,16 @@
    14,
    14,
    14,
-   14,
    14
   ],
   "canvas": 0,
   "svg": 210,
   "radius": {
-   "4px": 12,
-   "2px": 151
+   "4px": 11,
+   "2px": 141
   },
   "kontrast": {
-   "n": 369,
+   "n": 347,
    "min": 6.15,
    "fail": {}
   },
@@ -481,7 +449,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 16057,
+  "sh": 16239,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -534,7 +502,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 16057,
+  "sh": 16239,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -587,7 +555,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7416,
+  "sh": 7493,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -596,7 +564,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 365
+   "GF Text": 343
   },
   "loaded": [
    "GF Head",
@@ -762,30 +730,15 @@
     116,
     17,
     ". Sofar SOFAR 80KTL"
-   ],
-   [
-    94,
-    17,
-    ". SolarEdge SE4K"
-   ],
-   [
-    160,
-    17,
-    ". Solis RHI-3P10K-HV"
-   ],
-   [
-    153,
-    17,
-    ". Solis RHI-3P5K-HVE"
    ]
   ],
-  "nhit": 63,
+  "nhit": 59,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 368,
+  "nfs": 346,
   "fs12ex": [],
   "inputs": [
    14,
@@ -803,17 +756,16 @@
    14,
    14,
    14,
-   14,
    14
   ],
   "canvas": 0,
   "svg": 210,
   "radius": {
-   "4px": 12,
-   "2px": 151
+   "4px": 11,
+   "2px": 141
   },
   "kontrast": {
-   "n": 368,
+   "n": 346,
    "min": 5.29,
    "fail": {}
   },
@@ -826,7 +778,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 7416,
+  "sh": 7493,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -835,7 +787,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 365
+   "GF Text": 343
   },
   "loaded": [
    "GF Head",
@@ -1001,30 +953,15 @@
     116,
     17,
     ". Sofar SOFAR 80KTL"
-   ],
-   [
-    94,
-    17,
-    ". SolarEdge SE4K"
-   ],
-   [
-    160,
-    17,
-    ". Solis RHI-3P10K-HV"
-   ],
-   [
-    153,
-    17,
-    ". Solis RHI-3P5K-HVE"
    ]
   ],
-  "nhit": 63,
+  "nhit": 59,
   "overpx": 0,
   "over": [],
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 368,
+  "nfs": 346,
   "fs12ex": [],
   "inputs": [
    14,
@@ -1042,17 +979,16 @@
    14,
    14,
    14,
-   14,
    14
   ],
   "canvas": 0,
   "svg": 210,
   "radius": {
-   "4px": 12,
-   "2px": 151
+   "4px": 11,
+   "2px": 141
   },
   "kontrast": {
-   "n": 368,
+   "n": 346,
    "min": 6.15,
    "fail": {}
   },
@@ -1065,7 +1001,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 16088,
+  "sh": 16464,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1118,7 +1054,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 16088,
+  "sh": 16464,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1171,7 +1107,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 5072,
+  "sh": 5091,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -1180,7 +1116,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 124
+   "GF Text": 133
   },
   "loaded": [
    "GF Head",
@@ -1219,7 +1155,7 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 127,
+  "nfs": 136,
   "fs12ex": [],
   "inputs": [
    14,
@@ -1244,10 +1180,10 @@
   "svg": 18,
   "radius": {
    "4px": 12,
-   "2px": 50
+   "2px": 54
   },
   "kontrast": {
-   "n": 127,
+   "n": 136,
    "min": 5.29,
    "fail": {}
   },
@@ -1260,7 +1196,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 5072,
+  "sh": 5091,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -1269,7 +1205,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 3,
-   "GF Text": 124
+   "GF Text": 133
   },
   "loaded": [
    "GF Head",
@@ -1308,7 +1244,7 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 127,
+  "nfs": 136,
   "fs12ex": [],
   "inputs": [
    14,
@@ -1333,10 +1269,10 @@
   "svg": 18,
   "radius": {
    "4px": 12,
-   "2px": 50
+   "2px": 54
   },
   "kontrast": {
-   "n": 127,
+   "n": 136,
    "min": 6.15,
    "fail": {}
   },
@@ -1349,7 +1285,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 11724,
+  "sh": 11945,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -1402,7 +1338,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 11724,
+  "sh": 11945,
   "pans": [],
   "fitpx": 0,
   "coarse": true,

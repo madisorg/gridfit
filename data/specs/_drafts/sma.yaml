@@ -1,0 +1,556 @@
+brand: SMA
+status: draft
+rule: DRAFT - every value below was read by tools/specs/table.py from the sheet named in `source` and has not been reviewed.
+  Review each row against the sheet, correct it in tools/specs/draft.py (named, with the reason) and let draft.py write data/specs/<brand>.yaml;
+  this file is never read by the site.
+sources:
+- id: power_limiter-ds-en-10
+  url: https://files.sma.de/downloads/Power%20Limiter-DS-en-10.pdf
+  file: Power_Limiter-DS-en-10.pdf
+  title: Power_Limiter-DS-en-10.pdf
+  sha256: a80001583a3d4df787bf45deb21812823b4443ddb9edb2cbc6bb7ba5c33ff5e2
+  seen: '2026-11-01'
+- id: sb30-60-ds-en-61
+  url: https://files.sma.de/downloads/SB30-60-DS-en-61.pdf
+  file: SB30-60-DS-en-61.pdf
+  title: SB30-60-DS-en-61.pdf
+  sha256: 956a54fee00639eac38c3dde3d01f606cf65bd7d09e35b547855d333314fe836
+  seen: '2026-11-01'
+- id: 93b60494_sbse36-60-ds-en-18
+  url: https://files.sma.de/downloads/SBSE36-60-DS-en-18.pdf
+  file: 93b60494_SBSE36-60-DS-en-18.pdf
+  title: SBSE36-60-DS-en-18.pdf
+  sha256: 93b60494eb69b13e28463eee2c141f8b15e14c35256b459c56fd78b512547cbf
+  seen: '2026-11-01'
+- id: shps-30-ds-en-07
+  url: https://files.sma.de/downloads/SHPS-30-DS-en-07.pdf
+  file: SHPS-30-DS-en-07.pdf
+  title: SHPS-30-DS-en-07.pdf
+  sha256: 20ee54c74eaa7a04eef8edd931afee5dbc1a798dc353070851c3b59902010464
+  seen: '2026-11-01'
+- id: si44m-80h-13-ds-en-40
+  url: https://files.sma.de/downloads/SI44M-80H-13-DS-en-40.pdf
+  file: SI44M-80H-13-DS-en-40.pdf
+  title: SI44M-80H-13-DS-en-40.pdf
+  sha256: de693c7c317e305567b41fdd28e85cf0d307145b8d5810137926f9f609182fa2
+  seen: '2026-11-01'
+- id: sixx-20-ds-en-27
+  url: https://files.sma.de/downloads/SIxx-20-DS-en-27.pdf
+  file: SIxx-20-DS-en-27.pdf
+  title: SIxx-20-DS-en-27.pdf
+  sha256: 9e6ad1eac5bedd6dc11c3794dc960615fa24c54fae3e528edde89a9dfc5ebad2
+  seen: '2026-11-01'
+- id: smabackupstph-ds-en-11
+  url: https://files.sma.de/downloads/SMABackupSTPH-DS-en-11.pdf
+  file: SMABackupSTPH-DS-en-11.pdf
+  title: SMABackupSTPH-DS-en-11.pdf
+  sha256: 3855c7f9ea013cfbb4b1ac4fb127e37754adb82365ae5f8460a12c9172e4f238
+  seen: '2026-11-01'
+- id: stp3-6-3av-40-ds-en-41
+  url: https://files.sma.de/downloads/STP3-6-3AV-40-DS-en-41.pdf
+  file: STP3-6-3AV-40-DS-en-41.pdf
+  title: STP3-6-3AV-40-DS-en-41.pdf
+  sha256: e79d5bc3b23ade6361cb8b8a0d66c3c0ef76ab2052b8a2db358be7887e7eeedf
+  seen: '2026-11-01'
+- id: stp8-10-3av-40-ds-en-41
+  url: https://files.sma.de/downloads/STP8-10-3AV-40-DS-en-41.pdf
+  file: STP8-10-3AV-40-DS-en-41.pdf
+  title: STP8-10-3AV-40-DS-en-41.pdf
+  sha256: bccc4a50acff349f90a98b4da04477be08ce27d67c7e434349f716580fd5e909
+  seen: '2026-11-01'
+- id: stphxx-60-ds-en-10
+  url: https://files.sma.de/downloads/STPHxx-60-DS-en-10.pdf
+  file: STPHxx-60-DS-en-10.pdf
+  title: STPHxx-60-DS-en-10.pdf
+  sha256: 4ff700f9453839f7c33e2c43801744a7031eea8857401ccf466870b9ae3aa51d
+  seen: '2026-11-01'
+- id: stphxx-70-ds-en-03
+  url: https://files.sma.de/downloads/STPHxx-70-DS-en-03.pdf
+  file: STPHxx-70-DS-en-03.pdf
+  title: STPHxx-70-DS-en-03.pdf
+  sha256: b8e6eb446793698cff73e072bfcfbca329999dfe75ea99d7c4a13330e676aeac
+  seen: '2026-11-01'
+- id: af0e3e5f_stpxx-3se-40-ds-en-22
+  url: https://files.sma.de/downloads/STPxx-3SE-40-DS-en-22.pdf
+  file: af0e3e5f_STPxx-3SE-40-DS-en-22.pdf
+  title: STPxx-3SE-40-DS-en-22.pdf
+  sha256: af0e3e5f92472f1df06273a229f5d64ee5b9fb064cdece9a79d1e7a4b0fdc669
+  seen: '2026-11-01'
+models:
+- code: STP3.0-3AV-40,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: power_limiter-ds-en-10
+  raw: {}
+- code: STP4.0-3AV-40,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: power_limiter-ds-en-10
+  raw: {}
+- code: STP5.0-3AV-40,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: power_limiter-ds-en-10
+  raw: {}
+- code: STP6.0-3AV-40,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: power_limiter-ds-en-10
+  raw: {}
+- code: STP8.0-
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: power_limiter-ds-en-10
+  raw: {}
+- code: SB3.0-1AV-41
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sb30-60-ds-en-61
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SB3.6-1AV-41
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sb30-60-ds-en-61
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SB4.0-1AV-41
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sb30-60-ds-en-61
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SB5.0-1AV-41
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sb30-60-ds-en-61
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SB6.0-1AV-41
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: sb30-60-ds-en-61
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SBSE3.6-50
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 93b60494_sbse36-60-ds-en-18
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SBSE4.0-50
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 93b60494_sbse36-60-ds-en-18
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SBSE5.0-50
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 93b60494_sbse36-60-ds-en-18
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SBSE6.0-50
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 93b60494_sbse36-60-ds-en-18
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SHPS
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: shps-30-ds-en-07
+  raw:
+    phases: 3 3-grounding
+- code: SHPS
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: shps-30-ds-en-07
+  raw:
+    phases: 3 3-grounding
+- code: SHPS
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: shps-30-ds-en-07
+  raw:
+    phases: 3 3-grounding
+- code: SHPS
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: shps-30-ds-en-07
+  raw:
+    phases: 3 3-grounding
+- code: SI4.4M-13
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: si44m-80h-13-ds-en-40
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SI6.0H-13
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: si44m-80h-13-ds-en-40
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SI8.0H-13
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: si44m-80h-13-ds-en-40
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SI30-20
+  mppt: null
+  ac_kw: null
+  ac_kva: 0.03
+  ac_a: null
+  phases: null
+  pv_kw: 0.03
+  source: sixx-20-ds-en-27
+  raw:
+    ac_va: 30,000 50,000
+    pv_w: 30,600 51,000
+    phases: '50'
+- code: SI50-20
+  mppt: null
+  ac_kw: null
+  ac_kva: 0.03
+  ac_a: null
+  phases: null
+  pv_kw: 0.03
+  source: sixx-20-ds-en-27
+  raw:
+    ac_va: 30,000 50,000
+    pv_w: 30,600 51,000
+    phases: '50'
+- code: STPH5-60,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: smabackupstph-ds-en-11
+  raw: {}
+- code: STPH6-60,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: smabackupstph-ds-en-11
+  raw: {}
+- code: STPH8-60,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: smabackupstph-ds-en-11
+  raw: {}
+- code: STPH10-60,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: smabackupstph-ds-en-11
+  raw: {}
+- code: STPH12-60,
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: smabackupstph-ds-en-11
+  raw: {}
+- code: STPH15-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: smabackupstph-ds-en-11
+  raw: {}
+- code: STP3.0-3AV-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stp3-6-3av-40-ds-en-41
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP4.0-3AV-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stp3-6-3av-40-ds-en-41
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP5.0-3AV-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stp3-6-3av-40-ds-en-41
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP6.0-3AV-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stp3-6-3av-40-ds-en-41
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP8.0-3AV-40
+  mppt: 2
+  ac_kw: null
+  ac_kva: 8.0
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stp8-10-3av-40-ds-en-41
+  raw:
+    mppt: 2 A:2; B:1
+    ac_va: 8000 8000 10000 10000
+    phases: 50 230
+- code: STP10.0-3AV-40
+  mppt: 2
+  ac_kw: null
+  ac_kva: 8.0
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stp8-10-3av-40-ds-en-41
+  raw:
+    mppt: 2 A:2; B:1
+    ac_va: 8000 8000 10000 10000
+    phases: 50 230
+- code: STPH5-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-60-ds-en-10
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH6-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-60-ds-en-10
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH8-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-60-ds-en-10
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH10-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-60-ds-en-10
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH12-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-60-ds-en-10
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH15-60
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-60-ds-en-10
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH20-70
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-70-ds-en-03
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH25-70
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-70-ds-en-03
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STPH30-70
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: stphxx-70-ds-en-03
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP5.0-3SE-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: af0e3e5f_stpxx-3se-40-ds-en-22
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP6.0-3SE-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: af0e3e5f_stpxx-3se-40-ds-en-22
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP8.0-3SE-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: af0e3e5f_stpxx-3se-40-ds-en-22
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: STP10.0-3SE-40
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: af0e3e5f_stpxx-3se-40-ds-en-22
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'

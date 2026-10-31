@@ -1,0 +1,258 @@
+brand: GoodWe
+status: draft
+rule: DRAFT - every value below was read by tools/specs/table.py from the sheet named in `source` and has not been reviewed.
+  Review each row against the sheet, correct it in tools/specs/draft.py (named, with the reason) and let draft.py write data/specs/<brand>.yaml;
+  this file is never read by the site.
+sources:
+- id: gw_bat25-56_datasheet-en
+  url: https://en.goodwe.com/Skippower/downloadFileF?id=3053&mid=60
+  file: GW_BAT25-56_Datasheet-EN.pdf
+  title: Datasheet
+  sha256: 0c7e6c421538ff08838c6b37585c46d634b38a32d03b5ead0290e64ba0ebd1e6
+  seen: '2026-11-01'
+- id: gw_mis-g2_datasheet-en
+  url: https://en.goodwe.com/Skippower/downloadFileF?id=4382&mid=60
+  file: GW_MIS-G2_Datasheet-EN.pdf
+  title: Datasheet
+  sha256: 5e0b6445c0aa9d58250b9c7ad999982ac19ea0dcfe412baa118ebcdc290ef9b5
+  seen: '2026-11-01'
+- id: gw_ht_1500v_datasheet-en
+  url: https://en.goodwe.com/Skippower/downloadFileF?id=581&mid=60
+  file: GW_HT_1500V_Datasheet-EN.pdf
+  title: Datasheet
+  sha256: fe75b19a55fa81522cbc18f45311e5d70e9912de9b7388c8cbeca1e282958a4b
+  seen: '2026-11-01'
+- id: gw_etc_50-100k_datasheet-en
+  url: https://en.goodwe.com/Skippower/downloadFileF?id=609&mid=60
+  file: GW_ETC_50-100K_Datasheet-EN.pdf
+  title: Datasheet
+  sha256: 41ae3effde04ed248b5da129b706c90e6de5f4e7665675ad77383111bbf4fd19
+  seen: '2026-11-01'
+- id: gw_btc_50-100k_datasheet-en
+  url: https://en.goodwe.com/Skippower/downloadFileF?id=683&mid=60
+  file: GW_BTC_50-100K_Datasheet-EN.pdf
+  title: Datasheet
+  sha256: 423c7ff1a7c6f0a5e8e9e7705e3b7fc03dd92b33a57848f3f3cdf7f202aa531a
+  seen: '2026-11-01'
+models:
+- code: GW25.6-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW30.7-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW35.8-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW40.9-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW46.0-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW51.2-B
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW56.3-BA
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_bat25-56_datasheet-en
+  raw: {}
+- code: GW1.6K-
+  mppt: 4
+  ac_kw: 1.6
+  ac_kva: 1.6
+  ac_a: 7.0
+  phases: null
+  pv_kw: null
+  source: gw_mis-g2_datasheet-en
+  raw:
+    mppt: '4'
+    ac_w: '1.6'
+    ac_va: '1.6'
+    ac_a: 7.0 230V
+- code: GW1.8K-
+  mppt: 4
+  ac_kw: 1.8
+  ac_kva: 1.8
+  ac_a: 7.8
+  phases: null
+  pv_kw: null
+  source: gw_mis-g2_datasheet-en
+  raw:
+    mppt: '4'
+    ac_w: '1.8'
+    ac_va: '1.8'
+    ac_a: 7.8 230V
+- code: GW1.875K-
+  mppt: 4
+  ac_kw: 1.88
+  ac_kva: 1.88
+  ac_a: 8.2
+  phases: null
+  pv_kw: null
+  source: gw_mis-g2_datasheet-en
+  raw:
+    mppt: '4'
+    ac_w: '1.875'
+    ac_va: '1.875'
+    ac_a: 8.2 230V
+- code: GW2K-
+  mppt: 4
+  ac_kw: 2.0
+  ac_kva: 2.0
+  ac_a: 8.7
+  phases: null
+  pv_kw: null
+  source: gw_mis-g2_datasheet-en
+  raw:
+    mppt: '4'
+    ac_w: '2.0'
+    ac_va: '2.0'
+    ac_a: 8.7 230V
+- code: GW2.25K-
+  mppt: 4
+  ac_kw: 2.25
+  ac_kva: 2.25
+  ac_a: 9.8
+  phases: null
+  pv_kw: null
+  source: gw_mis-g2_datasheet-en
+  raw:
+    mppt: '4'
+    ac_w: '2.25'
+    ac_va: '2.25'
+    ac_a: 9.8 230V
+- code: GW2.5K-
+  mppt: 4
+  ac_kw: 2.5
+  ac_kva: 2.5
+  ac_a: 10.9
+  phases: null
+  pv_kw: null
+  source: gw_mis-g2_datasheet-en
+  raw:
+    mppt: '4'
+    ac_w: '2.5'
+    ac_va: '2.5'
+    ac_a: 10.9 230V
+- code: HT1500V
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_ht_1500v_datasheet-en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: GW225KN-HT
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_ht_1500v_datasheet-en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: GW250KN-HT
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: gw_ht_1500v_datasheet-en
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: GW50K06-ETC*1
+  mppt: 1
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 159.5
+  phases: null
+  pv_kw: null
+  source: gw_etc_50-100k_datasheet-en
+  raw:
+    mppt: '1'
+    ac_w: '50'
+    ac_va: '55'
+    ac_a: '159.5'
+- code: GW100K06-ETC*1
+  mppt: 2
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.5
+  phases: null
+  pv_kw: null
+  source: gw_etc_50-100k_datasheet-en
+  raw:
+    mppt: 2 2
+    ac_w: 100 100
+    ac_va: 110 110
+    ac_a: '159.5'
+- code: GW50K06-BTC*1
+  mppt: null
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 159.5
+  phases: null
+  pv_kw: null
+  source: gw_btc_50-100k_datasheet-en
+  raw:
+    ac_w: '50'
+    ac_va: '55'
+    ac_a: '159.5'
+- code: GW100K06-BTC*1
+  mppt: null
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.5
+  phases: null
+  pv_kw: null
+  source: gw_btc_50-100k_datasheet-en
+  raw:
+    ac_w: 100 100
+    ac_va: 110 110
+    ac_a: '159.5'
