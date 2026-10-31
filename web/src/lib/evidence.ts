@@ -38,9 +38,10 @@ try {
 export const docsFor = (cc: string) => [...(byCountry.get(cc) ?? [])].sort((a, b) => a.brand.localeCompare(b.brand) || (b.doc.issued ?? "").localeCompare(a.doc.issued ?? ""));
 
 const norm = (s: string) => s.toUpperCase().replace(/\s+/g, "").replace(/,/g, ".");
-export function releaseOf(brand: string, model: string): Release | null {
+// every document whose family matches: a Spanish certificate must not hide the Italian one for the same model
+export function releasesOf(brand: string, model: string): Release[] {
   const list = idx.get(brand.toLowerCase());
-  if (!list) return null;
+  if (!list) return [];
   const n = norm(model);
-  return list.find((x) => x.rx.test(n))?.rel ?? null;
+  return list.filter((x) => x.rx.test(n)).map((x) => x.rel);
 }

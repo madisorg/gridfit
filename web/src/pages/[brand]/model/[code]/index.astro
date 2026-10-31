@@ -7,7 +7,7 @@ import Glance from "../../../../components/Glance.astro";
 import GridBlock from "../../../../components/GridBlock.astro";
 import Status from "../../../../components/Status.astro";
 import { COUNTRIES, REGS, RC, RS, RSHORT, META, SNAP_DATE, faq, best, type Device } from "../../../../lib/registers";
-import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, kindOf, releaseOfModel } from "../../../../lib/devices";
+import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, kindOf, releasesOfModel } from "../../../../lib/devices";
 import { localOf } from "../../../../lib/devices";
 import { familyUrl, REPO } from "../../../../lib/data";
 
@@ -24,7 +24,7 @@ const sheet = sheetOf(d);
 const qa = faq(d);
 // only families of the same kind can claim this code: a hybrid is never an ENECTOR wallbox or a KSEM meter
 const routes = (brand?.families ?? []).filter((f) => kindOf(f.class) === kindOf(d.cls) && ["control", "read"].includes(localOf(f)));
-const spec = specOf(d), release = releaseOfModel(d);
+const spec = specOf(d), releases = releasesOfModel(d);
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -44,7 +44,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
     <h1>{d.brand} {d.model}</h1>
     <p class="kind"><span>{RC[d.cls]}</span><span aria-hidden="true">·</span><span>in {listed.length} of {COUNTRIES.length} lists</span>
       <span aria-hidden="true">·</span><span>no product family claims this code yet</span>{!sheet && (d.cls === "battery") && <><span aria-hidden="true">·</span><span>no MPPT: a battery / AC inverter</span></>}</p>
-    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} releases={release ? [release] : []} />
+    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} releases={releases} />
     <p class="chips"><a href="#grid">Grid lists</a><a href="#local">Local control</a><a href={`/${bslug}/#grid`}>All {d.brand} models</a></p>
   </header>
 
@@ -54,7 +54,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
       <div class="faq">
         {qa.map((f) => <><h3>{f.q}</h3><p class="a">{f.a}</p>{f.de && <p lang="de" class="small muted">{f.de}</p>}</>)}
       </div>
-      <GridBlock cells={cells} entries={d.cells} cls={d.cls} releases={release ? [release] : []} kva={spec.kva} brand={d.brand} />
+      <GridBlock cells={cells} entries={d.cells} cls={d.cls} releases={releases} kva={spec.kva} brand={d.brand} />
       {sheet && (
         <>
           <h3>Datasheet</h3>

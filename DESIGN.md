@@ -549,3 +549,31 @@ The same fifteen routes as §24 × 3440/390 × light/dark on the §8e build: [`t
 One regression caught in the browser before the round, not by the numbers: the status labels start hidden in the HTML for
 the no-JavaScript case and the "always show all" change had dropped the line that un-hides them, so the group showed its
 heading alone. The count test is unchanged (796 checks, 0 failures): colour moved, the partition did not.
+
+## 26. Measured, 2026-11-01 — Italy: CEI 0-21
+
+The third country profile (`data/profiles/it.yaml`) and what it needed from the page. "cei 0 21" is the one search with real
+volume (5 000 a month in Italy), so a country with a profile now carries the rule's name where the search lands: the profile's
+`norm` goes into the `<title>` ("CEI 0-21 in Italy: is my inverter fit for the grid?") and the block heading, its `summary` is
+the block's first paragraph (what the rule asks, in one place), its `description` is the meta description, and `changes` is a
+dated "What changes" row. A country page with a profile is no longer noindex and is in the sitemap — the sitemap's own comment
+already said country pages wait "until their notes are written"; that turns Spain on too. A partial list that is not the
+operator's (Italy: ANIE's members list) no longer makes the heading ask about "the grid operator's list". Under the profile a
+table lists every maker's document read for that country (`docsFor`, evidence.ts), brand and families in the first cell so a
+phone card has a heading and one document line.
+
+Two faults found on the way, both older than Italy. Each model joined only the *first* evidence document that matched it, so a
+Spanish certificate hid the Italian one for the same family (46 models: Fox ESS H3-Pro, SolaX X1-Fit / Hybrid G4, Solis
+S6-EH3P); now every matching document counts (`releasesOf`). And the type-A limit was applied to wallboxes: with Italy's
+11.08 kW line, 397 22-kW chargers read "over the type-A limit", which is a generator's category; a wallbox is now never type B
+(`cellCode` and `othersTiered` alike). Italy after both: 13 892 inverters, 390 fit by the maker's document (232 before the
+join fix and the 19 new documents), 4 896 over the 11.08 kW line, 8 244 accepted on other EU lists, 362 nothing known; 568
+wallboxes, none type B. Spain unchanged (245 / 2 174 / 10 977 / 496).
+
+Seven routes ([`routes-it.json`](docs/moodud/routes-it.json): `/grid/it/` at the top, at the block, at the documents table,
+with `?g=ev` and with `?st=D`, Spain's documents table, the SolaX Fit family at "the other countries") × 3440/390 × light/dark,
+three rounds, the last on the final build: [`it-profiil.json`](docs/moodud/it-profiil.json), 28 pictures, 0 console errors,
+0 failed requests, 0 px overflow, 0 texts under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 5.29), 0 tap targets under
+44 px. By eye between rounds: the families column of the documents table wrapped a word per line on a phone, and one Deye
+certificate number carried a research note in brackets into its link text (both fixed); the block's subtitle read "from The
+distribution grid operator…". The count test: 796 checks, 0 failures.

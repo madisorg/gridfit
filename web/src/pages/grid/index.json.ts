@@ -8,7 +8,7 @@ import { devices, COUNTRIES, best } from "../../lib/registers";
 import { BRANDS, brandSlugOf, modelUrl, familyOf, marksOfModel, specOf } from "../../lib/devices";
 import { COUNTRIES_ALL } from "../../lib/countries";
 import { LIMITS, PROFILES } from "../../lib/profiles";
-import { releaseOf } from "../../lib/evidence";
+import { releasesOf } from "../../lib/evidence";
 
 const CODE: Record<string, string> = { listed: "L", restricted: "R", limited: "T", "limited-past": "P", expired: "E", nein: "N", other: "O" };
 
@@ -18,9 +18,9 @@ export const GET: APIRoute = () => {
   const order = devices.filter((d) => !d.unmatched).sort((a, b) =>
     b.n - a.n || (lc(a.brand) < lc(b.brand) ? -1 : lc(a.brand) > lc(b.brand) ? 1 : 0) || (lc(a.model) < lc(b.model) ? -1 : lc(a.model) > lc(b.model) ? 1 : 0));
   const rows = order.map((d) => {
-    const f = familyOf(d), s = specOf(d), mk = marksOfModel(d), rel = releaseOf(d.brand, d.model);
+    const f = familyOf(d), s = specOf(d), mk = marksOfModel(d), rel = releasesOf(d.brand, d.model);
     return [bidx.get(brandSlugOf(d)), d.model, d.cls, modelUrl(d), COUNTRIES.map((c) => (d.cells[c] ? CODE[best(d.cells[c])] : "-")).join(""),
-      mk.ha + mk.evcc, f ? f.name : "", s.phases, s.kva, s.mppt, rel ? rel.countries.join(",") : ""];
+      mk.ha + mk.evcc, f ? f.name : "", s.phases, s.kva, s.mppt, [...new Set(rel.flatMap((r) => r.countries))].join(",")];
   });
   const scope = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c.classes]));
   const names = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c.country]));

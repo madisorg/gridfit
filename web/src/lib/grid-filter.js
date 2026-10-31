@@ -25,7 +25,8 @@ export function cellCode(row, cc, data) {
   if (row[10] && row[10].split(",").includes(cc)) return "D";
   if (st === "unknown") return "?";
   const lim = data.limits?.[cc]?.max_kw;
-  if (lim && row[8] !== null && row[8] > lim) return "B";
+  // RfG types are a generator's: a wallbox's charging power is not over any type-A limit
+  if (lim && row[2] !== "wallbox" && row[8] !== null && row[8] > lim) return "B";
   if ([...row[4]].some((ch) => POSITIVE.includes(ch))) return "K";
   return "-";
 }

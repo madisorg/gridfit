@@ -321,19 +321,19 @@
     wallbox: unverified
 - cc: IT
   country: Italy
-  list: "partial"
+  list: "partial"   # ANIE's members-only list; no operator list. Classes checked 2026-11-01 against CEI 0-21:2026-07 (data/profiles/it.yaml)
   classes:
     inverter: rule
     hybrid: rule
     battery: rule
-    plug-in: rule
-    wallbox: rule
+    plug-in: rule     # under 800 W: Comunicazione Unica with the inverter's CEI 0-21 declaration; Plug & Play up to 350 W
+    wallbox: rule     # charge-only is a consumer load until 2027; from 2027-01-01 new non-public points certified to Allegato X
   confidence:
     inverter: checked
-    hybrid: search
+    hybrid: checked
     battery: checked
-    plug-in: search
-    wallbox: search
+    plug-in: checked
+    wallbox: checked
 - cc: LI
   country: Liechtenstein
   list: "no"

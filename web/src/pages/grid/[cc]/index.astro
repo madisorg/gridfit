@@ -62,7 +62,7 @@ const desc = parsed
 
   {prof && (
     <section class="sec" id="how">
-      <header><h2>How it works in {c.country}{prof.norm && `: ${prof.norm}`}</h2><p>from {prof.decided_by.split(" (")[0]}'s own documents · the grid operator decides</p></header>
+      <header><h2>How it works in {c.country}{prof.norm && `: ${prof.norm}`}</h2><p>from {prof.decided_by.split(" (")[0].replace(/^The /, "the ")}'s own documents · the grid operator decides</p></header>
       {prof.summary && <p class="prose">{prof.summary}</p>}
       <dl class="facts-dl panel">
         <dt>Who decides</dt><dd>{prof.decided_by}</dd>
@@ -86,10 +86,10 @@ const desc = parsed
       {docs.length > 0 && <>
         <h3>The makers' documents read so far</h3>
         <table class="tbl">
-          <thead><tr><th scope="col">Brand</th><th scope="col">Families</th><th scope="col">Document</th></tr></thead>
+          <thead><tr><th scope="col">Brand and families</th><th scope="col">Document</th></tr></thead>
           <tbody>{docs.map((x) => { const slug = BRANDS.find((b) => b.name === x.brand)?.slug; return (
-            <tr><td class="fam">{slug ? <a href={`/${slug}/`}>{x.brand}</a> : x.brand}</td><td data-l="families">{x.families.join("; ")}</td>
-              <td data-l="document"><Ext href={x.doc.url}>{x.doc.cert_no ?? x.doc.kind}</Ext>{x.doc.issuer ? ` · ${x.doc.issuer.split(" (")[0]}` : ""}{x.doc.issued ? ` · ${x.doc.issued}` : ""}{x.doc.standards?.length ? <span class="muted"> · {x.doc.standards.at(-1)}</span> : ""}</td></tr>); })}</tbody>
+            <tr><td class="fam">{slug ? <a href={`/${slug}/`}>{x.brand}</a> : x.brand} <span class="muted">— {x.families.join("; ")}</span></td>
+              <td data-l=""><Ext href={x.doc.url}>{(x.doc.cert_no ?? x.doc.kind).split(" (")[0]}</Ext>{x.doc.issuer ? ` · ${x.doc.issuer.split(" (")[0]}` : ""}{x.doc.issued ? ` · ${x.doc.issued}` : ""}{x.doc.standards?.length ? <span class="muted"> · {x.doc.standards.at(-1)}</span> : ""}</td></tr>); })}</tbody>
         </table>
       </>}
       <h3>Sources</h3>
