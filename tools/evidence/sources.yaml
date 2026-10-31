@@ -34,3 +34,404 @@ kostal:
       - {name: PIKO CI 100, column: PIKO CI 100, match: '^PIKOC[IL]100$'}
       - {name: KSEM / KEM, column: KSEM / KEM, note: "energy meters — no grid list carries them; not joined"}
       - {name: KOSTAL HELIVOR HV, column: KOSTAL HELIVOR HV (BAT), match: '^(KOSTAL)?HELIVOR'}
+
+solax:
+  - id: safety-code-display
+    title: "Actual Safety Code Display"
+    url: https://www.solaxpower.com/uploads/file/actual-safety-code-display.pdf
+    kind: grid-code-setting
+    confidence: general
+    parser: codes
+    args: {start: 'Safety Code', bare_codes: false}
+    note: "The safety codes the inverter's LCD offers, country by country (75 rows, PDF of 2024-01-05, Last-Modified 2024-12-03).
+      Not per model: only Lithuania (X3-FORTH only), the type-B notes (X3-FORTH, X3-MEGA G2) and Ireland (X1-BOOST G3/G4, 25 A)
+      name models. An older generation's firmware may lack a code — the inverter's menu is the check."
+    families:
+      - {name: "X1 / X3 inverters and hybrids (the code list, not per model)", match: '^X[13]-', drop: [LT]}
+      - {name: X3-FORTH, match: '^X3-FORTH'}
+
+
+sofar:
+  - id: hyd-3ph-manual-country-codes
+    title: "HYD 5–20KTL-3PH user manual — Setting the country code"
+    url: https://www.sofarsolar.com/upload/file/20240321/1710982866939025487.pdf
+    file: HYD-5-20KTL-3PH-manual-2024-03.pdf
+    kind: grid-code-setting
+    parser: codes
+    args: {start: 'Setting the country code', end: 'Smartphone app', bare_codes: false}
+    note: "The manual's country-code table (109-000 Estonia, 122-000 Latvia, 108-000 Lithuania, 125-000 Finland). The same code
+      system as ZCS Azzurro's table; Sofar's other manuals sit in a JavaScript download centre and were not found elsewhere."
+    families:
+      - {name: HYD 5–20KTL-3PH, match: '^(SOFAR)?HYD-?(5|6|8|10|15|20)KTL-3PH'}
+
+goodwe:
+  - id: et12-30-manual-safety-country
+    title: "ET 12–30 kW user manual — 10.5 Safety Standards Countries"
+    url: https://en.goodwe.com/Ftp/EN/Downloads/User%20Manual/GW_Residential-Smart-Inverter-Solutions_User-Manual-ET12-30kW-EN.pdf
+    kind: grid-code-setting
+    parser: codes
+    args: {start: 'Safety Standards Countries', end: '\nGlobal\n', ignore: [LV]}
+    meta: {version: '(V\d+\.\d+ ?\d{4}-\d{2}-\d{2})'}
+    note: "The Europe part of the manual's safety-code table (EE is code 60). LV in the codes is a voltage level, not Latvia."
+    families:
+      - {name: ET 12–30 kW, match: '^GW(12|15|18|20|25|29\.9|30)K-ET'}
+
+zcs:
+  - id: safety-standard-table
+    brand: ZCS Azzurro
+    title: "Safety Standard Table"
+    url: https://www.zcsazzurro.com/uploads/documetazione/firmware/Safety-Standard-Table_2024-08-13-143351_qmss.pdf
+    kind: grid-code-setting
+    confidence: general
+    parser: codes
+    args: {start: 'SAFETY STANDARD', bare_codes: false}
+    note: "ZCS's code table for its inverters (2024-08-13 in the file name), not per model: 109-000 Estonia, 122-000 Latvia,
+      108-000 Lithuania, 125-000 Finland. An older model's firmware may lack a code — the inverter's menu is the check."
+    families:
+      - {name: "ZCS Azzurro inverters (the code table, not per model)", match: '^(1PH|3PH)'}
+
+# Certificates. A certificate names no country; `accepted_in` comes from data/evidence/rules/accepts.yaml. `models` is the
+# pattern of the model codes in the certificate; `match: auto` joins exactly those codes (plus `suffix`). Superseded
+# certificates are left out (Afore CN-PV-230409/-230410/-230046/-230047/-230673/-230621, replaced by the ones below), and so
+# are scans without a text layer (Kstar BluE 3–25KT-M1, BluE-G 1000–3200S, G40–80KT, KSG 25–40KT-M0).
+afore:
+  - id: en50549-sl-asl-2024
+    title: "Intertek CN-PVES-230621R1 — EN 50549-1 — AF*-SL-1 / SL / SLP / ASL-1 / ASL"
+    url: "https://www.aforenergy.com/wp-content/uploads/2025/04/【certificate】EN50549-single-phase-hybrid-storage-inverter-all-in-one.pdf"
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AF[0-9.]+K-A?SLP?(-1)?(?![-A-Z0-9])'}
+    meta: &intertek {cert_no: 'Certificate Number\s*:\s*([A-Z0-9-]+)', issued: 'Date:\s*(\d{1,2} \w+ \d{4})'}
+    families:
+      - {name: Single-phase hybrid SL / SLP / ASL, match: auto}
+  - id: en50549-sl0-2023
+    title: "Intertek CN-PV-220214R1 — EN 50549-1 — AF*-SL-0 (AC-coupled)"
+    url: https://www.aforenergy.com/wp-content/uploads/2025/04/EN50549-Certificate-Single-Phase-AC-Coupled-1-6kW.pdf
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AF[0-9.]+K-SL-0'}
+    meta: *intertek
+    families:
+      - {name: Single-phase AC-coupled SL-0, match: auto}
+  - id: en50549-hns-2026
+    title: "Intertek CN-PVES-260162 — EN 50549-1 + EN 50549-10 — HNS single-phase string"
+    url: "https://www.aforenergy.com/wp-content/uploads/2026/05/【certificate】【EN50549-10】-single-phase-pv-string-inverter-3-10KW.pdf"
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019+A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'HNS[0-9]+TL(-1)?'}
+    meta: *intertek
+    families:
+      - {name: HNS single-phase string, match: auto}
+  - id: en50549-bnt-3-25-2026
+    title: "Intertek CN-PVES-260016 — EN 50549-1 + EN 50549-10 — BNT 3–25 kW"
+    url: "https://www.aforenergy.com/wp-content/uploads/2026/01/【certificate】【EN50549-10】-three-phase-pv-string-inverter3-25KW.pdf"
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019+A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'BNT0[0-9]{2}KT[AL]'}
+    meta: *intertek
+    families:
+      - {name: BNT three-phase string 3–25 kW, match: auto}
+  - id: en50549-bnt-17-60-2023
+    title: "Intertek CN-PV-230411 — EN 50549-1 — BNT 17–60 kW"
+    url: https://www.aforenergy.com/wp-content/uploads/2025/04/EN50549-Certificate-Three-Phase-String-Inverter-30-60kW.pdf
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'BNT0[0-9]{2}KT[AL]'}
+    meta: *intertek
+    families:
+      - {name: BNT three-phase string 17–60 kW, match: auto}
+  - id: en50549-bnt-36-110-2024
+    title: "Intertek CN-PVES-240559 — EN 50549-1 — BNT 70–110 kW, BNT 36–60 KTA"
+    url: "https://www.aforenergy.com/wp-content/uploads/2025/04/【certificate】EN50549-three-phase-pv-string-inverter-70-110KW.pdf"
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'BNT[01][0-9]{2}KT[AL]'}
+    meta: *intertek
+    families:
+      - {name: BNT three-phase string 36–110 kW, match: auto}
+  - id: en50549-mth-ath-2025
+    title: "Intertek CN-PVES-250429 — EN 50549-1 + EN 50549-10 — AF*-MTH / ATH / MTHA / ATHA"
+    url: "https://www.aforenergy.com/wp-content/uploads/2025/11/【certificate】【EN50549-10】three-phase-energy-storage-inverter-3-15KW-and-all-in-one-system.pdf"
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019+A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AF[0-9.]+K-[AM]THA?(-0)?(?![-A-Z0-9])'}
+    meta: *intertek
+    families:
+      - {name: Three-phase hybrid MTH / ATH 3–15 kW, match: auto}
+  - id: en50549-th-thp-tha-2025
+    title: "Intertek CN-PVES-250462 — EN 50549-1 + EN 50549-10 — AF*-TH / THP / THA"
+    url: "https://www.aforenergy.com/wp-content/uploads/2025/12/【certificate】【EN50549-10】three-phase-energy-storage-inverter3-30KW.pdf"
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019+A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AF[0-9.]+K-TH[PA]?(-0)?(?![-A-Z0-9])'}
+    meta: *intertek
+    families:
+      - {name: Three-phase hybrid TH / THP / THA 3–30 kW, match: auto}
+
+kstar:
+  - id: en50549-blue-g-2023
+    title: "TÜV SÜD — EN 50549-1 — BluE-G 3000–6000 S/D"
+    url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_%20EN%2050549-1_BluE-G%20(3000-6000)D-M1_EN_V1.0.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'BluE-G ?[0-9]+[SD](-M[01])?'}
+    meta: &tuvsud {cert_no: 'Test report no\.:\s*(\d+)'}
+    families:
+      - {name: BluE-G single-phase, match: auto}
+  - id: en50549-blue-s-2023
+    title: "TÜV SÜD — EN 50549-1 — BluE-S 3680–6000D"
+    url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_%20EN%2050549-1_BluE-S(3.68-6)D-M1_EN_V1.0.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019/AC:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'BluE-S ?[0-9]+D(-M1)?'}
+    meta: *tuvsud
+    families:
+      - {name: BluE-S single-phase hybrid, match: auto}
+  - id: en50549-kac50dp
+    title: "TÜV SÜD — EN 50549-1 — KAC50DP"
+    url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_%20EN%2050549-1_KAC50DP_EN_V1.0.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019/AC:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'KAC50DP(?!2)'}
+    meta: *tuvsud
+    families:
+      - {name: KAC50DP, match: auto}
+  - id: en50549-e8-12kt
+    title: "TÜV SÜD — EN 50549-1 — E8KT / E10KT / E12KT"
+    url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_EN%2050549-1_E(8-12)KT_EN_V1.0.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019/AC:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: '\bE(8|10|12)KT\b'}
+    meta: *tuvsud
+    families:
+      - {name: E8–12KT, match: auto}
+  - id: en50549-kac80-125dp2
+    title: "TÜV SÜD — EN 50549-1 / -2 / -10 — KAC80–125DP2"
+    url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_EN%2050549_KAC125DP2_EN_V1.0.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019/A1:2023, EN 50549-2:2019/A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'KAC[0-9.]+DP2(-S0)?'}
+    meta: *tuvsud
+    families:
+      - {name: KAC80–125DP2, match: auto}
+  - id: en50549-kac20-50dp2
+    title: "TÜV SÜD — EN 50549-1 / -2 / -10 — KAC20–50DP2"
+    url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_EN%2050549_KAC50DP2_EN_V1.0.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019/A1:2023, EN 50549-2:2019/A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'KAC[0-9.]+DP2(-S0)?'}
+    meta: *tuvsud
+    families:
+      - {name: KAC20–50DP2, match: auto}
+
+saj:
+  - id: en50549-h3-ls2-2026
+    brand: SAJ
+    title: "DEKRA 4954902.01COC — EN 50549-1 + A1, EN 50549-10 — EK60 H3-2.9…6K-LS2"
+    url: https://www.saj-electric.com/hubfs/Certificate/Certificate-global/EK60%20H3-(2.9-6)K_EN50549-1%2610%20Test%20Certificate.pdf
+    issuer: DEKRA
+    kind: certificate
+    standards: [EN 50549-1:2019/A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'EK60 H3-[0-9.]+K-LS2(-IE)?'}
+    families:
+      - {name: H3 single-phase hybrid (EK60 kit), match: auto}
+  - id: en50549-chs2-2025
+    title: "TÜV Rheinland A3 50661611 0001 — EN 50549-1 — CHS2 29.9–50K"
+    url: https://www.saj-electric.com/hubfs/crm-properties-file-values/CHS2_Series_EN50549-1-2019_Certificate_en_EU.pdf
+    issuer: TÜV Rheinland
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'CHS2-[0-9.]+K-T[0-9]-X'}
+    meta: &tuvr {cert_no: 'Certificate No\.:\s*(A3 \d+ \d+)', issued: 'Date of issue:\s*([0-9.]+)'}
+    families:
+      - {name: CHS2 commercial hybrid, match: '^CHS2-(29\.9|30|40|50)K-T[45]'}
+
+aeg:
+  - id: en50549-ich02-2022
+    brand: AEG
+    title: "TÜV Rheinland A3 50555377 0001 — EN 50549-1 — AS-ICH02 hybrid"
+    url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/hybrid-AS-ICH02/Certificate%20AEG%20ICH02%20Series,%20EN%2050549-1-2019.pdf
+    issuer: TÜV Rheinland
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AS-ICH02-[0-9]+-2/HV'}
+    meta: *tuvr
+    families:
+      - {name: AS-ICH02 hybrid, match: '^AS-ICH02-(5000|6500|8000|10000)-2/HV'}
+  - id: en50549-ic02-2-2021
+    title: "EN 50549-1 — AS-IC02-2 4–15 kW"
+    url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/three-phase-AS-IC02-2_(4-15kW)/Certification_AS-IC02-2_4-15kW_EN50549-1-2019+VDE0126-1-1-2006_20210322.pdf
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AS-IC02-[0-9]+-2'}
+    meta: &aegm {cert_no: 'Certificate No\.:\s*(\w+)', issued: 'Date:\s*(\d{4}-\d{2}-\d{2})'}
+    families:
+      - {name: AS-IC02-2 three-phase, match: auto}
+  - id: en50549-ir02-2-2021
+    title: "EN 50549-1 — AS-IR02-2 3–6 kW"
+    url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/three-phase-AS-IR02-2_(3-6kW)/Certification_AS-IR02-2_3-6kW_EN50549-1-2019+VDE01261-1-2006_20210323.pdf
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AS-IR02-[0-9]+-2'}
+    meta: *aegm
+    families:
+      - {name: AS-IR02-2, match: auto}
+  - id: en50549-ir02-2021
+    title: "EN 50549-1 — AS-IR02 0.7–3 kW"
+    url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/single-phase_AS-IR02_(700kW-3kW)/Certification_AS-IR02_0.7-3kW_EN50549-1-2019+VDE0126-1-1-2016_20210323.pdf
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'AS-IR02-[0-9]+(?![-0-9])'}
+    meta: *aegm
+    families:
+      - {name: AS-IR02 single-phase, match: auto}
+
+tsun:
+  - id: en50549-ms1600-2000-2023
+    brand: TSUN
+    title: "Bureau Veritas U23-1067 — EN 50549-1 — TSOL-MS1600 / MS2000"
+    url: https://www.tsun-ess.com/files/certms2000-600-2000en-50549-1europe.pdf
+    issuer: Bureau Veritas
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'TSOL-MS[0-9]+'}
+    meta: &bv {cert_no: '[Cc]ertificate number:\s*(U\d{2}-\d{4})', issued: '(?:Date of issue|Issue date):\s*(\d{4}-\d{2}-\d{2})'}
+    families:
+      - {name: TSOL-MS1600–2000, match: auto}
+  - id: en50549-ms600-800-2024
+    title: "Bureau Veritas U24-0579 — EN 50549-1 — TSOL-MS600 / 700 / 800 (+ Balcony)"
+    url: https://www.tsun-ess.com/files/certms600800-balconyen-50549-1europe.pdf
+    issuer: Bureau Veritas
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'TSOL-MS[0-9]+( ?Balcony)?'}
+    meta: *bv
+    families:
+      - {name: TSOL-MS600–800, match: auto}
+
+victron:
+  - id: en50549-multiplus-ii-2026
+    brand: Victron Energy
+    title: "SGS Tecnos 2622/0478-B/E2-CER — EN 50549-1 + A1, EN 50549-10 — MultiPlus-II 48/8000, 48/10000, 48/15000"
+    url: https://www.victronenergy.com/upload/documents/Certificate-ESS-EN-50549-1-MultiPlus-II-48V-8kVA-48V-10kVA-48V-15kVA-2026.pdf
+    issuer: SGS Tecnos
+    kind: certificate
+    standards: [EN 50549-1:2019+AC:2019+A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: '48/[0-9]+/[0-9]+-100'}
+    meta: {cert_no: 'certificate number:\s*No\.\s*([0-9/A-Z-]+)'}
+    families:
+      - {name: "MultiPlus-II 48/8000, 48/10000, 48/15000", match: '^MULTIPLUS-II(230V)?48/(8000/110|10000/140|15000/200)-100'}
+
+sinexcel:
+  - id: en50549-pws2-29-30p-ex-2023
+    brand: Sinexcel
+    title: "TÜV SÜD ESY 076777 0085 — EN 50549-1, NC RfG — PWS2-29P-EX / PWS2-30P-EX"
+    url: https://en.sinexcel.com/uploads/soft/20260209/PWS2-29P%2030P-EX%20RFG%20Cert.pdf
+    issuer: TÜV SÜD
+    kind: certificate
+    standards: [EN 50549-1:2019/AC:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'PWS2-(29|30)P-EX'}
+    meta: *tuvsud
+    families:
+      - {name: PWS2-29P/30P-EX, match: auto}
+
+solis:
+  - id: en50549-s6-eh3p-3-10k-h-eu-2022
+    title: "Bureau Veritas U22-0376 — EN 50549-1 (NC RfG type A/B) — S6-EH3P3–10K-H-EU"
+    url: https://www.Solisinverters.com/uploads/file/Solis_certificate_EN_50549-1_TypeA_B_S6-EH3P(3-10)K-H-EU_EUR_V01.pdf
+    issuer: Bureau Veritas
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'S6-EH3P[0-9.]+K-H-EU'}
+    meta: *bv
+    families:
+      - {name: S6-EH3P 3–10K-H-EU, match: auto}
+
+deye:
+  - id: en50549-sun-18-36k-g04-2024
+    title: "Bureau Veritas U24-0954 — EN 50549-1 (NC RfG type A) — SUN-18…36K-G04"
+    url: https://www.deyeinverter.com/deyeinverter/2025/12/09/Certificate_Europe+EN50549-1.pdf
+    issuer: Bureau Veritas
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'SUN-[0-9]+K-G04'}
+    meta: *bv
+    families:
+      - {name: SUN-18–36K-G04, match: auto}
+
+growatt:
+  - id: en50549-moda-2026
+    title: "Intertek CN-PVES-260337 — EN 50549-1 + A1, EN 50549-10 — MODA 4000–15KTL3-HU-Y"
+    url: https://en.growatt.com/upload/file/MODA_All-In-One_50549_Certificate_202610.pdf
+    issuer: Intertek
+    kind: certificate
+    standards: [EN 50549-1:2019+A1:2023, EN 50549-10:2022]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'MODA ?[0-9]+K?TL3-HU'}
+    meta: *intertek
+    families:
+      - {name: "MODA all-in-one (Y = 1…7)", match: '^MODA(4000|5000|6000|8000|10K|12K|15K)TL3-HU-[1-7]$'}
+
+solplanet:
+  - id: en50549-asw-lt-g2-pro-2022
+    title: "Bureau Veritas U22-0354 — EN 50549-1 type A — ASW 3–5K-LT-G2 Pro"
+    url: https://www.solplanet.net/wp-content/uploads/2023/04/AISW_ASWxxK-LT-G2-Pro_UNBED_EN-50549-1_Typ-A_EN_U22-0354.pdf
+    issuer: Bureau Veritas
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'ASW[0-9]+K-LT-G2 ?Pro'}
+    meta: *bv
+    families:
+      - {name: ASW 3–5K-LT-G2 Pro, match: auto}
+  - id: en50549-asw-kh-t2-2024
+    title: "Bureau Veritas U24-0093 — EN 50549-1 — ASW05–12kH-T2"
+    url: https://www.solplanet.net/wp-content/uploads/2023/12/Cer_EN-50549-1_ASW5-12kH-T3_en_V02.pdf
+    issuer: Bureau Veritas
+    kind: certificate
+    standards: [EN 50549-1:2019]
+    parser: cert
+    args: {standard: 'EN ?50549-1', models: 'ASW[0-9]+kH-T[23]'}
+    meta: *bv
+    families:
+      - {name: ASW05–12kH-T2/T3 hybrid, match: auto, suffix: '(-O|-DG)?'}

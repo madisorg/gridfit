@@ -13,14 +13,15 @@ Parsers (named in tools/evidence/sources.yaml as `parser`):
           (English name, or a code in a grid-code token like "EN50549-EE", "EE-LV") between `start` and `end`
           patterns. One list per document, given to the families the source names.
   pages   `codes`, but per family: `sections` maps a family to its own start/end patterns.
+  cert    a certificate: proves `standard` and the `models` pattern are in the text; the countries come from the
+          standard (data/evidence/rules/accepts.yaml), not from the file.
 The files are untrusted data; nothing here evaluates them.
 """
 import re
 import sys
+import urllib.parse
 from collections import defaultdict
 from pathlib import Path
-
-import urllib.parse
 
 import pdfplumber
 
@@ -32,7 +33,7 @@ NAMES = {
     "FR": ["France"], "GB": ["United Kingdom", "Great Britain", "UK"], "GR": ["Greece"], "HR": ["Croatia"],
     "HU": ["Hungary"], "IE": ["Ireland"], "IS": ["Iceland"], "IT": ["Italy", "Italia"], "LT": ["Lithuania"],
     "LU": ["Luxembourg"], "LV": ["Latvia"], "ME": ["Montenegro"], "MK": ["North Macedonia", "Macedonia"], "MT": ["Malta"],
-    "NL": ["Netherlands", "Nederland"], "NO": ["Norway", "Norge"], "PL": ["Poland", "Polska"], "PT": ["Portugal"],
+    "NL": ["Netherlands", "Netherland", "Nederland"], "NO": ["Norway", "Norge"], "PL": ["Poland", "Polska"], "PT": ["Portugal"],
     "RO": ["Romania"], "RS": ["Serbia"], "SE": ["Sweden", "Sverige"], "SI": ["Slovenia"], "SK": ["Slovakia"],
     "TR": ["Turkey", "Türkiye"], "UA": ["Ukraine"],
 }
@@ -49,7 +50,7 @@ def text_of(pdf):
         return [p.extract_text() or "" for p in doc.pages]
 
 
-def countries_in(text, codes=True):
+def countries_in(text, codes=True, ignore=()):
     """Country codes named in a piece of text: English/local names, and two-letter codes standing alone or in a
     grid-code token (EN50549-EE, EE_LV, "EE:"). Bare codes are only read when `codes` is set: in prose "IT" or "DE"
     are words."""
@@ -59,7 +60,7 @@ def countries_in(text, codes=True):
             found.add(cc)
     if codes:
         for m in re.finditer(r"(?<![A-Za-z])([A-Z]{2})(?![a-z])", text):
-            if m.group(1) in CODES and m.group(1) not in {"IS", "ME"}:  # English words in upper case
+            if m.group(1) in CODES and m.group(1) not in {"IS", "ME", *ignore}:  # English words in upper case
                 found.add(m.group(1))
     return found
 
@@ -105,8 +106,8 @@ def xtable(pdf, page=0, **_):
     return {k: sorted(v) for k, v in out.items() if v}
 
 
-def codes(pdf, start, end=None, bare_codes=True, **_):
-    return {"*": sorted(countries_in(between(text_of(pdf), start, end), bare_codes))}
+def codes(pdf, start, end=None, bare_codes=True, ignore=(), **_):
+    return {"*": sorted(countries_in(between(text_of(pdf), start, end), bare_codes, ignore))}
 
 
 def pages(pdf, sections, bare_codes=True, **_):
@@ -114,19 +115,34 @@ def pages(pdf, sections, bare_codes=True, **_):
     return {fam: sorted(countries_in(between(t, s["start"], s.get("end")), bare_codes)) for fam, s in sections.items()}
 
 
-def meta(pdf, version=None, doc_no=None, **_):
+def cert(pdf, standard, models=None, **_):
+    """A certificate names no country: it certifies a standard for models. The source states both; this proves they are
+    in the text (a scan with no text layer, or a file that changed, fails loudly) and returns the model codes it finds."""
+    t = re.sub(r"[ \t]+", " ", "\n".join(text_of(pdf)))
+    # "AF*-TH (*=3K, 4K, 5K)" is three models; write them out so `models` finds each
+    t += "\n" + "\n".join(f"{m.group(1)}{v.strip()}{m.group(2)}" for m in re.finditer(r"([\w.]+)\*([\w.\-/]*)\s*\(\s*\*\s*=\s*([^)]*)\)", t)
+                          for v in m.group(3).split(","))
+    if not re.search(standard, t, re.I):
+        raise ValueError(f"standard /{standard}/ is not in the text (a scan without a text layer?)")
+    found = sorted({m.group(0).upper().replace(" ", "") for m in re.finditer(models, t, re.I)}) if models else []
+    if models and not found:
+        raise ValueError(f"no model code /{models}/ in the text")
+    return {"*": [], "_models": found}
+
+
+def meta(pdf, version=None, doc_no=None, cert_no=None, issued=None, **_):
     """The document's own version / number, by the patterns the source gives."""
     t = "\n".join(text_of(pdf)[:2])
     out = {}
-    for k, pat in (("version", version), ("doc_no", doc_no)):
+    for k, pat in (("version", version), ("doc_no", doc_no), ("cert_no", cert_no), ("issued", issued)):
         if pat:
             m = re.search(pat, t)
             if m:
-                out[k] = re.sub(r"\s+", "", m.group(1))
+                out[k] = re.sub(r"\s+", "" if k == "version" else " ", m.group(1)).strip()
     return out
 
 
-PARSERS = {"xtable": xtable, "codes": codes, "pages": pages}
+PARSERS = {"xtable": xtable, "codes": codes, "pages": pages, "cert": cert}
 
 if __name__ == "__main__":
     kind, path, *rest = sys.argv[1:]

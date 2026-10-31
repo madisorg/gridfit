@@ -43,7 +43,8 @@ class Dumper(yaml.SafeDumper):
 # a country list on one line, as the hand-written files have it
 Dumper.add_representer(list, lambda d, v: d.represent_sequence("tag:yaml.org,2002:seq", v,
                        flow_style=bool(v) and all(isinstance(x, str) and len(x) == 2 for x in v)))
-KEEP = ("title", "url", "via", "version", "doc_no", "issuer", "cert_no", "issued", "valid_until", "firmware", "kind", "standards", "note")
+KEEP = ("title", "url", "via", "version", "doc_no", "issuer", "cert_no", "issued", "valid_until", "firmware", "kind", "confidence",
+        "standards", "note")
 
 
 def document(src, manifest, key, warn):
@@ -72,8 +73,15 @@ def document(src, manifest, key, warn):
             out["match"] = fam["match"]
         if fam.get("note"):
             out["note"] = fam["note"]
-        out["countries"] = cols[col]
+        out["countries"] = [c for c in cols[col] if c not in (fam.get("drop") or [])]
         fams.append(out)
+    if "_models" in cols:
+        doc["models_in_document"] = models = cols.pop("_models")
+        for fam, srcfam in zip(fams, src["families"]):
+            if fam.get("match") == "auto":  # exactly the codes the certificate lists
+                fam["match"] = "^(" + "|".join(re.escape(m) for m in models) + ")" + srcfam.get("suffix", "") + "$"
+            elif fam.get("match") and not any(re.search(fam["match"], m) for m in models):
+                warn(f"{key}/{src['id']}: {fam['name']} matches none of the document's model codes")
     for col in set(cols) - used:
         warn(f"{key}/{src['id']}: the document has a column the mapping does not name: '{col}' {cols[col]}")
     doc["families"] = fams

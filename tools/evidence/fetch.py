@@ -56,7 +56,8 @@ def fetch(src, brand, manifest, force, max_age):
         return "fresh"
     if not allowed(src["url"]):
         return "robots.txt disallows"
-    req = urllib.request.Request(src["url"], headers={"User-Agent": UA, "Accept": "*/*"})
+    url = urllib.parse.quote(src["url"], safe=":/?&=%+,()~")  # some makers put 【】 or spaces in file names
+    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
     try:
         with urllib.request.urlopen(req, timeout=60) as r:
             body, lm, ct = r.read(), r.headers.get("Last-Modified"), r.headers.get("Content-Type", "")
