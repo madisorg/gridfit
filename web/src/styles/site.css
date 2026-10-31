@@ -119,7 +119,7 @@ sup { font-size: var(--fs-xs); line-height: 0; }
 .filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr)); gap: var(--s2); border: 0; margin: 0; padding: 0; min-width: 0; }
 @media (min-width: 80rem) { .filters { grid-template-columns: 1fr; position: sticky; top: var(--s4); } }
 .filters legend { font-family: var(--font-head); font-weight: 600; font-size: var(--fs-md); padding: 0; margin-bottom: var(--s2); }
-.filters label { display: grid; gap: 2px; font-size: var(--fs-xs); color: var(--ink-2); min-width: 0; }
+.filters label { display: grid; gap: 2px; align-content: start; font-size: var(--fs-xs); color: var(--ink-2); min-width: 0; }
 @media (max-width: 47.99rem) {
   /* phone = the "model code in hand" moment: search first, filters compact, each select names itself */
   .filters label > span, .filters legend { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
@@ -128,6 +128,20 @@ sup { font-size: var(--fs-xs); line-height: 0; }
 .filters select { min-height: var(--hit); width: 100%; min-width: 0; padding: 0 var(--s2); font: inherit; font-size: var(--fs-sm);
   color: var(--ink); background: var(--surface); border: var(--rule-w) solid var(--ink-2); border-radius: var(--r2); }
 .filters select.on { border-color: var(--signal); box-shadow: inset 0 0 0 var(--rule-w) var(--signal); }
+.filters label[hidden] { display: none; }
+/* the status group: the cells' answers as checkboxes, ticked together they add up; each says how many models it leaves */
+.st-pick { display: grid; gap: 0; border: 0; margin: 0; padding: 0; min-width: 0; }
+.st-pick legend { margin-bottom: 0; font-family: inherit; font-weight: 400; font-size: var(--fs-xs); color: var(--ink-2); }
+.filters .st-pick label { display: flex; align-items: center; gap: var(--s1); min-height: var(--hit); font-size: var(--fs-sm); color: var(--ink); }
+.filters .st-pick label > span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+.st-pick .n { margin-left: auto; color: var(--ink-3); font-size: var(--fs-xs); }
+.st-pick input:disabled + span, .st-pick input:disabled ~ .n { opacity: .5; }
+.st-pick .st-every { padding-left: var(--s4); color: var(--ink-2); }
+.st-pick.on legend { color: var(--signal); }
+/* beside the table (under 80rem) the group takes the whole row, its answers side by side */
+@media (max-width: 79.99rem) { .st-pick { grid-column: 1 / -1; display: flex; flex-wrap: wrap; gap: 0 var(--s4); } .st-pick legend { flex-basis: 100%; } .st-pick .n { margin-left: 0; } }
+/* a wallbox has no MPPT: the column goes with the filter */
+body[data-g="ev"] .xv .mp { display: none; }
 .filters button { min-height: var(--hit); font: inherit; font-size: var(--fs-sm); color: var(--link); background: none;
   border: var(--rule-w) dashed var(--ink-2); border-radius: var(--r2); cursor: pointer; }
 /* kind switch: two big toggles above the table, icon + word + count; the active one takes the signal edge like a filter */
@@ -363,10 +377,8 @@ span.rs-none { box-shadow: inset 0 0 0 var(--rule-w) var(--rule); }
 .xv th.lo, .xv td.lo { width: 6.5rem; text-align: left; padding-left: var(--s2); }
 @media (max-width: 47.99rem) { .xv th.lo, .xv td.lo, .xv th.sp, .xv td.sp, .xv th.num, .xv td.num { display: none; } .reglist li { grid-template-columns: 2.5rem minmax(0, 1fr) auto; } }
 
-/* the front door of a lens page: one question, one link to the other question; the site nav sits at the foot */
+/* the front door of a lens page: one question, nothing else; the site nav sits at the foot */
 .ask-top { padding-top: var(--s6); }
-.ask .alt { font-size: var(--fs-sm); }
-.ask .alt a { display: inline-flex; align-items: center; min-height: var(--hit); color: var(--link); }
 .q-ev { display: none; }
 body[data-g="ev"] .q-ev { display: inline; }
 body[data-g="ev"] .q-inv { display: none; }

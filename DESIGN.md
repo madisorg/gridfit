@@ -447,3 +447,22 @@ GOV.UK / Agriculture DS accessible autocomplete. `/grid/ee/` closed, typeahead o
 `/grid/?c=FI,ES,PL&ph=3` ([`routes-cc.json`](docs/moodud/routes-cc.json)) × 3440/390 × light/dark: [`cc.json`](docs/moodud/cc.json),
 16 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px. One
 finding by eye: the column-head rule word “certificate” clipped in a narrow column at 3440 — now “cert.”.
+
+## 23. Measured, 2026-10-31 — countries are columns, status is the filter
+
+Six asks in one sitting, the same evening. Countries no longer filter: a chosen country is a column, and a model off
+its list stays with an empty cell, which is the answer the first question needs (the model that is not on the list used
+to vanish, and seven lists at once kept 8 models — AND logic nobody asked for). The rows the chosen lists carry sort
+first. **Status** is a checkbox group in the cells' own words — fit / fit with a condition or end date / not fit / not on
+the list — ticked together they add up (OR), and “in every chosen country” (shown from two list countries on) is the
+installer's AND. **Other lists** replaces “Lists”: the read lists a model is on *besides* the chosen countries, a hint of
+what the maker has had certified where there is no list to check, never an approval. The smart-home filter is two, like
+the columns: **Local** (best route) and **Smart home** (Home Assistant, evcc). Every option carries in brackets the number
+of models it would leave with the other filters as they stand (facet counts: one pass keyed by brand for the 500 brand
+options, the search debounced 120 ms; one apply ≈ 0.2 s over 13.9 k rows). The filters follow the kind: wallboxes have no
+MPPT, so that filter and column go. The HA/evcc link under the country question is gone. `/grid/ee/`, `/grid/at/?st=CX`,
+`/grid/ee/?st=-&brand=Deye`, `/grid/es/?n=3&lo=W&sh=HW`, `/grid/ee/?g=ev`, `/grid/?c=AT,EE&st=Y&every=1`
+([`routes-filters.json`](docs/moodud/routes-filters.json)) × 3440/390 × light/dark: [`filters.json`](docs/moodud/filters.json),
+24 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. One
+finding on the way: an `<option>` without a `value` takes its text as value, so the count in the text broke the brand
+filter — every option now has an explicit value.

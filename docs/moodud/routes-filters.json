@@ -1,0 +1,8 @@
+[
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 2.5},
+ {"name": "grid-at-cond-notfit", "url": "grid/at/?st=CX", "wait": 2.5},
+ {"name": "grid-ee-notlisted-deye", "url": "grid/ee/?st=-&brand=Deye", "wait": 2.5},
+ {"name": "grid-es-other3-ha", "url": "grid/es/?n=3&lo=W&sh=HW", "wait": 2.5},
+ {"name": "grid-ee-wallbox", "url": "grid/ee/?g=ev", "wait": 2.5},
+ {"name": "grid-at-ee-every", "url": "grid/?c=AT,EE&st=Y&every=1", "wait": 2.5}
+]

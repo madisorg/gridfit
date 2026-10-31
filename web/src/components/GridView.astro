@@ -1,7 +1,8 @@
 ---
-// The grid view: one row per register model, filtered in place from /grid/index.json. Countries are a
-// multi-select with AND logic ("listed in every selected list"); the columns are the selected countries, or
-// the 7 lists read when nothing is selected. A country without a list shows what applies to the class there.
+// The grid view: one row per register model, filtered in place from /grid/index.json. The chosen countries are
+// columns, never a filter: a model that is not on the list stays, with an empty cell (nothing known). The status
+// group filters the rows by what those cells say, one country enough, or every one with "every" ticked (the
+// installer's question). Nothing chosen: the 7 lists read. A country without a list shows what applies to the class there.
 // Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
 import CellLegend from "./CellLegend.astro";
 import { COUNTRIES, REGS } from "../lib/registers";
@@ -25,7 +26,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       </div>
       <div class="cc-quick" role="group" aria-label="Lists read in full">{COUNTRIES.map((c) => <button type="button" data-cc={c} aria-pressed={c === preset ? "true" : "false"} title={COUNTRIES_ALL.find((x) => x.cc === c)?.country}>{c}</button>)}</div>
       <button type="button" id="ccall" class="small cc-all">All {COUNTRIES_ALL.length} countries…</button>
-      <p class="small muted">Listed in <em>every</em> selected list. A country without a list shows what applies there.</p>
+      <p class="small muted">Countries are columns: a model off the list stays, with an empty cell. A country without a list shows what applies there.</p>
       <dialog id="ccdlg" class="cc-dlg" aria-labelledby="ccdlg-h">
         <div class="cc-dlg-head"><h3 id="ccdlg-h">Countries</h3><button type="button" id="ccdone" class="small">Done</button></div>
         {groups.map(([g, label]) => (
@@ -46,13 +47,20 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="3">3-phase</option></select></label>
     <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
     <label><span>MPPT</span><select id="mppt"><option value="">Any MPPT count</option>{MPPT_OPTS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
-    <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option>{b.name}</option>)}</select></label>
-    <label><span>Status</span><select id="st"><option value="">Any status</option><option value="R">Listed with restrictions</option><option value="T">Time-limited</option>
-      <option value="P">Time-limited, date passed</option><option value="E">Expired</option><option value="N">“Nein” (AT)</option></select></label>
-    <label><span>Lists</span><select id="n"><option value="">In any number of lists</option><option value="2">In 2 or more lists</option>
-      <option value="3">In 3 or more</option><option value="4">In 4 or more</option></select></label>
-    <label><span>Smart home</span><select id="lo"><option value="">Any</option><option value="W">Local control, HA or evcc</option><option value="L">Local route, read or control</option>
-      <option value="HW">Home Assistant: local control</option><option value="EW">evcc: local control</option><option value="B">Brand route, model unconfirmed</option><option value="-">No local route found</option></select></label>
+    <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option value={b.name}>{b.name}</option>)}</select></label>
+    <fieldset class="st-pick" id="stpick"><legend>Status</legend>
+      <label><input type="checkbox" name="st" value="Y"> <span class="cl cl-yes">✓</span> Fit: on the list <small class="n"></small></label>
+      <label><input type="checkbox" name="st" value="C"> <span class="cl cl-yes">✓</span> Fit, with a condition <small class="n"></small></label>
+      <label><input type="checkbox" name="st" value="X"> <span class="cl cl-no">✕</span> Not fit: refused or expired <small class="n"></small></label>
+      <label><input type="checkbox" name="st" value="-"> <span class="cl cl-none"></span> Not on the list <small class="n"></small></label>
+      <label class="st-every"><input type="checkbox" id="every"> in every chosen country</label>
+    </fieldset>
+    <label><span>Other lists</span><select id="n"><option value="">Other lists: any</option><option value="1">Other lists: 1 or more</option>
+      <option value="3">Other lists: 3 or more</option></select></label>
+    <label><span>Local</span><select id="lo"><option value="">Any local route</option><option value="W">Local control</option><option value="L">Local, read or control</option>
+      <option value="C">Cloud only</option><option value="B">Brand route, model unconfirmed</option><option value="-">No route found</option></select></label>
+    <label><span>Smart home</span><select id="sh"><option value="">Any smart home</option><option value="HW">Home Assistant: local control</option><option value="HL">Home Assistant: local, read or control</option>
+      <option value="EW">evcc: local control</option><option value="EL">evcc: local, read or control</option><option value="BW">Both: local control</option></select></label>
     <label><span>Search</span><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model or brand"></label>
     <button type="button" id="reset" hidden>Clear filters</button>
   </fieldset>
@@ -68,7 +76,8 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       <span class="sh sh-L" role="img" aria-label="local, read only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> local, read only · <span class="sh sh-C" role="img" aria-label="cloud only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> cloud only ·
       <span class="sh sh-B" role="img" aria-label="brand route"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> brand route, model unconfirmed · empty = not found. Marks are GridFit's own glyphs, not the projects' logos.</span></p>
     <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists. No list carries MPPT counts: those are the makers' own datasheets,
-      read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); “–” means not collected, never “none”. The list is the authority; this is a cross-reference.</p>
+      read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); “–” means not collected, never “none”. The list is the authority; this is a cross-reference.
+      <b>Other lists</b> counts the read lists a model is on besides the countries you chose — a hint of what the maker has had certified where there is no list to check, never an approval.</p>
   </div>
 </div>
 
@@ -92,13 +101,16 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
   const BUCKET: Record<string, [number, number]> = { "0-3.7": [0, 3.7], "3.7-6": [3.7, 6], "6-12": [6, 12], "12-30": [12, 30], "30-": [30, Infinity] };
-  const ids = ["ph", "kva", "mppt", "brand", "st", "n", "lo", "q"];
+  const ids = ["ph", "kva", "mppt", "brand", "st", "n", "lo", "sh", "q"];
+  // the status group speaks the cells' answers: fit, fit with a condition, not fit, no entry — ticked together they add up
+  const SETS: Record<string, string> = { Y: "LO", C: "RT", X: "PEN", "-": "-" };
   type Row = [number, string, string, string, string, string, string, string, number | null, number | null];
   type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; brands: string[]; rows: Row[] };
-  let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "";
+  let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "", qt = 0;
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
-  const val = (id: string) => ($<HTMLInputElement>(id).value || "").trim();
+  const stBoxes = [...root.querySelectorAll<HTMLInputElement>('input[name="st"]')];
+  const val = (id: string) => id === "st" ? stBoxes.filter((b) => b.checked).map((b) => b.value).join("") : ($<HTMLInputElement>(id).value || "").trim();
   const boxes = [...root.querySelectorAll<HTMLInputElement>('input[name="c"]')];
   const sel = () => boxes.filter((b) => b.checked).map((b) => b.value);
   // ---- the country picker: chips for the chosen, a typeahead to add, the 7 read lists as quick toggles, the full list in a dialog
@@ -154,44 +166,72 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   const kinds = [...document.querySelectorAll<HTMLButtonElement>(`#${root.id} .kind button, .kind[data-for="${root.id}"] button`)];
 
   function apply() {
-    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c));
-    const q = val("q").toLowerCase(), b = val("brand"), cls = "", ph = val("ph"), kv = BUCKET[val("kva")], mp = val("mppt"), st = val("st"), n = +val("n") || 0, lo = val("lo");
-    hits = data.rows.filter((r) => {
-      const cells = r[4];
-      if (g && (g === "inv" ? !INV.has(r[2]) : r[2] !== "wallbox")) return false;
-      if (b && data.brands[r[0]] !== b) return false;
-      if (cls && r[2] !== cls) return false;
-      if (ph && r[7] !== ph) return false;
-      if (kv && (r[8] === null || r[8] <= kv[0] || r[8] > kv[1])) return false;
-      if (mp && (r[9] === null || (mp === "4" ? r[9] < 4 : r[9] !== +mp))) return false;
-      for (const c of readSel) { const code = cells[data.read.indexOf(c)]; if (code === "-") return false; if (st && code !== st) return false; }
-      if (st && !readSel.length && !cells.includes(st)) return false;
-      if (n && cells.replace(/-/g, "").length < n) return false;
-      if (lo) {
-        const [h, e] = r[5];
-        const ok = lo === "W" ? h === "W" || e === "W" : lo === "L" ? "WL".includes(h) || "WL".includes(e) : lo === "HW" ? h === "W" : lo === "EW" ? e === "W"
-          : lo === "B" ? (h === "B" || e === "B") && !"WL".includes(h) && !"WL".includes(e) : h === "-" && e === "-";
-        if (!ok) return false;
+    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c)), every = $<HTMLInputElement>("every").checked;
+    // "not on the list" only means something against a chosen list; "every" only against two or more
+    const noneBox = stBoxes.find((b) => b.value === "-")!;
+    noneBox.disabled = !readSel.length;
+    if (!readSel.length) noneBox.checked = false;
+    ($("every").closest("label") as HTMLElement).hidden = readSel.length < 2;
+    ($("mppt").closest("label") as HTMLElement).hidden = g === "ev";
+    if (g === "ev") $<HTMLSelectElement>("mppt").value = "";
+    // one rule per filter, so a facet can be counted with its own rule left out
+    const T: Record<string, (r: Row, v: string) => boolean> = {
+      brand: (r, v) => !v || data.brands[r[0]] === v,
+      ph: (r, v) => !v || r[7] === v,
+      kva: (r, v) => { if (!v) return true; const kv = BUCKET[v]; return r[8] !== null && r[8] > kv[0] && r[8] <= kv[1]; },
+      mppt: (r, v) => !v || (r[9] !== null && (v === "4" ? r[9] >= 4 : r[9] === +v)),
+      // a chosen list: the cell must have an entry, or the status asked for; no list chosen: any cell with that status
+      st: (r, v) => {
+        const set = [...v].map((k) => SETS[k]).join(""), cells = r[4];
+        if (!set) return true;
+        if (!readSel.length) return [...cells].some((ch) => ch !== "-" && set.includes(ch));
+        const fits = readSel.map((c) => set.includes(cells[data.read.indexOf(c)]));
+        return every ? fits.every(Boolean) : fits.some(Boolean);
+      },
+      // other lists = the read lists the model is on besides the chosen ones: a hint of what the maker has certified, never an approval
+      n: (r, v) => !v || [...r[4]].filter((ch, i) => ch !== "-" && !readSel.includes(data.read[i])).length >= +v,
+      lo: (r, v) => { if (!v) return true; const bst = best(r[5][0], r[5][1]); return v === "W" ? bst === "W" : v === "L" ? "WL".includes(bst) : bst === v; },
+      sh: (r, v) => { if (!v) return true; const [h, e] = r[5]; return v === "HW" ? h === "W" : v === "HL" ? "WL".includes(h) : v === "EW" ? e === "W" : v === "EL" ? "WL".includes(e) : h === "W" && e === "W"; },
+      q: (r, v) => !v || (data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(v),
+    };
+    const cur: Record<string, string> = Object.fromEntries(ids.map((id) => [id, id === "q" ? val(id).toLowerCase() : val(id)]));
+    const kindOk = (r: Row) => !g || (g === "inv" ? INV.has(r[2]) : r[2] === "wallbox");
+    const st = cur.st;
+    hits = data.rows.filter((r) => kindOk(r) && ids.every((id) => T[id](r, cur[id])));
+    // the chosen lists' models first, then the index order (most lists first)
+    const onChosen = (r: Row) => readSel.filter((c) => r[4][data.read.indexOf(c)] !== "-").length;
+    if (readSel.length) hits = hits.map((r, i) => [onChosen(r), i, r] as [number, number, Row]).sort((a, b) => b[0] - a[0] || a[1] - b[1]).map((x) => x[2]);
+    // every option says how many models it would leave, with the other filters as they stand
+    for (const id of ids) {
+      if (id === "q") continue;
+      const base = data.rows.filter((r) => kindOk(r) && ids.every((j) => j === id || T[j](r, cur[j])));
+      // brands are hundreds of options: one pass over the base, keyed by brand, instead of one filter per option
+      const byBrand = new Map<string, number>();
+      if (id === "brand") base.forEach((r) => byBrand.set(data.brands[r[0]], (byBrand.get(data.brands[r[0]]) ?? 0) + 1));
+      const count = (v: string) => (id === "brand" ? (v ? byBrand.get(v) ?? 0 : base.length) : base.filter((r) => T[id](r, v)).length).toLocaleString("en");
+      if (id === "st") { stBoxes.forEach((b) => (b.parentElement!.querySelector(".n")!.textContent = `(${count(b.value)})`)); continue; }
+      for (const o of $<HTMLSelectElement>(id).options) {
+        o.dataset.l ??= o.textContent!;
+        o.textContent = `${o.dataset.l} (${count(o.value)})`;
       }
-      if (q && !(data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(q)) return false;
-      return true;
-    });
+    }
     const cols = cs.length ? cs : data.read;
-    $("xcount").innerHTML = `<b>${hits.length.toLocaleString("en")}</b> ${hits.length === 1 ? "model" : "models"}${readSel.length ? ` listed in ${readSel.join(" and ")}` : ""}`;
+    $("xcount").innerHTML = `<b>${hits.length.toLocaleString("en")}</b> ${hits.length === 1 ? "model" : "models"}${readSel.length ? (st ? ` by status in ${readSel.join(every ? " and " : " or ")}` : ` · ${hits.filter((r) => onChosen(r)).length.toLocaleString("en")} on the list in ${readSel.join(", ")}`) : ""}`;
     paintCc();
     shown = 0;
-    const rcls = cls || (g === "ev" ? "wallbox" : "inverter");
+    const rcls = g === "ev" ? "wallbox" : "inverter";
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
       cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
-      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp">MPPT</th><th scope="col" class="lo">Local</th><th scope="col" class="lo"><span class="shh">' + HA + '</span><span class="shh">' + EV + '</span> Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
-    ids.forEach((id) => $(id).classList.toggle("on", !!val(id)));
+      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp mp">MPPT</th><th scope="col" class="lo">Local</th><th scope="col" class="lo"><span class="shh">' + HA + '</span><span class="shh">' + EV + '</span> Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
+    ids.forEach((id) => $(id === "st" ? "stpick" : id).classList.toggle("on", !!val(id)));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
-    $("reset").hidden = !ids.some((id) => val(id)) && g === (root.dataset.kind || "") && !cs.length;
+    $("reset").hidden = !ids.some((id) => val(id)) && g === (root.dataset.kind || "") && !cs.length && !every;
     document.body.dataset.g = g;
     more();
     const p = new URLSearchParams();
     if (cs.length) p.set("c", cs.join(","));
     if (g && g !== root.dataset.kind) p.set("g", g);
+    if (every) p.set("every", "1");
     ids.forEach((id) => val(id) && p.set(id, val(id)));
     history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
   }
@@ -208,7 +248,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       }).join("");
       const nl = r[4].replace(/-/g, "").length;
       return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}` +
-        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="sp num">${r[9] === null ? "–" : r[9]}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
+        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="sp num mp">${r[9] === null ? "–" : r[9]}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
     shown = Math.min(shown + PAGE, hits.length);
@@ -222,16 +262,19 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     if (init.get("c")) { const want = new Set(init.get("c")!.split(",")); boxes.forEach((b) => (b.checked = want.has(b.value))); }
     else if (root.dataset.preset) boxes.forEach((b) => (b.checked = b.value === root.dataset.preset));
     if (init.get("g") === "inv" || init.get("g") === "ev") g = init.get("g")!;
+    $<HTMLInputElement>("every").checked = !!init.get("every");
+    $("every").addEventListener("change", apply);
     ids.forEach((id) => {
+      if (id === "st") { const want = init.get("st") ?? ""; stBoxes.forEach((b) => { b.checked = want.includes(b.value); b.addEventListener("change", apply); }); return; }
       const el = $<HTMLInputElement>(id);
       if (init.get(id)) el.value = init.get(id)!;
-      el.addEventListener(id === "q" ? "input" : "change", apply);
+      el.addEventListener(id === "q" ? "input" : "change", id === "q" ? () => { clearTimeout(qt); qt = setTimeout(apply, 120); } : apply);
     });
     boxes.forEach((b) => b.addEventListener("change", apply));
     // with a default kind the choice is one or the other, never "both"; without one a second click shows every kind
     kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g && !root.dataset.kind ? "" : k.dataset.g!; apply(); }));
     $("ccclear").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); apply(); dlg.close(); });
-    $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLInputElement>(id).value = "")); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = false)); apply(); });
+    $("reset").addEventListener("click", () => { ids.forEach((id) => id !== "st" && ($<HTMLInputElement>(id).value = "")); stBoxes.forEach((b) => (b.checked = false)); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = false)); $<HTMLInputElement>("every").checked = false; apply(); });
     $("more").addEventListener("click", more);
     apply();
   });
