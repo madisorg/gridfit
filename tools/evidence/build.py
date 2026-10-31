@@ -53,7 +53,11 @@ def document(src, manifest, key, warn):
     if not f.exists() or not m:
         warn(f"{key}/{src['id']}: no file in cache/evidence — run tools/evidence/fetch.py {key}")
         return None
-    cols = parse.PARSERS[src["parser"]](f, **(src.get("args") or {}))
+    try:
+        cols = parse.PARSERS[src["parser"]](f, **(src.get("args") or {}))
+    except Exception as e:  # noqa: BLE001 — one changed file must not stop the others; the old document stays
+        warn(f"{key}/{src['id']}: {e}")
+        return None
     doc = {"id": src["id"]}
     for k in KEEP:
         if k in src:
@@ -80,7 +84,7 @@ def document(src, manifest, key, warn):
         for fam, srcfam in zip(fams, src["families"]):
             if fam.get("match") == "auto":  # exactly the codes the certificate lists
                 fam["match"] = "^(" + "|".join(re.escape(m) for m in models) + ")" + srcfam.get("suffix", "") + "$"
-            elif fam.get("match") and not any(re.search(fam["match"], m) for m in models):
+            elif fam.get("match") and srcfam.get("check", True) and not any(re.search(fam["match"], m) for m in models):
                 warn(f"{key}/{src['id']}: {fam['name']} matches none of the document's model codes")
     for col in set(cols) - used:
         warn(f"{key}/{src['id']}: the document has a column the mapping does not name: '{col}' {cols[col]}")

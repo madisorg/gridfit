@@ -11,6 +11,7 @@
 #   meta      regexes for the document's own version / number, read from its first two pages
 #   families  name (as GridFit shows it) · column (the parser's key, for xtable; "*" = the one list of `codes`) ·
 #             match (regex over the register code, upper case, spaces removed, comma → dot) · note
+#             check: false = the match is written by hand over register codes the document spells differently
 #   manual    true = the file cannot be fetched by script (a WAF, a login-free form, terms that forbid it):
 #             the rows are transcribed by hand into data/evidence and the source is listed for the map only
 
@@ -58,7 +59,7 @@ sofar:
     file: HYD-5-20KTL-3PH-manual-2024-03.pdf
     kind: grid-code-setting
     parser: codes
-    args: {start: 'Setting the country code', end: 'Smartphone app', bare_codes: false}
+    args: {start: 'Setting\s*the\s*country\s*code', end: 'Smartphone\s*app', bare_codes: false}
     note: "The manual's country-code table (109-000 Estonia, 122-000 Latvia, 108-000 Lithuania, 125-000 Finland). The same code
       system as ZCS Azzurro's table; Sofar's other manuals sit in a JavaScript download centre and were not found elsewhere."
     families:
@@ -71,7 +72,7 @@ goodwe:
     kind: grid-code-setting
     parser: codes
     args: {start: 'Safety Standards Countries', end: '\nGlobal\n', ignore: [LV]}
-    meta: {version: '(V\d+\.\d+ ?\d{4}-\d{2}-\d{2})'}
+    meta: {version: '(V\d\.\d) ?(\d{4}-\d{2}-\d{2})'}
     note: "The Europe part of the manual's safety-code table (EE is code 60). LV in the codes is a voltage level, not Latvia."
     families:
       - {name: ET 12–30 kW, match: '^GW(12|15|18|20|25|29\.9|30)K-ET'}
@@ -357,7 +358,7 @@ victron:
     args: {standard: 'EN ?50549-1', models: '48/[0-9]+/[0-9]+-100'}
     meta: {cert_no: 'certificate number:\s*No\.\s*([0-9/A-Z-]+)'}
     families:
-      - {name: "MultiPlus-II 48/8000, 48/10000, 48/15000", match: '^MULTIPLUS-II(230V)?48/(8000/110|10000/140|15000/200)-100'}
+      - {name: "MultiPlus-II 48/8000, 48/10000, 48/15000", match: '^MULTIPLUS-II(230V)?48/(8000/110|10000/140|15000/200)-100', check: false}  # the certificate writes the code without the series name
 
 sinexcel:
   - id: en50549-pws2-29-30p-ex-2023
@@ -410,7 +411,7 @@ growatt:
     args: {standard: 'EN ?50549-1', models: 'MODA ?[0-9]+K?TL3-HU'}
     meta: *intertek
     families:
-      - {name: "MODA all-in-one (Y = 1…7)", match: '^MODA(4000|5000|6000|8000|10K|12K|15K)TL3-HU-[1-7]$'}
+      - {name: "MODA all-in-one (Y = 1…7)", match: '^MODA(4000|5000|6000|8000|10K|12K|15K)TL3-HU-[1-7]$', check: false}  # the certificate writes the code without the series name
 
 solplanet:
   - id: en50549-asw-lt-g2-pro-2022

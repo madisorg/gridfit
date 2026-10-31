@@ -1,10 +1,13 @@
-# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
 brand: Fronius
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
-  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
-  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
 documents:
 - id: nts631-symo-gen24-6-10-2022
   title: CERTIFICADO DE CONFORMIDAD 21217-1-CER DE UGE TIPO — Norma Técnica de Supervisión (NTS) — Serie SYMO GEN 24
@@ -19,8 +22,7 @@ documents:
   families:
   - name: Symo GEN24 6.0–10.0 (incl. Plus and Lite)
     match: ^(FRONIUS)?SYMOGEN24(6\.0|7\.0|8\.0|10\.0)(PLUS|LITE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: nts631-primo-gen24-2023
   title: CERTIFICADO DE CONFORMIDAD 230850-CER DE UGE TIPO — NTS — Serie Fronius Primo GEN24 / Primo GEN24 Plus
   url: https://fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_Fronius_Primo_GEN24_CERE_230850-CER_TR_NTS631-SEPE_ES.pdf
@@ -35,6 +37,5 @@ documents:
   families:
   - name: Primo GEN24 / Primo GEN24 Plus 3.0–10.0
     match: ^(FRONIUS)?PRIMOGEN24(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0|8\.0|10\.0)(PLUS)?$
-    countries:
-    - ES
+    countries: [ES]
     note: 'Template NTS_PVI_CM_rev.13. Revision history: ''Inclusión de nuevos modelos / actualización de firmware''.'

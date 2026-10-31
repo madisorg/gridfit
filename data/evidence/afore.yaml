@@ -1,0 +1,352 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Afore
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-sl-asl-2024
+  title: Intertek CN-PVES-230621R1 — EN 50549-1 — AF*-SL-1 / SL / SLP / ASL-1 / ASL
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【certificate】EN50549-single-phase-hybrid-storage-inverter-all-in-one.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: CN-PVES-230621R1
+  issued: 05 November 2024
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AF1.5K-ASL-1
+  - AF1.5K-SL-1
+  - AF1K-ASL-1
+  - AF1K-SL-1
+  - AF2.5K-ASL-1
+  - AF2.5K-SL-1
+  - AF2K-ASL-1
+  - AF2K-SL-1
+  - AF3.6K-ASL
+  - AF3.6K-ASL-1
+  - AF3.6K-SL
+  - AF3.6K-SL-1
+  - AF3K-ASL
+  - AF3K-ASL-1
+  - AF3K-SL
+  - AF3K-SL-1
+  - AF4.6K-ASL
+  - AF4.6K-SL
+  - AF4.6K-SLP
+  - AF4K-ASL
+  - AF4K-SL
+  - AF4K-SLP
+  - AF5.5K-ASL
+  - AF5.5K-SL
+  - AF5.5K-SLP
+  - AF5K-ASL
+  - AF5K-SL
+  - AF5K-SLP
+  - AF6K-ASL
+  - AF6K-SL
+  - AF6K-SLP
+  families:
+  - name: Single-phase hybrid SL / SLP / ASL
+    match: ^(AF1\.5K\-ASL\-1|AF1\.5K\-SL\-1|AF1K\-ASL\-1|AF1K\-SL\-1|AF2\.5K\-ASL\-1|AF2\.5K\-SL\-1|AF2K\-ASL\-1|AF2K\-SL\-1|AF3\.6K\-ASL|AF3\.6K\-ASL\-1|AF3\.6K\-SL|AF3\.6K\-SL\-1|AF3K\-ASL|AF3K\-ASL\-1|AF3K\-SL|AF3K\-SL\-1|AF4\.6K\-ASL|AF4\.6K\-SL|AF4\.6K\-SLP|AF4K\-ASL|AF4K\-SL|AF4K\-SLP|AF5\.5K\-ASL|AF5\.5K\-SL|AF5\.5K\-SLP|AF5K\-ASL|AF5K\-SL|AF5K\-SLP|AF6K\-ASL|AF6K\-SL|AF6K\-SLP)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-sl0-2023
+  title: Intertek CN-PV-220214R1 — EN 50549-1 — AF*-SL-0 (AC-coupled)
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/EN50549-Certificate-Single-Phase-AC-Coupled-1-6kW.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: CN-PV-220214R1
+  issued: 15 November 2023
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AF1.5K-SL-0
+  - AF1K-SL-0
+  - AF2.5K-SL-0
+  - AF2K-SL-0
+  - AF3.6K-SL-0
+  - AF3K-SL-0
+  - AF4.6K-SL-0
+  - AF4K-SL-0
+  - AF5.5K-SL-0
+  - AF5K-SL-0
+  - AF6K-SL-0
+  families:
+  - name: Single-phase AC-coupled SL-0
+    match: ^(AF1\.5K\-SL\-0|AF1K\-SL\-0|AF2\.5K\-SL\-0|AF2K\-SL\-0|AF3\.6K\-SL\-0|AF3K\-SL\-0|AF4\.6K\-SL\-0|AF4K\-SL\-0|AF5\.5K\-SL\-0|AF5K\-SL\-0|AF6K\-SL\-0)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-hns-2026
+  title: Intertek CN-PVES-260162 — EN 50549-1 + EN 50549-10 — HNS single-phase string
+  url: https://www.aforenergy.com/wp-content/uploads/2026/05/【certificate】【EN50549-10】-single-phase-pv-string-inverter-3-10KW.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+A1:2023
+  - EN 50549-10:2022
+  cert_no: CN-PVES-260162
+  issued: 18 May 2026
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - HNS10000TL
+  - HNS3000TL
+  - HNS3600TL
+  - HNS3600TL-1
+  - HNS4000TL
+  - HNS4950TL
+  - HNS5000TL
+  - HNS6000TL
+  - HNS7000TL
+  - HNS7500TL
+  - HNS8000TL
+  - HNS9000TL
+  families:
+  - name: HNS single-phase string
+    match: ^(HNS10000TL|HNS3000TL|HNS3600TL|HNS3600TL\-1|HNS4000TL|HNS4950TL|HNS5000TL|HNS6000TL|HNS7000TL|HNS7500TL|HNS8000TL|HNS9000TL)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-bnt-3-25-2026
+  title: Intertek CN-PVES-260016 — EN 50549-1 + EN 50549-10 — BNT 3–25 kW
+  url: https://www.aforenergy.com/wp-content/uploads/2026/01/【certificate】【EN50549-10】-three-phase-pv-string-inverter3-25KW.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+A1:2023
+  - EN 50549-10:2022
+  cert_no: CN-PVES-260016
+  issued: 12 January 2026
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - BNT003KTA
+  - BNT003KTL
+  - BNT004KTA
+  - BNT004KTL
+  - BNT005KTA
+  - BNT005KTL
+  - BNT006KTA
+  - BNT006KTL
+  - BNT008KTA
+  - BNT008KTL
+  - BNT010KTA
+  - BNT010KTL
+  - BNT012KTA
+  - BNT012KTL
+  - BNT013KTL
+  - BNT015KTA
+  - BNT015KTL
+  - BNT017KTL
+  - BNT020KTL
+  - BNT025KTL
+  families:
+  - name: BNT three-phase string 3–25 kW
+    match: ^(BNT003KTA|BNT003KTL|BNT004KTA|BNT004KTL|BNT005KTA|BNT005KTL|BNT006KTA|BNT006KTL|BNT008KTA|BNT008KTL|BNT010KTA|BNT010KTL|BNT012KTA|BNT012KTL|BNT013KTL|BNT015KTA|BNT015KTL|BNT017KTL|BNT020KTL|BNT025KTL)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-bnt-17-60-2023
+  title: Intertek CN-PV-230411 — EN 50549-1 — BNT 17–60 kW
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/EN50549-Certificate-Three-Phase-String-Inverter-30-60kW.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: CN-PV-230411
+  issued: 19 July 2023
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - BNT017KTA
+  - BNT020KTA
+  - BNT025KTA
+  - BNT030KTA
+  - BNT030KTL
+  - BNT036KTL
+  - BNT040KTL
+  - BNT050KTL
+  - BNT060KTL
+  families:
+  - name: BNT three-phase string 17–60 kW
+    match: ^(BNT017KTA|BNT020KTA|BNT025KTA|BNT030KTA|BNT030KTL|BNT036KTL|BNT040KTL|BNT050KTL|BNT060KTL)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-bnt-36-110-2024
+  title: Intertek CN-PVES-240559 — EN 50549-1 — BNT 70–110 kW, BNT 36–60 KTA
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【certificate】EN50549-three-phase-pv-string-inverter-70-110KW.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: CN-PVES-240559
+  issued: 23 December 2024
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - BNT036KTA
+  - BNT040KTA
+  - BNT050KTA
+  - BNT060KTA
+  - BNT070KTL
+  - BNT075KTL
+  - BNT080KTL
+  - BNT090KTL
+  - BNT100KTL
+  - BNT110KTL
+  families:
+  - name: BNT three-phase string 36–110 kW
+    match: ^(BNT036KTA|BNT040KTA|BNT050KTA|BNT060KTA|BNT070KTL|BNT075KTL|BNT080KTL|BNT090KTL|BNT100KTL|BNT110KTL)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-mth-ath-2025
+  title: Intertek CN-PVES-250429 — EN 50549-1 + EN 50549-10 — AF*-MTH / ATH / MTHA / ATHA
+  url: https://www.aforenergy.com/wp-content/uploads/2025/11/【certificate】【EN50549-10】three-phase-energy-storage-inverter-3-15KW-and-all-in-one-system.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+A1:2023
+  - EN 50549-10:2022
+  cert_no: CN-PVES-250429
+  issued: 3 November 2025
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AF10K-ATH
+  - AF10K-ATH-0
+  - AF10K-MTH
+  - AF10K-MTH-0
+  - AF12K-ATH
+  - AF12K-ATH-0
+  - AF12K-MTH
+  - AF12K-MTH-0
+  - AF15K-ATH
+  - AF15K-ATH-0
+  - AF15K-MTH
+  - AF15K-MTH-0
+  - AF3K-ATH
+  - AF3K-ATH-0
+  - AF3K-ATHA
+  - AF3K-ATHA-0
+  - AF3K-MTH
+  - AF3K-MTH-0
+  - AF3K-MTHA
+  - AF3K-MTHA-0
+  - AF4K-ATH
+  - AF4K-ATH-0
+  - AF4K-ATHA
+  - AF4K-ATHA-0
+  - AF4K-MTH
+  - AF4K-MTH-0
+  - AF4K-MTHA
+  - AF4K-MTHA-0
+  - AF5K-ATH
+  - AF5K-ATH-0
+  - AF5K-ATHA
+  - AF5K-ATHA-0
+  - AF5K-MTH
+  - AF5K-MTH-0
+  - AF5K-MTHA
+  - AF5K-MTHA-0
+  - AF6K-ATH
+  - AF6K-ATH-0
+  - AF6K-ATHA
+  - AF6K-ATHA-0
+  - AF6K-MTH
+  - AF6K-MTH-0
+  - AF6K-MTHA
+  - AF6K-MTHA-0
+  - AF7K-ATHA
+  - AF7K-ATHA-0
+  - AF7K-MTHA
+  - AF7K-MTHA-0
+  - AF8K-ATH
+  - AF8K-ATH-0
+  - AF8K-MTH
+  - AF8K-MTH-0
+  families:
+  - name: Three-phase hybrid MTH / ATH 3–15 kW
+    match: ^(AF10K\-ATH|AF10K\-ATH\-0|AF10K\-MTH|AF10K\-MTH\-0|AF12K\-ATH|AF12K\-ATH\-0|AF12K\-MTH|AF12K\-MTH\-0|AF15K\-ATH|AF15K\-ATH\-0|AF15K\-MTH|AF15K\-MTH\-0|AF3K\-ATH|AF3K\-ATH\-0|AF3K\-ATHA|AF3K\-ATHA\-0|AF3K\-MTH|AF3K\-MTH\-0|AF3K\-MTHA|AF3K\-MTHA\-0|AF4K\-ATH|AF4K\-ATH\-0|AF4K\-ATHA|AF4K\-ATHA\-0|AF4K\-MTH|AF4K\-MTH\-0|AF4K\-MTHA|AF4K\-MTHA\-0|AF5K\-ATH|AF5K\-ATH\-0|AF5K\-ATHA|AF5K\-ATHA\-0|AF5K\-MTH|AF5K\-MTH\-0|AF5K\-MTHA|AF5K\-MTHA\-0|AF6K\-ATH|AF6K\-ATH\-0|AF6K\-ATHA|AF6K\-ATHA\-0|AF6K\-MTH|AF6K\-MTH\-0|AF6K\-MTHA|AF6K\-MTHA\-0|AF7K\-ATHA|AF7K\-ATHA\-0|AF7K\-MTHA|AF7K\-MTHA\-0|AF8K\-ATH|AF8K\-ATH\-0|AF8K\-MTH|AF8K\-MTH\-0)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-th-thp-tha-2025
+  title: Intertek CN-PVES-250462 — EN 50549-1 + EN 50549-10 — AF*-TH / THP / THA
+  url: https://www.aforenergy.com/wp-content/uploads/2025/12/【certificate】【EN50549-10】three-phase-energy-storage-inverter3-30KW.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+A1:2023
+  - EN 50549-10:2022
+  cert_no: CN-PVES-250462
+  issued: 03 December 2025
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - AF10K-TH
+  - AF10K-TH-0
+  - AF10K-THA
+  - AF10K-THA-0
+  - AF10K-THP
+  - AF10K-THP-0
+  - AF12K-TH
+  - AF12K-TH-0
+  - AF12K-THA
+  - AF12K-THA-0
+  - AF12K-THP
+  - AF12K-THP-0
+  - AF15K-TH
+  - AF15K-TH-0
+  - AF15K-THA
+  - AF15K-THA-0
+  - AF17K-TH
+  - AF17K-TH-0
+  - AF17K-THA
+  - AF17K-THA-0
+  - AF20K-TH
+  - AF20K-TH-0
+  - AF25K-TH
+  - AF25K-TH-0
+  - AF30K-TH
+  - AF30K-TH-0
+  - AF3K-TH
+  - AF3K-TH-0
+  - AF3K-THA
+  - AF3K-THA-0
+  - AF3K-THP
+  - AF3K-THP-0
+  - AF4K-TH
+  - AF4K-TH-0
+  - AF4K-THA
+  - AF4K-THA-0
+  - AF4K-THP
+  - AF4K-THP-0
+  - AF5K-TH
+  - AF5K-TH-0
+  - AF5K-THA
+  - AF5K-THA-0
+  - AF5K-THP
+  - AF5K-THP-0
+  - AF6K-TH
+  - AF6K-TH-0
+  - AF6K-THA
+  - AF6K-THA-0
+  - AF6K-THP
+  - AF6K-THP-0
+  - AF8K-TH
+  - AF8K-TH-0
+  - AF8K-THA
+  - AF8K-THA-0
+  - AF8K-THP
+  - AF8K-THP-0
+  families:
+  - name: Three-phase hybrid TH / THP / THA 3–30 kW
+    match: ^(AF10K\-TH|AF10K\-TH\-0|AF10K\-THA|AF10K\-THA\-0|AF10K\-THP|AF10K\-THP\-0|AF12K\-TH|AF12K\-TH\-0|AF12K\-THA|AF12K\-THA\-0|AF12K\-THP|AF12K\-THP\-0|AF15K\-TH|AF15K\-TH\-0|AF15K\-THA|AF15K\-THA\-0|AF17K\-TH|AF17K\-TH\-0|AF17K\-THA|AF17K\-THA\-0|AF20K\-TH|AF20K\-TH\-0|AF25K\-TH|AF25K\-TH\-0|AF30K\-TH|AF30K\-TH\-0|AF3K\-TH|AF3K\-TH\-0|AF3K\-THA|AF3K\-THA\-0|AF3K\-THP|AF3K\-THP\-0|AF4K\-TH|AF4K\-TH\-0|AF4K\-THA|AF4K\-THA\-0|AF4K\-THP|AF4K\-THP\-0|AF5K\-TH|AF5K\-TH\-0|AF5K\-THA|AF5K\-THA\-0|AF5K\-THP|AF5K\-THP\-0|AF6K\-TH|AF6K\-TH\-0|AF6K\-THA|AF6K\-THA\-0|AF6K\-THP|AF6K\-THP\-0|AF8K\-TH|AF8K\-TH\-0|AF8K\-THA|AF8K\-THA\-0|AF8K\-THP|AF8K\-THP\-0)$
+    countries: []
+    accepted_in: [EE]

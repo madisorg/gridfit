@@ -45,9 +45,18 @@ def file_name(src):
     return src.get("file") or urllib.parse.unquote(urllib.parse.urlsplit(src["url"]).path.rsplit("/", 1)[-1])
 
 
-def text_of(pdf):
+def text_of(pdf, first=None):
+    """Page texts; the whole file's are kept next to it as <file>.pages.txt, so a 300-page manual is read once per download."""
+    pdf = Path(pdf)
+    cache = pdf.with_name(pdf.name + ".pages.txt")
+    if cache.exists() and cache.stat().st_mtime >= pdf.stat().st_mtime:
+        return cache.read_text(encoding="utf-8").split("\f")[:first]
     with pdfplumber.open(str(pdf)) as doc:
-        return [p.extract_text() or "" for p in doc.pages]
+        if first:
+            return [p.extract_text() or "" for p in doc.pages[:first]]
+        pages = [p.extract_text() or "" for p in doc.pages]
+    cache.write_text("\f".join(pages), encoding="utf-8")
+    return pages
 
 
 def countries_in(text, codes=True, ignore=()):
@@ -131,14 +140,16 @@ def cert(pdf, standard, models=None, **_):
 
 
 def meta(pdf, version=None, doc_no=None, cert_no=None, issued=None, **_):
-    """The document's own version / number, by the patterns the source gives."""
-    t = "\n".join(text_of(pdf)[:2])
+    """The document's own version / number, by the patterns the source gives; several groups are joined by a space
+    (the text layer drops spaces between columns: "V2.22026-09-15" is version V2.2 of 2026-09-15)."""
+    t = "\n".join(text_of(pdf, first=2))
     out = {}
     for k, pat in (("version", version), ("doc_no", doc_no), ("cert_no", cert_no), ("issued", issued)):
         if pat:
             m = re.search(pat, t)
             if m:
-                out[k] = re.sub(r"\s+", "" if k == "version" else " ", m.group(1)).strip()
+                v = " ".join(g for g in m.groups() if g)
+                out[k] = re.sub(r"\s+", " ", re.sub(r"\s*/\s*", "/", v)).strip()
     return out
 
 

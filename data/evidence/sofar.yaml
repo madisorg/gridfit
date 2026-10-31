@@ -1,0 +1,23 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Sofar
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: hyd-3ph-manual-country-codes
+  title: HYD 5–20KTL-3PH user manual — Setting the country code
+  url: https://www.sofarsolar.com/upload/file/20240321/1710982866939025487.pdf
+  kind: grid-code-setting
+  note: The manual's country-code table (109-000 Estonia, 122-000 Latvia, 108-000 Lithuania, 125-000 Finland). The same code system
+    as ZCS Azzurro's table; Sofar's other manuals sit in a JavaScript download centre and were not found elsewhere.
+  seen: '2026-11-01'
+  source: tools/evidence
+  families:
+  - name: HYD 5–20KTL-3PH
+    match: ^(SOFAR)?HYD-?(5|6|8|10|15|20)KTL-3PH
+    countries: [AT, BE, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, IE, IT, LT, LV, NL, 'NO', PL, RO, SE, SI, SK, TR, UA]

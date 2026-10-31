@@ -7,7 +7,7 @@
 The model set is the built grid index (one row per register model, `npm run build` in web/): inverters, hybrids,
 batteries and plug-in units. In a country whose list is read the set is the models not on it; in any other country
 it is every model. A model counts when a document of its brand names the country for a family whose `match` takes
-the model's code — every matching document, not only the first (the site took the first one until 2026-11-01).
+the model's code — every matching document, as the site does since 2026-11-01.
 The count is split by what the document is: a released-countries table, a certificate naming the country, a
 grid-code setting in the firmware — and, apart, a certificate against the standard the country's operator names
 (`accepted_in`, data/evidence/rules/accepts.yaml), counted only for a model no document names the country for. Python regexes read the `match` patterns as the site's JavaScript does (no lookbehind is used).
@@ -49,11 +49,11 @@ def load_evidence(ref=None):
 
 
 def measure(index, ev, ccs):
-    """{cc: {"total", "first", "any", "kind": Counter, "brand": Counter(any), "gap": Counter(not any)}}"""
+    """{cc: {"total", "any", "accepted", "kind": Counter, "brand": Counter(any), "gap": Counter(not any)}}"""
     res = {}
     for cc in ccs:
         i = index["read"].index(cc) if cc in index["read"] else -1
-        r = {"total": 0, "first": 0, "any": 0, "accepted": 0, "kind": Counter(), "brand": Counter(), "gap": Counter()}
+        r = {"total": 0, "any": 0, "accepted": 0, "kind": Counter(), "brand": Counter(), "gap": Counter()}
         for row in index["rows"]:
             if row[2] not in KINDS or (i >= 0 and row[4][i] != "-"):
                 continue
@@ -61,8 +61,6 @@ def measure(index, ev, ccs):
             r["total"] += 1
             n = norm(row[1])
             hits = [x for x in ev.get(brand.lower(), []) if x[0].search(n)]
-            if hits and cc in hits[0][1]:
-                r["first"] += 1
             named = [x for x in hits if cc in x[1]]
             if named:
                 r["any"] += 1
@@ -93,19 +91,19 @@ def main():
     then = measure(index, load_evidence(a.before), ccs) if a.before else None
     w = sys.stdout.write
     if a.md:
-        w("| country | models without a list answer | " + ("before | " if then else "") + "maker's document names the country | of which: release table / certificate / grid-code setting |\n")
-        w("|---|---:|" + ("---:|" if then else "") + "---:|---|\n")
+        w("| country | models without a list answer | " + ("before | " if then else "") + "maker's document | names the country: release table / certificate / grid-code setting | certificate to the standard the operator names, only |\n")
+        w("|---|---:|" + ("---:|" if then else "") + "---:|---|---:|\n")
         for cc in ccs:
             r = now[cc]
             k = r["kind"]
             w(f"| {cc} | {r['total']:,} | " + (f"{then[cc]['any']:,} | " if then else "") +
-              f"**{r['any']:,}** | {k['country-release']:,} / {k['certificate'] + k['declaration']:,} / {k['grid-code-setting']:,} |\n")
+              f"**{r['any']:,}** | {k['country-release']:,} / {k['certificate'] + k['declaration']:,} / {k['grid-code-setting']:,} | {r['accepted']:,} |\n")
         w("\n")
     else:
         for cc in ccs:
             r = now[cc]
-            w(f"{cc}: {r['any']} of {r['total']} have the maker's document"
-              + (f" (before {then[cc]['any']})" if then else "") + f"; first-match only {r['first']}; by kind {dict(r['kind'])}\n")
+            w(f"{cc}: {r['any']} of {r['total']} have the maker's document" + (f" (before {then[cc]['any']})" if then else "")
+              + f"; naming the country, by kind {dict(r['kind'])}; by the operator's standard only {r['accepted']}\n")
     for cc in ccs:
         r = now[cc]
         brands = sorted(set(r["brand"]) | set(r["gap"]), key=lambda b: -(r["brand"][b] + r["gap"][b]))[: a.top]
