@@ -80,6 +80,8 @@ td.c { text-align: center; padding: 0; }
 .xv th .rule { display: block; font-weight: 400; font-size: var(--fs-xs); color: var(--ink-3); }
 sup { font-size: var(--fs-xs); line-height: 0; }
 @media (max-width: 47.99rem) { .xv th .rule { display: none; } .cl[tabindex] { height: var(--hit); width: 2.25rem; } }
+/* on a phone the tooltip is a sheet at the bottom of the screen, never clipped by the cell position */
+@media (max-width: 47.99rem) { .cl .tip { position: fixed; left: var(--gutter); right: var(--gutter); top: auto; bottom: var(--s4); width: auto; max-width: none; transform: none; } }
 /* ---- register matrix cell ---- */
 .mx { display: inline-grid; grid-auto-flow: column; gap: 2px; }
 .mx > span { display: grid; place-items: center; width: 1.75rem; height: 1.5rem; font-size: var(--fs-xs); font-weight: 600;
