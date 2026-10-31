@@ -4,6 +4,8 @@
 import { data, summary, familyUrl, slug, type Family } from "./data";
 import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
 import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
+import { readFileSync } from "node:fs";
+import { resolve } from "node:path";
 
 export type LocalState = "control" | "read" | "cloud" | "brand-route" | "none";
 // grid cell: a match in the list, or what the country's table says for this class when no model matched
@@ -100,21 +102,58 @@ export const othersOf = (cls: string) => OTHER_COUNTRIES.map((c) => {
     state: (key ? c.classes[key] : "free") as ClassState, confidence: key ? c.confidence[key] : "checked" };
 });
 
-// ---- specs the lists carry: phases (AT, SE) and rated power in kVA (AT, BE, SE). No list carries MPPT counts.
-export type Spec = { phases: string; kva: number | null };
+// ---- specs. The lists carry phases (AT, SE) and rated power in kVA (AT, BE, SE). MPPT count, rated kW and max AC
+// current come from the makers' own datasheets — data/specs/*.yaml, exported by tools/specs/build.py to .data/specs.json —
+// matched to a register model by exact normalised code or the row's `match` regex. A model without a datasheet row shows
+// "not collected", never a guess; the list's own figure wins where both have one.
+export type Sheet = { code: string; mppt: number | null; ac_kw: number | null; ac_kva: number | null; ac_a: number | null; phases: number | null;
+  pv_kw: number | null; src: { url: string; version: string; seen: string; title: string } };
+type SheetRow = Sheet & { norm: string; match: string };
+const SPECS: { brands: { brand: string; maker_site: string; rule: string; models: SheetRow[] }[] } =
+  JSON.parse(readFileSync(resolve(process.cwd(), ".data/specs.json"), "utf-8"));
+export const SPEC_BRANDS: string[] = SPECS.brands.map((b) => b.brand);
+export const SPEC_ROWS: number = SPECS.brands.reduce((n, b) => n + b.models.length, 0);
+export const SPEC_RULE: string = SPECS.brands[0]?.rule ?? "";
+const specNorm = (s: string) => s.toUpperCase().replace(/\s+/g, "").replace(/,/g, ".");
+const sheetIdx = new Map<string, { exact: Map<string, Sheet>; rx: [RegExp, Sheet][] }>();
+for (const b of SPECS.brands) {
+  const exact = new Map<string, Sheet>(), rx: [RegExp, Sheet][] = [];
+  for (const m of b.models) { exact.set(m.norm, m); if (m.match) rx.push([new RegExp(m.match), m]); }
+  sheetIdx.set(b.brand.toLowerCase(), { exact, rx });
+}
+const sheetCache = new Map<RegDevice, Sheet | null>();
+export function sheetOf(d: RegDevice): Sheet | null {
+  if (sheetCache.has(d)) return sheetCache.get(d)!;
+  const ix = sheetIdx.get(d.brand.toLowerCase());
+  let hit: Sheet | null = null;
+  if (ix) { const n = specNorm(d.model); hit = ix.exact.get(n) ?? ix.rx.find(([r]) => r.test(n))?.[1] ?? null; }
+  sheetCache.set(d, hit);
+  return hit;
+}
+export type Spec = { phases: string; kva: number | null; mppt: number | null; kw: number | null; sheet: Sheet | null };
 export function specOf(d: RegDevice): Spec {
   let phases = "", kva: number | null = null;
   for (const cc of ["AT", "SE", "BE"]) for (const e of d.cells[cc] ?? []) {
     if (!phases && e.extra?.phases && /^[123]$/.test(e.extra.phases)) phases = e.extra.phases;
     if (kva === null && e.kva !== undefined && e.kva !== null && e.kva !== "") { const n = Number(e.kva); if (Number.isFinite(n) && n > 0) kva = Math.round(n * 100) / 100; }
   }
-  return { phases, kva };
+  const sh = sheetOf(d);
+  if (!phases && sh?.phases) phases = String(sh.phases);
+  if (kva === null && sh) kva = sh.ac_kva ?? sh.ac_kw ?? null;
+  return { phases, kva, mppt: sh?.mppt ?? null, kw: sh?.ac_kw ?? sh?.ac_kva ?? null, sheet: sh };
 }
-export function specOfFamily(f: Family): { phases: string; kvaMin: number | null; kvaMax: number | null } {
-  const ph = new Set<string>(); let lo: number | null = null, hi: number | null = null;
-  for (const d of modelsOf(f)) { const s = specOf(d); if (s.phases) ph.add(s.phases); if (s.kva !== null) { lo = lo === null ? s.kva : Math.min(lo, s.kva); hi = hi === null ? s.kva : Math.max(hi, s.kva); } }
-  return { phases: [...ph].sort().join("/"), kvaMin: lo, kvaMax: hi };
+export function specOfFamily(f: Family): { phases: string; kvaMin: number | null; kvaMax: number | null; mppt: string; sheets: number } {
+  const ph = new Set<string>(), mp = new Set<number>(); let lo: number | null = null, hi: number | null = null, n = 0;
+  for (const d of modelsOf(f)) {
+    const s = specOf(d);
+    if (s.phases) ph.add(s.phases);
+    if (s.kva !== null) { lo = lo === null ? s.kva : Math.min(lo, s.kva); hi = hi === null ? s.kva : Math.max(hi, s.kva); }
+    if (s.mppt !== null) mp.add(s.mppt);
+    if (s.sheet) n++;
+  }
+  return { phases: [...ph].sort().join("/"), kvaMin: lo, kvaMax: hi, mppt: [...mp].sort().join("/"), sheets: n };
 }
+export const MPPT_OPTS: [string, string][] = [["1", "1 MPPT"], ["2", "2 MPPT"], ["3", "3 MPPT"], ["4", "4 or more MPPT"]];
 export const KVA_BUCKETS: [string, string, number, number][] = [
   ["0-3.7", "up to 3.7 kVA (one-phase, 16 A)", 0, 3.7], ["3.7-6", "3.7 to 6 kVA", 3.7, 6], ["6-12", "6 to 12 kVA", 6, 12],
   ["12-30", "12 to 30 kVA", 12, 30], ["30-", "over 30 kVA", 30, Infinity],

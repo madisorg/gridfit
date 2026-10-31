@@ -400,3 +400,11 @@ Findings: the column-head rule word overflowed 15 px on a phone (hidden there no
 0 overflow, 0 under 12 px, 0 tap targets under 44 px. Page weight: `/local/` 43 KB gz (33 KB before the titles), a
 brand page with 412 models 13 KB gz, a device page 12 KB gz.
 
+## 18. Measured, 2026-10-31 — datasheet specs (MPPT, kW)
+
+`/grid/` table, `/grid/?c=EE&mppt=2`, the Deye LP3 and GoodWe ET family pages at `#codes` (MPPT and kW columns, datasheet
+footnote), the Deye SUN-10K-SG04LP3-EU model page at `#grid` (Datasheet block) ([`routes-spec.json`](docs/moodud/routes-spec.json))
+× 3440/390 × light/dark: [`spec.json`](docs/moodud/spec.json), 20 pictures, 0 console errors, 0 overflow, 0 texts under 12 px,
+0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px. The MPPT column and filter sit beside phases and kVA; on a phone
+the `.sp` columns stay hidden as before and the model page's Datasheet block carries the figures. Rows: 290 for three brands;
+on the EE list 51 models answer "2 MPPT".

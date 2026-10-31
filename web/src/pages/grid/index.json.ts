@@ -1,5 +1,5 @@
 // Compact index the grid view filters and pages through: one row per register model — the 7 list cells as
-// one-letter codes, the smart-home lens as one letter, phases and kVA — plus what applies per class in every
+// one-letter codes, the smart-home lens as one letter, phases, kVA and MPPT count — plus what applies per class in every
 // EU+ country, so a selected country without a list still gets a cell.
 import type { APIRoute } from "astro";
 import { devices, COUNTRIES, best } from "../../lib/registers";
@@ -17,7 +17,7 @@ export const GET: APIRoute = () => {
   const rows = order.map((d) => {
     const f = familyOf(d), s = specOf(d);
     return [bidx.get(brandSlugOf(d)), d.model, d.cls, modelUrl(d), COUNTRIES.map((c) => (d.cells[c] ? CODE[best(d.cells[c])] : "-")).join(""),
-      LOCAL[f ? localOf(f) : localOfModel(d)], f ? f.name : "", s.phases, s.kva];
+      LOCAL[f ? localOf(f) : localOfModel(d)], f ? f.name : "", s.phases, s.kva, s.mppt];
   });
   const scope = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c.classes]));
   const names = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c.country]));

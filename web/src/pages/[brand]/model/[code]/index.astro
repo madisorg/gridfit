@@ -7,7 +7,7 @@ import Glance from "../../../../components/Glance.astro";
 import GridBlock from "../../../../components/GridBlock.astro";
 import Status from "../../../../components/Status.astro";
 import { COUNTRIES, REGS, RC, RS, RSHORT, META, SNAP_DATE, faq, best, type Device } from "../../../../lib/registers";
-import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf } from "../../../../lib/devices";
+import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf } from "../../../../lib/devices";
 import { localOf } from "../../../../lib/devices";
 import { familyUrl, REPO } from "../../../../lib/data";
 
@@ -20,6 +20,7 @@ const brand = brandOf(bslug);
 const cells = gridOfModel(d);
 const local = localOfModel(d);
 const listed = COUNTRIES.filter((c) => d.cells[c]);
+const sheet = sheetOf(d);
 const qa = faq(d);
 const routes = (brand?.families ?? []).filter((f) => ["control", "read"].includes(localOf(f)));
 const ld = {
@@ -52,6 +53,20 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
         {qa.map((f) => <><h3>{f.q}</h3><p class="a">{f.a}</p>{f.de && <p lang="de" class="small muted">{f.de}</p>}</>)}
       </div>
       <GridBlock cells={cells} entries={d.cells} cls={d.cls} />
+      {sheet && (
+        <>
+          <h3>Datasheet</h3>
+          <dl class="facts-dl">
+            <dt>MPPT</dt><dd>{sheet.mppt ?? <span class="muted">not collected</span>}</dd>
+            <dt>Rated AC power</dt><dd>{sheet.ac_kw !== null ? `${sheet.ac_kw} kW` : sheet.ac_kva !== null ? `${sheet.ac_kva} kVA` : <span class="muted">not collected</span>}
+              {sheet.ac_kw !== null && sheet.ac_kva !== null && sheet.ac_kva !== sheet.ac_kw && <span class="muted"> · {sheet.ac_kva} kVA max</span>}</dd>
+            <dt>Max AC current</dt><dd>{sheet.ac_a !== null ? `${sheet.ac_a} A` : <span class="muted">not collected</span>}</dd>
+            <dt>Phases</dt><dd>{sheet.phases ?? <span class="muted">not collected</span>}</dd>
+            {sheet.pv_kw !== null && <><dt>Max PV input</dt><dd>{sheet.pv_kw} kW</dd></>}
+            <dt>Source</dt><dd><Ext href={sheet.src.url}>{sheet.src.title || sheet.code}</Ext>{sheet.src.version && <> · version {sheet.src.version}</>} · model code “{sheet.code}” · seen {sheet.src.seen}</dd>
+          </dl>
+        </>
+      )}
       <h3>List by list</h3>
       <div class="lists">
         {listed.map((c) => (

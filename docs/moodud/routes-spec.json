@@ -1,0 +1,7 @@
+[
+ {"name": "grid-tabel", "url": "grid/", "wait": 2.5},
+ {"name": "grid-mppt2-ee", "url": "grid/?c=EE&mppt=2", "wait": 2.5},
+ {"name": "pere-deye-lp3-koodid", "url": "deye/sun-sg-lp3-three-phase-lv-hybrid/#codes", "wait": 1.0},
+ {"name": "pere-goodwe-et-koodid", "url": "goodwe/et-eh-bt-bh-etc-hybrids/#codes", "wait": 1.0},
+ {"name": "mudel-deye-sg04lp3", "url": "deye/model/sun-10k-sg04lp3-eu/#grid", "wait": 1.0}
+]

@@ -10,7 +10,7 @@ import GridBlock from "../../../components/GridBlock.astro";
 import RegCell from "../../../components/RegCell.astro";
 import { data, CLASS, CONN, SOURCE, REPO, summary, type Family, type Row } from "../../../lib/data";
 import { COUNTRIES, REGS, META, SNAP_DATE, trustOf } from "../../../lib/registers";
-import { gridOfFamily, modelsOf, entriesOfFamily, localOf, localRoutes, modelAnchor, GRID_WORD } from "../../../lib/devices";
+import { gridOfFamily, modelsOf, entriesOfFamily, localOf, localRoutes, modelAnchor, GRID_WORD, specOf, sheetOf } from "../../../lib/devices";
 
 export function getStaticPaths() {
   return data.families.map((f) => ({ params: { brand: f.brand_slug, family: f.slug }, props: { f } }));
@@ -19,6 +19,7 @@ const { f } = Astro.props as { f: Family };
 const s = summary(f);
 const cells = gridOfFamily(f);
 const models = modelsOf(f);
+const sheets = [...new Map(models.map((d) => sheetOf(d)).filter((x): x is NonNullable<typeof x> => !!x).map((x) => [x.src.url, x])).values()].slice(0, 8);
 const entries = entriesOfFamily(f);
 const local = localOf(f);
 const ha = f.rows.filter((r) => r.source !== "evcc");
@@ -133,17 +134,23 @@ const trust = [...new Set(models.map(trustOf))].join(" / ");
       <p class="small muted">{models.length ? `Matched to this family by model-code pattern (brand match ${trust}) — a pointer; confirm in the list. Hover a cell for the list's own words.` : "No list carries a model matched to this family. That says nothing about approval."}</p>
       {models.length > 0 && (
         <table class="xv">
-          <thead><tr><th scope="col">Model, as the list writes it</th>{COUNTRIES.map((c) => <th scope="col"><a href={`/grid/${c.toLowerCase()}/`}>{c}</a></th>)}<th scope="col" class="match">Match</th></tr></thead>
+          <thead><tr><th scope="col">Model, as the list writes it</th>{COUNTRIES.map((c) => <th scope="col"><a href={`/grid/${c.toLowerCase()}/`}>{c}</a></th>)}<th scope="col" class="sp">MPPT</th><th scope="col" class="sp">kW</th><th scope="col" class="match">Match</th></tr></thead>
           <tbody>
             {models.map((d) => (
               <tr id={modelAnchor(d)}>
                 <td>{d.model}</td>
                 {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} cls={d.cls} rich={true} />)}
+                <td class="sp num">{specOf(d).mppt ?? "–"}</td><td class="sp num">{specOf(d).kw ?? "–"}</td>
                 <td class="match">{trustOf(d)}</td>
               </tr>
             ))}
           </tbody>
         </table>
+      )}
+      {sheets.length > 0 && (
+        <p class="small muted">MPPT count and rated kW are the maker's own datasheets, model code exactly as the sheet writes it:
+          {sheets.map((x, i) => <>{i > 0 && "; "}<Ext href={x.src.url}>{x.src.title || x.code}</Ext>{x.src.version && ` (${x.src.version})`}, seen {x.src.seen}</>)}.
+          “–” = not collected.</p>
       )}
     </section>
 

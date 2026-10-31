@@ -1,0 +1,429 @@
+brand: Fronius
+maker_site: https://www.fronius.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: primo-gen24-10-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-10-0
+  title: Fronius Primo GEN24 10.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-10-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-10-0-plus
+  title: Fronius Primo GEN24 10.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-3-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-3-0
+  title: Fronius Primo GEN24 3.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-3-6
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-3-6
+  title: Fronius Primo GEN24 3.6 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-3-6-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-3-6-plus
+  title: Fronius Primo GEN24 3.6 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-4-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-4-0
+  title: Fronius Primo GEN24 4.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-4-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-4-0-plus
+  title: Fronius Primo GEN24 4.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-4-6
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-4-6
+  title: Fronius Primo GEN24 4.6 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-4-6-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-4-6-plus
+  title: Fronius Primo GEN24 4.6 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-5-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-5-0
+  title: Fronius Primo GEN24 5.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-5-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-5-0-plus
+  title: Fronius Primo GEN24 5.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-6-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-6-0
+  title: Fronius Primo GEN24 6.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-6-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-6-0-plus
+  title: Fronius Primo GEN24 6.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-8-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24/fronius-primo-gen24-8-0
+  title: Fronius Primo GEN24 8.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: primo-gen24-8-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/primo-gen24-plus/fronius-primo-gen24-8-0-plus
+  title: Fronius Primo GEN24 8.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-10-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-10-0-plus
+  title: Fronius Symo GEN24 10.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-12-0-plus-sc
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-12-0-plus-sc
+  title: Fronius Symo GEN24 12.0 Plus SC - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-12-0-sc
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24/fronius-symo-gen24-12-0-sc
+  title: Fronius Symo GEN24 12.0 SC - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-3-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24/fronius-symo-gen24-3-0
+  title: Fronius Symo GEN24 3.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-3-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-3-0-plus
+  title: Fronius Symo GEN24 3.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-4-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24/fronius-symo-gen24-4-0
+  title: Fronius Symo GEN24 4.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-4-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-4-0-plus
+  title: Fronius Symo GEN24 4.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-5-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24/fronius-symo-gen24-5-0
+  title: Fronius Symo GEN24 5.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-5-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-5-0-plus
+  title: Fronius Symo GEN24 5.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-6-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24/fronius-symo-gen24-6-0
+  title: Fronius Symo GEN24 6.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-6-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-6-0-plus
+  title: Fronius Symo GEN24 6.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-8-0
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24/fronius-symo-gen24-8-0
+  title: Fronius Symo GEN24 8.0 - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+- id: symo-gen24-8-0-plus
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/gen24/symo-gen24-plus/fronius-symo-gen24-8-0-plus
+  title: Fronius Symo GEN24 8.0 Plus - technical data (Fronius help center)
+  version: ''
+  note: web page, no version; the row is the page as read on the seen date
+  seen: '2026-10-31'
+models:
+- code: Primo GEN24 10.0
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 45.45
+  phases: 1
+  pv_kw: 15.0
+  source: primo-gen24-10-0
+  match: ^(FRONIUS)?PRIMOGEN2410\.0$
+- code: Primo GEN24 10.0 Plus
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 45.45
+  phases: 1
+  pv_kw: 15.0
+  source: primo-gen24-10-0-plus
+  match: ^(FRONIUS)?PRIMOGEN24(10\.0PLUS|PLUS10\.0)$
+- code: Primo GEN24 3.0
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 19.4
+  phases: 1
+  pv_kw: 4.5
+  source: primo-gen24-3-0
+  match: ^(FRONIUS)?PRIMOGEN243\.0$
+- code: Primo GEN24 3.6
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 23.7
+  phases: 1
+  pv_kw: 5.52
+  source: primo-gen24-3-6
+  match: ^(FRONIUS)?PRIMOGEN243\.6$
+- code: Primo GEN24 3.6 Plus
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 23.7
+  phases: 1
+  pv_kw: 5.52
+  source: primo-gen24-3-6-plus
+  match: ^(FRONIUS)?PRIMOGEN24(3\.6PLUS|PLUS3\.6)$
+- code: Primo GEN24 4.0
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 25.8
+  phases: 1
+  pv_kw: 6.0
+  source: primo-gen24-4-0
+  match: ^(FRONIUS)?PRIMOGEN244\.0$
+- code: Primo GEN24 4.0 Plus
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 25.8
+  phases: 1
+  pv_kw: 6.0
+  source: primo-gen24-4-0-plus
+  match: ^(FRONIUS)?PRIMOGEN24(4\.0PLUS|PLUS4\.0)$
+- code: Primo GEN24 4.6
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 27.5
+  phases: 1
+  pv_kw: 6.9
+  source: primo-gen24-4-6
+  match: ^(FRONIUS)?PRIMOGEN244\.6$
+- code: Primo GEN24 4.6 Plus
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 27.5
+  phases: 1
+  pv_kw: 6.9
+  source: primo-gen24-4-6-plus
+  match: ^(FRONIUS)?PRIMOGEN24(4\.6PLUS|PLUS4\.6)$
+- code: Primo GEN24 5.0
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 27.5
+  phases: 1
+  pv_kw: 7.5
+  source: primo-gen24-5-0
+  match: ^(FRONIUS)?PRIMOGEN245\.0$
+- code: Primo GEN24 5.0 Plus
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 27.5
+  phases: 1
+  pv_kw: 7.5
+  source: primo-gen24-5-0-plus
+  match: ^(FRONIUS)?PRIMOGEN24(5\.0PLUS|PLUS5\.0)$
+- code: Primo GEN24 6.0
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.5
+  phases: 1
+  pv_kw: 9.0
+  source: primo-gen24-6-0
+  match: ^(FRONIUS)?PRIMOGEN246\.0$
+- code: Primo GEN24 6.0 Plus
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.5
+  phases: 1
+  pv_kw: 9.0
+  source: primo-gen24-6-0-plus
+  match: ^(FRONIUS)?PRIMOGEN24(6\.0PLUS|PLUS6\.0)$
+- code: Primo GEN24 8.0
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 45.45
+  phases: 1
+  pv_kw: 12.0
+  source: primo-gen24-8-0
+  match: ^(FRONIUS)?PRIMOGEN248\.0$
+- code: Primo GEN24 8.0 Plus
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 45.45
+  phases: 1
+  pv_kw: 12.0
+  source: primo-gen24-8-0-plus
+  match: ^(FRONIUS)?PRIMOGEN24(8\.0PLUS|PLUS8\.0)$
+- code: Symo GEN24 10.0 Plus
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 16.4
+  phases: 3
+  pv_kw: 15.0
+  source: symo-gen24-10-0-plus
+  match: ^(FRONIUS)?SYMOGEN24(10\.0PLUS|PLUS10\.0)$
+- code: Symo GEN24 12.0 Plus SC
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 12.0
+  ac_a: 18.5
+  phases: 3
+  pv_kw: 18.0
+  source: symo-gen24-12-0-plus-sc
+  match: ^(FRONIUS)?(SYMO)?GEN24(12\.0PLUS|PLUS12\.0)SC$
+- code: Symo GEN24 12.0 SC
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 12.0
+  ac_a: 18.5
+  phases: 3
+  pv_kw: 18.0
+  source: symo-gen24-12-0-sc
+  match: ^(FRONIUS)?(SYMO)?GEN2412\.0SC$
+- code: Symo GEN24 3.0
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 4.5
+  source: symo-gen24-3-0
+  match: ^(FRONIUS)?SYMOGEN243\.0$
+- code: Symo GEN24 3.0 Plus
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 4.5
+  source: symo-gen24-3-0-plus
+  match: ^(FRONIUS)?SYMOGEN24(3\.0PLUS|PLUS3\.0)$
+- code: Symo GEN24 4.0
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 6.0
+  source: symo-gen24-4-0
+  match: ^(FRONIUS)?SYMOGEN244\.0$
+- code: Symo GEN24 4.0 Plus
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 6.0
+  source: symo-gen24-4-0-plus
+  match: ^(FRONIUS)?SYMOGEN24(4\.0PLUS|PLUS4\.0)$
+- code: Symo GEN24 5.0
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 7.5
+  source: symo-gen24-5-0
+  match: ^(FRONIUS)?SYMOGEN245\.0$
+- code: Symo GEN24 5.0 Plus
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 7.5
+  source: symo-gen24-5-0-plus
+  match: ^(FRONIUS)?SYMOGEN24(5\.0PLUS|PLUS5\.0)$
+- code: Symo GEN24 6.0
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 16.4
+  phases: 3
+  pv_kw: 9.0
+  source: symo-gen24-6-0
+  match: ^(FRONIUS)?SYMOGEN246\.0$
+- code: Symo GEN24 6.0 Plus
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 16.4
+  phases: 3
+  pv_kw: 9.0
+  source: symo-gen24-6-0-plus
+  match: ^(FRONIUS)?SYMOGEN24(6\.0PLUS|PLUS6\.0)$
+- code: Symo GEN24 8.0
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 16.4
+  phases: 3
+  pv_kw: 12.0
+  source: symo-gen24-8-0
+  match: ^(FRONIUS)?SYMOGEN248\.0$
+- code: Symo GEN24 8.0 Plus
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 16.4
+  phases: 3
+  pv_kw: 12.0
+  source: symo-gen24-8-0-plus
+  match: ^(FRONIUS)?SYMOGEN24(8\.0PLUS|PLUS8\.0)$

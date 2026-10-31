@@ -5,7 +5,7 @@
 // Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
 import CellLegend from "./CellLegend.astro";
 import { COUNTRIES, REGS, RC } from "../lib/registers";
-import { BRANDS, KVA_BUCKETS } from "../lib/devices";
+import { BRANDS, KVA_BUCKETS, MPPT_OPTS, SPEC_BRANDS } from "../lib/devices";
 import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
 const { preset = "", id = "gv" } = Astro.props as { preset?: string; id?: string };
 const gridBrands = BRANDS.filter((b) => b.models.length);
@@ -35,6 +35,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     <label><span>Device class</span><select id="cls"><option value="">All classes</option>{Object.entries(RC).filter(([k]) => k !== "other").map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
     <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="3">3-phase</option></select></label>
     <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
+    <label><span>MPPT</span><select id="mppt"><option value="">Any MPPT count</option>{MPPT_OPTS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
     <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option>{b.name}</option>)}</select></label>
     <label><span>Status</span><select id="st"><option value="">Any status</option><option value="R">Listed with restrictions</option><option value="T">Time-limited</option>
       <option value="P">Time-limited, date passed</option><option value="E">Expired</option><option value="N">“Nein” (AT)</option></select></label>
@@ -53,7 +54,8 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     <CellLegend />
     <p class="legend small"><span class="rs-key">Column head: <b>list</b> = the country has a public list · <b>certificate</b> = no list, the grid operator checks the maker's certificate · <b>—</b> = nothing to check for this class.</span>
       <span class="rs-key"><span class="st write">control</span> / <span class="st local">local</span> / <span class="st cloud">cloud</span> / <span class="st none">brand route</span> = Home Assistant or evcc on your network</span></p>
-    <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists; no list carries MPPT counts, so that column is not here yet. The list is the authority; this is a cross-reference.</p>
+    <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists. No list carries MPPT counts: those are the makers' own datasheets,
+      read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); “–” means not collected, never “none”. The list is the authority; this is a cross-reference.</p>
   </div>
 </div>
 
@@ -72,8 +74,8 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
   const BUCKET: Record<string, [number, number]> = { "0-3.7": [0, 3.7], "3.7-6": [3.7, 6], "6-12": [6, 12], "12-30": [12, 30], "30-": [30, Infinity] };
-  const ids = ["cls", "ph", "kva", "brand", "st", "n", "lo", "q"];
-  type Row = [number, string, string, string, string, string, string, string, number | null];
+  const ids = ["cls", "ph", "kva", "mppt", "brand", "st", "n", "lo", "q"];
+  type Row = [number, string, string, string, string, string, string, string, number | null, number | null];
   type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; brands: string[]; rows: Row[] };
   let data: Idx, hits: Row[] = [], shown = 0, g = "";
   const PAGE = 100;
@@ -85,7 +87,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
 
   function apply() {
     const cs = sel(), readSel = cs.filter((c) => data.read.includes(c));
-    const q = val("q").toLowerCase(), b = val("brand"), cls = val("cls"), ph = val("ph"), kv = BUCKET[val("kva")], st = val("st"), n = +val("n") || 0, lo = val("lo");
+    const q = val("q").toLowerCase(), b = val("brand"), cls = val("cls"), ph = val("ph"), kv = BUCKET[val("kva")], mp = val("mppt"), st = val("st"), n = +val("n") || 0, lo = val("lo");
     hits = data.rows.filter((r) => {
       const cells = r[4];
       if (g && (g === "inv" ? !INV.has(r[2]) : r[2] !== "wallbox")) return false;
@@ -93,6 +95,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       if (cls && r[2] !== cls) return false;
       if (ph && r[7] !== ph) return false;
       if (kv && (r[8] === null || r[8] <= kv[0] || r[8] > kv[1])) return false;
+      if (mp && (r[9] === null || (mp === "4" ? r[9] < 4 : r[9] !== +mp))) return false;
       for (const c of readSel) { const code = cells[data.read.indexOf(c)]; if (code === "-") return false; if (st && code !== st) return false; }
       if (st && !readSel.length && !cells.includes(st)) return false;
       if (n && cells.replace(/-/g, "").length < n) return false;
@@ -107,7 +110,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     const rcls = cls || (g === "ev" ? "wallbox" : "inverter");
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
       cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
-      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
+      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp">MPPT</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
     ids.forEach((id) => $(id).classList.toggle("on", !!val(id)));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
     $("reset").hidden = !ids.some((id) => val(id)) && !g && !cs.length;
@@ -132,7 +135,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       const nl = r[4].replace(/-/g, "").length;
       const [lk, lw] = LOC[r[5]] ?? LOC["-"];
       return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}` +
-        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="lo"><span class="st ${lk}">${lw}</span></td></tr>`;
+        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="sp num">${r[9] === null ? "–" : r[9]}</td><td class="lo"><span class="st ${lk}">${lw}</span></td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
     shown = Math.min(shown + PAGE, hits.length);
