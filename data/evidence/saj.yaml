@@ -1,0 +1,58 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: SAJ
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-h3-ls2-2026
+  title: DEKRA 4954902.01COC — EN 50549-1 + A1, EN 50549-10 — EK60 H3-2.9…6K-LS2
+  url: https://www.saj-electric.com/hubfs/Certificate/Certificate-global/EK60%20H3-(2.9-6)K_EN50549-1%2610%20Test%20Certificate.pdf
+  issuer: DEKRA
+  kind: certificate
+  standards:
+  - EN 50549-1:2019/A1:2023
+  - EN 50549-10:2022
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - EK60H3-2.9K-LS2
+  - EK60H3-3.6K-LS2
+  - EK60H3-3K-LS2
+  - EK60H3-4.6K-LS2
+  - EK60H3-4K-LS2
+  - EK60H3-5K-LS2
+  - EK60H3-6K-LS2
+  - EK60H3-6K-LS2-IE
+  families:
+  - name: H3 single-phase hybrid (EK60 kit)
+    match: ^(EK60H3\-2\.9K\-LS2|EK60H3\-3\.6K\-LS2|EK60H3\-3K\-LS2|EK60H3\-4\.6K\-LS2|EK60H3\-4K\-LS2|EK60H3\-5K\-LS2|EK60H3\-6K\-LS2|EK60H3\-6K\-LS2\-IE)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-chs2-2025
+  title: TÜV Rheinland A3 50661611 0001 — EN 50549-1 — CHS2 29.9–50K
+  url: https://www.saj-electric.com/hubfs/crm-properties-file-values/CHS2_Series_EN50549-1-2019_Certificate_en_EU.pdf
+  issuer: TÜV Rheinland
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: A3 50661611 0001
+  issued: 20.01.2025
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - CHS2-29.9K-T4-X
+  - CHS2-30K-T4-X
+  - CHS2-40K-T5-X
+  - CHS2-49.9K-T6-X
+  - CHS2-50K-T6-X
+  - CHS2-63K-T6-X
+  families:
+  - name: CHS2 commercial hybrid
+    match: ^CHS2-(29\.9|30|40|50)K-T[45]
+    countries: []
+    accepted_in: [EE]

@@ -1,0 +1,36 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Growatt
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-moda-2026
+  title: Intertek CN-PVES-260337 — EN 50549-1 + A1, EN 50549-10 — MODA 4000–15KTL3-HU-Y
+  url: https://en.growatt.com/upload/file/MODA_All-In-One_50549_Certificate_202610.pdf
+  issuer: Intertek
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+A1:2023
+  - EN 50549-10:2022
+  cert_no: CN-PVES-260337
+  issued: 31 August 2026
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - MODA10KTL3-HU
+  - MODA12KTL3-HU
+  - MODA15KTL3-HU
+  - MODA4000TL3-HU
+  - MODA5000TL3-HU
+  - MODA6000TL3-HU
+  - MODA8000TL3-HU
+  families:
+  - name: MODA all-in-one (Y = 1…7)
+    match: ^MODA(4000|5000|6000|8000|10K|12K|15K)TL3-HU-[1-7]$
+    countries: []
+    accepted_in: [EE]

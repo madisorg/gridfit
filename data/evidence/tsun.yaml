@@ -1,0 +1,54 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: TSUN
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-ms1600-2000-2023
+  title: Bureau Veritas U23-1067 — EN 50549-1 — TSOL-MS1600 / MS2000
+  url: https://www.tsun-ess.com/files/certms2000-600-2000en-50549-1europe.pdf
+  issuer: Bureau Veritas
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: U23-1067
+  issued: '2023-11-24'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - TSOL-MS1600
+  - TSOL-MS1800
+  - TSOL-MS2000
+  families:
+  - name: TSOL-MS1600–2000
+    match: ^(TSOL\-MS1600|TSOL\-MS1800|TSOL\-MS2000)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-ms600-800-2024
+  title: Bureau Veritas U24-0579 — EN 50549-1 — TSOL-MS600 / 700 / 800 (+ Balcony)
+  url: https://www.tsun-ess.com/files/certms600800-balconyen-50549-1europe.pdf
+  issuer: Bureau Veritas
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: U24-0579
+  issued: '2024-07-04'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - TSOL-MS600
+  - TSOL-MS600BALCONY
+  - TSOL-MS700
+  - TSOL-MS700BALCONY
+  - TSOL-MS800
+  - TSOL-MS800BALCONY
+  families:
+  - name: TSOL-MS600–800
+    match: ^(TSOL\-MS600|TSOL\-MS600BALCONY|TSOL\-MS700|TSOL\-MS700BALCONY|TSOL\-MS800|TSOL\-MS800BALCONY)$
+    countries: []
+    accepted_in: [EE]
