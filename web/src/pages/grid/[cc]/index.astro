@@ -66,10 +66,10 @@ const desc = parsed
         <thead><tr><th scope="col">Requirement</th><th scope="col">Value</th></tr></thead>
         <tbody>{prof.must_meet.map((m) => <tr><td class="fam">{m.rule}</td><td data-l="">{m.value}</td></tr>)}</tbody>
       </table>
-      <h3>How a model gets onto the list</h3>
+      <h3>{prof.list ? "How a model gets onto the list" : "How a model is accepted"}</h3>
       <p class="prose small">{prof.apply?.who ? `Who applies: ${prof.apply.who}. ` : ""}{prof.apply?.how}{prof.apply?.guide_url && <> — <Ext href={prof.apply.guide_url}>the listing guide</Ext>{prof.apply.guide_date ? ` (${prof.apply.guide_date})` : ""}</>}{prof.apply?.processing_time ? `. Processing time: ${prof.apply.processing_time}.` : ""}</p>
       <ul class="prose small">{prof.documents_for_listing.map((d) => <li>{d}</li>)}</ul>
-      {prof.not_listed && <><h3>If the model is not on the list</h3><p class="prose small">{prof.not_listed}</p></>}
+      {prof.not_listed && <><h3>{prof.list ? "If the model is not on the list" : "If the model has no certificate"}</h3><p class="prose small">{prof.not_listed}</p></>}
       {prof.evidence_for_documented && <><h3>What GridFit will show as “fit by the maker's document”</h3><p class="prose small">{prof.evidence_for_documented}</p></>}
       <h3>Sources</h3>
       <ul class="prose small">{prof.sources.map((x) => <li><Ext href={x.url}>{x.title}</Ext>{x.date ? ` (${x.date})` : ""}{x.seen ? `, read ${x.seen}` : ""}</li>)}</ul>

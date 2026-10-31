@@ -175,13 +175,13 @@
   classes:
     inverter: rule
     hybrid: rule
-    battery: unknown
+    battery: rule
     plug-in: rule
     wallbox: free
   confidence:
     inverter: checked
-    hybrid: search
-    battery: unverified
+    hybrid: checked
+    battery: checked
     plug-in: checked
     wallbox: search
 - cc: FI

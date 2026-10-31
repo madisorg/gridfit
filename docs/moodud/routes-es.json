@@ -1,0 +1,4 @@
+[
+ {"name": "grid-es", "url": "grid/es/", "wait": 2.5},
+ {"name": "grid-es-how", "url": "grid/es/#how", "wait": 2.5}
+]

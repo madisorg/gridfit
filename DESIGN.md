@@ -408,3 +408,9 @@ footnote), the Deye SUN-10K-SG04LP3-EU model page at `#grid` (Datasheet block) (
 0 under 4.5:1 (lowest 5.68), 0 tap targets under 44 px. The MPPT column and filter sit beside phases and kVA; on a phone
 the `.sp` columns stay hidden as before and the model page's Datasheet block carries the figures. Rows: 290 for three brands;
 on the EE list 51 models answer "2 MPPT".
+
+## 19. Measured, 2026-10-31 — Spain profile
+
+`/grid/es/` top and at `#how` ([`routes-es.json`](docs/moodud/routes-es.json)) × 3440/390 × light/dark: [`es.json`](docs/moodud/es.json),
+8 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 6.98), 0 tap targets under 44 px. The profile block's
+headings now follow the country: “How a model is accepted” / “If the model has no certificate” where there is no list.
