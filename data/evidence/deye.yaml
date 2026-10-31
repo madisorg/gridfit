@@ -1,13 +1,10 @@
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
 brand: Deye
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
 documents:
 - id: rd647-sg02hp3-bm-2026-09
   title: Certificado de Conformidad 260413RECH02-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — SUN-29.9K…50K-SG02HP3-EU-BM3/BM4(-P)
@@ -26,7 +23,8 @@ documents:
   families:
   - name: SG02HP3 three-phase hybrid 29.9–50 kW
     match: ^(SUN\-29\.9K\-SG02HP3\-EU\-BM3|SUN\-29\.9K\-SG02HP3\-EU\-BM3\-P|SUN\-30K\-SG02HP3\-EU\-BM3|SUN\-30K\-SG02HP3\-EU\-BM3\-P|SUN\-35K\-SG02HP3\-EU\-BM3|SUN\-35K\-SG02HP3\-EU\-BM3\-P|SUN\-40K\-SG02HP3\-EU\-BM4|SUN\-40K\-SG02HP3\-EU\-BM4\-P|SUN\-50K\-SG02HP3\-EU\-BM4|SUN\-50K\-SG02HP3\-EU\-BM4\-P)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: rd647-g04p3-60-80k-2024
   title: Certificado de Conformidad 240201RECO07-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — SUN-60K…80K-G04P3-EU-AM4
   url: https://www.deyeinverter.com/deyeinverter/2026/05/15/CertificateSpainRD647RD413RD1699.pdf
@@ -44,7 +42,8 @@ documents:
   families:
   - name: G04P3 string 60–80 kW
     match: ^(SUN\-60K\-G04P3\-EU\-AM4|SUN\-70K\-G04P3\-EU\-AM4|SUN\-75K\-G04P3\-EU\-AM4|SUN\-80K\-G04P3\-EU\-AM4)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: une217002-g04p3-60-80k-2024
   title: Certificado de Conformidad 240201RECO07-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — SUN-60K…80K-G04P3
   url: https://www.deyeinverter.com/deyeinverter/2026/05/15/CertificateSpainUNE217002.pdf
@@ -61,7 +60,8 @@ documents:
   families:
   - name: G04P3 string 60–80 kW
     match: ^(SUN\-60K\-G04P3\-EU\-AM4|SUN\-70K\-G04P3\-EU\-AM4|SUN\-75K\-G04P3\-EU\-AM4|SUN\-80K\-G04P3\-EU\-AM4)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: rd647-g04-40-50k-2024
   title: Certificado de Conformidad 240201RECO12-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — SUN-40K/45K/50K-G04
   url: https://www.deyeinverter.com/deyeinverter/2026/05/15/CertificateSpainRD647RD413RD1699-nKiQ.pdf
@@ -79,7 +79,8 @@ documents:
   families:
   - name: G04 string 40–50 kW
     match: ^(SUN\-40K\-G04|SUN\-45K\-G04|SUN\-50K\-G04)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: rd647-sg01hp3-dm2-2025
   title: Certificado de Conformidad 240201RECO14-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — SUN-5K…12K-SG01HP3-EU-DM2
   url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_spain+rd647+rd413+rd1699.pdf
@@ -97,7 +98,8 @@ documents:
   families:
   - name: SG01HP3 three-phase HV hybrid 5–12 kW
     match: ^(SUN\-10K\-SG01HP3\-EU\-DM2|SUN\-12K\-SG01HP3\-EU\-DM2|SUN\-5K\-SG01HP3\-EU\-DM2|SUN\-6K\-SG01HP3\-EU\-DM2|SUN\-8K\-SG01HP3\-EU\-DM2)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: une217002-sg01hp3-dm2-2025
   title: Certificado de Conformidad 240201RECO14-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — SUN-5K…12K-SG01HP3-EU-DM2
   url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_spain+une217002.pdf
@@ -115,7 +117,8 @@ documents:
   families:
   - name: SG01HP3 three-phase HV hybrid 5–12 kW
     match: ^(SUN\-10K\-SG01HP3\-EU\-DM2|SUN\-12K\-SG01HP3\-EU\-DM2|SUN\-5K\-SG01HP3\-EU\-DM2|SUN\-6K\-SG01HP3\-EU\-DM2|SUN\-8K\-SG01HP3\-EU\-DM2)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: rd647-g05p1-2026
   title: Certificado de Conformidad 230022RECO41-B/E1–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — SUN-[x]K-G05P1-EU-AM2 / -CM2
   url: https://www.deyeinverter.com/deyeinverter/2026/02/06/Certificate_Spain+RD647+RD413+RD16993.pdf
@@ -133,7 +136,8 @@ documents:
   families:
   - name: G05P1 single-phase string 3.6–6.2 kW
     match: ^(SUN\-3\.6K\-G05P1\-EU\-AM2|SUN\-4K\-G05P1\-EU\-AM2|SUN\-4\.2K\-G05P1\-EU\-AM2|SUN\-4\.6K\-G05P1\-EU\-AM2|SUN\-5K\-G05P1\-EU\-AM2|SUN\-5\.2K\-G05P1\-EU\-AM2|SUN\-6K\-G05P1\-EU\-AM2|SUN\-6\.2K\-G05P1\-EU\-AM2)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: cei021-sg04lp3-2022
   title: Test Verification of Conformity HC5200-211028BW001-C001 — CEI 0-21:2022 — SUN-5K…12K-SG04LP3-EU
   url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_italy+cei0-21.pdf
@@ -148,7 +152,8 @@ documents:
   families:
   - name: SG04LP3 three-phase LV hybrid 5–12 kW
     match: ^SUN-(5|6|8|10|12)K-SG04LP3-EU(-AM2-P)?$
-    countries: [IT]
+    countries:
+    - IT
     note: Older edition (CEI 0-21:2022 only, no V1/V2). Batteries listed in annex.
 - id: cei021-g03-70-110k-2024
   title: Kiwa Primara certificate 22-388-02 — CEI 0-21 2022-03; V1:2022-11; V2:2024-01 — SUN-70K…110K-G03
@@ -166,7 +171,8 @@ documents:
   families:
   - name: G03 string 70–110 kW
     match: ^(SUN\-100K\-G03|SUN\-110K\-G03|SUN\-70K\-G03|SUN\-75K\-G03|SUN\-80K\-G03|SUN\-90K\-G03)(-BE)?$
-    countries: [IT]
+    countries:
+    - IT
 - id: cei021-pcs01hp3-2025
   title: Kiwa Primara certificate — CEI 0-21 2022-03; V1; V2; V2/EC:2024-03 — SUN-100K/125K-PCS01HP3
   url: https://www.deyeinverter.com/deyeinverter/2026/08/03/CertificateItalyCEI0-21BOS-B.pdf
@@ -184,7 +190,8 @@ documents:
   families:
   - name: PCS01HP3 C&I battery PCS 100–125 kW
     match: ^(SUN\-100K\-PCS01HP3|SUN\-125K\-PCS01HP3)(-BE)?$
-    countries: [IT]
+    countries:
+    - IT
     note: Must be installed with SUN-MPPT-L01-EU-AM8 and SUN-STS500L; SUN-125K cannot provide 48.43 %Pn reactive power at 100 %Pn (document
       remarks).
 - id: vde4105-sg04lp3-2025
@@ -204,7 +211,8 @@ documents:
   families:
   - name: SG04LP3 three-phase LV hybrid 5–12 kW
     match: ^SUN-(5|6|8|10|12)K-SG04LP3-EU(-AM2-P)?$
-    countries: [DE]
+    countries:
+    - DE
     note: 'Revision history: Rev.1 2022-08-24 initial; Rev.2 2023-03-03 +SUN-5K; Rev.3 2023-05-03 +AI-W5.1 models; Rev.4 2024-03-14
       +AI-W5.1-…-B; Rev.5 2025-06-16.'
 - id: vde4105-sun-bk-2026
@@ -222,4 +230,5 @@ documents:
   families:
   - name: SUN-BK balcony storage (single-phase)
     match: ^SUN-BK(80|160|200|250)-2\.56KWH-EU-AM4-(18|32)L?$
-    countries: [DE]
+    countries:
+    - DE

@@ -1,13 +1,10 @@
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
 brand: SolaX
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
 documents:
 - id: x1-hybrid-g4-nts-2022
   title: Certificado de Conformidad A3 50547581 0001 (Appendix 6, ES) — NTS Version 2.0 — X1-Hybrid-x-y / X1-Fit-x-z
@@ -23,7 +20,8 @@ documents:
   families:
   - name: X1-Hybrid G4 / X1-Fit G4
     match: ^(SOLAX)?X1-(HYBRID|FIT)-(3\.0|3\.7|5\.0|6\.0|7\.5)K?-[DMW]$
-    countries: [ES]
+    countries:
+    - ES
     note: NTS 2.0, not 2.1.
 - id: x1-boost-g4-rd647-2022
   title: Certificado de Conformidad 2622/0499-2-B-CER — RD 647/2020 — X1-BOOST G4
@@ -40,7 +38,8 @@ documents:
   families:
   - name: X1-BOOST G4
     match: ^(X1\-BOOST\-2\.5K\-G4|X1\-BOOST\-3K\-G4|X1\-BOOST\-3\.3K\-G4|X1\-BOOST\-3\.6K\-G4|X1\-BOOST\-4\.2K\-G4|X1\-BOOST\-5K\-G4|X1\-BOOST\-6K\-G4)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: x1-boost-g4-une217002-2022
   title: Certificado de Conformidad 2622/0499-2-A-CER — UNE 217002:2020, IEC 62116, Orden TED/749/2020 — X1-BOOST G4
   url: https://au.solaxpower.com/uploads/file/x1-boost-g4-une-217002-spanish.pdf
@@ -57,7 +56,8 @@ documents:
   families:
   - name: X1-BOOST G4
     match: ^(X1\-BOOST\-2\.5K\-G4|X1\-BOOST\-3K\-G4|X1\-BOOST\-3\.3K\-G4|X1\-BOOST\-3\.6K\-G4|X1\-BOOST\-4\.2K\-G4|X1\-BOOST\-5K\-G4|X1\-BOOST\-6K\-G4)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: x1-mini-g4-rd647-2023
   title: Certificado de Conformidad 2622/0500-2-B-CER — RD 647/2020, RD 413/2014, RD 1699/2011 — X1-MINI G4
   url: https://ar.solaxpower.com/uploads/file/solax-x1-mini-g4-rd647-413-1699-n-2622-0500-2-b-cer-en.pdf
@@ -74,7 +74,8 @@ documents:
   families:
   - name: X1-MINI G4
     match: ^(X1\-MINI\-0\.6K\-G4|X1\-MINI\-0\.7K\-G4|X1\-MINI\-1\.1K\-G4|X1\-MINI\-1\.5K\-G4|X1\-MINI\-2\.0K\-G4|X1\-MINI\-2\.5K\-G4|X1\-MINI\-3\.0K\-G4|X1\-MINI\-3\.3K\-G4)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: x1-mini-g4-une217002-2023
   title: Certificado de Conformidad 2622/0500-2-A-CER — UNE 217002:2020, IEC 62116, Orden TED/749/2020 — X1-MINI G4
   url: https://au.solaxpower.com/uploads/file/solax-x1-mini-g4-une217002-n-2622-0500-2-a-cer-en.pdf
@@ -91,7 +92,8 @@ documents:
   families:
   - name: X1-MINI G4
     match: ^(X1\-MINI\-0\.6K\-G4|X1\-MINI\-0\.7K\-G4|X1\-MINI\-1\.1K\-G4|X1\-MINI\-1\.5K\-G4|X1\-MINI\-2\.0K\-G4|X1\-MINI\-2\.5K\-G4|X1\-MINI\-3\.0K\-G4|X1\-MINI\-3\.3K\-G4)(-BE)?$
-    countries: [ES]
+    countries:
+    - ES
 - id: x1-hybrid-g4-cei021-2026
   title: Certificate of Conformity A3 50735213 0001-0002 — CEI 0-21 (to V2/EC2:2025-02) — X1-Hybrid G4 / X1-Fit G4
   url: https://www.solaxpower.com/uploads/file/solax-x1-g4-cei-0-21.pdf
@@ -110,7 +112,8 @@ documents:
   families:
   - name: X1-Hybrid G4 / X1-Fit G4
     match: ^(SOLAX)?X1-(HYBRID|FIT)-(3\.0|3\.7|5\.0|6\.0|7\.5)K?-[DMW]$
-    countries: [IT]
+    countries:
+    - IT
     note: With Triple Power T30 / T-BAT H battery systems (46-page annex). An earlier edition AK 50557236 0001 (2022-09-05, CEI 0-21:2022-03
       only) is at at.solaxpower.com/uploads/file/solax-x1-hybrid-g4-t30-v2-cei0-21-2022-ak-50557236-0001-en.pdf.
 - id: x3-hybrid-g4-cei021-2026
@@ -131,7 +134,8 @@ documents:
   families:
   - name: X3-Hybrid G4 / X3-Fit G4
     match: ^(SOLAX)?X3-(HYBRID|FIT)-(5\.0|6\.0|8\.0|10\.0|12\.0|15\.0)-[DMW]$
-    countries: [IT]
+    countries:
+    - IT
 - id: x3-ultra-cei021-2025
   title: Certificate of Conformity A3 50680375 0001-0002 — CEI 0-21 (to V2/EC2:2025-02) — X3-ULTRA
   url: https://www.solaxpower.com/uploads/file/solax-x3-ultra-cei-0-21.pdf
@@ -150,7 +154,8 @@ documents:
   families:
   - name: X3-ULTRA
     match: ^(X3\-ULT\-15K|X3\-ULT\-15KP|X3\-ULT\-19\.9K|X3\-ULT\-20K|X3\-ULT\-20KP|X3\-ULT\-25K|X3\-ULT\-30K)(-BE)?$
-    countries: [IT]
+    countries:
+    - IT
     note: With Tx-HSn battery (×1/×2), Triple Power HS51 / HR36.
 - id: x3-hybrid-g4-vde4105-2023
   title: Certificate of Conformity A3 50573188 0001 — VDE-AR-N 4105/11.18, DIN VDE V 0124-100/06.20 — X3-Hybrid G4 / X3-Fit G4
@@ -167,4 +172,82 @@ documents:
   families:
   - name: X3-Hybrid G4 / X3-Fit G4
     match: ^(SOLAX)?X3-(HYBRID|FIT)-(5\.0|6\.0|8\.0|10\.0|12\.0|15\.0)-[DMW]$
-    countries: [DE]
+    countries:
+    - DE
+- id: cei021-x1-ies-2024
+  title: "TÜV Rheinland A3 50638217 0001 + declaration — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — X1-IES 2.5K…8K"
+  url: https://www.solaxpower.com/uploads/file/solax-x1-ies-cei-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd.
+  cert_no: A3 50638217 0001
+  issued: '2024-07-29'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: DSP 2.07, ARM 2.03
+  families:
+  - name: X1-IES 2.5K/3K/3.7K/4.6K/5K/6K/8K (single-phase hybrid)
+    match: '^X1-IES-(2\.5|3|3\.7|4\.6|5|6|8)K$'
+    countries:
+    - IT
+    note: "Report CN2458CS 001. Battery TP-HS50E (1–4 units). States compliance with Annex A, B and Bbis."
+- id: cei021-x1-hyb-lv-ld53-2024
+  title: "TÜV Rheinland A3 50633840 0001 + declaration — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — X1-HYB-3.0…6.0-LV-EU with TP-LD53"
+  url: https://www.solaxpower.com/uploads/file/solax-x1-hybrid-lv-ld53-cei-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd.
+  cert_no: A3 50633840 0001
+  issued: '2024-06-25'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: ARM 5.00, MDSP 5.00, SMCU 5.00
+  families:
+  - name: X1-HYB-3.0/3.7/4.0/4.6/5.0/6.0-LV-EU (single-phase low-voltage-battery hybrid)
+    match: '^X1-HYB-(3\.0|3\.7|4\.0|4\.6|5\.0|6\.0)-LV(-EU)?$'
+    countries:
+    - IT
+    note: "Report CN24KWZG 001. Battery TP-LD53 (1–16 units). The certificate identification lists 3.0/3.7/4.0/5.0/6.0, while the declaration tables also carry 4.6."
+- id: cei021-x3-pro-g2-2022
+  title: "Dichiarazione di conformità + TÜV Rheinland A3 50541883 0001 — CEI 0-21:2019-04 + V1:2020-12 — X3-PRO-8K…30K-G2"
+  url: https://gr.solaxpower.com/uploads/file/solax-x3-pro-g2-cei0-21-last-version.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50541883 0001
+  issued: '2022-04-28'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  firmware: Master 1.00, Manager 1.00
+  families:
+  - name: X3-PRO-8K/10K/12K/15K/17K/20K/25K/30K-G2 (three-phase string)
+    match: '^X3-PRO-(8|10|12|15|17|20|25|30)K-G2$'
+    countries:
+    - IT
+    note: "Older edition only (2019-04 + V1:2020-12). SolaX declaration dated 21/07/2022 under DPR 445/2000 art. 76. Report CN228SHR 001."
+- id: cei021-x3-aelio-2025
+  title: "TÜV Rheinland A3 50686346 0001 — CEI 0-21 (to V2/EC2:2025-02) — X3-AELIO-49.9K…61K"
+  url: https://www.solaxpower.com/uploads/file/solax-x3-aelio-cei-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50686346 0001
+  issued: '2025-08-04'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: Master 1.00, Manager 1.00 (battery BMU R140V_001.R01)
+  families:
+  - name: X3-AELIO-49.9K / 49.9K-P / 50K / 60K / 61K (C&I hybrid with storage)
+    match: '^X3-AELIO-(49\.9K|49\.9K-P|50K|60K|61K)$'
+    countries:
+    - IT
+    note: "Commercial size (> 20 kW), lower priority. Report CN241IKL 002."
