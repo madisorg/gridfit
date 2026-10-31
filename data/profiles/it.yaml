@@ -19,33 +19,81 @@ basis:
   - "DM 2 August 2022 n. 297 (Modello Unico up to 200 kW) and DM 15 July 2026 n. 223 (adds Modello Unico Parte III)"
   - "ARERA 574/2014/R/eel and 642/2014/R/eel — storage is a production plant, registered in GAUDÌ, and must meet CEI 0-21"
   - "Article 45-bis of Legislative Decree 199/2021 (added by D.Lgs 5/2026, date as amended) — smart charging for new non-public charging points from 1 January 2027"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). A document that cites an older edition is
+# shown as "documented for <that edition>" with the items that changed since marked unverified.
+edition:
+  norm: "CEI 0-21"
+  id: "2026-07"
+  date: "2026-07"
+  in_force: "2026-08-01"
+  label: "CEI 0-21:2026-07"
+document_must_cite: ["CEI 0-21"]
 must_meet:
-  - rule: "Frequency and voltage range (CEI 0-21 8.4.4, table 9)"
-    value: "an inverter stays connected without time limit from 47.5 to 51.5 Hz; it runs at constant power from 90 to 110 % of nominal voltage and stays connected from 85 to 110 % for limited periods"
-  - rule: "Rate of change of frequency (8.6.2)"
+  - id: power-class
+    rule: "Plant size class (ARERA 592/2018; CEI 0-21 3.x)"
+    value: "type A from 0.8 kW to 11.08 kW; above 11.08 kW type B, with fault ride-through, a rectangular reactive capability, Q(U) and remote set-points — a procedure of its own"
+    check: { kind: max, field: ac_kw, limit: 11.08, over: "over 11.08 kW: type B, a procedure of its own", provable_by: [datasheet, document], source: "ARERA 592/2018; CEI 0-21:2026-07 3.x" }
+  - id: freq-range
+    rule: "Frequency range (CEI 0-21 8.4.4, table 9)"
+    value: "an inverter stays connected without time limit from 47.5 to 51.5 Hz"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.4.4, table 9" }
+  - id: voltage-range
+    rule: "Voltage range (8.4.4)"
+    value: "it runs at constant power from 90 to 110 % of nominal voltage and stays connected from 85 to 110 % for limited periods"
+    check: { kind: range, field: vac_pct, range: [85, 110], provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.4.4" }
+  - id: rocof
+    rule: "Rate of change of frequency (8.6.2)"
     value: "stay connected and in operation up to 2.5 Hz/s without the interface protection tripping (measured over at least 100 ms); not required below 800 W"
-  - rule: "Over-frequency response, LFSM-O (8.5.3.2, annex F.3)"
+    check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.6.2" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (8.5.3.2, annex F.3)"
     value: "reduce active power from 50.2 Hz (settable 50–52 Hz) with a droop settable 2–12 %, 2.6 % by default for inverters, within 2 s; return once the frequency has stayed within 50 ± 0.1 Hz for 300 s, at no more than 20 % per minute"
-  - rule: "Interface protection settings (8.6.2.1, table 13)"
+    check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.5.3.2, annex F.3" }
+  - id: spi-settings
+    rule: "Interface protection settings (8.6.2.1, table 13)"
     value: "over-voltage 59.S1 at 1.10 Un as a 10-minute average (trip within 603 s) and 59.S2 at 1.15 Un (0.2 s in the 2022 text and in the 2026 edition's operating-rules form; table 13 of the 2026 edition prints 0.5 s — ask the operator); under-voltage 27.S1 at 0.85 Un in 1.5 s and 27.S2 at 0.15 Un in 0.2 s; frequency 81>.S2 51.5 Hz and 81<.S2 47.5 Hz in 0.1 s (1 s and 4 s once the operator's signal is connected); the narrow 50.2 / 49.8 Hz thresholds (81.S1, 0.1 s) only when the external signal and the local command ask for them"
-  - rule: "Where the interface protection sits (8.6.2, 8.2.2)"
-    value: "up to 11.08 kW in total it may be built into the inverter and is checked by its own autotest; above 11.08 kW it must be a separate protection relay, tested with a relay test set, and up to three interface switches may each have their own; it must accept the operator's signals over IEC 61850, certified at level A (not below 800 W)"
-  - rule: "Connection and reconnection (8.4.1.3)"
+    check: { kind: document, provable_by: [document], changed_in: "2026-07", changed: "table 13 prints 0.5 s for 59.S2 where the 2022 text had 0.2 s", source: "CEI 0-21:2026-07 8.6.2.1, table 13" }
+  - id: spi-integrated
+    rule: "Where the interface protection sits (8.6.2, 8.2.2)"
+    value: "up to 11.08 kW in total it may be built into the inverter and is checked by its own autotest; above 11.08 kW it must be a separate protection relay, tested with a relay test set, and up to three interface switches may each have their own"
+    check: { kind: max, field: ac_kw, limit: 11.08, over: "over 11.08 kW: a separate protection relay, tested with a relay test set", provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.6.2, 8.2.2.2" }
+  - id: iec-61850
+    rule: "The operator's signals over IEC 61850 (8.6.2)"
+    value: "the interface protection must accept the operator's signals over IEC 61850 (data-network presence for the narrow thresholds, remote trip), certified at level A by an accredited laboratory or body; not below 800 W"
+    check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.6.2" }
+  - id: reconnection
+    rule: "Connection and reconnection (8.4.1.3)"
     value: "only with the voltage at 85–110 % Un and the frequency steady within 49.90–50.10 Hz: for 30 s at start-up, 300 s after a protection trip; power ramps up at no more than 20 % of maximum per minute"
-  - rule: "Fault ride-through (8.5.1, table 12)"
-    value: "only for plants above 11.08 kW: an inverter rides through a dip to 0.05 pu for 0.2 s, back to 0.85 pu by 1.5 s, and restores its active and reactive power within 400 ms; below 11.08 kW CEI 0-21 asks for none"
-  - rule: "Reactive power (8.4.4.2, annex E)"
+    check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.4.1.3" }
+  - id: frt
+    rule: "Fault ride-through and fitness above 11.08 kW (8.5.1, table 12; declaration Sez. A)"
+    value: "only for plants above 11.08 kW: an inverter rides through a dip to 0.05 pu for 0.2 s, back to 0.85 pu by 1.5 s, and restores its active and reactive power within 400 ms; below 11.08 kW CEI 0-21 asks for none. The maker's declaration states whether the unit is fit for plants above 11.08 kW — that is what counts here, since AC-coupled storage adds to the plant's power"
+    check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.5.1, table 12; Allegato C, Sez. A" }
+  - id: reactive
+    rule: "Reactive power (8.4.4.2, annex E)"
     value: "cos φ = 1 by default; up to 11.08 kW a triangular capability down to cos φ 0.9 at rated power, above 11.08 kW a rectangular one (|Q| at least 48.43 % of rated power); the cos φ(P) curve (1 up to half power, 0.9 absorbing at full power) on the operator's request; Q(U) only above 11.08 kW"
-  - rule: "Voltage-driven power reduction (8.5.3)"
+    check: { kind: cosphi, field: cosphi, limit: 0.9, provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.4.4.2, table 10; annex E" }
+  - id: p-of-u
+    rule: "Voltage-driven power reduction (8.5.3)"
     value: "P(U)_110: reduce power smoothly near 110 % of nominal voltage; new in 2026, P(U)_115: from 110 % cut at least 20 % of rated power per 1 % of voltage, reaching zero at 115 % within 0.2 s — mandatory when an export limiter is installed"
-  - rule: "DC injection (8.4.4.1)"
+    check: { kind: document, provable_by: [document], changed_in: "2026-07", changed: "P(U)_115 is new in the 2026-07 edition", source: "CEI 0-21:2026-07 8.5.3.1, 8.5.3.5; annex F.2" }
+  - id: dc-injection
+    rule: "DC injection (8.4.4.1)"
     value: "at most 0.5 % of rated current, through a grid-frequency transformer or a DC-sensitive protection that trips in 200 ms above 1 A and in 1 s above 0.5 % of rated current"
-  - rule: "Phases (8.3)"
+    check: { kind: max, field: idc_pct, limit: 0.5, over: "over 0.5 % of rated current", provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.4.4.1" }
+  - id: phases
+    rule: "Phases (8.3)"
     value: "up to 6 kW single-phase (the operator may allow 10 kW); above it three-phase with the units spread over the phases; an imbalance above the limit must be corrected automatically, or the plant disconnects after 30 min (6–10 kW) or 1 min (above 10 kW)"
-  - rule: "Storage (8.5, 8.5.3.4, annex Bbis)"
+    check: { kind: phases, three_phase_above_kw: 6, provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.3" }
+  - id: storage
+    rule: "Storage (8.5, 8.5.3.4, annex Bbis)"
     value: "a battery inverter meets the same converter rules and also responds to frequency: from 50.2 Hz it stops discharging and charges, from 49.8 Hz it stops charging and discharges, within its 10–90 % charge band; storage is type-tested to Allegato Bbis, and the declaration lists the battery makes, models and BMS firmware usable with each converter"
-  - rule: "Export limiter, SLI (annex L, L.1)"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "CEI 0-21:2026-07 8.5, 8.5.3.4; annex Bbis" }
+  - id: sli
+    rule: "Export limiter, SLI (annex L, L.1)"
     value: "since the 2026-07 edition any customer who adds generation may install a limiter that holds export at the agreed export power, without upgrading the connection (from 1 March 2026 it was allowed only on single-phase supplies up to 6 kW); the phase limits above still apply; third-party certification of the limiter becomes mandatory two years after the 2026-07 edition, until then the operator judges the maker's declaration"
+    check: { kind: none, why: "optional, at the installation's level — not a check on the model", source: "CEI 0-21:2026-07 annex L" }
 documents_for_listing:
   - "the maker's Dichiarazione di conformità to CEI 0-21 for the model and firmware, on the Allegato C form: a self-certification under article 47 of DPR 445/2000 naming the models, firmware, phases, whether the interface protection is integrated, whether the unit is fit for plants above 11.08 kW, the storage data with the usable batteries, and the test reports behind it; when an accredited certification body issues it, it is titled a certificate (certificato)"
   - "behind the declaration, type-test reports from a laboratory accredited to ISO/IEC 17025, or from the maker's own laboratory under the surveillance of a certification body accredited to ISO/IEC 17065: Allegato A (interface protection), B (inverter), Bbis (storage); the maker keeps them 20 years and makes them available to the grid operator on its website"

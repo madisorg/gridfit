@@ -329,6 +329,35 @@ device" and sits in green: a wallbox in Estonia is a load, nothing gates it, so 
 group shows all nine categories always, in this order, zero counts in lighter ink, so the reader sees the whole ladder
 and where the chosen country's models fall on it.
 
+## 8f. The requirement check: three layers, one state per row (2026-11-01)
+
+Madis, 2026-11-01: can the inverters' product sheets be run against each country's requirements? The hand example
+was ABB/FIMER's TRIO-8.5-TL-OUTD against CEI 0-21: the datasheet alone settles six rows (8.5 kW is under the 11.08 kW
+line, three phases where over 6 kW needs them, 47–53 Hz covers 47.5–51.5, 320–480 V covers 85–110 % Un, cos φ to 0.9),
+eight more are settled only by the maker's type-test declaration, and that declaration cites the 2022 edition with
+two variants, not the 2026-07 one. So the model page now carries a **requirement check**, country by country
+([`docs/checks.md`](docs/checks.md)): every `must_meet` item of a country profile is a row with four cells —
+requirement and clause, what the datasheet says, what the maker's document covers, the state.
+
+The states are the design: **meets by datasheet** (green, filled ✓ — a number the sheet states, judged against the
+rule), **meets by maker's document** (amber, filled ✓ — the document releases the model for the country *and* cites
+the profile's norm), **documented for an older edition** (amber, outlined ~ — the item changed after the edition the
+document cites; the summary line says "documented for CEI 0-21:2022-03; V1; V2 — 2 items of 2026-07 unverified"),
+**not shown** (grey — neither says it; never "fails"), **outside by datasheet** (red, outlined ✕ — only with a number
+that is present and clearly outside: an 8 kW single-phase unit where over 6 kW needs three phases, a unit over the
+type-A line) and **no check** (an optional or installation-level item, listed so the reader sees the whole rule).
+The same amber as the traffic light's "the operator decides" (§8e): a document is the maker's word, the operator still
+decides, and every block ends by saying so. Each country is a `<details>`, the one with the most to say open; the
+front door's `gf-cc` cookie moves the reader's own country to the top. The requirement's `value` sentence hides under
+the rule until hover or focus, so a 16-row table stays a table and not a page of prose; on a phone the three answer
+cells stack under the rule with their labels.
+
+What it refuses to do, on purpose: it does not use a list's kVA or phases as "datasheet" evidence (the sheet is the
+maker's figure), it does not read a declaration's tick boxes as separate facts yet, and a released-countries table
+that names the country but cites no standard proves none of the rows — the block says that in one line rather than
+colouring anything amber. The profiles' `must_meet` entries gained an `id` and a machine-readable `check` block
+(kind, field, limit or range, who can prove it, which edition changed it); the sentences the country page prints stayed.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components

@@ -1,0 +1,104 @@
+---
+// The requirement check on a model page: for every country with a profile, each requirement in one row — what the
+// datasheet says, what the maker's document proves, the state — with the source and date of both. Three honest
+// words: the sheet shows it, the document covers it, or nothing says it ("not shown", never "fails" without a number).
+// The grid operator decides; this is what the papers show. Data: web/src/lib/checks.ts over .data/checks.json.
+import Ext from "./Ext.astro";
+import { checksOf, STATE_WORD, type State, type CountryCheck } from "../lib/checks";
+import type { Device } from "../lib/registers";
+const { d } = Astro.props as { d: Device };
+const checks: CountryCheck[] = checksOf(d);
+const GLYPH: Record<State, string> = { S: "✓", D: "✓", O: "~", N: "–", X: "✕", I: "·" };
+const n = (c: CountryCheck, s: State) => c.sum[s] ?? 0;
+const docN = (c: CountryCheck) => n(c, "D") + n(c, "O");
+const editionLine = (c: CountryCheck) => c.doc
+  ? (c.doc.older
+    ? `documented for ${c.doc.standards || c.doc.edition}; ${n(c, "O")} item${n(c, "O") === 1 ? "" : "s"} of ${c.edition.label} unverified`
+    : `documented for ${c.doc.standards || c.doc.edition}`)
+  : "";
+const summaryOf = (c: CountryCheck) => [
+  `${n(c, "S")} by datasheet`, `${docN(c)} by the maker's document`, n(c, "X") ? `${n(c, "X")} outside by datasheet` : "", `${n(c, "N")} not shown`,
+].filter(Boolean).join(" · ");
+const ids = checks.map((c) => c.cc);
+---
+{checks.length > 0 && (
+  <div class="checks" id="checks" data-ccs={ids.join(",")}>
+    <h3>Requirement check, country by country</h3>
+    <p class="small muted">Each country's rule against what the maker's papers show: the datasheet (numbers) and the maker's declaration or certificate (type tests). A row is “not shown” when neither says it — that is not a “no”. The grid operator decides at the application.</p>
+    {checks.map((c, i) => (
+      <details class="ck" id={`ck-${c.cc.toLowerCase()}`} open={i === 0}>
+        <summary><span class="ck-cc">{c.cc}</span> <b>{c.country}</b> — {c.norm.split(" (")[0]}: {summaryOf(c)}{c.applicable === c.covered && c.applicable > 0 ? " — every item covered" : ""}</summary>
+        <div class="ck-body">
+          <p class="small">
+            <b>Against:</b> {c.edition.label}{c.edition.in_force ? `, in force ${c.edition.in_force}` : ""} (<a href={`/grid/${c.cc.toLowerCase()}/`}>how it works in {c.country}</a>).
+            {" "}<b>Datasheet:</b> {c.sheet ? <><Ext href={c.sheet.url}>{c.sheet.title || c.sheet.code}</Ext>{c.sheet.version ? `, ${c.sheet.version}` : ""}, model code “{c.sheet.code}”, seen {c.sheet.seen}.</> : "none collected for this model."}
+            {" "}<b>Maker's document:</b> {c.doc ? <><Ext href={c.doc.url}>{(c.doc.cert_no || c.doc.title).split(" (")[0]}</Ext>{c.doc.issuer ? ` by ${c.doc.issuer.split(" (")[0]}` : ""}{c.doc.issued ? `, issued ${c.doc.issued}` : ""}{c.doc.standards ? `, against ${c.doc.standards}` : ""}{c.doc.firmware ? `, firmware ${c.doc.firmware}` : ""}, seen {c.doc.seen}{c.doc.more?.length ? ` (+${c.doc.more.length} more)` : ""}. {editionLine(c)}.</>
+              : c.named.length ? <>{c.named.map((x, j) => <>{j > 0 && "; "}<Ext href={x.url}>{x.title.split(" — ")[0]}</Ext></>)} names {c.country} but cites no {c.norm.split(" (")[0]} standard, so it proves none of the rows below.</>
+              : "none found for this country."}
+          </p>
+          <table class="tbl ck-tbl">
+            <thead><tr><th scope="col">Requirement</th><th scope="col">Datasheet says</th><th scope="col">Maker's document</th><th scope="col">State</th></tr></thead>
+            <tbody>
+              {c.rows.map((r) => (
+                <tr class={`ck-row ck-${r.state}`}>
+                  <td class="fam"><span class="ck-rule">{r.item.rule}</span><span class="small muted ck-src">{r.item.source}</span><span class="small muted ck-val">{r.item.value}</span></td>
+                  <td class="wide" data-l="datasheet:">{r.state === "S" || r.state === "X" ? r.text : r.state === "N" && r.note ? r.note : <span class="muted">{r.item.provable_by?.includes("datasheet") ? (c.sheet ? "not stated" : "no sheet") : "—"}</span>}</td>
+                  <td class="wide" data-l="document:">{r.state === "D" ? <>covered by the {c.doc?.kind === "declaration" ? "declaration" : "certificate"} (type tests to the edition it cites)</> : r.state === "O" ? <>covered for the edition it cites; {r.note}</> : r.state === "I" ? <span class="muted">{r.note}</span> : <span class="muted">{r.item.provable_by?.includes("document") ? (c.doc ? "also within the certificate's scope" : c.named.length ? "names the country, cites no standard" : "no document") : "—"}</span>}</td>
+                  <td class="wide" data-l=""><span class={`ck-st ck-st-${r.state}`}><span aria-hidden="true">{GLYPH[r.state]}</span> {STATE_WORD[r.state]}</span></td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          {c.na.length > 0 && <p class="small muted">Not applicable to this model: {c.na.map((x) => x.rule.split(" (")[0]).join("; ")}.</p>}
+          <p class="small muted">Decided by {c.decided_by.split(" (")[0].split(";")[0].replace(/^The /, "the ")}; what the papers show is not an approval.</p>
+        </div>
+      </details>
+    ))}
+    <script is:inline>
+      // the reader's own country first (the front door's gf-cc cookie), its block open
+      (function () {
+        var m = document.cookie.match(/(?:^|;\s*)gf-cc=([a-z]{2})/i), box = document.getElementById("checks");
+        if (!m || !box) return;
+        var el = document.getElementById("ck-" + m[1].toLowerCase());
+        if (!el) return;
+        box.querySelectorAll("details.ck").forEach(function (x) { x.open = false; });
+        el.open = true;
+        box.insertBefore(el, box.querySelector("details.ck"));
+      })();
+    </script>
+  </div>
+)}
+
+<style>
+  .checks { display: grid; gap: var(--s3); }
+  .checks h3 { margin: 0; }
+  details.ck { border-top: var(--rule-w) solid var(--rule); }
+  details.ck > summary { cursor: pointer; min-height: var(--hit); display: flex; flex-wrap: wrap; align-items: center; gap: 0 var(--s2); font-size: var(--fs-sm); line-height: var(--lh-text); }
+  details.ck > summary b { font-family: var(--font-head); font-size: var(--fs-md); }
+  .ck-cc { font-family: var(--font-head); font-weight: 600; color: var(--ink-2); }
+  .ck-body { display: grid; gap: var(--s3); padding: var(--s2) 0 var(--s4); }
+  .ck-body p { max-width: var(--measure); }
+  .ck-tbl th, .ck-tbl td { vertical-align: top; }
+  .ck-tbl td { height: auto; padding: var(--s2); }
+  .ck-tbl .fam { display: grid; gap: var(--s1); }
+  .ck-rule { font-weight: 600; }
+  .ck-src { font-variant-numeric: var(--num); }
+  .ck-val { display: none; }
+  .ck-st { display: inline-flex; align-items: center; gap: var(--s1); padding: 0 var(--s2); min-height: 1.5rem; border-radius: var(--r1); font-size: var(--fs-xs); font-weight: 600; white-space: nowrap; }
+  .ck-st-S { background: var(--ok); color: var(--surface); }
+  .ck-st-D { background: var(--cloud); color: var(--surface); }
+  .ck-st-O { background: var(--cloud-bg); color: var(--cloud); box-shadow: inset 0 0 0 var(--rule-w) var(--cloud); font-weight: 400; }
+  .ck-st-N { background: var(--unk-bg); color: var(--unk); font-weight: 400; }
+  .ck-st-X { background: var(--no-bg); color: var(--no); box-shadow: inset 0 0 0 var(--rule-w) var(--no); }
+  .ck-st-I { background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 var(--rule-w) var(--rule); font-weight: 400; }
+  @media (min-width: 48rem) {
+    .ck-tbl { table-layout: fixed; }
+    .ck-tbl th:nth-child(1) { width: 30%; }
+    .ck-tbl th:nth-child(4) { width: 13rem; }
+    .ck-tbl .fam:hover .ck-val, .ck-tbl .fam:focus-within .ck-val { display: block; }
+  }
+  @media (max-width: 47.99rem) {
+    .ck-tbl td.wide { font-size: var(--fs-sm); }
+    .ck-tbl tr { row-gap: var(--s1); padding: var(--s2) 0; }
+  }
+</style>

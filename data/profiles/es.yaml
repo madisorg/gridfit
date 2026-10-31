@@ -14,29 +14,65 @@ basis:
   - "Real Decreto 1699/2011 (small installations connected in low voltage: protections, article 14; three-phase above 15 kW, article 12.2)"
   - "Real Decreto 244/2019 (self-consumption: modalities, the anti-export device, exemption from access and connection permits, the register)"
   - "Reglamento electrotécnico para baja tensión (RD 842/2002), ITC-BT-40 (generating installations in low voltage; the anti-export device)"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). A certificate issued before Orden TED/82/2026
+# is shown as "documented for" its date, with the items that order changed marked unverified.
+edition:
+  norm: "Orden TED/749/2020"
+  id: "2026-05"
+  date: "2026-05"
+  in_force: "2026-05-12"
+  label: "Orden TED/749/2020 as amended by Orden TED/82/2026 (in force 12 May 2026)"
+document_must_cite: ["RD 647", "647/2020", "TED/749", "749/2020", "NTS", "Norma Técnica de Supervisión", "UNE 217002"]
 must_meet:
-  - rule: "Frequency ranges (TED/749/2020 annex I, 1.1, table 1, peninsular Spain)"
+  - id: power-class
+    rule: "Plant size class (RD 647/2020, article 8.1)"
+    value: "type A from 0.8 kW to 100 kW below 110 kV; above 100 kW type B, a procedure of its own with conformity per installation"
+    check: { kind: max, field: ac_kw, limit: 100, over: "over 100 kW: type B, a procedure of its own", provable_by: [datasheet, document], source: "RD 647/2020 article 8.1" }
+  - id: freq-range
+    rule: "Frequency ranges (TED/749/2020 annex I, 1.1, table 1, peninsular Spain)"
     value: "47.5–48.5 Hz for 30 min; 48.5–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
-  - rule: "Rate of change of frequency (annex I, 1.2)"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "Orden TED/749/2020 annex I, 1.1, table 1" }
+  - id: rocof
+    rule: "Rate of change of frequency (annex I, 1.2)"
     value: "stay connected up to 2 Hz/s measured over a 500 ms moving window; the operator may lower the value with the system operator's consent"
-  - rule: "Over-frequency response, LFSM-O (annex I, 1.3)"
+    check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 1.2" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (annex I, 1.3)"
     value: "active power reduction from 50.2 Hz (Δf = 0.2 Hz) with 5 % droop, unless the system operator says otherwise"
-  - rule: "Automatic connection (annex I, 1.5)"
+    check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 1.3" }
+  - id: auto-connection
+    rule: "Automatic connection (annex I, 1.5)"
     value: "a settable frequency window within the ranges above and a power ramp-up limit; automatic connection is not the same as reconnection after a disturbance"
-  - rule: "Fault ride-through (annex I, 3.1.1 as amended 2026)"
+    check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 1.5" }
+  - id: frt
+    rule: "Fault ride-through (annex I, 3.1.1 as amended 2026)"
     value: "since 12 May 2026 a type A power-park module (an inverter) below 110 kV must ride through the voltage-dip profile of figure 14 (previously types B–D only) and recover its active power as soon as the voltage is back at or above 0.85 pu (3.3.1)"
-  - rule: "DC injection (annex I, 5.3)"
+    check: { kind: document, provable_by: [document], changed_in: "2026-05", changed: "Orden TED/82/2026 extends fault ride-through to type A", source: "Orden TED/749/2020 annex I, 3.1.1 and 3.3.1, as amended by Orden TED/82/2026" }
+  - id: dc-injection
+    rule: "DC injection (annex I, 5.3)"
     value: "a type A power-park module injects no more than 0.5 % of its rated current as direct current"
-  - rule: "Protection settings in low voltage (RD 1699/2011, article 14, table 1 — as the makers' Spanish declarations quote it)"
+    check: { kind: max, field: idc_pct, limit: 0.5, over: "over 0.5 % of rated current", provable_by: [datasheet, document], source: "Orden TED/749/2020 annex I, 5.3" }
+  - id: protection-settings
+    rule: "Protection settings in low voltage (RD 1699/2011, article 14, table 1 — as the makers' Spanish declarations quote it)"
     value: "over-voltage 1.10 Un for 1.5 s and 1.15 Un for 0.2 s; under-voltage 0.85 Un for 1.5 s; over-frequency 51 Hz for 0.5 s; under-frequency 48 Hz for 3 s (47.5 Hz in the non-peninsular systems); after an over-frequency trip reconnect only once the frequency is at or below 50 Hz"
-  - rule: "Anti-islanding"
+    check: { kind: document, provable_by: [document], source: "RD 1699/2011 article 14, table 1" }
+  - id: anti-islanding
+    rule: "Anti-islanding"
     value: "the installation must not keep voltage on a disconnected distribution line (RD 1699/2011, article 11.2); makers certify active anti-islanding to UNE-EN 62116 and inverter conformity to UNE 217002"
-  - rule: "Phases (RD 1699/2011, article 12.2, as amended by RD 244/2019)"
+    check: { kind: document, provable_by: [document], source: "RD 1699/2011 article 11.2; UNE 217002; UNE-EN 62116" }
+  - id: phases
+    rule: "Phases (RD 1699/2011, article 12.2, as amended by RD 244/2019)"
     value: "above 15 kW the connection is three-phase with less than 5 kW imbalance between phases; a generator on an internal network behind a three-phase supply is three-phase too"
-  - rule: "Self-consumption without export (RD 244/2019, article 3.k and 4.1.a)"
+    check: { kind: phases, three_phase_above_kw: 15, provable_by: [datasheet, document], source: "RD 1699/2011 article 12.2" }
+  - id: anti-export
+    rule: "Self-consumption without export (RD 244/2019, article 3.k and 4.1.a)"
     value: "an anti-export device that stops any export, meeting ITC-BT-40; e-distribución asks for the installation certificate of that device (makers' certificates cite UNE 217001)"
-  - rule: "Storage (TED/749/2020, additional provision 1, added 2026)"
+    check: { kind: none, why: "only for a self-consumption installation without export — a check on the installation, not on the model", source: "RD 244/2019 article 3.k, 4.1.a; ITC-BT-40; UNE 217001" }
+  - id: storage
+    rule: "Storage (TED/749/2020, additional provision 1, added 2026)"
     value: "a storage installation that exports follows the generation-module requirements in both directions until EU storage rules exist; it is exempt from presenting conformity certificates at the operational notification"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, changed_in: "2026-05", changed: "the storage provision was added by Orden TED/82/2026", source: "Orden TED/749/2020 additional provision 1" }
 documents_for_listing:
   - "the maker's equipment certificate (certificado de equipo) for the inverter model, issued by an authorised certifier accredited under UNE-EN ISO/IEC 17065 (ENAC or an EA member), against RD 647/2020, Orden TED/749/2020 and the NTS — makers publish these per model family"
   - "the installation document (Documento de Instalación, RfG article 30) that the authorised installer files with the grid operator for the definitive operational notification; for a type A module in low voltage the installer, not a certifier, assembles it from the equipment certificates and the electrotechnical inspection (NTS 4.2.1)"

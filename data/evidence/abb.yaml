@@ -1,0 +1,28 @@
+# Evidence layer — see the rule below. Research notes of 2026-11-01; URLs are the maker's own (FIMER, ABB's solar
+# business since 2020; the lists spell the brand ABB, FIMER or ABB / FIMER).
+brand: ABB
+maker_site: 'https://www.fimer.com/'
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: cei021-trio-5-8-8-5-2024
+  title: Dichiarazione di Conformità del generatore — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — TRIO-5.8/7.5/8.5-TL-OUTD(-S)-400, attached to TÜV Rheinland certificate AK 60176937 0001
+  url: https://fimer.com/sites/default/files/TRIO-8.5%287.5%29%285.8%29%285.0%29-TL-OUTD-%28S%29-400%20%28TUV_CEI%200-21_DichConfGen_Ref.%20AK%2060176937%200001%29%20Rev.%202024-07-01.pdf
+  issuer: TÜV Rheinland Italia S.r.l. (ACCREDIA laboratory no. 1356 L; signed Pogliano Milanese by the technical reviewer)
+  cert_no: AK 60176937 0001
+  issued: '2024-07-01'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2115A or later
+  families:
+  - name: TRIO-5.8 / 7.5 / 8.5-TL-OUTD-400 and -S-400 (three-phase string, 5.8–8.5 kW)
+    match: ^TRIO-(5\.8|7\.5|8\.5)-TL-OUTD(-S)?(-400)?$
+    countries:
+    - IT
+    note: "Three-phase, 230/400 V, 50 Hz; rated 5.8 / 7.5 / 8.5 kW (5.22 / 6.75 / 7.65 kW at cos φ ±0.9). Sez. A: fit for plants above 11.08 kW; limits Idc to 0.5 % of rated current by a DC-sensitive protection. Sez. B: interface protection integrated. Test report IT2458MT 001 (Allegato B). It replaces the declaration of 10 June 2024 for the same models. The 2026-07 edition of CEI 0-21 is not cited."

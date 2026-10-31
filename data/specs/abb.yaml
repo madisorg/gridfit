@@ -1,0 +1,60 @@
+brand: ABB
+maker_site: https://www.fimer.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models. The optional grid-side fields (freq_hz, vac_v, vac_un, cosphi, idc_pct) feed the
+  requirement check (docs/checks.md) and are present only where the sheet states them. ABB''s solar business is FIMER since
+  2020; the lists spell the brand ABB, FIMER or ABB / FIMER.'
+sources:
+- id: trio-5-8-7-5-8-5-it-rev-b
+  url: https://www.fimer.com/sites/default/files/FIMER_TRIO-5.8-7.5-8.5-TL-OUTD__IT_Rev_B.pdf
+  file: FIMER_TRIO-5.8-7.5-8.5-TL-OUTD__IT_Rev_B.pdf
+  title: FIMER TRIO-5.8/7.5/8.5-TL-OUTD datasheet (Italian), Rev. B
+  version: Rev. B (copyright 2021)
+  note: the output voltage and frequency ranges are the sheet's, with its own note that both can vary with the grid standard of the country of installation
+  seen: '2026-11-01'
+models:
+- code: TRIO-5.8-TL-OUTD-400
+  mppt: 1
+  ac_kw: 5.8
+  ac_kva: 5.8
+  ac_a: 10.0
+  phases: 3
+  pv_kw: 5.95
+  freq_hz: [47, 53]
+  vac_v: [320, 480]
+  vac_un: 400
+  cosphi: 0.9
+  idc_pct: null
+  source: trio-5-8-7-5-8-5-it-rev-b
+  match: ^TRIO-5\.8-TL-OUTD(-S)?(-400)?$
+- code: TRIO-7.5-TL-OUTD-400
+  mppt: 2
+  ac_kw: 7.5
+  ac_kva: 7.5
+  ac_a: 12.5
+  phases: 3
+  pv_kw: 7.65
+  freq_hz: [47, 53]
+  vac_v: [320, 480]
+  vac_un: 400
+  cosphi: 0.9
+  idc_pct: null
+  source: trio-5-8-7-5-8-5-it-rev-b
+  match: ^TRIO-7\.5-TL-OUTD(-S)?(-400)?$
+- code: TRIO-8.5-TL-OUTD-400
+  mppt: 2
+  ac_kw: 8.5
+  ac_kva: 8.5
+  ac_a: 14.5
+  phases: 3
+  pv_kw: 8.7
+  freq_hz: [47, 53]
+  vac_v: [320, 480]
+  vac_un: 400
+  cosphi: 0.9
+  idc_pct: null
+  source: trio-5-8-7-5-8-5-it-rev-b
+  match: ^TRIO-8\.5-TL-OUTD(-S)?(-400)?$
