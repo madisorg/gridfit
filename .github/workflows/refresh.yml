@@ -1,12 +1,30 @@
-# Weekly: rebuild from the sources and commit the dataset when something changed.
-# The push then triggers the Cloudflare Pages build of the site.
+# Weekly: rebuild from the sources and commit the dataset. On the first Monday of the month the grid
+# registers are downloaded, parsed and diffed too (data/registers/). Each push triggers the Cloudflare
+# Pages build.
+#
+# Two things keep a passive site alive:
+# - data/dataset/REFRESHED is rewritten on every run, so there is a commit every week even when no
+#   source changed. GitHub disables scheduled workflows in a public repository after 60 days without
+#   repository activity; the weekly commit is that activity.
+# - The run pings a healthchecks.io check at the end (secret HEALTHCHECKS_URL = the check's ping URL,
+#   period 7 days). No ping = an alert, also when the schedule silently stopped. Without the secret the
+#   step is skipped and nothing else changes.
 name: refresh
 on:
   schedule:
-    - cron: "17 4 * * 1"
+    - cron: "17 4 * * 1"      # every Monday 04:17 UTC: sources
+    - cron: "47 4 1-7 * 1"    # first Monday of the month 04:47 UTC: sources + grid registers
   workflow_dispatch:
+    inputs:
+      registers:
+        description: "also refresh the grid registers"
+        type: boolean
+        default: false
 permissions:
   contents: write
+concurrency:
+  group: refresh
+  cancel-in-progress: false
 jobs:
   refresh:
     runs-on: ubuntu-latest
@@ -16,11 +34,40 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r requirements.txt
-      - run: python build.py --refresh
-      - name: commit dataset if it changed
+      - name: decide whether this run refreshes the registers
+        id: mode
+        run: |
+          if [ "${{ github.event.schedule }}" = "47 4 1-7 * 1" ] || [ "${{ inputs.registers }}" = "true" ]; then
+            echo "registers=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "registers=false" >> "$GITHUB_OUTPUT"
+          fi
+      - name: refresh sources (and registers on the monthly run)
+        run: |
+          if [ "${{ steps.mode.outputs.registers }}" = "true" ]; then
+            python build.py --refresh --registers-refresh
+          else
+            python build.py --refresh
+          fi
+      - name: commit what changed, plus the weekly stamp
         run: |
           git config user.name "gridfit-bot"
           git config user.email "gridfit-bot@users.noreply.github.com"
-          git add data/dataset
-          git diff --cached --quiet || git commit -m "dataset: weekly refresh $(date -u +%F)"
+          printf 'last refresh: %s\nregisters: %s\n' "$(date -u +%FT%TZ)" "${{ steps.mode.outputs.registers }}" > data/dataset/REFRESHED
+          git add data/dataset data/registers
+          if [ "${{ steps.mode.outputs.registers }}" = "true" ]; then
+            git commit -m "dataset: refresh $(date -u +%F) + grid registers"
+          else
+            git commit -m "dataset: refresh $(date -u +%F)"
+          fi
           git push
+      - name: healthchecks.io ping
+        if: ${{ always() && env.HC != '' }}
+        env:
+          HC: ${{ secrets.HEALTHCHECKS_URL }}
+        run: |
+          if [ "${{ job.status }}" = "success" ]; then
+            curl -fsS -m 10 --retry 3 "$HC" > /dev/null
+          else
+            curl -fsS -m 10 --retry 3 "$HC/fail" > /dev/null
+          fi
