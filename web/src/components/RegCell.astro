@@ -1,12 +1,9 @@
 ---
-// One register cell in the cross-view: the list's status as a symbol (✓ ✓* ⏱ ⏱! exp Nein), the words in the title.
-// Empty = no matching entry found, never "not approved".
-import { best, RSHORT, RS, REGS, META, SNAP_DATE, type Entry } from "../lib/registers";
-const { c, cell } = Astro.props as { c: string; cell?: Entry[] };
-const b = cell ? best(cell) : "";
-const e = cell?.[0];
-const title = !e ? `${c}: no matching entry found` :
-  `${c}: ${e.reg !== "BE" ? e.word : RS[b]}${e.valid ? ` until ${e.valid}` : ""}${e.fw && e.reg !== "BE" ? ` · ${REGS[e.reg].fw_label} ${e.fw.slice(0, 60)}` : ""}` +
-  ` · as written: ${e.maker_raw} ${e.model_raw} · match ${e.trust} · list dated ${META[e.reg]?.source_date ?? ""} · seen ${SNAP_DATE}`;
+// One list cell in a model table (brand page, device page): the three-answer Cell with the row's detail in the hover.
+import Cell from "./Cell.astro";
+import { stateOfCells, scopeState, type GridState } from "../lib/devices";
+import type { Entry } from "../lib/registers";
+const { c, cell, cls, rich = false } = Astro.props as { c: string; cell?: Entry[]; cls: string; rich?: boolean };
+const state: GridState = cell?.length ? stateOfCells(cell) : scopeState(c, cls);
 ---
-<td class={`rs rs-${b || "none"}`} title={title}>{b && RSHORT[b]}{cell && cell.length > 1 && <sup>{cell.length}</sup>}{!b && <span class="vh">not found</span>}</td>
+<td class="c"><Cell cc={c} state={state} entries={cell ?? []} cls={cls} rich={rich} />{cell && cell.length > 1 && <sup class="muted">{cell.length}</sup>}</td>

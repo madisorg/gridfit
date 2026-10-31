@@ -251,6 +251,27 @@ unconfirmed" when the brand has a local family, else "not found", and says which
 **Reserved first segments** (`local grid changes about model search data devices sitemap 404 llms robots models`): the
 build throws when a brand slug collides, or a family slug is `model`.
 
+## 8c. The grid cell: three answers, detail on hover (2026-10-31)
+
+Madis: "too many categories; think of them together with the visual side; mark, background, and a hover with the
+detail". The cell now answers one question — *fit for the grid here?* — with three answers, and nothing else is a
+category:
+
+| answer | cell | means |
+|---|---|---|
+| **✓** filled `--reg` | fit | a model of the family (or the model) is on the country's official list, with or without a condition |
+| **✓** outlined, dashed | fit by the maker's document | no list row, but the maker publishes a document against the country's named standard — the grid operator decides (evidence layer, later) |
+| **✕** `--cloud` outline | not fit | the list says no, the entry expired or its end date passed, or the class is not allowed |
+| empty, faint rule | nothing known | not found on the list, no document found, the rule not confirmed, or nothing to check for this class |
+
+Everything that used to be a category is now in the hover (`Cell.astro`): the list's own word ("Ja - befristet bis
+2027-03-31", "Nein"), the end date, firmware, the certificate or document number, the row as written, and a link to the
+list or the country page. On device pages the hover is a CSS tooltip that also opens on keyboard focus (`rich`); in
+the dense tables (732 families, brand pages with hundreds of models, the grid view) it is the `title` attribute, so a
+page carries 5 000 cells without 5 000 tooltips. The country's rule for the class — list / certificate / — — sits in the
+grid view's column head, not in every cell. `GRID_WORD` and the register words stay for the aria-labels and the
+device page's list rows. Colour repeats the shape: filled vs dashed vs outlined vs empty read in greyscale.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components
@@ -368,4 +389,14 @@ Cloudflare (now guarded by hostname), the grid table overflowed 14 px on a phone
 keys wrap, the "Show more" button wraps), phases were empty in the index (`tools/site_data.py` now exports `phases`), and
 three list links in the panels were 21 px (44 px now). Re-measure [`c0-parast.json`](docs/moodud/c0-parast.json): 0 errors,
 0 overflow, 0 under 4.5:1 (lowest 5.89), 0 tap targets under 44 px. Phases known for 6 229 of 14 411 models, kVA for 11 501.
+
+## 17. Measured, 2026-10-31 — three-answer cells
+
+`/local/` table, `/grid/?c=FI,ES,PL&ph=3`, the Deye LP3 device page top, at `#grid-ee` and with a glance cell focused
+(tooltip open), the Sungrow brand page at `#grid`, a register model page ([`routes-cell.json`](docs/moodud/routes-cell.json))
+× 3440/390 × light/dark: [`cell.json`](docs/moodud/cell.json), 28 pictures, 0 console errors, 0 under 4.5:1 (lowest 5.68).
+Findings: the column-head rule word overflowed 15 px on a phone (hidden there now), the row-count `<sup>` was 10.8 px
+(13 px now), a focusable cell was 26 px on a phone (44 px there now). Re-measure [`cell-parast.json`](docs/moodud/cell-parast.json):
+0 overflow, 0 under 12 px, 0 tap targets under 44 px. Page weight: `/local/` 43 KB gz (33 KB before the titles), a
+brand page with 412 models 13 KB gz, a device page 12 KB gz.
 

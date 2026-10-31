@@ -2,7 +2,7 @@
 // /local/ — the smart-home lens: one row per product family, with the grid lens as a compact column.
 import Base from "../../layouts/Base.astro";
 import FamilyTable from "../../components/FamilyTable.astro";
-import Matrix from "../../components/Matrix.astro";
+import CellLegend from "../../components/CellLegend.astro";
 import Timeline from "../../components/Timeline.astro";
 import { data, brands, CLASS, CONN, summary } from "../../lib/data";
 import { COUNTRIES, REGS, META, SNAP_DATE } from "../../lib/registers";
@@ -60,13 +60,7 @@ const sources = [
       <FamilyTable families={fams} id="list" />
       <div class="sec">
         <header><h2>What the marks mean</h2></header>
-        <div class="legend">
-          <span><Matrix cells={{ AT: "listed", BE: "restricted", CZ: "expired", EE: "free", NL: "rule", PL: "unknown" }} titled={false} /></span>
-          <span>filled = the list carries a model of this family · outlined * = with restrictions or time-limited · amber ! = expired, date passed or “Nein” ·
-            faint = the list covers this class but no model was found, which is <strong>not</strong> “not approved” ·
-            dotted green = the country has no listing for this class (a wallbox is a load, a meter is not a grid unit), nothing to check ·
-            dotted amber = no list, but a rule applies (the device page says which) · ? = not yet confirmed</span>
-        </div>
+        <CellLegend />
         <p class="small muted">Local = the integration talks to the device on your network. Control = it exposes settable entities (HA) or
           evcc drives it. A HA row without a family name applies to every family of that brand.</p>
       </div>

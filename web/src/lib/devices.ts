@@ -2,7 +2,7 @@
 // (registers.ts) — so every page reads the same answer for the same device and the two lenses cannot
 // disagree. A device is a family when one claims the model code, else the register model itself.
 import { data, summary, familyUrl, slug, type Family } from "./data";
-import { devices as regDevices, COUNTRIES, best, anchor, type Device as RegDevice, type Entry } from "./registers";
+import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
 import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
 
 export type LocalState = "control" | "read" | "cloud" | "brand-route" | "none";
@@ -120,6 +120,43 @@ export const KVA_BUCKETS: [string, string, number, number][] = [
   ["12-30", "12 to 30 kVA", 12, 30], ["30-", "over 30 kVA", 30, Infinity],
 ];
 export const kindOf = (cls: string) => (cls === "wallbox" ? "ev" : cls === "meter" ? "meter" : "inv");
+
+// ---- three answers per cell; the rest is detail for the hover
+export type Answer = "yes" | "doc" | "no" | "none";
+export const answerOf = (st: GridState | undefined): Answer =>
+  st === "listed" || st === "restricted" ? "yes" : st === "expired" || st === "refused" || st === "banned" ? "no" : "none";
+export const RULE_WORD: Record<string, string> = { list: "list", rule: "certificate", free: "—", banned: "not allowed", unknown: "?" };
+export type Tip = { title: string; lines: string[]; href?: string; hrefText?: string };
+export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string): Tip {
+  const c = COUNTRY_BY[cc];
+  const country = c?.country ?? cc;
+  const there = { href: `/grid/${cc.toLowerCase()}/`, hrefText: "what applies there" };
+  if (es.length) {
+    const e = es[0], r = REGS[e.reg], m = META[e.reg], b = best(es);
+    const title = b === "listed" ? "on the list" : b === "restricted" || b === "limited" ? "on the list, with a condition"
+      : b === "limited-past" ? "not fit: the end date has passed" : b === "expired" ? "not fit: expired" : b === "nein" ? "not fit: the list says no" : "on the list";
+    const lines = [`${r.name}${m?.source_date ? `, dated ${m.source_date}` : ""}`];
+    if (e.reg !== "BE") {
+      if (e.word && e.word.toLowerCase() !== RS[b]) lines.push(`the list says: \u201c${e.word}\u201d`);
+      if (e.valid) lines.push(`${b === "limited-past" ? "was valid until" : "valid until"} ${e.valid}`);
+      if (e.fw) lines.push(`${r.fw_label}: ${e.fw.length > 60 ? e.fw.slice(0, 60) + "\u2026" : e.fw}`);
+      if (e.cert) lines.push(`${e.reg === "PL" ? "document" : "evidence"}: ${e.cert}`);
+    }
+    lines.push(`as written: ${e.maker_raw} \u00b7 ${e.model_raw}${es.length > 1 ? ` (+${es.length - 1} rows)` : ""}`);
+    return { title, lines, href: r.url, hrefText: "open the list" };
+  }
+  const key = cls ? CLASS_KEY[cls] ?? null : null;
+  const st: ClassState | "" = key && c ? c.classes[key] : "";
+  if (state === "" || st === "list") {
+    const r = REGS[cc];
+    return { title: "nothing known: not found on the list", lines: [`${r ? r.name : country}${META[cc]?.source_date ? `, dated ${META[cc].source_date}` : ""}`,
+      "the list may spell the model differently \u2014 never \u201cnot approved\u201d"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
+  }
+  if (state === "rule") return { title: "nothing known: a certificate is required, no document found", lines: [`${country} has no list for this class; the grid operator checks the maker's certificate with the application`], ...there };
+  if (state === "free") return { title: "nothing to check", lines: [`${country} lists no ${cls === "wallbox" ? "chargers" : cls === "meter" ? "meters or energy managers" : "devices of this class"}; nothing to check against a list`], ...there };
+  if (state === "banned") return { title: "not fit: not allowed", lines: [`${country} does not allow this kind of device to be connected`], ...there };
+  return { title: "nothing known: not confirmed", lines: [`whether ${country} lists or otherwise gates this class is not confirmed yet`], ...there };
+}
 
 // ---- urls and pages
 export const modelAnchor = (d: RegDevice) => `m-${anchor(d)}`;

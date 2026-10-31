@@ -41,7 +41,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
     <h1>{d.brand} {d.model}</h1>
     <p class="kind"><span>{RC[d.cls]}</span><span aria-hidden="true">·</span><span>in {listed.length} of {COUNTRIES.length} lists</span>
       <span aria-hidden="true">·</span><span>no product family claims this code yet</span></p>
-    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} seen={SNAP_DATE} />
+    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} />
     <p class="chips"><a href="#grid">Grid lists</a><a href="#local">Local control</a><a href={`/${bslug}/#grid`}>All {d.brand} models</a></p>
   </header>
 

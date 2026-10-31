@@ -1,0 +1,3034 @@
+{
+ "cell--local-tabel--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 26236,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 1,
+   "GF Text": 466
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    151,
+    17,
+    ". AlfenEve Single / "
+   ],
+   [
+    157,
+    17,
+    ". Alpha ESSSMILE / S"
+   ],
+   [
+    235,
+    17,
+    ". Anker SOLIXSOLIX S"
+   ],
+   [
+    177,
+    17,
+    ". Anker SOLIXSOLIX X"
+   ],
+   [
+    285,
+    17,
+    ". APsystemsDS3 / QS1"
+   ],
+   [
+    222,
+    17,
+    ". APsystemsEZ1 plug-"
+   ],
+   [
+    179,
+    17,
+    ". BYDBattery-Box / P"
+   ],
+   [
+    160,
+    17,
+    ". DeyeSUN-EVSE wallb"
+   ],
+   [
+    169,
+    17,
+    ". DeyeSUN-G string i"
+   ],
+   [
+    227,
+    17,
+    ". DeyeSUN-M / SUN-G3"
+   ],
+   [
+    250,
+    17,
+    ". DeyeSUN-SG HP3 thr"
+   ],
+   [
+    247,
+    17,
+    ". DeyeSUN-SG LP1 sin"
+   ],
+   [
+    244,
+    17,
+    ". DeyeSUN-SG LP3 thr"
+   ],
+   [
+    229,
+    17,
+    ". E3/DCS10 / S20 hom"
+   ],
+   [
+    317,
+    17,
+    ". EaseeHome / Charge"
+   ],
+   [
+    180,
+    17,
+    ". EcoFlowPowerOcean "
+   ],
+   [
+    253,
+    17,
+    ". EcoFlowSTREAM / Po"
+   ],
+   [
+    185,
+    17,
+    ". EnphaseIQ Battery "
+   ],
+   [
+    264,
+    17,
+    ". EnphaseIQ microinv"
+   ],
+   [
+    142,
+    17,
+    ". Fox ESSAC EV charg"
+   ],
+   [
+    165,
+    17,
+    ". Fox ESSAvocado / M"
+   ],
+   [
+    251,
+    17,
+    ". Fox ESSH1 / AC1 / "
+   ],
+   [
+    302,
+    17,
+    ". Fox ESSH3 / H3-Pro"
+   ],
+   [
+    192,
+    17,
+    ". Fox ESST / S / F s"
+   ],
+   [
+    175,
+    17,
+    ". FroniusSymo Hybrid"
+   ],
+   [
+    218,
+    17,
+    ". FroniusSymo/Primo "
+   ],
+   [
+    265,
+    17,
+    ". FroniusVerto / Tau"
+   ],
+   [
+    160,
+    17,
+    ". FroniusVerto Plus "
+   ],
+   [
+    104,
+    17,
+    ". FroniusWattpilot"
+   ],
+   [
+    281,
+    17,
+    ". go-ego-e Charger ("
+   ],
+   [
+    269,
+    17,
+    ". GoodWeDT/SDT/MS/XS"
+   ],
+   [
+    173,
+    17,
+    ". GoodWeES/EM/EMS hy"
+   ],
+   [
+    212,
+    17,
+    ". GoodWeET/EH/BT/BH/"
+   ],
+   [
+    144,
+    17,
+    ". GoodWeHCA wallboxe"
+   ],
+   [
+    285,
+    17,
+    ". GrowattMIN / MOD /"
+   ],
+   [
+    284,
+    17,
+    ". GrowattSPH / SPA /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHM / HMS /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHYS / HiOn"
+   ],
+   [
+    254,
+    17,
+    ". HoymilesMIT three-"
+   ],
+   [
+    170,
+    17,
+    ". HuaweiLUNA2000 bat"
+   ],
+   [
+    167,
+    17,
+    ". HuaweiSCharger wal"
+   ]
+  ],
+  "nhit": 46,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 467,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 5,
+   "2px": 123
+  },
+  "kontrast": {
+   "n": 467,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--local-tabel--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 26236,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 1,
+   "GF Text": 466
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    151,
+    17,
+    ". AlfenEve Single / "
+   ],
+   [
+    157,
+    17,
+    ". Alpha ESSSMILE / S"
+   ],
+   [
+    235,
+    17,
+    ". Anker SOLIXSOLIX S"
+   ],
+   [
+    177,
+    17,
+    ". Anker SOLIXSOLIX X"
+   ],
+   [
+    285,
+    17,
+    ". APsystemsDS3 / QS1"
+   ],
+   [
+    222,
+    17,
+    ". APsystemsEZ1 plug-"
+   ],
+   [
+    179,
+    17,
+    ". BYDBattery-Box / P"
+   ],
+   [
+    160,
+    17,
+    ". DeyeSUN-EVSE wallb"
+   ],
+   [
+    169,
+    17,
+    ". DeyeSUN-G string i"
+   ],
+   [
+    227,
+    17,
+    ". DeyeSUN-M / SUN-G3"
+   ],
+   [
+    250,
+    17,
+    ". DeyeSUN-SG HP3 thr"
+   ],
+   [
+    247,
+    17,
+    ". DeyeSUN-SG LP1 sin"
+   ],
+   [
+    244,
+    17,
+    ". DeyeSUN-SG LP3 thr"
+   ],
+   [
+    229,
+    17,
+    ". E3/DCS10 / S20 hom"
+   ],
+   [
+    317,
+    17,
+    ". EaseeHome / Charge"
+   ],
+   [
+    180,
+    17,
+    ". EcoFlowPowerOcean "
+   ],
+   [
+    253,
+    17,
+    ". EcoFlowSTREAM / Po"
+   ],
+   [
+    185,
+    17,
+    ". EnphaseIQ Battery "
+   ],
+   [
+    264,
+    17,
+    ". EnphaseIQ microinv"
+   ],
+   [
+    142,
+    17,
+    ". Fox ESSAC EV charg"
+   ],
+   [
+    165,
+    17,
+    ". Fox ESSAvocado / M"
+   ],
+   [
+    251,
+    17,
+    ". Fox ESSH1 / AC1 / "
+   ],
+   [
+    302,
+    17,
+    ". Fox ESSH3 / H3-Pro"
+   ],
+   [
+    192,
+    17,
+    ". Fox ESST / S / F s"
+   ],
+   [
+    175,
+    17,
+    ". FroniusSymo Hybrid"
+   ],
+   [
+    218,
+    17,
+    ". FroniusSymo/Primo "
+   ],
+   [
+    265,
+    17,
+    ". FroniusVerto / Tau"
+   ],
+   [
+    160,
+    17,
+    ". FroniusVerto Plus "
+   ],
+   [
+    104,
+    17,
+    ". FroniusWattpilot"
+   ],
+   [
+    281,
+    17,
+    ". go-ego-e Charger ("
+   ],
+   [
+    269,
+    17,
+    ". GoodWeDT/SDT/MS/XS"
+   ],
+   [
+    173,
+    17,
+    ". GoodWeES/EM/EMS hy"
+   ],
+   [
+    212,
+    17,
+    ". GoodWeET/EH/BT/BH/"
+   ],
+   [
+    144,
+    17,
+    ". GoodWeHCA wallboxe"
+   ],
+   [
+    285,
+    17,
+    ". GrowattMIN / MOD /"
+   ],
+   [
+    284,
+    17,
+    ". GrowattSPH / SPA /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHM / HMS /"
+   ],
+   [
+    249,
+    17,
+    ". HoymilesHYS / HiOn"
+   ],
+   [
+    254,
+    17,
+    ". HoymilesMIT three-"
+   ],
+   [
+    170,
+    17,
+    ". HuaweiLUNA2000 bat"
+   ],
+   [
+    167,
+    17,
+    ". HuaweiSCharger wal"
+   ]
+  ],
+  "nhit": 46,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 467,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "4px": 5,
+   "2px": 123
+  },
+  "kontrast": {
+   "n": 467,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--local-tabel--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 114875,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 57
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 57,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 70,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--local-tabel--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 114875,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 57
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 5,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 57,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 70,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--grid-multi--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7375,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 1,
+   "GF Text": 406
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    240,
+    21,
+    "#q. "
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". ES"
+   ],
+   [
+    13,
+    32,
+    ". FI"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    161,
+    17,
+    ". EcoFlow EF HD-P3-6"
+   ],
+   [
+    154,
+    17,
+    ". EcoFlow EF HD-P3-8"
+   ],
+   [
+    161,
+    17,
+    ". EcoFlow EF HD-P3-8"
+   ],
+   [
+    126,
+    17,
+    ". Elecod Monet-100AC"
+   ],
+   [
+    139,
+    17,
+    ". GoodWe GW10K-ET-20"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW10K-ETA-G"
+   ],
+   [
+    139,
+    17,
+    ". GoodWe GW12K-ET-20"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW12K-ETA-G"
+   ],
+   [
+    139,
+    17,
+    ". GoodWe GW15K-ET-20"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW15K-ETA-G"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW20K-ETA-G"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW25K-ETA-G"
+   ],
+   [
+    149,
+    17,
+    ". GoodWe GW5K-ETA-G2"
+   ],
+   [
+    149,
+    17,
+    ". GoodWe GW6K-ETA-G2"
+   ],
+   [
+    149,
+    17,
+    ". GoodWe GW8K-ETA-G2"
+   ],
+   [
+    136,
+    17,
+    ". Hypontech HHT-1200"
+   ],
+   [
+    129,
+    17,
+    ". Hypontech HHT-5000"
+   ],
+   [
+    129,
+    17,
+    ". Hypontech HHT-6000"
+   ],
+   [
+    129,
+    17,
+    ". Hypontech HHT-8000"
+   ],
+   [
+    243,
+    17,
+    ". IN-Power INPPCS-12"
+   ],
+   [
+    137,
+    17,
+    ". SolaX X3-AELIO-49."
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-50K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-60K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-61K"
+   ],
+   [
+    138,
+    17,
+    ". SolaX X3-MGA-40K-G"
+   ],
+   [
+    138,
+    17,
+    ". SolaX X3-MGA-50K-G"
+   ],
+   [
+    138,
+    17,
+    ". SolaX X3-MGA-60K-G"
+   ],
+   [
+    136,
+    17,
+    ". SolaX X3-TRENE-100"
+   ]
+  ],
+  "nhit": 82,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 407,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "4px": 11,
+   "2px": 160
+  },
+  "kontrast": {
+   "n": 407,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--grid-multi--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7375,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 1,
+   "GF Text": 406
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    240,
+    21,
+    "#q. "
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". ES"
+   ],
+   [
+    13,
+    32,
+    ". FI"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    161,
+    17,
+    ". EcoFlow EF HD-P3-6"
+   ],
+   [
+    154,
+    17,
+    ". EcoFlow EF HD-P3-8"
+   ],
+   [
+    161,
+    17,
+    ". EcoFlow EF HD-P3-8"
+   ],
+   [
+    126,
+    17,
+    ". Elecod Monet-100AC"
+   ],
+   [
+    139,
+    17,
+    ". GoodWe GW10K-ET-20"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW10K-ETA-G"
+   ],
+   [
+    139,
+    17,
+    ". GoodWe GW12K-ET-20"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW12K-ETA-G"
+   ],
+   [
+    139,
+    17,
+    ". GoodWe GW15K-ET-20"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW15K-ETA-G"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW20K-ETA-G"
+   ],
+   [
+    157,
+    17,
+    ". GoodWe GW25K-ETA-G"
+   ],
+   [
+    149,
+    17,
+    ". GoodWe GW5K-ETA-G2"
+   ],
+   [
+    149,
+    17,
+    ". GoodWe GW6K-ETA-G2"
+   ],
+   [
+    149,
+    17,
+    ". GoodWe GW8K-ETA-G2"
+   ],
+   [
+    136,
+    17,
+    ". Hypontech HHT-1200"
+   ],
+   [
+    129,
+    17,
+    ". Hypontech HHT-5000"
+   ],
+   [
+    129,
+    17,
+    ". Hypontech HHT-6000"
+   ],
+   [
+    129,
+    17,
+    ". Hypontech HHT-8000"
+   ],
+   [
+    243,
+    17,
+    ". IN-Power INPPCS-12"
+   ],
+   [
+    137,
+    17,
+    ". SolaX X3-AELIO-49."
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-50K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-60K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-61K"
+   ],
+   [
+    138,
+    17,
+    ". SolaX X3-MGA-40K-G"
+   ],
+   [
+    138,
+    17,
+    ". SolaX X3-MGA-50K-G"
+   ],
+   [
+    138,
+    17,
+    ". SolaX X3-MGA-60K-G"
+   ],
+   [
+    136,
+    17,
+    ". SolaX X3-TRENE-100"
+   ]
+  ],
+  "nhit": 82,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 407,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "4px": 11,
+   "2px": 160
+  },
+  "kontrast": {
+   "n": 407,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--grid-multi--tel-hele": {
+  "w": 405,
+  "cw": 390,
+  "sw": 405,
+  "sh": 18692,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 102
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 40,
+  "overpx": 15,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 102,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "4px": 1,
+   "2px": 51
+  },
+  "kontrast": {
+   "n": 102,
+   "min": 5.68,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--grid-multi--tel-tume": {
+  "w": 405,
+  "cw": 390,
+  "sw": 405,
+  "sh": 18692,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 102
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 40,
+  "overpx": 15,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 102,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "4px": 1,
+   "2px": 51
+  },
+  "kontrast": {
+   "n": 102,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 13,
+   "GF Text": 111
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ]
+  ],
+  "nhit": 27,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 124,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 19,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 124,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 13,
+   "GF Text": 111
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ]
+  ],
+  "nhit": 27,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 124,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 19,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 124,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 5,
+   "GF Text": 30
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 35,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 5,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 35,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 5,
+   "GF Text": 30
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 35,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 5,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 35,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-grid--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 9,
+   "GF Text": 172
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 10.8333,
+  "fs12": 5,
+  "nfs": 181,
+  "fs12ex": [
+   "10.8333px .muted 2"
+  ],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 53
+  },
+  "kontrast": {
+   "n": 181,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-grid--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 9,
+   "GF Text": 172
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 58,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 10.8333,
+  "fs12": 5,
+  "nfs": 181,
+  "fs12ex": [
+   "10.8333px .muted 2"
+  ],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 53
+  },
+  "kontrast": {
+   "n": 181,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-grid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 5,
+   "GF Text": 84
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 44,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 10.8333,
+  "fs12": 5,
+  "nfs": 89,
+  "fs12ex": [
+   "10.8333px .muted 2"
+  ],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 39
+  },
+  "kontrast": {
+   "n": 89,
+   "min": 6.43,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-grid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 5,
+   "GF Text": 84
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 44,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 10.8333,
+  "fs12": 5,
+  "nfs": 89,
+  "fs12ex": [
+   "10.8333px .muted 2"
+  ],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 39
+  },
+  "kontrast": {
+   "n": 89,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-hover--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 14,
+   "GF Text": 114
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    262,
+    21,
+    ". open the list"
+   ],
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ]
+  ],
+  "nhit": 28,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 128,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 19,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 128,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-hover--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2770,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 14,
+   "GF Text": 114
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    262,
+    21,
+    ". open the list"
+   ],
+   [
+    58,
+    17,
+    ". Solarman"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    180,
+    17,
+    ". Sunsynk / Deye Sol"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    68,
+    17,
+    ". Deye Cloud"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    65,
+    17,
+    ". Deye Local"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ],
+   [
+    213,
+    17,
+    ". deye-hybrid-3p (3p"
+   ],
+   [
+    85,
+    20,
+    ".link-ext 2026-10-29"
+   ]
+  ],
+  "nhit": 28,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 128,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 19,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 128,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-hover--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    262,
+    21,
+    ". open the list"
+   ]
+  ],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 39,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 5,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 39,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--pere-hover--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 5274,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    262,
+    21,
+    ". open the list"
+   ]
+  ],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 39,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 13,
+  "radius": {
+   "2px": 5,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 39,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--brand-grid--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8245,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 224
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ],
+   [
+    47,
+    17,
+    ". S1600S"
+   ],
+   [
+    81,
+    17,
+    ". SG10.0RT-P2"
+   ],
+   [
+    71,
+    17,
+    ". SG10KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG10RT"
+   ],
+   [
+    69,
+    17,
+    ". SG10RT-P2"
+   ],
+   [
+    66,
+    17,
+    ". SG1100UD"
+   ],
+   [
+    57,
+    17,
+    ". SG110CX"
+   ],
+   [
+    219,
+    17,
+    ". SG110CX - Premium "
+   ],
+   [
+    78,
+    17,
+    ". SG110CX-P2"
+   ],
+   [
+    78,
+    17,
+    ". SG110CX-P3"
+   ],
+   [
+    81,
+    17,
+    ". SG12.0RT-P2"
+   ],
+   [
+    78,
+    17,
+    ". SG125CX-P2"
+   ],
+   [
+    78,
+    17,
+    ". SG125CX-P3"
+   ],
+   [
+    58,
+    17,
+    ". SG125HV"
+   ],
+   [
+    58,
+    17,
+    ". SG125HX"
+   ],
+   [
+    71,
+    17,
+    ". SG12KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG12RT"
+   ],
+   [
+    69,
+    17,
+    ". SG12RT-P2"
+   ],
+   [
+    81,
+    17,
+    ". SG15.0RT-P2"
+   ],
+   [
+    57,
+    17,
+    ". SG150CX"
+   ],
+   [
+    71,
+    17,
+    ". SG15KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG15RT"
+   ],
+   [
+    69,
+    17,
+    ". SG15RT-P2"
+   ],
+   [
+    81,
+    17,
+    ". SG17.0RT-P2"
+   ],
+   [
+    49,
+    17,
+    ". SG17RT"
+   ],
+   [
+    69,
+    17,
+    ". SG17RT-P2"
+   ],
+   [
+    66,
+    17,
+    ". SG2.0RS-S"
+   ],
+   [
+    66,
+    17,
+    ". SG2.5RS-S"
+   ],
+   [
+    81,
+    17,
+    ". SG20.0RT-P2"
+   ],
+   [
+    71,
+    17,
+    ". SG20KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG20RT"
+   ],
+   [
+    69,
+    17,
+    ". SG20RT-P2"
+   ],
+   [
+    58,
+    17,
+    ". SG250HX"
+   ]
+  ],
+  "nhit": 40,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 226,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 242
+  },
+  "kontrast": {
+   "n": 226,
+   "min": 6.33,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--brand-grid--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8245,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 224
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ],
+   [
+    47,
+    17,
+    ". S1600S"
+   ],
+   [
+    81,
+    17,
+    ". SG10.0RT-P2"
+   ],
+   [
+    71,
+    17,
+    ". SG10KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG10RT"
+   ],
+   [
+    69,
+    17,
+    ". SG10RT-P2"
+   ],
+   [
+    66,
+    17,
+    ". SG1100UD"
+   ],
+   [
+    57,
+    17,
+    ". SG110CX"
+   ],
+   [
+    219,
+    17,
+    ". SG110CX - Premium "
+   ],
+   [
+    78,
+    17,
+    ". SG110CX-P2"
+   ],
+   [
+    78,
+    17,
+    ". SG110CX-P3"
+   ],
+   [
+    81,
+    17,
+    ". SG12.0RT-P2"
+   ],
+   [
+    78,
+    17,
+    ". SG125CX-P2"
+   ],
+   [
+    78,
+    17,
+    ". SG125CX-P3"
+   ],
+   [
+    58,
+    17,
+    ". SG125HV"
+   ],
+   [
+    58,
+    17,
+    ". SG125HX"
+   ],
+   [
+    71,
+    17,
+    ". SG12KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG12RT"
+   ],
+   [
+    69,
+    17,
+    ". SG12RT-P2"
+   ],
+   [
+    81,
+    17,
+    ". SG15.0RT-P2"
+   ],
+   [
+    57,
+    17,
+    ". SG150CX"
+   ],
+   [
+    71,
+    17,
+    ". SG15KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG15RT"
+   ],
+   [
+    69,
+    17,
+    ". SG15RT-P2"
+   ],
+   [
+    81,
+    17,
+    ". SG17.0RT-P2"
+   ],
+   [
+    49,
+    17,
+    ". SG17RT"
+   ],
+   [
+    69,
+    17,
+    ". SG17RT-P2"
+   ],
+   [
+    66,
+    17,
+    ". SG2.0RS-S"
+   ],
+   [
+    66,
+    17,
+    ". SG2.5RS-S"
+   ],
+   [
+    81,
+    17,
+    ". SG20.0RT-P2"
+   ],
+   [
+    71,
+    17,
+    ". SG20KTL-M"
+   ],
+   [
+    49,
+    17,
+    ". SG20RT"
+   ],
+   [
+    69,
+    17,
+    ". SG20RT-P2"
+   ],
+   [
+    58,
+    17,
+    ". SG250HX"
+   ]
+  ],
+  "nhit": 40,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 226,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 242
+  },
+  "kontrast": {
+   "n": 226,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--brand-grid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 11232,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 49
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 51,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 53
+  },
+  "kontrast": {
+   "n": 51,
+   "min": 6.33,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--brand-grid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 11232,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 2,
+   "GF Text": 49
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 51,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 53
+  },
+  "kontrast": {
+   "n": 51,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--mudel--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2506,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 16,
+   "GF Text": 121
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 57,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 137,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 8,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 137,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--mudel--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 2506,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 16,
+   "GF Text": 121
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 57,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 137,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 8,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 137,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--mudel--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4545,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 7,
+   "GF Text": 25
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 32,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 1,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 32,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "cell--mudel--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 4545,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 7,
+   "GF Text": 25
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 13,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 32,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 1,
+   "4px": 3
+  },
+  "kontrast": {
+   "n": 32,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

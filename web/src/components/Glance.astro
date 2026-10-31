@@ -5,15 +5,15 @@ import Status from "./Status.astro";
 import Matrix from "./Matrix.astro";
 import { COUNTRIES } from "../lib/registers";
 import { LOCAL_WORD, type LocalState, type GridState } from "../lib/devices";
-const { local, routes = [], cells, seen, listDate } = Astro.props as
-  { local: LocalState; routes?: string[]; cells: Record<string, GridState>; seen: string; listDate?: string };
+const { local, routes = [], cells, entries = {}, cls, seen, listDate } = Astro.props as
+  { local: LocalState; routes?: string[]; cells: Record<string, GridState>; entries?: Record<string, any[]>; cls?: string; seen: string; listDate?: string };
 const mark = local === "control" ? "write" : local === "read" ? "local" : local === "cloud" ? "cloud" : "none";
 const on = COUNTRIES.filter((k) => cells[k] === "listed" || cells[k] === "restricted");
-const gridWord = on.length ? `on ${on.length} of ${COUNTRIES.length} lists` : "not found on the 7 lists read";
+const gridWord = on.length ? `fit in ${on.join(", ")}` : "nothing known from the 7 lists read";
 ---
 <div class="glance" role="group" aria-label="At a glance">
   <div><span class="k"><a href="#local">Local</a></span><Status kind={mark} label={LOCAL_WORD[local]} />
     {routes.length > 0 && <span class="muted">{routes.slice(0, 3).join(", ")}{routes.length > 3 ? ` +${routes.length - 3}` : ""}</span>}
     <span class="muted">· seen {seen}</span></div>
-  <div><span class="k"><a href="#grid">Grid</a></span><Matrix cells={cells} /><span class="muted">{gridWord}{listDate ? ` · lists dated up to ${listDate}` : ""}</span></div>
+  <div><span class="k"><a href="#grid">Grid</a></span><Matrix cells={cells} entries={entries} cls={cls} rich={true} /><span class="muted">{gridWord}{listDate ? ` · lists dated up to ${listDate}` : ""}</span></div>
 </div>

@@ -62,7 +62,7 @@ const trust = [...new Set(models.map(trustOf))].join(" / ");
     <p class="kind"><span>{CLASS[f.class]}</span><span aria-hidden="true">·</span>
       <span>{f.rows.length} integration route{f.rows.length === 1 ? "" : "s"}</span><span aria-hidden="true">·</span>
       <span>{models.length} model{models.length === 1 ? "" : "s"} on grid lists</span></p>
-    <Glance local={local} routes={localRoutes(f)} cells={cells} seen={data.seen} listDate={latestList} />
+    <Glance local={local} routes={localRoutes(f)} cells={cells} entries={entries} cls={f.class} seen={data.seen} listDate={latestList} />
     <p class="chips"><a href="#local">Local control</a><a href="#grid">Grid lists</a>{models.length > 0 && <a href="#codes">Model codes</a>}</p>
   </header>
 
@@ -138,7 +138,7 @@ const trust = [...new Set(models.map(trustOf))].join(" / ");
             {models.map((d) => (
               <tr id={modelAnchor(d)}>
                 <td>{d.model}</td>
-                {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} />)}
+                {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} cls={d.cls} rich={true} />)}
                 <td class="match">{trustOf(d)}</td>
               </tr>
             ))}

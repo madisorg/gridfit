@@ -1,7 +1,7 @@
 ---
 // Dense family table: one row per product family. /local/ and the brand pages use the same rows.
 import { CLASS, summary, familyUrl, type Family } from "../lib/data";
-import { gridOfFamily, modelsOf } from "../lib/devices";
+import { gridOfFamily, modelsOf, entriesOfFamily } from "../lib/devices";
 import Status from "./Status.astro";
 import Matrix from "./Matrix.astro";
 const { families, showBrand = true, id } = Astro.props as { families: Family[]; showBrand?: boolean; id?: string };
@@ -25,7 +25,7 @@ const { families, showBrand = true, id } = Astro.props as { families: Family[]; 
         <td data-l="HA"><Status kind={s.ha} /></td>
         <td data-l="evcc"><Status kind={s.evcc} /></td>
         <td>{s.control ? <Status kind="write" /> : <Status kind="read" label={s.ha === "none" && s.evcc === "none" ? "not known" : "read only"} />}</td>
-        <td class="wide"><Matrix cells={cells} titled={false} /></td>
+        <td class="wide"><Matrix cells={cells} entries={entriesOfFamily(f)} cls={f.class} /></td>
         <td class="num" data-l="models">{n || "–"}</td>
       </tr>
     );

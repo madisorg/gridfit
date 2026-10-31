@@ -1,0 +1,21 @@
+---
+// One grid cell, three answers: ✓ fit (filled = on the list, outlined = by the maker's document), ✕ not fit,
+// empty = nothing known. Everything else — the list's word, a condition or date, firmware, the row as written —
+// is in the hover (a CSS tooltip on hover and focus when `rich`, else the title attribute). Colour repeats the shape.
+import { answerOf, tipOf, type GridState } from "../lib/devices";
+import type { Entry } from "../lib/registers";
+const { cc, state, entries = [], cls, rich = false, label } = Astro.props as
+  { cc: string; state: GridState | string; entries?: Entry[]; cls?: string; rich?: boolean; label?: string };
+const a = answerOf(state as GridState);
+const tip = tipOf(cc, state as GridState, entries, cls);
+const GLYPH: Record<string, string> = { yes: "✓", doc: "✓", no: "✕", none: "" };
+// the full detail only where the cell is rich (device pages); dense tables get the short title, 5 000 cells a page
+const text = rich ? `${cc}: ${tip.title}${tip.lines.length ? " / " + tip.lines.join("; ") : ""}` : `${cc}: ${tip.title}`;
+---
+{rich ? (
+  <span class={`cl cl-${a}`} tabindex="0" role="img" aria-label={text}>{label ?? GLYPH[a]}
+    <span class="tip" aria-hidden="true"><b>{cc} · {tip.title}</b>{tip.lines.map((l) => <span>{l}</span>)}{tip.href && <a href={tip.href}>{tip.hrefText ?? "open the row"}</a>}</span>
+  </span>
+) : (
+  <span class={`cl cl-${a}`} role="img" aria-label={text} title={text}>{label ?? GLYPH[a]}</span>
+)}

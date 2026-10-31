@@ -3,7 +3,7 @@
 // multi-select with AND logic ("listed in every selected list"); the columns are the selected countries, or
 // the 7 lists read when nothing is selected. A country without a list shows what applies to the class there.
 // Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
-import RegLegend from "./RegLegend.astro";
+import CellLegend from "./CellLegend.astro";
 import { COUNTRIES, REGS, RC } from "../lib/registers";
 import { BRANDS, KVA_BUCKETS } from "../lib/devices";
 import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
@@ -50,9 +50,8 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     <div id="xv"></div>
     <p><button type="button" id="more" class="xv-more" hidden>Show more</button></p>
     <noscript><p>The table needs JavaScript. Every model is also on its brand page.</p></noscript>
-    <RegLegend />
-    <p class="legend small"><span class="rs-key"><span class="rs rs-free">free</span> no list and no model rule</span><span class="rs-key"><span class="rs rs-rule">rule</span> no list, a rule applies</span>
-      <span class="rs-key"><span class="rs rs-list">list</span> public list, not read yet</span><span class="rs-key"><span class="rs rs-banned">✕</span> not allowed</span><span class="rs-key"><span class="rs rs-none">?</span> not confirmed</span>
+    <CellLegend />
+    <p class="legend small"><span class="rs-key">Column head: <b>list</b> = the country has a public list · <b>certificate</b> = no list, the grid operator checks the maker's certificate · <b>—</b> = nothing to check for this class.</span>
       <span class="rs-key"><span class="st write">control</span> / <span class="st local">local</span> / <span class="st cloud">cloud</span> / <span class="st none">brand route</span> = Home Assistant or evcc on your network</span></p>
     <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists; no list carries MPPT counts, so that column is not here yet. The list is the authority; this is a cross-reference.</p>
   </div>
@@ -61,12 +60,14 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
 <script>
   const root = document.querySelector<HTMLElement>(".gv")!;
   const $ = <T extends HTMLElement>(id: string) => root.querySelector(`#${id}`) as T;
-  const SYM: Record<string, string> = { L: "✓", R: "✓*", T: "⏱", P: "⏱!", E: "exp", N: "Nein", O: "?", "-": "" };
-  const CLS: Record<string, string> = { L: "listed", R: "restricted", T: "limited", P: "limited-past", E: "expired", N: "nein", O: "other", "-": "none" };
-  const WORD: Record<string, string> = { L: "listed", R: "listed with restrictions", T: "time-limited", P: "time-limited, date passed",
-    E: "expired", N: "Nein (the list's own word)", O: "see the list", "-": "no matching entry found" };
-  const STATE: Record<string, [string, string, string]> = { list: ["rs-list", "list", "public list, not read yet — check the model there"], rule: ["rs-rule", "rule", "no list; a notification, registration or certificate rule applies"],
-    free: ["rs-free", "free", "no list and no model-level rule"], banned: ["rs-banned", "✕", "not allowed"], unknown: ["rs-none", "?", "not confirmed"] };
+  // three answers per cell: yes / no / nothing known; the list's own word is the hover
+  const ANS: Record<string, string> = { L: "yes", R: "yes", T: "yes", O: "yes", P: "no", E: "no", N: "no", "-": "none" };
+  const GLYPH: Record<string, string> = { yes: "✓", no: "✕", none: "" };
+  const WORD: Record<string, string> = { L: "on the list", R: "on the list, with a condition", T: "on the list, time-limited", P: "not fit: the end date has passed",
+    E: "not fit: expired", N: "not fit: the list says no", O: "on the list (see the list)", "-": "nothing known: not found on the list — never “not approved”" };
+  const STATE: Record<string, [string, string]> = { list: ["none", "nothing known: public list, not read yet — check the model there"], rule: ["none", "nothing known: a certificate is required; the grid operator checks the maker's document"],
+    free: ["none", "nothing to check for this class"], banned: ["no", "not fit: not allowed"], unknown: ["none", "nothing known: not confirmed"] };
+  const RULE: Record<string, string> = { list: "list", rule: "certificate", free: "—", banned: "not allowed", unknown: "?" };
   const LOC: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "local"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "not found"] };
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
@@ -103,8 +104,9 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     $("xcount").innerHTML = `<b>${hits.length.toLocaleString("en")}</b> ${hits.length === 1 ? "model" : "models"}${readSel.length ? ` listed in ${readSel.join(" and ")}` : ""}`;
     $("ccsum").textContent = cs.length ? cs.join(", ") : "any";
     shown = 0;
+    const rcls = cls || (g === "ev" ? "wallbox" : "inverter");
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
-      cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a></th>`).join("") +
+      cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
       '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
     ids.forEach((id) => $(id).classList.toggle("on", !!val(id)));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
@@ -122,9 +124,10 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     const html = hits.slice(shown, shown + PAGE).map((r) => {
       const cells = cols.map((c) => {
         const i = data.read.indexOf(c);
-        if (i >= 0) { const s = r[4][i]; return `<td class="rs rs-${CLS[s]}" title="${c}: ${WORD[s]}">${SYM[s] || `<span class="vh">${WORD[s]}</span>`}</td>`; }
-        const st = data.scope[c]?.[r[2]] ?? "unknown"; const [k, w, t] = STATE[st] ?? STATE.unknown;
-        return `<td class="rs ${k}" title="${c}: ${t}">${w}</td>`;
+        let a: string, t: string;
+        if (i >= 0) { const s = r[4][i]; a = ANS[s]; t = WORD[s]; }
+        else { const st = data.scope[c]?.[r[2]] ?? "unknown"; [a, t] = STATE[st] ?? STATE.unknown; }
+        return `<td class="c"><span class="cl cl-${a}" role="img" aria-label="${esc(c + ": " + t)}" title="${esc(c + ": " + t)}">${GLYPH[a]}</span></td>`;
       }).join("");
       const nl = r[4].replace(/-/g, "").length;
       const [lk, lw] = LOC[r[5]] ?? LOC["-"];

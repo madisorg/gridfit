@@ -4,7 +4,7 @@
 import Base from "../../layouts/Base.astro";
 import FamilyTable from "../../components/FamilyTable.astro";
 import RegCell from "../../components/RegCell.astro";
-import RegLegend from "../../components/RegLegend.astro";
+import CellLegend from "../../components/CellLegend.astro";
 import { REPO } from "../../lib/data";
 import { COUNTRIES, RC, SNAP_DATE, trustOf } from "../../lib/registers";
 import { BRANDS, localOf, familyOf, modelUrl, modelAnchor, nf, type Brand } from "../../lib/devices";
@@ -43,8 +43,8 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
       {models.length > 0 && (
         <>
           <p class="note">The list is the authority; this is a cross-reference. Empty = no matching entry found, never “not approved”.
-            A model name links to its page when it is in two or more lists, or to its family. Hover a cell for the list's own words. All rows read {SNAP_DATE}.</p>
-          <RegLegend />
+            A model name links to its page when it is in two or more lists, or to its family. All rows read {SNAP_DATE}.</p>
+          <CellLegend />
           {groups.map(([cls, g]) => (
             <section class="sec">
               <header><h3>{RC[cls]}</h3><p>{g.length}</p></header>
@@ -57,7 +57,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
                     return (
                       <tr id={modelAnchor(d)}>
                         <td>{url ? <a href={url}>{d.model}</a> : d.model}{f && <span class="cls">{f.name}</span>}</td>
-                        {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} />)}
+                        {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} cls={d.cls} />)}
                         <td class="match">{trustOf(d)}</td>
                       </tr>
                     );

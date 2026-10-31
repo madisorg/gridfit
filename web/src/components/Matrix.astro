@@ -1,26 +1,15 @@
 ---
-// The register matrix: one fixed cell per parsed list, always in the same order (AT BE CZ EE NL PL SE).
-// Filled = listed; outlined + * = listed with restrictions or time-limited; amber outline + ! = expired, date
-// passed or "Nein"; faint = the list covers the class but no model matched (never "no"); dotted green = the
-// country has no listing for this class, nothing to check; dotted amber = no list but a rule applies; struck
-// = not allowed; faint + ? = not confirmed. Shape first, colour second.
-import { COUNTRIES, REGS, META, SNAP_DATE } from "../lib/registers";
-import { GRID_WORD, type GridState } from "../lib/devices";
-const { cells, titled = true } = Astro.props as { cells: Record<string, GridState | string>; titled?: boolean };
-const pick = (v: string) => COUNTRIES.filter((k) => cells[k] === v);
-const on = pick("listed"), part = pick("restricted"), exp = pick("expired"), ref = pick("refused"), free = pick("free"), rule = pick("rule"), ban = pick("banned"), unk = pick("unknown");
-const none = COUNTRIES.filter((k) => !cells[k]);
-const label = [on.length && `Listed in ${on.join(", ")}`, part.length && `with restrictions in ${part.join(", ")}`,
-  exp.length && `expired in ${exp.join(", ")}`, ref.length && `not accepted in ${ref.join(", ")}`, none.length && `not found in ${none.join(", ")}`,
-  free.length && `no listing needed in ${free.join(", ")}`, rule.length && `no list but a rule in ${rule.join(", ")}`,
-  ban.length && `not allowed in ${ban.join(", ")}`, unk.length && `not confirmed for ${unk.join(", ")}`].filter(Boolean).join("; ");
-const SUFFIX: Record<string, string> = { restricted: "*", expired: "!", refused: "×", unknown: "?" };
-const word = (k: string) => `${k}: ${GRID_WORD[(cells[k] ?? "") as GridState] ?? GRID_WORD[""]}`;
+// The register matrix: one Cell per parsed list, always in the same order (AT BE CZ EE NL PL SE).
+import Cell from "./Cell.astro";
+import { COUNTRIES, type Entry } from "../lib/registers";
+import { answerOf, type GridState } from "../lib/devices";
+const { cells, entries = {}, cls, rich = false } = Astro.props as
+  { cells: Record<string, GridState | string>; entries?: Record<string, Entry[]>; cls?: string; rich?: boolean };
+const yes = COUNTRIES.filter((k) => answerOf(cells[k] as GridState) !== "none" && answerOf(cells[k] as GridState) !== "no");
+const no = COUNTRIES.filter((k) => answerOf(cells[k] as GridState) === "no");
+const label = [yes.length && `fit in ${yes.join(", ")}`, no.length && `not fit in ${no.join(", ")}`,
+  COUNTRIES.length - yes.length - no.length > 0 && `nothing known for the rest`].filter(Boolean).join("; ") || "nothing known";
 ---
-<span class="mx" role="img" aria-label={label}>
-  {COUNTRIES.map((k) => (
-    <span class={cells[k] || "no"} title={titled ? `${word(k)} — ${REGS[k].name}, list dated ${META[k]?.source_date ?? SNAP_DATE}` : undefined}>
-      {k}{SUFFIX[cells[k] ?? ""] ?? ""}
-    </span>
-  ))}
+<span class="mx" role="group" aria-label={label}>
+  {COUNTRIES.map((k) => <Cell cc={k} state={cells[k] ?? ""} entries={entries[k] ?? []} cls={cls} rich={rich} />)}
 </span>
