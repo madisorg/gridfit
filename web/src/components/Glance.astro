@@ -5,11 +5,13 @@ import Status from "./Status.astro";
 import Matrix from "./Matrix.astro";
 import { COUNTRIES } from "../lib/registers";
 import { LOCAL_WORD, type LocalState, type GridState } from "../lib/devices";
-const { local, routes = [], cells, entries = {}, cls, seen, listDate } = Astro.props as
-  { local: LocalState; routes?: string[]; cells: Record<string, GridState>; entries?: Record<string, any[]>; cls?: string; seen: string; listDate?: string };
+import type { Release } from "../lib/evidence";
+const { local, routes = [], cells, entries = {}, cls, seen, listDate, releases = [] } = Astro.props as
+  { local: LocalState; routes?: string[]; cells: Record<string, GridState>; entries?: Record<string, any[]>; cls?: string; seen: string; listDate?: string; releases?: Release[] };
 const mark = local === "control" ? "write" : local === "read" ? "local" : local === "cloud" ? "cloud" : "none";
 const on = COUNTRIES.filter((k) => cells[k] === "listed" || cells[k] === "restricted");
-const gridWord = on.length ? `fit in ${on.join(", ")}` : "nothing known from the 7 lists read";
+const docCc = [...new Set(releases.flatMap((r) => r.countries))].filter((c) => !COUNTRIES.includes(c));
+const gridWord = (on.length ? `fit in ${on.join(", ")}` : `nothing known from the ${COUNTRIES.length} lists read`) + (docCc.length ? ` · by the maker's document in ${docCc.length} more countries` : "");
 ---
 <div class="glance" role="group" aria-label="At a glance">
   <div><span class="k"><a href="#local">Local</a></span><Status kind={mark} label={LOCAL_WORD[local]} />

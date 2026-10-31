@@ -272,6 +272,43 @@ page carries 5 000 cells without 5 000 tooltips. The country's rule for the clas
 grid view's column head, not in every cell. `GRID_WORD` and the register words stay for the aria-labels and the
 device page's list rows. Colour repeats the shape: filled vs dashed vs outlined vs empty read in greyscale.
 
+## 8d. A country without a list: one answer per model, and the counts add up (2026-10-31)
+
+Madis, after the first evening with the filters: "many problems … a product that actually is free of rookie mistakes".
+Two rules came out of the walkthrough, and the grid view is built on them now.
+
+**Every filter is a partition.** The "Any … (N)" count equals the sum of its options, always, because a missing value is
+an option of its own — *Phases not specified*, *Power not specified*, *MPPT not collected* — and a value the class cannot
+have is named, not blank: *No MPPT: battery, AC inverter or wallbox*. The overlapping options went (Local "read or control"
+⊇ "control"; "Other lists: 1 or more" ⊇ "3 or more"; the Smart home select that mixed Home Assistant and evcc): Local,
+Home Assistant and evcc are three selects of five disjoint routes each, Other lists is none / 1 / 2 / 3 or more. The logic
+lives once, in `web/src/lib/grid-filter.js`, imported by the page and by `web/test/facets.mjs`, which proves the sums over
+the built index in fifteen states (`npm test`). An option that would leave nothing is hidden, so the 47 wallbox-only brands
+no longer sit as "(0)" in the inverter view.
+
+**One status per model and country.** The status group used to count "any cell with that status" over the seven lists,
+so its counts overlapped and in Spain — no list — every model was "Not on the list". Now a model has exactly one status
+in each chosen country, and the group filters by the best of them (or the worst, with "in every chosen country"). In a
+country whose list we read: on the list · with a condition · refused or expired · not on the list. In a country without a
+list, or whose list is not read, in this order:
+
+| answer | cell | from |
+|---|---|---|
+| fit by the maker's document | ✓ dashed (`--reg`) | `data/evidence/<brand>.yaml`: the maker's released-countries document names the country |
+| over the type-A limit | **B**, outlined, muted | the country profile's `type_a_max_kw` (Spain: 100 kW, RD 647/2020 art. 8) and the model's kVA |
+| accepted on other EU lists | ○ dotted, muted | a positive entry on at least one list read; the hover names them |
+| nothing known | empty | its only listings are expired or refused |
+
+plus *not fit* (a banned class), *nothing to check* (—) and *not confirmed* (?). Words, not percentages; the hover says
+why ("accepted on 5 other EU lists (AT, EE, NL, PL, SE) — nothing checked here; Spain has no list: the grid operator
+checks the maker's certificate"). The device pages group the 36 other countries by the same answer, with the reason and the
+document under each group (`GridBlock.astro`), so a model page can justify what the grid cell only states. The status group
+moved to the top of the filters, under the countries, because status is the question. The "Smart home" column head is
+the two words, nothing else (Madis: the icons wrapped and looked messy); the icons stay in the cells and the legend.
+
+A side effect of the walkthrough: the family join re-normalised model codes locally ("3.0" kept its zero, the parser
+drops it), so 400 models that belong to a family had pages of their own; `data.ts` now joins by the parser's `norm`.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components
@@ -466,3 +503,20 @@ MPPT, so that filter and column go. The HA/evcc link under the country question 
 24 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. One
 finding on the way: an `<option>` without a `value` takes its text as value, so the count in the text broke the brand
 filter — every option now has an explicit value.
+
+## 24. Measured, 2026-10-31 — the user's walk, counts that add up, a country without a list
+
+Madis's brief for the evening: walk the site as a user and do not stop before it is a viable product; three named faults
+(the counts, Spain, the small things). Fifteen routes ([`routes-toode.json`](docs/moodud/routes-toode.json): the home page,
+`/grid/es/` open and with "fit by the maker's document" ticked, `/grid/ee/`, `/grid/?c=AT,EE,ES&every=1&st=YCD`, the wallbox
+view, `/grid/ee/?mppt=0`, the Kostal PLENTICORE family page at the grid block and at "the other 36 countries", the Elecod
+Monet-100AC model page at the top and at the same block, the Kostal brand page, How we know, Changes, 404) × 3440/390 ×
+light/dark, three rounds, the last on the final build with the evidence layer and the three new datasheet brands:
+[`toode.json`](docs/moodud/toode.json), 60 pictures, 0 console errors, 0 failed requests, 0 px overflow, 0 texts under 12 px
+(smallest 13 px), 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px of 1 596 (round 2 found one: the model search box in the filters was 21 px tall on a phone — it had no rule of its own, the selects had; now 44 px like them). Proved by script, not by eye:
+`web/test/facets.mjs` over the built index — 796 checks in fifteen filter states, 0 failures: every "Any" equals the sum of
+its options, every category has an option, choosing an option leaves exactly its count, every cell has a legend word. Two
+findings by eye between the rounds as well: the sidebar's status counts floated away from a wrapped label (now inline after the
+words), and a device page listed the same Kostal document once per family (now once, naming the families). Spain after the
+round: 13 892 inverters, 245 fit by the maker's document, 2 174 over the type-A limit, 10 977 accepted on other EU lists,
+496 nothing known.

@@ -1,0 +1,191 @@
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+brand: Sungrow
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: product-certification-country-code-overview-europe-v3.5
+  title: Product Certification and Country Code Overview (Europe)
+  url: https://info-support.sungrowpower.com/application/pdf/2025/04/21/Product%20Certification%20and%20Country%20Code%20Overview%20(Europe).pdf
+  version: Version 3.5, 17.04.2025 (71 pages)
+  seen: '2026-10-31'
+  kind: country-release
+  standards: []
+  note: 'The coloured status glyphs (available / restricted / not available) are images and are lost in text extraction; only the CERTIFICATION,
+    COUNTRY CODE and WHITELISTING text columns were transcribed below. "NA" in the certification column is the document''s own text.
+    Sections exist for: SHRS, SHRT, SH5-12T, SH15-25T, SGRS (+ SG8.0-10RS-V13 sub-table), SGRT, SG33/40/50CX, SG25-50CX-P2, SG110CX,
+    SG125CX-P2, SG150CX, PowerStack AC ST225kWh-110kW-2h, batteries SBR064-256 / SBR050 / SBS050 / SBH100-400, AC-chargers AC007E-01
+    / AC011E-01 / AC22E-01, optimizer SP600S. Residential families transcribed; CX/commercial sections only summarised in notes.'
+  families:
+  - name: SHRS (single-phase hybrid SH3.0/3.6/4.0/5.0/6.0RS)
+    match: ^SH(3\.0|3\.6|4\.0|5\.0|6\.0)RS(-20)?$
+    countries:
+    - BE
+    - BG
+    - CY
+    - EE
+    - ES
+    - FR
+    - GB
+    - GE
+    - GR
+    - IE
+    - IT
+    - LT
+    - LV
+    - MD
+    - ME
+    - MK
+    - NI
+    - NL
+    - PT
+    - RO
+    - RS
+    - UA
+    note: The document's availability glyph per hardware version is an image GridFit could not read; the countries are those whose certification
+      column is not NA — check the document for your hardware version.
+  - name: SHRT (three-phase hybrid SH5.0/6.0/8.0/10RT, incl. -20)
+    match: ^SH(5\.0|6\.0|8\.0|10)RT(-20|-V112)?$
+    countries:
+    - AL
+    - AT
+    - BA
+    - BE
+    - BG
+    - CH
+    - CY
+    - CZ
+    - DE
+    - DK
+    - EE
+    - ES
+    - FI
+    - GE
+    - GR
+    - HR
+    - HU
+    - IE
+    - IT
+    - LT
+    - LU
+    - LV
+    - MD
+    - ME
+    - MK
+    - NL
+    - 'NO'
+    - PL
+    - PT
+    - RO
+    - RS
+    - SE
+    - SI
+    - TR
+    - UA
+    note: The document's availability glyph per hardware version is an image GridFit could not read; the countries are those whose certification
+      column is not NA — check the document for your hardware version.
+  - name: SH5-12T (three-phase hybrid SH5/6/8/10/12T)
+    match: ^SH(5|6|8|10|12)T$
+    countries:
+    - AL
+    - AT
+    - BA
+    - BE
+    - BG
+    - CH
+    - CZ
+    - DE
+    - EE
+    - ES
+    - FI
+    - FR
+    - GR
+    - HR
+    - HU
+    - IE
+    - IT
+    - LT
+    - LU
+    - LV
+    - ME
+    - MK
+    - NL
+    - 'NO'
+    - PL
+    - PT
+    - RO
+    - RS
+    - SE
+    - SI
+    - TR
+    - UA
+    note: The document's availability glyph per hardware version is an image GridFit could not read; the countries are those whose certification
+      column is not NA — check the document for your hardware version.
+  - name: SH15-25T (three-phase hybrid SH15/20/25T)
+    match: ^SH(15|20|25)T$
+    countries:
+    - AT
+    - BE
+    - CH
+    - CZ
+    - DE
+    - EE
+    - ES
+    - FI
+    - FR
+    - IT
+    - LT
+    - LV
+    - NL
+    - 'NO'
+    - PL
+    - PT
+    - SE
+    note: Other countries in this section (Albania, Armenia, Bosnia, Bulgaria, Croatia, Cyprus, Georgia, Greece, Hungary, Ireland, Israel,
+      Luxemburg, Malta, Moldova, Montenegro, North Macedonia, Romania, Serbia, Slovakia, Slovenia, Turkey, Ukraine) read as in SHRT.
+      The document's availability glyph per hardware version is an image GridFit could not read; the countries are those whose certification
+      column is not NA — check the document for your hardware version.
+  - name: SGRS (single-phase string SG2.0–6.0RS; SG2.0/2.5RS-S)
+    match: ^SG(2\.0|2\.5|3\.0|3\.6|4\.0|5\.0|6\.0)RS(-S)?$
+    countries:
+    - BE
+    - CZ
+    - DK
+    - EE
+    - ES
+    - FR
+    - GB
+    - HU
+    - IT
+    - NI
+    - NL
+    - PL
+    - PT
+    note: 'Separate sub-table ''For SG8.0-10RS-V13 (big SGRS specially for Armenia and Spanish market)'': Armenia EN50549-1 | Manual
+      settings; Spain UNE217002, NTS SEPE 2.1, RD631,413,1699 | Spain | UFD. The document''s availability glyph per hardware version
+      is an image GridFit could not read; the countries are those whose certification column is not NA — check the document for your
+      hardware version.'
+  - name: SGRT (three-phase string SG3.0–20RT)
+    match: ^SG(3\.0|4\.0|5\.0|6\.0|8\.0|10|10\.0|12|12\.0|15|15\.0|17|17\.0|20|20\.0)RT(-P2)?$
+    countries:
+    - BE
+    - CH
+    - CZ
+    - DE
+    - DK
+    - EE
+    - ES
+    - FI
+    - FR
+    - GB
+    - IT
+    - NL
+    - 'NO'
+    - PL
+    - PT
+    - SE
+    note: 'Austria absent from the SGRT list. Israel footnote: SG15RT-P2-V11 solely for Israel. The document''s availability glyph per
+      hardware version is an image GridFit could not read; the countries are those whose certification column is not NA — check the
+      document for your hardware version.'

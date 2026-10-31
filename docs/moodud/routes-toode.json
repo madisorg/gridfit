@@ -1,0 +1,17 @@
+[
+ {"name": "avaleht", "url": "", "wait": 1.5},
+ {"name": "grid-es", "url": "grid/es/", "wait": 3.0},
+ {"name": "grid-es-doc", "url": "grid/es/?st=D", "wait": 3.0},
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 3.0},
+ {"name": "grid-at-ee-es-every", "url": "grid/?c=AT,EE,ES&every=1&st=YCD", "wait": 3.0},
+ {"name": "grid-ev", "url": "grid/?g=ev", "wait": 3.0},
+ {"name": "grid-mppt-none", "url": "grid/ee/?mppt=0", "wait": 3.0},
+ {"name": "pere-kostal-grid", "url": "kostal/plenticore-hybrid/#grid", "wait": 1.5},
+ {"name": "pere-kostal-teised", "url": "kostal/plenticore-hybrid/", "js": "document.querySelector('.gb-others').scrollIntoView()", "wait": 1.5},
+ {"name": "mudel-elecod", "url": "elecod/model/monet-100ac/", "wait": 1.5},
+ {"name": "mudel-elecod-teised", "url": "elecod/model/monet-100ac/", "js": "document.querySelector('.gb-others').scrollIntoView()", "wait": 1.5},
+ {"name": "brand-kostal", "url": "kostal/", "wait": 1.5},
+ {"name": "kuidas", "url": "about/", "wait": 1.5},
+ {"name": "muudatused", "url": "changes/", "wait": 1.5},
+ {"name": "404", "url": "404.html", "wait": 1.0}
+]

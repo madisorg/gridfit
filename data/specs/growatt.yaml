@@ -1,0 +1,1555 @@
+brand: Growatt
+maker_site: https://en.growatt.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: mod-3000-9000tl3-x
+  url: https://en.growatt.com/upload/file/MOD%203000~9000TL3-X%202026.5%20Update.pdf
+  file: MOD_3000_9000TL3-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-10-15ktl3-x
+  url: https://en.growatt.com/upload/file/MOD%2010~15KTL3-X%202026.5%20Update.pdf
+  file: MOD_10_15KTL3-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-3000-9000tl3-x3
+  url: https://en.growatt.com/upload/file/MOD%203000-9000TL3-X3%202026.5%20Update.pdf
+  file: MOD_3000-9000TL3-X3_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-10-15ktl3-x3
+  url: https://en.growatt.com/upload/file/MOD%2010-15KTL3-X3%202026.5%20Update.pdf
+  file: MOD_10-15KTL3-X3_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-17-33ktl3-x3
+  url: https://en.growatt.com/upload/file/MOD%2017-33KTL3-X3%202026.5%20Update.pdf
+  file: MOD_17-33KTL3-X3_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-3000-6000tl3-x2-pro
+  url: https://en.growatt.com/upload/file/MOD%203000~6000TL3-X2%20Pro%202026.5%20Update.pdf
+  file: MOD_3000_6000TL3-X2_Pro_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-7-15ktl3-x2-pro
+  url: https://en.growatt.com/upload/file/MOD_7-15KTL3-X2_Pro_Datasheet_EN_202610.pdf
+  file: MOD_7-15KTL3-X2_Pro_Datasheet_EN_202610.pdf
+  version: 2026-10
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mod-3000-10000tl3-xh
+  url: https://en.growatt.com/upload/file/MOD_3000-10000TL3-XH_Datasheet_202209.pdf
+  file: MOD_3000-10000TL3-XH_Datasheet_202209.pdf
+  version: 2022-09
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mid-15-25ktl3-x
+  url: https://en.growatt.com/upload/file/MID%2015~25KTL3-X%202026.5%20Update.pdf
+  file: MID_15_25KTL3-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mid-25-40ktl3-x-eu
+  url: https://en.growatt.com/upload/file/Growatt%20MID%2025~40KTL3-X_EU%202026.5%20Update.pdf
+  file: Growatt_MID_25_40KTL3-X_EU_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mid-17-30ktl3-x2
+  url: https://en.growatt.com/upload/file/MID%2017~30KTL3-X2%202026.5%20Update.pdf
+  file: MID_17_30KTL3-X2_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mid-30-50ktl3-x2
+  url: https://en.growatt.com/upload/file/MID%2030~50KTL3-X2%202026.5%20Update.pdf
+  file: MID_30_50KTL3-X2_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: min-2500-6000-tl-x
+  url: https://en.growatt.com/upload/file/MIN%202500~6000%20TL-X%202026.5%20Update.pdf
+  file: MIN_2500_6000_TL-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: min-7000-10000-tl-x
+  url: https://en.growatt.com/upload/file/MIN%207000~10000%20TL-X%202026.5%20Update.pdf
+  file: MIN_7000_10000_TL-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: min-4200-6000-tl-x2-pro
+  url: https://en.growatt.com/upload/file/MIN%204200~6000%20TL-X2%20%28Pro%29%202026.5%20Update.pdf
+  file: MIN_4200_6000_TL-X2_Pro_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: min-7000-10000-tl-x2
+  url: https://en.growatt.com/upload/file/MIN%207000~10000%20TL-X2%202026.5%20Update.pdf
+  file: MIN_7000_10000_TL-X2_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: min-2500-6000-tl-xh
+  url: https://en.growatt.com/upload/file/MIN_2500~6000_TL-XH_Datasheet_202208.pdf
+  file: MIN_2500_6000_TL-XH_Datasheet_202208.pdf
+  version: 2022-08
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mic-750-3300tl-x
+  url: https://en.growatt.com/upload/file/MIC%20750~3300TL-X%202026.5%20Update.pdf
+  file: MIC_750_3300TL-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: mic-600-3300tl-x2
+  url: https://en.growatt.com/upload/file/MIC%20600~3300TL-X2%202026.5%20Update.pdf
+  file: MIC_600_3300TL-X2_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: sph-4000-10000tl3-bh-up
+  url: https://en.growatt.com/upload/file/SPH_4000-10000TL3_BH-UP_Datasheet_EN.pdf
+  file: SPH_4000-10000TL3_BH-UP_Datasheet_EN.pdf
+  version: ''
+  note: the sheet carries no version or date
+  seen: '2026-10-31'
+- id: spa-4000-10000tl3-bh-up
+  url: https://en.growatt.com/upload/file/SPA_4000-10000TL3_BH-UP_Datasheet_202208.pdf
+  file: SPA_4000-10000TL3_BH-UP_Datasheet_202208.pdf
+  version: 2022-08
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: sph-3000-6000tl-hub
+  url: https://en.growatt.com/upload/file/SPH_3000-6000TL-HUB_Datasheet_EN_202408.pdf
+  file: SPH_3000-6000TL-HUB_Datasheet_EN_202408.pdf
+  version: 2024-08
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: spa-3000-6000tl-aub
+  url: https://en.growatt.com/upload/file/SPA_3000-6000TL-AUB_Datasheet_EN_202408.pdf
+  file: SPA_3000-6000TL-AUB_Datasheet_EN_202408.pdf
+  version: 2024-08
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: sph-10000tl-hu
+  url: https://en.growatt.com/upload/file/SPH_10000TL-HU_Datasheet_EN_202505.pdf
+  file: SPH_10000TL-HU_Datasheet_EN_202505.pdf
+  version: 2025-05
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: wit-29-9-50k-xhu
+  url: https://en.growatt.com/upload/file/WIT_29.9~50K-XHU_Datasheet_EN_202410.pdf
+  file: WIT_29.9_50K-XHU_Datasheet_EN_202410.pdf
+  version: 2024-10
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: neo-1200-2000m-x
+  url: https://en.growatt.com/upload/file/NEO%201200~2000M-X%202026.5%20Update.pdf
+  file: NEO_1200_2000M-X_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: neo-1600-2500m-x2-wifi
+  url: https://en.growatt.com/upload/file/NEO%201600~2500M-X2-WiFi%202026.5%20Update.pdf
+  file: NEO_1600_2500M-X2-WiFi_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: max-50-80ktl3-lv
+  url: https://en.growatt.com/upload/file/MAX%2050~80KTL3%20LV%202026.5%20Update.pdf
+  file: MAX_50_80KTL3_LV_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: max100-125ktl3-x2-lv
+  url: https://en.growatt.com/upload/file/MAX100~125KTL3-X2%20LV%202026.5%20Update.pdf
+  file: MAX100_125KTL3-X2_LV_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: max100-125ktl3-x-lv
+  url: https://en.growatt.com/upload/file/MAX100~125KTL3-X%20LV%202026.5%20Update.pdf
+  file: MAX100_125KTL3-X_LV_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+- id: max-150ktl3-x-lv
+  url: https://en.growatt.com/upload/file/MAX%20150KTL3-X%20LV%202026.5%20Update.pdf
+  file: MAX_150KTL3-X_LV_2026.5_Update.pdf
+  version: '2026.5'
+  note: version from the file name ('2026.5 Update' or the YYYYMM suffix)
+  seen: '2026-10-31'
+models:
+- code: MOD 3000TL3-X
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 5.0
+  phases: 3
+  pv_kw: 4.5
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?3000TL3\-X$
+- code: MOD 4000TL3-X
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.7
+  phases: 3
+  pv_kw: 6.0
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?4000TL3\-X$
+- code: MOD 5000TL3-X
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.3
+  phases: 3
+  pv_kw: 7.5
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?5000TL3\-X$
+- code: MOD 6000TL3-X
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: 9.0
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?6000TL3\-X$
+- code: MOD 7000TL3-X
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 11.7
+  phases: 3
+  pv_kw: 10.5
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?7000TL3\-X$
+- code: MOD 8000TL3-X
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.3
+  phases: 3
+  pv_kw: 12.0
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?8000TL3\-X$
+- code: MOD 9000TL3-X
+  mppt: 2
+  ac_kw: 9.0
+  ac_kva: 9.9
+  ac_a: 15.0
+  phases: 3
+  pv_kw: 13.5
+  source: mod-3000-9000tl3-x
+  match: ^(MOD)?9000TL3\-X$
+- code: MOD 10KTL3-X
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.7
+  phases: 3
+  pv_kw: 15.0
+  source: mod-10-15ktl3-x
+  match: ^(MOD)?(10K|10000)TL3\-X$
+- code: MOD 11KTL3-X
+  mppt: 2
+  ac_kw: 11.0
+  ac_kva: 12.1
+  ac_a: 18.3
+  phases: 3
+  pv_kw: 16.5
+  source: mod-10-15ktl3-x
+  match: ^(MOD)?(11K|11000)TL3\-X$
+- code: MOD 12KTL3-X
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 20.0
+  phases: 3
+  pv_kw: 18.0
+  source: mod-10-15ktl3-x
+  match: ^(MOD)?(12K|12000)TL3\-X$
+- code: MOD 13KTL3-X
+  mppt: 2
+  ac_kw: 13.0
+  ac_kva: 14.3
+  ac_a: 21.7
+  phases: 3
+  pv_kw: 19.5
+  source: mod-10-15ktl3-x
+  match: ^(MOD)?(13K|13000)TL3\-X$
+- code: MOD 15KTL3-X
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 25.0
+  phases: 3
+  pv_kw: 22.5
+  source: mod-10-15ktl3-x
+  match: ^(MOD)?(15K|15000)TL3\-X$
+- code: MOD 3000TL3-X3
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 5.0
+  phases: 3
+  pv_kw: 4.5
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?3000TL3\-X3$
+- code: MOD 4000TL3-X3
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.7
+  phases: 3
+  pv_kw: 6.0
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?4000TL3\-X3$
+- code: MOD 5000TL3-X3
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.3
+  phases: 3
+  pv_kw: 7.5
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?5000TL3\-X3$
+- code: MOD 6000TL3-X3
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: 9.0
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?6000TL3\-X3$
+- code: MOD 7000TL3-X3
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 11.7
+  phases: 3
+  pv_kw: 10.5
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?7000TL3\-X3$
+- code: MOD 8000TL3-X3
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.3
+  phases: 3
+  pv_kw: 12.0
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?8000TL3\-X3$
+- code: MOD 9000TL3-X3
+  mppt: 2
+  ac_kw: 9.0
+  ac_kva: 9.9
+  ac_a: 15.0
+  phases: 3
+  pv_kw: 13.5
+  source: mod-3000-9000tl3-x3
+  match: ^(MOD)?9000TL3\-X3$
+- code: MOD 10KTL3-X3
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.7
+  phases: 3
+  pv_kw: 15.0
+  source: mod-10-15ktl3-x3
+  match: ^(MOD)?(10K|10000)TL3\-X3$
+- code: MOD 11KTL3-X3
+  mppt: 2
+  ac_kw: 11.0
+  ac_kva: 12.1
+  ac_a: 18.3
+  phases: 3
+  pv_kw: 16.5
+  source: mod-10-15ktl3-x3
+  match: ^(MOD)?(11K|11000)TL3\-X3$
+- code: MOD 12KTL3-X3
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 20.0
+  phases: 3
+  pv_kw: 18.0
+  source: mod-10-15ktl3-x3
+  match: ^(MOD)?(12K|12000)TL3\-X3$
+- code: MOD 13KTL3-X3
+  mppt: 2
+  ac_kw: 13.0
+  ac_kva: 14.3
+  ac_a: 21.7
+  phases: 3
+  pv_kw: 19.5
+  source: mod-10-15ktl3-x3
+  match: ^(MOD)?(13K|13000)TL3\-X3$
+- code: MOD 15KTL3-X3
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 25.0
+  phases: 3
+  pv_kw: 22.5
+  source: mod-10-15ktl3-x3
+  match: ^(MOD)?(15K|15000)TL3\-X3$
+- code: MOD 17KTL3-X3
+  mppt: 2
+  ac_kw: 17.0
+  ac_kva: 18.7
+  ac_a: 28.3
+  phases: 3
+  pv_kw: 25.5
+  source: mod-17-33ktl3-x3
+  match: ^(MOD)?(17K|17000)TL3\-X3$
+- code: MOD 20KTL3-X3
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 33.3
+  phases: 3
+  pv_kw: 30.0
+  source: mod-17-33ktl3-x3
+  match: ^(MOD)?(20K|20000)TL3\-X3$
+- code: MOD 25KTL3-X3
+  mppt: 2
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 41.7
+  phases: 3
+  pv_kw: 37.5
+  source: mod-17-33ktl3-x3
+  match: ^(MOD)?(25K|25000)TL3\-X3$
+- code: MOD 30KTL3-X3
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 50.0
+  phases: 3
+  pv_kw: 45.0
+  source: mod-17-33ktl3-x3
+  match: ^(MOD)?(30K|30000)TL3\-X3$
+- code: MOD 33KTL3-X3
+  mppt: 3
+  ac_kw: 33.0
+  ac_kva: 36.3
+  ac_a: 55.0
+  phases: 3
+  pv_kw: 50.0
+  source: mod-17-33ktl3-x3
+  match: ^(MOD)?(33K|33000)TL3\-X3$
+- code: MOD 3000TL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 5.0
+  phases: 3
+  pv_kw: 4.5
+  source: mod-3000-6000tl3-x2-pro
+  match: ^(MOD)?3000TL3\-X2(\(PRO\))?$
+- code: MOD 4000TL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.7
+  phases: 3
+  pv_kw: 6.0
+  source: mod-3000-6000tl3-x2-pro
+  match: ^(MOD)?4000TL3\-X2(\(PRO\))?$
+- code: MOD 5000TL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.3
+  phases: 3
+  pv_kw: 7.5
+  source: mod-3000-6000tl3-x2-pro
+  match: ^(MOD)?5000TL3\-X2(\(PRO\))?$
+- code: MOD 6000TL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: 9.0
+  source: mod-3000-6000tl3-x2-pro
+  match: ^(MOD)?6000TL3\-X2(\(PRO\))?$
+- code: MOD 7KTL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 11.7
+  phases: 3
+  pv_kw: 10.5
+  source: mod-7-15ktl3-x2-pro
+  match: ^(MOD)?(7K|7000)TL3\-X2(\(PRO\))?$
+- code: MOD 8KTL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.3
+  phases: 3
+  pv_kw: 12.0
+  source: mod-7-15ktl3-x2-pro
+  match: ^(MOD)?(8K|8000)TL3\-X2(\(PRO\))?$
+- code: MOD 10KTL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: 15.0
+  source: mod-7-15ktl3-x2-pro
+  match: ^(MOD)?(10K|10000)TL3\-X2(\(PRO\))?$
+- code: MOD 12KTL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 20.0
+  phases: 3
+  pv_kw: 18.0
+  source: mod-7-15ktl3-x2-pro
+  match: ^(MOD)?(12K|12000)TL3\-X2(\(PRO\))?$
+- code: MOD 15KTL3-X2 (Pro)
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 25.0
+  phases: 3
+  pv_kw: 22.5
+  source: mod-7-15ktl3-x2-pro
+  match: ^(MOD)?(15K|15000)TL3\-X2(\(PRO\))?$
+- code: MOD 3000TL3-XH
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 5.0
+  phases: 3
+  pv_kw: 6.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?3000TL3\-XH$
+- code: MOD 4000TL3-XH
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.7
+  phases: 3
+  pv_kw: 8.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?4000TL3\-XH$
+- code: MOD 5000TL3-XH
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.3
+  phases: 3
+  pv_kw: 10.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?5000TL3\-XH$
+- code: MOD 6000TL3-XH
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: 12.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?6000TL3\-XH$
+- code: MOD 7000TL3-XH
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.7
+  ac_a: 11.7
+  phases: 3
+  pv_kw: 14.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?7000TL3\-XH$
+- code: MOD 8000TL3-XH
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.3
+  phases: 3
+  pv_kw: 16.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?8000TL3\-XH$
+- code: MOD 9000TL3-XH
+  mppt: 2
+  ac_kw: 9.0
+  ac_kva: 9.9
+  ac_a: 15.0
+  phases: 3
+  pv_kw: 18.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?9000TL3\-XH$
+- code: MOD 10KTL3-XH
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.7
+  phases: 3
+  pv_kw: 20.0
+  source: mod-3000-10000tl3-xh
+  match: ^(MOD)?(10K|10000)TL3\-XH$
+- code: MID 15KTL3-X
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.6
+  ac_a: 24.2
+  phases: 3
+  pv_kw: 22.5
+  source: mid-15-25ktl3-x
+- code: MID 17KTL3-X
+  mppt: 2
+  ac_kw: 17.0
+  ac_kva: 18.8
+  ac_a: 27.4
+  phases: 3
+  pv_kw: 25.5
+  source: mid-15-25ktl3-x
+- code: MID 20KTL3-X
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: 30.0
+  source: mid-15-25ktl3-x
+- code: MID 22KTL3-X
+  mppt: 2
+  ac_kw: 22.0
+  ac_kva: 24.4
+  ac_a: 35.5
+  phases: 3
+  pv_kw: 33.0
+  source: mid-15-25ktl3-x
+- code: MID 25KTL3-X
+  mppt: 2
+  ac_kw: 25.0
+  ac_kva: 27.7
+  ac_a: 40.2
+  phases: 3
+  pv_kw: 37.5
+  source: mid-15-25ktl3-x
+- code: MID 25KTL3-X1
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 27.7
+  ac_a: 41.9
+  phases: 3
+  pv_kw: 37.5
+  source: mid-25-40ktl3-x-eu
+- code: MID 30KTL3-X
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 33.3
+  ac_a: 50.5
+  phases: 3
+  pv_kw: 45.0
+  source: mid-25-40ktl3-x-eu
+- code: MID 33KTL3-X
+  mppt: 3
+  ac_kw: 33.0
+  ac_kva: 36.6
+  ac_a: 55.5
+  phases: 3
+  pv_kw: 49.5
+  source: mid-25-40ktl3-x-eu
+- code: MID 36KTL3-X
+  mppt: 4
+  ac_kw: 36.0
+  ac_kva: 39.6
+  ac_a: 60.0
+  phases: 3
+  pv_kw: 54.0
+  source: mid-25-40ktl3-x-eu
+- code: MID 40KTL3-X
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 66.6
+  phases: 3
+  pv_kw: 60.0
+  source: mid-25-40ktl3-x-eu
+- code: MID 17KTL3-X2
+  mppt: 2
+  ac_kw: 17.0
+  ac_kva: 18.8
+  ac_a: 28.6
+  phases: 3
+  pv_kw: 25.5
+  source: mid-17-30ktl3-x2
+- code: MID 20KTL3-X2
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 33.6
+  phases: 3
+  pv_kw: 30.0
+  source: mid-17-30ktl3-x2
+- code: MID 25KTL3-X2
+  mppt: 2
+  ac_kw: 25.0
+  ac_kva: 27.7
+  ac_a: 42.0
+  phases: 3
+  pv_kw: 37.5
+  source: mid-17-30ktl3-x2
+- code: MID 30KTL3-X2
+  mppt: 2
+  ac_kw: 30.0
+  ac_kva: 33.3
+  ac_a: 50.5
+  phases: 3
+  pv_kw: 45.0
+  source: mid-17-30ktl3-x2
+- code: MID 33KTL3-X2
+  mppt: 3
+  ac_kw: 33.0
+  ac_kva: 36.6
+  ac_a: 55.5
+  phases: 3
+  pv_kw: 49.5
+  source: mid-30-50ktl3-x2
+- code: MID 36KTL3-X2
+  mppt: 3
+  ac_kw: 36.0
+  ac_kva: 40.0
+  ac_a: 60.6
+  phases: 3
+  pv_kw: 54.0
+  source: mid-30-50ktl3-x2
+- code: MID 40KTL3-X2
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.4
+  ac_a: 67.3
+  phases: 3
+  pv_kw: 60.0
+  source: mid-30-50ktl3-x2
+- code: MID 50KTL3-X2
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.5
+  ac_a: 84.1
+  phases: 3
+  pv_kw: 75.0
+  source: mid-30-50ktl3-x2
+- code: MIN 2500TL-X
+  mppt: 2
+  ac_kw: 2.5
+  ac_kva: 2.5
+  ac_a: 11.3
+  phases: 1
+  pv_kw: 3.5
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?2500TL\-X$
+- code: MIN 3000TL-X
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 13.6
+  phases: 1
+  pv_kw: 4.2
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?3000TL\-X$
+- code: MIN 3600TL-X
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.6
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 5.04
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?3600TL\-X$
+- code: MIN 4200TL-X
+  mppt: 2
+  ac_kw: 4.2
+  ac_kva: 4.2
+  ac_a: 19.0
+  phases: 1
+  pv_kw: 5.88
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?4200TL\-X$
+- code: MIN 4600TL-X
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.9
+  phases: 1
+  pv_kw: 6.44
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?4600TL\-X$
+- code: MIN 5000TL-X
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 22.7
+  phases: 1
+  pv_kw: 7.0
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?5000TL\-X$
+- code: MIN 6000TL-X
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.2
+  phases: 1
+  pv_kw: 8.1
+  source: min-2500-6000-tl-x
+  match: ^(MIN)?6000TL\-X$
+- code: MIN 7000TL-X
+  mppt: 3
+  ac_kw: 7.0
+  ac_kva: 7.0
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 12.0
+  source: min-7000-10000-tl-x
+  match: ^(MIN)?7000TL\-X$
+- code: MIN 8000TL-X
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.0
+  source: min-7000-10000-tl-x
+  match: ^(MIN)?8000TL\-X$
+- code: MIN 9000TL-X
+  mppt: 3
+  ac_kw: 9.0
+  ac_kva: 9.0
+  ac_a: 43.0
+  phases: 1
+  pv_kw: 13.5
+  source: min-7000-10000-tl-x
+  match: ^(MIN)?9000TL\-X$
+- code: MIN 10000TL-X
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 45.5
+  phases: 1
+  pv_kw: 15.0
+  source: min-7000-10000-tl-x
+  match: ^(MIN)?10000TL\-X$
+- code: MIN 4200TL-X2 (Pro)
+  mppt: 2
+  ac_kw: 4.2
+  ac_kva: 4.2
+  ac_a: 19.0
+  phases: 1
+  pv_kw: 6.3
+  source: min-4200-6000-tl-x2-pro
+  match: ^(MIN)?4200TL\-X2(\(PRO\))?$
+- code: MIN 4600TL-X2 (Pro)
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.9
+  phases: 1
+  pv_kw: 6.9
+  source: min-4200-6000-tl-x2-pro
+  match: ^(MIN)?4600TL\-X2(\(PRO\))?$
+- code: MIN 5000TL-X2 (Pro)
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 22.7
+  phases: 1
+  pv_kw: 7.5
+  source: min-4200-6000-tl-x2-pro
+  match: ^(MIN)?5000TL\-X2(\(PRO\))?$
+- code: MIN 6000TL-X2 (Pro)
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.2
+  phases: 1
+  pv_kw: 9.0
+  source: min-4200-6000-tl-x2-pro
+  match: ^(MIN)?6000TL\-X2(\(PRO\))?$
+- code: MIN 7000TL-X2
+  mppt: 3
+  ac_kw: 7.0
+  ac_kva: 7.0
+  ac_a: 33.5
+  phases: 1
+  pv_kw: 12.0
+  source: min-7000-10000-tl-x2
+  match: ^(MIN)?7000TL\-X2$
+- code: MIN 8000TL-X2
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 38.3
+  phases: 1
+  pv_kw: 12.0
+  source: min-7000-10000-tl-x2
+  match: ^(MIN)?8000TL\-X2$
+- code: MIN 9000TL-X2
+  mppt: 3
+  ac_kw: 9.0
+  ac_kva: 9.0
+  ac_a: 43.0
+  phases: 1
+  pv_kw: 13.5
+  source: min-7000-10000-tl-x2
+  match: ^(MIN)?9000TL\-X2$
+- code: MIN 10000TL-X2
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 45.5
+  phases: 1
+  pv_kw: 15.0
+  source: min-7000-10000-tl-x2
+  match: ^(MIN)?10000TL\-X2$
+- code: MIN 2500TL-XH
+  mppt: 2
+  ac_kw: 2.5
+  ac_kva: 2.5
+  ac_a: 11.3
+  phases: 1
+  pv_kw: 5.0
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?2500TL\-XH$
+- code: MIN 3000TL-XH
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 13.6
+  phases: 1
+  pv_kw: 6.0
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?3000TL\-XH$
+- code: MIN 3600TL-XH
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: 3.6
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 7.2
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?3600TL\-XH$
+- code: MIN 4200TL-XH
+  mppt: 2
+  ac_kw: 4.2
+  ac_kva: 4.2
+  ac_a: 19.0
+  phases: 1
+  pv_kw: 8.4
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?4200TL\-XH$
+- code: MIN 4600TL-XH
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.9
+  phases: 1
+  pv_kw: 9.2
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?4600TL\-XH$
+- code: MIN 5000TL-XH
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 22.7
+  phases: 1
+  pv_kw: 10.0
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?5000TL\-XH$
+- code: MIN 6000TL-XH
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.2
+  phases: 1
+  pv_kw: 10.0
+  source: min-2500-6000-tl-xh
+  match: ^(MIN)?6000TL\-XH$
+- code: MIC 750TL-X
+  mppt: 1
+  ac_kw: 0.75
+  ac_kva: 0.75
+  ac_a: 3.6
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?750TL\-X$
+- code: MIC 1000TL-X
+  mppt: 1
+  ac_kw: 1.0
+  ac_kva: 1.0
+  ac_a: 4.8
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?1000TL\-X$
+- code: MIC 1500TL-X
+  mppt: 1
+  ac_kw: 1.5
+  ac_kva: 1.5
+  ac_a: 7.1
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?1500TL\-X$
+- code: MIC 2000TL-X
+  mppt: 1
+  ac_kw: 2.0
+  ac_kva: 2.0
+  ac_a: 9.5
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?2000TL\-X$
+- code: MIC 2500TL-X
+  mppt: 1
+  ac_kw: 2.5
+  ac_kva: 2.5
+  ac_a: 11.9
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?2500TL\-X$
+- code: MIC 3000TL-X
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 14.3
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?3000TL\-X$
+- code: MIC 3300TL-X
+  mppt: 1
+  ac_kw: 3.3
+  ac_kva: 3.3
+  ac_a: 14.3
+  phases: 1
+  pv_kw: null
+  source: mic-750-3300tl-x
+  match: ^(MIC)?3300TL\-X$
+- code: MIC 600TL-X2
+  mppt: 1
+  ac_kw: 0.6
+  ac_kva: 0.6
+  ac_a: 2.9
+  phases: 1
+  pv_kw: 0.9
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?600TL\-X2$
+- code: MIC 750TL-X2
+  mppt: 1
+  ac_kw: 0.75
+  ac_kva: 0.75
+  ac_a: 3.6
+  phases: 1
+  pv_kw: 1.12
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?750TL\-X2$
+- code: MIC 800TL-X2
+  mppt: 1
+  ac_kw: 0.8
+  ac_kva: 0.8
+  ac_a: 3.8
+  phases: 1
+  pv_kw: 1.2
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?800TL\-X2$
+- code: MIC 1000TL-X2
+  mppt: 1
+  ac_kw: 1.0
+  ac_kva: 1.0
+  ac_a: 4.8
+  phases: 1
+  pv_kw: 1.5
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?1000TL\-X2$
+- code: MIC 1500TL-X2
+  mppt: 1
+  ac_kw: 1.5
+  ac_kva: 1.5
+  ac_a: 7.1
+  phases: 1
+  pv_kw: 2.25
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?1500TL\-X2$
+- code: MIC 2000TL-X2
+  mppt: 1
+  ac_kw: 2.0
+  ac_kva: 2.0
+  ac_a: 9.5
+  phases: 1
+  pv_kw: 3.0
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?2000TL\-X2$
+- code: MIC 2500TL-X2
+  mppt: 1
+  ac_kw: 2.5
+  ac_kva: 2.5
+  ac_a: 11.9
+  phases: 1
+  pv_kw: 3.75
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?2500TL\-X2$
+- code: MIC 3000TL-X2
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 14.3
+  phases: 1
+  pv_kw: 4.5
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?3000TL\-X2$
+- code: MIC 3300TL-X2
+  mppt: 1
+  ac_kw: 3.3
+  ac_kva: 3.3
+  ac_a: 14.3
+  phases: 1
+  pv_kw: 4.95
+  source: mic-600-3300tl-x2
+  match: ^(MIC)?3300TL\-X2$
+- code: SPH 4000TL3 BH-UP
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 6.1
+  phases: 3
+  pv_kw: null
+  source: sph-4000-10000tl3-bh-up
+- code: SPH 5000TL3 BH-UP
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 7.6
+  phases: 3
+  pv_kw: null
+  source: sph-4000-10000tl3-bh-up
+- code: SPH 6000TL3 BH-UP
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 9.1
+  phases: 3
+  pv_kw: null
+  source: sph-4000-10000tl3-bh-up
+- code: SPH 7000TL3 BH-UP
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: 7.0
+  ac_a: 10.6
+  phases: 3
+  pv_kw: null
+  source: sph-4000-10000tl3-bh-up
+- code: SPH 8000TL3 BH-UP
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.0
+  ac_a: 12.1
+  phases: 3
+  pv_kw: null
+  source: sph-4000-10000tl3-bh-up
+- code: SPH 10000TL3 BH-UP
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 15.2
+  phases: 3
+  pv_kw: null
+  source: sph-4000-10000tl3-bh-up
+- code: SPA4000TL3BH-UP
+  mppt: 0
+  ac_kw: null
+  ac_kva: 4.0
+  ac_a: 6.1
+  phases: 3
+  pv_kw: null
+  source: spa-4000-10000tl3-bh-up
+- code: SPA5000TL3BH-UP
+  mppt: 0
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: 7.6
+  phases: 3
+  pv_kw: null
+  source: spa-4000-10000tl3-bh-up
+- code: SPA6000TL3BH-UP
+  mppt: 0
+  ac_kw: null
+  ac_kva: 6.0
+  ac_a: 9.1
+  phases: 3
+  pv_kw: null
+  source: spa-4000-10000tl3-bh-up
+- code: SPA7000TL3BH-UP
+  mppt: 0
+  ac_kw: null
+  ac_kva: 7.0
+  ac_a: 10.6
+  phases: 3
+  pv_kw: null
+  source: spa-4000-10000tl3-bh-up
+- code: SPA8000TL3BH-UP
+  mppt: 0
+  ac_kw: null
+  ac_kva: 8.0
+  ac_a: 12.1
+  phases: 3
+  pv_kw: null
+  source: spa-4000-10000tl3-bh-up
+- code: SPA10000TL3BH-UP
+  mppt: 0
+  ac_kw: null
+  ac_kva: 10.0
+  ac_a: 15.2
+  phases: 3
+  pv_kw: null
+  source: spa-4000-10000tl3-bh-up
+- code: SPH 3000TL-HUB
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 6.0
+  source: sph-3000-6000tl-hub
+- code: SPH 3600TL-HUB
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 7.2
+  source: sph-3000-6000tl-hub
+- code: SPH 4000TL-HUB
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 22.0
+  phases: 1
+  pv_kw: 8.0
+  source: sph-3000-6000tl-hub
+- code: SPH 4600TL-HUB
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 22.0
+  phases: 1
+  pv_kw: 9.2
+  source: sph-3000-6000tl-hub
+- code: SPH 5000TL-HUB
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 27.0
+  phases: 1
+  pv_kw: 10.0
+  source: sph-3000-6000tl-hub
+- code: SPH 5500TL-HUB
+  mppt: 2
+  ac_kw: 5.5
+  ac_kva: 5.5
+  ac_a: 25.0
+  phases: 1
+  pv_kw: 11.0
+  source: sph-3000-6000tl-hub
+- code: SPH 6000TL-HUB
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.0
+  phases: 1
+  pv_kw: 12.0
+  source: sph-3000-6000tl-hub
+- code: SPA 3000TL-AUB
+  mppt: 0
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPA 3600TL-AUB
+  mppt: 0
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPA 4000TL-AUB
+  mppt: 0
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 22.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPA 4600TL-AUB
+  mppt: 0
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 22.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPA 5000TL-AUB
+  mppt: 0
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 27.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPA 5500TL-AUB
+  mppt: 0
+  ac_kw: 5.5
+  ac_kva: 5.5
+  ac_a: 25.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPA 6000TL-AUB
+  mppt: 0
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.0
+  phases: 1
+  pv_kw: null
+  source: spa-3000-6000tl-aub
+- code: SPH 10000TL-HU
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 50.0
+  phases: 1
+  pv_kw: 15.0
+  source: sph-10000tl-hu
+- code: WIT 29.9K-XHU
+  mppt: 4
+  ac_kw: 29.9
+  ac_kva: 29.9
+  ac_a: 45.3
+  phases: 3
+  pv_kw: 59.8
+  source: wit-29-9-50k-xhu
+- code: WIT 30K-XHU
+  mppt: 4
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 50.0
+  phases: 3
+  pv_kw: 60.0
+  source: wit-29-9-50k-xhu
+- code: WIT 36K-XHU
+  mppt: 4
+  ac_kw: 36.0
+  ac_kva: 39.6
+  ac_a: 60.0
+  phases: 3
+  pv_kw: 72.0
+  source: wit-29-9-50k-xhu
+- code: WIT 40K-XHU
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 66.7
+  phases: 3
+  pv_kw: 80.0
+  source: wit-29-9-50k-xhu
+- code: WIT 50K-XHU
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 83.3
+  phases: 3
+  pv_kw: 100.0
+  source: wit-29-9-50k-xhu
+- code: NEO 1200M-X
+  mppt: 3
+  ac_kw: 1.2
+  ac_kva: 1.2
+  ac_a: 5.58
+  phases: 1
+  pv_kw: 1.8
+  source: neo-1200-2000m-x
+- code: NEO 1600M-X
+  mppt: 4
+  ac_kw: 1.6
+  ac_kva: 1.6
+  ac_a: 7.44
+  phases: 1
+  pv_kw: 2.4
+  source: neo-1200-2000m-x
+- code: NEO 2000M-X
+  mppt: 4
+  ac_kw: 2.0
+  ac_kva: 2.0
+  ac_a: 9.3
+  phases: 1
+  pv_kw: 3.0
+  source: neo-1200-2000m-x
+- code: NEO 1600M-X2
+  mppt: 4
+  ac_kw: 1.6
+  ac_kva: 1.6
+  ac_a: 7.27
+  phases: 1
+  pv_kw: null
+  source: neo-1600-2500m-x2-wifi
+- code: NEO 1800M-X2
+  mppt: 4
+  ac_kw: 1.8
+  ac_kva: 1.8
+  ac_a: 8.18
+  phases: 1
+  pv_kw: null
+  source: neo-1600-2500m-x2-wifi
+- code: NEO 2000M-X2
+  mppt: 4
+  ac_kw: 2.0
+  ac_kva: 2.0
+  ac_a: 9.09
+  phases: 1
+  pv_kw: null
+  source: neo-1600-2500m-x2-wifi
+- code: NEO 2250M-X2
+  mppt: 4
+  ac_kw: 2.25
+  ac_kva: 2.25
+  ac_a: 10.23
+  phases: 1
+  pv_kw: null
+  source: neo-1600-2500m-x2-wifi
+- code: NEO 2500M-X2
+  mppt: 4
+  ac_kw: 2.5
+  ac_kva: 2.5
+  ac_a: 11.36
+  phases: 1
+  pv_kw: null
+  source: neo-1600-2500m-x2-wifi
+- code: MAX 50KTL3 LV
+  mppt: 6
+  ac_kw: 50.0
+  ac_kva: 55.5
+  ac_a: 80.5
+  phases: 3
+  pv_kw: 75.0
+  source: max-50-80ktl3-lv
+- code: MAX 60KTL3 LV
+  mppt: 6
+  ac_kw: 60.0
+  ac_kva: 66.6
+  ac_a: 96.6
+  phases: 3
+  pv_kw: 90.0
+  source: max-50-80ktl3-lv
+- code: MAX 70KTL3 LV
+  mppt: 7
+  ac_kw: 70.0
+  ac_kva: 77.7
+  ac_a: 112.7
+  phases: 3
+  pv_kw: 105.0
+  source: max-50-80ktl3-lv
+- code: MAX 80KTL3 LV
+  mppt: 7
+  ac_kw: 80.0
+  ac_kva: 88.8
+  ac_a: 128.8
+  phases: 3
+  pv_kw: 120.0
+  source: max-50-80ktl3-lv
+- code: MAX 100KTL3-X2 LV
+  mppt: 8
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 158.8
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x2-lv
+- code: MAX 110KTL3-X2 LV
+  mppt: 8
+  ac_kw: 110.0
+  ac_kva: 121.0
+  ac_a: 174.6
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x2-lv
+- code: MAX 120KTL3-X2 LV
+  mppt: 8
+  ac_kw: 120.0
+  ac_kva: 132.0
+  ac_a: 190.5
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x2-lv
+- code: MAX 125KTL3-X2 LV
+  mppt: 8
+  ac_kw: 125.0
+  ac_kva: 137.5
+  ac_a: 198.5
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x2-lv
+- code: MAX 100KTL3-X LV
+  mppt: 10
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 167.1
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x-lv
+- code: MAX 110KTL3-X LV
+  mppt: 10
+  ac_kw: 110.0
+  ac_kva: 121.0
+  ac_a: 183.8
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x-lv
+- code: MAX 120KTL3-X LV
+  mppt: 10
+  ac_kw: 120.0
+  ac_kva: 132.0
+  ac_a: 200.5
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x-lv
+- code: MAX 125KTL3-X LV
+  mppt: 10
+  ac_kw: 125.0
+  ac_kva: 137.5
+  ac_a: 208.9
+  phases: 3
+  pv_kw: null
+  source: max100-125ktl3-x-lv
+- code: MAX 150KTL3-X LV
+  mppt: 10
+  ac_kw: 150.0
+  ac_kva: 165.0
+  ac_a: 238.2
+  phases: 3
+  pv_kw: 225.0
+  source: max-150ktl3-x-lv

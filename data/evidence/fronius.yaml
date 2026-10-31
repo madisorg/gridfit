@@ -1,0 +1,40 @@
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+brand: Fronius
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: nts631-symo-gen24-6-10-2022
+  title: CERTIFICADO DE CONFORMIDAD 21217-1-CER DE UGE TIPO — Norma Técnica de Supervisión (NTS) — Serie SYMO GEN 24
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_NTS%20631_Symo_Gen24_6_10.pdf
+  issuer: Certification Entity for Renewable Energies S.L. (CERE), ENAC lab 1376/LE2560
+  cert_no: 21217-1-CER
+  issued: '2022-02-18'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - NTS (Norma Técnica de Supervisión) — UGE tipo; procedure PET-CERE-24
+  families:
+  - name: Symo GEN24 6.0–10.0 (incl. Plus and Lite)
+    match: ^(FRONIUS)?SYMOGEN24(6\.0|7\.0|8\.0|10\.0)(PLUS|LITE)?$
+    countries:
+    - ES
+- id: nts631-primo-gen24-2023
+  title: CERTIFICADO DE CONFORMIDAD 230850-CER DE UGE TIPO — NTS — Serie Fronius Primo GEN24 / Primo GEN24 Plus
+  url: https://fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_Fronius_Primo_GEN24_CERE_230850-CER_TR_NTS631-SEPE_ES.pdf
+  issuer: CERE (ENAC lab 1376/LE2560)
+  cert_no: 230850-CER
+  issued: '2023-12-21'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - NTS (SEPE) — UGE tipo; procedure PET-CERE-24
+  firmware: 1.27.3-1
+  families:
+  - name: Primo GEN24 / Primo GEN24 Plus 3.0–10.0
+    match: ^(FRONIUS)?PRIMOGEN24(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0|8\.0|10\.0)(PLUS)?$
+    countries:
+    - ES
+    note: 'Template NTS_PVI_CM_rev.13. Revision history: ''Inclusión de nuevos modelos / actualización de firmware''.'

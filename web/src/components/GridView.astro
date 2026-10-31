@@ -1,17 +1,27 @@
 ---
 // The grid view: one row per register model, filtered in place from /grid/index.json. The chosen countries are
-// columns, never a filter: a model that is not on the list stays, with an empty cell (nothing known). The status
-// group filters the rows by what those cells say, one country enough, or every one with "every" ticked (the
-// installer's question). Nothing chosen: the 7 lists read. A country without a list shows what applies to the class there.
+// columns, never a filter: a model that is not on the list stays, with its own status — in a country with a list
+// the list's word, in a country without one the maker's document, the type-A limit or what other EU lists say
+// (web/src/lib/grid-filter.js; one status per model × country, so the status group is a partition and its counts
+// add up — web/test/facets.mjs proves it). Status filters by the best answer among the chosen countries, or the
+// worst with "every" ticked (the installer's question). Nothing chosen: the 7 lists read.
 // Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
 import CellLegend from "./CellLegend.astro";
-import { COUNTRIES, REGS } from "../lib/registers";
+import { COUNTRIES } from "../lib/registers";
 import { BRANDS, KVA_BUCKETS, MPPT_OPTS, SPEC_BRANDS } from "../lib/devices";
 import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
+import { EVIDENCE_BRANDS } from "../lib/evidence";
 const { preset = "", id = "gv", kind = "", kindAt = "here" } = Astro.props as { preset?: string; id?: string; kind?: string; kindAt?: "here" | "top" };
 const gridBrands = BRANDS.filter((b) => b.models.length);
 const groups: [string, string][] = [["read", "Lists read in full"], ["yes", "Public list, not read yet"], ["partial", "Partial list"], ["no", "No public list"]];
 const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNTRIES.includes(c.cc) : !COUNTRIES.includes(c.cc) && c.list === g));
+// the status groups, best to worst (grid-filter.js ORDER); the glyph is the cell's, the word the legend's
+const ST: [string, string, string, string][] = [
+  ["Y", "cl-yes", "✓", "Fit: on the list"], ["C", "cl-yes", "✓", "Fit, with a condition or end date"], ["F", "cl-free", "—", "Nothing to check for this class"],
+  ["D", "cl-doc", "✓", "Fit by the maker's document"], ["K", "cl-else", "○", "Accepted on other EU lists"], ["B", "cl-type", "B", "Type B here: over the type-A limit"],
+  ["?", "cl-unk", "?", "Not confirmed for this class"], ["-", "cl-none", "", "Not on the list"], ["X", "cl-no", "✕", "Not fit: refused, expired or not allowed"]];
+const ROUTE: [string, string][] = [["W", "local control"], ["L", "local, read only"], ["C", "cloud only"], ["B", "brand route, model unconfirmed"], ["-", "not found"]];
+const LO: Record<string, string> = { W: "Local control", L: "Local, read only", C: "Cloud only", B: "Brand route, model unconfirmed", "-": "No route found" };
 ---
 <div class="layout gv" id={id} data-preset={preset} data-kind={kind}>
   <fieldset class="filters" id="xf">
@@ -26,7 +36,6 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       </div>
       <div class="cc-quick" role="group" aria-label="Lists read in full">{COUNTRIES.map((c) => <button type="button" data-cc={c} aria-pressed={c === preset ? "true" : "false"} title={COUNTRIES_ALL.find((x) => x.cc === c)?.country}>{c}</button>)}</div>
       <button type="button" id="ccall" class="small cc-all">All {COUNTRIES_ALL.length} countries…</button>
-      <p class="small muted">Countries are columns: a model off the list stays, with an empty cell. A country without a list shows what applies there.</p>
       <dialog id="ccdlg" class="cc-dlg" aria-labelledby="ccdlg-h">
         <div class="cc-dlg-head"><h3 id="ccdlg-h">Countries</h3><button type="button" id="ccdone" class="small">Done</button></div>
         {groups.map(([g, label]) => (
@@ -44,71 +53,64 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
       <button type="button" data-g="ev" aria-pressed="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>Wallboxes</button>
     </div>}
-    <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="3">3-phase</option></select></label>
-    <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
-    <label><span>MPPT</span><select id="mppt"><option value="">Any MPPT count</option>{MPPT_OPTS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
-    <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option value={b.name}>{b.name}</option>)}</select></label>
-    <fieldset class="st-pick" id="stpick"><legend>Status</legend>
-      <label><input type="checkbox" name="st" value="Y"> <span class="cl cl-yes">✓</span> Fit: on the list <small class="n"></small></label>
-      <label><input type="checkbox" name="st" value="C"> <span class="cl cl-yes">✓</span> Fit, with a condition <small class="n"></small></label>
-      <label><input type="checkbox" name="st" value="X"> <span class="cl cl-no">✕</span> Not fit: refused or expired <small class="n"></small></label>
-      <label><input type="checkbox" name="st" value="-"> <span class="cl cl-none"></span> Not on the list <small class="n"></small></label>
-      <label class="st-every"><input type="checkbox" id="every"> in every chosen country</label>
+    <fieldset class="st-pick" id="stpick"><legend id="st-h">Status</legend>
+      {ST.map(([k, cls, glyph, word]) => <label data-k={k} hidden><input type="checkbox" name="st" value={k}> <span class={`cl ${cls}`} aria-hidden="true">{glyph}</span> <span class="w">{word}</span> <small class="n"></small></label>)}
+      <label class="st-every" hidden><input type="checkbox" id="every"> in every chosen country</label>
     </fieldset>
-    <label><span>Other lists</span><select id="n"><option value="">Other lists: any</option><option value="1">Other lists: 1 or more</option>
-      <option value="3">Other lists: 3 or more</option></select></label>
-    <label><span>Local</span><select id="lo"><option value="">Any local route</option><option value="W">Local control</option><option value="L">Local, read or control</option>
-      <option value="C">Cloud only</option><option value="B">Brand route, model unconfirmed</option><option value="-">No route found</option></select></label>
-    <label><span>Smart home</span><select id="sh"><option value="">Any smart home</option><option value="HW">Home Assistant: local control</option><option value="HL">Home Assistant: local, read or control</option>
-      <option value="EW">evcc: local control</option><option value="EL">evcc: local, read or control</option><option value="BW">Both: local control</option></select></label>
+    <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="2">2-phase</option><option value="3">3-phase</option><option value="-">Phases not specified</option></select></label>
+    <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}<option value="-">Power not specified</option></select></label>
+    <label><span>MPPT</span><select id="mppt"><option value="">Any MPPT</option>{MPPT_OPTS.map(([k, w]) => <option value={k}>{w}</option>)}
+      <option value="0">No MPPT: battery, AC inverter or wallbox</option><option value="-">MPPT not collected</option></select></label>
+    <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option value={b.name}>{b.name}</option>)}</select></label>
+    <label><span>Other lists</span><select id="n"><option value="">Other lists: any</option><option value="0">Other lists: none</option><option value="1">Other lists: 1</option>
+      <option value="2">Other lists: 2</option><option value="3">Other lists: 3 or more</option></select></label>
+    <label><span>Local</span><select id="lo"><option value="">Any local route</option>{ROUTE.map(([k]) => <option value={k}>{LO[k]}</option>)}</select></label>
+    <label><span>Home Assistant</span><select id="ha"><option value="">Home Assistant: any</option>{ROUTE.map(([k, w]) => <option value={k}>Home Assistant: {w}</option>)}</select></label>
+    <label><span>evcc</span><select id="ev"><option value="">evcc: any</option>{ROUTE.map(([k, w]) => <option value={k}>evcc: {w}</option>)}</select></label>
     <label><span>Search</span><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model or brand"></label>
     <button type="button" id="reset" hidden>Clear filters</button>
   </fieldset>
   <div>
     <p class="count" id="xcount" aria-live="polite">Loading the table…</p>
+    <p class="small muted ccnote" id="ccnote" hidden></p>
     <div id="xv"></div>
     <p><button type="button" id="more" class="xv-more" hidden>Show more</button></p>
     <noscript><p>The table needs JavaScript. Every model is also on its brand page.</p></noscript>
     <CellLegend />
     <p class="legend small"><span class="rs-key">Column head: <b>list</b> = the country has a public list · <b>cert.</b> = no list, the grid operator checks the maker's certificate · <b>—</b> = nothing to check for this class.</span>
       <span class="rs-key" id="sh-legend"><b>Local</b> = the best route on your network: <span class="st write">control</span> / <span class="st local">read</span> / <span class="st cloud">cloud</span> / <span class="st none">brand route</span>.
-      <b>Smart home</b> = who talks to it, Home Assistant then evcc, each mark coloured by its own route: <span class="sh sh-W" role="img" aria-label="local control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> local control ·
+      <b>Smart home</b> = who talks to it, Home Assistant <span class="sh sh-W" role="img" aria-label="Home Assistant mark"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> then evcc <span class="sh sh-W" role="img" aria-label="evcc mark"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="12" height="11" rx="1.5"/><path d="M8 7V4M12 7V4M16 12h2.5a1.5 1.5 0 0 1 1.5 1.5V17"/><path d="M10 10l-2 3h4l-2 3"/></svg></span>,
+      each mark coloured by its own route: <span class="sh sh-W" role="img" aria-label="local control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> local control ·
       <span class="sh sh-L" role="img" aria-label="local, read only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> local, read only · <span class="sh sh-C" role="img" aria-label="cloud only"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> cloud only ·
       <span class="sh sh-B" role="img" aria-label="brand route"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg></span> brand route, model unconfirmed · empty = not found. Marks are GridFit's own glyphs, not the projects' logos.</span></p>
-    <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists. No list carries MPPT counts: those are the makers' own datasheets,
-      read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); “–” means not collected, never “none”. The list is the authority; this is a cross-reference.
+    <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists; where no list carries them the datasheet fills in, else “not specified”. No list carries MPPT counts: those are the makers' own datasheets,
+      read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); a battery, AC inverter or wallbox has no MPPT by its class; “not collected” means no sheet read yet, never “none”.
+      “Fit by the maker's document” comes from the maker's own released-countries or certificate document, read so far for {EVIDENCE_BRANDS.join(", ") || "no brand yet"}. The list is the authority; this is a cross-reference.
       <b>Other lists</b> counts the read lists a model is on besides the countries you chose — a hint of what the maker has had certified where there is no list to check, never an approval.</p>
   </div>
 </div>
 
 <script>
+  import { IDS, cellCode, rowStatus, predicates, select, facet, positiveLists, rank } from "../lib/grid-filter.js";
   const root = document.querySelector<HTMLElement>(".gv")!;
   const $ = <T extends HTMLElement>(id: string) => root.querySelector(`#${id}`) as T;
-  // three answers per cell: yes / no / nothing known; the list's own word is the hover
-  const ANS: Record<string, string> = { L: "yes", R: "yes", T: "yes", O: "yes", P: "no", E: "no", N: "no", "-": "none" };
-  const GLYPH: Record<string, string> = { yes: "✓", no: "✕", none: "" };
+  // the list's own word per cell letter; the hover and the aria-label
   const WORD: Record<string, string> = { L: "on the list", R: "on the list, with a condition", T: "on the list, time-limited", P: "not fit: the end date has passed",
-    E: "not fit: expired", N: "not fit: the list says no", O: "on the list (see the list)", "-": "nothing known: not found on the list — never “not approved”" };
-  const STATE: Record<string, [string, string]> = { list: ["none", "nothing known: public list, not read yet — check the model there"], rule: ["none", "nothing known: a certificate is required; the grid operator checks the maker's document"],
-    free: ["none", "nothing to check for this class"], banned: ["no", "not fit: not allowed"], unknown: ["none", "nothing known: not confirmed"] };
+    E: "not fit: expired", N: "not fit: the list says no", O: "on the list (see the list)", "-": "not on the list — the list may spell the model differently; never “not approved”" };
+  const CL: Record<string, [string, string]> = { Y: ["cl-yes", "✓"], C: ["cl-yes", "✓"], F: ["cl-free", "—"], D: ["cl-doc", "✓"], K: ["cl-else", "○"], B: ["cl-type", "B"], "?": ["cl-unk", "?"], "-": ["cl-none", ""], X: ["cl-no", "✕"] };
   const RULE: Record<string, string> = { list: "list", rule: "cert.", free: "—", banned: "not allowed", unknown: "?" };
   const MARK: Record<string, string> = { W: "local control", L: "local, read only", C: "cloud only", B: "brand route, model unconfirmed", "-": "not found" };
   const HA = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11.5 12 4l9 7.5"/><path d="M5.5 10v9h13v-9"/><path d="M12 8.5v10M8.5 13.5l3.5 2.5 3.5-2.5"/></svg>`, EV = `<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="7" width="12" height="11" rx="1.5"/><path d="M8 7V4M12 7V4M16 12h2.5a1.5 1.5 0 0 1 1.5 1.5V17"/><path d="M10 10l-2 3h4l-2 3"/></svg>`;
   const mark = (who: string, icon: string, m: string) => `<span class="sh sh-${m}" role="img" aria-label="${who}: ${MARK[m]}" title="${who}: ${MARK[m]}">${icon}</span>`;
-  // the Local column is the better of the two: control beats read beats cloud beats brand route
   const LEVEL: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "read"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "–"] };
   const best = (a: string, b: string) => "WLCB-".indexOf(a) <= "WLCB-".indexOf(b) ? a : b;
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
-  const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
-  const BUCKET: Record<string, [number, number]> = { "0-3.7": [0, 3.7], "3.7-6": [3.7, 6], "6-12": [6, 12], "12-30": [12, 30], "30-": [30, Infinity] };
-  const ids = ["ph", "kva", "mppt", "brand", "st", "n", "lo", "sh", "q"];
-  // the status group speaks the cells' answers: fit, fit with a condition, not fit, no entry — ticked together they add up
-  const SETS: Record<string, string> = { Y: "LO", C: "RT", X: "PEN", "-": "-" };
-  type Row = [number, string, string, string, string, string, string, string, number | null, number | null];
-  type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; brands: string[]; rows: Row[] };
+  type Row = [number, string, string, string, string, string, string, string, number | null, number | null, string];
+  type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; limits: Record<string, { max_kw: number }>; how: string[]; brands: string[]; rows: Row[] };
   let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "", qt = 0;
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
+  const nf = (n: number) => n.toLocaleString("en");
   const stBoxes = [...root.querySelectorAll<HTMLInputElement>('input[name="st"]')];
   const val = (id: string) => id === "st" ? stBoxes.filter((b) => b.checked).map((b) => b.value).join("") : ($<HTMLInputElement>(id).value || "").trim();
   const boxes = [...root.querySelectorAll<HTMLInputElement>('input[name="c"]')];
@@ -132,7 +134,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   function suggest() {
     const q = ccq.value.trim().toLowerCase();
     const hits = q ? boxes.filter((b) => !b.checked && (b.value.toLowerCase().startsWith(q) || b.dataset.name!.toLowerCase().includes(q))).slice(0, 8) : [];
-    cclist.replaceChildren(...hits.map((b, i) => {
+    cclist.replaceChildren(...hits.map((b) => {
       const li = document.createElement("li");
       li.setAttribute("role", "option"); li.id = `ccopt-${b.value}`; li.dataset.cc = b.value;
       li.innerHTML = `<b>${b.value}</b> ${b.dataset.name} <span class="muted">${b.dataset.g}</span>`;
@@ -165,95 +167,109 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
   // the kind buttons sit in the table's own column, or in the page header (data-for names this view)
   const kinds = [...document.querySelectorAll<HTMLButtonElement>(`#${root.id} .kind button, .kind[data-for="${root.id}"] button`)];
 
+  // the hover of one cell: the country, the status in words, and why
+  function tip(r: Row, cc: string, code: string): string {
+    const i = data.read.indexOf(cc), name = data.names[cc] ?? cc;
+    if (i >= 0) return `${cc}: ${WORD[r[4][i]]}`;
+    const st = data.scope[cc]?.[r[2]] ?? "unknown", brand = data.brands[r[0]];
+    const noList = st === "rule" ? `${name} has no list: the grid operator checks the maker's certificate` : `${name}'s list is not read yet — check the model there`;
+    if (code === "D") return `${cc}: fit by the maker's document — ${brand} publishes a release table or a certificate naming ${name}'s standard for this model; the grid operator decides (the model page shows the document)`;
+    if (code === "K") { const on = positiveLists(r, data); return `${cc}: accepted on ${on.length} other EU list${on.length === 1 ? "" : "s"} (${on.join(", ")}) — nothing checked here; ${noList}`; }
+    if (code === "B") return `${cc}: over the type-A limit in ${name} (${data.limits[cc].max_kw} kW) — type B, a procedure of its own`;
+    if (code === "F") return `${cc}: nothing to check for this class in ${name}`;
+    if (code === "?") return `${cc}: not confirmed whether ${name} lists or otherwise gates this class`;
+    if (code === "X") return `${cc}: not fit — ${name} does not allow this kind of device`;
+    return `${cc}: nothing known — its listings elsewhere are expired or refused; ${noList}`;
+  }
+
   function apply() {
-    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c)), every = $<HTMLInputElement>("every").checked;
-    // "not on the list" only means something against a chosen list; "every" only against two or more
-    const noneBox = stBoxes.find((b) => b.value === "-")!;
-    noneBox.disabled = !readSel.length;
-    if (!readSel.length) noneBox.checked = false;
-    ($("every").closest("label") as HTMLElement).hidden = readSel.length < 2;
+    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c)), ccs = cs.length ? cs : data.read;
+    ($("every").closest("label") as HTMLElement).hidden = cs.length < 2;
+    const every = cs.length >= 2 && $<HTMLInputElement>("every").checked;
     ($("mppt").closest("label") as HTMLElement).hidden = g === "ev";
     if (g === "ev") $<HTMLSelectElement>("mppt").value = "";
-    // one rule per filter, so a facet can be counted with its own rule left out
-    const T: Record<string, (r: Row, v: string) => boolean> = {
-      brand: (r, v) => !v || data.brands[r[0]] === v,
-      ph: (r, v) => !v || r[7] === v,
-      kva: (r, v) => { if (!v) return true; const kv = BUCKET[v]; return r[8] !== null && r[8] > kv[0] && r[8] <= kv[1]; },
-      mppt: (r, v) => !v || (r[9] !== null && (v === "4" ? r[9] >= 4 : r[9] === +v)),
-      // a chosen list: the cell must have an entry, or the status asked for; no list chosen: any cell with that status
-      st: (r, v) => {
-        const set = [...v].map((k) => SETS[k]).join(""), cells = r[4];
-        if (!set) return true;
-        if (!readSel.length) return [...cells].some((ch) => ch !== "-" && set.includes(ch));
-        const fits = readSel.map((c) => set.includes(cells[data.read.indexOf(c)]));
-        return every ? fits.every(Boolean) : fits.some(Boolean);
-      },
-      // other lists = the read lists the model is on besides the chosen ones: a hint of what the maker has certified, never an approval
-      n: (r, v) => !v || [...r[4]].filter((ch, i) => ch !== "-" && !readSel.includes(data.read[i])).length >= +v,
-      lo: (r, v) => { if (!v) return true; const bst = best(r[5][0], r[5][1]); return v === "W" ? bst === "W" : v === "L" ? "WL".includes(bst) : bst === v; },
-      sh: (r, v) => { if (!v) return true; const [h, e] = r[5]; return v === "HW" ? h === "W" : v === "HL" ? "WL".includes(h) : v === "EW" ? e === "W" : v === "EL" ? "WL".includes(e) : h === "W" && e === "W"; },
-      q: (r, v) => !v || (data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(v),
-    };
-    const cur: Record<string, string> = Object.fromEntries(ids.map((id) => [id, id === "q" ? val(id).toLowerCase() : val(id)]));
-    const kindOk = (r: Row) => !g || (g === "inv" ? INV.has(r[2]) : r[2] === "wallbox");
-    const st = cur.st;
-    hits = data.rows.filter((r) => kindOk(r) && ids.every((id) => T[id](r, cur[id])));
-    // the chosen lists' models first, then the index order (most lists first)
-    const onChosen = (r: Row) => readSel.filter((c) => r[4][data.read.indexOf(c)] !== "-").length;
-    if (readSel.length) hits = hits.map((r, i) => [onChosen(r), i, r] as [number, number, Row]).sort((a, b) => b[0] - a[0] || a[1] - b[1]).map((x) => x[2]);
-    // every option says how many models it would leave, with the other filters as they stand
-    for (const id of ids) {
+    const ctx = { ccs, every, readSel };
+    const T = predicates(data, ctx);
+    const cur: Record<string, string> = Object.fromEntries(IDS.map((id) => [id, id === "q" ? val(id).toLowerCase() : val(id)]));
+    hits = select(data, cur, g, T);
+    // a chosen country sorts its best answers first; otherwise the index order (most lists first)
+    if (cs.length) hits = hits.map((r, i) => [rank(rowStatus(r, ccs, false, data)), i, r] as [number, number, Row]).sort((a, b) => a[0] - b[0] || a[1] - b[1]).map((x) => x[2]);
+    // every option says how many models it would leave with the other filters as they stand; a partition, so they add up
+    const rcls = g === "ev" ? "wallbox" : "inverter";
+    const scopes = new Set(ccs.map((c) => (data.read.includes(c) ? "list" : data.scope[c]?.[rcls] ?? "unknown")));
+    for (const id of IDS) {
       if (id === "q") continue;
-      const base = data.rows.filter((r) => kindOk(r) && ids.every((j) => j === id || T[j](r, cur[j])));
-      // brands are hundreds of options: one pass over the base, keyed by brand, instead of one filter per option
-      const byBrand = new Map<string, number>();
-      if (id === "brand") base.forEach((r) => byBrand.set(data.brands[r[0]], (byBrand.get(data.brands[r[0]]) ?? 0) + 1));
-      const count = (v: string) => (id === "brand" ? (v ? byBrand.get(v) ?? 0 : base.length) : base.filter((r) => T[id](r, v)).length).toLocaleString("en");
-      if (id === "st") { stBoxes.forEach((b) => (b.parentElement!.querySelector(".n")!.textContent = `(${count(b.value)})`)); continue; }
+      const base = select(data, cur, g, T, id), counts = facet(id, base, data, ctx);
+      if (id === "st") {
+        stBoxes.forEach((b) => {
+          const n = counts.get(b.value) ?? 0, lab = b.parentElement!;
+          lab.hidden = !n && !b.checked;
+          lab.querySelector(".n")!.textContent = `(${nf(n)})`;
+          if (b.value === "-") lab.querySelector(".w")!.textContent = scopes.has("list") && scopes.size === 1 ? "Not on the list" : scopes.has("list") ? "Not on the list / nothing known" : "Nothing known";
+        });
+        continue;
+      }
       for (const o of $<HTMLSelectElement>(id).options) {
+        const n = o.value ? counts.get(o.value) ?? 0 : base.length;
         o.dataset.l ??= o.textContent!;
-        o.textContent = `${o.dataset.l} (${count(o.value)})`;
+        o.textContent = `${o.dataset.l} (${nf(n)})`;
+        o.hidden = o.disabled = !n && !!o.value && !o.selected;
       }
     }
-    const cols = cs.length ? cs : data.read;
-    $("xcount").innerHTML = `<b>${hits.length.toLocaleString("en")}</b> ${hits.length === 1 ? "model" : "models"}${readSel.length ? (st ? ` by status in ${readSel.join(every ? " and " : " or ")}` : ` · ${hits.filter((r) => onChosen(r)).length.toLocaleString("en")} on the list in ${readSel.join(", ")}`) : ""}`;
+    const st = cur.st;
+    let line = `<b>${nf(hits.length)}</b> ${hits.length === 1 ? "model" : "models"}`;
+    if (st) line += ` by status in ${ccs.join(every ? " and " : " or ")}`;
+    else if (cs.length === 1) {
+      const c = cs[0], by = (k: string) => hits.filter((r) => cellCode(r, c, data) === k).length;
+      line += data.read.includes(c) ? ` · ${nf(by("Y") + by("C"))} on the list in ${c}` : ` · in ${c}: ${nf(by("D"))} by the maker's document, ${nf(by("K"))} accepted on other EU lists`;
+    }
+    $("xcount").innerHTML = line;
+    // a chosen country without a list gets one sentence on how its cells are decided
+    const notes = cs.filter((c) => !data.read.includes(c)).slice(0, 2).map((c) => {
+      const name = data.names[c] ?? c, s = data.scope[c]?.[rcls], how = data.how.includes(c) ? ` <a href="/grid/${c.toLowerCase()}/#how">How it works in ${name}</a>.` : "";
+      if (s === "rule") return `<b>${name}</b> has no public list: the grid operator checks the maker's certificate. <span class="cl cl-doc" aria-hidden="true">✓</span> = the maker's own document names ${name}; <span class="cl cl-else" aria-hidden="true">○</span> = accepted on other EU lists, nothing checked here; <span class="cl cl-type" aria-hidden="true">B</span> = over the type-A limit, another procedure.${how}`;
+      if (s === "list") return `<b>${name}</b> publishes a list GridFit has not read yet — check the model there. Meanwhile <span class="cl cl-doc" aria-hidden="true">✓</span> = the maker's document names ${name}, <span class="cl cl-else" aria-hidden="true">○</span> = accepted on other EU lists.${how}`;
+      if (s === "free") return `<b>${name}</b>: nothing to check against a list for ${g === "ev" ? "wallboxes" : "this kind of device"}.${how}`;
+      if (s === "banned") return `<b>${name}</b> does not allow ${g === "ev" ? "wallboxes" : "this kind of device"} to be connected.${how}`;
+      return `<b>${name}</b>: whether a list or a rule applies is not confirmed yet.${how}`;
+    });
+    $("ccnote").innerHTML = notes.join(" ");
+    $("ccnote").hidden = !notes.length;
     paintCc();
     shown = 0;
-    const rcls = g === "ev" ? "wallbox" : "inverter";
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
-      cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
-      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp mp">MPPT</th><th scope="col" class="lo">Local</th><th scope="col" class="lo"><span class="shh">' + HA + '</span><span class="shh">' + EV + '</span> Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
-    ids.forEach((id) => $(id === "st" ? "stpick" : id).classList.toggle("on", !!val(id)));
+      ccs.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
+      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp mp">MPPT</th><th scope="col" class="lo">Local</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
+    IDS.forEach((id) => $(id === "st" ? "stpick" : id).classList.toggle("on", !!val(id)));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
-    $("reset").hidden = !ids.some((id) => val(id)) && g === (root.dataset.kind || "") && !cs.length && !every;
+    const presetOnly = cs.length === 1 && cs[0] === root.dataset.preset;
+    $("reset").hidden = !IDS.some((id) => val(id)) && g === (root.dataset.kind || "") && (!cs.length || presetOnly) && !every;
     document.body.dataset.g = g;
     more();
     const p = new URLSearchParams();
-    if (cs.length) p.set("c", cs.join(","));
+    if (cs.length && !presetOnly) p.set("c", cs.join(","));
     if (g && g !== root.dataset.kind) p.set("g", g);
     if (every) p.set("every", "1");
-    ids.forEach((id) => val(id) && p.set(id, val(id)));
+    IDS.forEach((id) => val(id) && p.set(id, val(id)));
     history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
   }
 
   function more() {
-    const cs = sel(), cols = cs.length ? cs : data.read;
+    const cs = sel(), ccs = cs.length ? cs : data.read;
     const html = hits.slice(shown, shown + PAGE).map((r) => {
-      const cells = cols.map((c) => {
-        const i = data.read.indexOf(c);
-        let a: string, t: string;
-        if (i >= 0) { const s = r[4][i]; a = ANS[s]; t = WORD[s]; }
-        else { const st = data.scope[c]?.[r[2]] ?? "unknown"; [a, t] = STATE[st] ?? STATE.unknown; }
-        return `<td class="c"><span class="cl cl-${a}" role="img" aria-label="${esc(c + ": " + t)}" title="${esc(c + ": " + t)}">${GLYPH[a]}</span></td>`;
+      const cells = ccs.map((c) => {
+        const code = cellCode(r, c, data), [cls, glyph] = CL[code], t = tip(r, c, code);
+        return `<td class="c"><span class="cl ${cls}" role="img" aria-label="${esc(t)}" title="${esc(t)}">${glyph}</span></td>`;
       }).join("");
       const nl = r[4].replace(/-/g, "").length;
+      const mp = r[9] !== null ? (r[9] === 0 ? '<span class="muted">none</span>' : String(r[9])) : r[2] === "battery" || r[2] === "wallbox" ? '<span class="muted" title="no MPPT: battery, AC inverter or wallbox">none</span>' : '<span class="muted" title="not collected">–</span>';
       return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}` +
-        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="sp num mp">${r[9] === null ? "–" : r[9]}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
+        `<td class="num">${nl}</td><td class="sp">${r[7] || '<span class="muted">–</span>'}</td><td class="sp num">${r[8] === null ? '<span class="muted">–</span>' : r[8]}</td><td class="sp num mp">${mp}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
     shown = Math.min(shown + PAGE, hits.length);
     $("more").hidden = shown >= hits.length;
-    $("more").textContent = `Show more (${(hits.length - shown).toLocaleString("en")} left)`;
+    $("more").textContent = `Show more (${nf(hits.length - shown)} left)`;
   }
 
   fetch("/grid/index.json").then((r) => r.json()).then((d: Idx) => {
@@ -264,7 +280,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     if (init.get("g") === "inv" || init.get("g") === "ev") g = init.get("g")!;
     $<HTMLInputElement>("every").checked = !!init.get("every");
     $("every").addEventListener("change", apply);
-    ids.forEach((id) => {
+    IDS.forEach((id) => {
       if (id === "st") { const want = init.get("st") ?? ""; stBoxes.forEach((b) => { b.checked = want.includes(b.value); b.addEventListener("change", apply); }); return; }
       const el = $<HTMLInputElement>(id);
       if (init.get(id)) el.value = init.get(id)!;
@@ -274,7 +290,7 @@ const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNT
     // with a default kind the choice is one or the other, never "both"; without one a second click shows every kind
     kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g && !root.dataset.kind ? "" : k.dataset.g!; apply(); }));
     $("ccclear").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); apply(); dlg.close(); });
-    $("reset").addEventListener("click", () => { ids.forEach((id) => id !== "st" && ($<HTMLInputElement>(id).value = "")); stBoxes.forEach((b) => (b.checked = false)); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = false)); $<HTMLInputElement>("every").checked = false; apply(); });
+    $("reset").addEventListener("click", () => { IDS.forEach((id) => id !== "st" && ($<HTMLInputElement>(id).value = "")); stBoxes.forEach((b) => (b.checked = false)); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = b.value === root.dataset.preset)); $<HTMLInputElement>("every").checked = false; apply(); });
     $("more").addEventListener("click", more);
     apply();
   });

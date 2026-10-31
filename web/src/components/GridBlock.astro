@@ -1,18 +1,34 @@
 ---
 // The grid half of a device page: one row per parsed list — the list's own status word, firmware, dates and a
-// link — then every other EU+ country for this device class, grouped by what applies there.
+// link — then every other EU+ country for this device class with one status each: the maker's own document,
+// the type-A ceiling, what other EU lists say (devices.ts tierOf; the same rule as the grid view), with the reason.
 import Ext from "./Ext.astro";
 import Cell from "./Cell.astro";
-import { COUNTRIES, REGS, META, RS, RSHORT, best, type Entry } from "../lib/registers";
-import { othersOf, GRID_WORD, type GridState } from "../lib/devices";
-import { COUNTRY_BY, CLASS_WORD, CONF_WORD, type ClassState } from "../lib/countries";
+import { COUNTRIES, REGS, META, RS, best, type Entry } from "../lib/registers";
+import { othersTiered, positiveOf, GRID_WORD, TIER_WORD, type GridState, type Tier } from "../lib/devices";
+import { COUNTRY_BY, CONF_WORD } from "../lib/countries";
 import { CLASS } from "../lib/data";
-const { cells, entries, cls } = Astro.props as { cells: Record<string, GridState>; entries: Record<string, Entry[]>; cls: string };
-const others = othersOf(cls);
-const ORDER: ClassState[] = ["list", "rule", "free", "banned", "unknown"];
-const groups = ORDER.map((s) => [s, others.filter((o) => o.state === s)] as const).filter(([, l]) => l.length);
-const rsClass = (st: GridState, es: Entry[]) => es.length ? `rs-${best(es)}` : st === "free" ? "rs-free" : st === "rule" ? "rs-rule" : st === "banned" ? "rs-banned" : "rs-none";
+import type { Release } from "../lib/evidence";
+import { LIMITS } from "../lib/profiles";
+const { cells, entries, cls, releases = [], kva = null, brand = "" } = Astro.props as
+  { cells: Record<string, GridState>; entries: Record<string, Entry[]>; cls: string; releases?: Release[]; kva?: number | null; brand?: string };
+const others = othersTiered(cls, cells, releases, kva);
+const positive = positiveOf(cells);
+const ORDER: Tier[] = ["D", "K", "B", "F", "?", "-", "X"];
+const groups = ORDER.map((t) => [t, others.filter((o) => o.tier === t)] as const).filter(([, l]) => l.length);
+const GLYPH: Record<Tier, [string, string]> = { D: ["cl-doc", "✓"], K: ["cl-else", "○"], B: ["cl-type", "B"], F: ["cl-free", "—"], "?": ["cl-unk", "?"], "-": ["cl-none", ""], X: ["cl-no", "✕"] };
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+const docsUsed = [...new Map(releases.map((r) => [r.doc.id, { doc: r.doc, fams: releases.filter((x) => x.doc.id === r.doc.id) }])).values()];
+const n = positive.length;
+const why: Record<Tier, string> = {
+  D: `${brand || "The maker"}'s own document names these countries — the grid operator still decides at the application.`,
+  K: n ? `On ${n} EU list${n === 1 ? "" : "s"} (${positive.join(", ")}): the maker has had the model certified and ${n === 1 ? "one grid operator accepts" : `${n} grid operators accept`} it. Nothing is checked in these countries themselves: where there is no list the grid operator reads the maker's certificate for that country — ask the maker or installer for it; where a list exists that GridFit has not read, check the model there.` : "",
+  B: `Above the type-A ceiling (${[...new Set(others.filter((o) => o.tier === "B").map((o) => `${LIMITS[o.cc]?.max_kw} kW in ${o.country}`))].join(", ")}): type B, a procedure of its own — conformity per installation, not a certificate per model.`,
+  F: "No list and no model-level rule for this class: nothing to check against a list.",
+  "?": "Whether a list or a rule applies is not confirmed yet.",
+  "-": "No positive listing anywhere GridFit reads (expired or refused only), and no maker's document: nothing known.",
+  X: "This kind of device is not allowed to be connected.",
+};
 ---
 <ul class="reglist" aria-label="Grid-connection lists">
   {COUNTRIES.map((cc) => {
@@ -21,6 +37,7 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
     const r = e ? REGS[e.reg] : REGS[cc];
     const m = META[e ? e.reg : cc];
     const st = cells[cc];
+    const rel = releases.find((x) => x.countries.includes(cc));
     return (
       <li id={`grid-${cc.toLowerCase()}`}>
         <span class="k"><a href={`/grid/${cc.toLowerCase()}/`}>{cc}</a></span>
@@ -31,22 +48,29 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
               {e.valid && <>, until {e.valid}</>}{e.fw && e.reg !== "BE" && <> · {r.fw_label} <code>{e.fw.slice(0, 60)}</code></>}
               {es.length > 1 && <span class="muted"> · {es.length} rows</span>}</>
           ) : (
-            <>{cap(GRID_WORD[st])}</>
+            <>{cap(GRID_WORD[st])}{rel && st === "" && <span class="muted"> · the maker's document releases it for {cc}, but the list is the gate</span>}</>
           )}
-          <span class="small muted"> · <Ext href={r.url}>{r.short}</Ext>{m?.source_date ? ` dated ${m.source_date}` : ""}{m?.seen ? `, read ${m.seen}` : ""}</span>
+          <span class="small muted"> · <Ext href={r.url}>{r.short}</Ext>{m?.source_date ? ` dated ${m.source_date}` : " (undated)"}{m?.seen ? `, read ${m.seen}` : ""}</span>
         </span>
         <Cell cc={cc} state={st} entries={es} cls={cls} rich={true} />
       </li>
     );
   })}
 </ul>
-<details class="more gb-others">
-  <summary>{others.length} more countries: what applies to a {CLASS[cls]?.toLowerCase() ?? cls} there</summary>
-  <p class="small muted">No model rows for these countries — they publish no usable list, or GridFit has not parsed it yet. The state comes from the EU+ grid-connection table; each country page says more.</p>
-  {groups.map(([s, list]) => (
-    <p class="small"><b>{cap(CLASS_WORD[s])}:</b>
-      {list.map((o) => <a href={`/grid/${o.cc.toLowerCase()}/`} title={`${o.country} — ${CONF_WORD[o.confidence] ?? o.confidence}`}>{o.country}{o.confidence !== "checked" && <sup class="muted">{o.confidence === "search" ? "s" : "?"}</sup>}</a>)}
-    </p>
-  ))}
-  <p class="small muted">s = from search results, ? = unverified; without a mark the page was opened.</p>
-</details>
+<div class="gb-others">
+  <h3>The other {others.length} countries: a {CLASS[cls]?.toLowerCase() ?? cls} there</h3>
+  <p class="small muted">No model rows for these: they publish no usable list, or GridFit has not read it. Each gets one answer by the same rule as the grid view — the maker's own document first, then the country's type-A ceiling, then what the lists read say.</p>
+  <dl class="tiers">
+    {groups.map(([t, list]) => (
+      <>
+        <dt><span class={`cl ${GLYPH[t][0]}`} aria-hidden="true">{GLYPH[t][1]}</span> {cap(TIER_WORD[t])} <span class="muted">({list.length})</span></dt>
+        <dd>
+          <p class="cc-run">{list.map((o) => <a href={`/grid/${o.cc.toLowerCase()}/`} title={`${o.country} — ${CONF_WORD[o.confidence] ?? o.confidence}`}>{o.country}{o.confidence !== "checked" && <sup class="muted">{o.confidence === "search" ? "s" : "?"}</sup>}</a>)}</p>
+          {why[t] && <p class="small muted">{why[t]}</p>}
+          {t === "D" && docsUsed.map(({ doc, fams }) => <p class="small"><Ext href={doc.url}>{doc.title}</Ext> — {doc.kind === "country-release" ? "the maker's released-countries table" : doc.kind === "certificate" ? `certificate${doc.issuer ? ` by ${doc.issuer}` : ""}${doc.cert_no ? ` no. ${doc.cert_no}` : ""}` : "the maker's declaration"}{doc.standards?.length ? `, against ${doc.standards.join("; ")}` : ""}{doc.version ? `, version ${doc.version}` : ""}{doc.doc_no ? `, ${doc.doc_no}` : ""}{doc.issued ? `, issued ${doc.issued}` : ""}{doc.valid_until ? `, valid until ${doc.valid_until}` : ""}; seen {doc.seen}. {fams.length === 1 ? "Family" : "Families"} {fams.map((f, i) => <>{i > 0 && "; "}“{f.family}”{f.note ? ` (${f.note.replace(/\.\s*$/, "")})` : ""}</>)}.</p>)}
+        </dd>
+      </>
+    ))}
+  </dl>
+  <p class="small muted">s = from search results, ? = unverified; without a mark the country page was opened. The state per country comes from the EU+ grid-connection table; each country page says more.</p>
+</div>

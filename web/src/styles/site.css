@@ -68,6 +68,11 @@ main { padding: var(--s5) 0 var(--s7); }
 .cl-doc { background: var(--reg-bg); color: var(--reg); outline: var(--rule-w) dashed var(--reg); outline-offset: calc(-1 * var(--rule-w)); }
 .cl-no { background: var(--cloud-bg); color: var(--cloud); box-shadow: inset 0 0 0 var(--rule-w) var(--cloud); }
 .cl-none { background: transparent; box-shadow: inset 0 0 0 var(--rule-w) var(--rule); }
+/* the two weaker answers of a country without a list, and the three "nothing" states, in greyscale-safe shapes */
+.cl-else { background: transparent; color: var(--ink-2); outline: var(--rule-w) dotted var(--ink-2); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
+.cl-type { background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 var(--rule-w) var(--ink-3); font-weight: 400; font-size: var(--fs-xs); }
+.cl-free { background: transparent; color: var(--ink-3); font-weight: 400; }
+.cl-unk { background: transparent; color: var(--ink-3); box-shadow: inset 0 0 0 var(--rule-w) var(--rule); font-weight: 400; }
 .cl[tabindex] { cursor: default; }
 .cl .tip { display: none; position: absolute; left: 50%; top: 100%; transform: translateX(-50%); margin-top: var(--s1); width: 18rem; max-width: 80vw; padding: var(--s2) var(--s3); text-align: left;
   background: var(--surface); color: var(--ink); border: var(--rule-w) solid var(--ink); box-shadow: 0 var(--rule-heavy) 0 var(--ink); font-weight: 400; font-size: var(--fs-sm); line-height: var(--lh-text); z-index: 3; gap: 2px; }
@@ -128,13 +133,28 @@ sup { font-size: var(--fs-xs); line-height: 0; }
 .filters select { min-height: var(--hit); width: 100%; min-width: 0; padding: 0 var(--s2); font: inherit; font-size: var(--fs-sm);
   color: var(--ink); background: var(--surface); border: var(--rule-w) solid var(--ink-2); border-radius: var(--r2); }
 .filters select.on { border-color: var(--signal); box-shadow: inset 0 0 0 var(--rule-w) var(--signal); }
+/* the model search is a tap target like the selects: 44 px on a phone (measured 21 px, 2026-10-31) */
+.filters input[type="search"] { min-height: var(--hit); width: 100%; min-width: 0; padding: 0 var(--s2); font: inherit; font-size: var(--fs-sm);
+  color: var(--ink); background: var(--surface); border: var(--rule-w) solid var(--ink-2); border-radius: var(--r2); }
+.filters input[type="search"].on { border-color: var(--signal); box-shadow: inset 0 0 0 var(--rule-w) var(--signal); }
 .filters label[hidden] { display: none; }
 /* the status group: the cells' answers as checkboxes, ticked together they add up; each says how many models it leaves */
 .st-pick { display: grid; gap: 0; border: 0; margin: 0; padding: 0; min-width: 0; }
 .st-pick legend { margin-bottom: 0; font-family: inherit; font-weight: 400; font-size: var(--fs-xs); color: var(--ink-2); }
 .filters .st-pick label { display: flex; align-items: center; gap: var(--s1); min-height: var(--hit); font-size: var(--fs-sm); color: var(--ink); }
 .filters .st-pick label > span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
-.st-pick .n { margin-left: auto; color: var(--ink-3); font-size: var(--fs-xs); }
+.st-pick .n { color: var(--ink-3); font-size: var(--fs-xs); white-space: nowrap; }
+.st-pick label[hidden] { display: none; }
+.st-pick .w { min-width: 0; }
+.ccnote { max-width: var(--measure); margin-bottom: var(--s2); }
+.gb-others { display: grid; gap: var(--s2); margin-top: var(--s4); }
+.tiers { display: grid; gap: var(--s2); margin: 0; }
+.tiers dt { display: flex; align-items: center; gap: var(--s2); font-weight: 600; }
+.tiers dd { margin: 0 0 var(--s2); display: grid; gap: var(--s1); max-width: var(--measure); }
+.cc-run { display: flex; flex-wrap: wrap; gap: 0 var(--s3); font-size: var(--fs-sm); }
+.cc-run a { display: inline-flex; align-items: center; min-height: var(--hit); }
+.cc-run sup { margin-left: 0.15em; }
+.ccnote .cl { vertical-align: middle; }
 .st-pick input:disabled + span, .st-pick input:disabled ~ .n { opacity: .5; }
 .st-pick .st-every { padding-left: var(--s4); color: var(--ink-2); }
 .st-pick.on legend { color: var(--signal); }

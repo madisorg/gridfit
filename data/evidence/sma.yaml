@@ -1,0 +1,43 @@
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+brand: SMA
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: stp-xx-50-cei021-2023
+  title: Dichiarazione di conformità CEI 0-21 — SUNNY TRIPOWER X (STP xx-50), with SGS certificate No. 2622/0215-C-E1-CER
+  url: https://files.sma.de/assets/279470.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + SGS Tecnos S.A.U. certificate
+  cert_no: 2622/0215-C-E1-CER
+  issued: '2023-10-27'
+  valid_until: '2028-10-27'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04 (Ed. 6 V1:2022-11), Allegato B
+  - CEI 0-21:2022-03 and CEI 0-21;V1:2022-11 (SMA declaration wording)
+  firmware: 01.16.03.R and higher
+  families:
+  - name: Sunny Tripower X
+    match: ^(STP12\-50|STP15\-50|STP20\-50|STP25\-50)(-BE)?$
+    countries:
+    - IT
+- id: stp-xx-50-cei016-2023
+  title: Dichiarazione di conformità CEI 0-16 — SUNNY TRIPOWER X (STP xx-50), with SGS certificate No. 2622/0215-D-E1-CER
+  url: https://files.sma.de/assets/279471.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + SGS Tecnos S.A.U. certificate
+  cert_no: 2622/0215-D-E1-CER
+  issued: '2023-10-27'
+  valid_until: '2028-10-27'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-16:2019-04 (Ed. 6 V2:2023-05)
+  firmware: 01.16.03.R and higher
+  families:
+  - name: Sunny Tripower X
+    match: ^(STP12\-50|STP15\-50|STP20\-50|STP25\-50)(-BE)?$
+    countries:
+    - IT

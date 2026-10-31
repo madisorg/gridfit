@@ -73,10 +73,10 @@ export function faq(d: Device) {
     if (e.valid) a += `, until ${e.valid}`;
     if (e.fw && e.reg !== "BE") a += `; ${r.fw_label}: ${e.fw.length <= 80 ? e.fw : e.fw.slice(0, 80).replace(/\s+\S*$/, "") + " …"}`;
     const src = META[e.reg]?.source_date ?? "";
-    a += ` (list dated ${src}, checked ${META[e.reg]?.seen ?? ""}).`;
+    a += src ? ` (list dated ${src}, checked ${META[e.reg]?.seen ?? ""}).` : ` (the list is undated; checked ${META[e.reg]?.seen ?? ""}).`;
     const de = c !== "AT" ? "" :
       `Steht der ${d.brand} ${d.model} auf der österreichischen ${e.reg === "AT-EV" ? "Liste der Ladeeinrichtungen" : "Wechselrichterliste (TOR Erzeuger Typ A)"}? ` +
-      `Laut Liste vom ${src}: „${e.word}“` + (e.valid ? `, befristet bis ${e.valid}` : "") + ".";
+      `Laut Liste vom ${src || "—"}: „${e.word}“` + (e.valid ? `, befristet bis ${e.valid}` : "") + ".";
     out.push({ q, a, de });
   }
   return out;

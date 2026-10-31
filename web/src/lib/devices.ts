@@ -4,6 +4,8 @@
 import { data, summary, familyUrl, slug, type Family } from "./data";
 import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
 import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
+import { LIMITS } from "./profiles";
+import { releaseOf, type Release } from "./evidence";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -35,7 +37,7 @@ export function brandSlugOf(d: RegDevice): string {
 
 // ---- register device -> family: exact normalised code inside the same brand
 const famByCode = new Map<string, Family>();
-for (const f of data.families) for (const m of f.models) famByCode.set(f.brand_slug + "\u0000" + norm(m.model), f);
+for (const f of data.families) for (const m of f.models) famByCode.set(f.brand_slug + "\u0000" + (data.normOf.get(f.brand + "\u0000" + m.model) ?? norm(m.model)), f);
 export const familyOf = (d: RegDevice): Family | undefined => famByCode.get(brandSlugOf(d) + "\u0000" + d.norm);
 
 const matched = new Map<Family, RegDevice[]>();
@@ -245,4 +247,34 @@ export const COUNTS = {
   regModels: regDevices.filter((d) => !d.unmatched).length, lists: COUNTRIES.length, countries: COUNTRIES_ALL.length,
   modelPages: modelPages.length,
   localRoute: data.families.filter((f) => ["control", "read"].includes(localOf(f))).length,
+};
+
+// ---- the countries without a list (or with one not read): one status per device, the same rule as the grid view
+// (web/src/lib/grid-filter.js cellCode): the maker's own document, the type-A ceiling, then what other EU lists say.
+export type Tier = "D" | "K" | "B" | "F" | "?" | "X" | "-";
+export const TIER_WORD: Record<Tier, string> = {
+  D: "fit by the maker's document", K: "accepted on other EU lists", B: "over the type-A limit: type B, a procedure of its own",
+  F: "nothing to check for this class", "?": "not confirmed", X: "not fit: not allowed", "-": "nothing known",
+};
+export type Other = { cc: string; country: string; list: string; list_url?: string; state: ClassState; confidence: string; tier: Tier; release: Release | null };
+export function tierOf(cc: string, state: ClassState, positive: string[], releases: Release[], kva: number | null): { tier: Tier; release: Release | null } {
+  if (state === "banned") return { tier: "X", release: null };
+  if (state === "free") return { tier: "F", release: null };
+  const rel = releases.find((r) => r.countries.includes(cc));
+  if (rel) return { tier: "D", release: rel };
+  if (state === "unknown") return { tier: "?", release: null };
+  const lim = LIMITS[cc]?.max_kw;
+  if (lim && kva !== null && kva > lim) return { tier: "B", release: null };
+  return { tier: positive.length ? "K" : "-", release: null };
+}
+export const positiveOf = (cells: Record<string, GridState>) => COUNTRIES.filter((c) => cells[c] === "listed" || cells[c] === "restricted");
+export function othersTiered(cls: string, cells: Record<string, GridState>, releases: Release[], kva: number | null): Other[] {
+  const positive = positiveOf(cells);
+  return othersOf(cls).map((o) => ({ ...o, ...tierOf(o.cc, o.state, positive, releases, kva) }));
+}
+export const releaseOfModel = (d: RegDevice): Release | null => releaseOf(d.brand, d.model);
+export const releasesOfFamily = (f: Family): Release[] => {
+  const seen = new Map<string, Release>();
+  for (const d of modelsOf(f)) { const r = releaseOf(d.brand, d.model); if (r && !seen.has(r.family)) seen.set(r.family, r); }
+  return [...seen.values()];
 };

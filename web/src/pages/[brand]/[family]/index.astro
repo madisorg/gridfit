@@ -10,7 +10,7 @@ import GridBlock from "../../../components/GridBlock.astro";
 import RegCell from "../../../components/RegCell.astro";
 import { data, CLASS, CONN, SOURCE, REPO, summary, type Family, type Row } from "../../../lib/data";
 import { COUNTRIES, REGS, META, SNAP_DATE, trustOf } from "../../../lib/registers";
-import { gridOfFamily, modelsOf, entriesOfFamily, localOf, localRoutes, modelAnchor, GRID_WORD, specOf, sheetOf } from "../../../lib/devices";
+import { gridOfFamily, modelsOf, entriesOfFamily, localOf, localRoutes, modelAnchor, specOf, sheetOf, releasesOfFamily, specOfFamily } from "../../../lib/devices";
 
 export function getStaticPaths() {
   return data.families.map((f) => ({ params: { brand: f.brand_slug, family: f.slug }, props: { f } }));
@@ -32,7 +32,7 @@ const title = `${f.brand} ${f.name}`;
 const latestList = Object.values(META).map((m) => m.source_date || "").sort().pop();
 const gridQ = `Is the ${title} on an EU grid-connection list?`;
 const gridA = on.length
-  ? `Yes — models of this family are on the ${on.length === 1 ? "list" : "lists"} of ${on.join(", ")} (lists dated up to ${latestList}, read ${SNAP_DATE}); the other ${COUNTRIES.length - on.length} of the 7 lists read have no matching model, which is not a “no”.`
+  ? `Yes — models of this family are on the ${on.length === 1 ? "list" : "lists"} of ${on.join(", ")} (lists dated up to ${latestList}, read ${SNAP_DATE})${on.length < COUNTRIES.length ? `; the other ${COUNTRIES.length - on.length} of the ${COUNTRIES.length} lists read have no matching model, which is not a “no”` : ", every list read"}.`
   : Object.values(cells).every((v) => v === "free") ? `No country lists this kind of device — nothing to check against a list.`
   : `No model of this family was found on the 7 lists read (${SNAP_DATE}). That is not “not approved”: the list may spell the model differently, or the family's codes are not collected yet.`;
 const ld = {
@@ -53,6 +53,9 @@ const items = [
 const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURIComponent(title + ": ")}`;
 const conn = (r: Row) => r.conn.map((c) => CONN[c] ?? c).join(", ");
 const trust = [...new Set(models.map(trustOf))].join(" / ");
+const releases = releasesOfFamily(f);
+const fspec = specOfFamily(f);
+const NO_MPPT = f.class === "battery";
 ---
 <Base title={`${title}: local control with Home Assistant and evcc, and EU grid lists`} current="/grid/" description={`${f.faq.a} ${gridA}`}>
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(ld).replace(/</g, "\\u003c")} />
@@ -63,7 +66,7 @@ const trust = [...new Set(models.map(trustOf))].join(" / ");
     <p class="kind"><span>{CLASS[f.class]}</span><span aria-hidden="true">·</span>
       <span>{f.rows.length} integration route{f.rows.length === 1 ? "" : "s"}</span><span aria-hidden="true">·</span>
       <span>{models.length} model{models.length === 1 ? "" : "s"} on grid lists</span></p>
-    <Glance local={local} routes={localRoutes(f)} cells={cells} entries={entries} cls={f.class} seen={data.seen} listDate={latestList} />
+    <Glance local={local} routes={localRoutes(f)} cells={cells} entries={entries} cls={f.class} seen={data.seen} listDate={latestList} releases={releases} />
     <p class="chips"><a href="#local">Local control</a><a href="#grid">Grid lists</a>{models.length > 0 && <a href="#codes">Model codes</a>}</p>
   </header>
 
@@ -129,7 +132,7 @@ const trust = [...new Set(models.map(trustOf))].join(" / ");
         <h3>{gridQ}</h3>
         <p class="a">{gridA}</p>
       </div>
-      <GridBlock cells={cells} entries={entries} cls={f.class} />
+      <GridBlock cells={cells} entries={entries} cls={f.class} releases={releases} kva={fspec.kvaMax} brand={f.brand} />
       <h3 id="codes">Model codes on the lists</h3>
       <p class="small muted">{models.length ? `Matched to this family by model-code pattern (brand match ${trust}) — a pointer; confirm in the list. Hover a cell for the list's own words.` : "No list carries a model matched to this family. That says nothing about approval."}</p>
       {models.length > 0 && (
@@ -140,17 +143,18 @@ const trust = [...new Set(models.map(trustOf))].join(" / ");
               <tr id={modelAnchor(d)}>
                 <td>{d.model}</td>
                 {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} cls={d.cls} rich={true} />)}
-                <td class="sp num">{specOf(d).mppt ?? "–"}</td><td class="sp num">{specOf(d).kw ?? "–"}</td>
+                <td class="sp num">{specOf(d).mppt === 0 || (specOf(d).mppt === null && (NO_MPPT || d.cls === "battery")) ? <span class="muted" title="no MPPT: battery / AC inverter">none</span> : specOf(d).mppt ?? <span class="muted" title="not collected">–</span>}</td><td class="sp num">{specOf(d).kw ?? <span class="muted" title="not collected">–</span>}</td>
                 <td class="match">{trustOf(d)}</td>
               </tr>
             ))}
           </tbody>
         </table>
       )}
+      {models.length > 0 && !sheets.length && <p class="small muted">{NO_MPPT ? "A battery / AC inverter has no MPPT (no PV input); rated kW not collected yet." : "MPPT count and rated kW: no datasheet read for this family yet — “–” = not collected, never “none”."}</p>}
       {sheets.length > 0 && (
         <p class="small muted">MPPT count and rated kW are the maker's own datasheets, model code exactly as the sheet writes it:
           {sheets.map((x, i) => <>{i > 0 && "; "}<Ext href={x.src.url}>{x.src.title || x.code}</Ext>{x.src.version && ` (${x.src.version})`}, seen {x.src.seen}</>)}.
-          “–” = not collected.</p>
+          “–” = not collected; “none” = a battery / AC inverter, which has no PV input.</p>
       )}
     </section>
 

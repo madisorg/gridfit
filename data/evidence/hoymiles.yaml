@@ -1,0 +1,28 @@
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+brand: Hoymiles
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: vde4105-mit-8t-12t-2025
+  title: TÜV NORD Unit Certificate 44 798 23053438 — VDE-AR-N 4105:2018-11, DIN VDE V 0124-100:2020-06 — MIT 8T/8TL/12T three-phase
+    microinverters
+  url: https://www.hoymiles.com/uploadfile/1/202506/908e2aa4d1.pdf
+  issuer: TÜV NORD CERT GmbH (Essen)
+  cert_no: 44 798 23053438
+  issued: '2025-04-23'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100:2020-06
+  firmware: Main V1.1.12, Slave V1.1.08
+  families:
+  - name: MIT series (3-phase microinverter)
+    match: ^(MIT\-4000\-8T|MIT\-4000\-8TL|MIT\-4500\-8T|MIT\-4500\-8TL|MIT\-5000\-8T|MIT\-5000\-8TL|MIT\-5500\-12T|MIT\-6000\-12T)(-BE)?$
+    countries:
+    - DE
+    note: 'Certificate text: ''with restrictions'' — integrated tie breaker, no central NA protection; manufacturer declaration for
+      MIT-XXXX-8T series dated 2025-03-12.'

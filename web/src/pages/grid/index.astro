@@ -20,9 +20,9 @@ const gridBrands = BRANDS.filter((b) => b.models.length);
       description={`${nf(shown.length)} inverters, hybrids, batteries, plug-in units and wallboxes across ${COUNTRIES.length} national grid-connection lists read in full and ${COUNTRIES_ALL.length} EU+ countries described: pick your countries, phases and power, see each list's own status.`}>
   <section class="ask" aria-labelledby="h">
     <h1 id="h">Is it fit for the grid in your country?</h1>
-    <p class="lede">Pick one country, or several: each is a column, a model off its list stays with an empty cell, and the status filter narrows the rows by
-      what the cells say; a country without a list shows what applies there. {nf(shown.length)} models from {COUNTRIES.length} lists read in full, {nf(multi)} of them on two or more; phases and rated power where a list carries them;
-      the <strong>Smart home</strong> column is whether Home Assistant or evcc talks to the model on your network (the two marks at the right of each row).</p>
+    <p class="lede">Pick one country, or several: each is a column with one answer per model — in a country with a list the list's own word; without one, the maker's document,
+      the type-A limit or what other EU lists say — and the status filter narrows the rows by that answer. {nf(shown.length)} models from {COUNTRIES.length} lists read in full, {nf(multi)} of them on two or more;
+      phases, rated power and MPPT where a list or datasheet carries them; the <strong>Smart home</strong> column is whether Home Assistant or evcc talks to the model on your network.</p>
     <p class="note"><strong>The list is the authority; this is a cross-reference.</strong> An empty cell means no matching entry was found — the model may be
       listed under another name, or the list may not cover it. It never means “not approved”. Check the list itself before you install.</p>
     <p class="facts"><span><b>{nf(shown.length)}</b> models</span><span><b>{COUNTRIES.length}</b> lists read</span><span><b>{COUNTRIES_ALL.length}</b> countries</span>
