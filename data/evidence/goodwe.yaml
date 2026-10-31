@@ -125,3 +125,24 @@ documents:
     match: ^(GW3K\-DNS\-G40|GW3\.1K\-DNS\-L\-G40|GW3\.6K\-DNS\-G40|GW4\.2K\-DNS\-G40|GW5K\-DNS\-G40|GW6K\-DNS\-G40)(-BE)?$
     countries:
     - DE
+- id: sdt-g3-8-20-cei021-2025
+  title: "TÜV Rheinland Certificate A3 50704192 0001 — CEI 0-21 (to V2/EC2:2025-02) — GW8000…GW20K-SDT-30"
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SDT-G3-8-20K_Certificate-CEI0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai)
+  cert_no: A3 50704192 0001
+  issued: '2025-12-02'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: V1.04.04
+  families:
+  - name: SDT G3 three-phase string 8–20 kW
+    match: '^(GW8000\-SDT\-30|GW10K\-SDT\-30|GW10K\-SDT\-EU30|GW12K\-SDT\-30|GW15K\-SDT\-30|GW17K\-SDT\-30|GW20K\-SDT\-30)(-BE)?$'
+    countries:
+    - IT
+    note: "Report CN24F6T1 004. Page 2 is the TÜV declaration form; its header prints \"Certificate No. A3 50628582 0001\", which does not match page 1's registration number."

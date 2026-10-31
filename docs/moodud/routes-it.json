@@ -1,0 +1,9 @@
+[
+ {"name": "grid-it", "url": "grid/it/", "wait": 3.0},
+ {"name": "grid-it-how", "url": "grid/it/", "js": "document.getElementById('how').scrollIntoView()", "wait": 3.0},
+ {"name": "grid-it-docs", "url": "grid/it/", "js": "[...document.querySelectorAll('#how h3')].find((h) => h.textContent.startsWith('The makers')).scrollIntoView()", "wait": 3.0},
+ {"name": "grid-it-ev", "url": "grid/it/?g=ev", "wait": 3.0},
+ {"name": "grid-it-doc", "url": "grid/it/?st=D", "wait": 3.0},
+ {"name": "grid-es-docs", "url": "grid/es/", "js": "[...document.querySelectorAll('#how h3')].find((h) => h.textContent.startsWith('The makers')).scrollIntoView()", "wait": 3.0},
+ {"name": "pere-solax-fit-teised", "url": "solax/x1-x3-fit-and-ac-retrofit/", "js": "document.querySelector('.gb-others').scrollIntoView()", "wait": 1.5}
+]

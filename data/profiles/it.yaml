@@ -1,0 +1,123 @@
+# Italy — requirement profile for a grid-connected inverter, battery, hybrid or wallbox in low voltage (CEI 0-21).
+# There is no approved-model list. What the grid operator checks is the maker's CEI 0-21 declaration of conformity,
+# handed over by the customer with the operating rules (Regolamento di esercizio). Facts only, with the source of
+# each; the grid operator decides. Written 2026-11-01 from the CEI 0-21:2026-07 text, ARERA's TICA and deliberations,
+# the ministerial decrees on the Modello Unico, normattiva and e-distribuzione's connection guide.
+cc: IT
+country: Italy
+norm: CEI 0-21
+type_a_max_kw: 11.08   # ARERA 592/2018: type A 0.8 kW to 11.08 kW; above it CEI 0-21 asks for an external SPI, FRT and more
+description: "CEI 0-21 in Italy: what an inverter, battery or wallbox must meet under the 2026-07 edition, the maker's declaration of conformity, the 11.08 kW line and how the grid operator accepts a model."
+summary: "CEI 0-21 is the Italian technical rule for connecting producers and consumers to the low-voltage grid; the edition in force is CEI 0-21:2026-07, since 1 August 2026. For an inverter, a battery or a hybrid it asks for an interface protection (SPI) that disconnects at the voltage and frequency limits below — built into the inverter up to 11.08 kW, a separate relay above —, staying connected from 47.5 to 51.5 Hz and through 2.5 Hz/s, cutting power above 50.2 Hz, and a declaration of conformity from the maker backed by accredited test reports. There is no approved-model list: the customer hands that declaration to the grid operator with the connection paperwork, and the operator decides at activation."
+decided_by: "The distribution grid operator of the area (e-distribuzione in most of Italy, Areti in Rome, Unareti in Milan and Brescia, and the smaller local operators) at activation, from the documents the customer hands over. ARERA sets the connection procedure (TICA), the Italian Electrotechnical Committee (CEI) writes the technical rule, and Terna keeps the register of every plant (GAUDÌ)."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG) — the generator requirements; CEI 0-21 takes its definition of a declaration of conformity from article 2(61)"
+  - "ARERA deliberation 592/2018/R/eel — approves Terna's RfG thresholds: type A 0.8 kW to 11.08 kW, type B above 11.08 kW to 6 MW"
+  - "CEI 0-21:2026-07 (fascicolo 26363), in force 1 August 2026 — replaces the 2022-03 edition and its variants V1:2022-11, V2:2024-01, V2/EC, V2/EC2 and V3:2025-10, and adds variant V4 (export limitation)"
+  - "CEI 0-21;V1:2026-08 — rewrites Allegato X, the controller every new home charging point needs from 2027"
+  - "ARERA TICA (Testo integrato connessioni attive, deliberation ARG/elt 99/08, Allegato A, consolidated to 361/2023) — the procedure, deadlines, GAUDÌ registration, activation"
+  - "DM 2 August 2022 n. 297 (Modello Unico up to 200 kW) and DM 15 July 2026 n. 223 (adds Modello Unico Parte III)"
+  - "ARERA 574/2014/R/eel and 642/2014/R/eel — storage is a production plant, registered in GAUDÌ, and must meet CEI 0-21"
+  - "Article 45-bis of Legislative Decree 199/2021 (added by D.Lgs 5/2026, date as amended) — smart charging for new non-public charging points from 1 January 2027"
+must_meet:
+  - rule: "Frequency and voltage range (CEI 0-21 8.4.4, table 9)"
+    value: "an inverter stays connected without time limit from 47.5 to 51.5 Hz; it runs at constant power from 90 to 110 % of nominal voltage and stays connected from 85 to 110 % for limited periods"
+  - rule: "Rate of change of frequency (8.6.2)"
+    value: "stay connected and in operation up to 2.5 Hz/s without the interface protection tripping (measured over at least 100 ms); not required below 800 W"
+  - rule: "Over-frequency response, LFSM-O (8.5.3.2, annex F.3)"
+    value: "reduce active power from 50.2 Hz (settable 50–52 Hz) with a droop settable 2–12 %, 2.6 % by default for inverters, within 2 s; return once the frequency has stayed within 50 ± 0.1 Hz for 300 s, at no more than 20 % per minute"
+  - rule: "Interface protection settings (8.6.2.1, table 13)"
+    value: "over-voltage 59.S1 at 1.10 Un as a 10-minute average (trip within 603 s) and 59.S2 at 1.15 Un (0.2 s in the 2022 text and in the 2026 edition's operating-rules form; table 13 of the 2026 edition prints 0.5 s — ask the operator); under-voltage 27.S1 at 0.85 Un in 1.5 s and 27.S2 at 0.15 Un in 0.2 s; frequency 81>.S2 51.5 Hz and 81<.S2 47.5 Hz in 0.1 s (1 s and 4 s once the operator's signal is connected); the narrow 50.2 / 49.8 Hz thresholds (81.S1, 0.1 s) only when the external signal and the local command ask for them"
+  - rule: "Where the interface protection sits (8.6.2, 8.2.2)"
+    value: "up to 11.08 kW in total it may be built into the inverter and is checked by its own autotest; above 11.08 kW it must be a separate protection relay, tested with a relay test set, and up to three interface switches may each have their own; it must accept the operator's signals over IEC 61850, certified at level A (not below 800 W)"
+  - rule: "Connection and reconnection (8.4.1.3)"
+    value: "only with the voltage at 85–110 % Un and the frequency steady within 49.90–50.10 Hz: for 30 s at start-up, 300 s after a protection trip; power ramps up at no more than 20 % of maximum per minute"
+  - rule: "Fault ride-through (8.5.1, table 12)"
+    value: "only for plants above 11.08 kW: an inverter rides through a dip to 0.05 pu for 0.2 s, back to 0.85 pu by 1.5 s, and restores its active and reactive power within 400 ms; below 11.08 kW CEI 0-21 asks for none"
+  - rule: "Reactive power (8.4.4.2, annex E)"
+    value: "cos φ = 1 by default; up to 11.08 kW a triangular capability down to cos φ 0.9 at rated power, above 11.08 kW a rectangular one (|Q| at least 48.43 % of rated power); the cos φ(P) curve (1 up to half power, 0.9 absorbing at full power) on the operator's request; Q(U) only above 11.08 kW"
+  - rule: "Voltage-driven power reduction (8.5.3)"
+    value: "P(U)_110: reduce power smoothly near 110 % of nominal voltage; new in 2026, P(U)_115: from 110 % cut at least 20 % of rated power per 1 % of voltage, reaching zero at 115 % within 0.2 s — mandatory when an export limiter is installed"
+  - rule: "DC injection (8.4.4.1)"
+    value: "at most 0.5 % of rated current, through a grid-frequency transformer or a DC-sensitive protection that trips in 200 ms above 1 A and in 1 s above 0.5 % of rated current"
+  - rule: "Phases (8.3)"
+    value: "up to 6 kW single-phase (the operator may allow 10 kW); above it three-phase with the units spread over the phases; an imbalance above the limit must be corrected automatically, or the plant disconnects after 30 min (6–10 kW) or 1 min (above 10 kW)"
+  - rule: "Storage (8.5, 8.5.3.4, annex Bbis)"
+    value: "a battery inverter meets the same converter rules and also responds to frequency: from 50.2 Hz it stops discharging and charges, from 49.8 Hz it stops charging and discharges, within its 10–90 % charge band; storage is type-tested to Allegato Bbis, and the declaration lists the battery makes, models and BMS firmware usable with each converter"
+  - rule: "Export limiter, SLI (annex L, L.1)"
+    value: "since the 2026-07 edition any customer who adds generation may install a limiter that holds export at the agreed export power, without upgrading the connection (from 1 March 2026 it was allowed only on single-phase supplies up to 6 kW); the phase limits above still apply; third-party certification of the limiter becomes mandatory two years after the 2026-07 edition, until then the operator judges the maker's declaration"
+documents_for_listing:
+  - "the maker's Dichiarazione di conformità to CEI 0-21 for the model and firmware, on the Allegato C form: a self-certification under article 47 of DPR 445/2000 naming the models, firmware, phases, whether the interface protection is integrated, whether the unit is fit for plants above 11.08 kW, the storage data with the usable batteries, and the test reports behind it; when an accredited certification body issues it, it is titled a certificate (certificato)"
+  - "behind the declaration, type-test reports from a laboratory accredited to ISO/IEC 17025, or from the maker's own laboratory under the surveillance of a certification body accredited to ISO/IEC 17065: Allegato A (interface protection), B (inverter), Bbis (storage); the maker keeps them 20 years and makes them available to the grid operator on its website"
+  - "an attestation that the unit is produced under ISO 9001, on the operator's request"
+  - "the Regolamento di esercizio (operating rules: CEI 0-21 Allegato Gbis up to 11.08 kW, Allegato G above), signed, with the sworn statement (asseverazione) of a licensed professional listing every inverter's make, model, serial number and firmware, the storage, the GAUDÌ code and a positive on-site autotest of the interface protection"
+  - "the installer's declaration of conformity of the installation (DM 37/08) and the single-line diagram"
+  - "for the Modello Unico, Parte II as built: the make and model of the modules, inverters, interface protection and storage, and a statement that the plant meets CEI 0-21"
+apply:
+  who: "the customer who will produce, or an installer or technician with the customer's mandate"
+  how: "for PV up to 200 kW on a building with simple grid works, the Modello Unico: Parte I on the grid operator's portal (e-distribuzione: Portale Produttori) before the work starts; within 20 working days the operator confirms, charges €100 plus VAT, registers the plant in Terna's GAUDÌ and prepares the operating rules; after the build, Parte II with the signed operating rules and the declarations. Below 800 W the Comunicazione Unica; anything else the ordinary TICA procedure, where the applicant registers in GAUDÌ"
+  guide_url: https://www.e-distribuzione.it/content/dam/e-distribuzione/documenti/connessione_alla_rete/regole_tecniche/Guida_per_le_connessioni_Maggio_2026_sez_B.pdf
+  guide_date: "e-distribuzione connection guide, section B, edition 8.0, May 2026"
+  processing_time: "Modello Unico: confirmation within 20 working days of Parte I, activation within 10 working days of a complete Parte II (TICA 13bis); ordinary procedure: the quote within 20 working days up to 100 kW, activation within 10 working days once GAUDÌ enables the plant"
+not_listed: "There is no list to be on: no grid operator, ARERA or Terna publishes approved models. The list from ANIE, a trade association, collects its members' declarations (dated 2025-10-29) and is not an approval. A model without a CEI 0-21 declaration cannot be entered truthfully in the operating rules, so the file is incomplete and the operator does not activate the plant (a report of non-activation, TICA 10.10bis) or can suspend the connection later (Allegato Gbis). Only the maker can fix that, by having the model tested and declared; an installer cannot."
+thresholds:
+  - "below 800 W: the Comunicazione Unica, with no payment for exported energy; relaxed rules (table 14 protection settings, no reactive power, no RoCoF or IEC 61850 requirement, no field tests), but the inverter's declaration is still attached"
+  - "Plug & Play up to 350 W: plugged into a dedicated socket on its own circuit, one per supply point and not where a generator already runs; no operating rules to sign"
+  - "type A 0.8 kW to 11.08 kW, type B above it (ARERA 592/2018); in CEI 0-21 the same 11.08 kW line decides integrated or separate interface protection, fault ride-through and the reactive-power capability"
+  - "single-phase up to 6 kW (10 kW with the operator's consent), three-phase above"
+  - "up to 20 kW the operator may take the producer's self-declaration instead of a site visit (TICA 10.10ter); above 20 kW the interface switch needs a back-up device"
+  - "the Modello Unico covers PV up to 200 kW on a building or structure (DM 297/2022, kept by DM 223/2026)"
+  - "storage on the AC side adds to the plant's power for these thresholds (20 kW PV + 20 kW storage = 40 kW); storage on the DC side behind one inverter counts as that inverter's rating"
+  - "wallboxes: a charge-only (V1G) wallbox is a consumer load with no interface protection and nothing to declare to the operator until 2027; a bidirectional (V2G) one follows the storage rules"
+commissioning: "Before the first parallel the operator checks the site (metering and GAUDÌ data must match) and writes an activation or non-activation report (TICA 10.10bis); up to 20 kW it may accept a self-declaration instead. The professional's statement must record a positive on-site autotest of the interface protection even for a declared model, because a single unit can be faulty. Separate protection relays above 11.08 kW are re-tested every five years (ARERA 786/2016); a missed test suspends the connection."
+changes:
+  - "1 August 2026: CEI 0-21:2026-07 replaces the 2022 edition with all its variants; it adds P(U)_115 and widens the export limiter. Most makers' declarations still cite 2022-03 up to V3:2025-10; GridFit has found no ARERA rule on when operators stop accepting them — the operator decides"
+  - "15 July 2026: DM 223 adds the Modello Unico Parte III, filed on the national renewables platform (SUER) within 5 days of entry into service; existing plants have six months"
+  - "1 January 2027: every new or replaced non-public standard-power charging point must be certified to CEI 0-21 Allegato X — a controller (CIR) that adjusts charging to the supply's total draw, talks to the 2G smart meter (Chain 2) and responds to under-frequency (article 45-bis D.Lgs 199/2021; ARERA 352/2026)"
+  - "about August–September 2027: the one-year transition for a basic charging controller under the new Allegato X ends"
+  - "2028: third-party certification of export limiters becomes mandatory (two years after the 2026-07 edition)"
+  - "the EU revision of the generator code (RfG 2.0) was in public feedback until 25 August 2026 and is not adopted"
+evidence_for_documented: "The maker's CEI 0-21 declaration of conformity, or a certification body's certificate, for the exact model family and firmware: it names the edition and variants it was tested against, the test laboratory and its accreditation, and whether the unit is fit above 11.08 kW. GridFit shows the document, its date and the newest variant it cites; the grid operator decides."
+sources:
+  - title: "CEI 0-21:2026-07 — Regola tecnica di riferimento per la connessione di Utenti attivi e passivi alle reti BT (catalogue entry, fascicolo 26363)"
+    url: https://mycatalogo.ceinorme.it/cei/item/0000026363
+    date: "2026-07, in force 2026-08-01"
+  - title: "CEI 0-21, consolidated working version 2025-10 (2022-03 + V1 + V2 + EC + EC2 + V3), published by CEI"
+    url: https://static.ceinorme.it/strumenti-online/doc/0-21consolidata.pdf
+    date: "2025-10"
+  - title: "CEI 0-21;V1:2026-08 — Allegato X, charging-infrastructure controller (English extract)"
+    url: https://static.ceinorme.it/strumenti-online/doc/EstrattoAllegatoX.pdf
+    date: "2026-09"
+  - title: "ARERA deliberation 592/2018/R/eel — Terna's RfG implementation and the type thresholds"
+    url: https://www.arera.it/allegati/docs/18/592-18.pdf
+    date: "2018-11-20"
+  - title: "ARERA — TICA, Testo integrato connessioni attive (ARG/elt 99/08, Allegato A, consolidated)"
+    url: https://www.arera.it/fileadmin/allegati/docs/08/099-08argallnew.pdf
+    seen: "2026-10-31"
+  - title: "DM 2 agosto 2022 n. 297 — Modello Unico for PV up to 200 kW"
+    url: https://www.mase.gov.it/portale/documents/d/guest/dm_297_02_08_2022-pdf
+    date: "2022-08-02"
+  - title: "DM 15 luglio 2026 n. 223 — Modello Unico Parte III"
+    url: https://www.mase.gov.it/portale/documents/d/guest/mase_udcm_dm_0000223-15-07-2026-pdf
+    date: "2026-07-15"
+  - title: "e-distribuzione — Guida per le connessioni alla rete elettrica, Sezione B (procedures), edition 8.0"
+    url: https://www.e-distribuzione.it/content/dam/e-distribuzione/documenti/connessione_alla_rete/regole_tecniche/Guida_per_le_connessioni_Maggio_2026_sez_B.pdf
+    date: "2026-05"
+  - title: "e-distribuzione — Fotovoltaico Plug & Play: requisiti e normativa per la connessione"
+    url: https://www.e-distribuzione.it/supporto/guide-ai-produttori-di-energia/fotovoltaico-plug-and-play--requisiti-e-normativa-per-la-conness.html
+    date: "2024-05-16"
+  - title: "e-distribuzione — Deliberazione 786/2016/R/eel (periodic checks of interface protection)"
+    url: https://www.e-distribuzione.it/a-chi-ci-rivolgiamo/produttori/normative-e-guide-tecniche/deliberazione-786-2016-r-eel.html
+    seen: "2026-10-31"
+  - title: "ARERA deliberation 642/2014/R/eel — storage systems and CEI 0-21 / 0-16"
+    url: https://www.arera.it/fileadmin/allegati/docs/14/642-14.pdf
+    date: "2014-12-18"
+  - title: "Decreto legislativo 199/2021, article 45-bis (smart charging), text in force from 2026-04-19"
+    url: https://www.normattiva.it/uri-res/N2Ls?urn:nir:stato:decreto.legislativo:2021-11-08;199~art45bis!vig=
+    seen: "2026-10-31"
+  - title: "ARERA deliberation 352/2026/R/eel — EV charging and the 2G meter's Chain 2"
+    url: https://www.arera.it/fileadmin/allegati/docs/26/352-2026-R-eel.pdf
+    date: "2026-10-06"
+  - title: "ANIE — inverters for LV with a CEI 0-21 declaration (trade association members' list, not an approval)"
+    url: https://anie.it/wp-content/uploads/2023/03/251028-Inverter-BT-Norma-CEI_0-21.pdf
+    date: "2025-10-29"

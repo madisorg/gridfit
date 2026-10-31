@@ -5,7 +5,7 @@ import { data, summary, familyUrl, slug, type Family } from "./data";
 import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
 import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
 import { LIMITS, NOT_LISTED } from "./profiles";
-import { releaseOf, type Release } from "./evidence";
+import { releasesOf, type Release } from "./evidence";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -284,11 +284,12 @@ export function subTiers(cells: Record<string, GridState>, releases: Release[], 
 }
 export function othersTiered(cls: string, cells: Record<string, GridState>, releases: Release[], kva: number | null): Other[] {
   const positive = positiveOf(cells);
-  return othersOf(cls).map((o) => ({ ...o, ...tierOf(o.cc, o.state, positive, releases, kva) }));
+  // RfG types are a generator's: a wallbox's charging power is not over any type-A limit (grid-filter.js cellCode alike)
+  return othersOf(cls).map((o) => ({ ...o, ...tierOf(o.cc, o.state, positive, releases, cls === "wallbox" ? null : kva) }));
 }
-export const releaseOfModel = (d: RegDevice): Release | null => releaseOf(d.brand, d.model);
+export const releasesOfModel = (d: RegDevice): Release[] => releasesOf(d.brand, d.model);
 export const releasesOfFamily = (f: Family): Release[] => {
   const seen = new Map<string, Release>();
-  for (const d of modelsOf(f)) { const r = releaseOf(d.brand, d.model); if (r && !seen.has(r.family)) seen.set(r.family, r); }
+  for (const d of modelsOf(f)) for (const r of releasesOf(d.brand, d.model)) { const k = r.doc.id + "|" + r.family; if (!seen.has(k)) seen.set(k, r); }
   return [...seen.values()];
 };

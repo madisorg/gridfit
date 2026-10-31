@@ -7,7 +7,7 @@ import Glance from "../../../../components/Glance.astro";
 import GridBlock from "../../../../components/GridBlock.astro";
 import Status from "../../../../components/Status.astro";
 import { COUNTRIES, REGS, RC, RS, RSHORT, META, SNAP_DATE, faq, best, type Device } from "../../../../lib/registers";
-import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, kindOf, releaseOfModel } from "../../../../lib/devices";
+import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, kindOf, releasesOfModel } from "../../../../lib/devices";
 import { localOf } from "../../../../lib/devices";
 import { familyUrl, REPO } from "../../../../lib/data";
 import { legacyOf, TIER_WORD } from "../../../../lib/legacy";
@@ -25,7 +25,7 @@ const sheet = sheetOf(d);
 const qa = faq(d);
 // only families of the same kind can claim this code: a hybrid is never an ENECTOR wallbox or a KSEM meter
 const routes = (brand?.families ?? []).filter((f) => kindOf(f.class) === kindOf(d.cls) && ["control", "read"].includes(localOf(f)));
-const spec = specOf(d), release = releaseOfModel(d), legacy = legacyOf(d);
+const spec = specOf(d), releases = releasesOfModel(d), legacy = legacyOf(d);
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -46,7 +46,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
     <p class="kind"><span>{RC[d.cls]}</span><span aria-hidden="true">·</span><span>in {listed.length} of {COUNTRIES.length} lists</span>
       {legacy.tier && <><span aria-hidden="true">·</span><span class="tag tag-legacy">{legacy.tier === "C" ? "legacy?" : "legacy"}</span></>}
       <span aria-hidden="true">·</span><span>no product family claims this code yet</span>{!sheet && (d.cls === "battery") && <><span aria-hidden="true">·</span><span>no MPPT: a battery / AC inverter</span></>}</p>
-    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} releases={release ? [release] : []} kva={spec.kva} />
+    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} releases={releases} kva={spec.kva} />
     <p class="chips"><a href="#grid">Grid lists</a><a href="#local">Local control</a><a href={`/${bslug}/#grid`}>All {d.brand} models</a></p>
     {legacy.tier && <p class="note"><b>{TIER_WORD[legacy.tier].charAt(0).toUpperCase() + TIER_WORD[legacy.tier].slice(1)}.</b> {legacy.reason}{legacy.source && <> — <Ext href={legacy.source.url}>{legacy.source.title}</Ext></>}. Hidden from the grid view unless “legacy models” are included; a search by model code always finds it.</p>}
   </header>
@@ -57,7 +57,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
       <div class="faq">
         {qa.map((f) => <><h3>{f.q}</h3><p class="a">{f.a}</p>{f.de && <p lang="de" class="small muted">{f.de}</p>}</>)}
       </div>
-      <GridBlock cells={cells} entries={d.cells} cls={d.cls} releases={release ? [release] : []} kva={spec.kva} brand={d.brand} />
+      <GridBlock cells={cells} entries={d.cells} cls={d.cls} releases={releases} kva={spec.kva} brand={d.brand} />
       {sheet && (
         <>
           <h3>Datasheet</h3>

@@ -52,3 +52,63 @@ documents:
       - name: KOSTAL HELIVOR HV
         match: '^(KOSTAL)?HELIVOR'
         countries: [BE, DK, DE, EE, FI, FR, GR, IT, LU, MT, NL, AT, PL, PT, SE, CH, ES, CY]
+  - id: cei021-plenticore-g3-2026
+    title: "Dichiarazione di conformità + Kiwa certificato 25-222-03 — CEI 0-21 (to V2/EC2:2025-02) — PLENTICORE S/M/L G3 4.0…20.0 con sistemi a batteria"
+    url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2301_Z_CEI_0-21_PLENTICORE_G3_it.pdf
+    issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, DIN EN ISO/IEC 17065)
+    cert_no: 25-222-03
+    issued: '2026-05-07'
+    seen: '2026-10-31'
+    kind: certificate
+    standards:
+    - CEI 0-21:2022-03
+    - CEI 0-21;V1:2022-11
+    - CEI 0-21;V2:2024-01
+    - CEI 0-21;V2/EC:2024-03
+    - CEI 0-21;V2/EC2:2025-02
+    firmware: SW ≥ 3.06.10 (inverter); BMS ≥ V01.26 (KOSTAL HELIVOR HV)
+    families:
+    - name: PLENTICORE S G3 4.0/5.5/7.0, M G3 8.5/10.0/12.5, L G3 15.0/17.5/20.0 (three-phase hybrid, power extension)
+      match: '^PLENTICORE[SML]?G3\d'
+      countries:
+      - IT
+      note: "Kostal declaration (38 pages, scanned) plus the Kiwa certificate and annex. SPI integrated; Kiwa ticks \"idoneo per impianti > 11,08 kW\". Batteries listed are KOSTAL HELIVOR HV (ZYC), AXITEC AXIstorage Li SV1/SV2, BYD and others. Base power can be raised by a software power extension; the certificate lists the maximum per size. Published 2026-05-27, replacing doc 2286 (2025-07-21)."
+  - id: cei021-plenticore-mp-g3-2026
+    title: "Dichiarazione di conformità + Kiwa certificato 25-205-03 — CEI 0-21 (to V2/EC2:2025-02) — PLENTICORE MP S/M G3 3.0…7.0 con sistemi a batteria"
+    url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2302_Z_PLENTICORE_MP_G3_CEI_0-21_it.pdf
+    issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, DIN EN ISO/IEC 17065)
+    cert_no: 25-205-03
+    issued: '2026-05-07'
+    seen: '2026-10-31'
+    kind: certificate
+    standards:
+    - CEI 0-21:2022-03
+    - CEI 0-21;V1:2022-11
+    - CEI 0-21;V2:2024-01
+    - CEI 0-21;V2/EC:2024-03
+    - CEI 0-21;V2/EC2:2025-02
+    firmware: SW ≥ 3.06.10
+    families:
+    - name: PLENTICORE MP S G3 3.0/3.6/4.0, MP M G3 5.0/6.0/7.0 (single-phase hybrid)
+      match: '^PLENTICOREMP[SM]?G3'
+      countries:
+      - IT
+      note: "SPI integrated. The two layers disagree on the 11.08 kW line. Kostal's own page 1 note reads \"Installabile su impianti di Potenza <= 11,08kW\", but Kiwa's annex ticks \"idoneo per installazione in impianti con potenza superiore a 11,08 kW\". Kostal lists Pn of 7.0 as 5.4 kVA (6.0 kVA Sn)."
+  - id: cei021-plenticore-plus-g2-2024
+    title: "Dichiarazione di conformità + BV certificato U24-0988 — CEI 0-21:2022-03 / V1:2022-11 — PLENTICORE plus 3.0…10 G2 con sistemi a batteria"
+    url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/2182_Z-Dichiarazione_di_conformita_CEI-0-21_G2_2024.pdf
+    issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00; test lab D-PL-12024-03-04)
+    cert_no: U24-0988
+    issued: '2024-10-14'
+    seen: '2026-10-31'
+    kind: certificate
+    standards:
+    - CEI 0-21:2022-03
+    - CEI 0-21;V1:2022-11
+    firmware: SW ≥ 02.13
+    families:
+    - name: PLENTICORE plus 3.0/4.2/5.5/7.0/8.5/10 G2 (three-phase)
+      match: '^PLENTICOREPLUS(3\.0|4\.2|5\.5|7\.0|8\.5|10)G2$'
+      countries:
+      - IT
+      note: "Test report 19TH0374-G2-CEI 0-21_3; programme NSOP-0032-DEU-ZE-V10. The BV header names 2022-03/V1 only, but its body text says \"conforme ... CEI 0-21: 2022-03, V1: 2022-11, V2: 2024-01, Allegato A, Allegato B e Allegato Bbis\". \"Il dispositivo è per gli impianti di ogni potenza\". The SPI maker is KOSTAL Industrie Elektrik GmbH & Co.KG (Hagen); the SPI is integrated. Batteries are AXITEC AXIstorage Li SH and others."

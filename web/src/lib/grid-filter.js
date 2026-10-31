@@ -30,7 +30,8 @@ export function cellCode(row, cc, data) {
 export function ladder(row, cc, data) {
   if (row[10] && row[10].split(",").includes(cc)) return "D";
   const lim = data.limits?.[cc]?.max_kw;
-  if (lim && row[8] !== null && row[8] > lim) return "B";
+  // RfG types are a generator's: a wallbox's charging power is not over any type-A limit
+  if (lim && row[2] !== "wallbox" && row[8] !== null && row[8] > lim) return "B";
   if (data.read.some((c, i) => c !== cc && POSITIVE.includes(row[4][i]))) return "K";
   return "-";
 }

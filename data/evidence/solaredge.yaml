@@ -1,0 +1,26 @@
+# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+brand: SolarEdge
+maker_site: https://knowledge-center.solaredge.com/
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
+  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
+  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+documents:
+- id: cei021-home-hub-3ph-2023
+  title: "Certificato di conformità U23-0210 — CEI 0-21:2022-03 / V1:2022-11 — SE5K…SE10K-RWB48 (Home Hub three-phase)"
+  url: https://knowledge-center.solaredge.com/sites/kc/files/se-solaredge-home-hub-inverter-three-phase-grid-certificate-it.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00; test lab D-PL-12024-03-03)
+  cert_no: U23-0210
+  issued: '2023-03-10'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: DSP1 1.20 / DSP2 2.20
+  families:
+  - name: Home Hub three-phase SE5K/SE7K/SE8K/SE10K-RWB48 (5–10 kW)
+    match: '^SE(5|7|8|10)K-RWB48[A-Z0-9]*$'
+    countries:
+    - IT
+    note: "Test report 22TH0188-CEI0-21_0. \"Il dispositivo è per gli impianti di ogni potenza\". The SPI is integrated (SolarEdge Technologies Ltd.). The annex carries measured SPI trip values at ambient, -10 °C and +55 °C."

@@ -174,3 +174,80 @@ documents:
     match: ^(SOLAX)?X3-(HYBRID|FIT)-(5\.0|6\.0|8\.0|10\.0|12\.0|15\.0)-[DMW]$
     countries:
     - DE
+- id: cei021-x1-ies-2024
+  title: "TÜV Rheinland A3 50638217 0001 + declaration — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — X1-IES 2.5K…8K"
+  url: https://www.solaxpower.com/uploads/file/solax-x1-ies-cei-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd.
+  cert_no: A3 50638217 0001
+  issued: '2024-07-29'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: DSP 2.07, ARM 2.03
+  families:
+  - name: X1-IES 2.5K/3K/3.7K/4.6K/5K/6K/8K (single-phase hybrid)
+    match: '^X1-IES-(2\.5|3|3\.7|4\.6|5|6|8)K$'
+    countries:
+    - IT
+    note: "Report CN2458CS 001. Battery TP-HS50E (1–4 units). States compliance with Annex A, B and Bbis."
+- id: cei021-x1-hyb-lv-ld53-2024
+  title: "TÜV Rheinland A3 50633840 0001 + declaration — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — X1-HYB-3.0…6.0-LV-EU with TP-LD53"
+  url: https://www.solaxpower.com/uploads/file/solax-x1-hybrid-lv-ld53-cei-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd.
+  cert_no: A3 50633840 0001
+  issued: '2024-06-25'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: ARM 5.00, MDSP 5.00, SMCU 5.00
+  families:
+  - name: X1-HYB-3.0/3.7/4.0/4.6/5.0/6.0-LV-EU (single-phase low-voltage-battery hybrid)
+    match: '^X1-HYB-(3\.0|3\.7|4\.0|4\.6|5\.0|6\.0)-LV(-EU)?$'
+    countries:
+    - IT
+    note: "Report CN24KWZG 001. Battery TP-LD53 (1–16 units). The certificate identification lists 3.0/3.7/4.0/5.0/6.0, while the declaration tables also carry 4.6."
+- id: cei021-x3-pro-g2-2022
+  title: "Dichiarazione di conformità + TÜV Rheinland A3 50541883 0001 — CEI 0-21:2019-04 + V1:2020-12 — X3-PRO-8K…30K-G2"
+  url: https://gr.solaxpower.com/uploads/file/solax-x3-pro-g2-cei0-21-last-version.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50541883 0001
+  issued: '2022-04-28'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  firmware: Master 1.00, Manager 1.00
+  families:
+  - name: X3-PRO-8K/10K/12K/15K/17K/20K/25K/30K-G2 (three-phase string)
+    match: '^X3-PRO-(8|10|12|15|17|20|25|30)K-G2$'
+    countries:
+    - IT
+    note: "Older edition only (2019-04 + V1:2020-12). SolaX declaration dated 21/07/2022 under DPR 445/2000 art. 76. Report CN228SHR 001."
+- id: cei021-x3-aelio-2025
+  title: "TÜV Rheinland A3 50686346 0001 — CEI 0-21 (to V2/EC2:2025-02) — X3-AELIO-49.9K…61K"
+  url: https://www.solaxpower.com/uploads/file/solax-x3-aelio-cei-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50686346 0001
+  issued: '2025-08-04'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: Master 1.00, Manager 1.00 (battery BMU R140V_001.R01)
+  families:
+  - name: X3-AELIO-49.9K / 49.9K-P / 50K / 60K / 61K (C&I hybrid with storage)
+    match: '^X3-AELIO-(49\.9K|49\.9K-P|50K|60K|61K)$'
+    countries:
+    - IT
+    note: "Commercial size (> 20 kW), lower priority. Report CN241IKL 002."

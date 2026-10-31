@@ -165,3 +165,24 @@ documents:
     match: ^(MQ\-2200\-M\-AC|MQ\-2200\-M\-H|S22\-M\-AC|S22\-M\-H|S22\-S)(-BE)?$
     countries:
     - IT
+- id: cei021-h1-g2-ep-2025
+  title: "TÜV Rheinland Certificate A3 50696995 0001-0002 — CEI 0-21 (to V2/EC2:2025-02) — H1/AC1-xx-E(1)-G2(-WL) with EP6/EP12 (Plus)"
+  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260427/A3506969950001extsigned-477.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50696995 0001-0002
+  issued: '2025-09-29'
+  seen: '2026-10-31'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: V1.27
+  families:
+  - name: H1-G2 / AC1-G2 3.0–6.0 kW (-E, -E1, -WL) with EP6 / EP12 (Plus) batteries
+    match: '^(H1|AC1)-(3\.0|3\.7|4\.0|4\.6|5\.0|6\.0)-E1?-G2(-WL)?$'
+    countries:
+    - IT
+    note: "An earlier certificate for the same family, battery-specific to EP6/EP12. foxess.yaml's cei021-h1-g2-2026 (A3 50727009, to V3:2025-10) is newer."
