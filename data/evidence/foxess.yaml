@@ -1,10 +1,13 @@
-# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
 brand: Fox ESS
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
-  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
-  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
 documents:
 - id: une217002-h3-pro-ac3-pro-2025
   title: Certificado de Conformidad 250061RECO11-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — H3-Pro / AC3-Pro 15–30
@@ -24,8 +27,7 @@ documents:
   families:
   - name: H3-Pro / AC3-Pro
     match: ^(AC3\-PRO\-15\.0|AC3\-PRO\-20\.0|AC3\-PRO\-25\.0|AC3\-PRO\-30\.0|H3\-PRO\-15\.0|H3\-PRO\-20\.0|H3\-PRO\-25\.0|H3\-PRO\-30\.0)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: une217002-h3-e-ac3-e-2022
   title: Certificado de Conformidad 2622/0374-1-A-CER — UNE 217002:2020, IEC 62116, Orden TED/749/2020 — H3-E / AC3-E 5–12 kW
   url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0374-1-A-CER.pdf
@@ -43,8 +45,7 @@ documents:
   families:
   - name: H3-E / AC3-E
     match: ^(AC3\-10\.0\-E|AC3\-12\.0\-E|AC3\-5\.0\-E|AC3\-6\.0\-E|AC3\-8\.0\-E|H3\-10\.0\-E|H3\-12\.0\-E|H3\-5\.0\-E|H3\-6\.0\-E|H3\-8\.0\-E)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: une217002-s-g2-2022
   title: Certificado de Conformidad 2622/0287-A-CER — UNE 217002:2020, IEC 62116, Orden TED/749/2020 — S-G2 single-phase string
   url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0287-A-CER_UNE217002.pdf
@@ -61,8 +62,7 @@ documents:
   families:
   - name: S-G2
     match: ^(S1000\-G2|S1500\-G2|S2000\-G2|S2500\-G2|S3000\-G2|S3300\-G2|S700\-G2)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: cei021-h3-smart-2026
   title: Certificate of Conformity A3 50727008 0001 — CEI 0-21 (to V3:2025-10) — H3-xx-Smart / AC3-xx-Smart
   url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260622/CERTIFICATECEI021forH3Smart.pdf
@@ -82,8 +82,7 @@ documents:
   families:
   - name: H3-Smart / AC3-Smart
     match: ^(AC3\-10\.0\-SMART|AC3\-12\.0\-SMART|AC3\-15\.0\-SMART|AC3\-5\.0\-SMART|AC3\-6\.0\-SMART|AC3\-8\.0\-SMART|AC3\-9\.9\-SMART|H3\-10\.0\-SMART|H3\-12\.0\-SMART|H3\-15\.0\-SMART|H3\-5\.0\-SMART|H3\-6\.0\-SMART|H3\-8\.0\-SMART|H3\-9\.9\-SMART)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
 - id: cei021-h1-g2-2026
   title: Certificate of Conformity A3 50727009 0001-0002 — CEI 0-21 (to V3:2025-10) — H1-xx-E-G2(-WL), AC1-xx-E-G2(-WL), H1/AC1-yy-E1-G2
   url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260622/CERTIFICATECEI021forH1G2A3507270090001.pdf
@@ -103,8 +102,7 @@ documents:
   families:
   - name: H1 G2 / AC1 G2
     match: ^(H1|AC1)-(3\.0|3\.7|4\.6|5\.0|6\.0)-E1?-G2(-WL)?$
-    countries:
-    - IT
+    countries: [IT]
 - id: cei021-kh-ka-kp-2025
   title: Certificate of Conformity A3 50704550 0001-0002 — CEI 0-21 (to V2/EC2:2025-02) — KH7…KH10.5, KP, KA, KP-AC
   url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260622/CERTIFICATECEI021forKHKA.pdf
@@ -123,8 +121,7 @@ documents:
   families:
   - name: KH / KP / KA
     match: ^(KA10|KA10\.5|KA7|KA8|KA9|KA9\.9|KH10|KH10\.5|KH7|KH8|KH9|KH9\.9|KP10|KP10\-AC|KP10\.5|KP10\.5\-AC|KP7|KP7\-AC|KP8|KP8\-AC|KP9|KP9\-AC)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
     note: With EP12 Plus, B4300, EP6 Plus batteries.
 - id: cei021-h3-pro-2025
   title: Bureau Veritas certificate U25-0102 — CEI 0-21:2022-03 / V1:2022-11 / V2:2024-01 — H3-Pro / AC3-Pro 10–30 kW
@@ -142,8 +139,7 @@ documents:
   families:
   - name: H3-Pro / AC3-Pro
     match: ^(AC3\-PRO\-10\.0|AC3\-PRO\-12\.0|AC3\-PRO\-15\.0|AC3\-PRO\-20\.0|AC3\-PRO\-22\.0|AC3\-PRO\-24\.9|AC3\-PRO\-25\.0|AC3\-PRO\-29\.9|AC3\-PRO\-30\.0|H3\-PRO\-10\.0|H3\-PRO\-12\.0|H3\-PRO\-15\.0|H3\-PRO\-20\.0|H3\-PRO\-22\.0|H3\-PRO\-24\.9|H3\-PRO\-25\.0|H3\-PRO\-29\.9|H3\-PRO\-30\.0)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
     note: With EQ4800-L4…L9 batteries.
 - id: cei021-s22-mq2200-2025
   title: Certificate of Conformity A3 50707759 0001 — CEI 0-21 (to V2/EC2:2025-02) — S22-M-H, S22-M-AC, MQ-2200-M-H, MQ-2200-M-AC
@@ -163,5 +159,4 @@ documents:
   families:
   - name: S22 / MQ-2200 (balcony storage)
     match: ^(MQ\-2200\-M\-AC|MQ\-2200\-M\-H|S22\-M\-AC|S22\-M\-H|S22\-S)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]

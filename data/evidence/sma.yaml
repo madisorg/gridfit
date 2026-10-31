@@ -1,10 +1,13 @@
-# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
 brand: SMA
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
-  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
-  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
 documents:
 - id: stp-xx-50-cei021-2023
   title: Dichiarazione di conformità CEI 0-21 — SUNNY TRIPOWER X (STP xx-50), with SGS certificate No. 2622/0215-C-E1-CER
@@ -22,8 +25,7 @@ documents:
   families:
   - name: Sunny Tripower X
     match: ^(STP12\-50|STP15\-50|STP20\-50|STP25\-50)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
 - id: stp-xx-50-cei016-2023
   title: Dichiarazione di conformità CEI 0-16 — SUNNY TRIPOWER X (STP xx-50), with SGS certificate No. 2622/0215-D-E1-CER
   url: https://files.sma.de/assets/279471.pdf
@@ -39,5 +41,4 @@ documents:
   families:
   - name: Sunny Tripower X
     match: ^(STP12\-50|STP15\-50|STP20\-50|STP25\-50)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]

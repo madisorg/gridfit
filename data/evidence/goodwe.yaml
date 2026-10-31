@@ -1,10 +1,13 @@
-# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
 brand: GoodWe
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
-  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
-  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
 documents:
 - id: esa-g20-rd647-2025
   title: Certificado de Conformidad 250008RECO09-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — GW3K…10K-EHA-G20
@@ -23,8 +26,7 @@ documents:
   families:
   - name: ESA G2 (single-phase hybrid)
     match: ^(GW10K\-EHA\-G20|GW3K\-EHA\-G20|GW3\.6K\-EHA\-G20|GW5K\-EHA\-G20|GW6K\-EHA\-G20|GW8K\-EHA\-G20|GW9\.999K\-EHA\-G20)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
     note: RD 647 scope limited to protection functions for abnormal V/f, self-reconnection and power factor (document remark).
 - id: esa-g20-une217002-2025
   title: Certificado de Conformidad 250008RECO09-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I 2.3.6 & 5.3 — GW3K…10K-EHA-G20
@@ -43,8 +45,7 @@ documents:
   families:
   - name: ESA G2 (single-phase hybrid)
     match: ^(GW10K\-EHA\-G20|GW3K\-EHA\-G20|GW3\.6K\-EHA\-G20|GW5K\-EHA\-G20|GW6K\-EHA\-G20|GW8K\-EHA\-G20|GW9\.999K\-EHA\-G20)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: esa-bha-g20-cei021-2026
   title: Certificate of Conformity A3 50731470 0001–0003 — CEI 0-21 — GW3K…10K-EHA-G20 / GW3K…10K-BHA-G20
   url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ESA-3-10kW_Certificate-CEI-0-21.pdf
@@ -64,8 +65,7 @@ documents:
   families:
   - name: ESA G2 / BHA G2
     match: ^(GW10K\-BHA\-G20|GW10K\-EHA\-G20|GW3K\-BHA\-G20|GW3K\-EHA\-G20|GW3\.6K\-BHA\-G20|GW3\.6K\-EHA\-G20|GW5K\-BHA\-G20|GW5K\-EHA\-G20|GW6K\-BHA\-G20|GW6K\-EHA\-G20|GW8K\-BHA\-G20|GW8K\-EHA\-G20|GW9\.999K\-BHA\-G20|GW9\.999K\-EHA\-G20)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
     note: With Lynx battery systems GW5.1/8.3-BAT-D-G20/G21 and GW6/9-BAT-D-G20 (combination tables).
 - id: es-g2-sbp-g2-cei021-2026
   title: Certificate of Conformity A3 50704204 0001 — CEI 0-21 — GWxx-ES-20 / ES-AT20 / GWyyM-ES-20 / GWyy-SBP-20 / SBP-AT20
@@ -84,8 +84,7 @@ documents:
   families:
   - name: ES G2 / SBP G2
     match: ^(GW3000\-ES\-20|GW3600M\-ES\-20|GW3600\-ES\-20|GW3600\-SBP\-20|GW5000M\-ES\-20|GW5000\-ES\-20|GW5000\-SBP\-20|GW6000M\-ES\-20|GW6000\-ES\-20|GW6000\-SBP\-20)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
     note: Model list from the per-battery combination pages (Lynx Home U, BYD LVS, Pylontech US2000C/US3000C, LG RESU, AL48-100-3U,
       LX U5.0-30, LX A5.0-30).
 - id: et40-50-cei021-2025
@@ -106,8 +105,7 @@ documents:
   families:
   - name: ET 40–50 kW (ET-10)
     match: ^(GW40K\-ET\-10|GW50K\-ET\-10)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
 - id: dns-g4-vde4105-2025
   title: Certificate of Conformity A3 50695689 0001 — VDE-AR-N 4105/11.18, DIN VDE V 0124-100/06.20 — DNS G4
   url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_DNS-G4_Certificate-VDE4105.pdf
@@ -123,5 +121,4 @@ documents:
   families:
   - name: DNS G4
     match: ^(GW3K\-DNS\-G40|GW3\.1K\-DNS\-L\-G40|GW3\.6K\-DNS\-G40|GW4\.2K\-DNS\-G40|GW5K\-DNS\-G40|GW6K\-DNS\-G40)(-BE)?$
-    countries:
-    - DE
+    countries: [DE]

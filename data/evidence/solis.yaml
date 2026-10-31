@@ -1,10 +1,13 @@
-# Evidence layer — see the rule below. Research notes of 2026-10-31; URLs are the makers' own.
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
 brand: Solis
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  or a certificate / test-lab declaration against the named national standard, with the models it lists. GridFit shows it as "fit by
-  the maker''s document" in that country; the grid operator decides at the application, and where a country has a public list the list
-  is the answer. Model codes are joined by `match`, a regex over the register code (upper case, spaces removed).'
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
 documents:
 - id: rd647-s6-eh1p-3-6-2023
   title: Certificado de Conformidad 230030RECO02-B-CER — RD 647/2020, RD 413/2014, RD 1699/2011 — S6-EH1P(3-6)K-L
@@ -23,8 +26,7 @@ documents:
   families:
   - name: S6-EH1P-L single-phase hybrid 3–6 kW
     match: ^(S6\-EH1P3K\-L|S6\-EH1P3\.6K\-L|S6\-EH1P4\.6K\-L|S6\-EH1P5K\-L|S6\-EH1P6K\-L)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: rd647-s6-eh1p-plus-2024
   title: Certificado de Conformidad 240266RECO12-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — S6-EH1P(3-8)K-L-PLUS
   url: https://solisinverters.com/uploads/file/Solis_certificate_RD_647_RD_413_RD_1699_S6-EH1P(3-8)K-L-PLUS_Spain_V01.pdf
@@ -42,8 +44,7 @@ documents:
   families:
   - name: S6-EH1P-L-PLUS single-phase hybrid 3–8 kW
     match: ^(S6\-EH1P3K\-L\-PLUS|S6\-EH1P3\.6K\-L\-PLUS|S6\-EH1P4\.6K\-L\-PLUS|S6\-EH1P5K\-L\-PLUS|S6\-EH1P6K\-L\-PLUS|S6\-EH1P8K\-L\-PLUS)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: rd647-s6-eh3p-5-10-2022
   title: Certificado de Conformidad 2622/0458-1-B-CER — RD 647/2020 — S6-EH3P(5-10)K-H-EU
   url: https://www.ginlong.com/uploads/file/Solis_certificate_RD_647_S6-EH3P(5-10)K-H-EU_Spain_V01.pdf
@@ -59,8 +60,7 @@ documents:
   families:
   - name: S6-EH3P-H three-phase hybrid 5–10 kW
     match: ^S6-EH3P(5|6|8|10)K2?-H(-EU)?(-OD)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: rd647-s6-gr1p-2023
   title: Certificado de Conformidad 230030RECO05-B-CER — RD 647/2020, RD 413/2014, RD 1699/2011 — S6-GR1P(2.5-6)K-S
   url: https://www.solisinverters.com/uploads/file/Solis_certificate_RD_647_RD_413_RD_1699_S6-GR1P(2,5-6)K-S_Spain_V01(bilingual).pdf
@@ -78,8 +78,7 @@ documents:
   families:
   - name: S6-GR1P-S single-phase string 2.5–6 kW
     match: ^(S6\-GR1P2\.5K\-S|S6\-GR1P3K\-S|S6\-GR1P3\.6K\-S|S6\-GR1P4K\-S|S6\-GR1P4\.6K\-S|S6\-GR1P5K\-S|S6\-GR1P6K\-S)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: une217002-s6-gr1p-2023
   title: Certificado de Conformidad 230030RECO05-A-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — S6-GR1P(2.5-6)K-S
   url: https://www.solisinverters.com/uploads/file/Solis_certificate_UNE_217002_S6-GR1P(2,5-6)K-S_Spain_V01(bilingual).pdf
@@ -97,8 +96,7 @@ documents:
   families:
   - name: S6-GR1P-S single-phase string 2.5–6 kW
     match: ^(S6\-GR1P2\.5K\-S|S6\-GR1P3K\-S|S6\-GR1P3\.6K\-S|S6\-GR1P4K\-S|S6\-GR1P4\.6K\-S|S6\-GR1P5K\-S|S6\-GR1P6K\-S)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
 - id: nts2-s5-gr3p-2022
   title: Certificate AK 50544786 0001 — RD 1699:2011, UNE 206006 IN:2011, UNE 206007-1 IN:2013, UNE 217001:2020, NTS Version 2.0 Type
     A, RD 244/2019 Anexo I — S5-GR3P(3-20)K / Solis-3P(3-20)K-4G
@@ -118,12 +116,10 @@ documents:
   families:
   - name: S5-GR3P three-phase string 3–20 kW
     match: ^(S5\-GR3P10K|S5\-GR3P12K|S5\-GR3P13K|S5\-GR3P15K|S5\-GR3P17K|S5\-GR3P20K|S5\-GR3P3K|S5\-GR3P4K|S5\-GR3P5K|S5\-GR3P6K|S5\-GR3P8K|S5\-GR3P9K)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
   - name: Solis-3P-4G three-phase string 3–20 kW
     match: ^(SOLIS\-3P10K\-4G|SOLIS\-3P12K\-4G|SOLIS\-3P15K\-4G|SOLIS\-3P17K\-4G|SOLIS\-3P20K\-4G|SOLIS\-3P3K\-4G|SOLIS\-3P4K\-4G|SOLIS\-3P5K\-4G|SOLIS\-3P6K\-4G|SOLIS\-3P8K\-4G|SOLIS\-3P9K\-4G)(-BE)?$
-    countries:
-    - ES
+    countries: [ES]
     note: NTS 2.0 (not 2.1). RD 244 Anexo I / UNE 217001 need external device (meter DTSD1352-C or EPM Solis-EPM3-5G / -PLUS).
 - id: cei021-s6-ea1p-2023
   title: TÜV SÜD Compliance document D 086470 0161 Rev. 00 — CEI 0-21:2022/V1:2022 — S6-EA1P(3-6)K-L
@@ -139,8 +135,7 @@ documents:
   families:
   - name: S6-EA1P-L single-phase AC-coupled 3–6 kW
     match: ^(S6\-EA1P3K\-L|S6\-EA1P3\.6K\-L|S6\-EA1P4\.6K\-L|S6\-EA1P5K\-L|S6\-EA1P6K\-L)(-BE)?$
-    countries:
-    - IT
+    countries: [IT]
     note: With Pylontech US5000 / US5000-B.
 - id: cei021-s6-eh3p-2023
   title: Certificate of Conformity A3 50601309 0001 — CEI 0-21:2022-03, V1:2022-11 — S6-EH3P(5-10)K-H-EU(-OD), S6-EH3P(5-10)K2-H(-OD),
@@ -158,6 +153,5 @@ documents:
   families:
   - name: S6-EH3P-H three-phase hybrid 5–10 kW
     match: ^S6-EH3P(5|6|8|10)K2?-H(-EU)?(-OD)?$
-    countries:
-    - IT
+    countries: [IT]
     note: With BYD HVS storage.

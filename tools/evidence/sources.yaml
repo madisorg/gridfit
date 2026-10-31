@@ -1,0 +1,36 @@
+# The makers' own country documents that tools/evidence/ fetches and parses (fetch.py → parse.py → build.py).
+# One key per brand (the data/evidence/<key>.yaml file). Each source becomes one document in that file; a document
+# written by hand in that file (no source here) is kept as it is. docs/evidence-sources.md is the map of what each
+# maker publishes and why a source is or is not here.
+#
+#   id        the document id in data/evidence (stable across versions: the version is a field)
+#   url       the maker's own file; `via` = the listing page when the file is found through one
+#   kind      country-release (the maker releases the family for the country) · grid-code-setting (the firmware has
+#             a setting for the country's grid code) · certificate (a test lab certifies a norm, see `standards`)
+#   parser    xtable | codes | pages (tools/evidence/parse.py) with its arguments under `args`
+#   meta      regexes for the document's own version / number, read from its first two pages
+#   families  name (as GridFit shows it) · column (the parser's key, for xtable; "*" = the one list of `codes`) ·
+#             match (regex over the register code, upper case, spaces removed, comma → dot) · note
+#   manual    true = the file cannot be fetched by script (a WAF, a login-free form, terms that forbid it):
+#             the rows are transcribed by hand into data/evidence and the source is listed for the map only
+
+kostal:
+  - id: released-countries-2026-10
+    title: "Freigegebene Länder / Released countries"
+    url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Listen/Released-countries-inverter.pdf
+    kind: country-release
+    parser: xtable
+    meta: {version: 'Version:\s*(\d+\s*/\s*\d{4})', doc_no: '(DOC\d{8}-\d{3})'}
+    note: "Page 1: EU countries released for sale and use (X per family). Page 2 (Jordan, non-EU, via sales partners) is not read."
+    families:
+      - {name: PLENTICORE G3, column: PLENTICORE G3, match: '^PLENTICORE[SML]G3'}
+      - {name: PLENTICORE MP G3, column: PLENTICORE MP G3, match: '^PLENTICOREMP[SML]?G3'}
+      - {name: PLENTICORE BI G3, column: PLENTICORE BI G3, match: '^PLENTICOREB[IL]\d+(\.\d+)?(/\d+)?G3$'}
+      - {name: PLENTICORE plus / G2, column: PLENTICORE plus / G2, match: '^PLENTICOREPLUS(G2)?\d+(\.\d+)?(G2)?$'}
+      - {name: PLENTICORE BI / G2, column: PLENTICORE BI / G2, match: '^PLENTICOREB[IL](G2)?\d+(\.\d+)?(/\d+)?(G2)?$'}
+      - {name: "PIKO 10 – 20 (firmware 5.00 or later)", column: "PIKO 10 - 20 > FW 5.00", match: '^PIKO(10|12|15|17|20)$', note: "released only from firmware 5.00 — check the firmware"}
+      - {name: PIKO CI 30/50/60, column: PIKO CI 30/50/60, match: '^PIKOC[IL](30|50|60)$'}
+      - {name: PIKO CI 30/50 G2, column: PIKO CI 30/50 G2, match: '^PIKOC[IL](30|50)G2$'}
+      - {name: PIKO CI 100, column: PIKO CI 100, match: '^PIKOC[IL]100$'}
+      - {name: KSEM / KEM, column: KSEM / KEM, note: "energy meters — no grid list carries them; not joined"}
+      - {name: KOSTAL HELIVOR HV, column: KOSTAL HELIVOR HV (BAT), match: '^(KOSTAL)?HELIVOR'}
