@@ -1,8 +1,9 @@
 ---
-// /grid/{cc}/ — one page per EU+ country: what the country publishes, what applies per device class, and —
-// for the 7 parsed lists — the list's facts, its rows by class and its changes.
+// /grid/{cc}/ — the country view: the grid table preselected to this country, what applies per device class,
+// and — for the 7 parsed lists — the list's facts, rows by class, status words and changes.
 import Base from "../../../layouts/Base.astro";
 import Ext from "../../../components/Ext.astro";
+import GridView from "../../../components/GridView.astro";
 import { devices, COUNTRIES, REGS, RC, META, LOG, STATS, SNAP_DATE, regsOf } from "../../../lib/registers";
 import { COUNTRIES_ALL, LIST_WORD, LIST_LONG, CLASS_WORD, CLASS_LONG, CONF_WORD, COUNTRIES_SOURCE, type Country } from "../../../lib/countries";
 import { BRANDS, brandSlugOf, nf } from "../../../lib/devices";
@@ -22,30 +23,34 @@ const top = Object.entries(here.reduce((m, d) => ((m[brandSlugOf(d)] = (m[brandS
 const brandName = new Map(BRANDS.map((b) => [b.slug, b.name]));
 const CLASSES = ["inverter", "hybrid", "battery", "plug-in", "wallbox"];
 const CLASS_LABEL: Record<string, string> = { inverter: "PV inverter", hybrid: "Hybrid inverter", battery: "Battery / AC inverter", "plug-in": "Plug-in solar / battery (≤ 800 VA)", wallbox: "Wallbox / EV charger" };
-const title = parsed ? `${c.country}: ${REGS[cc].name} — what it lists` : `${c.country}: grid-connection rules for inverters, batteries and wallboxes`;
+const title = parsed ? `${c.country}: is it on the ${REGS[cc].short}?` : `${c.country}: is it fit for the grid?`;
 const desc = parsed
-  ? `${c.country}'s grid-connection list for inverters, batteries${cc === "AT" ? " and chargers" : ""}: who publishes it, what it contains, how often it changes, and ${nf(here.length)} models from it cross-referenced with other EU lists.`
-  : `${c.country}: ${LIST_LONG[c.list]} What applies per device class, from the EU+ grid-connection table.`;
+  ? `${nf(here.length)} inverters, batteries${cc === "AT" ? ", chargers" : ""} on ${c.country}'s grid-connection list, with phases, rated power and the other EU lists side by side; who publishes the list, what it contains, how it changes.`
+  : `${c.country}: ${LIST_LONG[c.list]} What applies per device class, and every model's status on the other EU lists.`;
 ---
 <Base title={title} current="/grid/" description={desc} noindex={!parsed}>
   <nav class="crumbs" aria-label="Breadcrumb"><a href="/grid/">Grid lists</a></nav>
   <header class="head">
-    <h1>{c.country} ({cc})</h1>
+    <h1>{c.country}: is it fit for the grid?</h1>
     <p class="kind"><span>{LIST_WORD[c.list]}</span>
       {parsed && s && <><span aria-hidden="true">·</span><span>{nf(s.rows)} rows</span><span aria-hidden="true">·</span><span>{nf(here.length)} models</span>
-        <span aria-hidden="true">·</span><span>{nf(elsewhere)} also in another country's list</span></>}
-      {!parsed && c.list_url && <><span aria-hidden="true">·</span><Ext href={c.list_url}>the list</Ext></>}</p>
+        <span aria-hidden="true">·</span><span>{nf(elsewhere)} also on another country's list</span></>}
+      {c.list_url && <><span aria-hidden="true">·</span><Ext href={c.list_url}>the list</Ext></>}</p>
+    <p class="prose small muted">{LIST_LONG[c.list]}{!parsed && c.list === "yes" ? " GridFit has not read this list yet; the table below shows the models of the lists it has read, with what applies here." : ""}</p>
   </header>
 
   <section class="sec">
     <header><h2>What applies per device class</h2><p>{COUNTRIES_SOURCE}</p></header>
-    <p class="prose small muted">{LIST_LONG[c.list]}</p>
     <table class="tbl">
       <thead><tr><th scope="col">Device class</th><th scope="col">What applies</th><th scope="col">Checked</th></tr></thead>
       <tbody>{CLASSES.map((k) => <tr><td class="fam">{CLASS_LABEL[k]}</td><td data-l=""><b>{CLASS_WORD[c.classes[k]]}</b> <span class="muted">— {CLASS_LONG[c.classes[k]]}</span></td><td data-l="checked" class="muted">{CONF_WORD[c.confidence[k]] ?? c.confidence[k]}</td></tr>)}</tbody>
     </table>
-    {!parsed && <p class="small muted">GridFit has no model rows for {c.country}{c.list === "yes" ? " yet — the list exists and is on the parsing queue" : c.list === "partial" ? " — the list is partial; see the note above" : " — there is no list to read"}.
-      Country notes (who files the application, what the certificate must say, thresholds and deadlines) are being written.</p>}
+    {!parsed && <p class="small muted">Country notes — who files the application, what the certificate must say, how a model gets onto the list, thresholds and deadlines — are being written.</p>}
+  </section>
+
+  <section class="sec">
+    <header><h2>Models</h2><p>{parsed ? `${c.country} preselected; add countries to find a model that is on every list` : `the lists read, with ${c.country}'s rule as a column; add countries to combine`}</p></header>
+    <GridView preset={cc} />
   </section>
 
   {parsed && s && regsOf(cc).map((r) => {
@@ -86,7 +91,6 @@ const desc = parsed
           </table>
         </>
       )}
-      <p><a href={`/grid/?c=${cc}`}>Open the grid lists view filtered to {cc}</a></p>
     </section>
   )}
   {parsed && top.length > 0 && (

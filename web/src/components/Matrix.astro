@@ -8,13 +8,13 @@ import { COUNTRIES, REGS, META, SNAP_DATE } from "../lib/registers";
 import { GRID_WORD, type GridState } from "../lib/devices";
 const { cells, titled = true } = Astro.props as { cells: Record<string, GridState | string>; titled?: boolean };
 const pick = (v: string) => COUNTRIES.filter((k) => cells[k] === v);
-const on = pick("listed"), part = pick("restricted"), exp = pick("expired"), free = pick("free"), rule = pick("rule"), ban = pick("banned"), unk = pick("unknown");
+const on = pick("listed"), part = pick("restricted"), exp = pick("expired"), ref = pick("refused"), free = pick("free"), rule = pick("rule"), ban = pick("banned"), unk = pick("unknown");
 const none = COUNTRIES.filter((k) => !cells[k]);
 const label = [on.length && `Listed in ${on.join(", ")}`, part.length && `with restrictions in ${part.join(", ")}`,
-  exp.length && `expired or “Nein” in ${exp.join(", ")}`, none.length && `no model found in ${none.join(", ")}`,
+  exp.length && `expired in ${exp.join(", ")}`, ref.length && `not accepted in ${ref.join(", ")}`, none.length && `not found in ${none.join(", ")}`,
   free.length && `no listing needed in ${free.join(", ")}`, rule.length && `no list but a rule in ${rule.join(", ")}`,
   ban.length && `not allowed in ${ban.join(", ")}`, unk.length && `not confirmed for ${unk.join(", ")}`].filter(Boolean).join("; ");
-const SUFFIX: Record<string, string> = { restricted: "*", expired: "!", unknown: "?" };
+const SUFFIX: Record<string, string> = { restricted: "*", expired: "!", refused: "×", unknown: "?" };
 const word = (k: string) => `${k}: ${GRID_WORD[(cells[k] ?? "") as GridState] ?? GRID_WORD[""]}`;
 ---
 <span class="mx" role="img" aria-label={label}>

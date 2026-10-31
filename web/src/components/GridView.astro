@@ -1,0 +1,158 @@
+---
+// The grid view: one row per register model, filtered in place from /grid/index.json. Countries are a
+// multi-select with AND logic ("listed in every selected list"); the columns are the selected countries, or
+// the 7 lists read when nothing is selected. A country without a list shows what applies to the class there.
+// Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
+import RegLegend from "./RegLegend.astro";
+import { COUNTRIES, REGS, RC } from "../lib/registers";
+import { BRANDS, KVA_BUCKETS } from "../lib/devices";
+import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
+const { preset = "", id = "gv" } = Astro.props as { preset?: string; id?: string };
+const gridBrands = BRANDS.filter((b) => b.models.length);
+const groups: [string, string][] = [["read", "Lists read in full"], ["yes", "Public list, not read yet"], ["partial", "Partial list"], ["no", "No public list"]];
+const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNTRIES.includes(c.cc) : !COUNTRIES.includes(c.cc) && c.list === g));
+---
+<div class="layout gv" id={id} data-preset={preset}>
+  <fieldset class="filters" id="xf">
+    <legend>Narrow down</legend>
+    <details class="cc-pick" id="ccpick" open={!!preset}>
+      <summary><span>Countries</span> <b id="ccsum">any</b></summary>
+      <p class="small muted">Listed in <em>every</em> selected list. A country without a list shows what applies there.</p>
+      {groups.map(([g, label]) => (
+        <div class="cc-group">
+          <h4>{label}</h4>
+          {inGroup(g).map((c) => <label><input type="checkbox" name="c" value={c.cc} checked={c.cc === preset}> <b>{c.cc}</b> {c.country}</label>)}
+        </div>
+      ))}
+      <button type="button" id="ccclear" class="small">Clear countries</button>
+    </details>
+    <div class="kind" role="group" aria-label="Device kind">
+      <button type="button" data-g="inv" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg>Inverters</button>
+      <button type="button" data-g="ev" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>Wallboxes</button>
+    </div>
+    <label><span>Device class</span><select id="cls"><option value="">All classes</option>{Object.entries(RC).filter(([k]) => k !== "other").map(([k, v]) => <option value={k}>{v}</option>)}</select></label>
+    <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="3">3-phase</option></select></label>
+    <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}</select></label>
+    <label><span>Brand</span><select id="brand"><option value="">All brands</option>{gridBrands.map((b) => <option>{b.name}</option>)}</select></label>
+    <label><span>Status</span><select id="st"><option value="">Any status</option><option value="R">Listed with restrictions</option><option value="T">Time-limited</option>
+      <option value="P">Time-limited, date passed</option><option value="E">Expired</option><option value="N">“Nein” (AT)</option></select></label>
+    <label><span>Lists</span><select id="n"><option value="">In any number of lists</option><option value="2">In 2 or more lists</option>
+      <option value="3">In 3 or more</option><option value="4">In 4 or more</option></select></label>
+    <label><span>Smart home</span><select id="lo"><option value="">Any</option><option value="W">Local control (HA or evcc)</option><option value="L">Local route, read or control</option>
+      <option value="B">Brand route, model unconfirmed</option><option value="-">No local route found</option></select></label>
+    <label><span>Search</span><input id="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model or brand"></label>
+    <button type="button" id="reset" hidden>Clear filters</button>
+  </fieldset>
+  <div>
+    <p class="count" id="xcount" aria-live="polite">Loading the table…</p>
+    <div id="xv"></div>
+    <p><button type="button" id="more" class="xv-more" hidden>Show more</button></p>
+    <noscript><p>The table needs JavaScript. Every model is also on its brand page.</p></noscript>
+    <RegLegend />
+    <p class="legend small"><span class="rs-key"><span class="rs rs-free">free</span> no list and no model rule</span><span class="rs-key"><span class="rs rs-rule">rule</span> no list, a rule applies</span>
+      <span class="rs-key"><span class="rs rs-list">list</span> public list, not read yet</span><span class="rs-key"><span class="rs rs-banned">✕</span> not allowed</span><span class="rs-key"><span class="rs rs-none">?</span> not confirmed</span>
+      <span class="rs-key"><span class="st write">control</span> / <span class="st local">local</span> / <span class="st cloud">cloud</span> / <span class="st none">brand route</span> = Home Assistant or evcc on your network</span></p>
+    <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists; no list carries MPPT counts, so that column is not here yet. The list is the authority; this is a cross-reference.</p>
+  </div>
+</div>
+
+<script>
+  const root = document.querySelector<HTMLElement>(".gv")!;
+  const $ = <T extends HTMLElement>(id: string) => root.querySelector(`#${id}`) as T;
+  const SYM: Record<string, string> = { L: "✓", R: "✓*", T: "⏱", P: "⏱!", E: "exp", N: "Nein", O: "?", "-": "" };
+  const CLS: Record<string, string> = { L: "listed", R: "restricted", T: "limited", P: "limited-past", E: "expired", N: "nein", O: "other", "-": "none" };
+  const WORD: Record<string, string> = { L: "listed", R: "listed with restrictions", T: "time-limited", P: "time-limited, date passed",
+    E: "expired", N: "Nein (the list's own word)", O: "see the list", "-": "no matching entry found" };
+  const STATE: Record<string, [string, string, string]> = { list: ["rs-list", "list", "public list, not read yet — check the model there"], rule: ["rs-rule", "rule", "no list; a notification, registration or certificate rule applies"],
+    free: ["rs-free", "free", "no list and no model-level rule"], banned: ["rs-banned", "✕", "not allowed"], unknown: ["rs-none", "?", "not confirmed"] };
+  const LOC: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "local"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "not found"] };
+  const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
+  const INV = new Set(["inverter", "hybrid", "battery", "plug-in"]);
+  const BUCKET: Record<string, [number, number]> = { "0-3.7": [0, 3.7], "3.7-6": [3.7, 6], "6-12": [6, 12], "12-30": [12, 30], "30-": [30, Infinity] };
+  const ids = ["cls", "ph", "kva", "brand", "st", "n", "lo", "q"];
+  type Row = [number, string, string, string, string, string, string, string, number | null];
+  type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; brands: string[]; rows: Row[] };
+  let data: Idx, hits: Row[] = [], shown = 0, g = "";
+  const PAGE = 100;
+  const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
+  const val = (id: string) => ($<HTMLInputElement>(id).value || "").trim();
+  const boxes = [...root.querySelectorAll<HTMLInputElement>('input[name="c"]')];
+  const sel = () => boxes.filter((b) => b.checked).map((b) => b.value);
+  const kinds = [...root.querySelectorAll<HTMLButtonElement>(".kind button")];
+
+  function apply() {
+    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c));
+    const q = val("q").toLowerCase(), b = val("brand"), cls = val("cls"), ph = val("ph"), kv = BUCKET[val("kva")], st = val("st"), n = +val("n") || 0, lo = val("lo");
+    hits = data.rows.filter((r) => {
+      const cells = r[4];
+      if (g && (g === "inv" ? !INV.has(r[2]) : r[2] !== "wallbox")) return false;
+      if (b && data.brands[r[0]] !== b) return false;
+      if (cls && r[2] !== cls) return false;
+      if (ph && r[7] !== ph) return false;
+      if (kv && (r[8] === null || r[8] <= kv[0] || r[8] > kv[1])) return false;
+      for (const c of readSel) { const code = cells[data.read.indexOf(c)]; if (code === "-") return false; if (st && code !== st) return false; }
+      if (st && !readSel.length && !cells.includes(st)) return false;
+      if (n && cells.replace(/-/g, "").length < n) return false;
+      if (lo && !(lo === "L" ? r[5] === "L" || r[5] === "W" : r[5] === lo)) return false;
+      if (q && !(data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(q)) return false;
+      return true;
+    });
+    const cols = cs.length ? cs : data.read;
+    $("xcount").innerHTML = `<b>${hits.length.toLocaleString("en")}</b> ${hits.length === 1 ? "model" : "models"}${readSel.length ? ` listed in ${readSel.join(" and ")}` : ""}`;
+    $("ccsum").textContent = cs.length ? cs.join(", ") : "any";
+    shown = 0;
+    $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
+      cols.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a></th>`).join("") +
+      '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
+    ids.forEach((id) => $(id).classList.toggle("on", !!val(id)));
+    kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
+    $("reset").hidden = !ids.some((id) => val(id)) && !g && !cs.length;
+    more();
+    const p = new URLSearchParams();
+    if (cs.length) p.set("c", cs.join(","));
+    if (g) p.set("g", g);
+    ids.forEach((id) => val(id) && p.set(id, val(id)));
+    history.replaceState(null, "", p.toString() ? "?" + p : location.pathname);
+  }
+
+  function more() {
+    const cs = sel(), cols = cs.length ? cs : data.read;
+    const html = hits.slice(shown, shown + PAGE).map((r) => {
+      const cells = cols.map((c) => {
+        const i = data.read.indexOf(c);
+        if (i >= 0) { const s = r[4][i]; return `<td class="rs rs-${CLS[s]}" title="${c}: ${WORD[s]}">${SYM[s] || `<span class="vh">${WORD[s]}</span>`}</td>`; }
+        const st = data.scope[c]?.[r[2]] ?? "unknown"; const [k, w, t] = STATE[st] ?? STATE.unknown;
+        return `<td class="rs ${k}" title="${c}: ${t}">${w}</td>`;
+      }).join("");
+      const nl = r[4].replace(/-/g, "").length;
+      const [lk, lw] = LOC[r[5]] ?? LOC["-"];
+      return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}` +
+        `<td class="num">${nl}</td><td class="sp">${r[7] || "–"}</td><td class="sp num">${r[8] === null ? "–" : r[8]}</td><td class="lo"><span class="st ${lk}">${lw}</span></td></tr>`;
+    }).join("");
+    $("xb").insertAdjacentHTML("beforeend", html);
+    shown = Math.min(shown + PAGE, hits.length);
+    $("more").hidden = shown >= hits.length;
+    $("more").textContent = `Show more (${(hits.length - shown).toLocaleString("en")} left)`;
+  }
+
+  fetch("/grid/index.json").then((r) => r.json()).then((d: Idx) => {
+    data = d;
+    const init = new URLSearchParams(location.search);
+    if (init.get("c")) { const want = new Set(init.get("c")!.split(",")); boxes.forEach((b) => (b.checked = want.has(b.value))); }
+    else if (root.dataset.preset) boxes.forEach((b) => (b.checked = b.value === root.dataset.preset));
+    if (init.get("g") === "inv" || init.get("g") === "ev") g = init.get("g")!;
+    ids.forEach((id) => {
+      const el = $<HTMLInputElement>(id);
+      if (init.get(id)) el.value = init.get(id)!;
+      el.addEventListener(id === "q" ? "input" : "change", apply);
+    });
+    boxes.forEach((b) => b.addEventListener("change", apply));
+    kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g ? "" : k.dataset.g!; apply(); }));
+    $("ccclear").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); apply(); });
+    $("reset").addEventListener("click", () => { ids.forEach((id) => ($<HTMLInputElement>(id).value = "")); g = ""; boxes.forEach((b) => (b.checked = false)); apply(); });
+    $("more").addEventListener("click", more);
+    apply();
+  });
+</script>

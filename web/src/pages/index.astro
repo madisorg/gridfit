@@ -1,44 +1,73 @@
 ---
-// Home: the two kinds first, then the search, then the two doors (one database, two lenses) and the latest
-// changes from both. No JavaScript: the search submits to /local/.
+// Home, grid first: pick your country (or let the page guess it), search a model code, choose a kind.
+// The smart-home view is the second door. One small script: the country guess and the select.
 import Base from "../layouts/Base.astro";
 import { data, TAGLINE, DATA } from "../lib/data";
-import { COUNTRIES, LOG, META, SNAP_DATE } from "../lib/registers";
+import { COUNTRIES, LOG, META } from "../lib/registers";
 import { COUNTS, nf } from "../lib/devices";
-import { COUNTRIES_ALL } from "../lib/countries";
+import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
 import { readFileSync } from "node:fs";
 const INV = ["inverter", "hybrid", "battery", "plug-in"];
 const nInv = data.families.filter((f) => INV.includes(f.class)).length, nEv = data.families.filter((f) => f.class === "wallbox").length;
 const dlog: any[] = JSON.parse(readFileSync(DATA + "dataset/changelog.json", "utf-8"));
 const d0 = dlog[0], r0 = LOG[0];
-const listed = COUNTRIES_ALL.filter((c) => c.list === "yes").length;
 const latestList = Object.values(META).map((m) => m.source_date || "").sort().pop();
+const order = (c: { cc: string; list: string }) => (COUNTRIES.includes(c.cc) ? 0 : c.list === "yes" ? 1 : c.list === "partial" ? 2 : 3);
+const sorted = [...COUNTRIES_ALL].sort((a, b) => order(a) - order(b) || a.country.localeCompare(b.country));
+const GROUP = ["Lists read in full", "Public list, not read yet", "Partial list", "No public list"];
 ---
 <Base>
   <section class="ask" aria-labelledby="q-h">
     <h1 id="q-h" class="vh">{TAGLINE}</h1>
-    <div class="kind hero" role="group" aria-label="Device kind">
-      <a href="/local/?g=inv">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg>
-        Inverters <b>{nInv}</b></a>
-      <a href="/local/?g=ev">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>
-        Wallboxes <b>{nEv}</b></a>
+    <div class="pick" id="pick">
+      <label for="cc"><b>Is it fit for the grid in</b></label>
+      <select id="cc" autocomplete="off">
+        <option value="">choose a country…</option>
+        {GROUP.map((g, i) => <optgroup label={g}>{sorted.filter((c) => order(c) === i).map((c) => <option value={c.cc.toLowerCase()}>{c.country} ({c.cc}) — {LIST_WORD[c.list]}</option>)}</optgroup>)}
+      </select>
+      <p class="small muted" id="guess" hidden></p>
     </div>
-    <form class="search" role="search" action="/local/" method="get">
-      <label class="vh" for="q">Model code, brand or family</label>
-      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code, brand or family — e.g. SUN-12K-SG04LP3, Wattpilot">
+    <noscript><p class="small">Country pages: {sorted.map((c, i) => <>{i > 0 && " · "}<a href={`/grid/${c.cc.toLowerCase()}/`}>{c.cc}</a></>)}</p></noscript>
+    <form class="search" role="search" action="/grid/" method="get">
+      <label class="vh" for="q">Model code or brand</label>
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code or brand — e.g. SUN-12K-SG04LP3, SH10RT, Wattpilot">
     </form>
-    <p class="lede">One database, two questions. Every device page answers both; the two views below start from one or the other. Every row links to its source.</p>
-    <div class="doors">
-      <a class="door" href="/local/"><b>Local control</b>
-        <span>Does it work with Home Assistant and evcc without the cloud — read, or control?</span>
-        <span class="facts"><span><b>{nf(COUNTS.families)}</b> families</span><span><b>{nf(COUNTS.rows)}</b> integration rows</span><span><b>{nf(COUNTS.localRoute)}</b> with a local route</span></span></a>
-      <a class="door" href="/grid/"><b>Grid lists</b>
-        <span>Is the model on a national grid-connection list — and what applies where there is none?</span>
-        <span class="facts"><span><b>{nf(COUNTS.regModels)}</b> models</span><span><b>{COUNTRIES.length}</b> lists read</span><span><b>{COUNTRIES_ALL.length}</b> countries, <b>{listed}</b> with a public list</span></span></a>
+    <div class="kind hero" role="group" aria-label="Device kind">
+      <a href="/grid/?g=inv">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M6 12c1.5-3 3-3 4.5 0s3 3 4.5 0 2-2 3 0"/></svg>
+        Inverters <b>{nf(COUNTS.regModels - 596)}</b></a>
+      <a href="/grid/?g=ev">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>
+        Wallboxes <b>596</b></a>
     </div>
+    <p class="lede">{nf(COUNTS.regModels)} inverters, batteries and wallboxes across {COUNTRIES.length} national grid-connection lists read in full and {COUNTRIES_ALL.length} EU+ countries described;
+      pick several countries to find a model that is on every list. Each device page also says whether <a href="/local/">Home Assistant or evcc</a> talks to it on your network ({nf(COUNTS.families)} families). Every row links to its source.</p>
     <p class="facts"><span><b>{nf(COUNTS.brands)}</b> brands</span><span>sources read <b>{data.seen}</b></span><span>lists dated up to <b>{latestList}</b></span>
       <span><a href="/changes/">latest changes</a>: lists {r0.date}{r0.baseline ? " (baseline)" : ""} · rows {d0.date} ({d0.added.length} added, {d0.changed.length} changed)</span></p>
   </section>
 </Base>
+
+<script>
+  // The country select navigates; the guess comes from /api/cc (Cloudflare's CF-IPCountry, not stored) or, when
+  // that is absent, from the browser's language. The user's own choice wins and is remembered in localStorage.
+  const sel = document.getElementById("cc") as HTMLSelectElement, guess = document.getElementById("guess")!;
+  const known = new Set([...sel.options].map((o) => o.value));
+  const name = (cc: string) => [...sel.options].find((o) => o.value === cc)?.textContent?.replace(/ \(.*$/, "") ?? cc.toUpperCase();
+  let saved = ""; try { saved = localStorage.getItem("gf-cc") ?? ""; } catch {}
+  sel.addEventListener("change", () => { if (!sel.value) return; try { localStorage.setItem("gf-cc", sel.value); } catch {} location.href = `/grid/${sel.value}/`; });
+  const offer = (cc: string, how: string) => {
+    if (!known.has(cc)) return;
+    guess.innerHTML = `${how}: <a href="/grid/${cc}/">open the ${name(cc)} view</a>`;
+    guess.hidden = false;
+  };
+  if (saved && known.has(saved)) offer(saved, "Last time you chose");
+  else {
+    // the Function exists only on Cloudflare; elsewhere fall back to the browser language without a request
+    const onCf = /gridfit\.eu$|\.pages\.dev$/.test(location.hostname);
+    (onCf ? fetch("/api/cc").then((r) => (r.ok ? r.json() : null)) : Promise.resolve(null)).then((j) => {
+      const cc = (j?.cc || "").toLowerCase();
+      if (cc && known.has(cc)) offer(cc, "You seem to be in " + name(cc) + "");
+      else { const lang = (navigator.language || "").split("-")[1]?.toLowerCase() ?? ""; if (lang && known.has(lang)) offer(lang, "Your browser language suggests " + name(lang)); }
+    }).catch(() => {});
+  }
+</script>

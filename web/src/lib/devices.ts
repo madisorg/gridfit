@@ -7,15 +7,15 @@ import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countri
 
 export type LocalState = "control" | "read" | "cloud" | "brand-route" | "none";
 // grid cell: a match in the list, or what the country's table says for this class when no model matched
-export type GridState = "listed" | "restricted" | "expired" | "" | "rule" | "free" | "banned" | "unknown";
+export type GridState = "listed" | "restricted" | "expired" | "refused" | "" | "rule" | "free" | "banned" | "unknown";
 
 export const LOCAL_WORD: Record<LocalState, string> = {
   control: "local control", read: "local, read only", cloud: "cloud only", "brand-route": "brand route, model unconfirmed", none: "not found",
 };
 export const GRID_WORD: Record<GridState, string> = {
-  listed: "listed", restricted: "listed with restrictions or time-limited", expired: "expired, date passed or “Nein”",
-  "": "list covers this class, no model found", rule: "no list, a rule applies", free: "no list for this class, nothing to check",
-  banned: "not allowed", unknown: "not confirmed",
+  listed: "listed", restricted: "listed, conditions", expired: "expired or date passed", refused: "not accepted",
+  "": "not found on the list", rule: "no list, a requirement applies", free: "nothing to check",
+  banned: "not allowed", unknown: "unknown",
 };
 
 const norm = (s: string) => s.toUpperCase().replace(/[\s\-_./,()+]/g, "");
@@ -65,7 +65,7 @@ export const localRoutes = (f: Family) => f.rows.filter((r) => r.local).map((r) 
 
 // ---- grid lens
 const SHOW_STATE: Record<string, GridState> = {
-  listed: "listed", limited: "restricted", restricted: "restricted", "limited-past": "expired", expired: "expired", nein: "expired", other: "restricted",
+  listed: "listed", limited: "restricted", restricted: "restricted", "limited-past": "expired", expired: "expired", nein: "refused", other: "restricted",
 };
 export const stateOfCells = (es: Entry[]): GridState => SHOW_STATE[best(es)] ?? "restricted";
 export function scopeState(cc: string, cls: string): GridState {
@@ -78,7 +78,7 @@ export function gridOfFamily(f: Family): Record<string, GridState> {
   const out: Record<string, GridState> = {};
   for (const cc of COUNTRIES) {
     const sts = modelsOf(f).filter((d) => d.cells[cc]).map((d) => stateOfCells(d.cells[cc]));
-    out[cc] = sts.length ? (sts.includes("listed") ? "listed" : sts.includes("restricted") ? "restricted" : "expired") : scopeState(cc, f.class);
+    out[cc] = sts.length ? (sts.includes("listed") ? "listed" : sts.includes("restricted") ? "restricted" : sts.includes("expired") ? "expired" : "refused") : scopeState(cc, f.class);
   }
   return out;
 }
@@ -99,6 +99,27 @@ export const othersOf = (cls: string) => OTHER_COUNTRIES.map((c) => {
   return { cc: c.cc, country: c.country, list: c.list, list_url: c.list_url,
     state: (key ? c.classes[key] : "free") as ClassState, confidence: key ? c.confidence[key] : "checked" };
 });
+
+// ---- specs the lists carry: phases (AT, SE) and rated power in kVA (AT, BE, SE). No list carries MPPT counts.
+export type Spec = { phases: string; kva: number | null };
+export function specOf(d: RegDevice): Spec {
+  let phases = "", kva: number | null = null;
+  for (const cc of ["AT", "SE", "BE"]) for (const e of d.cells[cc] ?? []) {
+    if (!phases && e.extra?.phases && /^[123]$/.test(e.extra.phases)) phases = e.extra.phases;
+    if (kva === null && e.kva !== undefined && e.kva !== null && e.kva !== "") { const n = Number(e.kva); if (Number.isFinite(n) && n > 0) kva = Math.round(n * 100) / 100; }
+  }
+  return { phases, kva };
+}
+export function specOfFamily(f: Family): { phases: string; kvaMin: number | null; kvaMax: number | null } {
+  const ph = new Set<string>(); let lo: number | null = null, hi: number | null = null;
+  for (const d of modelsOf(f)) { const s = specOf(d); if (s.phases) ph.add(s.phases); if (s.kva !== null) { lo = lo === null ? s.kva : Math.min(lo, s.kva); hi = hi === null ? s.kva : Math.max(hi, s.kva); } }
+  return { phases: [...ph].sort().join("/"), kvaMin: lo, kvaMax: hi };
+}
+export const KVA_BUCKETS: [string, string, number, number][] = [
+  ["0-3.7", "up to 3.7 kVA (one-phase, 16 A)", 0, 3.7], ["3.7-6", "3.7 to 6 kVA", 3.7, 6], ["6-12", "6 to 12 kVA", 6, 12],
+  ["12-30", "12 to 30 kVA", 12, 30], ["30-", "over 30 kVA", 30, Infinity],
+];
+export const kindOf = (cls: string) => (cls === "wallbox" ? "ev" : cls === "meter" ? "meter" : "inv");
 
 // ---- urls and pages
 export const modelAnchor = (d: RegDevice) => `m-${anchor(d)}`;

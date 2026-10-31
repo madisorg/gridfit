@@ -1,0 +1,388 @@
+{
+ "c0c--grid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 18694,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 35
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 38,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "4px": 7
+  },
+  "kontrast": {
+   "n": 38,
+   "min": 5.89,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--grid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 18694,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 35
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 14,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 38,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "4px": 7
+  },
+  "kontrast": {
+   "n": 38,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--grid-multi--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 18601,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 130
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 38,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 130,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {},
+  "kontrast": {
+   "n": 130,
+   "min": 6.33,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--grid-multi--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 18601,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 130
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 38,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 130,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {},
+  "kontrast": {
+   "n": 130,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--riik-ee-tabel--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 12120,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 55,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {},
+  "kontrast": {
+   "n": 55,
+   "min": 6.98,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--riik-ee-tabel--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 12120,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 55,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 3,
+  "radius": {},
+  "kontrast": {
+   "n": 55,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--riik-fr--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 9926,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 24
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 27,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {},
+  "kontrast": {
+   "n": 30,
+   "min": 6.98,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "c0c--riik-fr--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 9926,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 24
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 27,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 2,
+  "radius": {},
+  "kontrast": {
+   "n": 30,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

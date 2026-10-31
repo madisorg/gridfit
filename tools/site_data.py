@@ -16,8 +16,8 @@ sys.path.insert(0, str(ROOT))
 from gridfit import registers as R  # noqa: E402
 from gridfit.brands import Brands  # noqa: E402
 
-KEEP = ("reg", "show", "word", "maker_raw", "model_raw", "fw", "cert", "id", "valid", "date", "trust")
-EXTRA = ("list", "battery", "setup", "comment", "note")
+KEEP = ("reg", "show", "word", "maker_raw", "model_raw", "fw", "cert", "id", "valid", "date", "trust", "kva")
+EXTRA = ("list", "battery", "setup", "comment", "note", "phases", "type", "category", "kind")
 
 
 def main():

@@ -228,6 +228,21 @@ unknown`; the last five come from `data/countries.yaml`, the EU+ grid-connection
 `#grid-{cc}` or `#m-{code}` (`/grid/`, country and brand pages link that way). A model page is grid-first and flips
 on `#local`. The target row or country gets the signal edge. No JavaScript, no referrer sniffing.
 
+**Grid first (2026-10-31).** The home page asks "is it fit for the grid in …?": a country select (the 7 lists read first, then
+public / partial / none), a model-code search that submits to `/grid/`, the two kinds, and the smart-home view as the second
+door. `/grid/` is a query: countries are a multi-select with AND logic ("on every selected list"), the columns are the selected
+countries (or the 7 read when none is selected), a country without a list shows what applies to the class there, and phases
+and rated power (from the AT, SE and BE lists; no list carries MPPT counts) are filter columns. `/grid/{cc}/` is the same view
+with that country preselected, under the country's class table. A tiny Pages Function (`functions/api/cc.js`) returns
+Cloudflare's `CF-IPCountry` so the home page can *offer* the visitor's country (never redirect; nothing stored server-side;
+the user's own choice is kept in `localStorage`); elsewhere the browser language is the guess.
+
+**One vocabulary for 43 countries.** A register's own word ("Nein", "befristet") is detail, not a category. Per model × country
+the site uses: `listed` · `listed, conditions` · `expired` · `not accepted` · `not found` (on a list that covers the class) ·
+`no list, a requirement applies` · `nothing to check` · `not allowed` · `unknown`; the evidence layer will add `documented`
+(the maker publishes a document against the country's named standard and version — the grid operator decides) and
+`general certificate` (EN 50549-1 without a country profile). The register's word stays in the cell's title and on the device page.
+
 **Partial data has words.** A family with no list match shows, per country, what the table says: no list for the class
 (dotted green), a rule without a list (dotted amber), not allowed (struck), not confirmed (`?`) — never a bare
 "not found" when the country has nothing to find. A register model with no integration row shows "brand route, model
@@ -343,4 +358,14 @@ model page, 404) × 3440/390 × light/dark = 52 pictures: [`arh.json`](docs/mood
 sentence links under 44 px on a phone (36 of 48) and the confidence marks were 11.7 px `<sup>`s; both fixed
 (44 px inline-flex links, 13 px marks), re-measure [`arh-parast.json`](docs/moodud/arh-parast.json) 0 of 40 and 0 of 13.
 Pages: 5 048 (732 families, 3 595 model pages, 672 brands, 43 countries) — down from 7 267; `/registers/**` is gone.
+
+## 16. Measured, 2026-10-31 — grid first
+
+Home (country select, search, kinds), `/grid/` top and the table, `/grid/?c=FI,ES,PL&ph=3` (three countries, two without a
+list), `/grid/ee/` top and table, `/grid/fr/`, the open country picker ([`routes-0c.json`](docs/moodud/routes-0c.json)) ×
+3440/390 × light/dark: [`c0.json`](docs/moodud/c0.json) 28 pictures. Findings: the home page logged a 404 for `/api/cc` outside
+Cloudflare (now guarded by hostname), the grid table overflowed 14 px on a phone (the Lists column is hidden there now, legend
+keys wrap, the "Show more" button wraps), phases were empty in the index (`tools/site_data.py` now exports `phases`), and
+three list links in the panels were 21 px (44 px now). Re-measure [`c0-parast.json`](docs/moodud/c0-parast.json): 0 errors,
+0 overflow, 0 under 4.5:1 (lowest 5.89), 0 tap targets under 44 px. Phases known for 6 229 of 14 411 models, kVA for 11 501.
 

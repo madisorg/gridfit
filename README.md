@@ -59,6 +59,7 @@ Environment variables (both optional):
 | `data/registers/changelog.json` | added / removed / changed rows between snapshots (generated, committed) |
 | `data/registers/listing.json` | membership only, read by the family pages (generated, committed) |
 | `data/countries.yaml` | one row per EU+ country (43): public list yes / partial / no, and what applies per device class (list / rule / free / banned / unknown) — from the EU+ grid-connection table of 2026-10-29 |
+| `functions/api/cc.js` | Cloudflare Pages Function: the visitor's country from `CF-IPCountry`, for the home page's "open the … view" offer; nothing stored |
 | `web/` | the site (Astro, static): `src/lib/devices.ts` is the one resolver over both halves; pages `/local/`, `/grid/`, `/grid/{cc}/`, `/{brand}/`, `/{brand}/{family}/`, `/{brand}/model/{code}/`, `/changes/` (DESIGN.md §8b) |
 
 ## Sources and licences

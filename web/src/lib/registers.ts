@@ -7,7 +7,7 @@ const R = JSON.parse(readFileSync(resolve(process.cwd(), ".data/registers.json")
 
 export type Entry = {
   reg: string; show: string; word: string; maker_raw: string; model_raw: string; fw: string; cert: string;
-  id: string; valid: string; date: string; trust: string; extra: Record<string, string>;
+  id: string; valid: string; date: string; trust: string; kva?: number | string; extra: Record<string, string>;
 };
 export type Device = {
   brand: string; model: string; norm: string; cls: string; n: number; unmatched: string | boolean; variants: string[];
