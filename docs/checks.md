@@ -98,13 +98,14 @@ The register has this unit under the brand ABB (Estonia's list); the Belgian and
 "Fimer" and are not joined yet, so the model has no page of its own — the check exists for it, the test proves it,
 and the page will follow the join.
 
-## Coverage on 2026-11-01 (origin/main datasheets and documents)
+## Coverage on 2026-11-01 (origin/main after the evidence PR #4)
 
-13 892 models × 3 countries. Models with at least one datasheet row: 670 per country (the spec layer's reach).
-Every applicable item covered: IT 319, ES 146, EE 0 (no EN 50549-1 certificate read for Estonia yet; the
-released-countries tables cite no standard). Outside by datasheet: IT 272 (units over 11.08 kW, single-phase units
-over 6 kW), ES 22 (over 100 kW). Every document read so far cites an edition older than the profile's (IT: before
-2026-07; ES: before Orden TED/82/2026), so every documented model carries the "unverified" count honestly.
+13 892 models × 3 countries. Models with at least one datasheet row: 670 per country (the spec layer's reach; 9
+brands). Every applicable item covered: EE 352 (EN 50549-1 certificates, accepted through `data/evidence/rules/accepts.yaml`
+→ the families' derived `accepted_in`), IT 319, ES 146. Outside by datasheet: IT 272 (units over 11.08 kW,
+single-phase units over 6 kW), ES 22 (over 100 kW), EE 0. Every Italian and Spanish document read so far cites an
+edition older than the profile's (IT: before 2026-07; ES: before Orden TED/82/2026), so every documented model there
+carries the "unverified" count honestly; 39 Estonian certificates predate the 2023 conditions, with no item changed since.
 
 ## What it does not do
 

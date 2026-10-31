@@ -170,7 +170,8 @@ def docs_of(idx: dict, brand: str, model: str, cc: str) -> list[dict]:
     n = norm(model)
     out, seen = [], set()
     for rx, doc, fam in idx.get(brand.lower(), []):
-        if cc in fam["countries"] and rx.search(n) and doc["id"] not in seen:
+        # `countries` is what the document names; `accepted_in` is derived by tools/evidence/build.py from data/evidence/rules
+        if (cc in (fam.get("countries") or []) or cc in (fam.get("accepted_in") or [])) and rx.search(n) and doc["id"] not in seen:
             seen.add(doc["id"])
             out.append(doc)
     return out
@@ -181,7 +182,9 @@ def edition_of(doc: dict) -> str | None:
     dates = [f"{y}-{m}" for s in (doc.get("standards") or []) for y, m in YM.findall(s)]
     if dates:
         return max(dates)
-    return (doc.get("issued") or "")[:7] or None
+    iss = str(doc.get("issued") or "")
+    m = YM.match(iss) or re.match(r"\d\d\.(\d\d)\.(20\d\d)", iss)   # 2024-07-01, or 15.08.2022 as a lab prints it
+    return (m.group(0)[:7] if m.re is YM else f"{m.group(2)}-{m.group(1)}") if m else None
 
 
 def cites(doc: dict, must: list[str]) -> bool:

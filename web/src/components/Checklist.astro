@@ -12,8 +12,9 @@ const GLYPH: Record<State, string> = { S: "✓", D: "✓", O: "~", N: "–", X: 
 const n = (c: CountryCheck, s: State) => c.sum[s] ?? 0;
 const docN = (c: CountryCheck) => n(c, "D") + n(c, "O");
 const editionLine = (c: CountryCheck) => c.doc
-  ? (c.doc.older
+  ? (c.doc.older && n(c, "O")
     ? `documented for ${c.doc.standards || c.doc.edition}; ${n(c, "O")} item${n(c, "O") === 1 ? "" : "s"} of ${c.edition.label} unverified`
+    : c.doc.older ? `documented for ${c.doc.standards || c.doc.edition}, issued before the ${c.edition.id} conditions; none of these items changed since`
     : `documented for ${c.doc.standards || c.doc.edition}`)
   : "";
 const summaryOf = (c: CountryCheck) => [

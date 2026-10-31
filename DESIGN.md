@@ -606,3 +606,26 @@ three rounds, the last on the final build: [`it-profiil.json`](docs/moodud/it-pr
 44 px. By eye between rounds: the families column of the documents table wrapped a word per line on a phone, and one Deye
 certificate number carried a research note in brackets into its link text (both fixed); the block's subtitle read "from The
 distribution grid operator…". The count test: 796 checks, 0 failures.
+
+## 27. Measured, 2026-11-01 — the requirement check
+
+The model page's new block (§8f, [`docs/checks.md`](docs/checks.md)) and the country page's longer "What the model
+must meet" table (the frequency/voltage and the interface-protection rows of Italy split, so each row is one check).
+Six routes ([`routes-kontroll.json`](docs/moodud/routes-kontroll.json): a GoodWe hybrid with an Italian certificate
+and a datasheet, at the top and at the block; a 50 kW GoodWe string inverter — two rows "outside by datasheet" in
+Italy; a Deye microinverter with a datasheet only, and the same with every country opened at Spain; `/grid/it/` at
+the requirements table) × 3440/390 × light/dark, three rounds, the last on the final build after merging the
+evidence PR: [`kontroll.json`](docs/moodud/kontroll.json), 24 pictures, 0 console errors, 0 failed requests, 0 px
+overflow, 0 texts under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 6.26), 0 tap targets under 44 px. By eye
+between rounds: the document column repeated the whole list of cited variants on every row (now once, in the block's
+source line, and "covered by the certificate" per row), and a block with no document said "no maker's document for
+this country" fourteen times (now "no document" per row, the reason once above). The count test grew by the new
+suite: 124 529 checks, 0 failures — the states of every model × country sum to the applicable items, every datasheet
+verdict carries its number, and the hand example holds (TRIO-8.5 × IT: 6 / 8 / 2022-03 + V1 + V2 against 2026-07).
+Coverage: 670 models with a datasheet row per country; every item covered for 352 models in Estonia (EN 50549-1
+certificates), 319 in Italy, 146 in Spain; outside by datasheet 272 in Italy, 22 in Spain.
+
+The example model itself has no page: the register holds it as ABB "TRIO-8.5-TL-OUTD" (Estonia), as Fimer
+"TRIO-8.5-TL-OUTD-*-400" (Netherlands) and as Fimer "…-Y-400 (*) NOTE…" (Belgium), three spellings under two brand
+words, not joined — a parser matter, noted for the product session. Models a product family claims have no page
+either, so the block reaches the 4 600 orphan model pages today and the family pages not yet.
