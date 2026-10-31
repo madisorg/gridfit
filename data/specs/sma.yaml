@@ -1,0 +1,141 @@
+brand: SMA
+maker_site: https://www.sma.de/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: sbse36-60-ds-en-18
+  url: https://files.sma.de/downloads/SBSE36-60-DS-en-18.pdf
+  file: SBSE36-60-DS-en-18.pdf
+  version: '18'
+  note: the version is the number at the end of the file name
+  seen: '2026-10-31'
+- id: stpxx-3se-40-ds-en-22
+  url: https://files.sma.de/downloads/STPxx-3SE-40-DS-en-22.pdf
+  file: STPxx-3SE-40-DS-en-22.pdf
+  version: '22'
+  note: the version is the number at the end of the file name
+  seen: '2026-10-31'
+- id: stp50-41-ds-en-20
+  url: https://files.sma.de/downloads/STP50-41-DS-en-20.pdf
+  file: STP50-41-DS-en-20.pdf
+  version: '20'
+  note: the version is the number at the end of the file name
+  seen: '2026-10-31'
+- id: stpxx-50-ds-en-24
+  url: https://files.sma.de/downloads/STPxx-50-DS-en-24.pdf
+  file: STPxx-50-DS-en-24.pdf
+  version: '24'
+  note: the version is the number at the end of the file name
+  seen: '2026-10-31'
+models:
+- code: SBSE3.6-50
+  mppt: 3
+  ac_kw: 3.6
+  ac_kva: null
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: sbse36-60-ds-en-18
+  match: ^SBSE3\.6-50
+- code: SBSE4.0-50
+  mppt: 3
+  ac_kw: 4.0
+  ac_kva: null
+  ac_a: 20.0
+  phases: 1
+  pv_kw: null
+  source: sbse36-60-ds-en-18
+  match: ^SBSE4\.0-50
+- code: SBSE5.0-50
+  mppt: 3
+  ac_kw: 5.0
+  ac_kva: null
+  ac_a: 25.0
+  phases: 1
+  pv_kw: null
+  source: sbse36-60-ds-en-18
+  match: ^SBSE5\.0-50
+- code: SBSE6.0-50
+  mppt: 3
+  ac_kw: 6.0
+  ac_kva: null
+  ac_a: 30.0
+  phases: 1
+  pv_kw: null
+  source: sbse36-60-ds-en-18
+  match: ^SBSE6\.0-50
+- code: STP5.0-3SE-40
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: null
+  ac_a: 7.6
+  phases: 3
+  pv_kw: null
+  source: stpxx-3se-40-ds-en-22
+- code: STP6.0-3SE-40
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: null
+  ac_a: 9.1
+  phases: 3
+  pv_kw: null
+  source: stpxx-3se-40-ds-en-22
+- code: STP8.0-3SE-40
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: null
+  ac_a: 12.1
+  phases: 3
+  pv_kw: null
+  source: stpxx-3se-40-ds-en-22
+- code: STP10.0-3SE-40
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: null
+  ac_a: 15.2
+  phases: 3
+  pv_kw: null
+  source: stpxx-3se-40-ds-en-22
+- code: STP50-41
+  mppt: 6
+  ac_kw: 50.0
+  ac_kva: null
+  ac_a: 72.5
+  phases: 3
+  pv_kw: null
+  source: stp50-41-ds-en-20
+- code: STP 12-50
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: stpxx-50-ds-en-24
+- code: STP 15-50
+  mppt: 3
+  ac_kw: 15.0
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: stpxx-50-ds-en-24
+- code: STP 20-50
+  mppt: 3
+  ac_kw: 20.0
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: stpxx-50-ds-en-24
+- code: STP 25-50
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: stpxx-50-ds-en-24

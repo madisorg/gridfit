@@ -231,7 +231,75 @@ def goodwe():
     dump("goodwe", {"brand": "GoodWe", "maker_site": "https://en.goodwe.com/", "rule": RULE, "sources": sources, "models": models})
 
 
+# ---------------------------------------------------------------- Kostal: official sheets, kostal-solar-electric.com/fileadmin (rows read from the text by hand)
+# The lists spell these "PLENTICORE S G3 4.0", "PLENTICORE S G3 4 kW", "PLENTICORE S G3 5,5 kW", "Plenticore G3 S": the match
+# takes the size with or without ".0" / "kW". PIKO MP plus "-1" variants have one tracker and no column on the sheet: no row.
+KOSTAL = {  # file stem: (phases, [(code, mppt, ac_kw, ac_kva, ac_a, match)])
+    "DB_PLENTICORE-G3_en": (3, [
+        ("PLENTICORE S G3 4.0", 3, 4.0, None, 11.2, r"^PLENTICORESG3(4|4\.0)(KW)?$"), ("PLENTICORE S G3 5.5", 3, 5.5, None, 11.2, r"^PLENTICORESG35\.5(KW)?$"),
+        ("PLENTICORE S G3 7.0", 3, 7.0, None, 11.2, r"^PLENTICORESG3(7|7\.0)(KW)?$"),
+        ("PLENTICORE M G3 8.5", 3, 8.5, None, 20.0, r"^PLENTICOREMG38\.5(KW)?$"), ("PLENTICORE M G3 10", 3, 10.0, None, 20.0, r"^PLENTICOREMG3(10|10\.0)(KW)?$"),
+        ("PLENTICORE M G3 12.5", 3, 12.5, None, 20.0, r"^PLENTICOREMG312\.5(KW)?$"),
+        ("PLENTICORE L G3 15", 3, 15.0, None, 32.0, r"^PLENTICORELG3(15|15\.0)(KW)?$"), ("PLENTICORE L G3 17.5", 3, 17.5, None, 32.0, r"^PLENTICORELG317\.5(KW)?$"),
+        ("PLENTICORE L G3 20", 3, 20.0, None, 32.0, r"^PLENTICORELG3(20|20\.0)(KW)?$")]),
+    "DB_PIKO-IQ_en": (3, [
+        ("PIKO IQ 3.0", 2, 3.0, None, 4.81, ""), ("PIKO IQ 4.2", 2, 4.2, None, 6.74, ""), ("PIKO IQ 5.5", 2, 5.5, None, 8.82, ""),
+        ("PIKO IQ 7.0", 2, 7.0, None, 11.23, ""), ("PIKO IQ 8.5", 2, 8.5, None, 13.63, ""), ("PIKO IQ 10", 2, 10.0, None, 16.04, "")]),
+    "DB_PIKO-MP-plus_en": (1, [
+        ("PIKO MP plus 3.0-2", 2, 3.0, None, 14.0, ""), ("PIKO MP plus 3.6-2", 2, 3.68, None, 16.0, ""), ("PIKO MP plus 4.6-2", 2, 4.6, None, 20.0, ""),
+        ("PIKO MP plus 5.0-2", 2, 5.0, None, 22.0, "")]),
+}
+
+
+def kostal():
+    urls = dict(line.split(" ", 1) for line in (CACHE / "kostal/SOURCES.txt").read_text(encoding="utf-8").splitlines() if " " in line)
+    sources, models = [], []
+    for stem, (ph, rows) in KOSTAL.items():
+        pdf = stem + ".pdf"
+        sid = stem.replace("DB_", "").replace("_en", "").lower()
+        sources.append({"id": sid, "url": urls.get(pdf, ""), "file": pdf, "version": "", "note": "the sheet carries no version or date in its text", "seen": SEEN})
+        for code, mp, ackw, kva, aca, match in rows:
+            m = row(code, mp, ackw, kva, aca, ph, None, sid)
+            if match:
+                m["match"] = match
+            models.append(m)
+    dump("kostal", {"brand": "Kostal", "maker_site": "https://www.kostal-solar-electric.com/", "rule": RULE, "sources": sources, "models": models})
+
+
+# ---------------------------------------------------------------- SMA: official sheets, files.sma.de (rows read from the text by hand)
+# The lists spell the Smart Energy units "SBSE3.6-50 (Sunny Boy Smart Energy 3.6)" and the 50 series "STP 12-50": the match
+# takes the code at the start / without the space. STP 12-50's current row did not come through the text layer: null.
+SMA = {  # file stem: (phases, [(code, mppt, ac_kw, ac_kva, ac_a, match)])
+    "SBSE36-60-DS-en-18": (1, [
+        ("SBSE3.6-50", 3, 3.6, None, 16.0, r"^SBSE3\.6-50"), ("SBSE4.0-50", 3, 4.0, None, 20.0, r"^SBSE4\.0-50"),
+        ("SBSE5.0-50", 3, 5.0, None, 25.0, r"^SBSE5\.0-50"), ("SBSE6.0-50", 3, 6.0, None, 30.0, r"^SBSE6\.0-50")]),
+    "STPxx-3SE-40-DS-en-22": (3, [
+        ("STP5.0-3SE-40", 2, 5.0, None, 7.6, ""), ("STP6.0-3SE-40", 2, 6.0, None, 9.1, ""), ("STP8.0-3SE-40", 2, 8.0, None, 12.1, ""),
+        ("STP10.0-3SE-40", 2, 10.0, None, 15.2, "")]),
+    "STP50-41-DS-en-20": (3, [("STP50-41", 6, 50.0, None, 72.5, "")]),
+    "STPxx-50-DS-en-24": (3, [
+        ("STP 12-50", 3, 12.0, None, None, ""), ("STP 15-50", 3, 15.0, None, None, ""), ("STP 20-50", 3, 20.0, None, None, ""), ("STP 25-50", 3, 25.0, None, None, "")]),
+}
+
+
+def sma():
+    urls = dict(line.split(" ", 1) for line in (CACHE / "sma/SOURCES.txt").read_text(encoding="utf-8").splitlines() if " " in line)
+    sources, models = [], []
+    for stem, (ph, rows) in SMA.items():
+        pdf = stem + ".pdf"
+        ver = stem.rsplit("-", 1)[-1]
+        sources.append({"id": stem.lower(), "url": urls.get(pdf, ""), "file": pdf, "version": ver, "note": "the version is the number at the end of the file name", "seen": SEEN})
+        for code, mp, ackw, kva, aca, match in rows:
+            m = row(code, mp, ackw, kva, aca, ph, None, stem.lower())
+            if match:
+                m["match"] = match
+            models.append(m)
+    dump("sma", {"brand": "SMA", "maker_site": "https://www.sma.de/", "rule": RULE, "sources": sources, "models": models})
+
+
 if __name__ == "__main__":
     deye()
     fronius()
     goodwe()
+    kostal()
+    sma()

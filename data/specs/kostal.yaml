@@ -1,0 +1,188 @@
+brand: Kostal
+maker_site: https://www.kostal-solar-electric.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: plenticore-g3
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/PLENTICORE-G3/DB_PLENTICORE-G3_en.pdf
+  file: DB_PLENTICORE-G3_en.pdf
+  version: ''
+  note: the sheet carries no version or date in its text
+  seen: '2026-10-31'
+- id: piko-iq
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/PIKO-IQ/DB_PIKO-IQ_en.pdf
+  file: DB_PIKO-IQ_en.pdf
+  version: ''
+  note: the sheet carries no version or date in its text
+  seen: '2026-10-31'
+- id: piko-mp-plus
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/PIKO-MP-plus/DB_PIKO-MP-plus_en.pdf
+  file: DB_PIKO-MP-plus_en.pdf
+  version: ''
+  note: the sheet carries no version or date in its text
+  seen: '2026-10-31'
+models:
+- code: PLENTICORE S G3 4.0
+  mppt: 3
+  ac_kw: 4.0
+  ac_kva: null
+  ac_a: 11.2
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICORESG3(4|4\.0)(KW)?$
+- code: PLENTICORE S G3 5.5
+  mppt: 3
+  ac_kw: 5.5
+  ac_kva: null
+  ac_a: 11.2
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICORESG35\.5(KW)?$
+- code: PLENTICORE S G3 7.0
+  mppt: 3
+  ac_kw: 7.0
+  ac_kva: null
+  ac_a: 11.2
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICORESG3(7|7\.0)(KW)?$
+- code: PLENTICORE M G3 8.5
+  mppt: 3
+  ac_kw: 8.5
+  ac_kva: null
+  ac_a: 20.0
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICOREMG38\.5(KW)?$
+- code: PLENTICORE M G3 10
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: null
+  ac_a: 20.0
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICOREMG3(10|10\.0)(KW)?$
+- code: PLENTICORE M G3 12.5
+  mppt: 3
+  ac_kw: 12.5
+  ac_kva: null
+  ac_a: 20.0
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICOREMG312\.5(KW)?$
+- code: PLENTICORE L G3 15
+  mppt: 3
+  ac_kw: 15.0
+  ac_kva: null
+  ac_a: 32.0
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICORELG3(15|15\.0)(KW)?$
+- code: PLENTICORE L G3 17.5
+  mppt: 3
+  ac_kw: 17.5
+  ac_kva: null
+  ac_a: 32.0
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICORELG317\.5(KW)?$
+- code: PLENTICORE L G3 20
+  mppt: 3
+  ac_kw: 20.0
+  ac_kva: null
+  ac_a: 32.0
+  phases: 3
+  pv_kw: null
+  source: plenticore-g3
+  match: ^PLENTICORELG3(20|20\.0)(KW)?$
+- code: PIKO IQ 3.0
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: null
+  ac_a: 4.81
+  phases: 3
+  pv_kw: null
+  source: piko-iq
+- code: PIKO IQ 4.2
+  mppt: 2
+  ac_kw: 4.2
+  ac_kva: null
+  ac_a: 6.74
+  phases: 3
+  pv_kw: null
+  source: piko-iq
+- code: PIKO IQ 5.5
+  mppt: 2
+  ac_kw: 5.5
+  ac_kva: null
+  ac_a: 8.82
+  phases: 3
+  pv_kw: null
+  source: piko-iq
+- code: PIKO IQ 7.0
+  mppt: 2
+  ac_kw: 7.0
+  ac_kva: null
+  ac_a: 11.23
+  phases: 3
+  pv_kw: null
+  source: piko-iq
+- code: PIKO IQ 8.5
+  mppt: 2
+  ac_kw: 8.5
+  ac_kva: null
+  ac_a: 13.63
+  phases: 3
+  pv_kw: null
+  source: piko-iq
+- code: PIKO IQ 10
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: null
+  ac_a: 16.04
+  phases: 3
+  pv_kw: null
+  source: piko-iq
+- code: PIKO MP plus 3.0-2
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: null
+  ac_a: 14.0
+  phases: 1
+  pv_kw: null
+  source: piko-mp-plus
+- code: PIKO MP plus 3.6-2
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: null
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: piko-mp-plus
+- code: PIKO MP plus 4.6-2
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: null
+  ac_a: 20.0
+  phases: 1
+  pv_kw: null
+  source: piko-mp-plus
+- code: PIKO MP plus 5.0-2
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: null
+  ac_a: 22.0
+  phases: 1
+  pv_kw: null
+  source: piko-mp-plus
