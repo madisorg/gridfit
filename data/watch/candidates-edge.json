@@ -1,0 +1,1711 @@
+{
+ "candidates": [
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "ACE-209H-2H-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "ACE209H2HHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "ACE-209H-2H-HV",
+   "url": "https://en.growatt.com/products/ace-209h-2h-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "ACE-261H-2H-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "ACE261H2HHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "ACE-261H-2H-HV",
+   "url": "https://en.growatt.com/products/ace-261h-2h-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "APX-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "APXHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "APX-HV",
+   "url": "https://en.growatt.com/products/apx-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "AURA-5000",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "AURA5000",
+   "partial": [
+    "AURA50002500",
+    "AURA5000800"
+   ],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "AURA-5000",
+   "url": "https://en.growatt.com/products/aura-5000-plug-in-ac-coupled-battery",
+   "verdict": "close to a listed model"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "AXE-30-60H-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "AXE3060HHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "AXE-30-60H-HV",
+   "url": "https://en.growatt.com/products/axe-30-60h-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "AXE-50-60H-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "AXE5060HHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "AXE-50-60H-HV",
+   "url": "https://en.growatt.com/products/axe-50-60h-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "AXE-75H-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "AXE75HHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "AXE-75H-HV",
+   "url": "https://en.growatt.com/products/axe-75h-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "AXE-88-286H-2HS-S1-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "AXE88286H2HSS1HV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "AXE-88-286H-2HS-S1-HV",
+   "url": "https://en.growatt.com/products/axe-88-286h-2hs-s1-hv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "AXE-LV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "AXELV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "AXE-LV",
+   "url": "https://en.growatt.com/products/axe-lv-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "EU-SYN-600E-30",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "EUSYN600E30",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "EU-SYN-600E-30",
+   "url": "https://en.growatt.com/products/eu-syn-600e-30",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "FUTURE-H",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "FUTUREH",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "FUTURE-H",
+   "url": "https://en.growatt.com/products/future-h-series",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "FUTURE-V",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "FUTUREV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "FUTURE-V",
+   "url": "https://en.growatt.com/products/future-v-series",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "GROHOMEMANAGER-X",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "GROHOMEMANAGERX",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "GROHOMEMANAGER-X",
+   "url": "https://en.growatt.com/products/grohomemanager-x",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "GROPLUG-X",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "GROPLUGX",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "GROPLUG-X",
+   "url": "https://en.growatt.com/products/groplug-x",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MONITORING-PLATFORM",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MONITORINGPLATFORM",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MONITORING-PLATFORM",
+   "url": "https://en.growatt.com/products/growatt-monitoring-platform",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "INFINITY-1000-PRO",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "INFINITY1000PRO",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "INFINITY-1000-PRO",
+   "url": "https://en.growatt.com/products/infinity-1000-pro",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MAC-50-70KTL3-X-LV-MV",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MAC5070KTL3XLVMV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MAC-50-70KTL3-X-LV-MV",
+   "url": "https://en.growatt.com/products/mac-50-70ktl3-x-lv-mv",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MAX-100-150KTL3-X-LV",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MAX100150KTL3XLV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MAX-100-150KTL3-X-LV",
+   "url": "https://en.growatt.com/products/max-100-150ktl3-x-lv",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MAX-100-150KTL3-X2-LV-MV",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MAX100150KTL3X2LVMV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MAX-100-150KTL3-X2-LV-MV",
+   "url": "https://en.growatt.com/products/max-100-150ktl3-x2-lv-mv",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MAX-185-253KTL3-X-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MAX185253KTL3XHV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MAX-185-253KTL3-X-HV",
+   "url": "https://en.growatt.com/products/max-185-253ktl3-x-hv",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MAX-320-350K-X",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MAX320350KX",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MAX-320-350K-X",
+   "url": "https://en.growatt.com/products/max-320-350k-x",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MAX-50-80KTL3-LV",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MAX5080KTL3LV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MAX-50-80KTL3-LV",
+   "url": "https://en.growatt.com/products/max-50-80ktl3-lv",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MID-11-30KTL3-XH",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MID1130KTL3XH",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MID-11-30KTL3-XH",
+   "url": "https://en.growatt.com/products/mid-11-30ktl3-xh",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MID-15-30KTL3-X-X2",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MID1530KTL3XX2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MID-15-30KTL3-X-X2",
+   "url": "https://en.growatt.com/products/mid-15-30ktl3-x-x2",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MID-25-40KTL3-X",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MID2540KTL3X",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MID-25-40KTL3-X",
+   "url": "https://en.growatt.com/products/mid-25-40ktl3-x",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MID-30-50KTL3-X2",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MID3050KTL3X2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MID-30-50KTL3-X2",
+   "url": "https://en.growatt.com/products/mid-30-50ktl3-x2",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MID-36-60KTL3-X3",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MID3660KTL3X3",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MID-36-60KTL3-X3",
+   "url": "https://en.growatt.com/products/mid-36-60ktl3-x3",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MIN-2500-5000TL-XA",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MIN25005000TLXA",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MIN-2500-5000TL-XA",
+   "url": "https://en.growatt.com/products/min-2500-5000tl-xa",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MIN-2500-6000TL-XH2",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MIN25006000TLXH2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MIN-2500-6000TL-XH2",
+   "url": "https://en.growatt.com/products/min-2500-6000tl-xh2",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MIN-3000-11400TL-XH-US",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MIN300011400TLXHUS",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MIN-3000-11400TL-XH-US",
+   "url": "https://en.growatt.com/products/min-3000-11400tl-xh-us",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MIN-7000-10000TL-X-X2",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MIN700010000TLXX2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MIN-7000-10000TL-X-X2",
+   "url": "https://en.growatt.com/products/min-7000-10000tl-x-x2",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MINA",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MINA",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MINA",
+   "url": "https://en.growatt.com/products/mina-all-in-one-ess",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MOD-3-15KTL3-HU",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MOD315KTL3HU",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MOD-3-15KTL3-HU",
+   "url": "https://en.growatt.com/products/mod-3-15ktl3-hu",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MOD-3-33KTL3-X3",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MOD333KTL3X3",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MOD-3-33KTL3-X3",
+   "url": "https://en.growatt.com/products/mod-3-33ktl3-x3",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MOD-3000-10000TL3-XH",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MOD300010000TL3XH",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MOD-3000-10000TL3-XH",
+   "url": "https://en.growatt.com/products/mod-3000-10000tl3-xh",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "MODA",
+   "date": "2026-10-31",
+   "family": "MIN / MOD / MID / MIC string inverters",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "MODA",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "MODA",
+   "url": "https://en.growatt.com/products/moda-all-in-one-ess",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "NEO-1600-2500M-X2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "NEO16002500MX2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "NEO-1600-2500M-X2",
+   "url": "https://en.growatt.com/products/neo-1600-2500m-x2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "NEO-2000M-X",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "NEO2000MX",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "NEO-2000M-X",
+   "url": "https://en.growatt.com/products/neo-2000m-x",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "NEO-600-1000M-X",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "NEO6001000MX",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "NEO-600-1000M-X",
+   "url": "https://en.growatt.com/products/neo-600-1000m-x",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "NEXA-2000",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [
+    "AT",
+    "BE"
+   ],
+   "kind": "edge",
+   "norm": "NEXA2000",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "NEXA-2000",
+   "url": "https://en.growatt.com/products/nexa-2000-all-in-one-storage",
+   "verdict": "in GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "NOAH-2000",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "NOAH2000",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "NOAH-2000",
+   "url": "https://en.growatt.com/products/noah-2000-dc-coupled-storage",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "RISE-261H-XH",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "RISE261HXH",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "RISE-261H-XH",
+   "url": "https://en.growatt.com/products/rise-261h-xh",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SEM-XA-R",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SEMXAR",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SEM-XA-R",
+   "url": "https://en.growatt.com/products/sem-xa-r",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SHINELINK-X2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SHINELINKX2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SHINELINK-X2",
+   "url": "https://en.growatt.com/products/shinelink-x2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SHINEMASTER4G-X",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SHINEMASTER4GX",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SHINEMASTER4G-X",
+   "url": "https://en.growatt.com/products/shinemaster4g-x",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SHINEWIFI-F-F-PRO-4G-F",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SHINEWIFIFFPRO4GF",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SHINEWIFI-F-F-PRO-4G-F",
+   "url": "https://en.growatt.com/products/shinewifi-f-f-pro-4g-f",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SHINEWILAN-X2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SHINEWILANX2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SHINEWILAN-X2",
+   "url": "https://en.growatt.com/products/shinewilan-x2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "METER",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "METER",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "METER",
+   "url": "https://en.growatt.com/products/smart-meter",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPA-4000-10000TL3-BH-UP",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPA400010000TL3BHUP",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPA-4000-10000TL3-BH-UP",
+   "url": "https://en.growatt.com/products/spa-4000-10000tl3-bh-up",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPE-15KTL3-HVM",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPE15KTL3HVM",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPE-15KTL3-HVM",
+   "url": "https://en.growatt.com/products/spe-15ktl3-hvm",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPE-8000-12000-ES",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPE800012000ES",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPE-8000-12000-ES",
+   "url": "https://en.growatt.com/products/spe-8000-12000-es",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-2000-5000TL-HVM",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF20005000TLHVM",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-2000-5000TL-HVM",
+   "url": "https://en.growatt.com/products/spf-2000-5000tl-hvm",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-3000-5000-ES-ES-LITE",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF30005000ESESLITE",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-3000-5000-ES-ES-LITE",
+   "url": "https://en.growatt.com/products/spf-3000-5000-es-es-lite",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-3000-6000T-HVM-G2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF30006000THVMG2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-3000-6000T-HVM-G2",
+   "url": "https://en.growatt.com/products/spf-3000-6000t-hvm-g2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-3000TL-LVM",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF3000TLLVM",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-3000TL-LVM",
+   "url": "https://en.growatt.com/products/spf-3000tl-lvm",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-3000TL-LVM-ES",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF3000TLLVMES",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-3000TL-LVM-ES",
+   "url": "https://en.growatt.com/products/spf-3000tl-lvm-es",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-4-12KT-HVM-MPV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF412KTHVMMPV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-4-12KT-HVM-MPV",
+   "url": "https://en.growatt.com/products/spf-4-12kt-hvm-mpv",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-4000-18000T-DVM",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF400018000TDVM",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-4000-18000T-DVM",
+   "url": "https://en.growatt.com/products/spf-4000-18000t-dvm",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-4000-18000T-DVM-MPV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF400018000TDVMMPV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-4000-18000T-DVM-MPV",
+   "url": "https://en.growatt.com/products/spf-4000-18000t-dvm-mpv",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-4000TL-HVM-24G2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF4000TLHVM24G2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-4000TL-HVM-24G2",
+   "url": "https://en.growatt.com/products/spf-4000tl-hvm-24g2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-6000-ES-LITE",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF6000ESLITE",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-6000-ES-LITE",
+   "url": "https://en.growatt.com/products/spf-6000-es-lite",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-6000-ES",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF6000ES",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-6000-ES",
+   "url": "https://en.growatt.com/products/spf-6000-es-plus",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPF-6000T-DVM-G2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPF6000TDVMG2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPF-6000T-DVM-G2",
+   "url": "https://en.growatt.com/products/spf-6000t-dvm-g2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPH-3000-6000TL-BL-UP",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPH30006000TLBLUP",
+   "partial": [
+    "SPH3000"
+   ],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPH-3000-6000TL-BL-UP",
+   "url": "https://en.growatt.com/products/sph-3000-6000tl-bl-up",
+   "verdict": "close to a listed model"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPH-4000-10000TL3-BH-UP",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPH400010000TL3BHUP",
+   "partial": [
+    "SPH4000"
+   ],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPH-4000-10000TL3-BH-UP",
+   "url": "https://en.growatt.com/products/sph-4000-10000tl3-bh-up",
+   "verdict": "close to a listed model"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPH-SPA-3000-6000TL-HUB-AUB",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPHSPA30006000TLHUBAUB",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPH-SPA-3000-6000TL-HUB-AUB",
+   "url": "https://en.growatt.com/products/sph-spa-3000-6000tl-hub-aub",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPH-SPM-8000-10000TL-HU-HU2",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPHSPM800010000TLHUHU2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPH-SPM-8000-10000TL-HU-HU2",
+   "url": "https://en.growatt.com/products/sph-spm-8000-10000tl-hu-hu2",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPI-3000-22000",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPI300022000",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPI-3000-22000",
+   "url": "https://en.growatt.com/products/spi-3000-22000",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPI-750-4000TL2-HV",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPI7504000TL2HV",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPI-750-4000TL2-HV",
+   "url": "https://en.growatt.com/products/spi-750-4000tl2-hv",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPM-2500-6000TL-HU-HU2",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPM25006000TLHUHU2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPM-2500-6000TL-HU-HU2",
+   "url": "https://en.growatt.com/products/spm-2500-6000tl-hu-hu2",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SPM-2CT-C",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SPM2CTC",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SPM-2CT-C",
+   "url": "https://en.growatt.com/products/spm-2ct-c",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SYN-100-XH-30",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SYN100XH30",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SYN-100-XH-30",
+   "url": "https://en.growatt.com/products/syn-100-xh-30",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "SYN-200-XH-US",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "SYN200XHUS",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "SYN-200-XH-US",
+   "url": "https://en.growatt.com/products/syn-200-xh-us",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-07-09-12AS-P-US",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR070912ASPUS",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-07-09-12AS-P-US",
+   "url": "https://en.growatt.com/products/thor-07-09-12as-p-us",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-07AD-SE-SEW-PE-PEW",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR07ADSESEWPEPEW",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-07AD-SE-SEW-PE-PEW",
+   "url": "https://en.growatt.com/products/thor-07ad-se-sew-pe-pew",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-07AS-S-P-SE-PE",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR07ASSPSEPE",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-07AS-S-P-SE-PE",
+   "url": "https://en.growatt.com/products/thor-07as-s-p-se-pe",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-11-22AD-SE-SEW-PE-PEW",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR1122ADSESEWPEPEW",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-11-22AD-SE-SEW-PE-PEW",
+   "url": "https://en.growatt.com/products/thor-11-22ad-se-sew-pe-pew",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-11-22AS-S-P-SE-PE",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR1122ASSPSEPE",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-11-22AS-S-P-SE-PE",
+   "url": "https://en.growatt.com/products/thor-11-22as-s-p-se-pe",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-20DS-P",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR20DSP",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-20DS-P",
+   "url": "https://en.growatt.com/products/thor-20ds-p",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-40DS-P-DD-P",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR40DSPDDP",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-40DS-P-DD-P",
+   "url": "https://en.growatt.com/products/thor-40ds-p-dd-p",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "THOR-60-200DD-P",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "THOR60200DDP",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "THOR-60-200DD-P",
+   "url": "https://en.growatt.com/products/thor-60-200dd-p",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "TPM-CT-E-EU",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "TPMCTE",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "TPM-CT-E-EU",
+   "url": "https://en.growatt.com/products/tpm-ct-e-eu",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "TPM-CT-E-US",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "TPMCTEUS",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "TPM-CT-E-US",
+   "url": "https://en.growatt.com/products/tpm-ct-e-us",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "VETA-2200",
+   "date": "2026-10-31",
+   "family": "",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "VETA2200",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "VETA-2200",
+   "url": "https://en.growatt.com/products/veta-2200-plug-in-all-in-one-battery",
+   "verdict": "new to GridFit"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "WIT-28-55K-HU-AU-US-L2",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "WIT2855KHUAUUSL2",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "WIT-28-55K-HU-AU-US-L2",
+   "url": "https://en.growatt.com/products/wit-28-55k-hu-au-us-l2",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "WIT-4-25K-HU",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "WIT425KHU",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "WIT-4-25K-HU",
+   "url": "https://en.growatt.com/products/wit-4-25k-hu",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "WIT-50-100K-HU-AU",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "WIT50100KHUAU",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "WIT-50-100K-HU-AU",
+   "url": "https://en.growatt.com/products/wit-50-100k-hu-au",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "WIT-50-150K-XHU-US",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "WIT50150KXHUUS",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "WIT-50-150K-XHU-US",
+   "url": "https://en.growatt.com/products/wit-50-150k-xhu-us",
+   "verdict": "family known, in no list yet"
+  },
+  {
+   "baseline": true,
+   "brand": "Growatt",
+   "brands": [
+    "Growatt"
+   ],
+   "code": "WIT-63-125K-XHU",
+   "date": "2026-10-31",
+   "family": "SPH / SPA / MOD-XH / MIN-XH hybrids",
+   "in_lists": [],
+   "kind": "edge",
+   "norm": "WIT63125KXHU",
+   "partial": [],
+   "source": "growatt-products",
+   "specs": false,
+   "title": "WIT-63-125K-XHU",
+   "url": "https://en.growatt.com/products/wit-63-125k-xhu",
+   "verdict": "family known, in no list yet"
+  }
+ ],
+ "log": [],
+ "mode": "edge",
+ "registers_pending": {},
+ "requests": 1,
+ "run": "2026-10-31",
+ "snapshot": "2026-10-31"
+}
