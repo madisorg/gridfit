@@ -602,6 +602,428 @@ def solis():
     dump("solis", {"brand": "Solis", "maker_site": "https://www.solisinverters.com/", "rule": RULE, "sources": sources, "models": models})
 
 
+# ---------------------------------------------------------------- hand-read sheets (SAJ, SolaX, Hoymiles): one table per brand
+def hand_brand(key, brand, site, cache_dir, table, src_note=""):
+    """table: {pdf stem: (phases, version, note, rows)}; a row is (code, mppt, ac_kw, ac_kva, ac_a, pv_kw[, match]).
+    The rows are typed from the sheet's table (cache/specs/<brand>/<stem>.txt, spanned cells read by x-position with
+    pdfplumber); the source id is the stem in lower case. A code is matched exactly unless the row carries a `match` regex."""
+    urls = dict(line.split(" ", 1) for line in (CACHE / cache_dir / "SOURCES.txt").read_text(encoding="utf-8").splitlines() if " " in line)
+    sources, models = [], []
+    for stem, (ph, ver, note, rows) in table.items():
+        pdf = stem + ".pdf"
+        sid = re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-")
+        url = urls.get(pdf, "").split(" (")[0]
+        sources.append({"id": sid, "url": url, "file": pdf, "version": ver, "note": (note + ("; " if note and src_note else "") + src_note).strip(), "seen": SEEN})
+        for r in rows:
+            code, mp, ackw, kva, aca, pv = r[:6]
+            m = row(code, mp, ackw, kva, aca, ph, pv, sid)
+            if len(r) > 6 and r[6]:
+                m["match"] = r[6]
+            models.append(m)
+    dump(key, {"brand": brand, "maker_site": site, "rule": RULE, "sources": sources, "models": models})
+
+
+# SAJ: www.saj-electric.com download centre (HubSpot, server-rendered; ?type=Datasheet&page=N). English BEU/EU/Global sheets.
+# The sheets carry no version except where noted; "updated" is the download centre's own "Last updated" date.
+# HS5/HS2/HS3/AS3 are all-in-one units: the code's X is the battery configuration, W/G the communication module (sheet note).
+def saj_hs5(prefix, three):
+    if three:
+        return [(f"{prefix} HS5-8K-T3-X", 3, 8.0, 8.8, 12.8, 16.0, rf"^{prefix}HS5-?8K-?T3-(\d+|X;.*)$"),
+                (f"{prefix} HS5-10K-T3-X", 3, 9.999, 9.999, 14.5, 20.0, rf"^{prefix}HS5-?10K-?T3-(\d+|X;.*)$"),
+                (f"{prefix} HS5-12K-T3-X", 3, 12.0, 13.2, 19.1, 24.0, rf"^{prefix}HS5-?12K-?T3-(\d+|X;.*)$"),
+                (f"{prefix} HS5-12K-T3-X-IE", 3, 11.0, 11.0, 15.9, 24.0, rf"^{prefix}HS5-?12K-?T3-(\d+-IE|X-IE;.*)$"),
+                (f"{prefix} HS5-15K-T3-X", 3, 15.0, 16.5, 23.9, 30.0, rf"^{prefix}HS5-?15K-?T3-(\d+|X;.*)$"),
+                (f"{prefix} HS5-20K-T3-X", 3, 20.0, 22.0, 31.9, 40.0, rf"^{prefix}HS5-?20K-?T3-(\d+|X;.*)$")]
+    last = 10.0 if prefix == "EK70" else 9.999
+    return [(f"{prefix} HS5-5K-S3-X", 3, 4.999, 4.999, 21.7, 10.0, rf"^{prefix}HS5-?5K-?S3-(\d+|X;.*)$"),
+            (f"{prefix} HS5-6K-S3-X", 3, 6.0, 6.6, 28.7, 12.0, rf"^{prefix}HS5-?6K-?S3-(\d+|X;.*)$"),
+            (f"{prefix} HS5-6K-S3-X-IE", 3, 5.75, 5.75, 25.0, 12.0, rf"^{prefix}HS5-?6K-?S3-(\d+-IE|X-IE;.*)$"),
+            (f"{prefix} HS5-8K-S3-X", 3, 8.0, 8.8, 38.3, 16.0, rf"^{prefix}HS5-?8K-?S3-(\d+|X;.*)$"),
+            (f"{prefix} HS5-10K-S4-X", 4, last, last, 47.8 if prefix == "EK70" else 43.5, 20.0, rf"^{prefix}HS5-?10K-?S4-(\d+|X;.*)$")]
+
+
+def saj_hs2(code, mp, kw, kva, a, pv):  # "HS2-5K-T2-X": the lists write HS2-5K-T2, HS2-5K-T2-3, HS2-5K-T2-3 WiFi, HS2-5K-T2-X WiFi (X=2, 3, 4, 5)
+    base = re.escape(code[:-2])
+    return (code, mp, kw, kva, a, pv, rf"^{base}(-[2-5X])?(WIFI(\(X=.*\))?)?$")
+
+
+def saj_hs3(code, mp, kw, kva, a, pv):  # "HS3-5K-T2-W/G-PX": the lists write HS3-5K-T2-W-PX, HS3-5K-T2-G-PX and "HS3-5K-T2-W-PX; HS3-5K-T2-G-PX (X=1, ...)"
+    base, tail = code.split("-W/G-")
+    return (code, mp, kw, kva, a, pv, rf"^{re.escape(base)}-[WG]-{re.escape(tail)}(;.*)?$")
+
+
+SAJ = {
+    "EK70_HS5_Three_Phase-EU": (3, "", "updated 2026-06-16", saj_hs5("EK70", True)),
+    "EK70_HS5_Single_Phase-EU": (1, "", "updated 2026-06-16", saj_hs5("EK70", False)),
+    "EK90_HS5_Three_Phase-EU": (3, "", "updated 2026-05-29", saj_hs5("EK90", True)),
+    "EK90_HS5_Single_Phase-EU": (1, "", "updated 2026-05-29", saj_hs5("EK90", False)),
+    "HS3-5-12K-T2-datasheet-EN-BEU": (3, "", "updated 2025-07-22", [
+        saj_hs3("HS3-5K-T2-W/G-PX", 2, 5.0, 5.5, 8.0, 10.0), saj_hs3("HS3-6K-T2-W/G-PX", 2, 6.0, 6.6, 9.6, 12.0), saj_hs3("HS3-8K-T2-W/G-PX", 2, 8.0, 8.8, 12.8, 12.0),
+        saj_hs3("HS3-10K-T2-W/G-PX", 2, 10.0, 11.0, 15.9, 15.0), saj_hs3("HS3-12K-T2-W/G-PX", 2, 12.0, 12.0, 17.4, 15.0)]),
+    "HS3-3-6K-S2-datasheet-EN-BEU": (1, "", "updated 2025-07-22", [
+        saj_hs3("HS3-3K-S2-W/G-PX", 2, 3.0, 3.3, 14.3, 6.0), saj_hs3("HS3-3.6K-S2-W/G-PX", 2, 3.6, 3.6, 15.7, 7.2), saj_hs3("HS3-4K-S2-W/G-PX", 2, 4.0, 4.4, 19.1, 8.0),
+        saj_hs3("HS3-4.6K-S2-W/G-PX", 2, 4.6, 4.6, 20.0, 9.2), saj_hs3("HS3-5K-S2-W/G-PX", 2, 5.0, 5.5, 23.9, 10.0), saj_hs3("HS3-6K-S2-W/G-PX", 2, 6.0, 6.0, 27.3, 12.0)]),
+    "HS3-10K-T2-datasheet-EN-BEU": (3, "", "Belgian variant; updated 2025-07-22", [("HS3-10K-T2-W/G-P-BE", 2, 10.0, 10.0, 14.5, 15.0, r"^HS3-10K-T2-[WG]-PX-BE(;.*)?$")]),
+    "HS3-5K-S2-datasheet-EN-BEU": (1, "", "Belgian variant; updated 2025-07-22", [("HS3-5K-S2-W/G-P-BE", 2, 5.0, 5.0, 21.7, 10.0, r"^HS3-5K-S2-[WG]-PX-BE(;.*)?$")]),
+    "HS2-5-10K-T2-datasheet-EN-BEU": (3, "", "updated 2025-07-22", [
+        saj_hs2("HS2-5K-T2-X", 2, 5.0, 5.5, 8.3, 7.5), saj_hs2("HS2-6K-T2-X", 2, 6.0, 6.6, 10.0, 9.0), saj_hs2("HS2-8K-T2-X", 2, 8.0, 8.8, 13.3, 12.0),
+        saj_hs2("HS2-10K-T2-B-X", 2, 10.0, 10.0, 15.2, 15.0), saj_hs2("HS2-10K-T2-X", 2, 10.0, 11.0, 16.7, 15.0)]),
+    "HS2-3-6K-S2-datasheet-EN-BEU": (1, "", "updated 2025-07-22", [
+        saj_hs2("HS2-3K-S2-X", 2, 3.0, 3.3, 15.0, 4.5), saj_hs2("HS2-3.6K-S2-X", 2, 3.68, 3.68, 16.0, 5.4), saj_hs2("HS2-4K-S2-X", 2, 4.0, 4.4, 20.0, 6.0),
+        saj_hs2("HS2-4.6K-S2-X", 2, 4.6, 4.6, 20.0, 6.9), saj_hs2("HS2-5K-S2-B-X", 2, 5.0, 5.0, 22.7, 7.5), saj_hs2("HS2-5K-S2-X", 2, 5.0, 5.5, 25.0, 7.5),
+        saj_hs2("HS2-6K-S2-X", 2, 6.0, 6.0, 27.3, 9.0)]),
+    "H2-5-10K-T2-datasheet-EN-BEU": (3, "", "updated 2025-07-22", [
+        ("H2-5K-T2", 2, 5.0, 5.5, 8.3, 7.5), ("H2-6K-T2", 2, 6.0, 6.6, 10.0, 9.0), ("H2-8K-T2", 2, 8.0, 8.8, 13.3, 12.0), ("H2-10K-T2", 2, 10.0, 11.0, 16.7, 15.0),
+        ("H2-10K-T2-B", 2, 10.0, 10.0, 15.2, 15.0)]),
+    "H2-3-6K-S2-datasheet-EN-BEU": (1, "", "updated 2025-07-22", [
+        ("H2-3K-S2", 2, 3.0, 3.3, 15.0, 4.5), ("H2-3.6K-S2", 2, 3.68, 3.68, 16.7, 5.4), ("H2-4K-S2", 2, 4.0, 4.4, 20.0, 6.0), ("H2-5K-S2", 2, 5.0, 5.5, 25.0, 7.5),
+        ("H2-6K-S2", 2, 6.0, 6.0, 27.3, 9.0)]),
+    "H2-5-10K-S3_datasheet_en": (1, "", "updated 2025-05-25", [
+        ("H2-5K-S3", 3, 5.0, 5.5, 25.0, 7.5), ("H2-6K-S3-IE", 3, 5.5, 5.5, 25.0, 9.0), ("H2-6K-S3", 3, 6.0, 6.6, 30.0, 9.0), ("H2-7K-S3", 3, 7.0, 7.7, 35.0, 10.5),
+        ("H2-8K-S3", 3, 8.0, 8.8, 40.0, 12.0), ("H2-10K-S3", 3, 10.0, 10.0, 45.5, 15.0)]),
+    "H2-10-30K-T2T3-datasheet-EN-BEU": (3, "", "T2 = 2 MPPT, T3 = 3 MPPT (spanned cells read by position); updated 2025-07-22", [
+        ("H2-10K-T3", 3, 10.0, 11.0, 16.0, 20.0), ("H2-12K-T3", 3, 12.0, 13.2, 19.2, 24.0), ("H2-15K-T2", 2, 15.0, 16.5, 24.0, 30.0), ("H2-15K-T3", 3, 15.0, 16.5, 24.0, 30.0),
+        ("H2-20K-T2", 2, 20.0, 22.0, 31.9, 30.0), ("H2-20K-T3", 3, 20.0, 22.0, 31.9, 40.0), ("H2-25K-T3-BE", 3, 25.0, 25.0, 36.3, 45.0), ("H2-25K-T3", 3, 25.0, 27.5, 39.9, 45.0),
+        ("H2-30K-T3-DE", 3, 29.999, 29.999, 43.4, 45.0), ("H2-30K-T3", 3, 30.0, 33.0, 47.9, 45.0)]),
+    "R5-0.7-3K-S1-datasheet-EN-BEU": (1, "", "the lists also write 'R5 Series 1K K-S1-15'; updated 2025-07-22", [
+        ("R5-0.7K-S1-15", 1, 0.7, 0.77, 3.5, 1.05, r"^(R5-|R5SERIES)0\.7KK?-S1-15$"), ("R5-1K-S1-15", 1, 1.0, 1.1, 5.0, 1.5, r"^(R5-|R5SERIES)1KK?-S1-15$"),
+        ("R5-1.5K-S1-15", 1, 1.5, 1.65, 7.5, 2.25, r"^(R5-|R5SERIES)1\.5KK?-S1-15$"), ("R5-2K-S1-15", 1, 2.0, 2.2, 10.0, 3.0, r"^(R5-|R5SERIES)2KK?-S1-15$"),
+        ("R5-2.5K-S1-15", 1, 2.5, 2.75, 12.5, 3.75, r"^(R5-|R5SERIES)2\.5KK?-S1-15$"), ("R5-3K-S1-15", 1, 3.0, 3.3, 15.0, 4.5, r"^(R5-|R5SERIES)3KK?-S1-15$")]),
+    "R5-3-8K-S2-datasheet-EN-BEU": (1, "", "the lists also write 'R5 Series 3K K-S2-15'; updated 2025-07-22", [
+        ("R5-3K-S2-15", 2, 3.0, 3.3, 14.4, 4.5, r"^(R5-|R5SERIES)3KK?-S2-15$"), ("R5-3.6K-S2-15", 2, 3.68, 3.68, 16.0, 5.52, r"^(R5-|R5SERIES)3\.6KK?-S2-15$"),
+        ("R5-4K-S2-15", 2, 4.0, 4.4, 19.2, 6.0, r"^(R5-|R5SERIES)4KK?-S2-15$"), ("R5-5K-S2-15", 2, 5.0, 5.5, 23.9, 7.5, r"^(R5-|R5SERIES)5KK?-S2-15$"),
+        ("R5-5K-S2-15-B", 2, 5.0, 5.0, 21.8, 7.5), ("R5-6K-S2-15", 2, 6.0, 6.0, 26.1, 9.0, r"^(R5-|R5SERIES)6KK?-S2-15$"),
+        ("R5-7K-S2-15", 2, 7.0, 7.7, 33.5, 10.5, r"^(R5-|R5SERIES)7KK?-S2-15$"), ("R5-8K-S2-15", 2, 8.0, 8.0, 34.8, 12.0, r"^(R5-|R5SERIES)8KK?-S2-15$")]),
+    "R6-3-15K-T2-datasheet-EN-BEU": (1, "", "the file is named R6-(3-15K)-T2 but holds the single-phase R6 S2 sheet; updated 2026-10-13", [
+        ("R6-5K-S2-X", 2, 5.0, 5.5, 25.0, 7.5), ("R6-6K-S2-X", 2, 6.0, 6.6, 30.0, 9.0), ("R6-7K-S2-X", 2, 7.0, 7.7, 35.0, 10.5), ("R6-8K-S2-X", 2, 8.0, 8.8, 40.0, 12.0),
+        ("R6-9K-S2-X", 2, 9.0, 9.9, 45.0, 12.0), ("R6-10K-S2-X", 2, 10.0, 10.0, 45.5, 12.0)]),
+    "R6-5-10K-S2-datasheet-EN-BEU": (1, "", "the file is named R6-(5-10K)-S2 but holds the R6 S3 sheet; updated 2025-07-22", [
+        ("R6-5K-S3", 3, 5.0, 5.5, 25.0, 7.5), ("R6-6K-S3", 3, 6.0, 6.6, 30.0, 9.0), ("R6-7K-S3", 3, 7.0, 7.7, 35.0, 10.5), ("R6-8K-S3", 3, 8.0, 8.8, 40.0, 12.0),
+        ("R6-9K-S3", 3, 9.0, 9.9, 45.0, 13.5), ("R6-10K-S3", 3, 10.0, 10.0, 45.5, 15.0)]),
+    "R6-8-25K-T2-datasheet-EN-BEU": (3, "", "updated 2025-07-22", [
+        ("R6-15K-T2-32", 2, 15.0, 16.5, 25.0, 22.5), ("R6-17K-T2-32", 2, 17.0, 18.7, 28.3, 25.5), ("R6-20K-T2-32", 2, 20.0, 22.0, 33.3, 30.0), ("R6-22K-T2-32", 2, 22.0, 24.2, 36.7, 33.0),
+        ("R6-25K-T2-32-B", 2, 25.0, 25.0, 37.9, 37.5), ("R6-25K-T2-32", 2, 25.0, 27.5, 41.7, 37.5)]),
+    "R6-25-50K-T3T4-datasheet-EN-BEU": (3, "", "T3 = 3 MPPT, T4 = 4 MPPT (spanned cells read by position); updated 2025-07-22", [
+        ("R6-25K-T3-32-B", 3, 25.0, 25.0, 37.9, 37.5), ("R6-25K-T3-32", 3, 25.0, 27.5, 41.7, 37.5), ("R6-30K-T3-32-B", 3, 30.0, 30.0, 45.5, 45.0), ("R6-30K-T3-32", 3, 30.0, 33.0, 50.0, 45.0),
+        ("R6-33K-T3-32", 3, 33.0, 36.3, 55.0, 49.5), ("R6-36K-T3-32", 3, 36.0, 39.6, 60.0, 54.0), ("R6-36K-T4-32", 4, 36.0, 39.6, 60.0, 54.0), ("R6-40K-T4-32", 4, 40.0, 44.0, 66.7, 60.0),
+        ("R6-50K-T4-32", 4, 50.0, 50.0, 75.8, 75.0)]),
+    "C6_String_Inverter-datasheet-EN-BEU": (3, "", "T6/T9/T12 = 6/9/12 MPPT (spanned cell read by position); updated 2025-07-22", [
+        ("C6-75K-T6-40", 6, 75.0, 82.5, 119.1, 144.0), ("C6-100K-T9-40", 9, 100.0, 110.0, 158.8, 200.0), ("C6-110K-T12-40", 12, 110.0, 121.0, 174.6, 220.0), ("C6-125K-T12-40", 12, 125.0, 125.0, 180.4, 250.0)]),
+    "EK60_H3-2.9-6K-LS2_Datasheet_en_EU": (1, "V1.1", "max AC current is given per grid voltage (e.g. 13.4/12.8) and left null; updated 2026-06-29", [
+        ("EK60 H3-2.9K-LS2", 2, 2.94, 2.94, None, 4.64), ("EK60 H3-3K-LS2", 2, 3.0, 3.3, None, 4.8), ("EK60 H3-3.6K-LS2", 2, 3.68, 3.68, None, 5.76), ("EK60 H3-4K-LS2", 2, 4.0, 4.4, None, 6.4),
+        ("EK60 H3-4.6K-LS2", 2, 4.6, 4.6, None, 7.36), ("EK60 H3-5K-LS2", 2, 4.999, 4.999, None, 8.0), ("EK60 H3-6K-LS2", 2, 6.0, 6.6, None, 9.6), ("EK60 H3-6K-LS2-IE", 2, 5.75, 5.75, 25.0, 9.6)]),
+    "H1-3-6K-S2-15-EN": (1, "V2.3", "updated 2025-07-09", [
+        ("H1-3K-S2-15", 2, 3.0, 3.0, 13.6, 4.5), ("H1-3.6K-S2-15", 2, 3.68, 3.68, 16.7, 5.4), ("H1-4K-S2-15", 2, 4.0, 4.0, 18.2, 6.0), ("H1-4.6K-S2-15", 2, 4.6, 4.6, 20.9, 6.9),
+        ("H1-5K-S2-15", 2, 5.0, 5.0, 22.7, 7.5), ("H1-6K-S2-15-IE", 2, 5.5, 5.5, 25.0, 9.0), ("H1-6K-S2-15", 2, 6.0, 6.0, 27.3, 9.0)]),
+    "AS3-3K-8K-T-datasheet-EN-BEU": (3, "V1.0", "AC-coupling solution: the sheet lists no PV input, hence mppt 0; updated 2026-03-31", [
+        ("AS3-3K-T-W/G-PX", 0, 3.0, None, 4.8, None, r"^AS3-3K-T-[WG]-PX$"), ("AS3-4K-T-W/G-PX", 0, 4.0, None, 6.4, None, r"^AS3-4K-T-[WG]-PX$"),
+        ("AS3-5K-T-W/G-PX", 0, 5.0, None, 8.0, None, r"^AS3-5K-T-[WG]-PX$"), ("AS3-6K-T-W/G-PX", 0, 6.0, None, 9.6, None, r"^AS3-6K-T-[WG]-PX$"),
+        ("AS3-8K-T-W/G-PX", 0, 8.0, None, 12.8, None, r"^AS3-8K-T-[WG]-PX$")]),
+    "AS3-10K-12K-T-datasheet-EN-BEU": (3, "V1.0", "AC-coupling solution: the sheet lists no PV input, hence mppt 0; updated 2026-03-31", [
+        ("AS3-10K-T-W/G-PX", 0, 10.0, None, 15.9, None, r"^AS3-10K-T-[WG]-PX$"), ("AS3-10K-T-W/G-PX-BE", 0, 10.0, None, 14.5, None, r"^AS3-10K-T-[WG]-PX-BE$"),
+        ("AS3-12K-T-W/G-PX", 0, 12.0, None, 17.4, None, r"^AS3-12K-T-[WG]-PX$"), ("AS3-12K-T-W/G-PX-IE", 0, 11.0, None, 15.9, None, r"^AS3-12K-T-[WG]-PX-IE$")]),
+    "AS3-3K-4.6K-S-datasheet-EN-BEU": (1, "V1.0", "AC-coupling solution: the sheet lists no PV input, hence mppt 0; updated 2026-03-31", [
+        ("AS3-3K-S-W/G-PX", 0, 3.0, None, 14.4, None, r"^AS3-3K-S-[WG]-PX$"), ("AS3-3.6K-S-W/G-PX", 0, 3.6, None, 15.7, None, r"^AS3-3\.6K-S-[WG]-PX$"),
+        ("AS3-4K-S-W/G-PX", 0, 4.0, None, 19.1, None, r"^AS3-4K-S-[WG]-PX$"), ("AS3-4.6K-S-W/G-PX", 0, 4.6, None, 20.0, None, r"^AS3-4\.6K-S-[WG]-PX$")]),
+    "AS3-5K-6K-S-datasheet-EN-BEU": (1, "V1.0", "AC-coupling solution: the sheet lists no PV input, hence mppt 0; updated 2026-03-31", [
+        ("AS3-5K-S-W/G-PX", 0, 5.0, None, 23.9, None, r"^AS3-5K-S-[WG]-PX$"), ("AS3-5K-S-W/G-PX-BE", 0, 5.0, None, 21.7, None, r"^AS3-5K-S-[WG]-PX-BE$"),
+        ("AS3-6K-S-W/G-PX", 0, 6.0, None, 26.1, None, r"^AS3-6K-S-[WG]-PX$"), ("AS3-6K-S-W/G-PX-IE", 0, 5.75, None, 25.0, None, r"^AS3-6K-S-[WG]-PX-IE$")]),
+    "CHS2-29.9K-50K-X_datasheet_en_BNL": (3, "V1.1", "C&I hybrid: the sheet gives strings per MPPT (2) but no MPPT count row; updated 2025-05-25", [
+        ("CHS2-29.9K-T4-X", None, 29.999, None, 43.3, 59.998), ("CHS2-30K-T4-X", None, 30.0, None, 47.9, 60.0), ("CHS2-50K-T6-X", None, 50.0, None, 79.8, 100.0),
+        ("CH2-29.9K-T4", None, 29.999, 29.999, 43.3, 59.998), ("CH2-30K-T4", None, 30.0, 33.0, 47.9, 60.0), ("CH2-50K-T6", None, 50.0, 55.0, 79.8, 100.0)]),
+    "M2-1.8-2.25K-S4-datasheet-EN-BEU": (1, "", "microinverter: the sheet gives 'Maximum Output Power [VA]' and a nominal (not max) current; updated 2025-07-22", [
+        ("M2-1.8K-S4", 4, None, 1.8, None, None), ("M2-2K-S4", 4, None, 2.0, None, None), ("M2-2.2K-S4", 4, None, 2.2, None, None), ("M2-2.25K-S4", 4, None, 2.25, None, None)]),
+    "M2-0.6-1K-S2-datasheet-EN-BEU": (1, "", "microinverter: the sheet gives 'Maximum Output Power [VA]' and a nominal (not max) current; updated 2025-07-22", [
+        ("M2-0.6K-S2", 2, None, 0.6, None, None), ("M2-0.8K-S2", 2, None, 0.8, None, None), ("M2-1K-S2", 2, None, 1.0, None, None)]),
+}
+
+
+def saj():
+    hand_brand("saj", "SAJ", "https://www.saj-electric.com/", "saj", SAJ)
+
+
+# SolaX: www.solaxpower.com download centre (ysecm_api template data.html per productid; each /downloads-NNNN.html page links
+# /uploads/file/*.pdf). English sheets; X1-Hybrid G4 and X1-FIT G4 only exist in German, X3-Hybrid G4 in English by direct file.
+# SolaX sheets give a rated and a max apparent power but mostly only a rated (not max) current, so ac_a stays null there.
+SOLAX = {
+    "x3-hybrid-g4-datasheet-en": (3, "V3.8", "the lists also write X3-Hybrid-5.0-M, X3-Hybrid-5.0-D/M, 'X3 Hybrid G4 5.0', 'Solax X3-Hybrid-5.0-D'", [
+        ("X3-HYBRID-5.0-D", 2, 5.0, 5.5, None, 10.0, r"^(SOLAX)?X3-HYBRID-5\.0K?-[DM](/M)?$|^X3HYBRIDG45\.0$"), ("X3-HYBRID-6.0-D", 2, 6.0, 6.6, None, 12.0, r"^(SOLAX)?X3-HYBRID-6\.0K?-[DM](/M)?$|^X3HYBRIDG46\.0$"),
+        ("X3-HYBRID-8.0-D", 2, 8.0, 8.8, None, 16.0, r"^(SOLAX)?X3-HYBRID-8\.0K?-[DM](/M)?$|^X3HYBRIDG48\.0$"), ("X3-HYBRID-10.0-D", 2, 10.0, 11.0, None, 20.0, r"^(SOLAX)?X3-HYBRID-10\.0K?-[DM](/M)?$|^X3HYBRIDG410$"),
+        ("X3-HYBRID-12.0-D", 2, 12.0, 13.2, None, 24.0, r"^(SOLAX)?X3-HYBRID-12\.0K?-[DM](/M)?$|^X3HYBRIDG412$"), ("X3-HYBRID-15.0-D", 2, 15.0, 15.0, None, 30.0, r"^(SOLAX)?X3-HYBRID-15\.0K?-[DM](/M)?$|^X3HYBRIDG415$")]),
+    "solax-x3-hyb-g4-pro-datasheet-en": (3, "V2.7", "4-6 kW 2 MPPT, 8-15 kW 3 MPPT (spanned cells by position); the rated-power row is headed 'Rated output apparent power' but given in W", [
+        ("X3-HYB-4.0-P", 2, 4.0, 4.4, None, 8.0, r"^X3-HYB-4\.0K?-P$"), ("X3-HYB-5.0-P", 2, 5.0, 5.5, None, 10.0, r"^X3-HYB-5\.0K?-P$"), ("X3-HYB-6.0-P", 2, 6.0, 6.6, None, 12.0, r"^X3-HYB-6\.0K?-P$"),
+        ("X3-HYB-8.0-P", 3, 8.0, 8.8, None, 16.0, r"^X3-HYB-8\.0K?-P$"), ("X3-HYB-10.0-P", 3, 10.0, 11.0, None, 20.0, r"^X3-HYB-10\.0K?-P$"), ("X3-HYB-12.0-P", 3, 12.0, 13.2, None, 24.0, r"^X3-HYB-12\.0K?-P$"),
+        ("X3-HYB-15.0-P", 3, 15.0, 16.5, None, 30.0, r"^X3-HYB-15\.0K?-P$")]),
+    "x1-hybrid-g4-de": (1, "V2.9", "German sheet (no English one on the site); 5.0-D's power and current carry footnotes the reader lost, left null; the lists also write X1-HYBRID-G4-3.0-D/M, 'X1 Hybrid G4 3.0'", [
+        ("X1-HYBRID-3.0-D", 2, 3.0, 3.3, 14.4, 6.0, r"^X1-HYBRID-3\.0K?-D$|^X1-HYBRID-G4-3\.0-D/M$|^X1HYBRIDG43\.0$"), ("X1-HYBRID-3.7-D", 2, 3.68, 3.68, 16.0, 7.4, r"^X1-HYBRID-3\.7K?-D$|^X1-HYBRID-G4-3\.7-D/M$|^X1HYBRIDG43\.7$"),
+        ("X1-HYBRID-5.0-D", 2, None, None, None, 10.0, r"^X1-HYBRID-5\.0K?-D$|^X1-HYBRID-G4-5\.0-D/M$|^X1HYBRIDG45\.0$"), ("X1-HYBRID-6.0-D", 2, 6.0, 6.6, 28.6, 12.0, r"^X1-HYBRID-6\.0K?-D$|^X1-HYBRID-G4-6\.0-D/M$|^X1HYBRIDG46\.0$"),
+        ("X1-HYBRID-7.5-D", 2, 7.5, 7.5, 32.6, 15.0, r"^X1-HYBRID-7\.5K?-D$|^X1-HYBRID-G4-7\.5-D/M$|^X1HYBRIDG47\.5$")]),
+    "x1-fit-g4-de": (1, "V2.7", "German sheet; AC-coupled retrofit inverter, the sheet lists no PV input, hence mppt 0; apparent power and most currents carry footnotes the reader lost", [
+        ("X1-FIT-3.7-W", 0, 3.68, None, 16.0, None), ("X1-FIT-4.6-W", 0, 4.6, None, None, None), ("X1-FIT-5.0-W", 0, 5.0, None, None, None), ("X1-FIT-6.0-W", 0, 6.0, None, 28.6, None), ("X1-FIT-7.5-W", 0, 7.5, None, None, None)]),
+    "x3-retrofit-g4-datasheet-en": (3, "V2.7", "AC-coupled retrofit inverter: the sheet lists no PV input, hence mppt 0; the lists also write X3-Fit-G4-6.0-M/W", [
+        ("X3-FIT-6.0-W", 0, 6.0, 6.6, 9.7, None, r"^X3-FIT-6\.0-W$|^X3-FIT-G4-6\.0-M/W$"), ("X3-FIT-8.0-W", 0, 8.0, 8.8, 12.9, None, r"^X3-FIT-8\.0-W$|^X3-FIT-G4-8\.0-M/W$"),
+        ("X3-FIT-10.0-W", 0, 10.0, 11.0, 16.1, None, r"^X3-FIT-10\.0-W$|^X3-FIT-G4-10\.0-M/W$"), ("X3-FIT-15.0-W", 0, 15.0, 15.0, 24.1, None, r"^X3-FIT-15\.0-W$|^X3-FIT-G4-15\.0-M/W$")]),
+    "x1-ac-datasheet-en": (1, "", "AC-coupled battery inverter ('AC Coupled' on the sheet, no PV input), hence mppt 0; power given in VA only", [
+        ("X1-AC-3.0", 0, None, 3.0, 13.6, None), ("X1-AC-3.6", 0, None, 3.68, 16.8, None), ("X1-AC-4.6", 0, None, 4.6, 21.0, None), ("X1-AC-5.0", 0, None, 4.999, 21.7, None)]),
+    "solax-x1-ies-a-datasheet-en": (1, "V1.0", "'AC-Coupling ESS': no PV input, hence mppt 0; nominal power in VA; first 'Max. AC current' row (grid side)", [
+        ("X1-IES-3.7K-A", 0, None, 3.68, 16.0, None), ("X1-IES-5K-A", 0, None, 5.0, 21.8, None), ("X1-IES-6K-A", 0, None, 6.0, 28.7, None), ("X1-IES-8K-A", 0, None, 8.0, 34.8, None)]),
+    "solax-x3-ies-a-datasheet-en": (3, "V1.0", "'AC-Coupling ESS': no PV input, hence mppt 0; nominal power in VA; first 'Max. AC current' row (grid side)", [
+        ("X3-IES-5K-A", 0, None, 5.0, 8.0, None), ("X3-IES-10K-A", 0, None, 10.0, 14.5, None), ("X3-IES-15K-A", 0, None, 15.0, 24.0, None)]),
+    "solax-x1-ies-datasheet-en": (1, "V2.0", "2.5-3.7 kW 2 MPPT, 5-8 kW 3 MPPT (spanned cells by position); kW from the sheet's 'Rated power' line; 5K's apparent power carries a VDE footnote the reader lost", [
+        ("X1-IES-2.5K", 2, 2.5, 2.5, None, 5.0), ("X1-IES-3K", 2, 3.0, 3.3, None, 6.0), ("X1-IES-3.7K", 2, 3.7, 3.68, None, 7.4), ("X1-IES-5K", 3, 5.0, None, None, 10.0),
+        ("X1-IES-6K", 3, 6.0, 6.6, None, 12.0), ("X1-IES-8K", 3, 8.0, 8.0, None, 16.0)]),
+    "solax-x3-ies-datasheet-en": (3, "V1.8", "kW from the sheet's 'Rated power' line; the apparent-power row packs several models per cell and is left null", [
+        ("X3-IES-4K", 2, 4.0, None, None, 8.0), ("X3-IES-5K", 2, 5.0, None, None, 10.0), ("X3-IES-6K", 2, 6.0, None, None, 12.0), ("X3-IES-8K", 2, 8.0, None, None, 16.0),
+        ("X3-IES-10K", 2, 10.0, None, None, 20.0), ("X3-IES-12K", 2, 12.0, None, None, 24.0), ("X3-IES-15K", 2, 15.0, None, None, 30.0)]),
+    "solax-x3-ies-p-datasheet-en": (3, "V2.0", "4-6 kW 2 MPPT, 8-15 kW 3 MPPT (spanned cells by position); kW from the sheet's 'Rated power' line; apparent power packed per cell, left null", [
+        ("X3-IES-4K-P", 2, 4.0, None, None, 8.0), ("X3-IES-5K-P", 2, 5.0, None, None, 10.0), ("X3-IES-6K-P", 2, 6.0, None, None, 12.0), ("X3-IES-8K-P", 3, 8.0, None, None, 16.0),
+        ("X3-IES-10K-P", 3, 10.0, None, None, 20.0), ("X3-IES-12K-P", 3, 12.0, None, None, 24.0), ("X3-IES-15K-P", 3, 15.0, None, None, 30.0)]),
+    "solax-x3-neo-lv-datasheet-en": (3, "", "", [
+        ("X3-NEO-5K-LV", 2, 5.0, 5.5, None, 10.0), ("X3-NEO-8K-LV", 2, 8.0, 8.8, None, 16.0), ("X3-NEO-10K-LV", 2, 10.0, 11.0, None, 20.0), ("X3-NEO-12K-LV", 2, 12.0, 13.2, None, 24.0),
+        ("X3-NEO-15K-LV", 2, 15.0, 16.5, None, 30.0), ("X3-NEO-20K-LV", 2, 20.0, 22.0, None, 40.0)]),
+    "solax-x1-vast-datasheet-en": (1, "V1.6", "5-6 kW 3 MPPT, 8-10 kW 4 MPPT (spanned cells by position)", [
+        ("X1-VAST-5K", 3, 4.999, 4.999, None, 10.0), ("X1-VAST-6K", 3, 6.0, 6.0, None, 12.0), ("X1-VAST-8K", 4, 8.0, 8.0, None, 16.0), ("X1-VAST-10K", 4, 9.999, 9.999, None, 20.0)]),
+    "solax-x3-mic-g2-datasheet-en-au-cec": (3, "V3.1", "the only English sheet is the AU/CEC edition (4999/9999/14999 W ratings); the lists also write X3-MIC 10.0-T-D G2, X3-MIC-10KW-G2", [
+        ("X3-MIC-3K-G2", 2, 3.0, 3.3, None, 6.0, r"^X3-MIC-?3(K|KW|\.0-T-D)-?G2$"), ("X3-MIC-4K-G2", 2, 4.0, 4.4, None, 8.0, r"^X3-MIC-?4(K|KW|\.0-T-D)-?G2$"),
+        ("X3-MIC-5K-G2", 2, 4.999, 4.999, None, 10.0, r"^X3-MIC-?5(K|KW|\.0-T-D)-?G2$"), ("X3-MIC-6K-G2", 2, 6.0, 6.6, None, 12.0, r"^X3-MIC-?6(K|KW|\.0-T-D)-?G2$"),
+        ("X3-MIC-8K-G2", 2, 8.0, 8.8, None, 16.0, r"^X3-MIC-?8(K|KW|\.0-T-D)-?G2$"), ("X3-MIC-10K-G2", 2, 9.999, 9.999, None, 20.0, r"^X3-MIC-?10(K|KW|\.0-T-D)-?G2$"),
+        ("X3-MIC-12K-G2", 2, 12.0, 13.2, None, 24.0, r"^X3-MIC-?12(K|KW|\.0-T-D)-?G2$"), ("X3-MIC-15K-G2", 2, 14.999, 14.999, None, 30.0, r"^X3-MIC-?15(K|KW|\.0-T-D)-?G2$")]),
+    "solax-x3-pro-g2-datasheet-en-au": (3, "V2.8", "the only English sheet is the AU edition; 8-17 kW 2 MPPT, 20-30 kW 3 MPPT (spanned cells by position); the lists also write 'X3 PRO G2 10K', X3-PRO-10KW-G2", [
+        ("X3-PRO-8K-G2", 2, 8.0, 8.8, None, 12.0, r"^X3-PRO-8KW?-G2$|^X3PROG28K$"), ("X3-PRO-10K-G2", 2, 10.0, 11.0, None, 15.0, r"^X3-PRO-10KW?-G2$|^X3PROG210K$"),
+        ("X3-PRO-12K-G2", 2, 12.0, 13.2, None, 18.0, r"^X3-PRO-12KW?-G2$|^X3PROG212K$"), ("X3-PRO-15K-G2", 2, 15.0, 16.5, None, 22.5, r"^X3-PRO-15KW?-G2$|^X3PROG215K$"),
+        ("X3-PRO-17K-G2", 2, 17.0, 18.7, None, 25.5, r"^X3-PRO-17KW?-G2$|^X3PROG217K$"), ("X3-PRO-20K-G2", 3, 20.0, 22.0, None, 30.0, r"^X3-PRO-20KW?-G2$|^X3PROG220K$"),
+        ("X3-PRO-25K-G2", 3, 25.0, 27.5, None, 37.5, r"^X3-PRO-25KW?-G2$|^X3PROG225K$"), ("X3-PRO-30K-G2", 3, 30.0, 30.0, None, 45.0, r"^X3-PRO-30KW?-G2$|^X3PROG230K$")]),
+    "solax-x3-mega-g2-datasheet-en": (3, "", "rated power given as kVA (40/50/60) and max apparent power; the lists also write 'X3 MEGA 40K-G2 (...)'", [
+        ("X3-MGA-40K-G2", 4, None, 44.0, None, 60.0, r"^X3-MGA-40K-G2$|^X3MEGA40K-G2\("), ("X3-MGA-50K-G2", 5, None, 55.0, None, 75.0, r"^X3-MGA-50K-G2$|^X3MEGA50K-G2\("),
+        ("X3-MGA-60K-G2", 6, None, 66.0, None, 90.0, r"^X3-MGA-60K-G2$|^X3MEGA60K-G2\(")]),
+    "solax-x3-forth-datasheet-en": (3, "", "rated power given as kVA and max apparent power; 75-80 kW 9 MPPT, 100-125 kW 12 MPPT (spanned cells by position)", [
+        ("X3-FTH-75K", 9, None, 75.0, None, 120.0), ("X3-FTH-80K", 9, None, 88.0, None, 120.0), ("X3-FTH-100K", 12, None, 110.0, None, 150.0), ("X3-FTH-110K", 12, None, 121.0, None, 165.0),
+        ("X3-FTH-120K", 12, None, 132.0, None, 180.0), ("X3-FTH-125K", 12, None, 132.0, None, 188.0)]),
+    "solax-x3-forth-plus-datasheet-en": (3, "", "rated power given as kVA and max apparent power", [
+        ("X3-FTH-120K-P", 6, None, 132.0, None, 180.0), ("X3-FTH-125KT-P", 6, None, 137.5, None, 187.5), ("X3-FTH-125K-P", 6, None, 137.5, None, 187.5), ("X3-FTH-136K-P", 6, None, 150.0, None, 204.0),
+        ("X3-FTH-150K-P", 6, None, 165.0, None, 225.0)]),
+    "solax-x3-grand-hv-datasheet-en": (3, "V2.0", "800 V AC unit; rated power given as kVA and max apparent power", [
+        ("X3-GRD-300K-HV", 6, None, 300.0, None, 450.0), ("X3-GRD-320K-HV", 6, None, 320.0, None, 480.0), ("X3-GRD-333K-HV", 6, None, 333.0, None, 499.5), ("X3-GRD-350K-HV", 6, None, 352.0, None, 525.0)]),
+    "solax-x3-aelio-36k-datasheet-en": (3, "V1.1", "36K/37.5K are 208/220 V units, 60K the 400 V one", [
+        ("X3-AELIO-36K", 6, 36.0, 36.0, None, 72.0), ("X3-AELIO-37.5K", 6, 37.5, 37.5, None, 75.0), ("X3-AELIO-60K", 6, 60.0, 66.0, None, 120.0)]),
+    "solax-x1-boost-g4-datasheet-en-au": (1, "V1.7", "the only English sheet is the AU edition", [
+        ("X1-BOOST-2.5K-G4", 2, 2.5, 2.75, None, 6.0), ("X1-BOOST-3K-G4", 2, 3.0, 3.3, None, 6.0), ("X1-BOOST-3.3K-G4", 2, 3.3, 3.63, None, 6.6), ("X1-BOOST-3.6K-G4", 2, 3.68, 4.048, None, 7.2),
+        ("X1-BOOST-4K-G4", 2, 4.0, 4.0, None, 8.0), ("X1-BOOST-4.2K-G4", 2, 4.2, 4.62, None, 8.0), ("X1-BOOST-5K-G4", 2, 5.0, 5.0, None, 10.0), ("X1-BOOST-6K-G4", 2, 6.0, 6.0, None, 12.0)]),
+    "x1-mini-g4-datasheet-for-au-en": (1, "V1.7", "the only English sheet is the AU edition", [
+        ("X1-MINI-0.6K-G4", 1, 0.6, 0.6, None, 1.2), ("X1-MINI-0.7K-G4", 1, 0.7, 0.77, None, 1.4), ("X1-MINI-1.1K-G4", 1, 1.1, 1.21, None, 2.2), ("X1-MINI-1.5K-G4", 1, 1.5, 1.65, None, 3.0),
+        ("X1-MINI-2.0K-G4", 1, 2.0, 2.2, None, 4.0), ("X1-MINI-2.5K-G4", 1, 2.5, 2.75, None, 5.0), ("X1-MINI-3.0K-G4", 1, 3.0, 3.3, None, 6.0), ("X1-MINI-3.3K-G4", 1, 3.3, 3.3, None, 6.6)]),
+    "x1-boost-g3-datasheet-en": (1, "V3.3", "the sheet heads each column with a D(L) and an N(L) code; the lists also write X1-BOOST-3.0-T-D(L), 'X1 BOOST X1-3.0-T', 'X1 Boost 3.0 T'", [
+        ("X1-3.0-T-D(L)", 2, 3.0, 3.3, 14.3, None, r"^(X1BOOST)?X1-3\.0-T(-[DN]\(L\))?$|^X1-BOOST-3\.0-T-[DN]\(L\)$|^X1BOOST3\.0T$"),
+        ("X1-3.3-T-D(L)", 2, 3.3, 3.63, 15.8, None, r"^(X1BOOST)?X1-3\.3-T(-[DN]\(L\))?$|^X1-BOOST-3\.3-T-[DN]\(L\)$|^X1BOOST3\.3T$"),
+        ("X1-3.6-T-D(L)", 2, 3.68, 4.048, 17.6, None, r"^(X1BOOST)?X1-3\.6-T(-[DN]\(L\))?$|^X1-BOOST-3\.6-T-[DN]\(L\)$|^X1BOOST3\.6T$"),
+        ("X1-4.2-T-D(L)", 2, 4.2, 4.62, 20.1, None, r"^(X1BOOST)?X1-4\.2-T(-[DN]\(L\))?$|^X1-BOOST-4\.2-T-[DN]\(L\)$|^X1BOOST4\.2T$"),
+        ("X1-4.6-T-D(L)", 2, 4.6, 5.06, 22.0, None, r"^(X1BOOST)?X1-4\.6K?-T(-[DN]\(L\))?$|^X1-BOOST-4\.6-T-[DN]\(L\)$|^X1BOOST4\.6T$"),
+        ("X1-5.0-T-D(L)", 2, 5.0, 5.5, 23.9, None, r"^(X1BOOST)?X1-5\.0K?-T(-[DN]\(L\))?$|^X1-BOOST-5\.0-T-[DN]\(L\)$|^X1BOOST5\.0T$"),
+        ("X1-5.5K-T-D(L)", 2, 5.5, 6.05, 26.3, None, r"^(X1BOOST)?X1-5\.5K-T(-[DN]\(L\))?$"),
+        ("X1-6.0K-T-D(L)", 2, 6.0, 6.6, 28.7, None, r"^(X1BOOST)?X1-6(\.0)?K-T(-[DN]\(L\))?$")]),
+    "solax-x1-micro-2-in-1-datasheet-en": (1, "", "microinverter: power in VA, 'Max. continuous output current'", [
+        ("X1-Micro 750", 2, None, 0.75, 3.26, None), ("X1-Micro 800", 2, None, 0.8, 3.48, None), ("X1-Micro 900", 2, None, 0.9, 3.92, None), ("X1-Micro 1000", 2, None, 1.0, 4.35, None),
+        ("X1-Micro 1200", 2, None, 1.2, 5.22, None)]),
+    "solax-x1-micro-4-in-1-datasheet-en": (1, "", "microinverter: power in VA, 'Max. continuous output current'", [
+        ("X1-Micro 1300", 4, None, 1.3, 5.66, None), ("X1-Micro 1500", 4, None, 1.5, 6.53, None), ("X1-Micro 1600", 4, None, 1.6, 6.96, None), ("X1-Micro 1800", 4, None, 1.8, 7.83, None),
+        ("X1-Micro 2000", 4, None, 2.0, 8.70, None), ("X1-Micro 2200", 4, None, 2.2, 9.57, None), ("X1-Micro 2400", 4, None, 2.4, 10.43, None)]),
+    "solax-x1-smart-g2-datasheet-en": (1, "V1.2", "", [
+        ("X1-SMT-5K-G2", 3, 4.999, 4.999, None, 10.0), ("X1-SMT-6K-G2", 3, 6.0, 6.6, None, 12.0), ("X1-SMT-7K-G2", 3, 7.0, 7.7, None, 14.0), ("X1-SMT-8K-G2", 3, 8.0, 8.8, None, 16.0),
+        ("X1-SMT-9K-G2", 3, 9.0, 9.9, None, 18.0), ("X1-SMT-10K-G2", 3, 9.999, 9.999, None, 20.0)]),
+}
+
+
+def solax():
+    hand_brand("solax", "SolaX", "https://www.solaxpower.com/", "solax", SOLAX)
+
+
+# Hoymiles: www.hoymiles.com download centre (ysecm_api dr_getdownloadtype/series/products, then list_data.html per product;
+# each /downloads/<slug>.html meta-refreshes to w3oss.hoymiles.com). HMS-300..500-1T, HYS-LV-EUG1, HYT and HAT files answer 403.
+HOYMILES = {
+    "HIT-5-20L-G3-G3S_Global_EN_REV1.8": (3, "REV1.8", "one column per power, headed with the G3 and the G3S code; MPPT per column from the 'MPPT number/Max. input strings' row", [
+        ("HIT-5L-G3", 2, 5.0, 5.5, 8.3, 10.0), ("HIT-6L-G3", 2, 6.0, 6.6, 10.0, 12.0), ("HIT-8L-G3", 3, 8.0, 8.8, 13.3, 16.0), ("HIT-10L-G3", 3, 10.0, 11.0, 16.7, 20.0),
+        ("HIT-12L-G3", 4, 12.0, 13.2, 20.0, 24.0), ("HIT-15L-G3", 4, 15.0, 16.5, 25.0, 30.0), ("HIT-17L-G3", 4, 17.0, 18.7, 28.3, 34.0), ("HIT-20L-G3", 4, 20.0, 22.0, 33.3, 40.0),
+        ("HIT-5L-G3S", 2, 5.0, 5.5, 8.3, 10.0), ("HIT-6L-G3S", 2, 6.0, 6.6, 10.0, 12.0), ("HIT-8L-G3S", 3, 8.0, 8.8, 13.3, 16.0), ("HIT-10L-G3S", 3, 10.0, 11.0, 16.7, 20.0),
+        ("HIT-12L-G3S", 4, 12.0, 13.2, 20.0, 24.0), ("HIT-15L-G3S", 4, 15.0, 16.5, 25.0, 30.0), ("HIT-17L-G3S", 4, 17.0, 18.7, 28.3, 34.0), ("HIT-20L-G3S", 4, 20.0, 22.0, 33.3, 40.0)]),
+    "HIS-3-6L-G3-G3S_Global_EN_REV1.9": (1, "REV1.9", "one column per power, headed with the G3 and the G3S code; 8L exists as G3S only", [
+        ("HIS-3L-G3", 2, 3.0, 3.3, 15.0, 6.0), ("HIS-3.6L-G3", 2, 3.68, 3.68, 16.0, 7.2), ("HIS-4.6L-G3", 2, 4.6, 4.6, 20.0, 9.2), ("HIS-5L-G3", 2, 5.0, 5.5, 25.0, 10.0), ("HIS-6L-G3", 2, 6.0, 6.6, 30.0, 12.0),
+        ("HIS-3L-G3S", 2, 3.0, 3.3, 15.0, 6.0), ("HIS-3.6L-G3S", 2, 3.68, 3.68, 16.0, 7.2), ("HIS-4.6L-G3S", 2, 4.6, 4.6, 20.0, 9.2), ("HIS-5L-G3S", 2, 5.0, 5.5, 25.0, 10.0), ("HIS-6L-G3S", 2, 6.0, 6.6, 30.0, 12.0),
+        ("HIS-8L-G3S", 2, 8.0, 8.0, 36.4, 16.0)]),
+    "HYS-LV-EUG2_EN_V1.4": (1, "REV1.4", "", [
+        ("HYS-8.0LV-EUG2", 2, 8.0, 8.8, 38.3, 10.4), ("HYS-10.0LV-EUG2", 2, 10.0, 11.0, 47.8, 13.0), ("HYS-12.0LV-EUG2", 2, 12.0, 13.2, 57.4, 15.6)]),
+    "HAS-LV-EUG1_EN_V1.5": (1, "REV1.5", "'AC-coupled Inverter': no PV input, hence mppt 0", [
+        ("HAS-3.0LV-EUG1", 0, 3.0, 3.0, 13.0, None), ("HAS-3.6LV-EUG1", 0, 3.68, 3.68, 16.0, None), ("HAS-4.6LV-EUG1", 0, 4.6, 4.6, 20.0, None), ("HAS-5.0LV-EUG1", 0, 5.0, 5.0, 21.7, None)]),
+    "HMS-600-1000-2T_EU_EN_V202408": (1, "V202408", "microinverter: rated power in VA, current only as rated (not max)", [
+        ("HMS-600-2T", 2, None, 0.6, None, None), ("HMS-700-2T", 2, None, 0.7, None, None), ("HMS-800-2T", 2, None, 0.8, None, None), ("HMS-900-2T", 2, None, 0.9, None, None), ("HMS-1000-2T", 2, None, 1.0, None, None)]),
+    "HMS-1600-2000-4T_EU_EN_V202506": (1, "V202506", "microinverter: rated power in VA, current only as rated (not max)", [
+        ("HMS-1600-4T", 4, None, 1.6, None, None), ("HMS-1800-4T", 4, None, 1.8, None, None), ("HMS-2000-4T", 4, None, 2.0, None, None)]),
+    "HMT-1600-2000_EMEA_EN_V202308": (3, "V202308", "three-phase microinverter: rated power in VA, current only as rated (not max); the sheet states 2 MPPTs", [
+        ("HMT-1600-4T", 2, None, 1.6, None, None), ("HMT-1800-4T", 2, None, 1.8, None, None), ("HMT-2000-4T", 2, None, 2.0, None, None)]),
+}
+
+
+def hoymiles():
+    hand_brand("hoymiles", "Hoymiles", "https://www.hoymiles.com/", "hoymiles", HOYMILES)
+
+
+# INVT: www.invt-solar.com/downloads.html (static; brochure PDFs under /userfiles/files/download/Brochure/, folders dated
+# 20240918 for XG and 20241205 for XD). The sheets give 'Rated Output Power' and 'Max. Output Power (kVA)' per column; the lists
+# also write the codes with an 'iMars ' prefix or without the 'XG' letters.
+INVT_NOTE = "spanned cells read by x-position; no version on the sheet, the download folder is dated 2024-09-18"
+
+
+def invt_m(code):  # XG30KTR: the lists write XG30KTR, 30KTR, iMars XG30KTR
+    return rf"^(IMARS)?(XG)?{re.escape(code[2:])}$"
+
+
+INVT = {
+    "INVT_XG3-15KTR-S_Three_Phase_On-Grid_Solar_Inverter_EN": (3, "", INVT_NOTE, [
+        ("XG3KTR-S", 2, 3.0, 3.3, 4.8, 4.8), ("XG4KTR-S", 2, 4.0, 4.4, 6.4, 6.4), ("XG5KTR-S", 2, 5.0, 5.5, 8.0, 8.0), ("XG6KTR-S", 2, 6.0, 6.6, 9.6, 9.6),
+        ("XG8KTR-S", 2, 8.0, 8.8, 12.8, 12.8), ("XG9KTR-S", 2, 9.0, 9.9, 14.4, 14.4), ("XG10KTR-S", 2, 10.0, 11.0, 15.9, 16.0), ("XG11KTR-S", 2, 11.0, 12.1, 17.5, 17.6),
+        ("XG12KTR-S", 2, 12.0, 13.2, 19.1, 19.2), ("XG15KTR1-S", 2, 15.0, 16.5, 23.9, 24.0)]),
+    "INVT_XG17-25KTR_Three_Phase_On-Grid_Solar_Inverter_EN": (3, "", INVT_NOTE, [
+        ("XG17KTR", 2, 17.0, 18.8, 27.2, 27.2, invt_m("XG17KTR")), ("XG20KTR", 2, 20.0, 22.2, 32.1, 32.0, invt_m("XG20KTR")), ("XG22KTR", 2, 22.0, 24.4, 35.3, 35.2, invt_m("XG22KTR")),
+        ("XG25KTR", 2, 25.0, 27.5, 39.8, 40.0, invt_m("XG25KTR"))]),
+    "INVT_XG30-40KTR_Three_Phase_On-Grid_Solar_Inverter_EN": (3, "", "30/33 kW 3 MPPT, 36/40 kW 4 MPPT; " + INVT_NOTE, [
+        ("XG30KTR", 3, 30.0, 33.3, 48.3, 48.0, invt_m("XG30KTR")), ("XG33KTR", 3, 33.0, 36.6, 53.0, 52.8, invt_m("XG33KTR")), ("XG36KTR", 4, 36.0, 39.6, 57.8, 57.6, invt_m("XG36KTR")),
+        ("XG40KTR", 4, 40.0, 44.0, 64.3, 64.0, invt_m("XG40KTR"))]),
+    "INVT_XG50-70KTR_Three_Phase_On-Grid_Solar_Inverter_EN": (3, "", "the KTRL models are the 277/480 V variants; " + INVT_NOTE, [
+        ("XG50KTR", 4, 50.0, 55.0, 79.7, 80.0, invt_m("XG50KTR")), ("XG50KTRL", 4, 50.0, 55.0, 66.2, 80.0, invt_m("XG50KTRL")), ("XG60KTR", 4, 60.0, 66.0, 95.6, 96.0, invt_m("XG60KTR")),
+        ("XG60KTRL", 4, 60.0, 66.0, 79.4, 96.0, invt_m("XG60KTRL")), ("XG66KTRL", 4, 66.0, 72.6, 87.4, 105.6, invt_m("XG66KTRL")), ("XG70KTRL", 4, 70.0, 77.0, 92.6, 112.0, invt_m("XG70KTRL"))]),
+    "INVT_XG100-136KTR_Three_Phase_On-Grid_Solar_Inverter_EN": (3, "", "the LF/XF models are the 480 V / 540 V variants; " + INVT_NOTE, [
+        ("XG100KTR-F", 9, 100.0, 110.0, 158.8, 150.0, invt_m("XG100KTR-F")), ("XG110KTR-F", 10, 110.0, 121.0, 174.6, 150.0, invt_m("XG110KTR-F")),
+        ("XG136KTR-LF", 12, 136.0, 150.0, 174.6, 160.0, invt_m("XG136KTR-LF")), ("XG136KTR-XF", 12, 136.0, 150.0, 160.4, 160.0, invt_m("XG136KTR-XF"))]),
+    "INVT_XG3-10KTL_Single_Phase_On-Grid_Solar_Inverter_EN": (1, "", INVT_NOTE, [
+        ("XG3KTL-2M", 2, 3.0, 3.3, 15.0, 4.5), ("XG3.68KTL", 2, 3.68, 3.68, 16.0, 5.52), ("XG4KTL", 2, 4.0, 4.4, 20.0, 6.0), ("XG4.2KTL", 2, 4.2, 4.62, 21.0, 6.3),
+        ("XG4.6KTL", 2, 4.6, 5.0, 23.0, 6.9), ("XG5KTL", 2, 5.0, 5.5, 25.0, 7.5), ("XG6KTL", 2, 6.0, 6.6, 30.0, 9.0), ("XG7KTL", 2, 7.0, 7.7, 35.0, 10.5),
+        ("XG8KTL", 2, 8.0, 8.8, 40.0, 12.0), ("XG10KTL", 2, 10.0, 10.0, 45.5, 15.0), ("XG7KTL1", 2, 7.0, 7.7, 35.0, 10.5), ("XG8KTL1", 2, 8.0, 8.8, 40.0, 12.0),
+        ("XG10KTL1", 2, 10.0, 10.0, 45.5, 15.0)]),
+    "INVT_XD3-6KTL_Single_Phase_Hybrid_Inverter_EN": (1, "", "rated power given in kVA only (3/3.68/4/4.6/5/6 kVA), kept as null kW; download folder dated 2024-12-05", [
+        ("XD3KTL", 2, None, 3.3, 15.0, 4.5), ("XD3K6TL", 2, None, 3.68, 16.0, 5.4), ("XD4KTL", 2, None, 4.4, 20.0, 6.0), ("XD4K6TL", 2, None, 4.6, 20.9, 6.9),
+        ("XD5KTL", 2, None, 5.5, 22.7, 7.5), ("XD6KTL", 2, None, 6.0, 27.3, 9.0)]),
+    "INVT_XD7-10KTL_Single_Phase_Hybrid_Inverter_EN": (1, "", "download folder dated 2024-12-05", [
+        ("XD7KTL", 2, 7.0, None, 35.0, 10.5), ("XD8KTL", 2, 8.0, None, 40.0, 12.0), ("XD10KTL", 2, 10.0, None, 50.0, 15.0)]),
+    "INVT_XD5-12KTR_Three_Phase_Hybrid_Inverter_EN": (3, "", "rated power given in kVA only, kept as null kW; download folder dated 2024-12-05", [
+        ("XD5KTR", 2, None, 5.5, 7.2, 8.0), ("XD6KTR", 2, None, 6.6, 8.7, 9.6), ("XD8KTR", 2, None, 8.8, 11.6, 12.8), ("XD10KTR", 2, None, 11.0, 14.5, 16.0), ("XD12KTR", 2, None, 13.2, 17.4, 19.2)]),
+    "INVT_XD30-60KTR_Three_Phase_Hybrid_Inverter_EN": (3, "", "download folder dated 2024-12-05", [
+        ("XD30KTR", 4, 30.0, 33.0, 50.0, 48.0), ("XD40KTR", 4, 40.0, 44.0, 66.7, 64.0), ("XD50KTR", 4, 50.0, 55.0, 83.4, 80.0), ("XD60KTR", 4, 60.0, 66.0, 100.0, 96.0)]),
+}
+
+
+def invt():
+    hand_brand("invt", "INVT", "https://www.invt-solar.com/", "invt", INVT)
+
+
+# Afore: www.aforenergy.com/download/ (WordPress document table, static). The single sheets are the MTH+ and SL+ revisions; the
+# register codes are those of the 2026-10-10 product catalogue, so the rows come from the catalogue's per-series tables.
+AFORE_CAT = "EN-Afore-catalogue-2026.10.10"
+AFORE_NOTE = "catalogue dated 2026.10.10 in its file name; one table per series, spanned cells read by x-position"
+AFORE = {
+    AFORE_CAT: (3, "2026.10.10", AFORE_NOTE, [
+        # three-phase hybrid AF-MTH 3-15 kW (Nominal AC Output Power kW; kVA = output side of 'Max. AC Input/Output Power'; Max. PV Access Power)
+        ("AF3K-MTH", 2, 3.0, 3.3, 5.3, 6.0, r"^AF3K?-MTH$"), ("AF4K-MTH", 2, 4.0, 4.4, 7.0, 8.0, r"^AF4K?-MTH$"), ("AF5K-MTH", 2, 5.0, 5.5, 8.5, 10.0, r"^AF5K?-MTH$"),
+        ("AF6K-MTH", 2, 6.0, 6.6, 10.5, 12.0, r"^AF6K?-MTH$"), ("AF8K-MTH", 2, 8.0, 8.8, 13.5, 16.0, r"^AF8K?-MTH$"), ("AF10K-MTH", 2, 10.0, 11.0, 17.0, 20.0, r"^AF10K?-MTH$"),
+        ("AF12K-MTH", 2, 12.0, 13.2, 21.5, 24.0, r"^AF12K?-MTH$"), ("AF15K-MTH", 2, 15.0, 16.5, 27.0, 30.0, r"^AF15K?-MTH$"),
+        # three-phase hybrid AF-TH 3-30 kW
+        ("AF3K-TH", 2, 3.0, 3.3, 5.3, 6.0), ("AF4K-TH", 2, 4.0, 4.4, 7.0, 8.0), ("AF5K-TH", 2, 5.0, 5.5, 8.5, 10.0), ("AF6K-TH", 2, 6.0, 6.6, 10.5, 12.0),
+        ("AF8K-TH", 2, 8.0, 8.8, 13.5, 16.0), ("AF10K-TH", 2, 10.0, 11.0, 17.0, 20.0), ("AF12K-TH", 2, 12.0, 13.2, 21.5, 24.0), ("AF15K-TH", 2, 15.0, 16.5, 27.0, 30.0),
+        ("AF17K-TH", 2, 17.0, 18.7, 30.0, 34.0), ("AF20K-TH", 2, 20.0, 22.0, 32.0, 40.0), ("AF25K-TH", 2, 25.0, 27.5, 40.0, 50.0), ("AF30K-TH", 2, 30.0, 33.0, 48.0, 51.0),
+        # three-phase hybrid AF-TH 36-60 kW
+        ("AF36K-TH", 4, 36.0, 39.6, 60.5, 72.0), ("AF40K-TH", 4, 40.0, 44.0, 67.0, 80.0), ("AF45K-TH", 4, 45.0, 49.5, 75.5, 90.0), ("AF50K-TH", 4, 50.0, 55.0, 83.5, 100.0),
+        ("AF60K-TH", 4, 60.0, 66.0, 96.0, 100.0),
+        # three-phase string BNT 3-25 kW (Nominal Output Power W, Max. Output Power VA, Max. Output Current, Max. DC Power)
+        ("BNT003KTL", 2, 3.0, 3.3, 5.3, 5.1), ("BNT004KTL", 2, 4.0, 4.4, 7.0, 6.0), ("BNT005KTL", 2, 5.0, 5.5, 8.5, 7.5), ("BNT006KTL", 2, 6.0, 6.6, 10.5, 9.0),
+        ("BNT008KTL", 2, 8.0, 8.8, 13.5, 12.0), ("BNT010KTL", 2, 10.0, 11.0, 17.0, 15.0), ("BNT012KTL", 2, 12.0, 13.2, 21.5, 18.0), ("BNT013KTL", 2, 13.0, 14.3, 22.0, 19.5),
+        ("BNT015KTL", 2, 15.0, 16.5, 27.0, 22.5), ("BNT017KTL", 2, 17.0, 18.7, 30.0, 25.5), ("BNT020KTL", 2, 20.0, 22.0, 32.0, 30.0), ("BNT025KTL", 2, 25.0, 27.5, 40.0, 37.5),
+        # BNT 30-60 kW: MPPT row '2/5 3/6 3/7 4/8' over five columns, the last cell spanning 50 and 60 kW
+        ("BNT030KTL", 2, 30.0, 33.0, 48.0, 45.0), ("BNT036KTL", 3, 36.0, 39.6, 60.0, 54.0), ("BNT040KTL", 3, 40.0, 44.0, 65.0, 60.0), ("BNT050KTL", 4, 50.0, 55.0, 80.0, 75.0),
+        ("BNT060KTL", 4, 60.0, 66.0, 96.0, 90.0),
+        # BNT 70-110 kW
+        ("BNT070KTL", 6, 70.0, 77.0, 111.0, 105.0), ("BNT075KTL", 6, 75.0, 82.5, 120.0, 112.5), ("BNT080KTL", 6, 80.0, 88.0, 127.0, 120.0), ("BNT090KTL", 6, 90.0, 99.0, 143.0, 135.0),
+        ("BNT100KTL", 6, 100.0, 110.0, 158.0, 150.0), ("BNT110KTL", 6, 110.0, 110.0, 159.5, 165.0)]),
+}
+AFORE_1P = {  # the catalogue's single-phase hybrid tables: 'Max Continuous Power (kVA)' and 'Max Continuous Current (A)', no kW row
+    AFORE_CAT: (1, "2026.10.10", AFORE_NOTE + "; single-phase hybrids give a max continuous kVA and current, no kW row; the lists also write 'Hybrid inverter AF3K-SL'", [
+        ("AF1K-SL-1", 1, None, 1.0, 5.0, 2.0), ("AF1.5K-SL-1", 1, None, 1.5, 7.0, 3.0), ("AF2K-SL-1", 1, None, 2.0, 10.0, 4.0), ("AF2.5K-SL-1", 1, None, 2.5, 12.0, 5.0),
+        ("AF3K-SL-1", 2, None, 3.0, 14.0, 6.0), ("AF3.6K-SL-1", 2, None, 3.6, 17.0, 7.2), ("AF3K-SL", 2, None, 3.0, 14.0, 6.0, r"^(HYBRIDINVERTER)?AF3K-SL$"),
+        ("AF3.6K-SL", 2, None, 3.6, 17.0, 7.2, r"^(HYBRIDINVERTER)?AF3\.6K-SL$"),
+        ("AF4K-SLP", 2, None, 4.0, 19.0, 8.0), ("AF4.6K-SLP", 2, None, 4.6, 22.0, 9.2), ("AF5K-SLP", 2, None, 5.0, 23.0, 10.0), ("AF5.5K-SLP", 2, None, 5.5, 26.0, 11.0),
+        ("AF6K-SLP", 2, None, 6.0, 28.0, 12.0)]),
+}
+
+
+def afore():
+    # one PDF, two phase groups: build the three-phase table first, then append the single-phase rows under a second source id
+    urls = dict(line.split(" ", 1) for line in (CACHE / "afore/SOURCES.txt").read_text(encoding="utf-8").splitlines() if " " in line)
+    sources, models = [], []
+    for tbl, suffix in ((AFORE, ""), (AFORE_1P, "-1p")):
+        for stem, (ph, ver, note, rows) in tbl.items():
+            sid = re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-") + suffix
+            sources.append({"id": sid, "url": urls.get(stem + ".pdf", ""), "file": stem + ".pdf", "version": ver, "note": note, "seen": SEEN})
+            for r in rows:
+                m = row(r[0], r[1], r[2], r[3], r[4], ph, r[5], sid)
+                if len(r) > 6 and r[6]:
+                    m["match"] = r[6]
+                models.append(m)
+    dump("afore", {"brand": "Afore", "maker_site": "https://www.aforenergy.com/", "rule": RULE, "sources": sources, "models": models})
+
+
+# ZCS Azzurro: www.zcsazzurro.com/en/documentation (static, 343 PDFs under /uploads/documetazione/). English sheets. They give
+# 'Rated AC power', 'Maximum AC power' (VA) and 'Maximum AC current (per phase)'; PV power only per MPPT, so pv_kw stays null.
+# The lists write the codes with or without a space before TL ('1PH 3000-TLM-V3', '3PH 15000TL-V3' for 3PH 15KTL-V3) and some with an
+# 'AZZURRO ' prefix.
+def zcs_hyd(code):  # "3PH HYD 5000 ZSS" -> also "AZZURRO 3PH HYD5000 ZSS"
+    return rf"^(AZZURRO)?{re.escape(re.sub(r'\s+', '', code.upper()))}$"
+
+
+ZCS = {
+    "Datasheet-ZCS-3PH-3.3-12KTL-V3-EN": (3, "", "", [
+        ("3PH 3.3KTL-V3", 2, 3.0, 3.3, 5.0, None), ("3PH 4.4KTL-V3", 2, 4.0, 4.4, 6.7, None), ("3PH 5.5KTL-V3", 2, 5.0, 5.5, 8.3, None), ("3PH 6.6KTL-V3", 2, 6.0, 6.6, 10.0, None),
+        ("3PH 8.8KTL-V3", 2, 8.0, 8.8, 13.3, None), ("3PH 11KTL-V3", 2, 10.0, 11.0, 16.7, None), ("3PH 12KTL-V3", 2, 12.0, 13.2, 20.0, None)]),
+    "Datasheet-ZCS-3PH-15-24KTL-V3-EN": (3, "", "the lists also write 3PH 15000TL-V3 / 3PH 15000KTL-V3", [
+        ("3PH 15KTL-V3", 2, 15.0, 16.5, 23.9, None, r"^3PH15(000)?K?TL-V3$"), ("3PH 17KTL-V3", 2, 17.0, 18.7, 27.1, None, r"^3PH17(000)?K?TL-V3$"),
+        ("3PH 20KTL-V3", 2, 20.0, 22.0, 31.9, None, r"^3PH20(000)?K?TL-V3$"), ("3PH 22KTL-V3", 2, 22.0, 24.2, 35.1, None, r"^3PH22(000)?K?TL-V3$"),
+        ("3PH 24KTL-V3", 2, 24.0, 26.4, 38.3, None, r"^3PH24(000)?K?TL-V3$")]),
+    "Datasheet-ZCS-3PH-25-50KTL-V3-EN": (3, "", "25-36 kW 3 MPPT, 40-50 kW 4 MPPT (spanned cells read by position)", [
+        ("3PH 25KTL-V3", 3, 25.0, 28.0, 42.4, None), ("3PH 30KTL-V3", 3, 30.0, 34.0, 51.5, None), ("3PH 33KTL-V3", 3, 33.0, 37.0, 56.0, None), ("3PH 36KTL-V3", 3, 36.0, 40.0, 60.6, None),
+        ("3PH 40KTL-V3", 4, 40.0, 44.0, 66.7, None), ("3PH 45KTL-V3", 4, 45.0, 50.0, 75.8, None), ("3PH 50KTL-V3", 4, 50.0, 55.0, 83.3, None)]),
+    "Datasheet-ZCS-3PH-60-80KTL-V3-EN": (3, "", "", [("3PH 60KTL-V3", 6, 60.0, 66.0, 100.0, None), ("3PH 80KTL-V3", 6, 80.0, 88.0, 133.3, None)]),
+    "Datasheet-ZCS-3PH-100-110KTL-V4-EN": (3, "", "", [("3PH 100KTL-V4", 10, 100.0, 110.0, 160.0, None), ("3PH 110KTL-V4", 10, 110.0, 125.0, 181.0, None)]),
+    "Datasheet-ZCS-3PH-20000-33000TL-V2-EN": (3, "", "", [
+        ("3PH 20000TL-V2", 2, 20.0, 22.0, 32.0, None), ("3PH 25000TL-V2", 2, 25.0, 27.5, 40.0, None), ("3PH 30000TL-V2", 2, 30.0, 33.0, 48.0, None), ("3PH 33000TL-V2", 2, 33.0, 36.3, 53.0, None)]),
+    "Datasheet-ZCS-3PH-50000-60000TL-V1-EN": (3, "", "", [("3PH 50000TL-V1", 3, 50.0, 50.0, 80.0, None), ("3PH 60000TL-V1", 3, 60.0, 60.0, 90.0, None)]),
+    "Datasheet-ZCS-1PH-1100-3300TL-V3-EN": (1, "", "", [
+        ("1PH 1100TL-V3", 1, 1.1, 1.1, 5.3, None), ("1PH 1600TL-V3", 1, 1.6, 1.6, 7.7, None), ("1PH 2200TL-V3", 1, 2.2, 2.2, 10.6, None), ("1PH 2700TL-V3", 1, 2.7, 2.7, 13.0, None),
+        ("1PH 3000TL-V3", 1, 3.0, 3.0, 14.5, None), ("1PH 3300TL-V3", 1, 3.3, 3.3, 16.0, None)]),
+    "Datasheet-ZCS-1PH-3000-6000TLM-V3-EN": (1, "", "the lists write 1PH 3000-TLM-V3", [
+        ("1PH 3000TLM-V3", 2, 3.0, 3.3, 15.0, None, r"^1PH3000-?TLM-V3$"), ("1PH 3680TLM-V3", 2, 3.68, 3.68, 16.0, None, r"^1PH3680-?TLM-V3$"), ("1PH 4000TLM-V3", 2, 4.0, 4.4, 20.0, None, r"^1PH4000-?TLM-V3$"),
+        ("1PH 4600TLM-V3", 2, 4.6, 4.6, 23.0, None, r"^1PH4600-?TLM-V3$"), ("1PH 5000TLM-V3", 2, 5.0, 5.5, 25.0, None, r"^1PH5000-?TLM-V3$"), ("1PH 6000TLM-V3", 2, 6.0, 6.6, 29.0, None, r"^1PH6000-?TLM-V3$")]),
+    "Datasheet-ZCS-3PH-HYD-5000-8000-ZSS-EN": (3, "", "", [
+        ("3PH HYD 5000 ZSS", 2, 5.0, 5.5, 8.0, None, zcs_hyd("3PH HYD 5000 ZSS")), ("3PH HYD 6000 ZSS", 2, 6.0, 6.6, 10.0, None, zcs_hyd("3PH HYD 6000 ZSS")),
+        ("3PH HYD 8000 ZSS", 2, 8.0, 8.8, 13.0, None, zcs_hyd("3PH HYD 8000 ZSS"))]),
+    "Datasheet-ZCS-3PH-HYD-10000-20000-ZSS-EN": (3, "", "", [
+        ("3PH HYD 10000 ZSS", 2, 10.0, 11.0, 16.0, None, zcs_hyd("3PH HYD 10000 ZSS")), ("3PH HYD 15000 ZSS", 2, 15.0, 16.5, 24.0, None, zcs_hyd("3PH HYD 15000 ZSS")),
+        ("3PH HYD 20000 ZSS", 2, 20.0, 22.0, 32.0, None, zcs_hyd("3PH HYD 20000 ZSS"))]),
+    "Datasheet-ZCS-3PH-HYD-5000-12000-ZP3-EN": (3, "", "", [
+        ("3PH HYD 5000 ZP3", 3, 5.0, 5.5, 8.0, None, zcs_hyd("3PH HYD 5000 ZP3")), ("3PH HYD 6000 ZP3", 3, 6.0, 6.6, 9.6, None, zcs_hyd("3PH HYD 6000 ZP3")),
+        ("3PH HYD 8000 ZP3", 3, 8.0, 8.8, 12.8, None, zcs_hyd("3PH HYD 8000 ZP3")), ("3PH HYD 10000 ZP3", 3, 10.0, 11.0, 15.9, None, zcs_hyd("3PH HYD 10000 ZP3")),
+        ("3PH HYD 12000 ZP3", 3, 12.0, 13.2, 19.1, None, zcs_hyd("3PH HYD 12000 ZP3"))]),
+    "Datasheet-ZCS-1PH-HYD-3000-6000-ZSS-EN": (1, "", "", [
+        ("1PH HYD3000 ZSS", 2, 3.0, 3.0, 13.7, None), ("1PH HYD3600 ZSS", 2, 3.68, 3.68, 16.0, None), ("1PH HYD4000 ZSS", 2, 4.0, 4.0, 18.2, None), ("1PH HYD5000 ZSS", 2, 5.0, 5.0, 22.8, None),
+        ("1PH HYD6000 ZSS", 2, 6.0, 6.0, 27.3, None)]),
+    "Datasheet-ZCS-1PH-HYD-3000-6000-ZSS-HP-EN": (1, "", "", [
+        ("1PH HYD 3000 ZSS HP", 2, 3.0, 3.3, 15.0, None), ("1PH HYD 3600 ZSS HP", 2, 3.68, 3.68, 16.0, None), ("1PH HYD 4000 ZSS HP", 2, 4.0, 4.4, 20.0, None), ("1PH HYD 4600 ZSS HP", 2, 4.6, 4.6, 20.9, None),
+        ("1PH HYD 5000 ZSS HP", 2, 5.0, 5.5, 25.0, None), ("1PH HYD 6000 ZSS HP", 2, 6.0, 6.0, 27.3, None)]),
+    "Datasheet-ZCS-1PH-HYD-3000-6000-ZP1-EN": (1, "", "", [
+        ("1PH HYD 3000 ZP1", 2, 3.0, 3.3, 15.0, None), ("1PH HYD 3680 ZP1", 2, 3.68, 3.68, 16.7, None), ("1PH HYD 4000 ZP1", 2, 4.0, 4.4, 20.0, None), ("1PH HYD 4600 ZP1", 2, 4.6, 4.6, 20.9, None),
+        ("1PH HYD 5000 ZP1", 2, 5.0, 5.5, 25.0, None), ("1PH HYD 6000 ZP1", 2, 6.0, 6.6, 30.0, None)]),
+}
+
+
+def zcs():
+    hand_brand("zcs", "ZCS Azzurro", "https://www.zcsazzurro.com/", "zcs", ZCS)
+
+
 if __name__ == "__main__":
     deye()
     fronius()
@@ -611,3 +1033,9 @@ if __name__ == "__main__":
     foxess()
     growatt()
     solis()
+    saj()
+    solax()
+    hoymiles()
+    invt()
+    afore()
+    zcs()

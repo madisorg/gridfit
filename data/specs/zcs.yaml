@@ -1,0 +1,673 @@
+brand: ZCS Azzurro
+maker_site: https://www.zcsazzurro.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: datasheet-zcs-3ph-3-3-12ktl-v3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-3.3-12KTL-V3-EN.pdf
+  file: Datasheet-ZCS-3PH-3.3-12KTL-V3-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-15-24ktl-v3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-15-24KTL-V3-EN.pdf
+  file: Datasheet-ZCS-3PH-15-24KTL-V3-EN.pdf
+  version: ''
+  note: the lists also write 3PH 15000TL-V3 / 3PH 15000KTL-V3
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-25-50ktl-v3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-25-50KTL-V3-EN.pdf
+  file: Datasheet-ZCS-3PH-25-50KTL-V3-EN.pdf
+  version: ''
+  note: 25-36 kW 3 MPPT, 40-50 kW 4 MPPT (spanned cells read by position)
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-60-80ktl-v3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-60-80KTL-V3-EN.pdf
+  file: Datasheet-ZCS-3PH-60-80KTL-V3-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-100-110ktl-v4-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-100-110KTL-V4-EN.pdf
+  file: Datasheet-ZCS-3PH-100-110KTL-V4-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-20000-33000tl-v2-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-20000-33000TL-V2-EN.pdf
+  file: Datasheet-ZCS-3PH-20000-33000TL-V2-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-50000-60000tl-v1-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-50000-60000TL-V1-EN.pdf
+  file: Datasheet-ZCS-3PH-50000-60000TL-V1-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-1ph-1100-3300tl-v3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-1PH-1100-3300TL-V3-EN.pdf
+  file: Datasheet-ZCS-1PH-1100-3300TL-V3-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-1PH-3000-6000TLM-V3-EN.pdf
+  file: Datasheet-ZCS-1PH-3000-6000TLM-V3-EN.pdf
+  version: ''
+  note: the lists write 1PH 3000-TLM-V3
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-hyd-5000-8000-zss-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-HYD-5000-8000-ZSS-EN.pdf
+  file: Datasheet-ZCS-3PH-HYD-5000-8000-ZSS-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-hyd-10000-20000-zss-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-HYD-10000-20000-ZSS-EN.pdf
+  file: Datasheet-ZCS-3PH-HYD-10000-20000-ZSS-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-3ph-hyd-5000-12000-zp3-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-3PH-HYD-5000-12000-ZP3-EN.pdf
+  file: Datasheet-ZCS-3PH-HYD-5000-12000-ZP3-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-1ph-hyd-3000-6000-zss-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-1PH-HYD-3000-6000-ZSS-EN.pdf
+  file: Datasheet-ZCS-1PH-HYD-3000-6000-ZSS-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-1PH-HYD-3000-6000-ZSS-HP-EN.pdf
+  file: Datasheet-ZCS-1PH-HYD-3000-6000-ZSS-HP-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+- id: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
+  url: https://www.zcsazzurro.com/uploads/documetazione/Datasheet-ZCS-1PH-HYD-3000-6000-ZP1-EN.pdf
+  file: Datasheet-ZCS-1PH-HYD-3000-6000-ZP1-EN.pdf
+  version: ''
+  note: ''
+  seen: '2026-10-31'
+models:
+- code: 3PH 3.3KTL-V3
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 5.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 4.4KTL-V3
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.7
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 5.5KTL-V3
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.3
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 6.6KTL-V3
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 8.8KTL-V3
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.3
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 11KTL-V3
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.7
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 12KTL-V3
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 20.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-3-3-12ktl-v3-en
+- code: 3PH 15KTL-V3
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 23.9
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-15-24ktl-v3-en
+  match: ^3PH15(000)?K?TL-V3$
+- code: 3PH 17KTL-V3
+  mppt: 2
+  ac_kw: 17.0
+  ac_kva: 18.7
+  ac_a: 27.1
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-15-24ktl-v3-en
+  match: ^3PH17(000)?K?TL-V3$
+- code: 3PH 20KTL-V3
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-15-24ktl-v3-en
+  match: ^3PH20(000)?K?TL-V3$
+- code: 3PH 22KTL-V3
+  mppt: 2
+  ac_kw: 22.0
+  ac_kva: 24.2
+  ac_a: 35.1
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-15-24ktl-v3-en
+  match: ^3PH22(000)?K?TL-V3$
+- code: 3PH 24KTL-V3
+  mppt: 2
+  ac_kw: 24.0
+  ac_kva: 26.4
+  ac_a: 38.3
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-15-24ktl-v3-en
+  match: ^3PH24(000)?K?TL-V3$
+- code: 3PH 25KTL-V3
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 28.0
+  ac_a: 42.4
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 30KTL-V3
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 34.0
+  ac_a: 51.5
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 33KTL-V3
+  mppt: 3
+  ac_kw: 33.0
+  ac_kva: 37.0
+  ac_a: 56.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 36KTL-V3
+  mppt: 3
+  ac_kw: 36.0
+  ac_kva: 40.0
+  ac_a: 60.6
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 40KTL-V3
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 66.7
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 45KTL-V3
+  mppt: 4
+  ac_kw: 45.0
+  ac_kva: 50.0
+  ac_a: 75.8
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 50KTL-V3
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 83.3
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-25-50ktl-v3-en
+- code: 3PH 60KTL-V3
+  mppt: 6
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 100.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-60-80ktl-v3-en
+- code: 3PH 80KTL-V3
+  mppt: 6
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 133.3
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-60-80ktl-v3-en
+- code: 3PH 100KTL-V4
+  mppt: 10
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 160.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-100-110ktl-v4-en
+- code: 3PH 110KTL-V4
+  mppt: 10
+  ac_kw: 110.0
+  ac_kva: 125.0
+  ac_a: 181.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-100-110ktl-v4-en
+- code: 3PH 20000TL-V2
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 32.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-20000-33000tl-v2-en
+- code: 3PH 25000TL-V2
+  mppt: 2
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 40.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-20000-33000tl-v2-en
+- code: 3PH 30000TL-V2
+  mppt: 2
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 48.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-20000-33000tl-v2-en
+- code: 3PH 33000TL-V2
+  mppt: 2
+  ac_kw: 33.0
+  ac_kva: 36.3
+  ac_a: 53.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-20000-33000tl-v2-en
+- code: 3PH 50000TL-V1
+  mppt: 3
+  ac_kw: 50.0
+  ac_kva: 50.0
+  ac_a: 80.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-50000-60000tl-v1-en
+- code: 3PH 60000TL-V1
+  mppt: 3
+  ac_kw: 60.0
+  ac_kva: 60.0
+  ac_a: 90.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-50000-60000tl-v1-en
+- code: 1PH 1100TL-V3
+  mppt: 1
+  ac_kw: 1.1
+  ac_kva: 1.1
+  ac_a: 5.3
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-1100-3300tl-v3-en
+- code: 1PH 1600TL-V3
+  mppt: 1
+  ac_kw: 1.6
+  ac_kva: 1.6
+  ac_a: 7.7
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-1100-3300tl-v3-en
+- code: 1PH 2200TL-V3
+  mppt: 1
+  ac_kw: 2.2
+  ac_kva: 2.2
+  ac_a: 10.6
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-1100-3300tl-v3-en
+- code: 1PH 2700TL-V3
+  mppt: 1
+  ac_kw: 2.7
+  ac_kva: 2.7
+  ac_a: 13.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-1100-3300tl-v3-en
+- code: 1PH 3000TL-V3
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 14.5
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-1100-3300tl-v3-en
+- code: 1PH 3300TL-V3
+  mppt: 1
+  ac_kw: 3.3
+  ac_kva: 3.3
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-1100-3300tl-v3-en
+- code: 1PH 3000TLM-V3
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 15.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  match: ^1PH3000-?TLM-V3$
+- code: 1PH 3680TLM-V3
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  match: ^1PH3680-?TLM-V3$
+- code: 1PH 4000TLM-V3
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 20.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  match: ^1PH4000-?TLM-V3$
+- code: 1PH 4600TLM-V3
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 23.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  match: ^1PH4600-?TLM-V3$
+- code: 1PH 5000TLM-V3
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 25.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  match: ^1PH5000-?TLM-V3$
+- code: 1PH 6000TLM-V3
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 29.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-3000-6000tlm-v3-en
+  match: ^1PH6000-?TLM-V3$
+- code: 3PH HYD 5000 ZSS
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-8000-zss-en
+  match: ^(AZZURRO)?3PHHYD5000ZSS$
+- code: 3PH HYD 6000 ZSS
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-8000-zss-en
+  match: ^(AZZURRO)?3PHHYD6000ZSS$
+- code: 3PH HYD 8000 ZSS
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-8000-zss-en
+  match: ^(AZZURRO)?3PHHYD8000ZSS$
+- code: 3PH HYD 10000 ZSS
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-10000-20000-zss-en
+  match: ^(AZZURRO)?3PHHYD10000ZSS$
+- code: 3PH HYD 15000 ZSS
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-10000-20000-zss-en
+  match: ^(AZZURRO)?3PHHYD15000ZSS$
+- code: 3PH HYD 20000 ZSS
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 32.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-10000-20000-zss-en
+  match: ^(AZZURRO)?3PHHYD20000ZSS$
+- code: 3PH HYD 5000 ZP3
+  mppt: 3
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-12000-zp3-en
+  match: ^(AZZURRO)?3PHHYD5000ZP3$
+- code: 3PH HYD 6000 ZP3
+  mppt: 3
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-12000-zp3-en
+  match: ^(AZZURRO)?3PHHYD6000ZP3$
+- code: 3PH HYD 8000 ZP3
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-12000-zp3-en
+  match: ^(AZZURRO)?3PHHYD8000ZP3$
+- code: 3PH HYD 10000 ZP3
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 15.9
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-12000-zp3-en
+  match: ^(AZZURRO)?3PHHYD10000ZP3$
+- code: 3PH HYD 12000 ZP3
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.1
+  phases: 3
+  pv_kw: null
+  source: datasheet-zcs-3ph-hyd-5000-12000-zp3-en
+  match: ^(AZZURRO)?3PHHYD12000ZP3$
+- code: 1PH HYD3000 ZSS
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 13.7
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-en
+- code: 1PH HYD3600 ZSS
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-en
+- code: 1PH HYD4000 ZSS
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 18.2
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-en
+- code: 1PH HYD5000 ZSS
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 22.8
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-en
+- code: 1PH HYD6000 ZSS
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.3
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-en
+- code: 1PH HYD 3000 ZSS HP
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 15.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+- code: 1PH HYD 3600 ZSS HP
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+- code: 1PH HYD 4000 ZSS HP
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 20.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+- code: 1PH HYD 4600 ZSS HP
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.9
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+- code: 1PH HYD 5000 ZSS HP
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 25.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+- code: 1PH HYD 6000 ZSS HP
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.3
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zss-hp-en
+- code: 1PH HYD 3000 ZP1
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 15.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
+- code: 1PH HYD 3680 ZP1
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.7
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
+- code: 1PH HYD 4000 ZP1
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 20.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
+- code: 1PH HYD 4600 ZP1
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.9
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
+- code: 1PH HYD 5000 ZP1
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 25.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
+- code: 1PH HYD 6000 ZP1
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 30.0
+  phases: 1
+  pv_kw: null
+  source: datasheet-zcs-1ph-hyd-3000-6000-zp1-en
