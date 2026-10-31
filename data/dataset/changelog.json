@@ -1,5 +1,16 @@
 [
  {
+  "date": "2026-10-31",
+  "added": [
+   "evcc:huawei-emma:SmartAssistant (EMMA):Huawei | SUN2000 inverters (string and hybrid)",
+   "evcc:ocpp-rheidon:PC200 Pro:Rheidon | PC200 Pro"
+  ],
+  "removed": [
+   "evcc:huawei-emma:EMMA:Huawei | SUN2000 inverters (string and hybrid)"
+  ],
+  "changed": []
+ },
+ {
   "date": "2026-10-29",
   "added": [
    "hacs:HQJaTu/hass-hoymiles-solarpv:Hoymiles | MIT three-phase string inverters"

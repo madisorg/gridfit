@@ -5178,14 +5178,8 @@
      "AT": "listed with restrictions",
      "EE": "listed",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-12K0-S2 A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5194,14 +5188,8 @@
     "registers": {
      "AT": "listed with restrictions",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-12K0-S2F A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5251,13 +5239,7 @@
    {
     "model": "EF HD-P3-15K0-S2F",
     "registers": {
-     "AT": "listed with restrictions"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-15K0-S2F A",
-    "registers": {
+     "AT": "listed with restrictions",
      "PL": "listed"
     },
     "trust": "alias"
@@ -5325,14 +5307,8 @@
      "AT": "listed with restrictions",
      "EE": "listed",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-3K-G2 A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5341,14 +5317,8 @@
     "registers": {
      "AT": "listed with restrictions",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-3K-G2F A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5358,14 +5328,8 @@
      "AT": "listed with restrictions",
      "EE": "listed",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-4K-G2 A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5374,14 +5338,8 @@
     "registers": {
      "AT": "listed with restrictions",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-4K-G2F A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5411,14 +5369,8 @@
      "AT": "listed with restrictions",
      "EE": "listed",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-5K-G2 A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5427,14 +5379,8 @@
     "registers": {
      "AT": "listed with restrictions",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-5K-G2F A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5476,14 +5422,8 @@
      "AT": "listed with restrictions",
      "EE": "listed",
      "NL": "listed",
+     "PL": "listed",
      "SE": "listed"
-    },
-    "trust": "alias"
-   },
-   {
-    "model": "EF HD-P3-6K-G2 A",
-    "registers": {
-     "PL": "listed"
     },
     "trust": "alias"
    },
@@ -5589,7 +5529,13 @@
     "model": "EF-EA-AC-P2K-600",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-AC-P2K-600 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5598,7 +5544,13 @@
     "model": "EF-EA-AC-P2K-800",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-AC-P2K-800 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5607,7 +5559,13 @@
     "model": "EF-EA-HD-M2K-600",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-M2K-600 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5616,7 +5574,13 @@
     "model": "EF-EA-HD-M2K-800",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-M2K-800 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5625,7 +5589,13 @@
     "model": "EF-EA-HD-P2K-600",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-P2K-600 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5634,7 +5604,13 @@
     "model": "EF-EA-HD-P2K-800",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-P2K-800 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5643,7 +5619,13 @@
     "model": "EF-EA-HD-U2K-600",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-U2K-600 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5652,7 +5634,13 @@
     "model": "EF-EA-HD-U2K-800",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-U2K-800 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5661,7 +5649,13 @@
     "model": "EF-EA-HD-U4K-600",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-U4K-600 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -5670,7 +5664,13 @@
     "model": "EF-EA-HD-U4K-800",
     "registers": {
      "AT": "listed with restrictions",
-     "NL": "listed",
+     "NL": "listed"
+    },
+    "trust": "exact"
+   },
+   {
+    "model": "EF-EA-HD-U4K-800 A",
+    "registers": {
      "PL": "listed"
     },
     "trust": "alias"
@@ -16833,6 +16833,7 @@
    "AT",
    "EE",
    "NL",
+   "PL",
    "SE"
   ],
   "models": [
@@ -16876,7 +16877,8 @@
    {
     "model": "LUNA2000-213KTL-H0",
     "registers": {
-     "EE": "listed"
+     "EE": "listed",
+     "PL": "listed"
     },
     "trust": "alias"
    }
@@ -21325,6 +21327,18 @@
   "faq": {
    "q": "Does Renogy Renogy devices over BLE work locally with Home Assistant?",
    "a": "Yes, according to the public sources: the HACS integration “Renogy” talks to it over the local network and exposes settable entities, not only sensors."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
+  "brand": "Rheidon",
+  "family": "PC200 Pro",
+  "class": "wallbox",
+  "curated": false,
+  "faq": {
+   "q": "Does Rheidon PC200 Pro work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally and lets evcc control it (needs an evcc sponsor token)."
   },
   "registers": [],
   "models": []
