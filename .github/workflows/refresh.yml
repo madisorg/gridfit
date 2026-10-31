@@ -1,4 +1,4 @@
-# Weekly: rebuild from the sources and commit the dataset. On the first Monday of the month the grid
+# Weekly: rebuild from the sources and commit the dataset. On the 1st of each month the grid
 # registers are downloaded, parsed and diffed too (data/registers/). Each push triggers the Cloudflare
 # Pages build.
 #
@@ -13,7 +13,8 @@ name: refresh
 on:
   schedule:
     - cron: "17 4 * * 1"      # every Monday 04:17 UTC: sources
-    - cron: "47 4 1-7 * 1"    # first Monday of the month 04:47 UTC: sources + grid registers
+    - cron: "47 4 1 * *"      # 1st of the month 04:47 UTC: sources + grid registers
+      # (not "1-7 * 1": in cron, day-of-month and day-of-week restricted together mean OR, not AND)
   workflow_dispatch:
     inputs:
       registers:
@@ -37,7 +38,7 @@ jobs:
       - name: decide whether this run refreshes the registers
         id: mode
         run: |
-          if [ "${{ github.event.schedule }}" = "47 4 1-7 * 1" ] || [ "${{ inputs.registers }}" = "true" ]; then
+          if [ "${{ github.event.schedule }}" = "47 4 1 * *" ] || [ "${{ inputs.registers }}" = "true" ]; then
             echo "registers=true" >> "$GITHUB_OUTPUT"
           else
             echo "registers=false" >> "$GITHUB_OUTPUT"
