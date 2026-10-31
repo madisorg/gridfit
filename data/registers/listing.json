@@ -3,7 +3,7 @@
 "AT": {
 "name": "Austria - Wechselrichterliste TOR Erzeuger Typ A",
 "url": "https://www.wechselrichterliste.at/tor-sea-typ-a",
-"snapshot": "2026-10-23",
+"snapshot": "2026-10-30",
 "scope": {
 "inverter": "list",
 "hybrid": "list",
@@ -34,7 +34,7 @@
 "EE": {
 "name": "Estonia - Inverterite nimekiri (Elektrilevi)",
 "url": "https://elektrilevi.ee/et/inverterite-nimekiri",
-"snapshot": "2026-10-29",
+"snapshot": "2026-10-31",
 "scope": {
 "inverter": "list",
 "hybrid": "list",
@@ -51,7 +51,7 @@
 "NL": {
 "name": "Netherlands - Goedgekeurde omvormers type A (opwek + opslag)",
 "url": "https://www.energieleveren.nl/",
-"snapshot": "2026-10-28",
+"snapshot": "2026-10-30",
 "scope": {
 "inverter": "list",
 "hybrid": "list",
@@ -5803,6 +5803,28 @@
 "page": "registers/brand/byd/power-box-th8k/"
 },
 {
+"brand": "BYD",
+"model": "STD1500AUL2A",
+"norm": "STD1500AUL2A",
+"class": "wallbox",
+"registers": {
+"AT": "listed, time-limited"
+},
+"trust": "exact",
+"page": "registers/brand/byd/"
+},
+{
+"brand": "BYD",
+"model": "SUD2100KUD3X",
+"norm": "SUD2100KUD3X",
+"class": "wallbox",
+"registers": {
+"AT": "listed, time-limited"
+},
+"trust": "exact",
+"page": "registers/brand/byd/"
+},
+{
 "brand": "ChargePoint",
 "model": "CP6000",
 "norm": "CP6000",
@@ -5878,6 +5900,17 @@
 },
 "trust": "exact",
 "page": "registers/brand/chargepoint/"
+},
+{
+"brand": "Chint",
+"model": "CPS ECB200KTL",
+"norm": "CPSECB200KTL",
+"class": "battery",
+"registers": {
+"PL": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/chint/cps-ecb200ktl/"
 },
 {
 "brand": "Chint",
@@ -10623,11 +10656,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-ac-p2k-600/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-AC-P2K-600 A",
+"norm": "EFEAACP2K600A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-ac-p2k-600/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10636,11 +10679,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-ac-p2k-800/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-AC-P2K-800 A",
+"norm": "EFEAACP2K800A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-ac-p2k-800/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10649,11 +10702,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-m2k-600/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-M2K-600 A",
+"norm": "EFEAHDM2K600A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-m2k-600/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10662,11 +10725,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-m2k-800/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-M2K-800 A",
+"norm": "EFEAHDM2K800A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-m2k-800/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10675,11 +10748,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-p2k-600/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-P2K-600 A",
+"norm": "EFEAHDP2K600A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-p2k-600/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10688,11 +10771,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-p2k-800/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-P2K-800 A",
+"norm": "EFEAHDP2K800A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-p2k-800/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10701,11 +10794,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-u2k-600/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-U2K-600 A",
+"norm": "EFEAHDU2K600A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-u2k-600/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10714,11 +10817,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-u2k-800/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-U2K-800 A",
+"norm": "EFEAHDU2K800A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-u2k-800/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10727,11 +10840,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-u4k-600/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-U4K-600 A",
+"norm": "EFEAHDU4K600A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-u4k-600/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -10740,11 +10863,21 @@
 "class": "plug-in",
 "registers": {
 "AT": "listed with restrictions",
-"NL": "listed",
+"NL": "listed"
+},
+"trust": "exact",
+"page": "registers/brand/ecoflow/ef-ea-hd-u4k-800/"
+},
+{
+"brand": "EcoFlow",
+"model": "EF-EA-HD-U4K-800 A",
+"norm": "EFEAHDU4K800A",
+"class": "hybrid",
+"registers": {
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/ef-ea-hd-u4k-800/"
+"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11058,21 +11191,11 @@
 "AT": "listed with restrictions",
 "EE": "listed",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-12k0-s2/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-12K0-S2 A",
-"norm": "EFHDP312K0S2A",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11082,21 +11205,11 @@
 "registers": {
 "AT": "listed with restrictions",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-12k0-s2f/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-12K0-S2F A",
-"norm": "EFHDP312K0S2FA",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11163,21 +11276,11 @@
 "norm": "EFHDP315K0S2F",
 "class": "hybrid",
 "registers": {
-"AT": "listed with restrictions"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-15K0-S2F A",
-"norm": "EFHDP315K0S2FA",
-"class": "hybrid",
-"registers": {
+"AT": "listed with restrictions",
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/ecoflow/"
+"page": "registers/brand/ecoflow/ef-hd-p3-15k0-s2f/"
 },
 {
 "brand": "EcoFlow",
@@ -11265,21 +11368,11 @@
 "AT": "listed with restrictions",
 "EE": "listed",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-3k-g2/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-3K-G2 A",
-"norm": "EFHDP33KG2A",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11289,21 +11382,11 @@
 "registers": {
 "AT": "listed with restrictions",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-3k-g2f/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-3K-G2F A",
-"norm": "EFHDP33KG2FA",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11314,21 +11397,11 @@
 "AT": "listed with restrictions",
 "EE": "listed",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-4k-g2/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-4K-G2 A",
-"norm": "EFHDP34KG2A",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11338,21 +11411,11 @@
 "registers": {
 "AT": "listed with restrictions",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-4k-g2f/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-4K-G2F A",
-"norm": "EFHDP34KG2FA",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11391,21 +11454,11 @@
 "AT": "listed with restrictions",
 "EE": "listed",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-5k-g2/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-5K-G2 A",
-"norm": "EFHDP35KG2A",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11415,21 +11468,11 @@
 "registers": {
 "AT": "listed with restrictions",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-5k-g2f/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-5K-G2F A",
-"norm": "EFHDP35KG2FA",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -11484,21 +11527,11 @@
 "AT": "listed with restrictions",
 "EE": "listed",
 "NL": "listed",
+"PL": "listed",
 "SE": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/ecoflow/ef-hd-p3-6k-g2/"
-},
-{
-"brand": "EcoFlow",
-"model": "EF HD-P3-6K-G2 A",
-"norm": "EFHDP36KG2A",
-"class": "hybrid",
-"registers": {
-"PL": "listed"
-},
-"trust": "alias",
-"page": "registers/brand/ecoflow/"
 },
 {
 "brand": "EcoFlow",
@@ -28283,89 +28316,89 @@
 "brand": "Hinen",
 "model": "A10000T",
 "norm": "A10000T",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a10000t/"
 },
 {
 "brand": "Hinen",
 "model": "A10000T-E",
 "norm": "A10000TE",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a10000t-e/"
 },
 {
 "brand": "Hinen",
 "model": "A15000T",
 "norm": "A15000T",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a15000t/"
 },
 {
 "brand": "Hinen",
 "model": "A15000T-E",
 "norm": "A15000TE",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a15000t-e/"
 },
 {
 "brand": "Hinen",
 "model": "A20000T",
 "norm": "A20000T",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a20000t/"
 },
 {
 "brand": "Hinen",
 "model": "A20000T-E",
 "norm": "A20000TE",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a20000t-e/"
 },
 {
 "brand": "Hinen",
 "model": "A25000T",
 "norm": "A25000T",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a25000t/"
 },
 {
 "brand": "Hinen",
 "model": "A25000T-E",
 "norm": "A25000TE",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/hinen/"
+"page": "registers/brand/hinen/a25000t-e/"
 },
 {
 "brand": "Hinen",
@@ -28875,7 +28908,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-ac/"
 },
 {
 "brand": "Hoymiles",
@@ -28886,7 +28919,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-ac-1/"
 },
 {
 "brand": "Hoymiles",
@@ -28897,7 +28930,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-ac-2/"
 },
 {
 "brand": "Hoymiles",
@@ -28908,7 +28941,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-ac-3/"
 },
 {
 "brand": "Hoymiles",
@@ -28919,7 +28952,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-x/"
 },
 {
 "brand": "Hoymiles",
@@ -28930,7 +28963,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-x-1/"
 },
 {
 "brand": "Hoymiles",
@@ -28941,7 +28974,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-x-2/"
 },
 {
 "brand": "Hoymiles",
@@ -28952,7 +28985,7 @@
 "AT": "listed with restrictions"
 },
 "trust": "exact",
-"page": "registers/brand/hoymiles/"
+"page": "registers/brand/hoymiles/hb-4020-x-3/"
 },
 {
 "brand": "Hoymiles",
@@ -31318,7 +31351,8 @@
 "norm": "LUNA2000213KTLH0",
 "class": "battery",
 "registers": {
-"EE": "listed"
+"EE": "listed",
+"PL": "listed"
 },
 "trust": "alias",
 "page": "registers/brand/huawei/luna2000-213ktl-h0/"
@@ -37939,9 +37973,10 @@
 "norm": "KAC125DH",
 "class": "battery",
 "registers": {
-"AT": "listed with restrictions"
+"AT": "listed with restrictions",
+"PL": "listed"
 },
-"trust": "exact",
+"trust": "alias",
 "page": "registers/brand/kstar/kac125dh/"
 },
 {
@@ -71292,7 +71327,7 @@
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/sungrow/"
+"page": "registers/brand/sungrow/sc125hx-fm/"
 },
 {
 "brand": "Sungrow",
@@ -71359,7 +71394,7 @@
 "PL": "listed"
 },
 "trust": "alias",
-"page": "registers/brand/sungrow/"
+"page": "registers/brand/sungrow/sc210hx-fm/"
 },
 {
 "brand": "Sungrow",
@@ -71371,6 +71406,39 @@
 },
 "trust": "alias",
 "page": "registers/brand/sungrow/"
+},
+{
+"brand": "Sungrow",
+"model": "SC300HX",
+"norm": "SC300HX",
+"class": "battery",
+"registers": {
+"PL": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/sungrow/sc300hx/"
+},
+{
+"brand": "Sungrow",
+"model": "SC430HX",
+"norm": "SC430HX",
+"class": "battery",
+"registers": {
+"PL": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/sungrow/sc430hx/"
+},
+{
+"brand": "Sungrow",
+"model": "SC450HX",
+"norm": "SC450HX",
+"class": "battery",
+"registers": {
+"PL": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/sungrow/sc450hx/"
 },
 {
 "brand": "Sungrow",
@@ -72905,12 +72973,12 @@
 "brand": "Sungrow",
 "model": "SH3.6RL",
 "norm": "SH36RL",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/sungrow/"
+"page": "registers/brand/sungrow/sh3-6rl/"
 },
 {
 "brand": "Sungrow",
@@ -72928,12 +72996,12 @@
 "brand": "Sungrow",
 "model": "SH3RL",
 "norm": "SH3RL",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/sungrow/"
+"page": "registers/brand/sungrow/sh3rl/"
 },
 {
 "brand": "Sungrow",
@@ -72951,12 +73019,12 @@
 "brand": "Sungrow",
 "model": "SH4RL",
 "norm": "SH4RL",
-"class": "inverter",
+"class": "hybrid",
 "registers": {
 "NL": "listed"
 },
 "trust": "exact",
-"page": "registers/brand/sungrow/"
+"page": "registers/brand/sungrow/sh4rl/"
 },
 {
 "brand": "Sungrow",
@@ -75374,6 +75442,17 @@
 },
 {
 "brand": "TSUN",
+"model": "TSOL-MAU4000Elite-0.8k",
+"norm": "TSOLMAU4000ELITE08K",
+"class": "plug-in",
+"registers": {
+"AT": "listed with restrictions"
+},
+"trust": "exact",
+"page": "registers/brand/tsun/"
+},
+{
+"brand": "TSUN",
 "model": "TSOL-MAU5000",
 "norm": "TSOLMAU5000",
 "class": "plug-in",
@@ -75642,6 +75721,17 @@
 },
 "trust": "exact",
 "page": "registers/brand/tsun/tsol-msu2000de-b4/"
+},
+{
+"brand": "TSUN",
+"model": "TSOL-MSU4000Elite-0.8k",
+"norm": "TSOLMSU4000ELITE08K",
+"class": "plug-in",
+"registers": {
+"AT": "listed with restrictions"
+},
+"trust": "exact",
+"page": "registers/brand/tsun/"
 },
 {
 "brand": "Victron Energy",

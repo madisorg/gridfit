@@ -1,5 +1,2194 @@
 [
  {
+  "date": "2026-10-31",
+  "baseline": false,
+  "previous": "2026-10-29",
+  "registers": {
+   "AT": {
+    "source_date": "2026-10-30",
+    "previous_source_date": "2026-10-23",
+    "added": [
+     [
+      "Bienesol",
+      "Cube-5200-800",
+      "Ja - <= 800W Anlage"
+     ],
+     [
+      "TSUN",
+      "TSOL-MAU4000Elite-0.8k",
+      "Ja - <= 800W Anlage"
+     ],
+     [
+      "TSUN",
+      "TSOL-MSU4000Elite-0.8k",
+      "Ja - <= 800W Anlage"
+     ]
+    ],
+    "removed": [],
+    "changed": [
+     [
+      "E3/DC",
+      "S10 SE",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "GoodWe",
+      "GW100K-BTR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW100K-ETR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW110K-BTR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW110K-ETR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW124,99K-BTR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW124,99K-ETR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW125K-BTR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW125K-ETR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW80K-BTR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW80K-ETR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW99,99K-BTR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "GoodWe",
+      "GW99,99K-ETR-G10",
+      "fw",
+      "1982-12-18 00:00:00",
+      "FW: 030303"
+     ],
+     [
+      "Huawei",
+      "SUN2000-12K-MB0",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Huawei",
+      "SUN2000-15K-MB0",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Huawei",
+      "SUN2000-17K-MB0",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Huawei",
+      "SUN2000-20K-MB0",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Huawei",
+      "SUN2000-25K-MB0",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PIKO CI 100",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE L G3 15 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE L G3 17,5 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE L G3 20 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE M G3 10 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE M G3 12,5 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE M G3 8,5 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE MP S G3 3.0",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE MP S G3 3.6",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE S G3 4 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE S G3 5,5 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "Kostal",
+      "PLENTICORE S G3 7 kW",
+      "valid",
+      "2026-11-30",
+      "2026-12-31"
+     ],
+     [
+      "SMA",
+      "STP 125-70",
+      "valid",
+      "2026-10-12",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "ME 10KTL-3PH",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "ME 15KTL-3PH",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "ME 20KTL-3PH",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "ME 5KTL-3PH",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "ME 6KTL-3PH",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "ME 8KTL-3PH",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 100KTLX-G4",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 10KTLX-G3-A",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 110KTLX-G4",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 11KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 11KTLX-G3-A",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 125KTLX-G4",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 125KTLX-G4-A",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 12KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 15KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 17KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 20KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 22KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 24KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 25KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 30KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 30KTLX-G3-A",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 3.3KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 3.6KTLM-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 36KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 3KTLM-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 40KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 40KTLX-G3-HV",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 4.4KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 45KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 50KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 50KTLX-G3-HV",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 5.5KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 5KTLX-G3-A",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 60KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 6.6KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 70KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 75KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 80KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 8.8KTLX-G3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Sofar",
+      "SOFAR 8.8KTLX-G3-A",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX10K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX12,5K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX13K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX15K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX16K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX17K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX20K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "SolarEdge",
+      "NX8K",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Easysolar-II 24/3000/70-32 MPPT 250/70GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Easysolar-II 48/3000/35-32 MPPT 250/70GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Easysolar-II 48/5000/70-50 MPPT 250/100GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 24/3000/70-32",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 24/3000/70-32 GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/10000/140-100/100",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Multiplus-II 48/15000/200-100 230V",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/3000/35-32",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/3000/35-32 GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/4k5/55-32 230V",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/4k5/55-32 230V GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/5000/70-50",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/5000/70-50 GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/6k5/100-50 230V",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/6k5/100-50 230V GX",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "MultiPlus-II 48/8000/110-100/100",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Multi RS Solar 48/6000/100-450/100",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Quattro 48/10000/140-100/100",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Quattro 48/15000/200-100/100",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Quattro 48/8000/110-100/100",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Victron",
+      "Quattro-II 48/5000/70-50/50/230V",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Viessmann",
+      "Vitocharge VX3 Typ 6.0C",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "Viessmann",
+      "Vitocharge VX3 Typ 8.0C",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 100KTL-V4",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 110KTL-V4",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 11KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 125KTL-V4",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 12KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 15000TL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 17000TL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 20000TL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 22000TL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 24000TL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 25KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 30KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 3.3KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 36KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 40KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 4.4KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 45KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 50KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 5.5KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 60KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 6.6KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 70KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 75KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 80KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ],
+     [
+      "ZCS Azzurro",
+      "3PH 8.8KTL-V3",
+      "valid",
+      "2026-10-31",
+      "2026-12-31"
+     ]
+    ]
+   },
+   "AT-EV": {
+    "source_date": "2026-10-30",
+    "previous_source_date": "2026-10-23",
+    "added": [
+     [
+      "BYD",
+      "STD1500AUL2A",
+      "Ja - befristet"
+     ],
+     [
+      "BYD",
+      "SUD2100KUD3X",
+      "Ja - befristet"
+     ],
+     [
+      "Pce",
+      "EV11.3 R37 - 11 kW",
+      "Ja - befristet"
+     ],
+     [
+      "Pce",
+      "EV11.3 R37 Z - 11 kW",
+      "Ja - befristet"
+     ],
+     [
+      "Pce",
+      "EV11.3 RFID R37 - 11 kW",
+      "Ja - befristet"
+     ],
+     [
+      "Pce",
+      "EV11.3 RFID R37 Z - 11 kW",
+      "Ja - befristet"
+     ]
+    ],
+    "removed": [
+     [
+      "Pce",
+      "EV11.3 R37 (370R2110-**)",
+      "Ja - befristet"
+     ],
+     [
+      "Pce",
+      "EV11.3 R37 Z (370R1111-**)",
+      "Ja - befristet"
+     ]
+    ],
+    "changed": []
+   },
+   "BE": {
+    "source_date": "2026-10-30",
+    "previous_source_date": "2026-10-23",
+    "added": [
+     [
+      "Apstorage",
+      "LSA-3.68",
+      "listed"
+     ],
+     [
+      "Apstorage",
+      "LSA-4.6",
+      "listed"
+     ],
+     [
+      "Apstorage",
+      "LSA-5",
+      "listed"
+     ],
+     [
+      "Apstorage",
+      "LSA-6",
+      "listed"
+     ],
+     [
+      "Enercon",
+      "E-160 EP5 E3 R1 - 5560 kW FT",
+      "listed"
+     ],
+     [
+      "Enercon",
+      "E-160 EP5 E3 R1 - 5560 kW FTQ",
+      "listed"
+     ],
+     [
+      "Enercon",
+      "E-160 EP5 E3 R1 - 5560 kW FTQS",
+      "listed"
+     ],
+     [
+      "Enercon",
+      "E-160 EP5 E3 R1 - 5560 kW FTS",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A10000T",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A10000T-E",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A15000T",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A15000T-E",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A20000T",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A20000T-E",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A25000T",
+      "listed"
+     ],
+     [
+      "Hinen",
+      "A25000T-E",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-AC",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-AC-1",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-AC-2",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-AC-3",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-ACM",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-ACM-1",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-ACM-2",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-ACM-3",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-X",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-X-1",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-X-2",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-X-3",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-XM",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-XM-1",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-XM-2",
+      "listed"
+     ],
+     [
+      "Hoymiles",
+      "HB-4020-XM-3",
+      "listed"
+     ],
+     [
+      "Rehlko",
+      "KD1800-E (KD45V20-5EES + KH04404TO4D)",
+      "listed"
+     ],
+     [
+      "Saj",
+      "CH2-29.9K-T4",
+      "listed"
+     ],
+     [
+      "Saj",
+      "CH2-30K-T4",
+      "listed"
+     ],
+     [
+      "Saj",
+      "CH2-40K-T5",
+      "listed"
+     ],
+     [
+      "Saj",
+      "CH2-49.9K-T6",
+      "listed"
+     ],
+     [
+      "Saj",
+      "CH2-50K-T6",
+      "listed"
+     ],
+     [
+      "Saj",
+      "CH2-63K-T6",
+      "listed"
+     ],
+     [
+      "Solis",
+      "S6-EH3P10K-LV-ND-H (Connected in Delta 3X230V)",
+      "listed"
+     ],
+     [
+      "Solis",
+      "S6-EH3P12K-LV-ND-H (Connected in Delta 3X230V)",
+      "listed"
+     ],
+     [
+      "Solis",
+      "S6-EH3P8K-LV-ND-H (Connected in Delta 3X230V)",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SC125HX-FM",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SC210HX-FM",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SC300HX",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SC430HX",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SC450HX",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SH3.6RL",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SH3RL",
+      "listed"
+     ],
+     [
+      "Sungrow",
+      "SH4RL",
+      "listed"
+     ],
+     [
+      "Sunwoda",
+      "SWDPCS-105K-A",
+      "listed"
+     ],
+     [
+      "Sunwoda",
+      "SWDPCS-105K-A-F",
+      "listed"
+     ],
+     [
+      "Sunwoda",
+      "SWDPCS-125K-A",
+      "listed"
+     ],
+     [
+      "Sunwoda",
+      "SWDPCS-125K-A-F",
+      "listed"
+     ]
+    ],
+    "removed": [],
+    "changed": []
+   },
+   "NL": {
+    "source_date": "2026-10-30",
+    "previous_source_date": "2026-10-28",
+    "added": [],
+    "removed": [],
+    "changed": []
+   },
+   "PL": {
+    "source_date": "2026-10-26",
+    "previous_source_date": "2026-10-26",
+    "added": [
+     [
+      "2G Heek",
+      "C Series",
+      "listed"
+     ],
+     [
+      "2G Heek",
+      "C Series small family",
+      "listed"
+     ],
+     [
+      "Chint",
+      "CPS ECB200KTL",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-AC-P2K-600 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-AC-P2K-800 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-M2K-600 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-M2K-800 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-P2K-600 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-P2K-800 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U2K-600 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U2K-800 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U4K-600 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U4K-800 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-12K0-S2",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-12K0-S2F",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-15K0-S2F",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-3K-G2",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-3K-G2F",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-4K-G2",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-4K-G2F",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-5K-G2",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-5K-G2F",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-6K-G2",
+      "listed"
+     ],
+     [
+      "Elsta O O",
+      "PCS-3-1-100",
+      "listed"
+     ],
+     [
+      "Elsta O O",
+      "PCS-3-1-125",
+      "listed"
+     ],
+     [
+      "Elsta O O",
+      "PCS-3-1-150",
+      "listed"
+     ],
+     [
+      "Elsta O O",
+      "PCS-3-1-50",
+      "listed"
+     ],
+     [
+      "Elsta O O",
+      "PCS-3-1-75",
+      "listed"
+     ],
+     [
+      "Enel Pc Ka O O",
+      "EW-800-100-G-2L-B",
+      "listed"
+     ],
+     [
+      "Enel Pc Ka O O",
+      "EW-800-100-M-2L-T",
+      "listed"
+     ],
+     [
+      "Enel Pc Ka O O",
+      "EW-800-160-G-2L-B",
+      "listed"
+     ],
+     [
+      "Enel Pc Ka O O",
+      "EW-800-160-M-2L-T",
+      "listed"
+     ],
+     [
+      "Enel Pc Ka O O",
+      "EW-800-45-M-3L-T",
+      "listed"
+     ],
+     [
+      "Fluence",
+      "Fluence OS version 7.9.0",
+      "listed"
+     ],
+     [
+      "Haier",
+      "HAH3P-15KB1/HU9",
+      "listed"
+     ],
+     [
+      "Huawei",
+      "LUNA2000-213KTL-H0",
+      "listed"
+     ],
+     [
+      "Kstar",
+      "KAC125DH",
+      "listed"
+     ],
+     [
+      "Renac",
+      "N1-HV-3.0",
+      "listed"
+     ],
+     [
+      "Renac",
+      "N1-HV-3.68",
+      "listed"
+     ],
+     [
+      "Renac",
+      "N1-HV-5.0",
+      "listed"
+     ],
+     [
+      "Renac",
+      "N1-HV-6.0",
+      "listed"
+     ],
+     [
+      "SRNE",
+      "HESP48140SHD3",
+      "listed"
+     ],
+     [
+      "Shenzhen Kstar 2025",
+      "KAC20D2-S0",
+      "listed"
+     ],
+     [
+      "Shenzhen Kstar 2025",
+      "KAC25D2-S0",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D10K-TL A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D5K-TL A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D6K-TL A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D8K-TL-S A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L29.9K-TH A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L29.9K-TH-S A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L30K-TH A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L30K-TH-S A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L40K-TH-S A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L42.5K-TH A",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L50K-TH A",
+      "listed"
+     ],
+     [
+      "Sunplus",
+      "SP1S-3P3K-H",
+      "listed"
+     ],
+     [
+      "Sunplus",
+      "SP1S-3P4K-H",
+      "listed"
+     ],
+     [
+      "Sunplus",
+      "SP1S-3P5K-H",
+      "listed"
+     ],
+     [
+      "Turbina Parowa Typu Sst 400 3 Cel Olomouck 3419 7 Wraz Idenice 618 00 Brno Generatorem Synchronicznym Typu 1Du2062 8Af02",
+      "C",
+      "listed"
+     ],
+     [
+      "Caterpillar 5",
+      "G3516K HR / TCG 4170 V16 HR",
+      "listed"
+     ],
+     [
+      "Caterpillar 5",
+      "G3516K LEF / TCG 4170 V16 LEF",
+      "listed"
+     ],
+     [
+      "Electratherm 4080 Enterprise Way Flowery Branch Ga 30542 Usa",
+      "ET150B / PM150",
+      "listed"
+     ],
+     [
+      "Shanghai Chint No",
+      "PS SCH250KTL-DO/EU A, B",
+      "listed"
+     ],
+     [
+      "Shanghai Chint No",
+      "PS SCH275KTL-DO/EU A, B",
+      "listed"
+     ],
+     [
+      "Sofar",
+      "FAR 125KTLX-G4-ESS",
+      "listed"
+     ],
+     [
+      "Enjoy",
+      "EPCS125-AM-MY tylko z modułem zdalnego pozyskiwania danych VCB-5131LN-WB",
+      "listed"
+     ],
+     [
+      "Enjoy",
+      "EPCS250-AM-HY tylko z modułem zdalnego pozyskiwania danych VCB-5131LN-WB",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      ",B",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      ",B",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      ",B",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      ",B",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      ",B",
+      "listed"
+     ],
+     [
+      "Oss Drives Runsorintie 7 65380 Vaasa Finl",
+      "A ,B, C, D",
+      "listed"
+     ],
+     [
+      "Oss Drives Runsorintie 7 65380 Vaasa Finl",
+      "A ,B, C, D",
+      "listed"
+     ],
+     [
+      "Oss Drives Runsorintie 7 65380 Vaasa Finl",
+      "A ,B, C, D",
+      "listed"
+     ]
+    ],
+    "removed": [
+     [
+      "EcoFlow",
+      "EF-EA-AC-P2K-600",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-AC-P2K-800",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-M2K-600",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-M2K-800",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-P2K-600",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-P2K-800",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U2K-600",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U2K-800",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U4K-600",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF-EA-HD-U4K-800",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-12K0-S2 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-12K0-S2F A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-15K0-S2F A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-3K-G2 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-3K-G2F A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-4K-G2 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-4K-G2F A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-5K-G2 A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-5K-G2F A",
+      "listed"
+     ],
+     [
+      "EcoFlow",
+      "EF HD-P3-6K-G2 A",
+      "listed"
+     ],
+     [
+      "Enjoy",
+      "EPCS125-AM-MY tylko z modułem zdalnego pozyskiwania danych VCB-5131LN-WB",
+      "listed"
+     ],
+     [
+      "Enjoy",
+      "EPCS250-AM-HY tylko z modułem zdalnego pozyskiwania danych VCB-5131LN-WB",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D10K-TL",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D5K-TL",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D6K-TL",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna D8K-TL-S",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L29.9K-TH",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L29.9K-TH-S",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L30K-TH",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L30K-TH-S",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L40K-TH-S",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L42.5K-TH",
+      "listed"
+     ],
+     [
+      "Sinexcel",
+      "Isuna L50K-TH",
+      "listed"
+     ],
+     [
+      "2G Heek B",
+      "C Series small family",
+      "listed"
+     ],
+     [
+      "2G Heek B",
+      "C Series",
+      "listed"
+     ],
+     [
+      "Block C 12 No 20 Datong Road Comprehensive Renac Bonded Zone Suzhou Hi District Suzhou Jiangsu P R China",
+      "A",
+      "listed"
+     ],
+     [
+      "Block C 12 No 20 Datong Road Comprehensive Renac Bonded Zone Suzhou Hi District Suzhou Jiangsu P R China",
+      "A",
+      "listed"
+     ],
+     [
+      "Block C 12 No 20 Datong Road Comprehensive Renac Bonded Zone Suzhou Hi District Suzhou Jiangsu P R China",
+      "A",
+      "listed"
+     ],
+     [
+      "Block C 12 No 20 Datong Road Comprehensive Renac Bonded Zone Suzhou Hi District Suzhou Jiangsu P R China",
+      "A",
+      "listed"
+     ],
+     [
+      "Caterpillar 25",
+      "G3516K HR / TCG 4170 V16 HR",
+      "listed"
+     ],
+     [
+      "Caterpillar 25",
+      "G3516K LEF / TCG 4170 V16 LEF",
+      "listed"
+     ],
+     [
+      "Fluence",
+      "Fluence OS version 7.9.0",
+      "listed"
+     ],
+     [
+      "Huawei",
+      "LUNA2000-213KTL-H0 B",
+      "listed"
+     ],
+     [
+      "No 5999 Guangfulin Road Shanghai Chint Songjiang District 201616 Shanghai P R China",
+      "B",
+      "listed"
+     ],
+     [
+      "Room 102 3 Building E2 No 289 Laiqing Road Qingdao Haier Wenquan Street Office Jimo District Qingdao City 266207 Shandong P R China",
+      "A",
+      "listed"
+     ],
+     [
+      "SRNE",
+      "HESP48140SHD3",
+      "listed"
+     ],
+     [
+      "Shanghai Chint No 5999 Guangfulin Road Songjiang District 201616 Shanghai P R China",
+      "B, C, D LC",
+      "listed"
+     ],
+     [
+      "Shanghai Chint No 5999 Guangfulin Road Songjiang District 201616 Shanghai P R China",
+      "B, C, D LC",
+      "listed"
+     ],
+     [
+      "Shanghai Sunplus Room 706 Building 4 No 260 Maoyuan Road Fengxian District Shanghai China",
+      "A",
+      "listed"
+     ],
+     [
+      "Shanghai Sunplus Room 706 Building 4 No 260 Maoyuan Road Fengxian District Shanghai China",
+      "A",
+      "listed"
+     ],
+     [
+      "Shanghai Sunplus Room 706 Building 4 No 260 Maoyuan Road Fengxian District Shanghai China",
+      "A",
+      "listed"
+     ],
+     [
+      "Sofar",
+      "AR 125KTLX-G4-ESS",
+      "listed"
+     ],
+     [
+      "Kstar",
+      "(A,B, KAC125DH",
+      "listed"
+     ],
+     [
+      "Kstar",
+      "KAC20D2-S0",
+      "listed"
+     ],
+     [
+      "Kstar",
+      "KAC25D2-S0",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      "A",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      "A",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      "A",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      "A",
+      "listed"
+     ],
+     [
+      "Via Sila 1 3 36033 Isola Dwukierunkowy Vicentina Italy Przekszta Tnik W Ochy Dc Ac Sunsys C Cab L",
+      "A",
+      "listed"
+     ],
+     [
+      "S Drives Runsorintie 7 65380 Vaasa Finlan",
+      "A ,B, C, D",
+      "listed"
+     ],
+     [
+      "S Drives Runsorintie 7 65380 Vaasa Finlan",
+      "A ,B, C, D",
+      "listed"
+     ],
+     [
+      "S Drives Runsorintie 7 65380 Vaasa Finlan",
+      "A ,B, C, D",
+      "listed"
+     ],
+     [
+      "Ul Graniczna 74B 44 178 Przyszowice",
+      "A, B",
+      "listed"
+     ],
+     [
+      "Ul Graniczna 74B 44 178 Przyszowice",
+      "A, B",
+      "listed"
+     ],
+     [
+      "Ul Graniczna 74B 44 178 Przyszowice",
+      "A, B",
+      "listed"
+     ],
+     [
+      "Ul Graniczna 74B 44 178 Przyszowice",
+      "A, B",
+      "listed"
+     ],
+     [
+      "Ul Graniczna 74B 44 178 Przyszowice",
+      "A, B",
+      "listed"
+     ]
+    ],
+    "changed": [
+     [
+      "Deye",
+      "SUN-5K-SG01HP3-EU- DM2",
+      "fw",
+      "1122",
+      "A 1122"
+     ],
+     [
+      "Deye",
+      "SUN-6K-SG01HP3-EU- DM2",
+      "fw",
+      "1122",
+      "A 1122"
+     ],
+     [
+      "IN-Power",
+      "INPPCS-100/0.4-W-14-A2- OS",
+      "fw",
+      "DSP: 1197 ARM: 1852",
+      "A,B DSP: 1197 ARM: 1852"
+     ],
+     [
+      "IN-Power",
+      "INPPCS-124/0.4-W-14-A2- OS",
+      "fw",
+      "DSP: 1197 ARM: 1852",
+      "A,B DSP: 1197 ARM: 1852"
+     ],
+     [
+      "IN-Power",
+      "INPPCS-125/0.4-W-14-A2- OS",
+      "fw",
+      "DSP: 1197 ARM: 1852",
+      "A,B DSP: 1197 ARM: 1852"
+     ],
+     [
+      "IN-Power",
+      "INPPCS-90/0.4-W-14-A2- OS",
+      "fw",
+      "DSP: 1197 ARM: 1852",
+      "A,B DSP: 1197 ARM: 1852"
+     ],
+     [
+      "IN-Power",
+      "INPPCS-99/0.4-W-14-A2- OS",
+      "fw",
+      "DSP: 1197 ARM: 1852",
+      "A,B DSP: 1197 ARM: 1852"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C600",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C615",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C630",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C645",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C660",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C675",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Ingeteam",
+      "INGECON SUN 3825TL C690",
+      "fw",
+      "ABU1000_C (1)",
+      "C,D ABU1000_C (1)"
+     ],
+     [
+      "Kstar",
+      "KAC100DH",
+      "fw",
+      "—",
+      "V000"
+     ],
+     [
+      "Kstar",
+      "KAC100DP2",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC100DP2-S0",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC110DP2",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC110DP2-S0",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC125D2",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC125DP2",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC125DP2-S0",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC80DP2",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Kstar",
+      "KAC80DP2-S0",
+      "fw",
+      "—",
+      "V030B020D060"
+     ],
+     [
+      "Solis",
+      "S6-EH3P100K10-NV-ND- H",
+      "fw",
+      "A,B,C A3",
+      "A3"
+     ],
+     [
+      "Solis",
+      "S6-EH3P99.9K10-NV-ND- H",
+      "fw",
+      "A,B,C A3",
+      "A3"
+     ],
+     [
+      "Solis",
+      "S6-EH3P99.9K10-NV-YD- H",
+      "fw",
+      "A,B,C A3",
+      "A3"
+     ],
+     [
+      "China The 9Th Floor R D Building Kstar Park Guangming Hi Zone 518107 Shenzhen Guangdong Province People S Republic Of",
+      "A,B",
+      "fw",
+      "—",
+      "0"
+     ],
+     [
+      "China The 9Th Floor R D Building Kstar Park Guangming Hi Zone 518107 Shenzhen Guangdong Province People S Republic Of",
+      "A,B",
+      "fw",
+      "—",
+      "0"
+     ]
+    ]
+   }
+  }
+ },
+ {
   "date": "2026-10-29",
   "baseline": true,
   "note": "Baseline: 29,184 rows from 8 lists. Later refreshes are compared with it.",
