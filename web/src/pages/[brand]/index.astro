@@ -8,6 +8,7 @@ import CellLegend from "../../components/CellLegend.astro";
 import { REPO } from "../../lib/data";
 import { COUNTRIES, RC, SNAP_DATE, trustOf } from "../../lib/registers";
 import { BRANDS, localOf, familyOf, modelUrl, modelAnchor, nf, type Brand } from "../../lib/devices";
+import { legacyOf } from "../../lib/legacy";
 
 export function getStaticPaths() {
   return BRANDS.map((b) => ({ params: { brand: b.slug }, props: { b } }));
@@ -17,7 +18,8 @@ const fams = b.families, models = b.models;
 const local = fams.filter((f) => ["control", "read"].includes(localOf(f))).length;
 const ctl = fams.filter((f) => localOf(f) === "control").length;
 const listed = COUNTRIES.filter((c) => models.some((d) => d.cells[c]));
-const groups = Object.keys(RC).map((c) => [c, models.filter((d) => d.cls === c)] as const).filter(([, g]) => g.length);
+const current = models.filter((d) => !legacyOf(d).tier), legacy = models.filter((d) => legacyOf(d).tier);
+const groups = Object.keys(RC).map((c) => [c, current.filter((d) => d.cls === c)] as const).filter(([, g]) => g.length);
 const matchedN = models.filter((d) => familyOf(d)).length;
 const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURIComponent(b.name + ": ")}`;
 ---
@@ -66,6 +68,27 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
               </table>
             </section>
           ))}
+          {legacy.length > 0 && (
+            <section class="sec">
+              <header><h3>Legacy models</h3><p>{legacy.length} — expired or refused on every list, discontinued by the maker, or probably an older generation; hover a tag for the reason, a model page spells it out</p></header>
+              <table class="xv">
+                <thead><tr><th scope="col">Model</th>{COUNTRIES.map((c) => <th scope="col"><a href={`/grid/${c.toLowerCase()}/`}>{c}</a></th>)}<th scope="col" class="match">Match</th></tr></thead>
+                <tbody>
+                  {legacy.map((d) => {
+                    const f = familyOf(d);
+                    const url = f || d.page ? modelUrl(d) : "";
+                    return (
+                      <tr id={modelAnchor(d)} class="legacy">
+                        <td>{url ? <a href={url}>{d.model}</a> : d.model}<span class="tag tag-legacy" title={legacyOf(d).reason}>{legacyOf(d).tier === "C" ? "legacy?" : "legacy"}</span>{f && <span class="cls">{f.name}</span>}</td>
+                        {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} cls={d.cls} />)}
+                        <td class="match">{trustOf(d)}</td>
+                      </tr>
+                    );
+                  })}
+                </tbody>
+              </table>
+            </section>
+          )}
           <p class="small muted">A small number after a symbol = the list has several rows for this model (variants, firmware versions).
             Something wrong? <a href={issue}>Fix a row</a>.</p>
         </>

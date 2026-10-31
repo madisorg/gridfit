@@ -13,7 +13,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const data = JSON.parse(readFileSync(resolve(here, "../dist/grid/index.json"), "utf-8"));
 const OPTIONS = {
   ph: ["1", "2", "3", "-"], kva: ["0-3.7", "3.7-6", "6-12", "12-30", "30-", "-"], mppt: ["1", "2", "3", "4", "0", "-"],
-  n: ["0", "1", "2", "3"], lo: ["W", "L", "C", "B", "-"], ha: ["W", "L", "C", "B", "-"], ev: ["W", "L", "C", "B", "-"], st: ORDER,
+  n: ["0", "1", "2", "3"], lo: ["W", "L", "C", "B", "-"], ha: ["W", "L", "C", "B", "-"], ev: ["W", "L", "C", "B", "-"], st: ORDER, legacy: ["0", "1"],
 };
 const empty = Object.fromEntries(IDS.map((id) => [id, ""]));
 // the states a reader reaches: no country, one list country, one no-list country, several, the kinds, a brand, a search
@@ -24,12 +24,13 @@ const STATES = [
   { name: "SE wallboxes", cs: ["SE"], g: "ev" }, { name: "EE, Deye", cs: ["EE"], g: "inv", cur: { brand: "Deye" } },
   { name: "ES, status D", cs: ["ES"], g: "inv", cur: { st: "D" } }, { name: "ES, 3-phase 6-12 kVA, search sun", cs: ["ES"], g: "inv", cur: { ph: "3", kva: "6-12", q: "sun" } },
   { name: "no country, status X, HA local control", cs: [], g: "", cur: { st: "X", ha: "W" } }, { name: "EE wallboxes (nothing to check)", cs: ["EE"], g: "ev" },
+  { name: "AT with legacy included", cs: ["AT"], g: "inv", cur: { legacy: "1" } }, { name: "AT, search 'symo' (legacy shown by search)", cs: ["AT"], g: "inv", cur: { q: "symo" } },
 ];
 let fails = 0, checks = 0;
 const fail = (m) => { fails++; console.log("FAIL", m); };
 for (const s of STATES) {
   const ccs = s.cs.length ? s.cs : data.read, readSel = s.cs.filter((c) => data.read.includes(c)), every = !!s.every && s.cs.length >= 2;
-  const ctx = { ccs, every, readSel }, T = predicates(data, ctx), cur = { ...empty, ...(s.cur ?? {}) };
+  const cur = { ...empty, ...(s.cur ?? {}) }, ctx = { ccs, every, readSel, q: cur.q }, T = predicates(data, ctx);
   const hits = select(data, cur, s.g, T);
   for (const id of IDS) {
     if (id === "q" || id === "brand") continue;
@@ -38,6 +39,13 @@ for (const s of STATES) {
     checks++;
     if (sum !== base.length) fail(`${s.name} · ${id}: any ${base.length} ≠ sum ${sum} (${[...counts].map(([k, v]) => `${k}:${v}`).join(" ")})`);
     for (const k of counts.keys()) if (!OPTIONS[id].includes(k)) fail(`${s.name} · ${id}: category "${k}" has no option`);
+    if (id === "legacy") {
+      // a toggle, not a partition of choices: off leaves the current rows (unless a search text shows everything), on leaves them all
+      checks++; const off = select(data, { ...cur, legacy: "" }, s.g, T).length, on = select(data, { ...cur, legacy: "1" }, s.g, T).length;
+      if (on !== base.length) fail(`${s.name} · legacy on: ${on} ≠ base ${base.length}`);
+      if (off !== (cur.q ? base.length : counts.get("0") ?? 0)) fail(`${s.name} · legacy off: ${off} ≠ ${cur.q ? base.length : counts.get("0")}`);
+      continue;
+    }
     // and each option really is the filter: choosing it leaves exactly its count
     for (const v of OPTIONS[id]) { checks++; const n = select(data, { ...cur, [id]: v }, s.g, T).length; if (n !== (counts.get(v) ?? 0)) fail(`${s.name} · ${id}=${v}: option says ${counts.get(v) ?? 0}, choosing it gives ${n}`); }
   }
@@ -54,6 +62,9 @@ checks++;
 const es = data.rows.filter((r) => r[2] !== "wallbox").map((r) => cellCode(r, "ES", data));
 const tally = Object.fromEntries(ORDER.map((k) => [k, es.filter((c) => c === k).length]));
 console.log("ES inverters by status:", tally);
+const leg = data.rows.filter((r) => r[11]).length, legX = data.rows.filter((r) => r[11] === "A" && [...r[4]].some((ch) => "LORT".includes(ch))).length;
+console.log(`legacy rows: ${leg} (A ${data.rows.filter((r) => r[11] === "A").length}, B ${data.rows.filter((r) => r[11] === "B").length}, C ${data.rows.filter((r) => r[11] === "C").length})`);
+if (legX) fail(`${legX} tier-A legacy rows still have a positive list entry`);
 if ((tally["-"] ?? 0) > es.length * 0.1) fail(`ES: ${tally["-"]} of ${es.length} inverters are "nothing known"`);
 console.log(`${checks} checks, ${fails} failures`);
 process.exit(fails ? 1 : 0);

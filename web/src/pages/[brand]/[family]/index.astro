@@ -11,6 +11,7 @@ import RegCell from "../../../components/RegCell.astro";
 import { data, CLASS, CONN, SOURCE, REPO, summary, type Family, type Row } from "../../../lib/data";
 import { COUNTRIES, REGS, META, SNAP_DATE, trustOf } from "../../../lib/registers";
 import { gridOfFamily, modelsOf, entriesOfFamily, localOf, localRoutes, modelAnchor, specOf, sheetOf, releasesOfFamily, specOfFamily } from "../../../lib/devices";
+import { legacyOf } from "../../../lib/legacy";
 
 export function getStaticPaths() {
   return data.families.map((f) => ({ params: { brand: f.brand_slug, family: f.slug }, props: { f } }));
@@ -140,8 +141,8 @@ const NO_MPPT = f.class === "battery";
           <thead><tr><th scope="col">Model, as the list writes it</th>{COUNTRIES.map((c) => <th scope="col"><a href={`/grid/${c.toLowerCase()}/`}>{c}</a></th>)}<th scope="col" class="sp">MPPT</th><th scope="col" class="sp">kW</th><th scope="col" class="match">Match</th></tr></thead>
           <tbody>
             {models.map((d) => (
-              <tr id={modelAnchor(d)}>
-                <td>{d.model}</td>
+              <tr id={modelAnchor(d)} class={legacyOf(d).tier ? "legacy" : undefined}>
+                <td>{d.model}{legacyOf(d).tier && <span class="tag tag-legacy" title={legacyOf(d).reason}>{legacyOf(d).tier === "C" ? "legacy?" : "legacy"}</span>}</td>
                 {COUNTRIES.map((c) => <RegCell c={c} cell={d.cells[c]} cls={d.cls} rich={true} />)}
                 <td class="sp num">{specOf(d).mppt === 0 || (specOf(d).mppt === null && (NO_MPPT || d.cls === "battery")) ? <span class="muted" title="no MPPT: battery / AC inverter">none</span> : specOf(d).mppt ?? <span class="muted" title="not collected">–</span>}</td><td class="sp num">{specOf(d).kw ?? <span class="muted" title="not collected">–</span>}</td>
                 <td class="match">{trustOf(d)}</td>
@@ -155,6 +156,9 @@ const NO_MPPT = f.class === "battery";
         <p class="small muted">MPPT count and rated kW are the maker's own datasheets, model code exactly as the sheet writes it:
           {sheets.map((x, i) => <>{i > 0 && "; "}<Ext href={x.src.url}>{x.src.title || x.code}</Ext>{x.src.version && ` (${x.src.version})`}, seen {x.src.seen}</>)}.
           “–” = not collected; “none” = a battery / AC inverter, which has no PV input.</p>
+      )}
+      {models.some((d) => legacyOf(d).tier) && (
+        <p class="small muted"><span class="tag tag-legacy">legacy</span> = expired or refused on every list that carries it, or discontinued by the maker; <span class="tag tag-legacy">legacy?</span> = probably: an entry older than six years, untouched, with a newer generation on the lists. Hover the tag for the reason; the model page spells it out.</p>
       )}
     </section>
 

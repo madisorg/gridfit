@@ -1,0 +1,29 @@
+[
+ {
+  "name": "grid-at",
+  "url": "grid/at/",
+  "wait": 3.0
+ },
+ {
+  "name": "grid-at-legacy",
+  "url": "grid/at/?legacy=1&st=X",
+  "wait": 3.0
+ },
+ {
+  "name": "grid-at-search-old",
+  "url": "grid/at/?q=symo+3.0",
+  "wait": 3.0
+ },
+ {
+  "name": "brand-legacy",
+  "url": "solax/",
+  "js": "document.querySelector('tr.legacy')?.scrollIntoView()",
+  "wait": 1.5
+ },
+ {
+  "name": "mudel-legacy",
+  "url": "a-tronix/",
+  "wait": 1.5,
+  "js": "document.querySelector('tr.legacy')?.scrollIntoView()"
+ }
+]

@@ -1,0 +1,72 @@
+# Brand generation rules for the "probable legacy" tier (c): an older generation of a family whose successor the same
+# brand has on the lists. A rule alone marks nothing — it only counts together with a list date older than six years
+# and no change to the entry since (web/src/lib/legacy.ts). Regexes run over the register code normalised the way the
+# specs layer does it (upper case, spaces removed). Facts about naming, from the makers' own product lines.
+- brand: Deye
+  old: '^SUN-\d+(\.\d+)?K-SG04LP3'
+  new: '^SUN-\d+(\.\d+)?K-SG0[56]LP3'
+  note: "SG04LP3 three-phase LV hybrid → SG05LP3 / SG06LP3"
+- brand: Deye
+  old: '^SUN-\d+(\.\d+)?K-SG0[1-3]LP1'
+  new: '^SUN-\d+(\.\d+)?K-SG0[56]LP1'
+  note: "SG01–03LP1 single-phase LV hybrid → SG05LP1 / SG06LP1"
+- brand: Deye
+  old: '^SUN-\d+(\.\d+)?K-G0[34]$'
+  new: '^SUN-\d+(\.\d+)?K-G0[56]'
+  note: "G03 / G04 string inverters → G05 / G06"
+- brand: Fronius
+  old: '^(FRONIUS)?(SYMO|PRIMO)(?!GEN24)\d'
+  new: '^(FRONIUS)?(SYMO|PRIMO)GEN24'
+  note: "Symo / Primo (SnapINverter) → Symo GEN24 / Primo GEN24"
+- brand: Fronius
+  old: '^(FRONIUS)?(GALVO|IG|AGILO)'
+  new: '^(FRONIUS)?(SYMO|PRIMO)GEN24'
+  note: "Galvo / IG / Agilo → GEN24"
+- brand: SMA
+  old: '^SB\d(\.\d)?-1AV-40$'
+  new: '^SB\d(\.\d)?-1AV-41$'
+  note: "Sunny Boy x.x-1AV-40 → -41"
+- brand: SMA
+  old: '^STP\d+(\.\d)?-3AV-40$'
+  new: '^STP\d+(\.\d)?-3SE-40$|^STP\d+-50$'
+  note: "Sunny Tripower 3AV-40 → Smart Energy / X"
+- brand: SMA
+  old: '^(SB|STP)\d+TL-\d\d$'
+  new: '^SB\d(\.\d)?-1AV-41$|^STP\d+-50$'
+  note: "SB/STP TL-20/21/30 → AV-41 / X"
+- brand: SolaX
+  old: '^(SOLAX)?X[13]-HYBRID-?.*G3'
+  new: '^(SOLAX)?X[13]-HYBRID-?.*(G4|-[DM]$)'
+  note: "X1/X3-Hybrid G3 → G4"
+- brand: Growatt
+  old: '^\d+(\.\d+)?TL3?-S$'
+  new: '^(MOD|MID|MIN|MAX)\d'
+  note: "TL3-S / TL-S string inverters → MOD / MID / MIN / MAX"
+- brand: Solis
+  old: '^SOLIS-\d+(\.\d+)?K-[45]G'
+  new: '^S[56]-G[RC][13]P'
+  note: "Solis 4G / 5G → S5 / S6"
+- brand: GoodWe
+  old: '^GW\d+(\.\d+)?K-(DT|ET|BT|EH|BH|ES|EM)$'
+  new: '^GW\d+(\.\d+)?K-(DT|ET|BT|EH|BH|ES|EM)-?(20|G2)|^GW\d+(\.\d+)?K-[A-Z]+A-G20'
+  note: "DT / ET / BT / EH … → -20 / G2 (ETA, EHA, BTA …)"
+- brand: Huawei
+  old: '^SUN2000-\d+KTL-M0$'
+  new: '^SUN2000-\d+KTL-M[12]$'
+  note: "SUN2000 KTL-M0 → M1 / M2"
+- brand: Sungrow
+  old: '^SG\d+(\.\d)?KTL-M$'
+  new: '^SG\d+(\.\d)?RT'
+  note: "SG KTL-M → SG RT"
+- brand: Kostal
+  old: '^PIKO\d+$'
+  new: '^PIKO(IQ|CI)|^PLENTICORE'
+  note: "PIKO 3.0–20 → PIKO IQ / CI, PLENTICORE"
+- brand: Fox ESS
+  old: '^(H1|AC1)-\d+(\.\d)?-E$'
+  new: '^(H1|AC1)-\d+(\.\d)?-E1?-G2'
+  note: "H1 / AC1 → G2"
+- brand: Enphase
+  old: '^IQ[67]'
+  new: '^IQ[78]'
+  note: "IQ6 / IQ7 → IQ7+ / IQ8"

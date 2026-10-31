@@ -11,6 +11,7 @@ import { COUNTRIES } from "../lib/registers";
 import { BRANDS, KVA_BUCKETS, MPPT_OPTS, SPEC_BRANDS } from "../lib/devices";
 import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
 import { EVIDENCE_BRANDS } from "../lib/evidence";
+import { LEGACY_COUNTS } from "../lib/legacy";
 const { preset = "", id = "gv", kind = "", kindAt = "here" } = Astro.props as { preset?: string; id?: string; kind?: string; kindAt?: "here" | "top" };
 const gridBrands = BRANDS.filter((b) => b.models.length);
 const groups: [string, string][] = [["read", "Lists read in full"], ["yes", "Public list, not read yet"], ["partial", "Partial list"], ["no", "No public list"]];
@@ -58,6 +59,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
       {ST.map(([k, cls, glyph, word]) => <label data-k={k} hidden><input type="checkbox" name="st" value={k}> <span class={`cl ${cls}`} aria-hidden="true">{glyph}</span> <span class="w">{word}</span> <small class="n"></small></label>)}
       <label class="st-every" hidden><input type="checkbox" id="every"> in every chosen country</label>
     </fieldset>
+    <label class="st-legacy"><input type="checkbox" id="legacy" value="1"> <span class="w">Include legacy models</span> <small class="n"></small></label>
     <label><span>Phases</span><select id="ph"><option value="">Any phases</option><option value="1">1-phase</option><option value="2">2-phase</option><option value="3">3-phase</option><option value="-">Phases not specified</option></select></label>
     <label><span>Rated power</span><select id="kva"><option value="">Any power</option>{KVA_BUCKETS.map(([k, w]) => <option value={k}>{w}</option>)}<option value="-">Power not specified</option></select></label>
     <label><span>MPPT</span><select id="mppt"><option value="">Any MPPT</option>{MPPT_OPTS.map(([k, w]) => <option value={k}>{w}</option>)}
@@ -87,7 +89,8 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     <p class="small muted">Phases and rated power (kVA) come from the Austrian, Swedish and Belgian lists; where no list carries them the datasheet fills in, else “not specified”. No list carries MPPT counts: those are the makers' own datasheets,
       read so far for {SPEC_BRANDS.join(", ")} (model codes exactly as the sheet writes them); a battery, AC inverter or wallbox has no MPPT by its class; “not collected” means no sheet read yet, never “none”.
       “Fit by the maker's document” comes from the maker's own released-countries or certificate document, read so far for {EVIDENCE_BRANDS.join(", ") || "no brand yet"}. The list is the authority; this is a cross-reference.
-      <b>Other lists</b> counts the read lists a model is on besides the countries you chose — a hint of what the maker has had certified where there is no list to check, never an approval.</p>
+      <b>Other lists</b> counts the read lists a model is on besides the countries you chose — a hint of what the maker has had certified where there is no list to check, never an approval.
+      <b>Legacy</b> models are hidden unless included: expired or refused on every list that carries them ({LEGACY_COUNTS.A.toLocaleString("en")}), discontinued by the maker's own archive ({LEGACY_COUNTS.B.toLocaleString("en")}), or probably legacy — an entry older than six years, untouched, with a newer generation of the family on the lists ({LEGACY_COUNTS.C.toLocaleString("en")}); never an age guess. A search by model code shows them regardless; the model page gives the reason.</p>
   </div>
 </div>
 
@@ -106,14 +109,14 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   const LEVEL: Record<string, [string, string]> = { W: ["write", "control"], L: ["local", "read"], C: ["cloud", "cloud"], B: ["none", "brand route"], "-": ["none", "–"] };
   const best = (a: string, b: string) => "WLCB-".indexOf(a) <= "WLCB-".indexOf(b) ? a : b;
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
-  type Row = [number, string, string, string, string, string, string, string, number | null, number | null, string];
+  type Row = [number, string, string, string, string, string, string, string, number | null, number | null, string, string];
   type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; limits: Record<string, { max_kw: number }>; how: string[]; brands: string[]; rows: Row[] };
   let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "", qt = 0;
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
   const nf = (n: number) => n.toLocaleString("en");
   const stBoxes = [...root.querySelectorAll<HTMLInputElement>('input[name="st"]')];
-  const val = (id: string) => id === "st" ? stBoxes.filter((b) => b.checked).map((b) => b.value).join("") : ($<HTMLInputElement>(id).value || "").trim();
+  const val = (id: string) => id === "st" ? stBoxes.filter((b) => b.checked).map((b) => b.value).join("") : id === "legacy" ? ($<HTMLInputElement>(id).checked ? "1" : "") : ($<HTMLInputElement>(id).value || "").trim();
   const boxes = [...root.querySelectorAll<HTMLInputElement>('input[name="c"]')];
   const sel = () => boxes.filter((b) => b.checked).map((b) => b.value);
   // ---- the country picker: chips for the chosen, a typeahead to add, the 7 read lists as quick toggles, the full list in a dialog
@@ -189,7 +192,8 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     const every = cs.length >= 2 && $<HTMLInputElement>("every").checked;
     ($("mppt").closest("label") as HTMLElement).hidden = g === "ev";
     if (g === "ev") $<HTMLSelectElement>("mppt").value = "";
-    const ctx = { ccs, every, readSel };
+    const cur0 = val("q").toLowerCase();
+    const ctx = { ccs, every, readSel, q: cur0 };
     const T = predicates(data, ctx);
     const cur: Record<string, string> = Object.fromEntries(IDS.map((id) => [id, id === "q" ? val(id).toLowerCase() : val(id)]));
     hits = select(data, cur, g, T);
@@ -201,6 +205,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     for (const id of IDS) {
       if (id === "q") continue;
       const base = select(data, cur, g, T, id), counts = facet(id, base, data, ctx);
+      if (id === "legacy") { $("legacy").parentElement!.querySelector(".n")!.textContent = `(${nf(counts.get("1") ?? 0)})`; continue; }
       if (id === "st") {
         stBoxes.forEach((b) => {
           const n = counts.get(b.value) ?? 0, lab = b.parentElement!;
@@ -225,7 +230,10 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
       const c = cs[0], by = (k: string) => hits.filter((r) => cellCode(r, c, data) === k).length;
       line += data.read.includes(c) ? ` · ${nf(by("Y") + by("C"))} on the list in ${c}` : ` · in ${c}: ${nf(by("D"))} by the maker's document, ${nf(by("K"))} accepted on other EU lists`;
     }
+    const hiddenLegacy = cur.legacy || cur0 ? 0 : select(data, { ...cur, legacy: "1" }, g, T).length - hits.length;
+    if (hiddenLegacy) line += ` · ${nf(hiddenLegacy)} legacy ${hiddenLegacy === 1 ? "model" : "models"} hidden — <a href="#" id="showlegacy">include</a>`;
     $("xcount").innerHTML = line;
+    $("xcount").querySelector("#showlegacy")?.addEventListener("click", (e) => { e.preventDefault(); $<HTMLInputElement>("legacy").checked = true; apply(); });
     // a chosen country without a list gets one sentence on how its cells are decided
     const notes = cs.filter((c) => !data.read.includes(c)).slice(0, 2).map((c) => {
       const name = data.names[c] ?? c, s = data.scope[c]?.[rcls], how = data.how.includes(c) ? ` <a href="/grid/${c.toLowerCase()}/#how">How it works in ${name}</a>.` : "";
@@ -243,6 +251,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
       ccs.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
       '<th scope="col" class="num">Lists</th><th scope="col" class="sp">Ph</th><th scope="col" class="sp">kVA</th><th scope="col" class="sp mp">MPPT</th><th scope="col" class="lo">Local</th><th scope="col" class="lo">Smart home</th></tr></thead><tbody id="xb"></tbody></table>';
     IDS.forEach((id) => $(id === "st" ? "stpick" : id).classList.toggle("on", !!val(id)));
+    $("legacy").parentElement!.classList.toggle("on", !!val("legacy"));
     kinds.forEach((k) => k.setAttribute("aria-pressed", String(k.dataset.g === g)));
     const presetOnly = cs.length === 1 && cs[0] === root.dataset.preset;
     $("reset").hidden = !IDS.some((id) => val(id)) && g === (root.dataset.kind || "") && (!cs.length || presetOnly) && !every;
@@ -265,7 +274,8 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
       }).join("");
       const nl = r[4].replace(/-/g, "").length;
       const mp = r[9] !== null ? (r[9] === 0 ? '<span class="muted">none</span>' : String(r[9])) : r[2] === "battery" || r[2] === "wallbox" ? '<span class="muted" title="no MPPT: battery, AC inverter or wallbox">none</span>' : '<span class="muted" title="not collected">–</span>';
-      return `<tr><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span></td>${cells}` +
+      const leg = r[11] ? `<span class="tag tag-legacy" title="${r[11] === "C" ? "probably legacy: an older generation" : r[11] === "B" ? "legacy: discontinued by the maker" : "legacy: expired or refused on every list"}">${r[11] === "C" ? "legacy?" : "legacy"}</span>` : "";
+      return `<tr${r[11] ? ' class="legacy"' : ""}><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span>${leg}</td>${cells}` +
         `<td class="num">${nl}</td><td class="sp">${r[7] || '<span class="muted">–</span>'}</td><td class="sp num">${r[8] === null ? '<span class="muted">–</span>' : r[8]}</td><td class="sp num mp">${mp}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
@@ -285,6 +295,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     IDS.forEach((id) => {
       if (id === "st") { const want = init.get("st") ?? ""; stBoxes.forEach((b) => { b.checked = want.includes(b.value); b.addEventListener("change", apply); }); return; }
       const el = $<HTMLInputElement>(id);
+      if (id === "legacy") { el.checked = !!init.get("legacy"); el.addEventListener("change", apply); return; }
       if (init.get(id)) el.value = init.get(id)!;
       el.addEventListener(id === "q" ? "input" : "change", id === "q" ? () => { clearTimeout(qt); qt = setTimeout(apply, 120); } : apply);
     });
@@ -292,7 +303,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     // with a default kind the choice is one or the other, never "both"; without one a second click shows every kind
     kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g && !root.dataset.kind ? "" : k.dataset.g!; apply(); }));
     $("ccclear").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); apply(); dlg.close(); });
-    $("reset").addEventListener("click", () => { IDS.forEach((id) => id !== "st" && ($<HTMLInputElement>(id).value = "")); stBoxes.forEach((b) => (b.checked = false)); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = b.value === root.dataset.preset)); $<HTMLInputElement>("every").checked = false; apply(); });
+    $("reset").addEventListener("click", () => { IDS.forEach((id) => id !== "st" && id !== "legacy" && ($<HTMLInputElement>(id).value = "")); $<HTMLInputElement>("legacy").checked = false; stBoxes.forEach((b) => (b.checked = false)); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = b.value === root.dataset.preset)); $<HTMLInputElement>("every").checked = false; apply(); });
     $("more").addEventListener("click", more);
     apply();
   });

@@ -147,6 +147,13 @@ sup { font-size: var(--fs-xs); line-height: 0; }
 .st-pick .n { color: var(--ink-3); font-size: var(--fs-xs); white-space: nowrap; }
 .st-pick label[hidden] { display: none; }
 .st-pick label.zero .w, .st-pick label.zero .n { color: var(--ink-3); }
+.filters .st-legacy { display: flex; align-items: center; gap: var(--s1); min-height: var(--hit); font-size: var(--fs-sm); color: var(--ink); }
+.filters .st-legacy > span { position: static; width: auto; height: auto; overflow: visible; clip: auto; }
+.filters .st-legacy .n { color: var(--ink-3); font-size: var(--fs-xs); }
+.filters .st-legacy.on .w { color: var(--signal); }
+.tag { display: inline-block; margin-left: var(--s1); padding: 0 var(--s1); border-radius: var(--r1); font-size: var(--fs-xs); font-weight: 400; line-height: 1.4; white-space: nowrap; }
+.tag-legacy { color: var(--unk); background: var(--unk-bg); box-shadow: inset 0 0 0 var(--rule-w) var(--rule); }
+.xv tr.legacy td:first-child a { color: var(--ink-2); }
 .st-pick .w { min-width: 0; }
 .ccnote { max-width: var(--measure); margin-bottom: var(--s2); }
 .gb-others { display: grid; gap: var(--s2); margin-top: var(--s4); }

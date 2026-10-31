@@ -7,7 +7,8 @@
 //   cells: one letter per read list — L listed, R restricted, T time-limited, O other, P end date passed,
 //          E expired, N refused, - not on the list;  marks: Home Assistant + evcc, W/L/C/B/-;
 //   phases: "1" | "2" | "3" | "";  kva: number | null;  mppt: number | null (0 = the sheet says none);
-//   doc: country codes the maker's own document releases the model for, comma-joined, or "".
+//   doc: country codes the maker's own document releases the model for, comma-joined, or "";
+//   legacy: "" current, or A / B / C (web/src/lib/legacy.ts) — hidden unless `legacy=1`, or unless there is a search text.
 
 // ---- one status per model × country. Best → worst; "every chosen country" takes the worst.
 export const ORDER = ["Y", "C", "F", "D", "K", "B", "?", "-", "X"];
@@ -52,7 +53,8 @@ export const loCat = (row) => best(row[5][0], row[5][1]);
 export const nCat = (row, readSel, data) => { const n = otherLists(row, readSel, data); return n >= 3 ? "3" : String(n); };
 
 // ---- the filters: one predicate per id, over the current values
-export const IDS = ["st", "ph", "kva", "mppt", "brand", "n", "lo", "ha", "ev", "q"];
+export const IDS = ["st", "ph", "kva", "mppt", "brand", "n", "lo", "ha", "ev", "legacy", "q"];
+export const legacyCat = (row) => (row[11] ? "1" : "0");
 export function predicates(data, ctx) {
   const { ccs, every, readSel } = ctx;
   return {
@@ -65,6 +67,8 @@ export function predicates(data, ctx) {
     lo: (r, v) => !v || loCat(r) === v,
     ha: (r, v) => !v || r[5][0] === v,
     ev: (r, v) => !v || r[5][1] === v,
+    // a search by code ignores the hiding: an owner always finds an old unit
+    legacy: (r, v) => !!v || !r[11] || !!ctx.q,
     q: (r, v) => !v || (data.brands[r[0]] + " " + r[1] + " " + r[6]).toLowerCase().includes(v),
   };
 }
@@ -78,7 +82,7 @@ export function select(data, cur, g, T, skip = "") {
 export function facet(id, base, data, ctx) {
   const m = new Map();
   const cat = id === "st" ? (r) => rowStatus(r, ctx.ccs, ctx.every, data) : id === "ph" ? phCat : id === "kva" ? kvaCat : id === "mppt" ? mpptCat
-    : id === "brand" ? (r) => data.brands[r[0]] : id === "n" ? (r) => nCat(r, ctx.readSel, data) : id === "lo" ? loCat : id === "ha" ? (r) => r[5][0] : (r) => r[5][1];
+    : id === "brand" ? (r) => data.brands[r[0]] : id === "n" ? (r) => nCat(r, ctx.readSel, data) : id === "lo" ? loCat : id === "ha" ? (r) => r[5][0] : id === "legacy" ? legacyCat : (r) => r[5][1];
   for (const r of base) { const k = cat(r); m.set(k, (m.get(k) ?? 0) + 1); }
   return m;
 }

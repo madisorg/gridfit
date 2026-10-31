@@ -1,0 +1,2034 @@
+{
+ "legacy--grid-at--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7416,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 366
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    171,
+    17,
+    ". Huawei SUN2000-30K"
+   ],
+   [
+    171,
+    17,
+    ". Huawei SUN2000-36K"
+   ],
+   [
+    171,
+    17,
+    ". Huawei SUN2000-40K"
+   ],
+   [
+    137,
+    17,
+    ". SolaX X3-AELIO-49."
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-50K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-60K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-61K"
+   ],
+   [
+    134,
+    17,
+    ". SolaX X3-MIC-10K-G"
+   ],
+   [
+    134,
+    17,
+    ". SolaX X3-MIC-12K-G"
+   ],
+   [
+    134,
+    17,
+    ". SolaX X3-MIC-15K-G"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-3K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-4K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-5K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-6K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-8K-G2"
+   ],
+   [
+    136,
+    17,
+    ". SolaX X3-TRENE-100"
+   ],
+   [
+    148,
+    17,
+    ". SolaX X3-TRENE-124"
+   ],
+   [
+    136,
+    17,
+    ". SolaX X3-TRENE-125"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-15K"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-20K"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-25K"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-30K"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 3.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 3.7-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 4.5-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 5.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 6.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 7.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 8.2-3"
+   ],
+   [
+    185,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ]
+  ],
+  "nhit": 63,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 369,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 12,
+   "2px": 151
+  },
+  "kontrast": {
+   "n": 369,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7416,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 366
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    171,
+    17,
+    ". Huawei SUN2000-30K"
+   ],
+   [
+    171,
+    17,
+    ". Huawei SUN2000-36K"
+   ],
+   [
+    171,
+    17,
+    ". Huawei SUN2000-40K"
+   ],
+   [
+    137,
+    17,
+    ". SolaX X3-AELIO-49."
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-50K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-60K"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-AELIO-61K"
+   ],
+   [
+    134,
+    17,
+    ". SolaX X3-MIC-10K-G"
+   ],
+   [
+    134,
+    17,
+    ". SolaX X3-MIC-12K-G"
+   ],
+   [
+    134,
+    17,
+    ". SolaX X3-MIC-15K-G"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-3K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-4K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-5K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-6K-G2"
+   ],
+   [
+    126,
+    17,
+    ". SolaX X3-MIC-8K-G2"
+   ],
+   [
+    136,
+    17,
+    ". SolaX X3-TRENE-100"
+   ],
+   [
+    148,
+    17,
+    ". SolaX X3-TRENE-124"
+   ],
+   [
+    136,
+    17,
+    ". SolaX X3-TRENE-125"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-15K"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-20K"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-25K"
+   ],
+   [
+    109,
+    17,
+    ". SolaX X3-ULT-30K"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 3.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 3.7-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 4.5-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 5.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 6.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 7.0-3"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 8.2-3"
+   ],
+   [
+    185,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ],
+   [
+    177,
+    17,
+    ". Fronius Symo GEN24"
+   ]
+  ],
+  "nhit": 63,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 369,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 12,
+   "2px": 151
+  },
+  "kontrast": {
+   "n": 369,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16057,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16057,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-legacy--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7416,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 365
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T15-G3"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T17-G3"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T20-G3"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T25-G3"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW50KS-MT"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW60KS-MT"
+   ],
+   [
+    92,
+    17,
+    ". APsystems DS3"
+   ],
+   [
+    107,
+    17,
+    ". APsystems DS3-H"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T23-G3"
+   ],
+   [
+    128,
+    17,
+    ". GoodWe GW100K-HT"
+   ],
+   [
+    128,
+    17,
+    ". GoodWe GW110K-HT"
+   ],
+   [
+    128,
+    17,
+    ". GoodWe GW120K-HT"
+   ],
+   [
+    121,
+    17,
+    ". GoodWe GW30K-MT"
+   ],
+   [
+    121,
+    17,
+    ". GoodWe GW36K-MT"
+   ],
+   [
+    121,
+    17,
+    ". GoodWe GW80K-MT"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-1000-"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-1600-"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-1800-"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-2000-"
+   ],
+   [
+    135,
+    17,
+    ". Hoymiles HMS-900-2"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-1600-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-1800-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-1800-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-2000-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-2250-"
+   ],
+   [
+    148,
+    17,
+    ". Huawei SUN2000-36K"
+   ],
+   [
+    151,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    138,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    138,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    138,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    116,
+    17,
+    ". Sofar SOFAR 80KTL"
+   ],
+   [
+    94,
+    17,
+    ". SolarEdge SE4K"
+   ],
+   [
+    160,
+    17,
+    ". Solis RHI-3P10K-HV"
+   ],
+   [
+    153,
+    17,
+    ". Solis RHI-3P5K-HVE"
+   ]
+  ],
+  "nhit": 63,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 368,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 12,
+   "2px": 151
+  },
+  "kontrast": {
+   "n": 368,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-legacy--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 7416,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 365
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T15-G3"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T17-G3"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T20-G3"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T25-G3"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW50KS-MT"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW60KS-MT"
+   ],
+   [
+    92,
+    17,
+    ". APsystems DS3"
+   ],
+   [
+    107,
+    17,
+    ". APsystems DS3-H"
+   ],
+   [
+    95,
+    17,
+    ". Fox ESS T23-G3"
+   ],
+   [
+    128,
+    17,
+    ". GoodWe GW100K-HT"
+   ],
+   [
+    128,
+    17,
+    ". GoodWe GW110K-HT"
+   ],
+   [
+    128,
+    17,
+    ". GoodWe GW120K-HT"
+   ],
+   [
+    121,
+    17,
+    ". GoodWe GW30K-MT"
+   ],
+   [
+    121,
+    17,
+    ". GoodWe GW36K-MT"
+   ],
+   [
+    121,
+    17,
+    ". GoodWe GW80K-MT"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-1000-"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-1600-"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-1800-"
+   ],
+   [
+    143,
+    17,
+    ". Hoymiles HMS-2000-"
+   ],
+   [
+    135,
+    17,
+    ". Hoymiles HMS-900-2"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-1600-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-1800-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-1800-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-2000-"
+   ],
+   [
+    141,
+    17,
+    ". Hoymiles HMT-2250-"
+   ],
+   [
+    148,
+    17,
+    ". Huawei SUN2000-36K"
+   ],
+   [
+    151,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    138,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    138,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    138,
+    17,
+    ". Sineng Electric SN"
+   ],
+   [
+    116,
+    17,
+    ". Sofar SOFAR 80KTL"
+   ],
+   [
+    94,
+    17,
+    ". SolarEdge SE4K"
+   ],
+   [
+    160,
+    17,
+    ". Solis RHI-3P10K-HV"
+   ],
+   [
+    153,
+    17,
+    ". Solis RHI-3P5K-HVE"
+   ]
+  ],
+  "nhit": 63,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 368,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 12,
+   "2px": 151
+  },
+  "kontrast": {
+   "n": 368,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-legacy--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16088,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-legacy--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16088,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 210,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-search-old--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 5072,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 124
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 3.0-3"
+   ],
+   [
+    199,
+    17,
+    ". Solarwatt / Froniu"
+   ],
+   [
+    196,
+    17,
+    ". Solarwatt / Froniu"
+   ],
+   [
+    129,
+    17,
+    ". Fronius Symo 3.0-3"
+   ]
+  ],
+  "nhit": 33,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 127,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 18,
+  "radius": {
+   "4px": 12,
+   "2px": 50
+  },
+  "kontrast": {
+   "n": 127,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-search-old--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 5072,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 124
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    131,
+    17,
+    ". Fronius Symo 3.0-3"
+   ],
+   [
+    199,
+    17,
+    ". Solarwatt / Froniu"
+   ],
+   [
+    196,
+    17,
+    ". Solarwatt / Froniu"
+   ],
+   [
+    129,
+    17,
+    ". Fronius Symo 3.0-3"
+   ]
+  ],
+  "nhit": 33,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 127,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 18,
+  "radius": {
+   "4px": 12,
+   "2px": 50
+  },
+  "kontrast": {
+   "n": 127,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-search-old--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 11724,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 18,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--grid-at-search-old--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 11724,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 18,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--brand-legacy--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 22820,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 181
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 181,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 344
+  },
+  "kontrast": {
+   "n": 181,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--brand-legacy--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 22820,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 181
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 181,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 344
+  },
+  "kontrast": {
+   "n": 181,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--brand-legacy--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 29729,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 77
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 77,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 184
+  },
+  "kontrast": {
+   "n": 77,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--brand-legacy--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 29729,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 77
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 77,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 184
+  },
+  "kontrast": {
+   "n": 77,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--mudel-legacy--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1766,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 4,
+   "GF Text": 111
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    143,
+    17,
+    ". AX Plus Hybrid Inv"
+   ],
+   [
+    144,
+    17,
+    ". Hybridpower AX2 GE"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 16,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 115,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 98
+  },
+  "kontrast": {
+   "n": 115,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--mudel-legacy--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 1766,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 4,
+   "GF Text": 111
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    143,
+    17,
+    ". AX Plus Hybrid Inv"
+   ],
+   [
+    144,
+    17,
+    ". Hybridpower AX2 GE"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ],
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 16,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 115,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 98
+  },
+  "kontrast": {
+   "n": 115,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--mudel-legacy--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 2860,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 39
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 39,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 48
+  },
+  "kontrast": {
+   "n": 39,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "legacy--mudel-legacy--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 2860,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Text": 39
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 7,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 39,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 0,
+  "radius": {
+   "2px": 48
+  },
+  "kontrast": {
+   "n": 39,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

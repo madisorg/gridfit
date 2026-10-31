@@ -329,6 +329,26 @@ device" and sits in green: a wallbox in Estonia is a load, nothing gates it, so 
 group shows all nine categories always, in this order, zero counts in lighter ink, so the reader sees the whole ladder
 and where the chosen country's models fall on it.
 
+## 8f. Legacy models (2026-11-01)
+
+Madis: old models nobody searches for any more are noise in the table — hide them by default, with a way to include them.
+The flag is evidence, never an age guess (`web/src/lib/legacy.ts`), in three tiers, each carrying its reason in words:
+
+| tier | means | reason on the model page |
+|---|---|---|
+| A, sure | every entry the model has is expired, past its end date or refused | "expired or refused on every list that carries it (AT: time-limited until 2023-03-31; BE: expired)" |
+| B, sure | the maker's own archive or end-of-life page names it (`data/legacy/<brand>.yaml`) | "Kostal lists it as discontinued — “…” (archive page, seen …)" |
+| C, probable | the oldest list date (SE reviewed, CZ added) is more than six years old, no list has changed the entry since, and the brand has a newer generation of the family on the lists (`data/legacy/generations.yaml`) | "the SE entry dates from … and no list has changed it since; Deye has a newer generation on the lists (SG04LP3 → SG05LP3; e.g. …)" |
+
+No date (AT, BE, EE, NL carry none; PL's are end dates) means current. On 2026-11-01 the lists' oldest dates are 2021, so
+tier C marks nothing yet and will start to as the data ages; tier B waits for the archive pages. The grid view hides
+legacy rows unless "Include legacy models (N)" is ticked (`legacy=1`); the count line says how many are hidden with a
+one-click "include"; **a search by model code ignores the hiding**, because the owner of a 2017 inverter and the
+second-hand buyer must always find it. Legacy rows carry a grey `legacy` tag (`legacy?` for tier C); the model page
+states the reason under the header; the brand page lists them in a section of their own at the end; the family page
+tags them in the model-codes table. The count test treats the toggle as a toggle: off leaves the current rows (or
+everything when there is a search text), on leaves them all.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components
@@ -549,3 +569,13 @@ The same fifteen routes as §24 × 3440/390 × light/dark on the §8e build: [`t
 One regression caught in the browser before the round, not by the numbers: the status labels start hidden in the HTML for
 the no-JavaScript case and the "always show all" change had dropped the line that un-hides them, so the group showed its
 heading alone. The count test is unchanged (796 checks, 0 failures): colour moved, the partition did not.
+
+## 26. Measured, 2026-11-01 — legacy models
+
+Five routes ([`routes-legacy.json`](docs/moodud/routes-legacy.json): `/grid/at/` with its "535 legacy models hidden — include"
+line, `/grid/at/?legacy=1&st=X`, `/grid/at/?q=symo+3.0` (an old code found despite the hiding), the SolaX brand page at its
+"Legacy models" section, a family page at its first tagged row) × 3440/390 × light/dark: [`legacy.json`](docs/moodud/legacy.json),
+20 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. The count
+test grew to 936 checks (two legacy states), 0 failures; it also asserts that no tier-A row still has a positive list entry.
+On this date: 535 legacy (all tier A: 495 refused on the Austrian list only, 40 expired on the Belgian list only), 0 tier B,
+0 tier C, 13 925 current.
