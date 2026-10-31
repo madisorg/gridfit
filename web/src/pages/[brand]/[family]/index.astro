@@ -67,7 +67,7 @@ const NO_MPPT = f.class === "battery";
     <p class="kind"><span>{CLASS[f.class]}</span><span aria-hidden="true">·</span>
       <span>{f.rows.length} integration route{f.rows.length === 1 ? "" : "s"}</span><span aria-hidden="true">·</span>
       <span>{models.length} model{models.length === 1 ? "" : "s"} on grid lists</span></p>
-    <Glance local={local} routes={localRoutes(f)} cells={cells} entries={entries} cls={f.class} seen={data.seen} listDate={latestList} releases={releases} />
+    <Glance local={local} routes={localRoutes(f)} cells={cells} entries={entries} cls={f.class} seen={data.seen} listDate={latestList} releases={releases} kva={fspec.kvaMax} />
     <p class="chips"><a href="#local">Local control</a><a href="#grid">Grid lists</a>{models.length > 0 && <a href="#codes">Model codes</a>}</p>
   </header>
 

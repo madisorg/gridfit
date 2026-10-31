@@ -110,7 +110,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   const best = (a: string, b: string) => "WLCB-".indexOf(a) <= "WLCB-".indexOf(b) ? a : b;
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   type Row = [number, string, string, string, string, string, string, string, number | null, number | null, string, string];
-  type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; limits: Record<string, { max_kw: number }>; how: string[]; brands: string[]; rows: Row[] };
+  type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; limits: Record<string, { max_kw: number }>; how: string[]; notListed: Record<string, string>; brands: string[]; rows: Row[] };
   let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "", qt = 0;
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
@@ -174,12 +174,15 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   // the hover of one cell: the country, the status in words, and why
   function tip(r: Row, cc: string, code: string): string {
     const i = data.read.indexOf(cc), name = data.names[cc] ?? cc;
-    if (i >= 0) return `${cc}: ${WORD[r[4][i]]}`;
-    const st = data.scope[cc]?.[r[2]] ?? "unknown", brand = data.brands[r[0]];
-    const noList = st === "rule" ? `${name} has no list: the grid operator checks the maker's certificate` : `${name}'s list is not read yet — check the model there`;
-    if (code === "D") return `${cc}: fit by the maker's document — ${brand} publishes a release table or a certificate naming ${name}'s standard for this model; the grid operator decides (the model page shows the document)`;
-    if (code === "K") { const on = positiveLists(r, data); return `${cc}: accepted on ${on.length} other EU list${on.length === 1 ? "" : "s"} (${on.join(", ")}) — nothing checked here; ${noList}`; }
-    if (code === "B") return `${cc}: over the type-A limit in ${name} (${data.limits[cc].max_kw} kW) — type B, a procedure of its own`;
+    if (i >= 0 && r[4][i] !== "-") return `${cc}: ${WORD[r[4][i]]}`;
+    const st = i >= 0 ? "list" : data.scope[cc]?.[r[2]] ?? "unknown", brand = data.brands[r[0]];
+    // the second level of a list country: not on the list, then what the country does with such a model (its profile's words)
+    const off = i >= 0 ? `not on the list — ` : "";
+    const then = i >= 0 ? (data.notListed[cc] ?? "the grid operator decides outside the list") : st === "rule" ? `${name} has no list: the grid operator checks the maker's certificate` : `${name}'s list is not read yet — check the model there`;
+    if (code === "D") return `${cc}: ${off}likely fit: ${brand} publishes a release table or a certificate naming ${name}'s standard for this model; ${then} (the model page shows the document)`;
+    if (code === "K") { const on = positiveLists(r, data, cc); return `${cc}: ${off}possibly fit: accepted on ${on.length} other EU list${on.length === 1 ? "" : "s"} (${on.join(", ")}) — nothing checked here; ${then}`; }
+    if (code === "B") return `${cc}: ${off}over the type-A limit in ${name} (${data.limits[cc].max_kw} kW) — type B, a procedure of its own`;
+    if (i >= 0) return `${cc}: not on the list, nothing known — its listings elsewhere are expired or refused; ${then}; the list may also spell the model differently, never “not approved”`;
     if (code === "F") return `${cc}: fit — nothing to approve: ${name} has no list and no rule for this kind of device`;
     if (code === "?") return `${cc}: not confirmed whether ${name} lists or otherwise gates this class`;
     if (code === "X") return `${cc}: not fit — ${name} does not allow this kind of device`;
@@ -212,7 +215,11 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
           lab.hidden = false;
           lab.classList.toggle("zero", !n);
           lab.querySelector(".n")!.textContent = `(${nf(n)})`;
-          if (b.value === "-") lab.querySelector(".w")!.textContent = scopes.has("list") && scopes.size === 1 ? "Unknown: not on the list" : scopes.has("list") ? "Unknown: not on the list, or nothing known" : "Unknown: nothing known";
+          // a list country's second level says so in the label
+          const onlyList = scopes.has("list") && scopes.size === 1, mixed = scopes.has("list") && scopes.size > 1;
+          const base: Record<string, string> = onlyList || mixed ? { D: "likely fit: the maker's document names the country", K: "possibly fit: accepted on other EU lists", B: "other procedure: over the type-A limit", "-": "nothing known" }
+            : { D: "Likely fit: the maker's document names the country", K: "Possibly fit: accepted on other EU lists", B: "Other procedure: over the type-A limit", "-": "Unknown: nothing known" };
+          if (b.value in base) lab.querySelector(".w")!.textContent = (onlyList ? "Not on the list — " : mixed ? "Not on the list / " : "") + (b.value === "-" && onlyList ? "nothing known" : b.value === "-" && mixed ? "nothing known" : base[b.value]);
         });
         continue;
       }
@@ -228,15 +235,16 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     if (st) line += ` by status in ${ccs.join(every ? " and " : " or ")}`;
     else if (cs.length === 1) {
       const c = cs[0], by = (k: string) => hits.filter((r) => cellCode(r, c, data) === k).length;
-      line += data.read.includes(c) ? ` · ${nf(by("Y") + by("C"))} on the list in ${c}` : ` · in ${c}: ${nf(by("D"))} by the maker's document, ${nf(by("K"))} accepted on other EU lists`;
+      line += data.read.includes(c) ? ` · in ${c}: ${nf(by("Y") + by("C"))} on the list; off the list ${nf(by("D"))} likely, ${nf(by("K"))} possibly fit` : ` · in ${c}: ${nf(by("D"))} by the maker's document, ${nf(by("K"))} accepted on other EU lists`;
     }
     const hiddenLegacy = cur.legacy || cur0 ? 0 : select(data, { ...cur, legacy: "1" }, g, T).length - hits.length;
     if (hiddenLegacy) line += ` · ${nf(hiddenLegacy)} legacy ${hiddenLegacy === 1 ? "model" : "models"} hidden — <a href="#" id="showlegacy">include</a>`;
     $("xcount").innerHTML = line;
     $("xcount").querySelector("#showlegacy")?.addEventListener("click", (e) => { e.preventDefault(); $<HTMLInputElement>("legacy").checked = true; apply(); });
     // a chosen country without a list gets one sentence on how its cells are decided
-    const notes = cs.filter((c) => !data.read.includes(c)).slice(0, 2).map((c) => {
-      const name = data.names[c] ?? c, s = data.scope[c]?.[rcls], how = data.how.includes(c) ? ` <a href="/grid/${c.toLowerCase()}/#how">How it works in ${name}</a>.` : "";
+    const notes = cs.slice(0, 2).map((c) => {
+      const name = data.names[c] ?? c, s = data.read.includes(c) ? "read" : data.scope[c]?.[rcls], how = data.how.includes(c) ? ` <a href="/grid/${c.toLowerCase()}/#how">How it works in ${name}</a>.` : "";
+      if (s === "read") return `<b>${name}</b>: green is the list's own answer. A model <b>off the list</b> gets a second level in amber — <span class="cl cl-doc" aria-hidden="true">✓</span> likely, the maker's document names ${name}; <span class="cl cl-else" aria-hidden="true">○</span> possibly, accepted on other EU lists — because ${data.notListed[c] ?? "the grid operator decides outside the list"}.${how}`;
       if (s === "rule") return `<b>${name}</b> has no public list: the grid operator checks the maker's certificate. Amber is the operator's call: <span class="cl cl-doc" aria-hidden="true">✓</span> likely — the maker's own document names ${name}; <span class="cl cl-else" aria-hidden="true">○</span> possibly — accepted on other EU lists, nothing checked here; <span class="cl cl-type" aria-hidden="true">B</span> over the type-A limit, another procedure.${how}`;
       if (s === "list") return `<b>${name}</b> publishes a list GridFit has not read yet — check the model there. Meanwhile amber: <span class="cl cl-doc" aria-hidden="true">✓</span> likely — the maker's document names ${name}, <span class="cl cl-else" aria-hidden="true">○</span> possibly — accepted on other EU lists.${how}`;
       if (s === "free") return `<b>${name}</b> has no list and no rule for ${g === "ev" ? "wallboxes" : "this kind of device"}: nothing to approve, so every model is fit.${how}`;

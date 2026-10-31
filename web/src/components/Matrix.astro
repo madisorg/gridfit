@@ -2,14 +2,15 @@
 // The register matrix: one Cell per parsed list, always in the same order (AT BE CZ EE NL PL SE).
 import Cell from "./Cell.astro";
 import { COUNTRIES, type Entry } from "../lib/registers";
-import { answerOf, type GridState } from "../lib/devices";
-const { cells, entries = {}, cls, rich = false } = Astro.props as
-  { cells: Record<string, GridState | string>; entries?: Record<string, Entry[]>; cls?: string; rich?: boolean };
+import { answerOf, type GridState, type Tier } from "../lib/devices";
+import type { Release } from "../lib/evidence";
+const { cells, entries = {}, cls, rich = false, subs = {} } = Astro.props as
+  { cells: Record<string, GridState | string>; entries?: Record<string, Entry[]>; cls?: string; rich?: boolean; subs?: Record<string, { tier: Tier; release: Release | null; positive: string[] }> };
 const yes = COUNTRIES.filter((k) => !["none", "no", "free"].includes(answerOf(cells[k] as GridState)));
 const no = COUNTRIES.filter((k) => answerOf(cells[k] as GridState) === "no");
 const label = [yes.length && `fit in ${yes.join(", ")}`, no.length && `not fit in ${no.join(", ")}`,
   COUNTRIES.length - yes.length - no.length > 0 && `nothing known for the rest`].filter(Boolean).join("; ") || "nothing known";
 ---
 <span class="mx" role="group" aria-label={label}>
-  {COUNTRIES.map((k) => <Cell cc={k} state={cells[k] ?? ""} entries={entries[k] ?? []} cls={cls} rich={rich} />)}
+  {COUNTRIES.map((k) => <Cell cc={k} state={cells[k] ?? ""} entries={entries[k] ?? []} cls={cls} rich={rich} sub={subs[k]} />)}
 </span>

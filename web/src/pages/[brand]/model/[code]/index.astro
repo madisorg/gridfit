@@ -46,7 +46,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
     <p class="kind"><span>{RC[d.cls]}</span><span aria-hidden="true">·</span><span>in {listed.length} of {COUNTRIES.length} lists</span>
       {legacy.tier && <><span aria-hidden="true">·</span><span class="tag tag-legacy">{legacy.tier === "C" ? "legacy?" : "legacy"}</span></>}
       <span aria-hidden="true">·</span><span>no product family claims this code yet</span>{!sheet && (d.cls === "battery") && <><span aria-hidden="true">·</span><span>no MPPT: a battery / AC inverter</span></>}</p>
-    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} releases={release ? [release] : []} />
+    <Glance local={local} routes={routes.map((f) => f.name)} cells={cells} entries={d.cells} cls={d.cls} seen={SNAP_DATE} releases={release ? [release] : []} kva={spec.kva} />
     <p class="chips"><a href="#grid">Grid lists</a><a href="#local">Local control</a><a href={`/${bslug}/#grid`}>All {d.brand} models</a></p>
     {legacy.tier && <p class="note"><b>{TIER_WORD[legacy.tier].charAt(0).toUpperCase() + TIER_WORD[legacy.tier].slice(1)}.</b> {legacy.reason}{legacy.source && <> — <Ext href={legacy.source.url}>{legacy.source.title}</Ext></>}. Hidden from the grid view unless “legacy models” are included; a search by model code always finds it.</p>}
   </header>

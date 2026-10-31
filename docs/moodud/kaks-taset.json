@@ -1,0 +1,2082 @@
+{
+ "kaks-taset--grid-ee--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8138,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 345
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH10"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH12"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH15"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH5K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH6K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH8K"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-10K-SG04L"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-14K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-15K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-16K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-18K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-20K-SG05L"
+   ],
+   [
+    217,
+    17,
+    ". Deye SUN-29.9K-SG0"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-30K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-35K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-40K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-50K-SG01H"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-6K-SG04LP"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-8K-SG04LP"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    160,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ]
+  ],
+  "nhit": 59,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 348,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 11,
+   "2px": 141
+  },
+  "kontrast": {
+   "n": 348,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8138,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 345
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-2"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW15K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW20K-ET"
+   ],
+   [
+    119,
+    17,
+    ". GoodWe GW25K-ET"
+   ],
+   [
+    130,
+    17,
+    ". GoodWe GW29.9K-ET"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH10"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH12"
+   ],
+   [
+    138,
+    17,
+    ". BYD Power-Box TH15"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH5K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH6K"
+   ],
+   [
+    130,
+    17,
+    ". BYD Power-Box TH8K"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-10K-SG04L"
+   ],
+   [
+    170,
+    17,
+    ". Deye SUN-12K-SG04L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-14K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-15K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-16K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-18K-SG05L"
+   ],
+   [
+    202,
+    17,
+    ". Deye SUN-20K-SG05L"
+   ],
+   [
+    217,
+    17,
+    ". Deye SUN-29.9K-SG0"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-30K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-35K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-40K-SG01H"
+   ],
+   [
+    205,
+    17,
+    ". Deye SUN-50K-SG01H"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-6K-SG04LP"
+   ],
+   [
+    163,
+    17,
+    ". Deye SUN-8K-SG04LP"
+   ],
+   [
+    162,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    160,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ],
+   [
+    169,
+    17,
+    ". EcoFlow EF HD-P3-1"
+   ]
+  ],
+  "nhit": 59,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 348,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 11,
+   "2px": 141
+  },
+  "kontrast": {
+   "n": 348,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16300,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16300,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-likely--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 6088,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 344
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    87,
+    17,
+    ". Sungrow SH5T"
+   ],
+   [
+    87,
+    17,
+    ". Sungrow SH6T"
+   ],
+   [
+    87,
+    17,
+    ". Sungrow SH8T"
+   ],
+   [
+    175,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    103,
+    17,
+    ". Sungrow SH10RT"
+   ],
+   [
+    123,
+    17,
+    ". Sungrow SH10RT-20"
+   ],
+   [
+    179,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    179,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    179,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    171,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    183,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    175,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    186,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    172,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    172,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    172,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG10RT-P2"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG12RT-P2"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG15RT-P2"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG17RT-P2"
+   ],
+   [
+    121,
+    17,
+    ". Sungrow SG2.0RS-S"
+   ],
+   [
+    121,
+    17,
+    ". Sungrow SG2.5RS-S"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG20RT-P2"
+   ],
+   [
+    121,
+    17,
+    ". Sungrow SG3.0RS-S"
+   ],
+   [
+    107,
+    17,
+    ". Sungrow SG5.0RS"
+   ],
+   [
+    107,
+    17,
+    ". Sungrow SG6.0RS"
+   ]
+  ],
+  "nhit": 59,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 347,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 100,
+  "radius": {
+   "4px": 11,
+   "2px": 141
+  },
+  "kontrast": {
+   "n": 347,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-likely--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 6088,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 344
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    87,
+    17,
+    ". Sungrow SH5T"
+   ],
+   [
+    87,
+    17,
+    ". Sungrow SH6T"
+   ],
+   [
+    87,
+    17,
+    ". Sungrow SH8T"
+   ],
+   [
+    175,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    103,
+    17,
+    ". Sungrow SH10RT"
+   ],
+   [
+    123,
+    17,
+    ". Sungrow SH10RT-20"
+   ],
+   [
+    179,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    179,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    179,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    171,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    183,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    175,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    186,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    190,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    172,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    172,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    172,
+    17,
+    ". Kostal PLENTICORE "
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG10RT-P2"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG12RT-P2"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG15RT-P2"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG17RT-P2"
+   ],
+   [
+    121,
+    17,
+    ". Sungrow SG2.0RS-S"
+   ],
+   [
+    121,
+    17,
+    ". Sungrow SG2.5RS-S"
+   ],
+   [
+    124,
+    17,
+    ". Sungrow SG20RT-P2"
+   ],
+   [
+    121,
+    17,
+    ". Sungrow SG3.0RS-S"
+   ],
+   [
+    107,
+    17,
+    ". Sungrow SG5.0RS"
+   ],
+   [
+    107,
+    17,
+    ". Sungrow SG6.0RS"
+   ]
+  ],
+  "nhit": 59,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 347,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 100,
+  "radius": {
+   "4px": 11,
+   "2px": 141
+  },
+  "kontrast": {
+   "n": 347,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-likely--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 13611,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 100,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-likely--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 13611,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 100,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-possibly-fox--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8138,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 344
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    196,
+    17,
+    ". Fox ESS GM215kWh-1"
+   ],
+   [
+    119,
+    17,
+    ". Fox ESS AC3-10.0-E"
+   ],
+   [
+    119,
+    17,
+    ". Fox ESS AC3-12.0-E"
+   ],
+   [
+    112,
+    17,
+    ". Fox ESS AC3-5.0-E"
+   ],
+   [
+    112,
+    17,
+    ". Fox ESS AC3-6.0-E"
+   ],
+   [
+    112,
+    17,
+    ". Fox ESS AC3-8.0-E"
+   ],
+   [
+    128,
+    17,
+    ". Fox ESS AIO-H3-10."
+   ],
+   [
+    120,
+    17,
+    ". Fox ESS AIO-H3-5.0"
+   ],
+   [
+    120,
+    17,
+    ". Fox ESS AIO-H3-6.0"
+   ],
+   [
+    120,
+    17,
+    ". Fox ESS AIO-H3-8.0"
+   ],
+   [
+    126,
+    17,
+    ". Fox ESS P3-100-Plu"
+   ],
+   [
+    126,
+    17,
+    ". Fox ESS P3-125-Plu"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-50-Plus"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-60-Plus"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-75-Plus"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-80-Plus"
+   ],
+   [
+    134,
+    17,
+    ". Fox ESS AC1-3.0-E-"
+   ],
+   [
+    134,
+    17,
+    ". Fox ESS AC1-3.7-E-"
+   ],
+   [
+    148,
+    17,
+    ". Fox ESS AC3-10.0-S"
+   ],
+   [
+    148,
+    17,
+    ". Fox ESS AC3-12.0-S"
+   ],
+   [
+    148,
+    17,
+    ". Fox ESS AC3-15.0-S"
+   ],
+   [
+    140,
+    17,
+    ". Fox ESS AC3-5.0-Sm"
+   ],
+   [
+    140,
+    17,
+    ". Fox ESS AC3-6.0-Sm"
+   ],
+   [
+    140,
+    17,
+    ". Fox ESS AC3-8.0-Sm"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H1-3.0-E-G"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H1-3.7-E-G"
+   ],
+   [
+    141,
+    17,
+    ". Fox ESS H3-10.0-Sm"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H3-100-Plu"
+   ],
+   [
+    141,
+    17,
+    ". Fox ESS H3-12.0-Sm"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H3-125-Plu"
+   ],
+   [
+    141,
+    17,
+    ". Fox ESS H3-15.0-Sm"
+   ]
+  ],
+  "nhit": 59,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 347,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 11,
+   "2px": 141
+  },
+  "kontrast": {
+   "n": 347,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-possibly-fox--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8138,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 344
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    196,
+    17,
+    ". Fox ESS GM215kWh-1"
+   ],
+   [
+    119,
+    17,
+    ". Fox ESS AC3-10.0-E"
+   ],
+   [
+    119,
+    17,
+    ". Fox ESS AC3-12.0-E"
+   ],
+   [
+    112,
+    17,
+    ". Fox ESS AC3-5.0-E"
+   ],
+   [
+    112,
+    17,
+    ". Fox ESS AC3-6.0-E"
+   ],
+   [
+    112,
+    17,
+    ". Fox ESS AC3-8.0-E"
+   ],
+   [
+    128,
+    17,
+    ". Fox ESS AIO-H3-10."
+   ],
+   [
+    120,
+    17,
+    ". Fox ESS AIO-H3-5.0"
+   ],
+   [
+    120,
+    17,
+    ". Fox ESS AIO-H3-6.0"
+   ],
+   [
+    120,
+    17,
+    ". Fox ESS AIO-H3-8.0"
+   ],
+   [
+    126,
+    17,
+    ". Fox ESS P3-100-Plu"
+   ],
+   [
+    126,
+    17,
+    ". Fox ESS P3-125-Plu"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-50-Plus"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-60-Plus"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-75-Plus"
+   ],
+   [
+    118,
+    17,
+    ". Fox ESS P3-80-Plus"
+   ],
+   [
+    134,
+    17,
+    ". Fox ESS AC1-3.0-E-"
+   ],
+   [
+    134,
+    17,
+    ". Fox ESS AC1-3.7-E-"
+   ],
+   [
+    148,
+    17,
+    ". Fox ESS AC3-10.0-S"
+   ],
+   [
+    148,
+    17,
+    ". Fox ESS AC3-12.0-S"
+   ],
+   [
+    148,
+    17,
+    ". Fox ESS AC3-15.0-S"
+   ],
+   [
+    140,
+    17,
+    ". Fox ESS AC3-5.0-Sm"
+   ],
+   [
+    140,
+    17,
+    ". Fox ESS AC3-6.0-Sm"
+   ],
+   [
+    140,
+    17,
+    ". Fox ESS AC3-8.0-Sm"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H1-3.0-E-G"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H1-3.7-E-G"
+   ],
+   [
+    141,
+    17,
+    ". Fox ESS H3-10.0-Sm"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H3-100-Plu"
+   ],
+   [
+    141,
+    17,
+    ". Fox ESS H3-12.0-Sm"
+   ],
+   [
+    127,
+    17,
+    ". Fox ESS H3-125-Plu"
+   ],
+   [
+    141,
+    17,
+    ". Fox ESS H3-15.0-Sm"
+   ]
+  ],
+  "nhit": 59,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 347,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 11,
+   "2px": 141
+  },
+  "kontrast": {
+   "n": 347,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-possibly-fox--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16310,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--grid-ee-possibly-fox--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 16310,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 33
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 18,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 36,
+  "fs12ex": [],
+  "inputs": [
+   14,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333
+  ],
+  "canvas": 0,
+  "svg": 218,
+  "radius": {
+   "4px": 6,
+   "2px": 13
+  },
+  "kontrast": {
+   "n": 36,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-grid--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 5504,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 10,
+   "GF Text": 98
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 44,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 108,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 10
+  },
+  "kontrast": {
+   "n": 108,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-grid--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 5504,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 10,
+   "GF Text": 98
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 44,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 108,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 10
+  },
+  "kontrast": {
+   "n": 108,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-grid--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 9691,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 8,
+   "GF Text": 44
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 6,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 52,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 6
+  },
+  "kontrast": {
+   "n": 52,
+   "min": 6.13,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-grid--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 9691,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 8,
+   "GF Text": 44
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 6,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 52,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 6
+  },
+  "kontrast": {
+   "n": 52,
+   "min": 7.96,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-ee-row--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 5504,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 100
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 48,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 106,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 21
+  },
+  "kontrast": {
+   "n": 106,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-ee-row--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 5504,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 6,
+   "GF Text": 100
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    15,
+    32,
+    ". AT"
+   ],
+   [
+    16,
+    32,
+    ". BE"
+   ],
+   [
+    16,
+    32,
+    ". CZ"
+   ],
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    16,
+    32,
+    ". NL"
+   ],
+   [
+    15,
+    32,
+    ". PL"
+   ],
+   [
+    16,
+    32,
+    ". SE"
+   ]
+  ],
+  "nhit": 48,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 106,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 21
+  },
+  "kontrast": {
+   "n": 106,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-ee-row--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 9895,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 5,
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 29,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 60,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 5
+  },
+  "kontrast": {
+   "n": 60,
+   "min": 6.98,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "kaks-taset--pere-sungrow-ee-row--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 9895,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 5,
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 29,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 60,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 12,
+  "radius": {
+   "2px": 5
+  },
+  "kontrast": {
+   "n": 60,
+   "min": 8.31,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

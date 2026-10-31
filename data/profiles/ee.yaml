@@ -3,6 +3,8 @@
 # with the source of each; the grid operator decides. Written 2026-10-31 from Elektrilevi's own documents.
 cc: EE
 country: Estonia
+type_a_max_kw: 500   # RfG thresholds as Elering applies them: type A below 0.5 MW; above it type B, a procedure of its own
+not_listed_short: "Elektrilevi takes a model that is not on the list with extra documents (an EN 50549-1 / EN 50438 conformity certificate and a type-test protocol with the application)"
 decided_by: "Elektrilevi OÜ (the distribution grid operator for most of Estonia); Imatra Elekter and VKG Elektrivõrgud publish no list"
 list:
   name: "Inverterite nimekiri (Elektrilevi)"

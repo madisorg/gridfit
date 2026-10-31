@@ -8,7 +8,7 @@ import type { APIRoute } from "astro";
 import { devices, COUNTRIES, best } from "../../lib/registers";
 import { BRANDS, brandSlugOf, modelUrl, familyOf, marksOfModel, specOf } from "../../lib/devices";
 import { COUNTRIES_ALL } from "../../lib/countries";
-import { LIMITS, PROFILES } from "../../lib/profiles";
+import { LIMITS, PROFILES, NOT_LISTED } from "../../lib/profiles";
 import { releaseOf } from "../../lib/evidence";
 import { legacyOf } from "../../lib/legacy";
 
@@ -26,6 +26,6 @@ export const GET: APIRoute = () => {
   });
   const scope = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c.classes]));
   const names = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c.country]));
-  return new Response(JSON.stringify({ read: COUNTRIES, names, scope, limits: LIMITS, how: Object.keys(PROFILES), brands: BRANDS.map((b) => b.name), rows }),
+  return new Response(JSON.stringify({ read: COUNTRIES, names, scope, limits: LIMITS, how: Object.keys(PROFILES), notListed: NOT_LISTED, brands: BRANDS.map((b) => b.name), rows }),
     { headers: { "Content-Type": "application/json" } });
 };

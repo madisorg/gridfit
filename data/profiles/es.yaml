@@ -5,6 +5,7 @@
 cc: ES
 country: Spain
 type_a_max_kw: 100   # RD 647/2020 article 8.1: type A up to 100 kW; above it type B, a procedure of its own
+not_listed_short: "the grid operator checks the maker's equipment certificate at the operational notification"
 decided_by: "The distribution grid operator of the area (i-DE / Iberdrola, e-distribución / Endesa, UFD / Naturgy, E-Redes, Viesgo and some 300 small ones) at the operational notification; the regional authority (comunidad autónoma) registers the installation. Red Eléctrica (REE) writes the technical supervision standard (NTS) that says how conformity is proven."
 basis:
   - "Commission Regulation (EU) 2016/631 (RfG), article 13 — type A requirements; article 30 — the installation document"

@@ -4,7 +4,7 @@
 import { data, summary, familyUrl, slug, type Family } from "./data";
 import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
 import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
-import { LIMITS } from "./profiles";
+import { LIMITS, NOT_LISTED } from "./profiles";
 import { releaseOf, type Release } from "./evidence";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
@@ -185,7 +185,7 @@ export const answerOf = (st: GridState | undefined): Answer =>
   st === "listed" ? "yes" : st === "restricted" ? "cond" : st === "free" ? "free" : st === "expired" || st === "refused" || st === "banned" ? "no" : "none";
 export const RULE_WORD: Record<string, string> = { list: "list", rule: "certificate", free: "—", banned: "not allowed", unknown: "?" };
 export type Tip = { title: string; lines: string[]; href?: string; hrefText?: string };
-export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string): Tip {
+export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string, sub?: { tier: Tier; release: Release | null; positive: string[] }): Tip {
   const c = COUNTRY_BY[cc];
   const country = c?.country ?? cc;
   const there = { href: `/grid/${cc.toLowerCase()}/`, hrefText: "what applies there" };
@@ -207,8 +207,12 @@ export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string): 
   const st: ClassState | "" = key && c ? c.classes[key] : "";
   if (state === "" || st === "list") {
     const r = REGS[cc];
-    return { title: "nothing known: not found on the list", lines: [`${r ? r.name : country}${META[cc]?.source_date ? `, dated ${META[cc].source_date}` : ""}`,
-      "the list may spell the model differently \u2014 never \u201cnot approved\u201d"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
+    const then = NOT_LISTED[cc] ?? "the grid operator decides outside the list";
+    const lines = [`${r ? r.name : country}${META[cc]?.source_date ? `, dated ${META[cc].source_date}` : ""}`];
+    if (sub?.tier === "D") return { title: "not on the list \u2014 likely fit: the maker's document names " + country, lines: [...lines, `${sub.release?.brand ?? "the maker"}: \u201c${sub.release?.doc.title}\u201d (${sub.release?.doc.seen})`, then], href: r?.url ?? c?.list_url, hrefText: "open the list" };
+    if (sub?.tier === "K") return { title: `not on the list \u2014 possibly fit: accepted on ${sub.positive.length} other EU list${sub.positive.length === 1 ? "" : "s"}`, lines: [...lines, `on the lists of ${sub.positive.join(", ")}; nothing checked here`, then], href: r?.url ?? c?.list_url, hrefText: "open the list" };
+    if (sub?.tier === "B") return { title: `not on the list \u2014 over the type-A limit (${LIMITS[cc]?.max_kw} kW): type B`, lines: [...lines, "a procedure of its own"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
+    return { title: "not on the list \u2014 nothing known", lines: [...lines, then, "the list may spell the model differently \u2014 never \u201cnot approved\u201d"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
   }
   if (state === "rule") return { title: "nothing known: a certificate is required, no document found", lines: [`${country} has no list for this class; the grid operator checks the maker's certificate with the application`], ...there };
   if (state === "free") return { title: "fit: nothing to approve", lines: [`${country} lists no ${cls === "wallbox" ? "chargers" : cls === "meter" ? "meters or energy managers" : "devices of this class"}; nothing to check against a list`], ...there };
@@ -268,6 +272,16 @@ export function tierOf(cc: string, state: ClassState, positive: string[], releas
   return { tier: positive.length ? "K" : "-", release: null };
 }
 export const positiveOf = (cells: Record<string, GridState>) => COUNTRIES.filter((c) => cells[c] === "listed" || cells[c] === "restricted");
+// the second level of a read list: what a model off that list gets, by the same ladder (other lists except this one)
+export function subTiers(cells: Record<string, GridState>, releases: Release[], kva: number | null): Record<string, { tier: Tier; release: Release | null; positive: string[] }> {
+  const out: Record<string, { tier: Tier; release: Release | null; positive: string[] }> = {};
+  for (const cc of COUNTRIES) {
+    if (cells[cc] !== "") continue;
+    const positive = positiveOf(cells).filter((c) => c !== cc);
+    out[cc] = { ...tierOf(cc, "list", positive, releases, kva), positive };
+  }
+  return out;
+}
 export function othersTiered(cls: string, cells: Record<string, GridState>, releases: Release[], kva: number | null): Other[] {
   const positive = positiveOf(cells);
   return othersOf(cls).map((o) => ({ ...o, ...tierOf(o.cc, o.state, positive, releases, kva) }));

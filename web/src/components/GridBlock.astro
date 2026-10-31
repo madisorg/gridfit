@@ -5,7 +5,8 @@
 import Ext from "./Ext.astro";
 import Cell from "./Cell.astro";
 import { COUNTRIES, REGS, META, RS, best, type Entry } from "../lib/registers";
-import { othersTiered, positiveOf, GRID_WORD, TIER_WORD, type GridState, type Tier } from "../lib/devices";
+import { othersTiered, positiveOf, subTiers, GRID_WORD, TIER_WORD, type GridState, type Tier } from "../lib/devices";
+import { NOT_LISTED } from "../lib/profiles";
 import { COUNTRY_BY, CONF_WORD } from "../lib/countries";
 import { CLASS } from "../lib/data";
 import type { Release } from "../lib/evidence";
@@ -13,6 +14,7 @@ import { LIMITS } from "../lib/profiles";
 const { cells, entries, cls, releases = [], kva = null, brand = "" } = Astro.props as
   { cells: Record<string, GridState>; entries: Record<string, Entry[]>; cls: string; releases?: Release[]; kva?: number | null; brand?: string };
 const others = othersTiered(cls, cells, releases, kva);
+const subs = subTiers(cells, releases, kva);
 const positive = positiveOf(cells);
 const ORDER: Tier[] = ["F", "D", "K", "B", "?", "-", "X"];
 const groups = ORDER.map((t) => [t, others.filter((o) => o.tier === t)] as const).filter(([, l]) => l.length);
@@ -48,11 +50,11 @@ const why: Record<Tier, string> = {
               {e.valid && <>, until {e.valid}</>}{e.fw && e.reg !== "BE" && <> · {r.fw_label} <code>{e.fw.slice(0, 60)}</code></>}
               {es.length > 1 && <span class="muted"> · {es.length} rows</span>}</>
           ) : (
-            <>{cap(GRID_WORD[st])}{rel && st === "" && <span class="muted"> · the maker's document releases it for {cc}, but the list is the gate</span>}</>
+            <>{st === "" && subs[cc] ? <>Not on the list — {subs[cc].tier === "D" ? <>likely fit: the maker's document names {COUNTRY_BY[cc]?.country ?? cc}</> : subs[cc].tier === "K" ? <>possibly fit: accepted on {subs[cc].positive.length} other EU list{subs[cc].positive.length === 1 ? "" : "s"} ({subs[cc].positive.join(", ")})</> : subs[cc].tier === "B" ? <>over the type-A limit: type B, a procedure of its own</> : <>nothing known</>}<span class="muted"> · {NOT_LISTED[cc] ?? "the grid operator decides outside the list"}</span></> : cap(GRID_WORD[st])}</>
           )}
           <span class="small muted"> · <Ext href={r.url}>{r.short}</Ext>{m?.source_date ? ` dated ${m.source_date}` : " (undated)"}{m?.seen ? `, read ${m.seen}` : ""}</span>
         </span>
-        <Cell cc={cc} state={st} entries={es} cls={cls} rich={true} />
+        <Cell cc={cc} state={st} entries={es} cls={cls} rich={true} sub={subs[cc]} />
       </li>
     );
   })}

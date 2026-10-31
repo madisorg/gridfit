@@ -349,6 +349,23 @@ states the reason under the header; the brand page lists them in a section of th
 tags them in the model-codes table. The count test treats the toggle as a toggle: off leaves the current rows (or
 everything when there is a search text), on leaves them all.
 
+## 8g. A list country's second level (2026-11-01)
+
+Madis: Estonia showed 11 678 models as "not on the list", although every one of them is on some other list and
+Elektrilevi takes a model that is not on its list with extra documents. So a cell in a country whose list we read now has
+two levels. The first is the list's own word — green on the list, green outlined with a condition, red refused or
+expired. A model **off the list** gets the second level by the same amber ladder as a country without a list
+(`grid-filter.js ladder()`, `devices.ts subTiers()`): likely fit when the maker's document names the country, over the
+type-A limit when the profile's ceiling says so (Estonia 500 kW), possibly fit when it is accepted on other EU lists
+(this one excluded), else nothing known. The words of what the country does with such a model come from the profile's
+`not_listed_short` ("Elektrilevi takes a model that is not on the list with extra documents …"; Spain: the maker's
+certificate at the operational notification) and sit in the hover, in the note under the count line and on the device
+page's list row ("Not on the list — likely fit: the maker's document names Estonia · Elektrilevi takes …"). The status
+group's labels say "Not on the list — likely fit …" when every chosen country has a list, so the ladder reads as the
+second level it is. Estonia on 2026-11-01: 2 214 on the list; off the list 41 likely, 9 850 possibly, 1 252 over the
+type-A limit, 535 nothing known (all of them legacy, hidden by default). "Type A fits" was asked for and not added: under
+the ceiling is the normal case, so it would mark everything and say nothing.
+
 ## 9. Adding a page
 
 A new page is an `.astro` file under `web/src/pages/` wrapped in `Base.astro`, built from the components
@@ -579,3 +596,10 @@ line, `/grid/at/?legacy=1&st=X`, `/grid/at/?q=symo+3.0` (an old code found despi
 test grew to 936 checks (two legacy states), 0 failures; it also asserts that no tier-A row still has a positive list entry.
 On this date: 535 legacy (all tier A: 495 refused on the Austrian list only, 40 expired on the Belgian list only), 0 tier B,
 0 tier C, 13 925 current.
+
+## 27. Measured, 2026-11-01 — the second level
+
+Five routes ([`routes-kaks-taset.json`](docs/moodud/routes-kaks-taset.json): `/grid/ee/`, `/grid/ee/?st=D`, `/grid/ee/?st=K&brand=Fox ESS`,
+the Sungrow SH family page at its grid block and at its Estonia row) × 3440/390 × light/dark: [`kaks-taset.json`](docs/moodud/kaks-taset.json),
+20 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. The count
+test is unchanged at 936 checks, 0 failures — the second level only moved rows between categories of the same partition.

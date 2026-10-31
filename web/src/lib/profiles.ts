@@ -5,7 +5,7 @@ import { parse } from "yaml";
 import { DATA } from "./data";
 
 export type Profile = {
-  cc: string; country: string; decided_by: string; type_a_max_kw?: number;
+  cc: string; country: string; decided_by: string; type_a_max_kw?: number; not_listed_short?: string;
   list?: { name: string; url: string; meaning: string; gate: string };
   basis: string[];
   must_meet: { rule: string; value: string }[];
@@ -24,4 +24,6 @@ try {
   }
 } catch { /* no profiles yet */ }
 // the type-A ceiling per country where a profile states one: above it the model is type B, another procedure
+// what the country does with a model that is not on its list, in one sentence, for the cell's hover
+export const NOT_LISTED: Record<string, string> = Object.fromEntries(Object.values(PROFILES).filter((p) => p.not_listed_short).map((p) => [p.cc, p.not_listed_short!]));
 export const LIMITS: Record<string, { max_kw: number }> = Object.fromEntries(Object.values(PROFILES).filter((p) => p.type_a_max_kw).map((p) => [p.cc, { max_kw: p.type_a_max_kw! }]));

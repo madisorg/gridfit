@@ -18,16 +18,20 @@ export const KIND_OF = { inverter: "inv", hybrid: "inv", battery: "inv", "plug-i
 
 export function cellCode(row, cc, data) {
   const i = data.read.indexOf(cc);
-  if (i >= 0) { const s = row[4][i]; return s === "-" ? "-" : LIST_GROUP[s]; }
+  // a list read: the list's word; a model off the list gets the second level, the same ladder as a country without a list
+  if (i >= 0) { const s = row[4][i]; return s === "-" ? ladder(row, cc, data) : LIST_GROUP[s]; }
   const st = data.scope[cc]?.[row[2]] ?? "unknown";
   if (st === "banned") return "X";
   if (st === "free") return "F";
-  // the maker's document first (it outranks "not confirmed"), then the type-A limit, then what other EU lists say
+  if (st === "unknown" && !(row[10] && row[10].split(",").includes(cc))) return "?";
+  return ladder(row, cc, data);
+}
+// the maker's document first, then the type-A limit, then what other EU lists say, else nothing known
+export function ladder(row, cc, data) {
   if (row[10] && row[10].split(",").includes(cc)) return "D";
-  if (st === "unknown") return "?";
   const lim = data.limits?.[cc]?.max_kw;
   if (lim && row[8] !== null && row[8] > lim) return "B";
-  if ([...row[4]].some((ch) => POSITIVE.includes(ch))) return "K";
+  if (data.read.some((c, i) => c !== cc && POSITIVE.includes(row[4][i]))) return "K";
   return "-";
 }
 export const rank = (code) => ORDER.indexOf(code);
@@ -41,7 +45,7 @@ export function rowStatus(row, ccs, every, data) {
 }
 // the lists a model has an entry on, besides the chosen read lists (any status: it is a listing, not an approval)
 export const otherLists = (row, readSel, data) => [...row[4]].filter((ch, i) => ch !== "-" && !readSel.includes(data.read[i])).length;
-export const positiveLists = (row, data) => data.read.filter((c, i) => POSITIVE.includes(row[4][i]));
+export const positiveLists = (row, data, except = "") => data.read.filter((c, i) => c !== except && POSITIVE.includes(row[4][i]));
 
 // ---- the partitions behind the selects. Each option value maps a row to exactly one value.
 export const BUCKETS = [["0-3.7", 0, 3.7], ["3.7-6", 3.7, 6], ["6-12", 6, 12], ["12-30", 12, 30], ["30-", 30, Infinity]];

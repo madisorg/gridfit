@@ -2,13 +2,16 @@
 // One grid cell, three answers: ✓ fit (filled = on the list, outlined = by the maker's document), ✕ not fit,
 // empty = nothing known. Everything else — the list's word, a condition or date, firmware, the row as written —
 // is in the hover (a CSS tooltip on hover and focus when `rich`, else the title attribute). Colour repeats the shape.
-import { answerOf, tipOf, type GridState } from "../lib/devices";
+import { answerOf, tipOf, type GridState, type Tier } from "../lib/devices";
+import type { Release } from "../lib/evidence";
 import type { Entry } from "../lib/registers";
-const { cc, state, entries = [], cls, rich = false, label } = Astro.props as
-  { cc: string; state: GridState | string; entries?: Entry[]; cls?: string; rich?: boolean; label?: string };
-const a = answerOf(state as GridState);
-const tip = tipOf(cc, state as GridState, entries, cls);
-const GLYPH: Record<string, string> = { yes: "✓", cond: "✓", free: "✓", doc: "✓", no: "✕", none: "" };
+const { cc, state, entries = [], cls, rich = false, label, sub } = Astro.props as
+  { cc: string; state: GridState | string; entries?: Entry[]; cls?: string; rich?: boolean; label?: string; sub?: { tier: Tier; release: Release | null; positive: string[] } };
+// a model off a read list shows the second level: the same amber ladder as a country without a list
+const SUB: Record<string, string> = { D: "doc", K: "else", B: "type" };
+const a = state === "" && sub && SUB[sub.tier] ? SUB[sub.tier] : answerOf(state as GridState);
+const tip = tipOf(cc, state as GridState, entries, cls, sub);
+const GLYPH: Record<string, string> = { yes: "✓", cond: "✓", free: "✓", doc: "✓", else: "○", type: "B", no: "✕", none: "" };
 // the full detail only where the cell is rich (device pages); dense tables get the short title, 5 000 cells a page
 const text = rich ? `${cc}: ${tip.title}${tip.lines.length ? " / " + tip.lines.join("; ") : ""}` : `${cc}: ${tip.title}`;
 ---

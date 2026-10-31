@@ -62,6 +62,8 @@ checks++;
 const es = data.rows.filter((r) => r[2] !== "wallbox").map((r) => cellCode(r, "ES", data));
 const tally = Object.fromEntries(ORDER.map((k) => [k, es.filter((c) => c === k).length]));
 console.log("ES inverters by status:", tally);
+const ee = data.rows.filter((r) => r[2] !== "wallbox").map((r) => cellCode(r, "EE", data));
+console.log("EE inverters by status:", Object.fromEntries(ORDER.map((k) => [k, ee.filter((c) => c === k).length])));
 const leg = data.rows.filter((r) => r[11]).length, legX = data.rows.filter((r) => r[11] === "A" && [...r[4]].some((ch) => "LORT".includes(ch))).length;
 console.log(`legacy rows: ${leg} (A ${data.rows.filter((r) => r[11] === "A").length}, B ${data.rows.filter((r) => r[11] === "B").length}, C ${data.rows.filter((r) => r[11] === "C").length})`);
 if (legX) fail(`${legX} tier-A legacy rows still have a positive list entry`);

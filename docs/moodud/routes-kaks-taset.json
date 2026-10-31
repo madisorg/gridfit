@@ -1,0 +1,28 @@
+[
+ {
+  "name": "grid-ee",
+  "url": "grid/ee/",
+  "wait": 3.0
+ },
+ {
+  "name": "grid-ee-likely",
+  "url": "grid/ee/?st=D",
+  "wait": 3.0
+ },
+ {
+  "name": "grid-ee-possibly-fox",
+  "url": "grid/ee/?st=K&brand=Fox%20ESS",
+  "wait": 3.0
+ },
+ {
+  "name": "pere-sungrow-grid",
+  "url": "sungrow/sh-hybrid-inverters/#grid",
+  "wait": 1.5
+ },
+ {
+  "name": "pere-sungrow-ee-row",
+  "url": "sungrow/sh-hybrid-inverters/",
+  "js": "document.querySelector('#grid-ee')?.scrollIntoView()",
+  "wait": 1.5
+ }
+]
