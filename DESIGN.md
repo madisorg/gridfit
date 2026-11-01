@@ -693,3 +693,20 @@ Five routes ([`routes-kaks-taset.json`](docs/moodud/routes-kaks-taset.json): `/g
 the Sungrow SH family page at its grid block and at its Estonia row) × 3440/390 × light/dark: [`kaks-taset.json`](docs/moodud/kaks-taset.json),
 20 pictures, 0 console errors, 0 overflow, 0 under 12 px, 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. The count
 test is unchanged at 936 checks, 0 failures — the second level only moved rows between categories of the same partition.
+
+## 30. Measured, 2026-11-01 — ten countries
+
+Madis narrowed the scope to ten countries: AT, BE, CZ, EE, NL, PL, SE (the seven lists read) and DE, IT, ES (no list read;
+their own rules). The other 33 rows of the EU+ table stay in `data/countries.yaml` as `scope: out` — no page, no picker
+entry, `/grid/{cc}/` answers 301 to `/grid/`. With ten countries the picker of § 22 had nothing left to solve: the chips,
+the typeahead and the “All 43 countries…” dialog are gone, and the countries are ten toggles in one group — real checkboxes
+inside 44 px labels, the code on the face and the name for the title and screen readers, ringed when ticked; one row on a
+wide sidebar, two on a phone. Nothing ticked means all ten as columns (it used to mean the seven lists read), so DE, IT and
+ES show by default with their column word (“list”, “cert.”). The home page's country select became ten links by name —
+one tap, crawlable, no `<noscript>` copy; a click still sets the gf-cc cookie. The front door keeps a cookie it no longer
+covers on the neutral home page instead of falling back to the IP guess. `web/test/scope.mjs` (52 checks) holds the YAML,
+the grid index, the built pages, the front door's set, `_redirects` and every built link to the same ten. Home, `/grid/`,
+`/grid/ee/`, `/grid/de/`, `/grid/es/` and a model page at its grid block ([`routes-skoop10.json`](docs/moodud/routes-skoop10.json))
+× 3440/390 × light/dark: [`skoop10.json`](docs/moodud/skoop10.json), 24 pictures, 0 console errors, 0 overflow, 0 under 12 px,
+0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. The count test is unchanged at 936 checks, 0 failures (its states
+FI and FR became DE).

@@ -2,6 +2,8 @@
 import Base from "../../layouts/Base.astro";
 import Status from "../../components/Status.astro";
 import { REPO, OHF, data } from "../../lib/data";
+import { IN_SCOPE } from "../../lib/countries";
+import { COUNTRIES } from "../../lib/registers";
 ---
 <Base title="How we get the data, and what we do not guarantee" current="/about/">
   <header class="head"><h1>How we get the data, and what we do not guarantee</h1></header>
@@ -22,6 +24,9 @@ import { REPO, OHF, data } from "../../lib/data";
         Device pages show every list row for the matched models. The <a href="/grid/">grid lists view</a> also shows each row's status word, firmware,
         row or document number and dates — the registers' facts, not GridFit's work, and not under GridFit's CC BY. None of the lists states reuse terms; every row links back,
         and the register is the authority. Belgium's Synergrid list allows personal use only, so the cross-view shows just “listed” / “expired” with a link, and family pages do not use it.</li>
+      <li><strong>Which countries</strong> — {IN_SCOPE.length}: {IN_SCOPE.map((c) => c.country).join(", ")}. {COUNTRIES.length} of them publish a list GridFit reads in full;
+        the others get their own rules on their country page. The rest of Europe is left out for now: the EU+ grid-connection table keeps their rows
+        (<code>data/countries.yaml</code>, <code>scope: out</code>), and their old pages lead to the grid view.</li>
     </ul>
     <h2>What the marks mean</h2>
     <ul>

@@ -3,7 +3,7 @@
 // disagree. A device is a family when one claims the model code, else the register model itself.
 import { data, summary, familyUrl, slug, type Family } from "./data";
 import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
-import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
+import { IN_SCOPE, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
 import { LIMITS, NOT_LISTED } from "./profiles";
 import { releasesOf, fitsIn, type Release } from "./evidence";
 import { readFileSync } from "node:fs";
@@ -114,7 +114,7 @@ export function entriesOfFamily(f: Family): Record<string, Entry[]> {
   for (const d of modelsOf(f)) for (const [cc, es] of Object.entries(d.cells)) (out[cc] ??= []).push(...es);
   return out;
 }
-export const OTHER_COUNTRIES = COUNTRIES_ALL.filter((c) => !COUNTRIES.includes(c.cc));
+export const OTHER_COUNTRIES = IN_SCOPE.filter((c) => !COUNTRIES.includes(c.cc));
 export const othersOf = (cls: string) => OTHER_COUNTRIES.map((c) => {
   const key = CLASS_KEY[cls] ?? null;
   return { cc: c.cc, country: c.country, list: c.list, list_url: c.list_url,
@@ -248,7 +248,7 @@ for (const f of data.families) if (f.slug === "model") throw new Error(`family s
 export const nf = (n: number) => n.toLocaleString("en").replace(/,/g, " ");
 export const COUNTS = {
   families: data.families.length, brands: BRANDS.length, rows: data.rows.length,
-  regModels: regDevices.filter((d) => !d.unmatched).length, lists: COUNTRIES.length, countries: COUNTRIES_ALL.length,
+  regModels: regDevices.filter((d) => !d.unmatched).length, lists: COUNTRIES.length, countries: IN_SCOPE.length,
   modelPages: modelPages.length,
   localRoute: data.families.filter((f) => ["control", "read"].includes(localOf(f))).length,
 };
