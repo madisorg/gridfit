@@ -1,7 +1,7 @@
 // Proves the requirement check adds up (web/.data/checks.json, written by tools/check/run.py): for every model and
 // country the states sum to the applicable items, every "meets / outside by datasheet" row carries the number it was
 // judged on, "outside" never appears without a datasheet row, and the worked example holds — ABB/FIMER TRIO-8.5-TL-OUTD
-// in Italy: 6 rows by the datasheet, 8 by the maker's declaration, which cites CEI 0-21:2022-03 + V1 + V2 against the
+// in Italy: 7 rows by the datasheet, 9 by the maker's declaration, which cites CEI 0-21:2022-03 + V1 + V2 against the
 // profile's 2026-07 edition, so the items changed in 2026-07 are unverified. A second run over a test fixture
 // (tools/check/fixtures/gr: Greece × GoodWe GW10K-ET-20) proves what the schema must carry beyond Italy: several kW/A
 // lines with different meanings, operator-set protection values, datasheet fields the operator asks for, and a generic
@@ -53,7 +53,10 @@ for (const [key, m] of Object.entries(C.models)) {
     }
     if (r.sum.X) ok(m.sheet, `${key} ${cc}: outside only with a datasheet`);
     if (r.doc && C.profiles[cc].accepts.includes("national-declaration") && !C.profiles[cc].accepts.includes("generic-en50549-1"))
-      ok(!/^EN 50(549|438)/.test(r.doc.standards), `${key} ${cc}: a generic certificate does not count where the operator wants the national one`);
+      // generic = every standard it cites is an EN 50549 / EN 50438 edition (national adoptions included); a certificate
+      // that cites the country's own rule beside EN 50549-1 (Deye's C10/11 certificate, Sungrow's PPDS declaration) is national
+      ok(!r.doc.standards.split(/;\s*/).every((s) => /^(?:[A-ZČ-]+ )?(?:NBN |NEN-|SS-|ČSN )?EN 50(549|438)/.test(s)),
+        `${key} ${cc}: a generic certificate does not count where the operator wants the national one`);
     if (r.sum.S || r.sum.P || r.sum.L || r.sum.X) sheetAny[cc] = (sheetAny[cc] ?? 0) + 1;
     if (r.sum.L) overLine[cc] = (overLine[cc] ?? 0) + 1;
     if (!r.sum.N) covered[cc] = (covered[cc] ?? 0) + 1;
@@ -72,8 +75,8 @@ const trio = C.models["ABB|TRIO-8.5-TL-OUTD"];
 ok(trio, "ABB TRIO-8.5-TL-OUTD is a register model with checks");
 if (trio) {
   const it = trio.cc.IT, items = C.profiles.IT.items, id = (i) => items[i].id;
-  eq(it.sum.S ?? 0, 6, "TRIO × IT: by datasheet");
-  eq((it.sum.D ?? 0) + (it.sum.O ?? 0), 8, "TRIO × IT: by the maker's document");
+  eq(it.sum.S ?? 0, 7, "TRIO × IT: by datasheet");
+  eq((it.sum.D ?? 0) + (it.sum.O ?? 0), 9, "TRIO × IT: by the maker's document");
   eq(it.sum.N ?? 0, 0, "TRIO × IT: nothing not shown");
   eq(it.sum.X ?? 0, 0, "TRIO × IT: nothing outside");
   eq(it.doc?.edition, "2024-01", "TRIO × IT: the declaration's newest cited variant is V2:2024-01");
@@ -82,7 +85,7 @@ if (trio) {
   const old = Object.entries(it.rows).filter(([, r]) => r[0] === "O").map(([i]) => id(i)).sort();
   eq(old.join(","), "p-of-u,spi-settings", "TRIO × IT: the two 2026-07 items are unverified");
   const sheet = Object.entries(it.rows).filter(([, r]) => r[0] === "S").map(([i]) => id(i)).sort();
-  eq(sheet.join(","), "freq-range,phases,power-class,reactive,spi-integrated,voltage-range", "TRIO × IT: the six datasheet rows");
+  eq(sheet.join(","), "backup-ddi,freq-range,phases,power-class,reactive,spi-integrated,voltage-range", "TRIO × IT: the seven datasheet rows");
   eq((it.na ?? []).map(id).join(","), "storage", "TRIO × IT: storage does not apply to a PV inverter");
   eq(trio.cc.ES.doc, undefined, "TRIO × ES: no Spanish document");
   ok((trio.cc.ES.sum.S ?? 0) >= 2, "TRIO × ES: the datasheet still answers the numeric rows");

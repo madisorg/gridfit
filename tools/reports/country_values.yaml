@@ -25,6 +25,8 @@ EE:
   - {id: p-of-u, item: p-of-u, label: "P(U) from 110 % Un, zero at 112 %", checks: [[p_u, start_un, 1.10], [p_u, zero_un, 1.12]]}
   - {id: reactive, item: reactive, label: "cos φ = 1; fixed cos φ, cos φ(P), fixed Q or Q(U) on request",
      checks: [[q_modes, modes, {modes: [cosphi_setpoint, cosphi_p, q_setpoint, q_u]}]]}
+  - {id: protection-frequency-time, item: lom-protection, label: "f> and f< trip time at least 0.1 s (2019 recommended settings)",
+     checks: [[of1, time_s, [0.1, null]], [uf1, time_s, [0.1, null]]]}
 ES:
   profile: data/profiles/es.yaml
   label: "Orden TED/749/2020 as amended by TED/82/2026; RD 1699/2011 table 1"
@@ -67,3 +69,205 @@ IT:
      checks: [[p_u, start_un, 1.10], [p_u, zero_un, 1.15]]}
   - {id: reactive, item: reactive, label: "cos φ down to 0.9; cos φ(P) curve on request", checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [cosphi_p]}]]}
   - {id: dc-injection, item: dc-injection, label: "DC injection ≤ 0.5 % of rated current", checks: [[dc_injection, max_pct, [null, 0.5]]]}
+  - {id: storage-lfsm-u, item: storage, label: "Storage: LFSM-U from 49.8 Hz, settable 47–50 Hz (8.5.3.4, figure 31)",
+     checks: [[lfsm_u, f1_hz, 49.8], [lfsm_u, f1_hz, {cover: [47.0, 50.0]}]],
+     note: "battery / hybrid only; the full-discharge point (49.1 Hz) and the over-frequency full-charge point (51.5 Hz) have no parameter in the grammar"}
+  - {id: protection-frequency-definitive, item: spi-settings, label: "81>.S2 / 81<.S2 in definitive mode (operator signal connected): 1 s / 4 s",
+     checks: [[of2, time_s, {cover: [0.1, 1.0]}], [uf2, time_s, {cover: [0.1, 4.0]}]],
+     note: "both times must be settable — 0.1 s in transitory mode, 1 s / 4 s once the operator's signal is connected (CEI 0-21:2026-07 8.6.2.1)"}
+AT:
+  profile: data/profiles/at.yaml
+  label: "TOR Stromerzeugungsanlagen Typ A V1.4 (annex A3); storage: TOR Verteilernetzanschluss NS V1.3.1 5.1.2.2"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "47.5–48.5 Hz 60 min; 48.5–49.0 Hz 90 min; 51.0–51.5 Hz 30 min (table 1, p. 17)",
+     checks: [[freq_bands, band_47_5_48_5_min, 60], [freq_bands, band_51_51_5_min, 30]],
+     note: "the 48.5–49.0 Hz band (90 min) has no parameter name in the grammar"}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2 Hz/s (5.1.2, p. 17)", checks: [[rocof, immunity_hz_s, 2]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O 50.2 Hz settable 50.2–50.5 Hz; droop 5 %, settable 2–12 % (5.1.3, A3 2a)",
+     checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, f1_hz, {cover: [50.2, 50.5]}], [lfsm_o, droop_pct, 5], [lfsm_o, droop_pct, {cover: [2, 12]}]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49.0 Hz output falls at most 2 % Pmax per Hz (5.1.5, p. 20)",
+     checks: [[uf_power, reduction_pct_hz, [null, 2]]]}
+  - {id: lfsm-u-storage, item: storage, label: "Storage LFSM-U 49.8 Hz settable 49.5–49.8 Hz; droop 1 %, settable 1–2 % (TOR VNA NS 5.1.2.2)",
+     checks: [[lfsm_u, f1_hz, 49.8], [lfsm_u, f1_hz, {cover: [49.5, 49.8]}], [lfsm_u, droop_pct, 1], [lfsm_u, droop_pct, {cover: [1, 2]}]],
+     note: "battery / hybrid only; the 1–2 % droop lies below the EN 50549-1 floor's 2–12 %"}
+  - {id: frt, item: frt, label: "FRT: 0.15 pu for 0.15 s, linear to 0.85 pu at 1.5 s; no current below 0.8 Un (figure 5, A3 3)",
+     checks: [[uvrt, curve, present]],
+     note: "the grammar has no parameters for the curve's points; only the presence of a tested UVRT curve is compared"}
+  - {id: protection-voltage-high, item: lom-protection, label: "U>> 1.15 Un ≤ 0.1 s; U> 10-min mean 1.11 Un (settable 1.10–1.15 Un) (table 8, A3 5)",
+     checks: [[ov2, threshold_un, 1.15], [ov2, time_s, [null, 0.1]], [ov10, threshold_un, 1.11], [ov10, threshold_un, {cover: [1.10, 1.15]}]]}
+  - {id: protection-voltage-low, item: lom-protection, label: "U< 0.80 Un 1.5 s; U<< 0.25 Un 0.5 s (table 8, A3 5)",
+     checks: [[uv1, threshold_un, 0.80], [uv1, time_s, 1.5], [uv2, threshold_un, 0.25], [uv2, time_s, 0.5]]}
+  - {id: protection-frequency, item: lom-protection, label: "f> 51.5 Hz ≤ 0.1 s; f< 47.5 Hz ≤ 0.1 s (table 8, A3 5)",
+     checks: [[of1, threshold_hz, 51.5], [of1, time_s, [null, 0.1]], [uf1, threshold_hz, 47.5], [uf1, time_s, [null, 0.1]]],
+     note: "single-stage frequency protection, put on of1 / uf1 as for EE and ES"}
+  - {id: anti-islanding, item: anti-islanding, label: "Stop feeding within 5 s on loss of mains (table 8 note 34)", checks: [[islanding, method, present]],
+     note: "the 5 s limit has no parameter name in the grammar"}
+  - {id: reconnection, item: reconnection, label: "0.85–1.09 pu, 47.5–50.10 Hz; wait settable 0–300 s, 60 s at start, 300 s after a trip; ≤ 10 %/min (5.5.2, A3 4)",
+     checks: [[reconnect, f_low_hz, 47.5], [reconnect, f_high_hz, 50.1], [reconnect, u_low_un, 0.85], [reconnect, u_high_un, 1.09],
+              [reconnect, observation_s, 300], [start, observation_s, 60],
+              [reconnect, ramp_pct_min, [null, 10]]],
+     note: "the TOR says the wait is settable 0–300 s; only the two recommended values are compared (the EN 50549-1 floor starts at 10 s, so a 0 s cover would fail every document)"}
+  - {id: p-of-u, item: p-of-u, label: "P(U) from 110 % Un to 0 at 112 % Un, PT1 5 s (5.3.6, A3 2b)", checks: [[p_u, start_un, 1.10], [p_u, zero_un, 1.12]]}
+  - {id: reactive, item: reactive, label: "cos φ down to 0.9; fixed cos φ, cos φ(P), Q(U), fixed Q (> 3.68 kVA) (5.3.3, table 4, A3 1)",
+     checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [cosphi_setpoint, cosphi_p, q_u, q_setpoint]}]],
+     note: "fixed Q (q_setpoint) is required only above 3.68 kVA (table 4); cos φ(P) default 1 to 0.5 Pmax, 0.9 under-excited at Pmax; Q(U) points 0.92 / 0.96 / 1.05 / 1.08 Un"}
+BE:
+  profile: data/profiles/be.yaml
+  label: "Synergrid C10/11 ed. 2.4 (15.10.2025), Annex C table 8 and Annex D"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "Frequency bands 47.5–49.0 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2 Hz/s (500 ms window)", checks: [[rocof, immunity_hz_s, 2]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49 Hz output falls at most 2 % Pmax per Hz",
+     checks: [[uf_power, reduction_pct_hz, [null, 2]]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz (settable 50.2–52), droop 5 % (settable 2–12 %)",
+     checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, f1_hz, {cover: [50.2, 52.0]}], [lfsm_o, droop_pct, 5], [lfsm_o, droop_pct, {cover: [2, 12]}]]}
+  - {id: lfsm-u, item: lfsm-u, label: "Storage: LFSM-U from 49.8 Hz (settable 46–49.8), droop 2 % (settable 2–12 %)",
+     checks: [[lfsm_u, f1_hz, 49.8], [lfsm_u, f1_hz, {cover: [46.0, 49.8]}], [lfsm_u, droop_pct, 2], [lfsm_u, droop_pct, {cover: [2, 12]}]],
+     note: "mandatory for storage only; other units 5 % if they activate it"}
+  - {id: protection-voltage-high, item: separation-settings, label: "10-min mean 230 V + 10 %; 230 V + 15 %, trip within 200 ms",
+     checks: [[ov10, threshold_un, 1.10], [ov2, threshold_un, 1.15], [ov2, time_s, [null, 0.2]]],
+     note: "table 8 says 'no time delay', total disconnection ≤ 200 ms; read as a set delay of at most 0.2 s"}
+  - {id: protection-voltage-low, item: separation-settings, label: "230 V − 20 %, trip within 200 ms",
+     checks: [[uv1, threshold_un, 0.80], [uv1, time_s, [null, 0.2]]]}
+  - {id: protection-frequency, item: separation-settings, label: "f> 51.5 Hz / f< 47.5 Hz, trip within 200 ms",
+     checks: [[of1, threshold_hz, 51.5], [of1, time_s, [null, 0.2]], [uf1, threshold_hz, 47.5], [uf1, time_s, [null, 0.2]]]}
+  - {id: anti-islanding, item: loss-of-mains, label: "Loss of mains per EN 50549-1 4.9.4, tested to EN 62116", checks: [[islanding, method, present]]}
+  - {id: reconnection, item: reconnection, label: "49.9–50.1 Hz, 85–110 % Un for 60 s; ramp ≤ 10 %/min after a trip",
+     checks: [[reconnect, f_low_hz, 49.9], [reconnect, f_high_hz, 50.1], [reconnect, u_low_un, 0.85], [reconnect, u_high_un, 1.10],
+              [reconnect, observation_s, 60], [reconnect, ramp_pct_min, [null, 10]], [start, f_low_hz, 49.9], [start, f_high_hz, 50.1], [start, observation_s, 60]],
+     note: "normal start: same window and 60 s, ramp ≤ 20 %/min (no grammar parameter)"}
+  - {id: reactive, item: reactive, label: "cos φ 0.9 over/under-excited; Q set-point, Q(U), cos φ set-point, cos φ(P)",
+     checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [q_setpoint, q_u, cosphi_setpoint, cosphi_p]}]],
+     note: "small installations by default: cos φ 1 up to 105 % Un, then free under-excited down to 0.9"}
+# Grid Update draft (consultation until 2026-12-01, not in force) — for a later edition block, not for use now:
+#   separation system: ov2 1.15 Un 3 s; uv1 0.80 Un 3 s; of1 51.5 Hz 3 s; uf1 47.5 Hz 3 s; ov10 1.10 unchanged;
+#   rocof (if implemented) 2 Hz/s 700 ms; narrow window 50.3 / 49.7 Hz 3 s; vector shift 7° 0 s;
+#   Q(U) mandatory on LV: start 1.05 Un, full 33 % PD absorption from 1.08 Un, time constant 3 s; P(U) not below 1.08 Un.
+NL:
+  profile: data/profiles/nl.yaml
+  label: "Systeemcode elektriciteit 2026 § 3.3 and art. 2.9; Netbeheer Nederland country settings type A (2026-09)"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "Frequency bands 47.5–48.5, 48.5–49.0 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]],
+     note: "the 48.5–49.0 Hz band (30 min) has no parameter in the grammar"}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2 Hz/s (500 ms window), power park modules", checks: [[rocof, immunity_hz_s, 2]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz settable 50.2–50.5 Hz; droop 5 %, settable 4–12 %",
+     checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, f1_hz, {cover: [50.2, 50.5]}], [lfsm_o, droop_pct, 5], [lfsm_o, droop_pct, {cover: [4, 12]}]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49.5 Hz output falls at most 10 % Pmax per Hz (where agreed in the contract)",
+     checks: [[uf_power, reduction_pct_hz, [null, 10]]]}
+  - {id: protection-voltage-high, item: protection-settings, label: "U> 110 % Un in 2 s",
+     checks: [[ov1, threshold_un, 1.10], [ov1, time_s, 2]]}
+  - {id: protection-voltage-low, item: protection-settings, label: "U< 80 % Un in 2 s; U<< 70 % Un in 0.2 s",
+     checks: [[uv1, threshold_un, 0.80], [uv1, time_s, 2], [uv2, threshold_un, 0.70], [uv2, time_s, 0.2]],
+     note: "the code asks U<< 70 % 0.2 s above 11 kW on low voltage (art. 3.12) and for synchronous units (art. 3.6(3)); Netbeheer Nederland's table lists it for every type-A unit"}
+  - {id: protection-frequency, item: protection-settings, label: "f< 47.5 Hz and f> 51.5 Hz in 2 s",
+     checks: [[uf1, threshold_hz, 47.5], [uf1, time_s, 2], [of1, threshold_hz, 51.5], [of1, time_s, 2]]}
+  - {id: reconnection, item: reconnection, label: "Connect within 0.90–1.10 Un and 49.9–50.1 Hz after 60 s; ramp 10 %/min (code: at most 20 %/min)",
+     checks: [[reconnect, u_low_un, 0.90], [reconnect, u_high_un, 1.10], [reconnect, f_low_hz, 49.9], [reconnect, f_high_hz, 50.1],
+              [reconnect, observation_s, 60], [reconnect, ramp_pct_min, 10],
+              [start, f_low_hz, 49.9], [start, f_high_hz, 50.1], [start, observation_s, 60]],
+     note: "art. 3.11(7) is one clause for automatic connection, so the same window is read for start and reconnection; the code's ceiling is 20 %/min, the country-settings table sets 10 %/min"}
+  - {id: reactive, item: reactive, label: "Power factor 1 by default (fixed cos φ); DSO may add requirements",
+     checks: [[q_modes, modes, {modes: [cosphi_setpoint]}]]}
+  - {id: anti-islanding, item: anti-islanding, label: "Loss-of-mains detection (EN 50549-1 4.9.4, the accepted standard)", checks: [[islanding, method, present]]}
+  - {id: lfsm-u-storage, item: storage, label: "Storage: LFSM-U from 49.8 Hz, droop 2 % in charging and generating mode",
+     checks: [[lfsm_u, f1_hz, 49.8], [lfsm_u, droop_pct, 2]],
+     note: "Systeemcode art. 2.9(3)(g) says 2 % below 1 MW; Netbeheer Nederland's ESM document v2.0 (2024) still prints 1 %; threshold 49.8 Hz from the ESM document 4.2.1"}
+PL:
+  profile: data/profiles/pl.yaml
+  label: "WOS 2025 + WiPWC 1.3 / Bank Nastaw dla Polski 1.1 (type A)"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "Frequency bands 47.5–48.5, 48.5–49.0 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2.5 Hz/s (500 ms window, power park modules)", checks: [[rocof, immunity_hz_s, 2.5]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz (settable 50.2–50.5), droop 5 % (settable 2–12 %)",
+     checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, f1_hz, {cover: [50.2, 50.5]}], [lfsm_o, droop_pct, 5], [lfsm_o, droop_pct, {cover: [2, 12]}]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49 Hz output falls at most 2 % Pmax per Hz",
+     checks: [[uf_power, reduction_pct_hz, [null, 2]]]}
+  - {id: protection-voltage-high, item: protection-settings, label: "U> 1.10 Un 10-min mean (3 s); U>> 1.15 Un 0.1 s",
+     checks: [[ov10, threshold_un, 1.10], [ov2, threshold_un, 1.15], [ov2, time_s, 0.1]]}
+  - {id: protection-voltage-low, item: protection-settings, label: "U< 0.85 Un 1.2 s", checks: [[uv1, threshold_un, 0.85], [uv1, time_s, 1.2]]}
+  - {id: protection-frequency, item: protection-settings, label: "f> 51.5 Hz 0.3 s; f< 47.5 Hz 1 s",
+     checks: [[of1, threshold_hz, 51.5], [of1, time_s, 0.3], [uf1, threshold_hz, 47.5], [uf1, time_s, 1.0]]}
+  - {id: anti-islanding, item: anti-islanding, label: "LoM by RoCoF 2.5 Hz/s within 0.5 s", checks: [[islanding, method, present]],
+     note: "the RoCoF LoM threshold (2.5 Hz/s, tmax 0.5 s) has no parameter in the grammar; only presence is compared"}
+  - {id: reconnection, item: reconnection, label: "Reconnect within 49.00–50.05 Hz after 60 s, ramp ≤ 10 %/min",
+     checks: [[reconnect, f_low_hz, 49.0], [reconnect, f_high_hz, 50.05], [reconnect, observation_s, 60], [reconnect, ramp_pct_min, [null, 10]],
+              [start, f_low_hz, 49.0], [start, f_high_hz, 50.05], [start, observation_s, 60]],
+     note: "Dz.U. 2023 poz. 1098 (micro-installations) gives 47.5–50.1 Hz, 0.85–1.10 Un, 60 s observation + 60 s delay; WOS 2025 / Bank Nastaw's narrower 49.00–50.05 Hz window is used here"}
+  - {id: p-of-u, item: p-of-u, label: "P(U) from 1.08 pu", checks: [[p_u, start_un, 1.08]]}
+  - {id: reactive, item: reactive, label: "cos φ 0.9 ind – 0.9 cap; Q(U) as Bank Nastaw's default",
+     checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [q_u, cosphi_p]}]],
+     note: "q_u from Bank Nastaw 1.1; cosphi_p read from the micro regulation's 'curve set by the OSD' between cos φ 0.9 ind and 0.9 cap above 20 % P — the regulation does not name the mode"}
+SE:
+  profile: data/profiles/se.yaml
+  label: "EIFS 2018:2; ALP recommended protection settings (Rikta Rätt form, version 2025)"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "Frequency bands 47.5–48.5, 48.5–49.0 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2.0 Hz/s (500 ms window)", checks: [[rocof, immunity_hz_s, 2.0]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.5 Hz, droop 8 % (25 % Pmax/Hz)", checks: [[lfsm_o, f1_hz, 50.5], [lfsm_o, droop_pct, 8]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49 Hz output falls at most 3 % Pmax per Hz",
+     checks: [[uf_power, reduction_pct_hz, [null, 3]]]}
+  - {id: reconnection, item: reconnection, label: "Connect and reconnect within 47.5–50.1 Hz after 3 min; ramp ≤ 10 %/min in 49.9–50.1 Hz",
+     checks: [[reconnect, f_low_hz, 47.5], [reconnect, f_high_hz, 50.1], [reconnect, observation_s, 180], [reconnect, ramp_pct_min, [null, 10]],
+              [start, f_low_hz, 47.5], [start, f_high_hz, 50.1], [start, observation_s, 180]],
+     note: "EIFS 2018:2 3 kap. 9 § lets the rise be unlimited below 49.9 Hz and forbids it above 50.1 Hz; only the 49.9–50.1 Hz ramp is a number here"}
+  - {id: protection-voltage-high, item: lom-protection, label: "U> 253.0 V (1.10 Un) 60 s; U>> 264.5 V (1.15 Un) 0.2 s",
+     checks: [[ov1, threshold_un, 1.10], [ov1, time_s, 60], [ov2, threshold_un, 1.15], [ov2, time_s, 0.2]],
+     note: "older Swedish documents (Fronius 2020) carry 255.3 V (1.11 Un) for the 60 s stage; the forms number the two stages the other way round (Ellevio: 'steg 2' = 60 s)"}
+  - {id: protection-voltage-low, item: lom-protection, label: "U< 195.5 V (0.85 Un) 0.2 s", checks: [[uv1, threshold_un, 0.85], [uv1, time_s, 0.2]]}
+  - {id: protection-frequency, item: lom-protection, label: "f> 51.5 Hz 0.5 s; f< 47.5 Hz 0.5 s",
+     checks: [[of1, threshold_hz, 51.5], [of1, time_s, 0.5], [uf1, threshold_hz, 47.5], [uf1, time_s, 0.5]]}
+  - {id: anti-islanding, item: anti-islanding, label: "Unwanted island operation detected (RoCoF 2.5 Hz/s in 0.5 s)", checks: [[islanding, method, present]],
+     note: "the 2.5 Hz/s / 0.5 s trip is a number the grammar has no parameter for"}
+CZ:
+  profile: data/profiles/cz.yaml
+  label: "PPDS Příloha 4 (2025); ČEZ Distribuce VP_05 and VP_08"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "47.5–48.5 Hz 30 min, 48.5–49 Hz 90 min, 51–51.5 Hz 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand ±2 Hz/s (500 ms window)", checks: [[rocof, immunity_hz_s, 2]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz, droop 5 %", checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, droop_pct, 5]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49 Hz output falls at most 2 % Pmax per Hz",
+     checks: [[uf_power, reduction_pct_hz, [null, 2]]]}
+  - {id: protection-voltage-high, item: protection-settings, label: "U>> 1.2 Un 0.1 s; U> 1.15 Un 5 s; 10-min mean 1.11 Un",
+     checks: [[ov2, threshold_un, 1.2], [ov2, time_s, 0.1], [ov1, threshold_un, 1.15], [ov1, time_s, 5], [ov10, threshold_un, 1.11]]}
+  - {id: protection-voltage-low, item: protection-settings, label: "U< 0.7 Un 2.7 s; U<< 0.45 Un 0.2 s",
+     checks: [[uv1, threshold_un, 0.7], [uv1, time_s, 2.7], [uv2, threshold_un, 0.45], [uv2, time_s, 0.2]]}
+  - {id: protection-frequency, item: protection-settings, label: "f> 51.5 Hz 0.1 s; f< 47.5 Hz 0.1 s",
+     checks: [[of1, threshold_hz, 51.5], [of1, time_s, 0.1], [uf1, threshold_hz, 47.5], [uf1, time_s, 0.1]]}
+  - {id: reconnection, item: reconnection, label: "47.5–50.05 Hz and 85–110 % Un for 300 s; ramp ≤ 10 %/min",
+     checks: [[reconnect, f_low_hz, 47.5], [reconnect, f_high_hz, 50.05], [reconnect, u_low_un, 0.85], [reconnect, u_high_un, 1.10],
+              [reconnect, observation_s, 300], [reconnect, ramp_pct_min, [null, 10]]]}
+  - {id: frt, item: frt, label: "UVRT 0.05 pu 0–0.15 s, 0.85 pu at 3 s (A1 upward)", checks: [[uvrt, curve, present]],
+     note: "the curve points are in the profile text; only the presence of a tested UVRT curve is compared"}
+  - {id: p-of-u, item: p-of-u, label: "P(U): 100 % at 109 % Un, 50 % at 110 %, 0 % at 111 %",
+     checks: [[p_u, start_un, 1.09], [p_u, zero_un, 1.11]]}
+  - {id: reactive, item: reactive, label: "cos φ 0.9 ind–0.9 cap; fixed Q, Q(U), fixed cos φ, cos φ(P) (also Q(P), cos φ(U), U set-point)",
+     checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [q_setpoint, q_u, cosphi_setpoint, cosphi_p]}]]}
+  - {id: storage-lfsm-u, item: storage, label: "Storage under-frequency response: threshold settable 49.8–49.5 Hz, droop 0.1–12 %",
+     checks: [[lfsm_u, f1_hz, {cover: [49.5, 49.8]}], [lfsm_u, droop_pct, {cover: [0.1, 12]}]],
+     note: "battery and hybrid only; blocked until the TSO sets values. The EN 50549-1 floor droop range starts at 2 %, so 0.1 % is stricter than the floor"}
+  - {id: anti-islanding, item: grid-monitoring, label: "Grid monitoring with an assigned switch, verified by an accredited lab", checks: [[islanding, method, present]]}
+DE:
+  profile: data/profiles/de.yaml
+  label: "VDE-AR-N 4105:2026-03 (certificates to 2018-11 accepted during the transition)"
+  requirements:
+  - {id: rocof, item: rocof, label: "RoCoF ride-through ±4 Hz/s for 0.25 s (±2 Hz/s 0.5 s, ±1.5 Hz/s 1 s, ±1.25 Hz/s 2.5 s)",
+     checks: [[rocof, immunity_hz_s, 4]],
+     note: "the 2026-03 table; the 2 Hz/s step is over 0.5 s like the EN 50549-1 floor, the 4 Hz/s step over 0.25 s is extra"}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz, droop 5 %", checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, droop_pct, 5]]}
+  - {id: lfsm-u, item: lfsm-u-storage, label: "Storage: LFSM-U from 49.8 Hz, droop 1.6 %", checks: [[lfsm_u, f1_hz, 49.8], [lfsm_u, droop_pct, 1.6]],
+     note: "battery and hybrid only (figure 16 of the 2026-03 edition)"}
+  - {id: protection-voltage-high, item: lom-protection, label: "U> 1.10 Un 10-min mean; U>> 1.25 Un ≤ 0.2 s",
+     checks: [[ov10, threshold_un, 1.10], [ov2, threshold_un, 1.25], [ov2, time_s, [null, 0.2]]],
+     note: "U> is fixed at 1.1 Un for NA protection up to 30 kVA; the FGH slide prints U> '≤ 5 s', makers' 2026 documents keep the 10-minute mean"}
+  - {id: protection-voltage-low, item: lom-protection, label: "U< 0.80 Un 3.0 s; U<< 0.45 Un 0.3 s",
+     checks: [[uv1, threshold_un, 0.80], [uv1, time_s, 3.0], [uv2, threshold_un, 0.45], [uv2, time_s, 0.3]]}
+  - {id: protection-frequency, item: lom-protection, label: "f< 47.5 Hz 2.0 s; f> 51.5 Hz 5.0 s; f>> 52.6 Hz ≤ 0.2 s (2026-03)",
+     checks: [[uf1, threshold_hz, 47.5], [uf1, time_s, 2.0], [of1, threshold_hz, 51.5], [of1, time_s, 5.0], [of2, threshold_hz, 52.6], [of2, time_s, [null, 0.2]]]}
+  - {id: reactive, item: reactive, label: "cos φ 0.9 under- to over-excited; Q(U) default, cos φ(P) and fixed cos φ selectable",
+     checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [q_u, cosphi_p, cosphi_setpoint]}]]}
+  - {id: anti-islanding, item: anti-islanding, label: "Active islanding detection", checks: [[islanding, method, present]]}

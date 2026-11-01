@@ -244,6 +244,40 @@ is left out of the per-country tables.
    EN 50549-10:2022) carry Annex C — Deye SG06, Growatt MODA, Victron — but the newest families are often not on any
    list yet (Deye SG06LP3/LP1: 0 register models).
 
+## Ten countries (2026-11-01, second pass)
+
+`tools/reports/country_values.yaml` now carries AT, BE, CZ, DE, NL, PL and SE beside EE, ES and IT (each block names its
+profile item; the EE and IT blocks gained the gap check's lines). Run `python tools/reports/compare.py --md --registers
+web/.data/registers.json` for every table; the documents with a settable-range table:
+
+| document | kind | models | EE ✓/✗/?/–/op | ES ✓/✗/?/–/op | IT ✓/✗/?/–/op | AT ✓/✗/?/–/op | BE ✓/✗/?/–/op | NL ✓/✗/?/–/op | PL ✓/✗/?/–/op | SE ✓/✗/?/–/op | CZ ✓/✗/?/–/op | DE ✓/✗/?/–/op | GR ✓/✗/?/–/op |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Deye — tuvr-a3-50714707-sg06lp3 | certificate-annex-c | 0 | 10/0/0/1/0 of 11 | 8/0/0/2/0 of 10 | 6/4/0/2/0 of 12 | 10/1/0/2/0 of 13 | 10/0/0/1/0 of 11 | 10/0/0/1/0 of 11 | 9/0/0/2/0 of 11 | 8/0/0/1/0 of 9 | 10/1/0/2/0 of 13 | 4/3/0/1/0 of 8 | 4/0/0/0/3 of 7 |
+| Deye — tuvr-a3-50717844-sg06lp1 | certificate-annex-c | 0 | 10/0/0/1/0 of 11 | 8/0/0/2/0 of 10 | 6/4/0/2/0 of 12 | 10/1/0/2/0 of 13 | 10/0/0/1/0 of 11 | 10/0/0/1/0 of 11 | 9/0/0/2/0 of 11 | 8/0/0/1/0 of 9 | 10/1/0/2/0 of 13 | 4/3/0/1/0 of 8 | 4/0/0/0/3 of 7 |
+| EAST — dekra-6052106-53-ea-ktsi | test-report | 0 | 8/0/3/0/0 of 11 | 10/0/0/0/0 of 10 | 6/1/5/0/0 of 12 | 8/0/5/0/0 of 13 | 8/0/3/0/0 of 11 | 8/0/3/0/0 of 11 | 7/0/4/0/0 of 11 | 7/0/2/0/0 of 9 | 9/0/4/0/0 of 13 | 5/1/2/0/0 of 8 | 2/1/1/0/3 of 7 |
+| Growatt — intertek-cn-pves-260337-moda | certificate-table | 49 | 5/0/0/6/0 of 11 | 6/0/0/4/0 of 10 | 4/2/0/6/0 of 12 | 4/1/0/8/0 of 13 | 5/0/0/6/0 of 11 | 5/0/0/6/0 of 11 | 5/0/0/6/0 of 11 | 4/1/0/4/0 of 9 | 4/1/0/8/0 of 13 | 3/1/0/4/0 of 8 | 1/0/0/3/3 of 7 |
+| SMA — tuvsud-d070122-0013-stp110-60 | certificate-annex-c | 4 | 10/0/0/1/0 of 11 | 8/0/0/2/0 of 10 | 7/3/0/2/0 of 12 | 10/1/0/2/0 of 13 | 10/0/0/1/0 of 11 | 10/0/0/1/0 of 11 | 9/0/0/2/0 of 11 | 8/0/0/1/0 of 9 | 10/1/0/2/0 of 13 | 5/2/0/1/0 of 8 | 4/0/0/0/3 of 7 |
+| Solplanet — bv-u22-0354-asw-lt-g2-pro | certificate-annex-c | 12 | 10/0/1/0/0 of 11 | 8/0/0/2/0 of 10 | 5/5/1/1/0 of 12 | 10/1/1/1/0 of 13 | 11/0/0/0/0 of 11 | 11/0/0/0/0 of 11 | 10/0/1/0/0 of 11 | 9/0/0/0/0 of 9 | 10/1/1/1/0 of 13 | 7/1/0/0/0 of 8 | 4/0/0/0/3 of 7 |
+| Victron — sgs-2622-0478-multiplus-ii | certificate-annex-c | 9 | 9/1/1/0/0 of 11 | 8/0/0/2/0 of 10 | 5/5/1/1/0 of 12 | 9/2/1/1/0 of 13 | 10/0/0/1/0 of 11 | 9/1/0/1/0 of 11 | 8/1/1/1/0 of 11 | 8/0/0/1/0 of 9 | 8/3/1/1/0 of 13 | 3/4/0/1/0 of 8 | 4/0/0/0/3 of 7 |
+| EN 50549-1 — en50549-1-floor | standard-floor | — | 7/1/3/0/0 of 11 | 8/0/2/0/0 of 10 | 6/4/2/0/0 of 12 | 8/1/4/0/0 of 13 | 9/0/2/0/0 of 11 | 9/0/2/0/0 of 11 | 7/1/3/0/0 of 11 | 7/0/2/0/0 of 9 | 8/1/4/0/0 of 13 | 5/3/0/0/0 of 8 | 3/0/1/0/3 of 7 |
+
+What it shows:
+
+- **An Annex C table covers most of a country's document-level numbers everywhere except Italy and Germany**: EE 10/11,
+  BE 10–11/11, NL 10–11/11, SE 8–9/9, PL 9–10/11, AT 10/13, CZ 10/13, ES 8/10 (the rest is untested or absent, not
+  outside). Italy stays at 5–7/12 (27.S2 0.15 Un below the floor, LFSM-O 50.0 Hz), Germany at 3–7/8.
+- **Germany's 2026-03 edition breaks the 2018 tables**: f< 2 s / f> 5 s / f>> 52.6 Hz and the 4 Hz/s RoCoF ride-through are
+  outside most documents' printed ranges, which were written for 2018-11 (0.1 s trips). Until about 2028-03 a 2018-11
+  certificate is still sufficient, so this is "documented for an older edition", not unfit.
+- **Storage LFSM-U droop below 2 %** (AT 1 %, settable 1–2 %; DE 1.6 %; CZ settable from 0.1 %) is under the EN 50549-1
+  floor of 2–12 %: no generic document proves it. NL's 2 % sits on the floor.
+- **AT reconnection**: the TOR's "wait settable 0–300 s" is not compared as a cover (the floor starts at 10 s); the two
+  recommended values (60 s, 300 s) are.
+- The national-only items (no Annex C function exists: certificate under WiPWC / PPDS / ZEREZ, Bank Nastaw profile name,
+  storage power control, logic interface, controllability) are counted per country in the homelab report
+  `kataloogid/reference/gridfit-10-riiki.md`; the grammar extensions the gap check asks for (FRT curve points, LFSM-O
+  response times, the operating power factor, the RoCoF loss-of-mains trip) are listed in "What the profile needs".
+
 ## What the profile needs (handoff — not changed here)
 
 - **Setting values as data.** Each `kind: document` item whose `value` sentence holds numbers gets a `settings` list
@@ -257,5 +291,9 @@ is left out of the per-country tables.
 - **The evidence entry and the test-report entry are the same document** (Solplanet U22-0354, Victron 2622/0478,
   Growatt CN-PVES-260337 are in both): when this is adopted, `functions` becomes a field of the `data/evidence`
   entry and `data/test-reports/` folds into it.
+- **Grammar extensions from the 10-country pass**: FRT curve points (`uvrt`: u_ret_pu, t_clear_s, u_clear_pu, u_rec2_pu,
+  t_rec3_s — ES figure 14, IT table 12, AT figure 5, CZ), LFSM-O response and settling times, the 48.5–49.0 Hz band
+  duration (AT 90 min, CZ 90 min), a time for `ov10` (IT 603 s), the RoCoF loss-of-mains trip (PL, SE 2.5 Hz/s 0.5 s), the
+  start-up ramp (BE 20 %/min) and a region condition (ES non-peninsular systems).
 - **Italy keeps `national-declaration`**; the table is a pre-check there, not evidence. Spain's FRT item needs
   figure 14's points before a curve can be compared.

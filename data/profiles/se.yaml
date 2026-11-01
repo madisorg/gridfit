@@ -1,0 +1,207 @@
+# Sweden — requirement profile for a grid-connected inverter, battery or hybrid in low voltage (type A, 0.8 kW to < 1.5 MW).
+# Sweden has a list, Energiföretagen's Rikta Rätt, but it is not binding: the local grid operator (about 170 of them) decides
+# from the installer's pre-notification (föranmälan). The national rule is Ei's EIFS 2018:2 on top of RfG; the protection
+# settings come from Energiföretagen's handbook ALP (2025), as printed on the Rikta Rätt form and the operators' own forms.
+# Facts only, with the source of each; the grid operator decides. Written 2026-11-01 from Ei's regulation and its 2026
+# consultation draft, the Electricity Act, the Rikta Rätt page and forms, and Ellevio's, Vattenfall Eldistribution's and
+# Nätkraft Borås's own connection documents.
+cc: SE
+country: Sweden
+norm: EIFS 2018:2
+type_a_max_kw: 1500   # EIFS 2018:2 3 kap. 17 § (Nordic thresholds of RfG art. 5.2): type A 0.8 kW to below 1.5 MW; type B from 1.5 MW
+not_listed_short: "The grid operator takes a model that is not on Rikta Rätt when the installer fills in the protection-settings and power-quality tables of its form and can show certificates (RfG / EN 50549-1, EMC, LVD); some operators also ask the maker's relay-protection test protocol"
+description: "EIFS 2018:2 and Rikta Rätt in Sweden: what an inverter, battery or hybrid must meet for type A, the Swedish protection settings, the micro-producer lines and how the local grid operator accepts a model."
+summary: "In Sweden a production unit from 0.8 kW to below 1.5 MW is type A under RfG and Ei's regulation EIFS 2018:2: it stays connected 47.5–51.5 Hz and through 2.0 Hz/s, reduces power from 50.5 Hz with an 8 % droop, reconnects only after the frequency has stayed within 47.5–50.1 Hz for 3 minutes, and trips at the Swedish settings of Energiföretagen's handbook ALP (1.10 Un in 60 s, 1.15 Un and 0.85 Un in 0.2 s, 51.5 / 47.5 Hz in 0.5 s, 2.5 Hz/s loss of mains in 0.5 s). Energiföretagen's Rikta Rätt list pre-checks models but is not binding; the installer's pre-notification (föranmälan) goes to the local grid operator, which decides."
+decided_by: "The local distribution grid operator (elnätsföretag) of the area — Ellevio, Vattenfall Eldistribution, E.ON Energidistribution and about 170 smaller ones — from the installer's pre-notification. The Electricity Act makes the operator check that connected equipment does not endanger operational or supply security (as Energiföretagen's Rikta Rätt page puts it); Ei (Energimarknadsinspektionen) writes the national requirements; Energiföretagen Sverige, the industry association, runs the non-binding Rikta Rätt pre-check list and writes the ALP handbook with the recommended settings."
+list:
+  name: "Rikta Rätt 1.0 (Energiföretagen Sverige)"
+  url: https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller
+  meaning: "A pre-review list: Energiföretagen checked the submitted application form and certificates (RfG / EN 50549-1, EMC, LVD) and that the unit can be set to the Swedish settings — not that it is set right, and without checking test reports or testing anything. Columns: running number, make, type, firmware, kW, phases, energy source, date reviewed, comment. Page dated 2026-10-29, list 2026-10-23."
+  gate: "No. In Energiföretagen's words the list 'has no legal status and is not mandatory for DSOs, manufacturers or installers' and listing 'does not constitute formal approval'. In practice the operators' forms ask whether the inverter is on Rikta Rätt and ask extra tables if it is not (Ellevio)."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG), article 13 — type A requirements"
+  - "EIFS 2018:2 — Energimarknadsinspektionens föreskrifter om fastställande av generellt tillämpliga krav för nätanslutning av generatorer, decided 2018-11-08, in force 2019-04-27 (3 kap. 1–9 §§ for type A)"
+  - "Ellagen (1997:857) 4 kap. 1–2, 11, 37–38 §§ — duty to connect, the 43.5 kW / 63 A fee exemptions, the 1,500 kW feed-in fee rule"
+  - "Energiföretagen Sverige, ALP — Anslutning av elproduktion och energilager till lågspänningsnätet (order no. 35137, February 2025): the recommended protection settings and the installation rules the operators refer to"
+  - "SS-EN 50549-1 (the Swedish edition of EN 50549-1), SS-EN 61000-3-2 / -3-3 / -3-11 / -3-12 (harmonics and flicker), SS 437 01 02 (production spread evenly over the phases, as cited by Energiföretagen and Svensk Solenergi)"
+  - "Directives 2014/30/EU (EMC) and 2014/35/EU (LVD); CE marking"
+# The edition every requirement below is written against, and what a maker's document must cite to count as evidence
+# for it (tools/check/run.py; docs/checks.md). EIFS 2018:2 has not been amended; Ei's replacement (consultation draft of
+# 2026-02-19) was not found adopted on 2026-11-01 — see changes.
+edition:
+  norm: "EIFS 2018:2"
+  id: "2018-11"
+  date: "2018-11"
+  in_force: "2019-04-27"
+  label: "EIFS 2018:2 with the ALP 2025 recommended protection settings"
+document_must_cite: ["EIFS 2018:2", "EIFS 2018.2"]
+accepts: [generic-en50549-1, national-declaration]
+# why generic-en50549-1: Rikta Rätt page (2026-10-29): "Det krävs certifikat på att produkten uppfyller kraven enligt: RfG (EU 2016/631)
+#   och/eller EN 50549-1"; Ellevio type-A form (2025-09): "Anläggningsinnehavaren har rätt att åberopa utrustningscertifikat som utfärdats
+#   av behörigt certifieringsorgan för att visa överensstämmelse med kraven". A bare EN 50549-1 certificate does not show the Swedish
+#   50.5 Hz / 8 % / 3-minute values, which is why the forms also ask the settings.
+# why national-declaration: Fronius, SMA, Sungrow and SolarEdge publish documents that cite EIFS 2018:2 with the Swedish settings
+#   (evidence.md); the operators' forms ask the same settings to be confirmed.
+must_meet:
+  - id: power-class
+    rule: "Plant size class (EIFS 2018:2 3 kap. 17 §; RfG art. 5.2, Nordic synchronous area)"
+    value: "type A from 0.8 kW to below 1.5 MW; type B from 1.5 MW (fault ride-through, voltage range 90–105 %), C from 10 MW, D from 30 MW — each with conditions of its own"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 1500, over: "1.5 MW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "EIFS 2018:2 3 kap. 17 §; Rikta Rätt application form 2025" }
+  - id: micro-producer
+    rule: "Micro-producer line (Ellagen 4 kap. 2, 11, 38 §§)"
+    value: "a renewable unit that can feed in at most 43.5 kW, at a consumer with a fuse subscription of at most 63 A: no connection fee and no feed-in fee; the operator may refuse the connection only by telling the applicant within one month"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 43.5, over: "over 43.5 kW: no longer the micro-producer fee exemption — the ordinary connection procedure and fees", provable_by: [datasheet, document], source: "Ellagen (1997:857) 4 kap. 2, 11 och 38 §§" }
+  - id: phases
+    rule: "Single-phase limit (operator's technical conditions; SS 437 01 02)"
+    value: "no national figure: production is to be spread evenly over the phases; Vattenfall Eldistribution (2026), Nätkraft Borås (2026) and Falkenberg Energi allow at most 3 kW single-phase, Alingsås and Jönköping 2 kW, Eksjö recommends 1.5 kW; some operators allow no single-phase unit. Several single-phase units on Rikta Rätt are listed 'only in a three-phase connection'"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 3, applies: { phases: [1] }, over: "single-phase over 3 kW: above most operators' single-phase limit (Vattenfall, Nätkraft Borås, Falkenberg 3 kW; others lower) — ask the local operator", provable_by: [datasheet, document], source: "Vattenfall Eldistribution, Tekniska villkor för egen elproduktion (2026), point 5; Energiföretagen/Svensk Solenergi 2021" }
+  - id: emc-16a
+    rule: "Power-quality class, 16 A (Rikta Rätt form; ALP)"
+    value: "up to 16 A per phase: harmonics to SS-EN 61000-3-2 and flicker to SS-EN 61000-3-3; above 16 A the 61000-3-12 / -3-11 route (next line); recommended limits Pst 0.35, Plt 0.25"
+    check: { kind: max, meaning: emc-class, field: ac_a, limit: 16, over: "over 16 A: harmonics to SS-EN 61000-3-12 and flicker to SS-EN 61000-3-11", provable_by: [datasheet, document], source: "Rikta Rätt application form 2025; Ellevio type-A form 2025-09" }
+  - id: emc-75a
+    rule: "Power-quality class, 75 A (Rikta Rätt form, appendix 1)"
+    value: "above 75 A: flicker to SS-EN 61400-21 and every harmonic and inter-harmonic current (orders 2–50) reported separately on the form's appendix 1"
+    check: { kind: max, meaning: emc-class, field: ac_a, limit: 75, over: "over 75 A: harmonic currents reported per order (Rikta Rätt appendix 1)", provable_by: [datasheet, document], source: "Rikta Rätt application form and appendix 1, 2025" }
+  - id: freq-range
+    rule: "Frequency ranges (EIFS 2018:2 3 kap. 1 §)"
+    value: "at least 30 min in 47.5–48.5 Hz and in 48.5–49.0 Hz, unlimited 49.0–51.0 Hz, at least 30 min in 51.0–51.5 Hz"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "EIFS 2018:2 3 kap. 1 §" }
+  - id: voltage-range
+    rule: "Voltage window between the protection settings (ALP 2025)"
+    value: "the unit must keep running between the under-voltage trip at 195.5 V (0.85 Un) and the over-voltage trip at 253 V (1.10 Un); EIFS 2018:2 sets no voltage range for type A"
+    check: { kind: range, field: vac_pct, range: [85, 110], provable_by: [datasheet, document], source: "derived from the ALP settings on the Rikta Rätt form 2025; not a separate clause" }
+  - id: rocof
+    rule: "Rate of change of frequency (EIFS 2018:2 3 kap. 2 §)"
+    value: "stay connected and operate up to 2.0 Hz/s, measured at the connection point over 500 ms"
+    check: { kind: document, provable_by: [document], source: "EIFS 2018:2 3 kap. 2 §" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (EIFS 2018:2 3 kap. 3–6 §§)"
+    value: "reduce active power from 50.5 Hz with an 8 % droop (25 % of Pmax per Hz), referred to the maximum continuous power; no disconnection instead of the reduction; keep running at the minimum regulating level; the form asks the lowest kW the unit can reduce to"
+    check: { kind: document, provable_by: [document], source: "EIFS 2018:2 3 kap. 3–6 §§" }
+  - id: under-frequency
+    rule: "Power at falling frequency (EIFS 2018:2 3 kap. 7 §)"
+    value: "below 49.0 Hz active power may fall by at most 3 % of Pmax per Hz"
+    check: { kind: document, provable_by: [document], source: "EIFS 2018:2 3 kap. 7 §" }
+  - id: reconnection
+    rule: "Automatic connection and reconnection (EIFS 2018:2 3 kap. 8–9 §§)"
+    value: "only with the frequency within 47.5–50.1 Hz continuously for at least 3 minutes; power rise unlimited below 49.9 Hz, at most 10 % of rated power per minute in 49.9–50.1 Hz, none above 50.1 Hz"
+    check: { kind: document, provable_by: [document], source: "EIFS 2018:2 3 kap. 8–9 §§" }
+  - id: lom-protection
+    rule: "Protection settings at low voltage, 400 V (ALP recommended values, on the Rikta Rätt form)"
+    value: "over-voltage 253.0 V (1.10 Un) in 60 s and 264.5 V (1.15 Un) in 0.2 s; under-voltage 195.5 V (0.85 Un) in 0.2 s; over-frequency > 51.5 Hz and under-frequency < 47.5 Hz in 0.5 s; unwanted island operation 2.5 Hz/s in 0.5 s. Older documents carry 255.3 V for the 60 s stage; an operator may set other values on its form"
+    check: { kind: document, provable_by: [document], source: "Rikta Rätt application form 2025; Ellevio type-A form 2025-09 (ALP); Nätkraft Borås 2026-02-02" }
+  - id: anti-islanding
+    rule: "Island operation (ALP; operators' conditions)"
+    value: "the unit must not energise a dead grid and must detect unwanted island operation (2.5 Hz/s in 0.5 s above); a battery meant as back-up power is notified separately with a single-line diagram"
+    check: { kind: document, provable_by: [document], source: "Vattenfall Eldistribution 2026 points 7 and 11; Nätkraft Borås 2026-02-02 6.2; Rikta Rätt form 2025" }
+  - id: logic-interface
+    rule: "Logic interface for remote stop (RfG art. 13.6)"
+    value: "the form asks whether the unit has a logic interface (input port) that lets the operator cease active power output; the operator has the right to set requirements for it"
+    check: { kind: document, provable_by: [document], source: "Rikta Rätt application form 2025; Ellevio type-A form 2025-09; RfG art. 13.6" }
+  - id: reactive
+    rule: "Reactive power (operator's conditions)"
+    value: "no national type-A requirement found; the form asks the power factor; Nätkraft Borås asks cos φ = 1 in normal operation with a control range from 0.9 to 0.9 (both directions)"
+    check: { kind: none, why: "no national value; one operator's condition only", source: "Rikta Rätt application form 2025; Nätkraft Borås 2026-02-02 6.2" }
+  - id: storage
+    rule: "Storage (operators' forms; Rikta Rätt)"
+    value: "a battery or hybrid is notified and checked like production — Ellevio: 'pending updated rules the same rules apply to an energy store'; Energiföretagen warns that Rikta Rätt 1.0 is not fully adapted to energy storage and bidirectional EV charging and asks operators for extra care"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "Ellevio type-A form 2025-09; Rikta Rätt page 2026-10-29" }
+  - id: export-limit
+    rule: "Static or dynamic export limitation"
+    value: "the power entered on the pre-notification is the inverters' rated power or the statically / dynamically limited maximum; the resulting current may not exceed the meter fuse; the measuring point is never on the grid side of the operator's meter"
+    check: { kind: none, why: "installation-level setting, not a check on the model", source: "Svensk Solenergi and Energiföretagen, Solcellsanläggningars effekt — anmälan till elnätsföretag, version 1, 2021-12-17" }
+documents_for_listing:
+  - "Energiföretagen's application form 'Registration for approval of an inverter for a type A power-generating facility' (version 2025), signed by a responsible person of the applying company (a printed name alone is not enough), every field filled, the settings and measured values matching the certificates"
+  - "appendix 1 (harmonic currents per order 2–50, total harmonic and inter-harmonic current) for units above 75 A"
+  - "a certificate that the product meets RfG (EU 2016/631) and/or EN 50549-1, with third-party test reports"
+  - "a certificate for the EMC directive (2014/30/EU) and the flicker and harmonics standards named on the form"
+  - "the LVD (2014/35/EU) declaration — the maker may issue it itself"
+apply:
+  who: "for the list: makers, wholesalers, importers or installers, to Energiföretagen; for the connection: the registered electrical installation company, by pre-notification (föranmälan) to the local grid operator, signed by the installer and the owner"
+  how: "the installer sends the föranmälan with the operator's type-A form (Rikta Rätt yes / no; if no, the settings and power-quality tables), the operator checks the service and the grid and returns an installation consent (installationsmedgivande) with conditions; after the work the installer sends a completion notice (färdiganmälan); the operator fits a production meter and, at some operators, checks on site before the unit may run. A new föranmälan is needed when the power grows or the inverter make or model changes"
+  guide_url: https://www.ellevio.se/globalassets/content/ovrigt/ellevio-anmalan-av-produktionsanlaggning-typ-a.pdf
+  guide_date: "Ellevio, Anmälan anslutning av produktionsanläggning (Typ A), 2025-09-12; Rikta Rätt application form version 2025 (2025-02-20)"
+  processing_time: "Rikta Rätt aims to publish a new list every second Friday, handling applications received by the day before; complicated cases take longer. For the connection there is no national deadline, except that for renewable units up to 43.5 kW the operator must say within one month if it will not connect (Ellagen 4 kap. 2 §)"
+not_listed: "Rikta Rätt is not a prerequisite: 'Inclusion on the Rikta Rätt list is not a prerequisite for an inverter to be connected', and an operator 'may always require' documentation that every requirement is met. For a model that is not on the list Ellevio's form asks the installer to fill in the protection-settings table (values from the inverter's type-test protocol) and the power-quality table; Vattenfall wants the relay-protection protocol from the maker ('a reference to the maker's website is not enough'). Some operators are said to refuse a pre-notification without a listed inverter (not confirmed from an operator's own document). The maker can also apply to Rikta Rätt, free of charge."
+thresholds:
+  - "below 0.8 kW: outside RfG, but a plug-in (socket) connection is not allowed (Vattenfall, Nätkraft Borås, Eksjö conditions; Elsäkerhetsverket's position since 2022) — every unit is fixed-wired with a lockable switch"
+  - "single-phase: set by each operator — 3 kW at Vattenfall Eldistribution, Nätkraft Borås and Falkenberg Energi, 2 kW at Alingsås and Jönköping, 1.5 kW recommended at Eksjö; spread over the phases with unbalance protection where several single-phase units are used (Jönköping, Eksjö)"
+  - "16 A and 75 A per phase: the harmonics / flicker standard changes (61000-3-2/-3-3 → -3-12/-3-11 → per-order reporting)"
+  - "43.5 kW feed-in at a fuse of at most 63 A: no connection fee, no feed-in fee (Ellagen 4 kap. 11 and 38 §§); Vattenfall: connection category 1 = 16–63 A, category 2 = 80–1,500 A"
+  - "100 A fuse: the income-tax micro-producer (tax reduction for renewable micro-production has no power limit, only the 100 A fuse) — as cited by Nätkraft Borås 2026"
+  - "type A 0.8 kW to < 1.5 MW, type B from 1.5 MW (EIFS 2018:2 3 kap. 17 §); up to 1,500 kW the feed-in fee covers only metering (Ellagen 4 kap. 37 §)"
+  - "storage: treated as production pending updated rules (Ellevio); Rikta Rätt 1.0 not fully adapted to storage and V2G"
+commissioning: "The unit may not run before the operator's approval (Nätkraft Borås). The installer confirms with the färdiganmälan that the installation is done to the conditions; the operator fits an import/export meter and at some operators books a commissioning check. The owner keeps the relay protection and other protective equipment maintained and tested to the maker's instructions (Vattenfall point 13), and the operator may require compliance tests and simulations after any change or fault (Ellevio)."
+changes:
+  - "November 2026: Energiföretagen presents the Rikta Rätt 2.0 application format, the XML data format and a test data set, plus an industry guideline on which data operators should treat as necessary"
+  - "turn of 2026/2027: listing in Rikta Rätt 2.0 opens — a database of all identifiable equipment with its certificates and declarations, no longer a pass list; each operator judges"
+  - "Q2 2027: a Rikta Rätt 1.0 listing also requires a 2.0 listing; September 2027: no new 1.0 listings; turn of 2027/2028: the 1.0 CSV is unpublished"
+  - "Ei's consultation draft of 2026-02-19 (EIFS 2026:nr) replaces EIFS 2018:2: planned decision May 2026, in force 1 July 2026; the fixed LFSM settings (50.5 Hz, 8 %) would cease on 1 January 2027 and Svenska kraftnät would publish recommended LFSM / FSM settings instead; frequency bands, 2.0 Hz/s, 3 %/Hz below 49 Hz, the 3-minute 47.5–50.1 Hz reconnection and the 10 %/min ramp are kept. Adoption was NOT found on 2026-11-01 (Ei's English page of 2026-03-08 and Vattenfall's conditions of 2026-09 still cite EIFS 2018:2)"
+  - "EU RfG revision (RfG 2.0, storage included): Svenska kraftnät expected entry into force in Q4 2026 (page reviewed 2025-05-16); not adopted on 2026-11-01"
+  - "1 January 2026: EIFS 2025:2 replaced SvKFS 2005:2 for the operational-security design of production plants not covered by EU requirements — not a type-A change"
+evidence_for_documented: "A certificate or test report against EN 50549-1 (RfG) plus the maker's Swedish settings document — a declaration citing EIFS 2018:2 or a parameter table for 'Sweden' (50.5 Hz / 8 %, 3 min reconnection, the ALP trips). GridFit shows the document and the Rikta Rätt row; the local grid operator decides."
+sources:
+  - title: "Rikta Rätt – information om omriktare för anslutning till det svenska lågspänningsnätet (Energiföretagen Sverige)"
+    url: https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller
+    date: "2026-10-29"
+  - title: "Rikta Rätt 1.0 list, semicolon-separated CSV"
+    url: https://www.energiforetagen.se/4aa4f3/globalassets/medlemsportalen-oppet/rikta-ratt/rikta-ratt-26-10-23.csv
+    date: "2026-10-23"
+  - title: "Registration for approval of an inverter for a type A power-generating facility – registration for Rikta Rätt (version 2025 EN)"
+    url: https://www.energiforetagen.se/492bc8/globalassets/energiforetagen/energifakta/el/riktaratt_en.pdf
+    date: "2025-02-20"
+  - title: "Registration for Rikta Rätt – Appendix 1, specification of harmonic currents (version 2025 EN)"
+    url: https://www.energiforetagen.se/492bc8/globalassets/energiforetagen/energifakta/el/riktaratt_bilaga1_en.pdf
+    date: "2025-02-24"
+  - title: "EIFS 2018:2 — Energimarknadsinspektionens föreskrifter om fastställande av generellt tillämpliga krav för nätanslutning av generatorer (text)"
+    url: https://lagen.nu/eifs/2018:2
+    date: "2018-11-08, in force 2019-04-27"
+  - title: "Föreskrift EIFS 2018:2 (Ei's publication page)"
+    url: https://ei.se/om-oss/publikationer/publikationer/foreskrifter-el/2018/foreskrift-eifs-20182
+    seen: "2026-11-01"
+  - title: "Ei — Information regarding network codes for grid connection (EIFS 2018:2 in force)"
+    url: https://ei.se/ei-in-english/electricity/information-regarding-network-codes-for-grid-connection
+    date: "2026-03-08"
+  - title: "Ei — Remissutkast, föreskrifter och allmänna råd om fastställande av generellt tillämpliga krav för nätanslutning av generatorer (EIFS 2026:nr)"
+    url: https://ei.se/download/18.1825c33b19c47ab9719fc29/1771849515674/Remissutkast-Energimarknadsinspektionens-f%C3%B6reskrifter-och-allm%C3%A4nna-r%C3%A5d-om-fastst%C3%A4llande-av-generellt-till%C3%A4mpliga-krav-f%C3%B6r-n%C3%A4tanslutning-av-generatorer.pdf
+    date: "2026-02-23"
+  - title: "Ei — Remissutkast, konsekvensutredning (ärende 2025-103407)"
+    url: https://ei.se/download/18.1825c33b19c47ab9719fc38/1771849540664/Remissutkast-Konsekvensutredning-Eis-f%C3%B6reskrifter-och-allm%C3%A4nna-r%C3%A5d-om-fastst%C3%A4llande-av-generellt-till%C3%A4mpliga-krav-f%C3%B6r-n%C3%A4tanslutning-av-kraftproduktionsmoduler.pdf
+    date: "2026-02-19"
+  - title: "Ei — Nya föreskrifter om krav vid anslutning av produktionsanläggningar (EIFS 2025:2)"
+    url: https://ei.se/om-oss/nyheter/2025/2025-12-10-nya-foreskrifter-om-krav-vid-anslutning-av-produktionsanlaggningar
+    date: "2025-12-10"
+  - title: "Ellagen (1997:857), 4 kap."
+    url: https://lagen.nu/1997:857
+    seen: "2026-11-01"
+  - title: "Ellevio — Anmälan anslutning av produktionsanläggning (Typ A), bifogas föranmälan"
+    url: https://www.ellevio.se/globalassets/content/ovrigt/ellevio-anmalan-av-produktionsanlaggning-typ-a.pdf
+    date: "2025-09-12"
+  - title: "Vattenfall Eldistribution — Tekniska villkor för egen elproduktion"
+    url: https://www.vattenfalleldistribution.se/globalassets/1.-privat/elnatsanslutning/anslut-elproduktion/tekniska-villkor-egen-produktion-vattenfall-eldistribution-ab-2026.pdf
+    date: "2026-09-02"
+  - title: "Nätkraft Borås — Tekniska anvisningar för anslutning (section 6, production)"
+    url: https://natkraftboras.se/wp-content/uploads/2026/02/Tekniska-anvisningar-tillganglighetsanpassad-uppdaterad-2026-02-02.pdf
+    date: "2026-02-02"
+  - title: "Svensk Solenergi and Energiföretagen — Solcellsanläggningars effekt: anmälan till elnätsföretag (version 1)"
+    url: https://www.energiforetagen.se/globalassets/dokument/broschyrer/anmalan-solceller.pdf
+    date: "2021-12-17"
+  - title: "Eksjö Energi — Mikroproduktion för elinstallatörer"
+    url: https://eksjoenergi.se/app/uploads/2024/10/mikroproduktion-for-elinstallatorer-eksjo-docm.pdf
+    date: "2023-04-04"
+  - title: "Falkenberg Energi — Tekniska villkor för anslutning av lågspänning (3 kW single-phase; seen through a search excerpt, not opened)"
+    url: https://www.falkenberg-energi.se/wp-content/uploads/2025/05/FEAB-Tekniska-villkor-for-anslutning-av-Lagspanning-2505-1.pdf
+    date: "2025-05"
+  - title: "Alingsås Energi Elnät — Tekniska anvisningar (2 kW single-phase; search excerpt, not opened)"
+    url: https://www.alingsasenergi.se/wp-content/uploads/2025/03/Tekniska-Anvisningar-Alingsas-Energi-Elnat-AB.pdf
+    date: "2025-03"
+  - title: "Jönköping Energi — Installera solcellsanläggningar (2 kW single-phase, unbalance protection; search excerpt, not opened)"
+    url: https://jonkopingenergi.se/storage/FCC645339D146CB3F3D58BC2F04CA8B8BAA31D90056BB050D63B276A3FF04929/e96a1f4a297d4f9a9f904b3705a88160/pdf/media/43c4daf91e594208be594fa38bb759f7/installera%20solcellsanl%C3%A4ggningar_2024%202.pdf
+    date: "2024"
+  - title: "Svenska kraftnät — Nätanslutning av generatorer (RfG)"
+    url: https://www.svk.se/om-kraftsystemet/legalt-ramverk/eu-lagstiftning-/natanslutning-av-generatorer-rfg/
+    date: "reviewed 2025-05-16"
+  - title: "pv magazine — Swedish authorities issue warning about solar panels on balconies"
+    url: https://www.pv-magazine.com/2023/01/30/swedish-authorities-issue-warning-about-solar-panels-on-balconies
+    date: "2023-01-30"

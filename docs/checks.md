@@ -36,8 +36,8 @@ the profile `accepts`:
 
 | `accepts` value | a document is this kind when | taken by |
 |---|---|---|
-| `national-declaration` | one of its `standards` contains one of the profile's `document_must_cite` keys (CEI 0-21, RD 647 / TED 749 / NTS, …) | IT, ES, EE |
-| `generic-en50549-1` | one of its `standards` contains EN 50549 or EN 50438 | EE (Greece in the test fixture) |
+| `national-declaration` | one of its `standards` contains one of the profile's `document_must_cite` keys (CEI 0-21, RD 647 / TED 749 / NTS, TOR Erzeuger, C10/11, PPDS, VDE-AR-N 4105, WiPWC, EIFS 2018:2, Netcode, …) | all ten |
+| `generic-en50549-1` | one of its `standards` contains EN 50549 or EN 50438 | EE, NL, SE (Greece in the test fixture) |
 | `country-release` | its `kind` is `country-release` — the maker's own released-countries table | no country yet |
 
 A document of a kind the country does not take proves none of the rows; the page names it and says which kinds that
@@ -104,11 +104,11 @@ ABB/FIMER TRIO-8.5-TL-OUTD × Italy — datasheet FIMER TRIO-5.8/7.5/8.5-TL-OUTD
 (`data/specs/abb.yaml`); declaration of conformity attached to TÜV Rheinland certificate AK 60176937 0001,
 2024-07-01, citing CEI 0-21:2022-03; V1:2022-11; V2:2024-01 (`data/evidence/abb.yaml`):
 
-- **6 by datasheet**: 8.5 kW within the 11.08 kW type-A line (`power-class`) and so the interface protection may be
-  built in (`spi-integrated`); three-phase, required over 6 kW (`phases`); 47–53 Hz covers 47.5–51.5 (`freq-range`);
+- **7 by datasheet**: 8.5 kW within the 11.08 kW type-A line (`power-class`) and so the interface protection may be
+  built in (`spi-integrated`), and within the 20 kW back-up interface switch line (`backup-ddi`, added 2026-11-01); three-phase, required over 6 kW (`phases`); 47–53 Hz covers 47.5–51.5 (`freq-range`);
   320–480 V at 400 V = 80–120 % covers 85–110 % (`voltage-range`); cos φ adjustable to 0.9 (`reactive`).
-- **8 by the maker's document**: RoCoF, LFSM-O, interface protection settings, IEC 61850, reconnection, fitness above
-  11.08 kW / FRT, P(U), DC injection — of which two are `O`: table 13's 59.S2 time and P(U)_115 changed in the
+- **9 by the maker's document**: RoCoF, LFSM-O, interface protection settings, IEC 61850, reconnection, fitness above
+  11.08 kW / FRT, P(U), DC injection, power at under-frequency (`under-frequency`, added 2026-11-01) — of which two are `O`: table 13's 59.S2 time and P(U)_115 changed in the
   2026-07 edition, which the declaration does not cite.
 - `storage` not applicable; `sli` no check. Nothing not shown.
 

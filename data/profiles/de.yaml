@@ -1,0 +1,188 @@
+# Germany — requirement profile for a grid-connected inverter, battery, hybrid or bidirectional charger in low voltage
+# (VDE-AR-N 4105). There is no approved-model list. What the grid operator checks is the unit certificate
+# (Einheitenzertifikat) and the NA-protection certificate of the model, issued by an accredited certification body
+# and registered by the maker in ZEREZ, the central register for unit and component certificates; since
+# 1 February 2025 the operator gets only the ZEREZ-ID and may take certificate data only from the register
+# (NELEV § 4(9)-(10)). Facts only, with the source of each; the grid operator decides. Written 2026-11-01 from the
+# NELEV text, VDE FNN's own pages and consultation summary for VDE-AR-N 4105:2026-03, a DSO workshop (badenova
+# Netze with the certification body FGH, 2026-06-30), ZEREZ's terms, FAQ, user manual and API documentation, and
+# makers' certificates. The norm text itself is paid; its 2026 values come from those public summaries.
+cc: DE
+country: Germany
+norm: VDE-AR-N 4105
+type_a_max_kw: 135   # BNetzA BK6-16-166 (2018-04-24): type B from 135 kW (150 kVA); type A from the RfG's 0.8 kW
+not_listed_short: "There is no list; a model needs a VDE-AR-N 4105 unit certificate and NA-protection certificate registered in ZEREZ — the grid operator takes only the ZEREZ-ID"
+description: "VDE-AR-N 4105 in Germany: what an inverter, battery or hybrid must meet under the 2026-03 edition, the unit certificate in the ZEREZ register, the 4.6 kVA, 30 kVA and 135 kW lines and how the grid operator accepts a model."
+summary: "VDE-AR-N 4105 is the German technical rule for connecting generators and storage to the low-voltage grid; the edition in force is VDE-AR-N 4105:2026-03, applied since 1 March 2026, with certificates to the 2018-11 edition still sufficient during a transition. A model needs a unit certificate and an NA-protection certificate from an accredited certification body, registered by the maker in ZEREZ; the installer hands the grid operator only the ZEREZ-ID. The NA protection disconnects at the voltage and frequency limits below — built into the inverter up to 30 kVA in total, a central device above —, the unit rides through 4 Hz/s for 0.25 s, cuts power from 50.2 Hz, and ships with Q(U) as its default reactive-power mode. There is no approved-model list: the register holds the certificates, and the grid operator decides at commissioning."
+decided_by: "The distribution grid operator (Verteilnetzbetreiber) of the connection point — the large regional ones (Westnetz, Bayernwerk Netz, E.DIS, Netze BW, Avacon, MITNETZ) to municipal Stadtwerke (several hundred operators; count not checked) — at the grid-connection and commissioning procedure, from the ZEREZ-IDs (NELEV § 2(1), § 4(9)-(10)). VDE FNN writes the technical rule, which BNetzA decision BK6-23-037 makes a binding technical safety rule under § 49(2) EnWG; FGW e.V. runs ZEREZ as the body entrusted by the federal economics ministry under § 49d(3) EnWG; BNetzA keeps the Marktstammdatenregister, where every plant is registered."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG) — the generator requirements"
+  - "BNetzA decision BK6-16-166 of 24 April 2018 — approves the TSOs' thresholds: type B from 135 kW (150 kVA), type C from 36 MW, type D from 45 MW; type A from the RfG's 0.8 kW (VDE FNN, Leistungsklassen)"
+  - "§ 49 EnWG and BNetzA decision BK6-23-037 — the VDE FNN connection rules are binding technical safety rules (§ 49(2) sentence 2 EnWG), stated in the foreword of VDE-AR-N 4105:2026-03 (VDE FNN consultation summary)"
+  - "Elektrotechnische-Eigenschaften-Nachweis-Verordnung (NELEV) of 12 June 2017, last amended 16 May 2024 (BGBl. 2024 I Nr. 158) — proof of the technical requirements to the grid operator, the register for unit and component certificates (§ 4), validity (§ 5), register duties from 1 February 2025 (§ 7(4))"
+  - "§ 49d EnWG — the register; FGW e.V. entrusted with it under § 49d(3) EnWG (ZEREZ terms of use, preamble)"
+  - "Energieanlagen-Anforderungen-Verordnung (EAAV) — up to 500 kW cumulative and 270 kW feed-in may connect on unit and component certificates without a plant certificate (VDE FNN NELEV/EAAV note, March 2024)"
+  - "VDE-AR-N 4105:2026-03, published 27 February 2026, applied from 1 March 2026; replaces VDE-AR-N 4105:2018-11 and its correction 1:2020-10; tested to DIN VDE V 0124-100"
+  - "VDE-AR-N 4100:2026-04 (customer installations; the 4.6 kVA unbalance rule, § 5.5.2 as the certificates cite it), applied from 1 April 2026"
+  - "EEG 2023 as amended by the Solarspitzengesetz (BGBl. 2025 I Nr. 51, in force 25 February 2025) — § 9 control and the 60 % feed-in cap, § 51 no payment at negative prices, Steckersolargeräte up to 2 kW / 800 VA"
+  - "§ 14a EnWG and BNetzA decision BK6-22-300 — controllable consumer devices (charging points, storage charging, heat pumps above 4.2 kW) since 1 January 2024"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). Almost every certificate published so far
+# cites VDE-AR-N 4105:2018-11 (TÜV Rheinland writes it "VDE-AR-N 4105/11.18"), which stays sufficient for
+# registration and commissioning until the certificate transition ends (24 months after the rule took effect,
+# so about 1 March 2028 — not confirmed as a single date); items changed in 2026-03 show as "documented for an
+# older edition".
+edition:
+  norm: "VDE-AR-N 4105"
+  id: "2026-03"
+  date: "2026-03"
+  in_force: "2026-03-01"
+  label: "VDE-AR-N 4105:2026-03"
+document_must_cite: ["VDE-AR-N 4105"]
+# why national-declaration only: NELEV § 2(1) proof to the grid operator; VDE-AR-N 4105:2026-03 § 9 as VDE FNN
+# summarises it: "Für Erzeugungsanlagen und Speicher, die in den Anwendungsbereich dieser Anwendungsregel fallen,
+# sind Einheitenzertifikate nach Abschnitt 9 dieser Anwendungsregel nachzuweisen." A generic EN 50549-1
+# certificate is not that. In Germany the document must also be a certificate (not a maker's declaration) and
+# registered in ZEREZ — GridFit cannot check the registration yet (see register.md).
+accepts: [national-declaration]
+must_meet:
+  - id: power-class
+    rule: "Plant size class (RfG; BNetzA BK6-16-166)"
+    value: "type A from 0.8 kW to below 135 kW; from 135 kW (150 kVA) type B. VDE-AR-N 4105:2026-03 still applies up to 500 kW cumulative and 270 kW agreed feed-in at the connection point (EAAV), with extra protection above 270 kW; above that VDE-AR-N 4110 with a plant certificate"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 135, over: "135 kW or more: type B; up to 500 kW / 270 kW feed-in still under VDE-AR-N 4105 with its own procedure, above it VDE-AR-N 4110", provable_by: [datasheet, document], source: "BNetzA BK6-16-166 (2018-04-24); VDE FNN Leistungsklassen; VDE-AR-N 4105:2026-03 section 1, 8.4" }
+  - id: unit-certificate
+    rule: "Unit and NA-protection certificate in ZEREZ (VDE-AR-N 4105 section 9; NELEV § 2, § 4)"
+    value: "each generating unit, storage unit and bidirectional charger needs an Einheitenzertifikat and an NA-protection certificate (and a PAV,E-protection certificate where one is used) from a certification body accredited to ISO/IEC 17065, on DIN VDE V 0124-100 tests by an ISO/IEC 17025 laboratory; the maker registers them in ZEREZ and the installer gives the operator the ZEREZ-ID. A certificate whose certified properties change (for example by a firmware update) loses validity unless a supplementary proof is registered (NELEV § 5); certificates to VDE-AR-N 4105:2018-11 remain sufficient for a limited time"
+    check: { kind: document, provable_by: [document], source: "VDE-AR-N 4105:2026-03 section 9.2 (FGH, badenova Netze workshop 2026-06-30); NELEV § 2, § 4(3), § 4(9)-(10), § 5" }
+  - id: freq-range
+    rule: "Frequency range (section 5.7.1, table 2)"
+    value: "stay connected from 47.5 to 51.5 Hz; the 2026-03 edition adds that units stay connected for at least 10 s between 51.5 and 52.5 Hz (as the draft's table was amended in consultation — the final table not seen); proof is a maker's declaration checked in the unit certification"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], changed_in: "2026-03", changed: "51.5–52.5 Hz for at least 10 s added (consultation table, final text not seen)", source: "VDE-AR-N 4105:2026-03 5.7.1 table 2 (VDE FNN consultation summary, entries on 5.7.1)" }
+  - id: rocof
+    rule: "Rate of change of frequency (5.7.4.3.3)"
+    value: "type-2 units (inverters), storage and DC-coupled units ride through ±4.0 Hz/s for 0.25 s, ±2.0 Hz/s for 0.5 s, ±1.5 Hz/s for 1 s and ±1.25 Hz/s for 2.5 s without disconnecting; proof by maker's declaration and commissioning test"
+    check: { kind: document, provable_by: [document], changed_in: "2026-03", changed: "the RoCoF ride-through table is new in the 2026-03 edition", source: "VDE-AR-N 4105:2026-03 5.7.4.3.3 (FGH slides, badenova Netze workshop 2026-06-30)" }
+  - id: lfsm-o
+    rule: "Over-frequency response (netzsicherheitsbasierte Primärregelung, 5.7.4.3.4)"
+    value: "outside 49.8–50.2 Hz type-2 units, storage and DC-coupled units take part: from 50.2 Hz active power falls with a 5 % droop (40 % of Pref per Hz); units up to 800 VA likewise from 50.2 Hz with a fixed 5 % droop"
+    check: { kind: document, provable_by: [document], source: "VDE-AR-N 4105:2026-03 5.7.4.3.4, 5.5.3 (FGH slides 2026-06-30)" }
+  - id: lfsm-u-storage
+    rule: "Under-frequency response of storage (5.7.4.3.4, figure 16)"
+    value: "from 49.8 Hz storage and DC-coupled units raise output with a 1.6 % droop and switch to discharging; the full range is −100 % to +100 % PEmax for batteries (10–100 % for PV); system stability ranks above a no-export agreement"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, changed_in: "2026-03", changed: "the over- and under-frequency behaviour (PRNB) was restructured in the 2026-03 edition", source: "VDE-AR-N 4105:2026-03 5.7.4.3.4, figure 16 (FGH slides 2026-06-30)" }
+  - id: lom-protection
+    rule: "NA protection settings (6.5.2, table 7)"
+    value: "for inverters: U>> 1.25 Un within 200 ms; U> 1.10 Un as a 10-minute moving mean (fixed at 1.1 Un for NA protection up to 30 kVA); U< 0.80 Un 3.0 s; U<< 0.45 Un 300 ms; f< 47.5 Hz 2.0 s; f> 51.5 Hz 5.0 s; f>> 52.6 Hz within 200 ms. The 2018-11 edition had f< 47.5 Hz and f> 51.5 Hz within 100 ms and no f>>; switch-off time (protection plus switch) at most 200 ms"
+    check: { kind: document, provable_by: [document], changed_in: "2026-03", changed: "frequency trips lengthened to 2 s (f<) and 5 s (f>), f>> 52.6 Hz added; settings now differ by unit type", source: "VDE-AR-N 4105:2026-03 6.5.2 table 7 (FGH slides 2026-06-30); VDE-AR-N 4105:2018-11 values as makers' NA-protection certificates print them (KOSTAL/Bureau Veritas U25-0583, 2025-06-18; Deye/TÜV Rheinland A3 50734054 0001, 2026-06-23)" }
+  - id: na-protection-integrated
+    rule: "Where the NA protection sits (6.1)"
+    value: "up to 30 kVA in total (sum of SAmax at the connection point) it may be integrated in the inverter; above 30 kVA a central NA protection at the central meter location, unless the total is permanently reduced in software or the integrated protection uses a remote U> measurement at the meter (exception 4, certified as a chain)"
+    check: { kind: max, meaning: protection, field: ac_kva, limit: 30, over: "over 30 kVA: a central NA protection at the meter (or a certified remote-measurement exception)", provable_by: [datasheet, document], source: "VDE FNN, VDE-AR-N 4105:2026-03 FAQ (30 kVA, 25 kWp/33 kVA example); Fronius/Bureau Veritas certificate P26-0320 (2026-04-09)" }
+  - id: anti-islanding
+    rule: "Islanding detection (6.x)"
+    value: "an active islanding-detection method is required; a passive one is not enough for inverters (a VDE FNN study confirmed the need); the 2026-03 edition clarifies islanding detection in combined systems"
+    check: { kind: document, provable_by: [document], source: "VDE FNN consultation summary, section 6; KOSTAL NA-protection certificate U25-0583 (active method, resonant-circuit test)" }
+  - id: frt
+    rule: "Dynamic grid support / fault ride-through (5.7.3)"
+    value: "type-2 units must ride through voltage dips with restricted dynamic grid support (stay connected; no reactive-current injection required); certificates note when a unit limits it. The curve's points are not confirmed from a public source"
+    check: { kind: document, provable_by: [document], source: "VDE-AR-N 4105:2018-11 as cited in Victron/Kiwa certificate 24-361-01 (2025-06-11); curve not seen" }
+  - id: reactive
+    rule: "Reactive power and static voltage support (5.7.2)"
+    value: "every type-2 unit (inverter) must be able to run at cos φ 0.9 under- to over-excited (the 2018 split at 4.6 kVA, with 0.95 below it, is gone); the delivered default is the Q(U) characteristic; cos φ(P) and a fixed cos φ remain selectable when the operator asks; storage keeps the set mode while charging"
+    check: { kind: cosphi, field: cosphi, limit: 0.9, provable_by: [datasheet, document], changed_in: "2026-03", changed: "Q(U) is the factory default and cos φ 0.9 now applies to all type-2 units", source: "VDE-AR-N 4105:2026-03 5.7.2.4–5.7.2.5 (VDE FNN consultation summary; FGH slides 2026-06-30)" }
+  - id: phases
+    rule: "Phases and unbalance (VDE-AR-N 4100 5.5.2, as certificates cite it)"
+    value: "single-phase units may feed at most 4.6 kVA unbalance per installation (up to three single-phase units of 4.6 kVA on different phases, 13.8 kVA); a larger single-phase unit only with a symmetry device or a permanent limit to 4.6 kVA, reported to the operator"
+    check: { kind: max, meaning: procedure, field: ac_kva, limit: 4.6, applies: { phases: [1] }, over: "single-phase over 4.6 kVA: only with a symmetry device or a permanent limit to 4.6 kVA, reported to the operator", provable_by: [datasheet, document], source: "VDE-AR-N 4100 5.5.2 as cited in Solis/TÜV SÜD ESY 086470 0118 (2022-07-04), Victron/Kiwa 19-117-04 and FoxESS/Bureau Veritas U23-0654" }
+  - id: storage
+    rule: "Storage and bidirectional chargers (sections 1, 4, 5.7, 9.2)"
+    value: "storage follows the generator rules in both directions; a bidirectional EV charger counts as storage while a bidirectional vehicle is connected and needs a unit and NA-protection certificate (DC charging: the charger is certified, the vehicle is a battery; AC: the vehicle-charger system, detailed in an FNN note); a change of storage mode from no-export to export must be reported to the operator and assessed first"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, changed_in: "2026-03", changed: "bidirectional chargers and the mode-change notification are new in the 2026-03 edition", source: "VDE FNN consultation summary (sections 1, 4); FGH slides 2026-06-30 (9.2)" }
+  - id: export-limit
+    rule: "Feed-in limit at the connection point, PAV,E (5.5.2)"
+    value: "where the agreed feed-in is below the installed active power, a PAV,E controller and, new in 2026-03, a certified PAV,E protection (which may be built into the inverter, storage or charger) keep export under the agreed value, down to zero export; a two-way meter is still required; after 5 s without measurement power falls to PAV,E, after 60 s the PAV,E protection trips. Until 1 March 2028 the 60 % limit of § 9 EEG may also be met with a PAV,E monitoring certified to 4105:2018-11, or by a permanent PEmax reduction"
+    check: { kind: none, why: "at the installation's level, not a check on the model; a PAV,E-protection certificate is evidence of a component, not of the inverter", source: "VDE-AR-N 4105:2026-03 5.5.2 (FGH slides 2026-06-30); VDE FNN 4105:2026 page, FAQ on the 60 % limit" }
+  - id: control
+    rule: "Control by the grid operator (§ 9 EEG; § 14a EnWG)"
+    value: "PV plants of 25 kW or more need remote power reduction until a smart meter is fitted (100 kW or more always); new plants under 100 kW taking the feed-in tariff cap feed-in at 60 % of installed power until a smart meter is installed; Steckersolargeräte up to 2 kW and 800 VA are exempt. Storage charging and charging points above 4.2 kW are controllable devices under § 14a EnWG"
+    check: { kind: none, why: "a legal duty of the plant operator, not a property certified per model", source: "§ 9 EEG 2023 (gesetze-im-internet.de, seen 2026-11-01); BK6-22-300" }
+documents_for_listing:
+  - "the Einheitenzertifikat to VDE-AR-N 4105 (form E.4/E.5 in the 2018 edition) for the model family and firmware, issued under ISO/IEC 17067 programme type 1a by a certification body accredited to ISO/IEC 17065, on test reports to DIN VDE V 0124-100 from an ISO/IEC 17025 laboratory"
+  - "the NA-protection certificate (E.6/E.7: settings, trip values and times, the protection–switch chain, active islanding detection, single-fault safety) — integrated or central"
+  - "a PAV,E-protection certificate where export is limited by a certified protection (new in 2026-03)"
+  - "the maker's registration of each certificate in ZEREZ, which gives every unit a ZEREZ-ID (for example ZE-R018-RV36-0001); since 1 February 2025 the installer hands over only that ID (NELEV § 4(9))"
+  - "for a plant: the registration in the grid operator's connection portal (FNN data set, or annex F forms; F.1.2 for up to 800 VA), the commissioning record F.9, and above 500 kW / 270 kW feed-in a plant certificate and conformity declaration"
+apply:
+  who: "the maker, for the certificates and their ZEREZ registration; for a plant, a licensed electrical contractor in the grid operator's installer register (the operator may register a plug-in unit or a storage mode change up to 30 kW himself)"
+  how: "the maker has the model certified and uploads the certificates to ZEREZ (free of charge); the installer registers the plant in the grid operator's connection portal with the ZEREZ-IDs, waits for the operator's assessment, then orders commissioning; the plant operator also registers the plant in BNetzA's Marktstammdatenregister. Up to 800 VA the simplified notification F.1.2; a Steckersolargerät without payment for export only in the Marktstammdatenregister"
+  guide_url: https://www.vde.com/de/fnn/themen/tar/tar-niederspannung/erzeugungsanlagen-am-niederspannungsnetz-vde-ar-n-4105-2026
+  guide_date: "VDE FNN page for VDE-AR-N 4105:2026-03 (rule dated 2026-02-27), seen 2026-11-01; each operator's own TAB and portal on top"
+  processing_time: "commissioning within 10 calendar days of the commissioning order (2026-03 edition, up from 7 days, per VDE FNN's consultation summary); the grid assessment time is not set by the rule — not confirmed"
+not_listed: "There is no list to be on, and the grid operator does not approve models. A model whose certificates are not in ZEREZ has no ZEREZ-ID, and since 1 February 2025 the operator may not take certificate data in any other way than from the register (NELEV § 4(10)), so the plant cannot be connected on that model. Only the maker can fix that, by having it certified and registered. Exceptions with the operator's agreement: an individual-proof procedure (Einzelnachweisverfahren) for small series or special plants, prototypes for at most two years with a certified NA protection, museum and research plants."
+thresholds:
+  - "up to 800 VA inverter power (SAmax) per customer installation: simplified notification on form F.1.2, connection without the operator's consent, cos φ = 1 and a fixed 5 % droop from 50.2 Hz; certificates with ZEREZ-ID still required"
+  - "Steckersolargeräte up to 2 kW module power and 800 VA: registration only in the Marktstammdatenregister when no payment for export is claimed (EEG); may be put into service without an electrician under DIN VDE V 0126-95"
+  - "single-phase: at most 4.6 kVA unbalance per installation (VDE-AR-N 4100 5.5.2), three single-phase units of 4.6 kVA = 13.8 kVA"
+  - "30 kVA total SAmax: above it a central NA protection at the meter (VDE-AR-N 4105 6.1)"
+  - "25 kW and 100 kW: the § 9 EEG control duties; under 100 kW with the feed-in tariff the 60 % feed-in cap until a smart meter is installed"
+  - "4.2 kW: storage charging and charging points above it are controllable devices under § 14a EnWG"
+  - "135 kW: RfG type B; VDE-AR-N 4105 still applies up to 500 kW cumulative and 270 kW feed-in, with an extra superordinate protection above 270 kW and a plant certificate above 500 kW or 270 kW feed-in (2026-03 edition)"
+commissioning: "The installer orders commissioning from the grid operator, who sets the meter within 10 calendar days (2026-03); the commissioning record (F.9 in the 2026 edition) records the ZEREZ-IDs and the set parameter set; the NA protection's trip may be checked through software; up to 800 VA form F.1.2 replaces the record and is signed by the plant operator. The plant operator registers the plant in the Marktstammdatenregister."
+changes:
+  - "27 February 2026: VDE-AR-N 4105:2026-03 published, applied from 1 March 2026 — 500 kW scope, simplified ≤ 800 VA rules, PAV,E protection and zero export, Q(U) default, new RoCoF table and NA-protection settings, bidirectional chargers as storage"
+  - "1 April 2026: VDE-AR-N 4100:2026-04 (customer installations) applies, 12-month transition"
+  - "1 March 2027: end of the 12-month transition in which connections may still be handled under VDE-AR-N 4105:2018-11 (DSO slides; VDE FNN's own page does not state it)"
+  - "about 1 March 2028: certificates to VDE-AR-N 4105:2018-11 stop being sufficient — 24 months after the rule took effect, or 12 months after a new DIN VDE V 0124-100, whichever the final text makes decisive (not confirmed); 1 March 2028 is also the stated end for meeting the 60 % limit with a 2018-11 PAV,E monitoring"
+  - "E VDE-AR-N 4100/A1 (control and metering roll-out) consulted 15 May – 26 June 2026; publication planned early 2027, application from February 2027 (DSO slides)"
+  - "EEG 2027: a ministry draft of 22 July 2026 would end the fixed feed-in tariff for new plants up to 25 kW after a transition; not adopted as of 2026-11-01 (not confirmed)"
+  - "ZEREZ opened an API to registered users in 2026 (exact date not confirmed) and a 'Datenzugangsverwalter' role for makers to release non-public data"
+evidence_for_documented: "The maker's VDE-AR-N 4105 unit certificate and NA-protection certificate for the exact model family and firmware, from an accredited certification body, ideally with its ZEREZ-ID. GridFit shows the document, its date and the edition it cites (2018-11 or 2026-03); whether it is registered and valid in ZEREZ is the register's answer, not GridFit's. The grid operator decides."
+sources:
+  - title: "VDE FNN — Erzeugungsanlagen am Niederspannungsnetz (VDE-AR-N 4105:2026-03), page with FAQ and transition rule for the 60 % limit"
+    url: https://www.vde.com/de/fnn/themen/tar/tar-niederspannung/erzeugungsanlagen-am-niederspannungsnetz-vde-ar-n-4105-2026
+    seen: "2026-11-01 (rule dated 2026-02-27)"
+  - title: "VDE FNN — Erzeugungsanlagen am Niederspannungsnetz, zusammenfassende Bewertung aller Stellungnahmen zum Entwurf E VDE-AR-N 4105:2024-10"
+    url: https://www.vde.com/resource/blob/2455950/4e30c849065bb8a374f552158026a668/vde-fnn-erzeugungsanlagen-am-niederspannungsnetz--bewertung-stellungnahmen-data.pdf
+    seen: "2026-11-01"
+  - title: "badenova Netze / FGH — Einspeiser-Workshop: Anlagen nach VDE-AR-N 4105:2026-03 (slides)"
+    url: https://a.storyblok.com/f/307935/x/10656c4379/260630-badenova-netze-unterlagen-einspeiser-workshop.pdf
+    date: "2026-06-30"
+  - title: "badenova Netze — Installateursversammlung: Änderungen der technischen Anschlussregeln (VDE-AR-N 4100:2026-04, 4105:2026-03)"
+    url: https://a.storyblok.com/f/307935/x/83dc25f2b2/260422-installateursversammlung-neuerungen-tar-ns.pdf
+    date: "2026-04-22"
+  - title: "NELEV — Elektrotechnische-Eigenschaften-Nachweis-Verordnung (consolidated, last amended 16.05.2024)"
+    url: https://www.gesetze-im-internet.de/nelev/BJNR165100017.html
+    seen: "2026-11-01"
+  - title: "VDE FNN Hinweis — Anwendungshilfe zur NELEV-Novelle 2024 und zur EAAV, Version 1.0"
+    url: https://www.vde.com/resource/blob/2306364/ae50ed2dfe20e6584fad16e2525565e2/nelev-hinweis-download-data.pdf
+    date: "2024-03"
+  - title: "VDE FNN — Leistungsklassen (RfG types in Germany, BNetzA approval of 24.04.2018)"
+    url: https://www.vde.com/de/fnn/themen/tar/europaeische-network-codes/leistungsklassen
+    seen: "2026-11-01"
+  - title: "BNetzA BK6-16-166 — decision of 24.04.2018 on the type B/C/D thresholds"
+    url: https://www.bundesnetzagentur.de/DE/Beschlusskammern/1_GZ/BK6-GZ/2016/BK6-16-166/BK6-16-166_Beschluss_vom_24_04_2018.html
+    date: "2018-04-24"
+  - title: "BNetzA BK6-23-037 — Festlegung on introducing VDE FNN technical safety rules (§ 49(2) EnWG)"
+    url: https://www.bundesnetzagentur.de/DE/Beschlusskammern/1_GZ/BK6-GZ/2023/BK6-23-037/BK6-23-037_beschluss.html
+    seen: "2026-11-01 (title only; text not read)"
+  - title: "EEG 2023 § 9 — technical requirements, control, 60 % limit (gesetze-im-internet)"
+    url: https://www.gesetze-im-internet.de/eeg_2014/__9.html
+    seen: "2026-11-01"
+  - title: "ZEREZ — Nutzungsbedingungen (terms of use)"
+    url: https://shop.wind-fgw.de/wp-json/wp/v2/pages?slug=zerez-nutzungsbedingungen
+    date: "2025-02-06"
+  - title: "ZEREZ — FAQ"
+    url: https://shop.wind-fgw.de/zerez-faq/
+    date: "2025-12-10"
+  - title: "ZEREZ — Benutzerhandbuch, Stand 13.03.2026 (Rev. 5)"
+    url: https://shop.wind-fgw.de/wp-content/uploads/2026/03/ZEREZ-Benutzerhandbuch_Rev-5_DEU.pdf
+    date: "2026-03-13"
+  - title: "ZEREZ API 1.0 — OpenAPI document (server-to-server API)"
+    url: https://app-zerez-weeu-gatewaysvc-prod-01.azurewebsites.net/swagger/v1/swagger.json
+    seen: "2026-11-01"
+  - title: "KOSTAL / Bureau Veritas — Zertifikat für den NA-Schutz U25-0583, PLENTICORE MP S/M G3 (VDE-AR-N 4105:2018-11 settings table)"
+    url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2269_Z-PLENTICORE-MP-S-G3-30-46_VDE-AR-N-4105-2018-NA_de.pdf
+    date: "2025-06-18"
+  - title: "Fronius / Bureau Veritas — Zertifikat NA-Schutz mit abgesetzter Spannungsmessung, VDE-AR-N 4105:2026-03 (P26-0320)"
+    url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates%20myFronius/Zertifikat_NA-Schutz%20mit%20abgesetzer%20Spannungsmessung_Deutschland_VDE-AR-N%204105-2026.pdf
+    date: "2026-04-09"

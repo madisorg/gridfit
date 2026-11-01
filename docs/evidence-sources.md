@@ -78,3 +78,22 @@ heat-and-power units: no inverter maker's document will ever cover them.
 3. Fox ESS certificates (266 entries, server-rendered): read the titles' report numbers against the certificates.
 4. Fronius and SolarEdge country documents by hand in a browser (WAF / Cloudflare), transcribed with the seen date.
 5. SAJ HS2/HS3/AS2 and EK70/EK90 kits: no EN 50549-1 certificate published — ask nothing, wait for the centre.
+
+## Country documents, ten countries (2026-11-01)
+
+69 hand-written documents from the country research of 2026-11-01 (ids start with the country: `at-`, `be-`, `cz-`,
+`de-`, `nl-`, `pl-`, `se-`; generic `en50549-*`), 11 brands. Each `standards` string is copied as the document prints it,
+so the country's `document_must_cite` key matches (TOR Erzeuger / OVE-Richtlinie R 25, C10/11, PPDS, VDE-AR-N 4105,
+WiPWC / WOS, EIFS 2018:2, Netcode / NEN-EN 50549). Where only a wholesaler's copy could be read, `url` is the copy and
+`copy_of` says who hosts it. Belgian entries are Synergrid GLV declarations (one per brand, opened) plus the makers' own
+C10/11 certificates (Deye U22-0136, Victron 2622/0478); Czech entries say in the family note whether the document is the
+accredited SZÚ certificate the operators take (only Deye B-00337-26) or background.
+
+Left out, and why: Huawei in every country (its terms forbid automated access); Fronius P26-0320 (VDE-AR-N 4105:2026-03,
+an NA-protection certificate with remote voltage measurement for plants above 30 kVA — not a unit certificate; the
+evidence schema cannot show that narrow scope yet); Deye U22-0643 (replaced by U24-0950); Fox ESS A3 50555469 (expired
+2025-08-17); Fox ESS's Dutch CE self-declaration (names no country); GoodWe's ET G2 GLV (a scan, model codes
+unreadable); GoodWe's SZÚ certificate (only on an aggregator site); Kostal's TOR, NL and CZ files and Fronius Tauro / CZ
+files (dead links or block pages on 2026-11-01). SolaX's Czech declaration names X3-FTH-…K-O; the register has no `-O`
+suffix, so those rows are not joined. Two families join no register model and keep a note (Deye SG06LP1 for DE, Fronius
+Primo GEN24 8.0/10.0 U25-0878).

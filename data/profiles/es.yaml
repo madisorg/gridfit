@@ -49,7 +49,7 @@ must_meet:
     check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 1.5" }
   - id: frt
     rule: "Fault ride-through (annex I, 3.1.1 as amended 2026)"
-    value: "since 12 May 2026 a type A power-park module (an inverter) below 110 kV must ride through the voltage-dip profile of figure 14 (previously types B–D only) and recover its active power as soon as the voltage is back at or above 0.85 pu (3.3.1)"
+    value: "since 12 May 2026 a type A power-park module (an inverter) below 110 kV rides through the figure 14 profile: 0.05 pu from the fault until 0.2 s, rising linearly to 0.85 pu at 1.5 s, 0.85 pu after that (GridFit's reading of the figure; the text gives no numbers); unbalanced faults by the lowest phase voltage; power electronics may block below 0.2 pu and must unblock within 100 ms above it; active power recovers as soon as possible once the voltage is back at 0.85 pu (3.3.1)"
     check: { kind: document, provable_by: [document], changed_in: "2026-05", changed: "Orden TED/82/2026 extends fault ride-through to type A", source: "Orden TED/749/2020 annex I, 3.1.1 and 3.3.1, as amended by Orden TED/82/2026" }
   - id: dc-injection
     rule: "DC injection (annex I, 5.3)"
@@ -75,6 +75,38 @@ must_meet:
     rule: "Storage (TED/749/2020, additional provision 1, added 2026)"
     value: "a storage installation that exports follows the generation-module requirements in both directions until EU storage rules exist; it is exempt from presenting conformity certificates at the operational notification"
     check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, changed_in: "2026-05", changed: "the storage provision was added by Orden TED/82/2026", source: "Orden TED/749/2020 additional provision 1" }
+  - id: access-permit
+    rule: "Access and connection permit line (RD 244/2019 article 7.1.b)"
+    value: "self-consumption without export needs no access and connection permit; with export, none up to 15 kW on urbanised land; above that the grid operator's permit"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 15, over: "over 15 kW with export: an access and connection permit from the grid operator", provable_by: [datasheet, document], source: "RD 244/2019 article 7.1.b; e-distribución guide v12" }
+  - id: under-frequency
+    rule: "Reduction of maximum power with falling frequency (annex I, 1.4)"
+    value: "the order allows a reduction only for synchronous gas-turbine and gas-engine modules and sets no allowance for power-park modules (inverters) — read as: hold power down to 47.5 Hz (GridFit's reading, not confirmed)"
+    check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 1.4" }
+  - id: lfsm-u
+    rule: "Under-frequency response, MRPFL-U (TED/749 annex I, 1.7)"
+    value: "required only of types C and D (49.8 Hz, 5 %); storage follows the generation-module rules and is typed by its injection capacity, so home storage (type A) has none"
+    check: { kind: none, why: "not required below type C", source: "Orden TED/749/2020 annex I, 1.7; additional provision 1 (Orden TED/82/2026)" }
+  - id: power-factor
+    rule: "Power factor in low voltage (RD 1699/2011 article 12.4; TED/749 2.3.2)"
+    value: "as close to 1 as possible and above 0.98 when running above 25 % of rated power; TED/749 sets reactive capability only for types B–D; active power has priority within the normal voltage range (2.3.4)"
+    check: { kind: document, provable_by: [document], source: "RD 1699/2011 article 12.4; Orden TED/749/2020 annex I, 2.3.2, 2.3.4" }
+  - id: phase-jump
+    rule: "Phase jumps and out-of-phase reclosure (annex I, 3.3.2)"
+    value: "ride through phase jumps of up to 20° at the connection point without disconnecting; on a distribution network, survive an out-of-phase reclosure without damage (disconnection allowed)"
+    check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 3.3.2" }
+  - id: overvoltage-emission
+    rule: "Transient over-voltage emission, type A (annex I, 2.3.6, table 6)"
+    value: "a type A power-park module creates no over-voltage between phases above 280 % of peak voltage for 0.2 ms, 218 % for 0.6 ms, 178 % for 2 ms, 145 % for 6 ms, 129 % for 20 ms and 120 % from 60 ms on"
+    check: { kind: document, provable_by: [document], source: "Orden TED/749/2020 annex I, 2.3.6, table 6" }
+  - id: non-peninsular
+    rule: "Balearic, Canary, Ceuta and Melilla systems (TED/749 additional provision 2, added 2026)"
+    value: "power-park modules from 0.8 kW to below 1 MW on the distribution networks of the non-peninsular systems follow operating procedure 12.2 (Resolution of 1 February 2018) for fault ride-through, power-electronics blocking, frequency ranges and RoCoF; certificates for this are not asked for nine months from application"
+    check: { kind: document, provable_by: [document], changed_in: "2026-05", changed: "added by Orden TED/82/2026", source: "Orden TED/749/2020 additional provision 2" }
+  - id: remote-control
+    rule: "Remote set-points and information exchange (annex I, 1.6, 5.1)"
+    value: "stopping or reducing a type A module's output follows the operating procedure on information exchange with the system operator; TED/749 itself puts no remote-control duty on a type A device"
+    check: { kind: none, why: "no type A device requirement in the order", source: "Orden TED/749/2020 annex I, 1.6, 5.1" }
 documents_for_listing:
   - "the maker's equipment certificate (certificado de equipo) for the inverter model, issued by an authorised certifier accredited under UNE-EN ISO/IEC 17065 (ENAC or an EA member), against RD 647/2020, Orden TED/749/2020 and the NTS — makers publish these per model family"
   - "the installation document (Documento de Instalación, RfG article 30) that the authorised installer files with the grid operator for the definitive operational notification; for a type A module in low voltage the installer, not a certifier, assembles it from the equipment certificates and the electrotechnical inspection (NTS 4.2.1)"
@@ -85,8 +117,8 @@ documents_for_listing:
 apply:
   who: "the authorised installer (instalador autorizado) for low voltage, or the installation company in high voltage; the holder or a representative requests the self-consumption code"
   how: "ask the grid operator for the self-consumption code (CAU, 26 digits) on its web portal; file the installation with the regional authority (the community registers low-voltage installations under 100 kW ex officio, RD 244/2019 article 20); for installations that need an access and connection permit, the abbreviated procedure applies up to 15 kW and the general one above, with the operator's conditions due within three weeks up to 100 kW"
-  guide_url: https://dev0.edistribucion.com/content/dam/edistribucion/autoconsumo/Autocosumo_ESP_V9.pdf
-  guide_date: "e-distribución self-consumption guide, version 9 (undated); the CAU and document lists are from it"
+  guide_url: "https://www.edistribucion.com/content/dam/edistribucion/conexion-a-la-red/descargables/guia-autocosumo-ESPV12.pdf"
+  guide_date: "e-distribución self-consumption guide, version 12 (PDF dated 2026-06-15); deadlines unchanged from v9"
   processing_time: "technical and economic conditions within 3 weeks up to 100 kW (half that in the abbreviated procedure); conditions valid 30 days; metering verification visit within 7 days"
 not_listed: "There is no list to be on. A model is accepted when its equipment certificate covers the requirements above and the installer's installation document says so; a model without a certificate has no path except tests or simulations by an accredited entity (NTS 4.3, 4.4), which is not done for household inverters. Makers publish Spanish certificates per model family (RD 647 / TED 749 / NTS, UNE 217002, UNE 217001 for zero export); GridFit will show that document when it has read it."
 thresholds:
@@ -97,6 +129,12 @@ thresholds:
   - "above 15 kW: three-phase connection (RD 1699/2011 article 12.2)"
   - "until 12 May 2026 self-consumption modules without export, and with export up to 15 kW, were exempt from RfG conformity (RD 647/2020 transitional provision 3); Orden TED/82/2026 ended that exemption"
 commissioning: "Low voltage up to 100 kW: the installer's CIE (plus the regional filing receipt in some communities; Catalonia waives the CIE for generation when an A1 form is filed) and the metering check by the operator; above 100 kW or in high voltage: the administrative authorisation of commissioning (APM). The operator then issues, on request, the certificates needed for the production register under RD 413/2014."
+changes:
+  - "12 May 2026: Orden TED/82/2026 in force — fault ride-through for type A (figure 14), storage follows the generation-module rules in both directions, end of the self-consumption exemption, PO 12.2 rules for small modules in the non-peninsular systems"
+  - "22 March 2026: Real Decreto-ley 7/2026 (BOE 2026-03-21) — collective self-consumption up to 5 km, the 'gestor de autoconsumo', 10 % of reserved capacity freed for self-consumption; administrative only, no inverter requirement"
+  - "pending: a new self-consumption Royal Decree is announced and not adopted on 2026-11-01"
+  - "the NTS (how conformity is proven) is still version 2.1 of July 2021; no edition with type A fault ride-through tests was found — how a certificate proves figure 14 for type A is open"
+  - "2 February 2024: limited operational notifications without certificates ended (Orden TED/724/2022)"
 evidence_for_documented: "The maker's Spanish equipment certificate for the exact model family: issued by an accredited certifier, naming RD 647/2020, Orden TED/749/2020 and the NTS version, plus UNE 217002 for the inverter and UNE 217001 where zero export is claimed. Certificates issued against NTS 2.0 stay valid per requirement under the equivalence table of NTS 2.1 (7.1.4.2). GridFit shows the document and its date; the grid operator decides at the operational notification."
 sources:
   - title: "Real Decreto 647/2020, de 7 de julio (consolidated text, last change 12 February 2026)"
@@ -123,3 +161,12 @@ sources:
   - title: "SMA — Solo para España: ajustes de parámetros para cumplir con la orden TED/749/2020 para plantas del tipo A, with the declaration of conformity (the RD 1699/2011 table 1 values as a maker quotes them)"
     url: https://files.sma.de/downloads/TED749_TypeA_Parasetting-SG-es-10.pdf
     date: "2021-01-11"
+  - title: "Orden TED/724/2022 — end of limited operational notifications (2 February 2024)"
+    url: https://boe.es/boe/dias/2022/07/29/pdfs/BOE-A-2022-12647.pdf
+    date: "2022-07-29"
+  - title: "Real Decreto-ley 7/2026, de 20 de marzo (consolidated)"
+    url: https://www.boe.es/buscar/act.php?id=BOE-A-2026-6544
+    seen: "2026-11-01"
+  - title: "e-distribución — Guía para la tramitación de autoconsumos, version 12"
+    url: https://www.edistribucion.com/content/dam/edistribucion/conexion-a-la-red/descargables/guia-autocosumo-ESPV12.pdf
+    date: "2026-06-15"

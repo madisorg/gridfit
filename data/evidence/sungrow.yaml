@@ -59,3 +59,57 @@ documents:
     note: 'Austria absent from the SGRT list. Israel footnote: SG15RT-P2-V11 solely for Israel. The document''s availability glyph per
       hardware version is an image GridFit could not read; the countries are those whose certification column is not NA — check the
       document for your hardware version.'
+- id: at-tor-r25-sh-t-2023
+  title: TÜV Rheinland A3 50611034 0001 — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R25 — SH5…25T
+  url: https://www.memodo.de/mwdownloads/024c18afa17c56949635fec57edcca1d
+  copy_of: memodo.de (German wholesaler); no copy found on sungrowpower.com
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50611034 0001
+  issued: '2023-12-12'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A Version 1.2
+  - OVE-Richtlinie R25/03.20
+  firmware: ARM_PEARL-H_V11_V01_A, MDSP_PEARL-H_V11_V01_A
+  families:
+  - name: SH-T three-phase hybrid 5–25 kW
+    match: ^SH(5|6|8|10|12|15|20|22|25)(\.0)?T$
+    countries: [AT]
+    note: Type designation SHxxT, xx = 5, 6, 8, 10, 12, 15, 20, 22, 25; report CN230E3I 002. The register rows SH5.0T/SH6.0T/SH8.0T
+      are read as the same models. Not the SH-TA series. No settings table.
+- id: be-glv070-34-shta-2026
+  title: Synergrid GLV070-34 — C10/26 declaration of conformity — Sungrow SHTA series
+  url: https://dev.synergrid.be/images/downloads/GLV070-34_Sungrow_SHTA_Series_20261022_Signed.pdf
+  issuer: Synergrid (homologation) / Sungrow
+  cert_no: GLV070-34
+  issued: '2026-10-22'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.4.1 (04/2026)
+  firmware: EUCLASE-H_B001.V001.P001
+  families:
+  - name: SH-TA three-phase hybrid 5–30 kW
+    match: ^SH(5|6|8|10|12|15|17|20|22|25|30)TA$
+    countries: [BE]
+    note: Homologated by Synergrid 22/10/2026; 11 list rows (GLV070-34-0001…0011), power control Energy Bridge EB80T. No settings table.
+- id: cz-ppds-2018-decl-2021
+  title: Sungrow declaration "Nastavení požadované distribucí ČEZu" — EN 50549-1, P4 PPDS 2018 — SG/SH residential and CX
+  url: https://www.memodo.cz/mwdownloads/10210ba76a20524bae0b7a1e217e7b69
+  copy_of: memodo.cz (Czech distributor); not found on sungrowpower.com
+  issuer: Sungrow Power Supply Co., Ltd. (maker's declaration)
+  issued: '2021-01-22'
+  seen: '2026-11-01'
+  kind: declaration
+  standards:
+  - EN 50549-1
+  - P4 PPDS 2018 (PŘÍLOHA 4 PPDS … 2018)
+  families:
+  - name: SG-S/SG-D/SG-KTL-M(T)/SH-RT/CX listed in the declaration
+    match: ^(SG2K-S|SG2K5-S|SG3K-S|SG3K-D|SG3K6-D|SG4K-D|SG4K6-D|SG5K-D|SG6K-D|SG(5|6)KTL-MT|SG(8|10|12|15|17|20)KTL-M|SH(5\.0|6\.0|8\.0|10)RT|SG(33|40|50)CX|SG110CX)$
+    countries: [CZ]
+    note: Maker's declaration, not an accredited certificate — Czech operators take only an SZÚ/ČIA certificate or a ČEZd/EG.D lab protocol.
+      National settings table with numbers (p. 3) for the 2018 edition of Příloha 4 (superseded by the 2025 table). Firmware not stated.
+      "SG33-50CX" read as SG33CX, SG40CX, SG50CX.

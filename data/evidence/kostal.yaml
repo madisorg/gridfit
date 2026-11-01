@@ -120,3 +120,74 @@ documents:
       says "conforme ... CEI 0-21: 2022-03, V1: 2022-11, V2: 2024-01, Allegato A, Allegato B e Allegato Bbis". "Il dispositivo è per
       gli impianti di ogni potenza". The SPI maker is KOSTAL Industrie Elektrik GmbH & Co.KG (Hagen); the SPI is integrated. Batteries
       are AXITEC AXIstorage Li SH and others.'
+- id: be-glv016-11-plenticore-bi-25-g3-2026
+  title: Synergrid GLV016-11 — C10/26 declaration of conformity — PLENTICORE BI 25 G3
+  url: https://dev.synergrid.be/images/downloads/GLV016-11_KOSTAL_PLENTICORE_BI_25_G3_20260918_Signed.pdf
+  issuer: Synergrid (homologation) / Kostal
+  cert_no: GLV016-11
+  issued: '2026-09-18'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.4.1 (04/2026)
+  firmware: ≥ 3.06.15
+  families:
+  - name: PLENTICORE BI 25 G3 (battery inverter)
+    match: ^PLENTICOREBI25G3$
+    countries: [BE]
+    note: Homologated by Synergrid 18/09/2026; one list row (GLV016-11-0001), power control by KSEM / KEM-P / KEM-C. No settings table.
+- id: de-vde4105-eze-plenticore-mp-g3-2025
+  title: Bureau Veritas U25-0582_1 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — PLENTICORE MP S G3 3.0–4.0, MP M G3 4.6
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2268_Z-PLENTICORE-MP-S-G3-30-46_VDE-AR-N-4105-2018-EZE_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U25-0582_1
+  issued: '2025-07-07'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 3.05.00.19100
+  families:
+  - name: PLENTICORE MP S G3 3.0/3.6/4.0, MP M G3 4.6
+    match: ^PLENTICOREMP(SG3(3\.0|3\.6|4\.0)|MG34\.6)$
+    countries: [DE]
+    note: Unit certificate (report 25TH0195-VDE0124-100:2020_0, programme NSOP-0032-DEU-ZE-V10); E.5 values. MP M G3 5.0–7.0 and the
+      bare "PLENTICORE MP S/M G3" rows are not joined.
+- id: de-vde4105-na-plenticore-mp-g3-2025
+  title: Bureau Veritas U25-0583 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — PLENTICORE MP S G3 3.0–4.0, MP M G3 4.6
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2269_Z-PLENTICORE-MP-S-G3-30-46_VDE-AR-N-4105-2018-NA_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U25-0583
+  issued: '2025-06-18'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 3.05.00.19100
+  families:
+  - name: PLENTICORE MP S G3 3.0/3.6/4.0, MP M G3 4.6
+    match: ^PLENTICOREMP(SG3(3\.0|3\.6|4\.0)|MG34\.6)$
+    countries: [DE]
+    note: Integrated NA protection; settings table with numbers p. 2 (U< 184.0 V 2.997 s, U<< 103.5 V 0.312 s, U> 253.0 V 10-min mean,
+      U>> 287.5 V 0.068 s, f< 47.50 Hz 0.044 s, f> 51.50 Hz 0.051 s) — the 2018-11 settings.
+- id: de-vde4105-plenticore-bi-g2-2023
+  title: Bureau Veritas U23-0230 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — PLENTICORE BI 5.5/26 G2, 10/26 G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2008_Z-VDE-AR-N-4105-2018-Einheitenzertifikat_PLENTICORE_BI-G2.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0230
+  issued: '2023-03-16'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '02.06'
+  families:
+  - name: PLENTICORE BI G2 5.5/26 and 10/26 (battery inverter)
+    match: ^PLENTICOREBI((5\.5|10)/26G2|G2(5\.5|10)/26)$
+    countries: [DE]
+    note: Unit certificate (report 19TH0374-BI-G2-VDE0124-100:2020_0); E.5 values; lists the usable batteries (BYD Battery-Box, Nilar,
+      BMZ Hyperion, AXIstorage, LG RESU FLEX). The first-generation BI 5.5/26 and 10/26 rows are not joined.

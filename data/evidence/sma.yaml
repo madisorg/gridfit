@@ -116,3 +116,67 @@ documents:
     match: ^(STP8\.0\-3AV\-40|STP10\.0\-3AV\-40)(-BE)?$
     countries: [IT]
     note: Same BV certificate as cei021-stp-3av-3-6-2023; SMA declaration signed 12.12.2023.
+- id: be-glv006-17-stph-2026
+  title: Synergrid GLV006-17 — C10/26 declaration of conformity — Sunny Tripower Smart Energy Hybrid X (STPH5–15-60)
+  url: https://dev.synergrid.be/images/downloads/GLV006-17_SMA_Sunny_Tripower_Hybrid_X_20261008_Signed.pdf
+  issuer: Synergrid (homologation) / SMA
+  cert_no: GLV006-17
+  issued: '2026-10-08'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.4.1 (04/2026)
+  firmware: 03.17.80.R or higher
+  families:
+  - name: Sunny Tripower Hybrid X 5–15
+    match: ^STPH(5|6|8|10|12|15)-60$
+    countries: [BE]
+    note: Homologated by Synergrid 08/10/2026; 6 list rows (GLV006-17-0001…0006). No settings table.
+- id: se-eifs-2018-2-parameters-v1.2
+  title: SMA Technical Information "Parameter settings for compliance with EIFS 2018:2 for type A plants (only for Sweden)", version
+    1.2
+  url: https://cdn.estg.eu/p/9/b/0/4/9b040aa2d3326a91332342db6d17adf75e2a3640_EIFS_2_2018_Paraeinst_TI_en_12_only_for_Sweden.pdf
+  copy_of: cdn.estg.eu (a distributor's CDN); SMA's own files.sma.de/downloads/EIFS_2_2018_Paraeinst-TI-en-12.pdf returned 404 on 2026-11-01
+  issuer: SMA Solar Technology AG
+  doc_no: EIFS_2_2018_Paraeinst-TI-en-12
+  version: '1.2'
+  issued: '2022-11-28'
+  seen: '2026-11-01'
+  kind: grid-code-setting
+  standards:
+  - EIFS 2018:2
+  families:
+  - name: Sunny Boy 1.5–2.5 (1VL-40) and 3.0–5.0 (1AV-41)
+    match: ^(SUNNYBOY)?(SB)?((1\.5|2\.0|2\.5)-1VL-40|(3\.0|3\.6|4\.0|5\.0)-1AV-41)$
+    countries: [SE]
+  - name: Sunny Boy Storage 2.5 / 3.7–6.0
+    match: ^((SUNNYBOYSTORAGE)?SBS2\.5-1VL-10|SBSTORAGE2\.5-1VL-10|(SUNNYBOYSTORAGE)?SBS(3\.7|5\.0|6\.0)-10)$
+    countries: [SE]
+  - name: Sunny Island 4.4M / 6.0H / 8.0H (-13)
+    match: ^(SUNNYISLAND)?SI(4\.4M|6\.0H|8\.0H)-13$
+    countries: [SE]
+  - name: Sunny Tripower 3.0–10.0 (3AV-40), STP 50-40/-41, STP 12–25-50
+    match: ^((SUNNYTRIPOWER)?(STP)?(3\.0|4\.0|5\.0|6\.0|8\.0|10\.0)-3AV-40|(SUNNYTRIPOWER|CORE1/)?STP50-4[01]|(SUNNYTRIPOWER)?(STP)?(12|15|20|25)-50)$
+    countries: [SE]
+    note: 'Maker''s parameter list, not a certificate: country data set [EU] EN50549-1:2018 LV, then default → value to set (HzOv 50.2
+      → 50.5 Hz, gradient 40 → 25 %/Hz, reconnection times 60 → 180 s, hhLim 1.15 pu 200 ms, hLim 1.10 pu 60 000 ms, lLim 0.85 pu 200
+      ms, connection 47.5–50.1 Hz, islanding trip 500 ms). The document prints no date; issued = the PDF''s creation date. The PDF keywords
+      also list STP15000TL-30…25000TL-30, which the text does not — not joined.'
+- id: de-vde4105-stp-3av-40-2020
+  title: Bureau Veritas U20-1019 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — STP3.0–10.0-3AV-40
+  url: https://files.sma.de/downloads/SMA_STPxxx-3AV-40_VDE-AR-N-4105-2018-de-10.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U20-1019
+  issued: '2020-12-15'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2019-09
+  firmware: ab V03.10.10.R
+  families:
+  - name: Sunny Tripower 3.0–10.0 (3AV-40)
+    match: ^(SUNNYTRIPOWER)?(STP)?(3\.0|4\.0|5\.0|6\.0|8\.0|10\.0)-3AV-40$
+    countries: [DE]
+    note: Unit certificate only (report 18TH0325-VDE-0124-100_0, programme NSOP-0032-DEU-ZE-V01); no NA-protection table in this file.
