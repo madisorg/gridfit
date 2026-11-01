@@ -1,0 +1,19 @@
+# Test-report layer (pre-certification pilot, 2026-11-01). Schema: docs/pre-cert.md. Facts only, with the PDF page.
+brand: Kostal
+documents:
+- id: kostal-plenticore-g3-country-setting-2024
+  title: KOSTAL PLENTICORE G3 — Initial commissioning / Country setting (valid from 01.03.2024)
+  url: https://memodo.de/mwdownloads/04784c2c322c5861bb6f5e1e66f013f9
+  kind: country-presets
+  issuer: KOSTAL Solar Electric GmbH
+  standards: []
+  pages: 2
+  text_layer: true
+  seen: '2026-11-01'
+  copy_of: "a distributor's copy (memodo.de); the maker's 'Table of country setting' links return 404 on 2026-11-01"
+  families:
+  - name: PLENTICORE G3 S / M / L
+    match: ^PLENTICORE[SML]G3
+  presets: {page: 1, EE: "EE EN50549-1 Type A (from 05.2024)", ES: "ES RD647 Type A (03.2024)", IT: "IT CEI0-21 2022 <11kW / >11kW (04.2024)", GR: "GR RFG Type A Main / Islands (05.2024)"}
+  functions: {}
+  note: "The table gives the preset's display name, the grid code and edition it is written against, the S/M/L sizes and the month it became available — no parameter value. The 'Table of country settings' the brief names for PIKO 10–20 is the same kind of list."

@@ -1,0 +1,30 @@
+# The EN 50549-1 floor: the settable ranges a unit must offer AT LEAST to pass the standard, as the requirement
+# column of a full test report reproduces them (DEKRA TRF 6052106.53, data/test-reports/east.yaml: pages 12, 16, 21,
+# 37, 38) and as the Annex C tables of TÜV Rheinland, TÜV SÜD and Intertek print them for the reconnection window
+# (Table 3 column 2). Read with the same grammar as a maker's document: it answers "what does a bare EN 50549-1
+# certificate imply, if the lab held the unit to the floor?" — and the EAST report shows a lab that did not
+# (reconnection upper frequency settable 50.0–50.2 Hz, passed).
+id: en50549-1-floor
+title: "EN 50549-1:2019 minimum settable ranges (the floor a pass implies)"
+functions:
+  rocof: {page: 12, immunity_hz_s: {max: 2}}
+  lfsm_o: {page: 16, f1_hz: {range: [50.2, 52]}, droop_pct: {range: [2, 12]}}
+  lfsm_u: {page: 21, f1_hz: {range: [46, 49.8]}, droop_pct: {range: [2, 12]}}
+  uv1: {page: 37, threshold_un: {range: [0.2, 1]}, time_s: {range: [0.1, 100]}}
+  uv2: {page: 37, threshold_un: {range: [0.2, 1]}, time_s: {range: [0.1, 5]}}
+  ov1: {page: 37, threshold_un: {range: [1.0, 1.2]}, time_s: {range: [0.1, 100]}}
+  ov2: {page: 37, threshold_un: {range: [1.0, 1.3]}, time_s: {range: [0.1, 5]}}
+  ov10: {page: 37, threshold_un: {range: [1.0, 1.15]}}
+  uf1: {page: 38, threshold_hz: {range: [47, 50]}, time_s: {range: [0.1, 100]}}
+  uf2: {page: 38, threshold_hz: {range: [47, 50]}, time_s: {range: [0.1, 5]}}
+  of1: {page: 38, threshold_hz: {range: [50, 52]}, time_s: {range: [0.1, 100]}}
+  of2: {page: 38, threshold_hz: {range: [50, 52]}, time_s: {range: [0.1, 5]}}
+  reconnect: {page: 40, f_low_hz: {range: [47, 50]}, f_high_hz: {range: [50, 52]}, u_low_un: {range: [0.5, 1]}, u_high_un: {range: [1, 1.2]},
+              observation_s: {range: [10, 600]}, ramp_pct_min: {range: [6, 3000]}}
+  start: {page: 41, f_low_hz: {range: [47, 50]}, f_high_hz: {range: [50, 52]}, observation_s: {range: [10, 600]}}
+  q_modes: {page: 27, modes: [q_setpoint, q_u, cosphi_setpoint, cosphi_p]}
+  cosphi: {page: 24, min_cosphi: {range: [0.9, 1]}}
+  dc_injection: {page: 132, max_pct: {max: 0.5}}
+  islanding: {page: 34, method: "required (4.9.4)"}
+tested: [freq_bands, uf_power, uvrt, p_u]
+note: "P(U) (4.7.3) is optional in EN 50549-1, the operating-band durations depend on the responsible party's choice, and the reactive-power modes are capabilities the DSO enables."

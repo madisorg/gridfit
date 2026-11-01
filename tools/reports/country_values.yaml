@@ -1,0 +1,69 @@
+# The pre-certification pilot's reading of data/profiles/{ee,es,it}.yaml as numbers (2026-11-01). The profiles
+# carry these values as sentences (`value`) with `kind: document`; the pilot needs them as setting values to put
+# beside a document's settable range. Every requirement names the profile item it reads (`item`). This file is a
+# pilot input, not a profile: the schema extension it argues for is in docs/pre-cert.md ("What the profile needs").
+#
+# A check is [function, parameter, value]. value: a number; [lo, hi] = any value in it is acceptable (null = open);
+# {cover: [lo, hi]} = the whole interval must be settable; {modes: [...]} = these control modes must exist;
+# "present" = the function must be there; "operator" = the grid operator sets it per installation.
+EE:
+  profile: data/profiles/ee.yaml
+  label: "Elektrilevi A-type conditions 2023-06-01; protection settings recommended 2019-04-27"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "Frequency bands 47.5–49.0 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2.5 Hz/s", checks: [[rocof, immunity_hz_s, 2.5]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz, droop 5 %", checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, droop_pct, 5]]}
+  - {id: under-frequency, item: under-frequency, label: "Below 49 Hz output falls at most 2 % Pmax per Hz",
+     checks: [[uf_power, reduction_pct_hz, [null, 2]]]}
+  - {id: protection-voltage-high, item: lom-protection, label: "U>> 1.15 Un 0.1–0.2 s; U> 1.11 Un ≥ 3 s",
+     checks: [[ov2, threshold_un, 1.15], [ov2, time_s, [0.1, 0.2]], [ov1, threshold_un, 1.11], [ov1, time_s, [3, null]]]}
+  - {id: protection-voltage-low, item: lom-protection, label: "U< 0.85 Un 1.2–1.5 s", checks: [[uv1, threshold_un, 0.85], [uv1, time_s, [1.2, 1.5]]]}
+  - {id: protection-frequency, item: lom-protection, label: "f> ≥ 51.6 Hz; f< ≤ 47.4 Hz", checks: [[of1, threshold_hz, [51.6, null]], [uf1, threshold_hz, [null, 47.4]]]}
+  - {id: reconnection, item: reconnection, label: "Reconnect within 49.0–50.1 Hz after 60 s, ramp ≤ 10 %/min",
+     checks: [[reconnect, f_low_hz, 49.0], [reconnect, f_high_hz, 50.1], [reconnect, observation_s, 60], [reconnect, ramp_pct_min, [null, 10]]]}
+  - {id: p-of-u, item: p-of-u, label: "P(U) from 110 % Un, zero at 112 %", checks: [[p_u, start_un, 1.10], [p_u, zero_un, 1.12]]}
+  - {id: reactive, item: reactive, label: "cos φ = 1; fixed cos φ, cos φ(P), fixed Q or Q(U) on request",
+     checks: [[q_modes, modes, {modes: [cosphi_setpoint, cosphi_p, q_setpoint, q_u]}]]}
+ES:
+  profile: data/profiles/es.yaml
+  label: "Orden TED/749/2020 as amended by TED/82/2026; RD 1699/2011 table 1"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "Frequency bands 47.5–48.5 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2 Hz/s (500 ms window)", checks: [[rocof, immunity_hz_s, 2]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O from 50.2 Hz, droop 5 %", checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, droop_pct, 5]]}
+  - {id: auto-connection, item: auto-connection, label: "Settable connection window and ramp; after an over-frequency trip reconnect only at ≤ 50 Hz",
+     checks: [[reconnect, f_high_hz, 50.0], [reconnect, ramp_pct_min, present]]}
+  - {id: frt, item: frt, label: "Fault ride-through (figure 14) for type A since 2026-05", checks: [[uvrt, curve, present]],
+     note: "the profile does not carry figure 14's points; only the presence of a tested UVRT curve is compared"}
+  - {id: dc-injection, item: dc-injection, label: "DC injection ≤ 0.5 % of rated current", checks: [[dc_injection, max_pct, [null, 0.5]]]}
+  - {id: protection-voltage-high, item: protection-settings, label: "1.10 Un 1.5 s; 1.15 Un 0.2 s",
+     checks: [[ov1, threshold_un, 1.10], [ov1, time_s, 1.5], [ov2, threshold_un, 1.15], [ov2, time_s, 0.2]]}
+  - {id: protection-voltage-low, item: protection-settings, label: "0.85 Un 1.5 s", checks: [[uv1, threshold_un, 0.85], [uv1, time_s, 1.5]]}
+  - {id: protection-frequency, item: protection-settings, label: "51 Hz 0.5 s; 48 Hz 3 s",
+     checks: [[of1, threshold_hz, 51.0], [of1, time_s, 0.5], [uf1, threshold_hz, 48.0], [uf1, time_s, 3]]}
+  - {id: anti-islanding, item: anti-islanding, label: "Active anti-islanding (UNE-EN 62116)", checks: [[islanding, method, present]]}
+IT:
+  profile: data/profiles/it.yaml
+  label: "CEI 0-21:2026-07"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "47.5–51.5 Hz without time limit",
+     checks: [[freq_bands, band_47_5_48_5_min, .inf], [freq_bands, band_51_51_5_min, .inf]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2.5 Hz/s", checks: [[rocof, immunity_hz_s, 2.5]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O 50.2 Hz settable 50–52 Hz; droop 2.6 %, settable 2–12 %",
+     checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, f1_hz, {cover: [50.0, 52.0]}], [lfsm_o, droop_pct, 2.6], [lfsm_o, droop_pct, {cover: [2, 12]}]]}
+  - {id: protection-voltage-high, item: spi-settings, label: "59.S1 1.10 Un 10-min mean; 59.S2 1.15 Un 0.2 s",
+     checks: [[ov10, threshold_un, 1.10], [ov2, threshold_un, 1.15], [ov2, time_s, 0.2]]}
+  - {id: protection-voltage-low, item: spi-settings, label: "27.S1 0.85 Un 1.5 s; 27.S2 0.15 Un 0.2 s",
+     checks: [[uv1, threshold_un, 0.85], [uv1, time_s, 1.5], [uv2, threshold_un, 0.15], [uv2, time_s, 0.2]]}
+  - {id: protection-frequency, item: spi-settings, label: "81>.S2 51.5 Hz / 81<.S2 47.5 Hz 0.1 s; narrow 81.S1 50.2 / 49.8 Hz 0.1 s",
+     checks: [[of2, threshold_hz, 51.5], [of2, time_s, 0.1], [uf2, threshold_hz, 47.5], [uf2, time_s, 0.1],
+              [of1, threshold_hz, 50.2], [of1, time_s, 0.1], [uf1, threshold_hz, 49.8], [uf1, time_s, 0.1]]}
+  - {id: reconnection, item: reconnection, label: "49.90–50.10 Hz, 85–110 % Un; 30 s at start, 300 s after a trip; ramp ≤ 20 %/min",
+     checks: [[reconnect, f_low_hz, 49.9], [reconnect, f_high_hz, 50.1], [reconnect, u_low_un, 0.85], [reconnect, u_high_un, 1.10],
+              [reconnect, observation_s, 300], [start, observation_s, 30], [reconnect, ramp_pct_min, [null, 20]]]}
+  - {id: p-of-u, item: p-of-u, label: "P(U)_115: from 110 % Un at ≥ 20 % Pn per 1 % U, zero at 115 %",
+     checks: [[p_u, start_un, 1.10], [p_u, zero_un, 1.15]]}
+  - {id: reactive, item: reactive, label: "cos φ down to 0.9; cos φ(P) curve on request", checks: [[cosphi, min_cosphi, 0.9], [q_modes, modes, {modes: [cosphi_p]}]]}
+  - {id: dc-injection, item: dc-injection, label: "DC injection ≤ 0.5 % of rated current", checks: [[dc_injection, max_pct, [null, 0.5]]]}

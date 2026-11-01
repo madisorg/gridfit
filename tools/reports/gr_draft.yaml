@@ -1,0 +1,16 @@
+# Greece — a DRAFT for the pre-certification pilot only (2026-11-01), from the owner session's hand reading of
+# RAE 1165/2020 and HEDNO's practice. Not a site profile: data/profiles/gr.yaml is still to be written from the
+# sources (tools/check/fixtures/gr/ is the test fixture of the same reading). Same check grammar as country_values.yaml.
+GR:
+  profile: "draft — RAE 1165/2020; HEDNO connection letter per installation"
+  label: "RAE 1165/2020 (RfG type A below 1 MW); protection settings in HEDNO's letter per installation"
+  requirements:
+  - {id: freq-bands, item: freq-range, label: "47.5–48.5 and 51.0–51.5 Hz for 30 min",
+     checks: [[freq_bands, band_47_5_48_5_min, 30], [freq_bands, band_51_51_5_min, 30]]}
+  - {id: rocof, item: rocof, label: "RoCoF withstand 2 Hz/s over 500 ms", checks: [[rocof, immunity_hz_s, 2]]}
+  - {id: lfsm-o, item: lfsm-o, label: "LFSM-O 50.2 Hz, droop settable 2–12 %, 5 % by default",
+     checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, droop_pct, 5], [lfsm_o, droop_pct, {cover: [2, 12]}]]}
+  - {id: reconnection, item: reconnection, label: "Reconnect within 49.5–50.5 Hz", checks: [[reconnect, f_low_hz, 49.5], [reconnect, f_high_hz, 50.5]]}
+  - {id: protection-voltage-high, item: protection, label: "U>, U>> — HEDNO's letter per installation", checks: [[ov1, threshold_un, operator], [ov2, threshold_un, operator]]}
+  - {id: protection-voltage-low, item: protection, label: "U<, U<< — HEDNO's letter per installation", checks: [[uv1, threshold_un, operator], [uv2, threshold_un, operator]]}
+  - {id: protection-frequency, item: protection, label: "f>, f< — HEDNO's letter per installation", checks: [[of1, threshold_hz, operator], [uf1, threshold_hz, operator]]}
