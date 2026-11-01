@@ -1,0 +1,19 @@
+# TEST FIXTURE, invented: a single-phase 6 kW unit to prove a phase-dependent procedure line (over 5 kW single-phase).
+brand: Synthetic
+maker_site: ''
+rule: fixture
+sources:
+- id: invented
+  url: https://example.invalid/
+  title: invented test row
+  version: ''
+  seen: '2026-11-01'
+models:
+- code: ONE-PHASE-6K
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 26.1
+  phases: 1
+  pv_kw: null
+  source: invented

@@ -16,27 +16,62 @@ basis:
   - "Vabariigi Valitsuse määrus „Elektrisüsteemi toimimise võrgueeskiri“ (the national grid code)"
   - "EVS-EN 50549-1 (A-type technical conditions, 1 June 2023, section 8.1.2)"
   - "Directives 2014/35/EU (low voltage) and 2014/30/EU (EMC); CE marking under Regulation (EC) 765/2008"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). A released-countries table that names Estonia
+# but cites no standard is not evidence for these items.
+edition:
+  norm: "EN 50549-1 (Elektrilevi A-type conditions)"
+  id: "2023-06"
+  date: "2023-06"
+  in_force: "2023-06-01"
+  label: "A-type technical conditions of 1 June 2023 (EVS-EN 50549-1)"
+document_must_cite: ["2016/631", "RfG", "Elektrilevi"]
+accepts: [generic-en50549-1, national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
 must_meet:
-  - rule: "Frequency ranges"
+  - id: power-class
+    rule: "Plant size class (RfG as Elering applies it)"
+    value: "type A below 500 kW; from 500 kW type B–D with their own conditions"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 500, over: "500 kW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "Elektrilevi A-type conditions 2023-06-01" }
+  - id: freq-range
+    rule: "Frequency ranges"
     value: "47.5–49.0 Hz for 30 min; 49.0–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
-  - rule: "Rate of change of frequency"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "Elektrilevi A-type conditions 2023-06-01, 8.1.2; EN 50549-1" }
+  - id: rocof
+    rule: "Rate of change of frequency"
     value: "stay connected up to 2.5 Hz/s"
-  - rule: "Over-frequency response (LFSM-O)"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+  - id: lfsm-o
+    rule: "Over-frequency response (LFSM-O)"
     value: "active power reduction from 50.2 Hz with 5 % droop (40 %/Hz)"
-  - rule: "Under-frequency"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+  - id: under-frequency
+    rule: "Under-frequency"
     value: "output may fall at most 2 % of Pmax per Hz below 49 Hz"
-  - rule: "Loss-of-mains protection"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+  - id: lom-protection
+    rule: "Loss-of-mains protection"
     value: "U<, U>, U>>, f<, f> functions; 2019 recommended settings: U>> 1.15 Un 0.1–0.2 s, U> 1.11 Un ≥ 3 s, U< 0.85 Un 1.2–1.5 s, f> ≥ 51.6 Hz, f< ≤ 47.4 Hz"
-  - rule: "Reconnection"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi technical conditions 2019-04-27; EN 50549-1" }
+  - id: reconnection
+    rule: "Reconnection"
     value: "only after the grid frequency has stayed within 49.0–50.1 Hz for 60 s; ramp at most 10 % of Pmax per minute"
-  - rule: "Voltage-dependent output P(U)"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+  - id: p-of-u
+    rule: "Voltage-dependent output P(U)"
     value: "linear reduction from +10 % of nominal voltage, reaching zero at +12 %"
-  - rule: "Reactive power"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+  - id: reactive
+    rule: "Reactive power"
     value: "cos φ = 1 at the connection point by default; the operator may set a fixed cos φ, cos φ(P), fixed Q or Q(U)"
-  - rule: "Export limit"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+  - id: export-limit
+    rule: "Export limit"
     value: "the control system keeps the exported active power under the contracted value, summed per phase; step response within the curve ΔP(t) = ΔP(0)·e^(−1.05·(t−0.8))"
-  - rule: "Storage dynamics"
+    check: { kind: none, why: "a control-system requirement at the installation's level, not a check on the model", source: "Elektrilevi A-type conditions 2023-06-01" }
+  - id: storage-dynamics
+    rule: "Storage dynamics"
     value: "smooth transitions between charging and discharging; power ramps of at most 10 % per minute near the charge limits"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "Elektrilevi A-type conditions 2023-06-01" }
 documents_for_listing:
   - "a properly completed data form (Elektrilevi's Excel form)"
   - "the device's technical data sheet"

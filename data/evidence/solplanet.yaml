@@ -1,0 +1,66 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Solplanet
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-asw-lt-g2-pro-2022
+  title: Bureau Veritas U22-0354 — EN 50549-1 type A — ASW 3–5K-LT-G2 Pro
+  url: https://www.solplanet.net/wp-content/uploads/2023/04/AISW_ASWxxK-LT-G2-Pro_UNBED_EN-50549-1_Typ-A_EN_U22-0354.pdf
+  issuer: Bureau Veritas
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: U22-0354
+  issued: '2022-06-03'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - ASW10K-LT-G2PRO
+  - ASW12K-LT-G2PRO
+  - ASW13K-LT-G2PRO
+  - ASW15K-LT-G2PRO
+  - ASW17K-LT-G2PRO
+  - ASW20K-LT-G2PRO
+  - ASW3K-LT-G2PRO
+  - ASW4K-LT-G2PRO
+  - ASW5K-LT-G2PRO
+  - ASW6K-LT-G2PRO
+  - ASW8K-LT-G2PRO
+  families:
+  - name: ASW 3–5K-LT-G2 Pro
+    match: ^(ASW10K\-LT\-G2PRO|ASW12K\-LT\-G2PRO|ASW13K\-LT\-G2PRO|ASW15K\-LT\-G2PRO|ASW17K\-LT\-G2PRO|ASW20K\-LT\-G2PRO|ASW3K\-LT\-G2PRO|ASW4K\-LT\-G2PRO|ASW5K\-LT\-G2PRO|ASW6K\-LT\-G2PRO|ASW8K\-LT\-G2PRO)$
+    countries: []
+    accepted_in: [EE]
+- id: en50549-asw-kh-t2-2024
+  title: Bureau Veritas U24-0093 — EN 50549-1 — ASW05–12kH-T2
+  url: https://www.solplanet.net/wp-content/uploads/2023/12/Cer_EN-50549-1_ASW5-12kH-T3_en_V02.pdf
+  issuer: Bureau Veritas
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  cert_no: U24-0093
+  issued: '2024-03-01'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - ASW05KH-T2
+  - ASW05KH-T3
+  - ASW06KH-T2
+  - ASW06KH-T3
+  - ASW08KH-T2
+  - ASW08KH-T3
+  - ASW10KH-T2
+  - ASW10KH-T3
+  - ASW12KH-T2
+  - ASW12KH-T3
+  families:
+  - name: ASW05–12kH-T2/T3 hybrid
+    match: ^(ASW05KH\-T2|ASW05KH\-T3|ASW06KH\-T2|ASW06KH\-T3|ASW08KH\-T2|ASW08KH\-T3|ASW10KH\-T2|ASW10KH\-T3|ASW12KH\-T2|ASW12KH\-T3)(-O|-DG)?$
+    countries: []
+    accepted_in: [EE]

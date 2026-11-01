@@ -1,0 +1,29 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Sinexcel
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: en50549-pws2-29-30p-ex-2023
+  title: TÜV SÜD ESY 076777 0085 — EN 50549-1, NC RfG — PWS2-29P-EX / PWS2-30P-EX
+  url: https://en.sinexcel.com/uploads/soft/20260209/PWS2-29P%2030P-EX%20RFG%20Cert.pdf
+  issuer: TÜV SÜD
+  kind: certificate
+  standards:
+  - EN 50549-1:2019/AC:2019
+  cert_no: '64290233104301'
+  seen: '2026-11-01'
+  source: tools/evidence
+  models_in_document:
+  - PWS2-29P-EX
+  - PWS2-30P-EX
+  families:
+  - name: PWS2-29P/30P-EX
+    match: ^(PWS2\-29P\-EX|PWS2\-30P\-EX)$
+    countries: []
+    accepted_in: [EE]

@@ -329,7 +329,41 @@ device" and sits in green: a wallbox in Estonia is a load, nothing gates it, so 
 group shows all nine categories always, in this order, zero counts in lighter ink, so the reader sees the whole ladder
 and where the chosen country's models fall on it.
 
-## 8f. Legacy models (2026-11-01)
+## 8f. The requirement check: three layers, one state per row (2026-11-01)
+
+Madis, 2026-11-01: can the inverters' product sheets be run against each country's requirements? The hand example
+was ABB/FIMER's TRIO-8.5-TL-OUTD against CEI 0-21: the datasheet alone settles six rows (8.5 kW is under the 11.08 kW
+line, three phases where over 6 kW needs them, 47–53 Hz covers 47.5–51.5, 320–480 V covers 85–110 % Un, cos φ to 0.9),
+eight more are settled only by the maker's type-test declaration, and that declaration cites the 2022 edition with
+two variants, not the 2026-07 one. So the model page now carries a **requirement check**, country by country
+([`docs/checks.md`](docs/checks.md)): every `must_meet` item of a country profile is a row with four cells —
+requirement and clause, what the datasheet says, what the maker's document covers, the state.
+
+The states are the design: **meets by datasheet** (green, filled ✓ — a number the sheet states, judged against the
+rule), **meets by maker's document** (amber, filled ✓ — the document releases the model for the country *and* cites
+the profile's norm), **documented for an older edition** (amber, outlined ~ — the item changed after the edition the
+document cites; the summary line says "documented for CEI 0-21:2022-03; V1; V2 — 2 items of 2026-07 unverified"),
+**range covers; set at commissioning** (green, outlined ○ — where the operator writes the protection values per
+installation, the sheet can only show its settable range takes them), **over a line: other procedure** (amber,
+dotted B — over an RfG type, procedure, EMC-class or protection line: the model is not unfit, another procedure
+applies, the traffic light's B), **not shown** (grey — neither says it; never "fails"), **outside by datasheet** (red,
+outlined ✕ — only with a number that breaks the rule: an 8 kW single-phase unit where over 6 kW needs three phases)
+and **no check** (an optional or installation-level item, listed so the reader sees the whole rule).
+The same amber as the traffic light's "the operator decides" (§8e): a document is the maker's word, the operator still
+decides, and every block ends by saying so. Each country is a `<details>`, the one with the most to say open; the
+front door's `gf-cc` cookie moves the reader's own country to the top. The requirement's `value` sentence hides under
+the rule until hover or focus, so a 16-row table stays a table and not a page of prose; on a phone the three answer
+cells stack under the rule with their labels.
+
+What it refuses to do, on purpose: it does not use a list's kVA or phases as "datasheet" evidence (the sheet is the
+maker's figure), it does not read a declaration's tick boxes as separate facts yet, and a released-countries table
+that names the country but cites no standard proves none of the rows — the block says that in one line rather than
+colouring anything amber. The profiles' `must_meet` entries gained an `id` and a machine-readable `check` block
+(kind, field, limit or range, what a line means, who can prove it, which edition changed it) and each profile says
+which kinds of maker's document its operator takes (`accepts`: a national declaration, a generic EN 50549-1 certificate,
+the maker's released-countries table); the sentences the country page prints stayed.
+
+## 8g. Legacy models (2026-11-01)
 
 Madis: old models nobody searches for any more are noise in the table — hide them by default, with a way to include them.
 The flag is evidence, never an age guess (`web/src/lib/legacy.ts`), in three tiers, each carrying its reason in words:
@@ -349,7 +383,7 @@ states the reason under the header; the brand page lists them in a section of th
 tags them in the model-codes table. The count test treats the toggle as a toggle: off leaves the current rows (or
 everything when there is a search text), on leaves them all.
 
-## 8g. A list country's second level (2026-11-01)
+## 8h. A list country's second level (2026-11-01)
 
 Madis: Estonia showed 11 678 models as "not on the list", although every one of them is on some other list and
 Elektrilevi takes a model that is not on its list with extra documents. So a cell in a country whose list we read now has
@@ -615,7 +649,32 @@ three rounds, the last on the final build: [`it-profiil.json`](docs/moodud/it-pr
 certificate number carried a research note in brackets into its link text (both fixed); the block's subtitle read "from The
 distribution grid operator…". The count test: 796 checks, 0 failures.
 
-## 27. Measured, 2026-11-01 — legacy models
+## 27. Measured, 2026-11-01 — the requirement check
+
+The model page's new block (§8f, [`docs/checks.md`](docs/checks.md)) and the country page's longer "What the model
+must meet" table (the frequency/voltage and the interface-protection rows of Italy split, so each row is one check).
+Six routes ([`routes-kontroll.json`](docs/moodud/routes-kontroll.json): a GoodWe hybrid with an Italian certificate
+and a datasheet, at the top and at the block; a 50 kW GoodWe string inverter — two rows "outside by datasheet" in
+Italy; a Deye microinverter with a datasheet only, and the same with every country opened at Spain; `/grid/it/` at
+the requirements table) × 3440/390 × light/dark, three rounds, the last on the final build after merging the
+evidence PR: [`kontroll.json`](docs/moodud/kontroll.json), 24 pictures, 0 console errors, 0 failed requests, 0 px
+overflow, 0 texts under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 6.26), 0 tap targets under 44 px. By eye
+between rounds: the document column repeated the whole list of cited variants on every row (now once, in the block's
+source line, and "covered by the certificate" per row), and a block with no document said "no maker's document for
+this country" fourteen times (now "no document" per row, the reason once above). The count test grew by the new
+suite: 124 529 checks, 0 failures — the states of every model × country sum to the applicable items, every datasheet
+verdict carries its number, and the hand example holds (TRIO-8.5 × IT: 6 / 8 / 2022-03 + V1 + V2 against 2026-07).
+Coverage: 670 models with a datasheet row per country; every item covered for 352 models in Estonia (EN 50549-1
+certificates), 319 in Italy, 146 in Spain; over a line 260 in Italy, 21 in Spain; outside by datasheet 16 in Italy, 1 in
+Spain. A Greek test fixture (GoodWe GW10K-ET-20) proves the schema carries several lines per country, operator-set values
+and a generic certificate as accepted evidence.
+
+The example model itself has no page: the register holds it as ABB "TRIO-8.5-TL-OUTD" (Estonia), as Fimer
+"TRIO-8.5-TL-OUTD-*-400" (Netherlands) and as Fimer "…-Y-400 (*) NOTE…" (Belgium), three spellings under two brand
+words, not joined — a parser matter, noted for the product session. Models a product family claims have no page
+either, so the block reaches the 4 600 orphan model pages today and the family pages not yet.
+
+## 28. Measured, 2026-11-01 — legacy models
 
 Five routes ([`routes-legacy.json`](docs/moodud/routes-legacy.json): `/grid/at/` with its "535 legacy models hidden — include"
 line, `/grid/at/?legacy=1&st=X`, `/grid/at/?q=symo+3.0` (an old code found despite the hiding), the SolaX brand page at its
@@ -627,7 +686,7 @@ makers' own archive pages were read the same night (Fronius's SnapINverter serie
 Hoymiles's HM series 39, Deye's download tags 38, Sungrow's German archive 17, GoodWe 3; 20 brand files, Enphase's
 North-American EOL table deliberately dropped because it would have flagged European IQ7-INT models); 0 tier C; 13 735 current.
 
-## 28. Measured, 2026-11-01 — the second level
+## 29. Measured, 2026-11-01 — the second level
 
 Five routes ([`routes-kaks-taset.json`](docs/moodud/routes-kaks-taset.json): `/grid/ee/`, `/grid/ee/?st=D`, `/grid/ee/?st=K&brand=Fox ESS`,
 the Sungrow SH family page at its grid block and at its Estonia row) × 3440/390 × light/dark: [`kaks-taset.json`](docs/moodud/kaks-taset.json),

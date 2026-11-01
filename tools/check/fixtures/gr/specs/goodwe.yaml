@@ -1,0 +1,25 @@
+# TEST FIXTURE: one row of the real GoodWe ET G2 datasheet (read 2026-11-01), plus one synthetic single-phase unit
+# under the brand "Synthetic" in synthetic.yaml. Not part of data/specs.
+brand: GoodWe
+maker_site: https://en.goodwe.com/
+rule: fixture
+sources:
+- id: et-g2
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_ET-G2_Datasheet-EN.pdf
+  title: GoodWe ET G2 datasheet (EN)
+  version: ''
+  seen: '2026-11-01'
+models:
+- code: GW10K-ET-20
+  mppt: 3
+  ac_kw: null
+  ac_kva: 10.0
+  ac_a: 14.5
+  phases: 3
+  pv_kw: null
+  freq_hz: [45, 65]
+  vac_v: [170, 290]
+  vac_un: 230
+  cosphi: 0.8
+  thdi_pct: 3
+  source: et-g2
