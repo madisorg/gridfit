@@ -29,28 +29,28 @@ document_must_cite: ["2016/631", "RfG", "Elektrilevi"]
 accepts: [generic-en50549-1, national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
 must_meet:
   - id: power-class
-    rule: "Plant size class (RfG as Elering applies it)"
-    value: "type A below 500 kW; from 500 kW type B–D with their own conditions"
-    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 500, over: "500 kW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "Elektrilevi A-type conditions 2023-06-01" }
+    rule: "Plant size class (Võrgueeskiri § 16 lg 1; RfG as Elering applies it)"
+    value: "type A below 0.5 MW (below 110 kV); type B 0.5 MW to below 5 MW, type C 5 MW to below 15 MW, type D 15 MW or more or a connection at 110 kV or above — each from 500 kW with conditions of its own"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 500, over: "500 kW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "Elektrisüsteemi toimimise võrgueeskiri § 16 lg 1; Konkurentsiamet decision 08.11.2018 nr 7-26/2018-005" }
   - id: freq-range
     rule: "Frequency ranges"
     value: "47.5–49.0 Hz for 30 min; 49.0–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
     check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "Elektrilevi A-type conditions 2023-06-01, 8.1.2; EN 50549-1" }
   - id: rocof
     rule: "Rate of change of frequency"
-    value: "stay connected up to 2.5 Hz/s"
-    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+    value: "stay connected up to 2.5 Hz/s, except where the disconnection is made by a RoCoF-type loss-of-mains protection"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi listing guide 2023-12-06, item 2; A-type conditions 2023-06-01, 4.3; EN 50549-1" }
   - id: lfsm-o
     rule: "Over-frequency response (LFSM-O)"
-    value: "active power reduction from 50.2 Hz with 5 % droop (40 %/Hz)"
-    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
+    value: "active power reduction from 50.2 Hz with 5 % droop (40 %/Hz); a storage unit in discharge reduces too and, if needed, switches to charging"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01, 9.2–9.4; EN 50549-1" }
   - id: under-frequency
     rule: "Under-frequency"
     value: "output may fall at most 2 % of Pmax per Hz below 49 Hz"
     check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
   - id: lom-protection
     rule: "Loss-of-mains protection"
-    value: "U<, U>, U>>, f<, f> functions; 2019 recommended settings: U>> 1.15 Un 0.1–0.2 s, U> 1.11 Un ≥ 3 s, U< 0.85 Un 1.2–1.5 s, f> ≥ 51.6 Hz, f< ≤ 47.4 Hz"
+    value: "U<, U>, U>>, f<, f> functions (2023 conditions 5.1, no numbers); 2019 recommended settings: U>> 1.15 Un 0.1–0.2 s, U> 1.11 Un ≥ 3 s, U< 0.85 Un 1.2–1.5 s, f> ≥ 51.6 Hz ≥ 0.1 s, f< ≤ 47.4 Hz ≥ 0.1 s"
     check: { kind: document, provable_by: [document], source: "Elektrilevi technical conditions 2019-04-27; EN 50549-1" }
   - id: reconnection
     rule: "Reconnection"
@@ -58,7 +58,7 @@ must_meet:
     check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
   - id: p-of-u
     rule: "Voltage-dependent output P(U)"
-    value: "linear reduction from +10 % of nominal voltage, reaching zero at +12 %"
+    value: "linear reduction from +10 % of nominal voltage, reaching zero at +12 %; a storage unit need not switch to charging"
     check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01; EN 50549-1" }
   - id: reactive
     rule: "Reactive power"
@@ -70,8 +70,36 @@ must_meet:
     check: { kind: none, why: "a control-system requirement at the installation's level, not a check on the model", source: "Elektrilevi A-type conditions 2023-06-01" }
   - id: storage-dynamics
     rule: "Storage dynamics"
-    value: "smooth transitions between charging and discharging; power ramps of at most 10 % per minute near the charge limits"
-    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "Elektrilevi A-type conditions 2023-06-01" }
+    value: "storage — a bidirectional EV charger included — is a type-2 module; storage with its own connection point has Pmax = its largest continuous discharge power; charge↔discharge transitions without steps; near full charge the charging power falls at no more than 10 % of Pmax,L per minute, near empty the discharge power at no more than 10 % of Pmax per minute"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "Elektrilevi A-type conditions 2023-06-01, 2.9–2.11, 7.1–7.3" }
+  - id: single-phase
+    rule: "Single-phase connection point (Elektrilevi connection conditions 7.4)"
+    value: "a generating module of up to 5 kW may sit on a single-phase connection point; new single-phase connections are not given (only an existing one can be raised to 25 A); Elektrilevi states no unbalance limit for a single-phase unit on a three-phase supply"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 5, applies: { phases: [1] }, over: "a single-phase unit over 5 kW cannot go on a single-phase connection point; on a three-phase supply Elektrilevi states no limit", provable_by: [datasheet, document], source: "Elektrilevi OÜ liitumistingimused 7.4 (2023-05-16; same in the 2025-05-01 edition)" }
+  - id: micro-producer
+    rule: "Micro-producer line (connection conditions 2.22 / 2.30.1, 8.1; Võrgueeskiri § 21 lg 2)"
+    value: "up to 15 kW three-phase (5 kW single-phase) the producer is a micro-producer and the operator may not ask for the extra documents of § 21 lg 1¹; above 15 kW a security of €38 000 per MW is due with the application"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 15, over: "over 15 kW: small producer — a security of €38 000/MW with the application", provable_by: [datasheet, document], source: "Elektrilevi OÜ liitumistingimused 2.22, 8.1; Võrgueeskiri § 21 lg 2" }
+  - id: anti-islanding
+    rule: "Anti-islanding (A-type conditions 5.1)"
+    value: "the loss-of-mains protection must stop any energy flowing from the installation into the grid during grid disturbances, including loss of grid voltage; no detection method is prescribed"
+    check: { kind: document, provable_by: [document], source: "Elektrilevi A-type conditions 2023-06-01, 5.1" }
+  - id: lfsm-u
+    rule: "Under-frequency response (LFSM-U)"
+    value: "not required for type A, storage included: Elektrilevi asks for a power increase on under-frequency from type C only"
+    check: { kind: none, why: "not required below type C", source: "Elektrilevi B–D conditions 2023-06-01, 9.2; A-type conditions 2023-06-01 (no clause)" }
+  - id: frt
+    rule: "Fault ride-through"
+    value: "not required for type A; from type B the RfG article 14.3 voltage-dip curves apply"
+    check: { kind: none, why: "not required for type A", source: "Elektrilevi B–D conditions 2023-06-01, 15.1; RfG article 13 (no FRT for type A)" }
+  - id: dc-injection
+    rule: "DC injection"
+    value: "no limit stated by Elektrilevi; EN 50549-1 sets none either"
+    check: { kind: none, why: "no Estonian requirement found (A-type conditions 2023, conditions 2019, listing guide 2023, connection conditions 2023/2025)", source: "Elektrilevi documents as listed" }
+  - id: remote-control
+    rule: "Remote control and communication"
+    value: "none for type A; from type B a communication project agreed with Elering and tested before synchronisation"
+    check: { kind: none, why: "not required for type A", source: "Elektrilevi liitumistingimused 7.6; Elering AS liitumise tüüptingimused 2025-07-31, 5.3.3" }
 documents_for_listing:
   - "a properly completed data form (Elektrilevi's Excel form)"
   - "the device's technical data sheet"
@@ -87,14 +115,18 @@ apply:
   how: "send the documents to Elektrilevi's electricity-producers mailbox named in the listing guide (PDF below)"
   guide_url: https://www.elektrilevi.ee/-/doc/8644141/liitumised/vaiketootjale/failid/inverterite_lisamine_elektrilevi_nimekirja_est.pdf
   guide_date: "2023-12-06 (an earlier version dated 2019-08-15 has the same requirements without the mailbox)"
-  processing_time: "not stated"
+  processing_time: "listing: not stated; the connection offer: within 30 days of a complete application (Võrgueeskiri § 22 lg 1)"
 not_listed: "The small-producer form points to the list; the micro-producer form says a model not on the list needs an EN 50438:2013 conformity certificate and a type-test protocol with the application. In practice the installer applies, and Elektrilevi checks the certificate against the requirements above. The list page says: if needed, contact customer service."
 thresholds:
   - "≤ 800 W: the A-type technical conditions do not apply (plug-in units); registration still applies (not confirmed)"
   - "micro-producer: ≤ 15 kW three-phase or ≤ 5 kW single-phase"
   - "small producer (type A): < 500 kW; type B–D from 500 kW have their own conditions"
-  - "above 1 MW: extra documents with the application"
+  - "1 MW and above: not connected at low voltage (connection conditions 7.3)"
 commissioning: "Before parallel operation: the inverter settings protocol and, where required, the electrical-installation audit (checked in the TJA register) or the builder's confirmation; the grid contract for a producer must be signed by both sides first."
+changes:
+  - "30 January 2026: Võrgueeskiri amended (RT I, 27.01.2026, 3) — meters and data access; § 30 lg 14: metering points of storage and of generation of 15 kW or more must measure in 15-minute intervals by 5 July 2031. Nothing about the inverter itself"
+  - "Elektrilevi's A-type conditions are still those of 1 June 2023 (the file served on 2026-11-01); the connection conditions of 1 May 2025 were labelled 'valid until 31.12.2025' — a 2026 edition was not found"
+  - "the EU revision of the generator code (RfG 2.0) is not adopted"
 evidence_for_documented: "A certificate or test report against EN 50549-1 (any national profile, or none) that shows the parameters above, plus the Estonian settings — this is what Elektrilevi checks for a model that is not on the list. GridFit shows the document; Elektrilevi decides."
 sources:
   - title: "Inverterite nimekiri (the list page, with the documents checked per listed model)"
@@ -116,3 +148,18 @@ sources:
     url: https://www.elektrilevi.ee/-/doc/8644141/kliendile/el_vorm_liitumistaotlus_vaiketootja.pdf
   - title: "Liitumistaotlus mikrotootjale (micro-producer form, older)"
     url: https://www.elektrilevi.ee/-/doc/6305157/kliendile/el_vorm_liitumistaotlus_mikrotootja.doc
+  - title: "Elektrisüsteemi toimimise võrgueeskiri (VV määrus nr 10, 14.02.2019), consolidated text RT I, 27.01.2026, 7"
+    url: https://www.riigiteataja.ee/akt/127012026007
+    seen: "2026-11-01"
+  - title: "Konkurentsiamet — otsus RfG siseriiklikult määratavate sätete osas, 08.11.2018 nr 7-26/2018-005"
+    url: https://www.konkurentsiamet.ee/sites/default/files/documents/2023-09/OTSUS%20RfG%20siseriiklikult%20m%C3%A4%C3%A4ratavate%20s%C3%A4tete%20osas.pdf
+    date: "2018-11-08"
+  - title: "Elektrilevi — B–D-tüüpi (üle 500 kW) tootmismoodulite tüüpsed tehnilised tingimused"
+    url: https://public-docs.elektrilevi.ee/2/10/b_d_tuupi_alates_500_k_W_tuupsed_tehnilised_tingimused_1376cf5898.pdf
+    date: "2023-06-01"
+  - title: "Elektrilevi OÜ — Connection conditions (valid from 1 May 2025, English)"
+    url: https://public-docs.elektrilevi.ee/2/10/13/liitumistingimused_kuni_31_12_2025_eng_09eaac19fb.pdf
+    date: "2025-05-01"
+  - title: "Elering AS elektri põhivõrguga liitumise tüüptingimused (KA 27.06.2025 nr 7-10/2025-011)"
+    url: https://elering.ee/sites/default/files/public/Teenused/liitumistingimused/01%20-%20Elering%20AS%20elektri%20p%C3%B5hiv%C3%B5rguga%20liitumise%20t%C3%BC%C3%BCptingimused%202025.07.31.pdf
+    date: "2025-07-31"

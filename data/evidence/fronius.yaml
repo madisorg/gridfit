@@ -39,3 +39,157 @@ documents:
     match: ^(FRONIUS)?PRIMOGEN24(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0|8\.0|10\.0)(PLUS)?$
     countries: [ES]
     note: 'Template NTS_PVI_CM_rev.13. Revision history: ''Inclusión de nuevos modelos / actualización de firmware''.'
+- id: at-tor-r25-symo-gen24-3-5-2020
+  title: Bureau Veritas U20-0450 — Unbedenklichkeitsbescheinigung TOR Erzeuger Typ A, OVE-Richtlinie R25 — Symo GEN24 3.0–5.0 (Plus,
+    Lite)
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_Unbed_TOR_Erzeuger_TypA_OVE_R25_Fronius_Symo_GEN24_3.0_-_5.0_DE.pdf
+  note: fronius.com refused automated access ("Request Rejected") on 2026-11-01; the same file was read from the copy at https://www.siblik.com/fileadmin/mam/medias/docus/106/SE_CER_Unbed_TOR_Erzeuger_TypA_OVE_R25_Fronius_Symo_GEN24_3.0_-_5.0_DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U20-0450
+  issued: '2020-06-16'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A:2019-12
+  - OVE-Richtlinie R25:2020-03
+  firmware: ab V1.7.1-0
+  families:
+  - name: Symo GEN24 3.0–5.0 (Plus, Lite)
+    match: ^SYMOGEN24(3|4|5)\.0(PLUS|LITE)?$
+    countries: [AT]
+    note: Report SGP-17698_01_R1, programme NSOP-0032-DEU-ZE-V01; R25 clauses 5.1–5.6. Not the SC models. No settings table.
+- id: at-tor-r25-symo-gen24-6-12-sc-2023
+  title: VDE Einheitenzertifikat 40057148 — TOR Erzeuger Typ A, OVE-Richtlinie R 25 — Symo GEN24 6.0–12.0 SC / Plus SC
+  url: https://www.siblik.com/fileadmin/mam/medias/docus/183/05_se_symo-gen24-12.0-sc_zertifikat_tor-erzeuger-typ-a.pdf
+  copy_of: Siblik Elektrik (Austrian wholesaler); the maker's own download not found (fronius.com refuses automated access)
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: '40057148'
+  issued: '2023-07-21'
+  valid_until: '2028-07-20'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 'TOR Erzeuger Typ A: 2022-04-18'
+  - 'OVE-Richtlinie R 25: 2020-03'
+  - 'DIN VDE V 0124-100: 2020-06'
+  firmware: 1.24.60-1 (bundle, annex B)
+  families:
+  - name: Symo GEN24 6.0–12.0 SC and Plus SC
+    match: ^(FRONIUS)?(SYMO)?GEN24(6|7|8|9|10|11|12)\.0(PLUS)?SC$
+    countries: [AT]
+    note: VDE report 309723-RE-1 (2023-07-20); AIT test report SGP-23837_01_R1 (2023-06-02). No settings table.
+- id: at-tor-r25-verto-2023
+  title: VDE Einheitenzertifikat 40057391 — TOR Erzeuger Typ A und Typ B, OVE-Richtlinie R 25 — Verto 25.0–33.3
+  url: https://www.siblik.com/fileadmin/mam/medias/docus/171/SE_CER_Confirmation_TOR_Erzeuger_TypA_u_TypB_VDE_40057391_Fronius_Verto_20.0_33.3_DE.pdf
+  copy_of: Siblik Elektrik (Austrian wholesaler); the maker's own download not found (fronius.com refuses automated access)
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: '40057391'
+  issued: '2023-11-21'
+  valid_until: '2028-11-20'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A Version 1.2, gültig ab 18.04.2022
+  - TOR Erzeuger Typ B Version 1.2, gültig ab 18.04.2022
+  - OVE-Richtlinie R 25, 01.03.2020
+  firmware: 1.25.4-1
+  families:
+  - name: Verto 25.0–33.3 (PV inverter, not Plus)
+    match: ^VERTO(25\.0|27\.0|29\.9|30\.0|33\.3)$
+    countries: [AT]
+    note: VDE report 311819-RE-1 (2023-11-20); R25 Annex B delta test on a VDE-AR-N 4105:2018-11 proof. The Verto Plus hybrids and "Verto
+      25.0 400" are not named. No settings table.
+- id: be-glv012-14-symo-gen24-sc-2026
+  title: Synergrid GLV012-14 — C10/26 declaration of conformity — Symo GEN24 (Plus) SC 3.0–5.0
+  url: https://dev.synergrid.be/images/downloads/GLV012-14_Fronius_Symo_GEN24_Plus_SC_Series_20260714_Signed.pdf
+  issuer: Synergrid (homologation) / Fronius
+  cert_no: GLV012-14
+  issued: '2026-07-14'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.4.1 (04/2026)
+  firmware: 1.34.6-1
+  families:
+  - name: Symo GEN24 3.0–5.0 SC and Plus SC
+    match: ^SYMOGEN24(3|4|5)\.0(PLUS)?SC$
+    countries: [BE]
+    note: Homologated by Synergrid 14/07/2026; 6 list rows (GLV012-14-0001…0006), power control by Fronius Smart Meter. No settings
+      table.
+- id: en50549-primo-gen24-8-10-2025
+  title: Bureau Veritas U25-0878 — EN 50549-1/A1, EN 50549-10 — Primo GEN24 8.0 / 10.0 (Plus)
+  url: https://midsummer.ie/pdfs/primo-gen24-10kw-bureau-veritas-u25-0878-en50549-1-2019-a1-v1-2025-09-18.pdf
+  copy_of: Midsummer (Irish wholesaler); no copy found on fronius.com
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U25-0878
+  issued: '2025-09-18'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019/A1:2023
+  - EN 50549-10:2022
+  - Commission Regulation (EU) 2016/631
+  firmware: 1.3x.x-x (tested with 1.33.7-1)
+  families:
+  - name: Primo GEN24 8.0 / 10.0 (Plus)
+    match: ^PRIMOGEN24(8\.0|10\.0)(PLUS)?$
+    countries: []
+    note: Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Report SGP-24964_15_R2,
+      programme NSOP-0032-DEU-ZE-V10; Annex C parameter table in the appendix. No Primo GEN24 8.0/10.0 is in the register yet — the
+      match joins nothing.
+    accepted_in: [EE, NL, SE]
+- id: se-eifs-setup-sweden-2020
+  title: Fronius "Conformity to EN 50549-1 with Setup Sweden" — EN 50549-1, EIFS 2018:2 — Primo, Symo, Symo Hybrid, Eco, Symo GEN24
+  url: https://assets.ctfassets.net/9pi13bto1z9e/6oUE8zOD4pYZaC6NYiK1ry/39fa760edd4cf822fa32d0e6fc45be8d/202065_SE_CER_Conformity_EN50549_Sweden_EN.PDF
+  copy_of: assets.ctfassets.net (Contentful CDN) — not confirmed as Fronius's own asset store; no fronius.com URL found
+  issuer: Fronius International GmbH (maker's declaration)
+  doc_no: SE_CER_Conformity_EN50549_Sweden
+  issued: '2020-09-29'
+  seen: '2026-11-01'
+  kind: declaration
+  standards:
+  - EN 50549-1
+  - EIFS 2018:2
+  - IEC 62116
+  families:
+  - name: Primo (SnapINverter, single-phase)
+    match: ^PRIMO\d+\.\d-1$
+    countries: [SE]
+  - name: Symo (SnapINverter, three-phase)
+    match: ^(FRONIUS)?SYMO\d+\.\d-3-(M|S)(-OS|LIGHT)?$
+    countries: [SE]
+    note: Symo Advanced is not named and is not joined.
+  - name: Symo Hybrid
+    match: ^SYMOHYBRID(3|4|5)\.0-3-S$
+    countries: [SE]
+  - name: Eco
+    match: ^ECO(25|27)\.0-3-S(LIGHT|WLAN/LAN/WEBOVÝSERVER)?$
+    countries: [SE]
+  - name: Symo GEN24 (Plus)
+    match: ^SYMOGEN24(PLUS)?\d+\.0(PLUS)?$
+    countries: [SE]
+    note: Family names only in the declaration, no model list or firmware. The 2020 document predates the Symo GEN24 SC models, which
+      are not joined. "Setup Sweden" settings table with numbers (U> 255.3 V 60 s, U>> 264.5 V 0.2 s, U< 195.5 V 0.2 s, f> 51.5 / f<
+      47.5 Hz 0.1 s, LFSM-O 50.5 Hz / 8 %, reconnection 47.5–50.1 Hz after 180 s) — documented for the 2020 Swedish setup, before the
+      ALP 2025 form (0.5 s frequency trips).
+- id: de-vde4105-symo-gen24-6-12-sc-2024
+  title: VDE Einheitenzertifikat 40058101 — VDE-AR-N 4105:2018-11 — Symo GEN24 6.0–12.0 SC / Plus SC
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Symo_GEN24_6_0-12_0_SC_DE_EN.pdf
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: '40058101'
+  issued: '2024-04-17'
+  valid_until: '2029-04-16'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - FGW TR 8 Rev.9 Anhang F
+  - 'DIN VDE V 0124-100: 2020-06'
+  firmware: 1.25.5-1 (bundle)
+  families:
+  - name: Symo GEN24 6.0–12.0 SC and Plus SC
+    match: ^(FRONIUS)?(SYMO)?GEN24(6|7|8|9|10|11|12)\.0(PLUS)?SC$
+    countries: [DE]
+    note: Unit certificate (evaluation 317036-RE-1, 31 pp.); the NA-protection certificate is a separate file in the same folder (not
+      read).

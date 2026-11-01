@@ -95,6 +95,14 @@ must_meet:
     rule: "Export limiter, SLI (annex L, L.1)"
     value: "since the 2026-07 edition any customer who adds generation may install a limiter that holds export at the agreed export power, without upgrading the connection (from 1 March 2026 it was allowed only on single-phase supplies up to 6 kW); the phase limits above still apply; third-party certification of the limiter becomes mandatory two years after the 2026-07 edition, until then the operator judges the maker's declaration"
     check: { kind: none, why: "optional, at the installation's level — not a check on the model", source: "CEI 0-21:2026-07 annex L" }
+  - id: under-frequency
+    rule: "Power reduction at under-frequency (8.4.4, figure 20)"
+    value: "figure 20 allows a limited reduction of maximum power for rotating machines; for static generators (inverters) normally no reduction is needed"
+    check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.4.4, figure 20" }
+  - id: backup-ddi
+    rule: "Back-up interface switch above 20 kW (8.2.2.4; TICA 10.10ter)"
+    value: "above 20 kW in total a back-up device (rincalzo) must open if the interface switch fails; up to 20 kW the operator may take the producer's self-declaration instead of a site visit"
+    check: { kind: max, meaning: protection, field: ac_kw, limit: 20, over: "over 20 kW: a back-up interface switch", provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.2.2.4; ARERA TICA 10.10ter" }
 documents_for_listing:
   - "the maker's Dichiarazione di conformità to CEI 0-21 for the model and firmware, on the Allegato C form: a self-certification under article 47 of DPR 445/2000 naming the models, firmware, phases, whether the interface protection is integrated, whether the unit is fit for plants above 11.08 kW, the storage data with the usable batteries, and the test reports behind it; when an accredited certification body issues it, it is titled a certificate (certificato)"
   - "behind the declaration, type-test reports from a laboratory accredited to ISO/IEC 17025, or from the maker's own laboratory under the surveillance of a certification body accredited to ISO/IEC 17065: Allegato A (interface protection), B (inverter), Bbis (storage); the maker keeps them 20 years and makes them available to the grid operator on its website"
@@ -170,3 +178,6 @@ sources:
   - title: "ANIE — inverters for LV with a CEI 0-21 declaration (trade association members' list, not an approval)"
     url: https://anie.it/wp-content/uploads/2023/03/251028-Inverter-BT-Norma-CEI_0-21.pdf
     date: "2025-10-29"
+  - title: "ANIE — sistemi di accumulo conformi alla norma CEI 0-21, n. 8 (trade association members' list, not an approval)"
+    url: https://anie.it/wp-content/uploads/2025/10/Sistemi-di-accumulo-CEI-0-21-n.8.pdf
+    date: "2020-03-02 (uploaded 2025-10)"

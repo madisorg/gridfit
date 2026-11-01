@@ -1,0 +1,205 @@
+# Austria — requirement profile for a grid-connected inverter, battery, hybrid or wallbox in low voltage (TOR).
+# Austria has a national list: the Wechselrichterliste of Oesterreichs Energie, which E-Control's own grid code cites —
+# a PV inverter listed as admissible counts as proven conformant (TOR Stromerzeugungsanlagen Typ A V1.4, 8.1, note 37).
+# An unlisted unit needs an OVE R 25 test report from an ISO/IEC 17025 laboratory with the Austrian settings confirmed.
+# Facts only, with the source of each; the grid operator decides. Written 2026-11-01 from the TOR texts on e-control.at
+# (Typ A V1.4, Verteilernetzanschluss Niederspannung V1.3.1), the ElWG on jusline (state 2026-11-01), the list's own
+# pages and xlsx of 2026-10-30, and Wiener Netze's page for small plants.
+cc: AT
+country: Austria
+norm: "TOR Stromerzeugungsanlagen Typ A"
+type_a_max_kw: 250   # RfG Schwellenwert-V (BGBl. II Nr. 96/2024) as TOR Typ A V1.4 2.1 and 2.5 apply it: type A from 0.8 kW to below 250 kW; type B from 250 kW (strictly "< 250 kW": a unit of exactly 250 kW is type B)
+description: "TOR Stromerzeugungsanlagen Typ A in Austria: the Wechselrichterliste, the OVE R 25 test report, the Austrian settings of Annex A3, the 3.68 kVA single-phase line and how a grid operator accepts a model."
+summary: "Austria's grid code for small generators is E-Control's TOR Stromerzeugungsanlagen Typ A, version 1.4, in force since 1 June 2026, with the storage and charger rules in the TOR Verteilernetzanschluss für die Niederspannung (V1.3.1). An inverter must ride through 47.5–51.5 Hz and 2 Hz/s, cut power from 50.2 Hz with a 5 % droop, run the Austrian protection settings (1.15 Un in 0.1 s, a 1.11 Un 10-minute average, 0.80 Un in 1.5 s, 0.25 Un in 0.5 s, 47.5 / 51.5 Hz in 0.1 s), cut power by P(U) between 110 and 112 % of nominal voltage and ride through faults down to 15 % voltage. Proof is an OVE R 25 test report from an accredited laboratory with the Austria setting confirmed — or the model's entry in the national Wechselrichterliste, which the grid code itself accepts as proof."
+not_listed_short: "A grid operator can still take an unlisted unit with an OVE R 25 test report from an ISO/IEC 17025 laboratory that confirms the Austria setting (or a VDE-AR-N 4105 / VDE V 0124-100 report plus the R 25 Annex B delta test); in practice operators expect the list"
+decided_by: "The distribution grid operator of the area (122 in Austria; the largest are Netz Niederösterreich, Wiener Netze, Netz Oberösterreich, Energienetze Steiermark, KNG-Kärnten Netz, Salzburg Netz, TINETZ, Vorarlberger Energienetze, Netz Burgenland, Linz Netz, Stromnetz Graz, Energie Klagenfurt, Innsbrucker Kommunalbetriebe) in the Betriebserlaubnisverfahren. E-Control writes the TOR; the TOR is agreed in every grid connection contract. The list is kept by Oesterreichs Energie for a project group of 13 grid operators and the association VÖEW, and every Austrian grid operator reads the same list."
+list:
+  name: "Wechselrichterliste TOR Stromerzeugungsanlagen Typ A (Oesterreichs Energie)"
+  url: https://www.wechselrichterliste.at/tor-sea-typ-a
+  meaning: "The inverter types relevant in Austria, by maker, marking those whose maker has supplied every document chapter 8 of the TOR asks for; the list says a listed type has shown it meets all TOR Typ A requirements and may be used without the grid operator's individual review. Each row carries a status (Ja; Ja - mit Einschränkung, valid from the firmware named; Ja, befristet, with an end date; Ja - <= 800W Anlage; Ja - <= 16A Anlage; Ja - nur für Eigenverbrauch; Nein; Nein - Typ B; Nein - Befristung abgelaufen; Nein - In Prüfung …). The list has no relevance for type B and above; it claims no completeness."
+  gate: "De facto, and written into the grid code: TOR Typ A V1.4 8.1 note 37 says that for PV inverters listed as admissible the proof of conformity counts as given. Without the list the grid operator may ask for the R 25 test report, the installer's Austria-setup confirmation and a machine-readable parameter export. Grid operators' practice with unlisted units is not published (forum reports of refusals only)."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG); E-Control RfG Anforderungs-V (BGBl. II Nr. 95/2024) and RfG Schwellenwert-V (BGBl. II Nr. 96/2024) — type A below 250 kW, type B from 250 kW"
+  - "TOR Stromerzeugungsanlagen Typ A, version 1.4, published and in force 2026-06-01 (E-Control, § 22 Z 2 E-ControlG) — replaces V1.3 of 2024-07-01; changes chapter 5.4 (controllability under § 76 ElWG)"
+  - "TOR Verteilernetzanschluss für die Niederspannung (Netzebenen 6 und 7), version 1.3.1, in force 2026-03-30 — storage (LFSM-O/U, FRT in both directions, reconnection) and chargers above 3.68 kVA"
+  - "OVE-Richtlinie R 25:2020-03-01 — the test standard for generating units on LV (paid); OVE-Richtlinie R 37 — the test standard for chargers (paid, published December 2024); OVE-Richtlinie R 20 — stationary storage"
+  - "Elektrizitätswirtschaftsgesetz (ElWG), in force 2025-12-24 — § 76 controllability, § 96 simplified connection up to 20 kW, § 101 peak capping"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md).
+edition:
+  norm: "TOR Stromerzeugungsanlagen Typ A"
+  id: "1.4"
+  date: "2026-06"
+  in_force: "2026-06-01"
+  label: "TOR Stromerzeugungsanlagen Typ A V1.4 (2026-06-01) with OVE R 25:2020-03"
+# Makers' Austrian documents cite "TOR Erzeuger Typ A …", "TOR Stromerzeugungsanlagen Typ A …", in English "TOR Generator type A",
+# and "OVE-Richtlinie R25 / R 25" (a bare "R 25" is too short to match on).
+# The OVE R 25 test is the national proof; a bare EN 50549-1 certificate is not named anywhere in TOR 8.1.
+document_must_cite: ["TOR Erzeuger", "TOR Stromerzeugungsanlagen", "TOR Generator", "OVE-Richtlinie R", "OVE R 25", "OVE R25"]
+accepts: [national-declaration]   # why: TOR Typ A V1.4 8.1 asks for "Prüfberichte … gemäß Prüfnorm OVE-Richtlinie R 25, worin auch eine Dokumentation … der Ländereinstellungen ‚Österreich‘ … bestätigt wurde"; note 38 also takes VDE-AR-N 4105 / VDE V 0124-100 reports only together with the R 25 tests (Q(U), P(U)) and the Austria setting. EN 50549-1 alone is not named.
+must_meet:
+  - id: power-class
+    rule: "Plant size class (RfG Schwellenwert-V; TOR Typ A V1.4 2.1)"
+    value: "type A from 0.8 kW to below 250 kW maximum capacity; from 250 kW type B (TOR Stromerzeugungsanlagen Typ B, RKS-AT certification) — the Wechselrichterliste does not apply there and marks such units 'Nein - Typ B'"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 250, over: "250 kW or more: type B, a procedure of its own (RKS-AT)", provable_by: [datasheet, document], source: "RfG Schwellenwert-V BGBl. II 96/2024; TOR Typ A V1.4 2.1, 2.5" }
+  - id: phases
+    rule: "Phases and unbalance (6.1.1)"
+    value: "plants are built as symmetrical three-phase plants; single-phase connection only up to a resulting unbalance of 3.68 kVA, i.e. at most 3 × 3.68 kVA single-phase units spread over the three phases; communicatively coupled single-phase units count as three-phase but need a central symmetry relay; three-phase AC-coupled storage + generation: unbalance factor k_U ≤ 0.7 %"
+    check: { kind: max, meaning: procedure, field: ac_kva, limit: 3.68, applies: { phases: [1] }, over: "single-phase over 3.68 kVA: only limited to 3.68 kVA (16 A) or with a central symmetry device — the list marks such units '<= 16A Anlage'", provable_by: [datasheet, document], source: "TOR Typ A V1.4 6.1.1" }
+  - id: protection-place
+    rule: "Where the interface protection sits (6.1.2, 6.3.1)"
+    value: "up to 30 kVA total inverter capacity per connection point the inverters' integrated automatic disconnection device (selbsttätig wirkende Freischaltstelle per OVE R 25) may serve as interface protection and switching point; above 30 kVA a separate central interface protection relay with a test terminal strip is required (non-exporting AC-coupled storage does not count)"
+    check: { kind: max, meaning: protection, field: ac_kva, limit: 30, over: "over 30 kVA per connection point: a separate interface protection relay", provable_by: [datasheet, document], source: "TOR Typ A V1.4 6.1.2, 6.3.1, 6.3.4" }
+  - id: simplified-procedure
+    rule: "Simplified connection (ElWG § 96)"
+    value: "renewable plants up to 20 kW grid-effective power are connected on notification: the grid operator confirms or refuses (only for reasoned safety concerns or technical incompatibility) within four weeks of a complete notification, otherwise the plant may be connected; PV up to 15 kW over an existing supply connection pays no extra connection charge"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 20, over: "over 20 kW: the regular grid-access procedure with a connection concept", provable_by: [datasheet], source: "ElWG § 96 (in force 2025-12-24)" }
+  - id: freq-range
+    rule: "Frequency ranges (5.1.1, table 1)"
+    value: "47.5–48.5 Hz for 60 min; 48.5–49.0 Hz for 90 min; 49.0–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "TOR Typ A V1.4 5.1.1, table 1" }
+  - id: voltage-range
+    rule: "Voltage ranges, LV connection (5.3.1, table 2)"
+    value: "0.85–0.90 pu for 60 min; 0.90–1.10 pu unlimited; 1.10–1.12 pu for 10 min"
+    check: { kind: range, field: vac_pct, range: [85, 112], provable_by: [datasheet, document], source: "TOR Typ A V1.4 5.3.1, table 2" }
+  - id: rocof
+    rule: "Rate of change of frequency (5.1.2)"
+    value: "stay connected and in operation up to 2 Hz/s; no RoCoF-triggered protection unless the grid operator asks for one"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.1.2" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (5.1.3; A3 2a)"
+    value: "active by default on LV inverters; threshold settable 50.2–50.5 Hz, droop settable 2–12 %; default 50.2 Hz and 5 % (40 % of P per Hz) of the momentary power; response time under 2 s, no artificial delay; plants that cannot do LFSM-O must disconnect between 50.2 and 51.5 Hz at a value staggered by the grid operator. Also required of plants up to 0.8 kW"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.1.3, annex A3 2a" }
+  - id: under-frequency
+    rule: "Power reduction at falling frequency (5.1.5)"
+    value: "non-synchronous plants: no reduction down to 49.0 Hz; below 49.0 Hz at most 2 % of maximum capacity per Hz"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.1.5" }
+  - id: frt
+    rule: "Fault ride-through, LV non-synchronous (5.2.1, figure 5; 5.2.2; A3 3)"
+    value: "stay connected for faults above the profile 0.15 pu for 0.15 s, rising linearly to 0.85 pu at 1.5 s; for dips below 0.8 Un inject no current (restricted dynamic grid support) unless the grid operator agrees otherwise; restore active current within 1 s after the fault; storage also in charging mode. Backup-capable inverters ≤ 30 kVA with ≤ 20 ms switch-over are exempt only while in backup use"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.2.1 figure 5, 5.2.2, annex A3 3; TOR VNA NS V1.3.1 5.2" }
+  - id: lom-protection
+    rule: "Interface protection settings, inverters with integrated disconnection (6.3.3.1, table 8; A3 5)"
+    value: "U>> 1.15 Un ≤ 0.1 s; U> 10-minute moving average 1.11 Un ≤ 0.1 s (settable 1.10–1.15 Un, delivered at 1.11 Un, or 1.10 Un if not settable); U< 0.80 Un 1.5 s; U<< 0.25 Un 0.5 s; f> 51.5 Hz ≤ 0.1 s; f< 47.5 Hz ≤ 0.1 s; voltage functions phase-to-neutral, three-phase. A separate relay (above 30 kVA) uses table 7: the same values, or U> 1.11 Un 60 s instead of the average. The grid operator may set other values"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 6.3.3.1 tables 7–8, annex A3 5" }
+  - id: anti-islanding
+    rule: "Loss of mains (table 8, note 34)"
+    value: "on loss of mains — also with balanced generation and load — the inverter stops feeding within 5 s, at any output"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 6.3.3.1 table 8, note 34" }
+  - id: reconnection
+    rule: "Connection and reconnection (5.5.2; A3 4)"
+    value: "only with 0.85 ≤ U ≤ 1.09 pu and 47.5 Hz < f < 50.10 Hz and no protection criterion pending; waiting time settable 0–300 s, recommended 60 s at start-up and 300 s after an interface-protection trip; after a disturbed-operation reconnection at most 10 % of Pmax per minute"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.5.2, annex A3 4" }
+  - id: reactive
+    rule: "Reactive power capability and methods (5.3.3, 5.3.4, table 4; A3 1)"
+    value: "inverters cover cos φ 0.9 under- to over-excited at rated apparent power (Q = ±0.436 Sr); default cos φ = 1 / Q = 0; the grid operator prescribes one method in the contract — fixed cos φ, cos φ(P) (1 up to 0.5 Pmax, 0.9 under-excited at Pmax), Q(U) (0.92 / 0.96 / 1.05 / 1.08 Un, PT1 5 s) or, above 3.68 kVA, fixed Q; below 0.2 Sr a settable minimum cos φ is set to 0.4; a change of method must be implemented within 12 months"
+    check: { kind: cosphi, field: cosphi, limit: 0.9, provable_by: [datasheet, document], changed_in: "2024-07", changed: "V1.3 (2024-07-01) extended 5.3.4 (methods, measuring point)", source: "TOR Typ A V1.4 5.3.3, 5.3.4 table 4, 5.3.4.1–5.3.4.2 table 5, annex A3 1" }
+  - id: p-of-u
+    rule: "Voltage-driven power reduction P(U) (5.3.6; A3 2b)"
+    value: "on LV inverters active by default (method a): maximum active power reduced linearly from 100 % at 1.10 Un to 0 at 1.12 Un, PT1 time constant 5 s (settable 3–60 s), activation delay at most 3 s; values may differ by agreement with the grid operator"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.3.6 figure 14, annex A3 2b" }
+  - id: remote-stop
+    rule: "Active-power stop on command (5.4.1.1, 6.2.1)"
+    value: "an input (remote-control interface) that ends active-power output within 5 s of a command; where the contract asks for it, as potential-free contacts at the grid operator's ripple-control receiver or gateway"
+    check: { kind: document, provable_by: [document], source: "TOR Typ A V1.4 5.4.1.1, 6.2.1" }
+  - id: controllability
+    rule: "Controllability by the grid operator (ElWG § 76; TOR Typ A V1.4 5.4.1.2)"
+    value: "from 2026-06-01 every new or substantially changed plant with grid-effective power of 3.68 kW or more needs a standardised digital interface for the operator's set-point of grid-effective power at the connection point (internet, OpenADR to IEC 62746-10-1; protocol due by 2026-12-31), reaching the set-point within 1 minute, with a fall-back of 70 % of module peak power on loss of communication; operators must establish control by 2028-06-01 (> 25 kW), 2029-06-01 (> 3.68–25 kW) and 2030-01-31 (> 0.8–3.68 kW, on request)"
+    check: { kind: none, why: "at the installation's level: the interface may sit in the inverter or in a separate device, and the OpenADR profile is not published yet", source: "ElWG § 76; TOR Typ A V1.4 5.4.1.2" }
+  - id: settings-protection
+    rule: "Locked settings and parameter export (6.2.3, 8.1, A3)"
+    value: "the TOR settings must be protected against change by the user (e.g. a password not given to the user), a software update must not change them, deviations from the defaults must be visible on the device or in the read-out, and the parameter export documenting the Austria settings must be machine-readable and searchable"
+    check: { kind: document, provable_by: [document], changed_in: "2024-07", changed: "V1.3 (2024-07-01) made the machine-readable parameter export a requirement", source: "TOR Typ A V1.4 6.2.3, 8.1 note 39, annex A3" }
+  - id: dc-injection
+    rule: "DC injection"
+    value: "TOR Typ A V1.4 states no DC-injection limit; whether OVE R 25 tests one is not confirmed (paid text)"
+    check: { kind: none, why: "no limit in the public TOR text", source: "TOR Typ A V1.4 (no clause)" }
+  - id: storage
+    rule: "Storage (TOR VNA NS V1.3.1 2.4, 5.1.2.2, 5.2, 5.7.4.2, 8.1)"
+    value: "a battery inverter meets the generator rules in discharge and the storage rules in both directions: LFSM-O from 50.2 Hz with 5 % droop and LFSM-U from 49.8 Hz with 1 % droop (thresholds settable 50.2–50.5 / 49.5–49.8 Hz, droops 2–12 % / 1–2 %), reference power = maximum export capacity (also for DC-coupled PV), switching from charging to discharging if needed; after 10 min within 50 ± 0.1 Hz back to the old set-point at ≤ 40 %/min; FRT also when charging; reconnection in charging mode only at 0.9–1.09 pu and 49.90–50.10 Hz; proof by an R 25 report with the LFSM values of the TOR VNA, with makers' declarations accepted for FRT and LFSM in charging mode until a storage test exists"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "TOR VNA NS V1.3.1 2.4, 5.1.2.1–5.1.2.2, 5.2, 5.7.4.2, 8.1" }
+  - id: export-limit
+    rule: "Grid-effective power and peak capping (TOR Typ A 4.1, 4.4; ElWG § 101)"
+    value: "the contract fixes the grid-effective (export) power at the connection point, which may be lower than the plant's maximum capacity; from 2027-01-01 the grid operator may cap export of new or changed PV statically or dynamically, never below 70 % of module peak power (not for agreed grid-effective power of 7 kW or less, or where an unrestricted connection was paid for)"
+    check: { kind: none, why: "set per installation in the contract, not a check on the model", source: "TOR Typ A V1.4 4.1, 4.4; ElWG § 101" }
+  - id: charger
+    rule: "Chargers above 3.68 kVA (TOR VNA NS V1.3.1 2.5, 5.9, 5.7.4.2, 8.1)"
+    value: "a bidirectional digital interface with an open protocol (e.g. OCPP, EEBUS) that allows limiting the charging power; reduced-power and timed charging programmes with a random start delay of 0–300 s; three-phase connection, unbalance at most 16 A per conductor; under-voltage trip after more than 3 s below 80 % Un; reconnection at 0.9–1.09 pu and 49.90–50.10 Hz with a ramp of 10 %/min or 1 A/min; LFSM for chargers suspended. Proof: an OVE R 37 test report from 2026-12-15 (makers' declarations until 2026-12-14); bidirectional chargers in feed-in also meet the generator TOR and OVE R 25"
+    check: { kind: none, why: "a charger rule: the check engine covers inverter, hybrid, battery and plug-in classes only (applies.classes cannot name wallbox); the charger list (AT-EV) carries each wallbox's status. Changed 2026-03-30 (V1.3.1): declarations accepted until 2026-12-14", source: "TOR VNA NS V1.3.1 2.5, 5.9, 5.7.4.2, 8.1 note 39" }
+documents_for_listing:
+  - "the list's application form (Formular_Liste_TYP_A_TOR_ERZ.xlsx)"
+  - "the OVE R 25 certificate"
+  - "the OVE R 25 test report from a testing body accredited to ISO/IEC 17025 for this field, in which the Austria setting (or the maker's parameterisation guide with the country setting 'Österreich') is confirmed — or a VDE-AR-N 4105 / DIN VDE V 0124-100 report plus the protocol of the delta test to OVE R 25 Annex B, with complete screenshots of the DEFAULT settings for 'Austria'"
+  - "Oesterreichs Energie reserves the right to verify the country settings and their documentation on a test unit for new devices; the project group finances independent laboratory tests to OVE R 25"
+  - "chargers: the charger application form and the maker's declaration (until 2026-12-14) or an OVE R 37 test report (from 2026-12-15)"
+apply:
+  who: "listing: the maker or importer (to the list's mailbox); connection: the customer, usually through the licensed electrical contractor"
+  how: "connection: a grid-access application (Netzanschlussantrag) on the grid operator's form or portal (e.g. Netz Niederösterreich's customer portal, Salzburg Netz's 'Datenblatt Erzeugungsanlage' or online reporting for registered contractors) with grid-effective power, plant capacity and module peak power; the operator answers with a connection concept or offer; after the build the contractor sends the completion report and the installation document (TOR Annex A5), and the operator grants the operating permit (Betriebserlaubnis). Up to 0.8 kW a written notification at least two weeks before commissioning"
+  guide_url: https://www.wechselrichterliste.at/tor-sea-typ-a/aufnahme-typ-a
+  guide_date: "list admission page, seen 2026-11-01 (no date)"
+  processing_time: "ElWG § 96: up to 20 kW the grid operator confirms or refuses within four weeks of a complete notification, otherwise the plant may be connected; above that no statutory period was found (Salzburg Netz states about two weeks for its feedback, 2024-08-27)"
+not_listed: "TOR 8.1 does not require the list: the grid operator may ask for the OVE R 25 test report (ISO/IEC 17025 laboratory, Austria setting confirmed) — or a VDE-AR-N 4105 / VDE V 0124-100 report with the R 25 tests of Q(U) and P(U) — together with the contractor's confirmation of the Austria setup and a machine-readable parameter export. Only for a listed PV inverter does the proof count as given. A 'Nein' row means the list's assessment found the documents or tests insufficient; the list itself says to contact the grid operator in individual cases. The maker fixes a missing listing by sending the documents to the list; an installer cannot."
+thresholds:
+  - "up to 0.8 kW in total per customer installation (Kleinsterzeugungsanlage): most of the TOR does not apply, but the interface protection chapter 6.3, LFSM-O, EN 61000-3-2/-3-3 and a fixed cos φ = 1 do; written notification to the grid operator at least two weeks before commissioning (TOR 2.1); Wiener Netze tolerates the plant if it does not object within two weeks and states that Schuko plugs are forbidden for generators under ÖVE E 8101 (page seen 2026-11-01); TOR 6.1.1 allows a touch-safe plug only where the whole plant is approved for it. The list has its own status 'Ja - <= 800W Anlage'"
+  - "type A from 0.8 kW to below 250 kW, type B from 250 kW (RfG Schwellenwert-V)"
+  - "single-phase up to 3.68 kVA per phase (at most 3 × 3.68 kVA); above that three-phase (TOR 6.1.1)"
+  - "3.68 kVA also splits the reactive-power methods (fixed Q only above 3.68 kVA) and, under ElWG § 76, the controllability duty (from 3.68 kW grid-effective power)"
+  - "up to 20 kW renewable: simplified connection on notification, four-week deadline (ElWG § 96); PV up to 15 kW over an existing supply connection without extra connection charge"
+  - "up to 30 kVA per connection point: the inverters' integrated disconnection device may be the interface protection; above it a central relay (TOR 6.1.2, 6.3.1)"
+  - "storage of 10 kVA or more in total in one installation: the grid operator may suspend the connection for review and must answer within 4 weeks, unless an energy-management system keeps the contracted power (TOR VNA NS 4.2.3); every storage in parallel operation is reported to the grid operator"
+  - "chargers: the TOR VNA rules (5.9) and the charger list apply above 3.68 kVA"
+commissioning: "First parallel operation only in agreement with the grid operator (TOR 7). The installation document (Annex A5) with the operator's protection settings and reactive-power method; the protection test report (not needed for an integrated automatic disconnection device with its type-test report); the contractor's and customer's confirmation of conformant construction. On request: CE declarations, the R 25 report, the contractor's confirmation that the Austria setup was done, and the parameter export. The operator may attend the checks. Every 5 years at least (or per ESV 2012 in workplaces) the user prepares the Annex A8 records."
+changes:
+  - "2025-12-24: the ElWG replaces the ElWOG 2010 — § 96 simplified connection up to 20 kW with a four-week deadline, § 101 peak capping to 70 % of module peak power, § 76 controllability"
+  - "2027-01-01: the grid operator's right to peak capping of new or changed PV (no lower than 70 % of module peak power, not up to 7 kW agreed grid-effective power) starts (ElWG § 101 (2), (4))"
+  - "2026-03-30: TOR Verteilernetzanschluss V1.3.1 — moves the end of the charger transition (makers' declarations) to 2026-12-14"
+  - "2026-06-01: TOR Stromerzeugungsanlagen Typ A V1.4 — chapter 5.4 rewritten for controllability under § 76 ElWG; from the same date new plants from 3.68 kW grid-effective power need the controllability interface"
+  - "by 2026-10-31 the grid operators' OpenADR protocol was to be specified and sent to E-Control; publication due by 2026-12-31 (TOR Typ A V1.4 note 25) — not checked whether it was"
+  - "2026-12-14 / 12-15: chargers above 3.68 kVA need an OVE R 37 test report; 508 of the 614 rows of the charger list of 2026-10-30 are time-limited to 2026-12-14"
+  - "2026-12-31 and 2027-01-31: 118 and 34 rows of the inverter list of 2026-10-30 reach their time limit; ordered or installed units may still be commissioned up to 6 months after (list FAQ)"
+  - "2028-06-01 / 2029-06-01 / 2030-01-31: controllability by the grid operator for plants above 25 kW / above 3.68–25 kW / above 0.8–3.68 kW on request (ElWG § 76 (2))"
+  - "the EU revision of the generator code (RfG 2.0) is not adopted; TOR VNA note 16 already cites its draft LFSM-U droop range for storage (0.2–5 %)"
+evidence_for_documented: "A certificate or unit certificate stating conformity with TOR Erzeuger / TOR Stromerzeugungsanlagen Typ A, tested to OVE-Richtlinie R 25 (or VDE-AR-N 4105 plus the R 25 Annex B delta test), for the exact model and firmware; the Austrian settings themselves are TOR Annex A3, which is public — the certificates read so far carry no settings table. GridFit shows the document and the TOR version it cites next to the list status; the grid operator decides."
+sources:
+  - title: "E-Control — TOR Stromerzeugungsanlagen Typ A, Version 1.4 (Anschluss und Parallelbetrieb von Stromerzeugungsanlagen des Typs A und von Kleinsterzeugungsanlagen)"
+    url: https://www.e-control.at/documents/1785851/1811582/TOR+Stromerzeugungsanlagen+Typ+A+Version+1.4+%287%29.pdf/093752f5-e220-0731-b8a8-bfa85ccb7287?t=1780897058735
+    date: "2026-06-01"
+  - title: "E-Control — TOR Verteilernetzanschluss für die Niederspannung (Netzebenen 6 und 7), Version 1.3.1"
+    url: https://www.e-control.at/documents/1785851/1811582/TOR_Verteilernetzanschluss_-_Niederspannung_V1.3.1.pdf/64c9e5f0-e38d-351a-b52e-a1b0e07077ae?t=1774007041985
+    date: "2026-03-23, in force 2026-03-30"
+  - title: "E-Control — TOR overview page (current parts and consultations)"
+    url: https://www.e-control.at/marktteilnehmer/strom/marktregeln/tor
+    seen: "2026-11-01"
+  - title: "Wechselrichterliste — TOR Stromerzeugungsanlagen Typ A (list page, FAQ, xlsx 2026-10-30)"
+    url: https://www.wechselrichterliste.at/tor-sea-typ-a
+    seen: "2026-11-01"
+  - title: "Wechselrichterliste — Aufnahme Typ A (documents for listing, ≤ 800 W rules)"
+    url: https://www.wechselrichterliste.at/tor-sea-typ-a/aufnahme-typ-a
+    seen: "2026-11-01"
+  - title: "Wechselrichterliste — Über (project group members)"
+    url: https://www.wechselrichterliste.at/ueber
+    seen: "2026-11-01"
+  - title: "Wechselrichterliste — Ladeeinrichtungen (charger list, xlsx 2026-10-30)"
+    url: https://www.wechselrichterliste.at/ladeeinrichtungen
+    seen: "2026-11-01"
+  - title: "Wechselrichterliste — TOR SEA Typ B und größer (no list; RKS-AT)"
+    url: https://www.wechselrichterliste.at/tor-sea-typ-b
+    seen: "2026-11-01"
+  - title: "OVE-Richtlinie R 25:2020-03-01 (shop entry)"
+    url: https://shop.ove.at/de/product/ove-richtlinie-r-25-2020-03-01
+    seen: "2026-11-01"
+  - title: "ElWG § 76 — Ansteuerbarkeit (jusline, state 2026-11-01)"
+    url: https://www.jusline.at/gesetz/elwg/paragraf/76
+    seen: "2026-11-01"
+  - title: "ElWG § 96 — vereinfachter Netzanschluss (jusline, state 2026-11-01)"
+    url: https://www.jusline.at/gesetz/elwg/paragraf/96
+    seen: "2026-11-01"
+  - title: "ElWG § 101 — Spitzenkappung (jusline, state 2026-11-01)"
+    url: https://www.jusline.at/gesetz/elwg/paragraf/101
+    seen: "2026-11-01"
+  - title: "Wiener Netze — Balkonkraftwerk / Kleinsterzeugungsanlage anmelden"
+    url: https://www.wienernetze.at/balkonkraftwerk
+    seen: "2026-11-01"
+  - title: "Salzburg AG — Der Weg zu Ihrer Photovoltaik-Anlage in Salzburg (checklist)"
+    url: https://www.salzburg-ag.at/content/dam/web18/dokumente/strom/photovoltaik/Checkliste-Photovoltaik.pdf
+    date: "2024-08-27"
