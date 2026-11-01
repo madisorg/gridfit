@@ -271,7 +271,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 9773,
+  "sh": 9815,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -315,7 +315,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 9773,
+  "sh": 9815,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -359,7 +359,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 4239,
+  "sh": 4464,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -368,7 +368,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 8,
-   "GF Text": 162
+   "GF Text": 126
   },
   "loaded": [
    "GF Head",
@@ -381,16 +381,16 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 170,
+  "nfs": 134,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
   "svg": 13,
   "radius": {
-   "2px": 18
+   "2px": 16
   },
   "kontrast": {
-   "n": 170,
+   "n": 134,
    "min": 6.26,
    "fail": {}
   },
@@ -403,7 +403,7 @@
   "w": 3440,
   "cw": 3440,
   "sw": 3440,
-  "sh": 4239,
+  "sh": 4464,
   "pans": [],
   "fitpx": 0,
   "coarse": false,
@@ -412,7 +412,7 @@
   "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
   "fam": {
    "GF Head": 8,
-   "GF Text": 162
+   "GF Text": 126
   },
   "loaded": [
    "GF Head",
@@ -425,16 +425,16 @@
   "nover": 0,
   "minfs": 13,
   "fs12": 0,
-  "nfs": 170,
+  "nfs": 134,
   "fs12ex": [],
   "inputs": [],
   "canvas": 0,
   "svg": 13,
   "radius": {
-   "2px": 18
+   "2px": 16
   },
   "kontrast": {
-   "n": 170,
+   "n": 134,
    "min": 6.72,
    "fail": {}
   },
@@ -447,7 +447,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8277,
+  "sh": 8872,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -491,7 +491,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8277,
+  "sh": 8872,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -623,7 +623,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8828,
+  "sh": 8870,
   "pans": [],
   "fitpx": 0,
   "coarse": true,
@@ -667,7 +667,7 @@
   "w": 390,
   "cw": 390,
   "sw": 390,
-  "sh": 8828,
+  "sh": 8870,
   "pans": [],
   "fitpx": 0,
   "coarse": true,

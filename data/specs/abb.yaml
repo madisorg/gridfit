@@ -4,7 +4,7 @@ rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT
   sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
   code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
   spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
-  with another suffix are other models. The optional grid-side fields (freq_hz, vac_v, vac_un, cosphi, idc_pct) feed the
+  with another suffix are other models. The optional grid-side fields (freq_hz, vac_v, vac_un, cosphi, idc_pct, thdi_pct, isc_a = the contribution to the short-circuit current) feed the
   requirement check (docs/checks.md) and are present only where the sheet states them. ABB''s solar business is FIMER since
   2020; the lists spell the brand ABB, FIMER or ABB / FIMER.'
 sources:
@@ -28,6 +28,8 @@ models:
   vac_un: 400
   cosphi: 0.9
   idc_pct: null
+  thdi_pct: 2
+  isc_a: 12.0
   source: trio-5-8-7-5-8-5-it-rev-b
   match: ^TRIO-5\.8-TL-OUTD(-S)?(-400)?$
 - code: TRIO-7.5-TL-OUTD-400
@@ -42,6 +44,8 @@ models:
   vac_un: 400
   cosphi: 0.9
   idc_pct: null
+  thdi_pct: 2
+  isc_a: 14.5
   source: trio-5-8-7-5-8-5-it-rev-b
   match: ^TRIO-7\.5-TL-OUTD(-S)?(-400)?$
 - code: TRIO-8.5-TL-OUTD-400
@@ -56,5 +60,7 @@ models:
   vac_un: 400
   cosphi: 0.9
   idc_pct: null
+  thdi_pct: 2
+  isc_a: 16.5
   source: trio-5-8-7-5-8-5-it-rev-b
   match: ^TRIO-8\.5-TL-OUTD(-S)?(-400)?$

@@ -1,14 +1,15 @@
 ---
 // The requirement check on a model page: for every country with a profile, each requirement in one row — what the
-// datasheet says, what the maker's document proves, the state — with the source and date of both. Three honest
-// words: the sheet shows it, the document covers it, or nothing says it ("not shown", never "fails" without a number).
+// datasheet says, what the maker's document proves, the state — with the source and date of both. Honest words: the
+// sheet shows it, the document covers it, the operator sets it, a line moves the model to another procedure, or nothing
+// says it ("not shown", never "fails" without a number that breaks the rule).
 // The grid operator decides; this is what the papers show. Data: web/src/lib/checks.ts over .data/checks.json.
 import Ext from "./Ext.astro";
-import { checksOf, STATE_WORD, type State, type CountryCheck } from "../lib/checks";
+import { checksOf, STATE_WORD, ACCEPT_WORD, type State, type CountryCheck } from "../lib/checks";
 import type { Device } from "../lib/registers";
 const { d } = Astro.props as { d: Device };
 const checks: CountryCheck[] = checksOf(d);
-const GLYPH: Record<State, string> = { S: "✓", D: "✓", O: "~", N: "–", X: "✕", I: "·" };
+const GLYPH: Record<State, string> = { S: "✓", P: "○", D: "✓", O: "~", N: "–", L: "B", X: "✕", I: "·" };
 const n = (c: CountryCheck, s: State) => c.sum[s] ?? 0;
 const docN = (c: CountryCheck) => n(c, "D") + n(c, "O");
 const editionLine = (c: CountryCheck) => c.doc
@@ -18,9 +19,11 @@ const editionLine = (c: CountryCheck) => c.doc
     : `documented for ${c.doc.standards || c.doc.edition}`)
   : "";
 const summaryOf = (c: CountryCheck) => [
-  `${n(c, "S")} by datasheet`, `${docN(c)} by the maker's document`, n(c, "X") ? `${n(c, "X")} outside by datasheet` : "", `${n(c, "N")} not shown`,
+  `${n(c, "S")} by datasheet`, n(c, "P") ? `${n(c, "P")} set at commissioning` : "", `${docN(c)} by the maker's document`,
+  n(c, "L") ? `${n(c, "L")} over a line` : "", n(c, "X") ? `${n(c, "X")} outside by datasheet` : "", `${n(c, "N")} not shown`,
 ].filter(Boolean).join(" · ");
 const ids = checks.map((c) => c.cc);
+const LINE_WORD: Record<string, string> = { "rfg-type": "the RfG type line", procedure: "the procedure line", "emc-class": "the EMC class line", protection: "where protection sits" };
 ---
 {checks.length > 0 && (
   <div class="checks" id="checks" data-ccs={ids.join(",")}>
@@ -34,7 +37,7 @@ const ids = checks.map((c) => c.cc);
             <b>Against:</b> {c.edition.label}{c.edition.in_force ? `, in force ${c.edition.in_force}` : ""} (<a href={`/grid/${c.cc.toLowerCase()}/`}>how it works in {c.country}</a>).
             {" "}<b>Datasheet:</b> {c.sheet ? <><Ext href={c.sheet.url}>{c.sheet.title || c.sheet.code}</Ext>{c.sheet.version ? `, ${c.sheet.version}` : ""}, model code “{c.sheet.code}”, seen {c.sheet.seen}.</> : "none collected for this model."}
             {" "}<b>Maker's document:</b> {c.doc ? <><Ext href={c.doc.url}>{(c.doc.cert_no || c.doc.title).split(" (")[0]}</Ext>{c.doc.issuer ? ` by ${c.doc.issuer.split(" (")[0]}` : ""}{c.doc.issued ? `, issued ${c.doc.issued}` : ""}{c.doc.standards ? `, against ${c.doc.standards}` : ""}{c.doc.firmware ? `, firmware ${c.doc.firmware}` : ""}, seen {c.doc.seen}{c.doc.more?.length ? ` (+${c.doc.more.length} more)` : ""}. {editionLine(c)}.</>
-              : c.named.length ? <>{c.named.map((x, j) => <>{j > 0 && "; "}<Ext href={x.url}>{x.title.split(" — ")[0]}</Ext></>)} names {c.country} but cites no {c.norm.split(" (")[0]} standard, so it proves none of the rows below.</>
+              : c.named.length ? <>{c.named.map((x, j) => <>{j > 0 && "; "}<Ext href={x.url}>{x.title.split(" — ")[0]}</Ext> ({x.is.map((k) => ACCEPT_WORD[k] ?? k).join(", ")})</>)} names {c.country}, but {c.country}'s operator takes {c.accepts.map((k) => ACCEPT_WORD[k] ?? k).join(" or ")}, so it proves none of the rows below.</>
               : "none found for this country."}
           </p>
           <table class="tbl ck-tbl">
@@ -42,9 +45,9 @@ const ids = checks.map((c) => c.cc);
             <tbody>
               {c.rows.map((r) => (
                 <tr class={`ck-row ck-${r.state}`}>
-                  <td class="fam"><span class="ck-rule">{r.item.rule}</span><span class="small muted ck-src">{r.item.source}</span><span class="small muted ck-val">{r.item.value}</span></td>
-                  <td class="wide" data-l="datasheet:">{r.state === "S" || r.state === "X" ? r.text : r.state === "N" && r.note ? r.note : <span class="muted">{r.item.provable_by?.includes("datasheet") ? (c.sheet ? "not stated" : "no sheet") : "—"}</span>}</td>
-                  <td class="wide" data-l="document:">{r.state === "D" ? <>covered by the {c.doc?.kind === "declaration" ? "declaration" : "certificate"} (type tests to the edition it cites)</> : r.state === "O" ? <>covered for the edition it cites; {r.note}</> : r.state === "I" ? <span class="muted">{r.note}</span> : <span class="muted">{r.item.provable_by?.includes("document") ? (c.doc ? "also within the certificate's scope" : c.named.length ? "names the country, cites no standard" : "no document") : "—"}</span>}</td>
+                  <td class="fam"><span class="ck-rule">{r.item.rule}</span><span class="small muted ck-src">{r.item.source}{r.item.meaning && r.item.meaning !== "phases" && <> · {LINE_WORD[r.item.meaning] ?? r.item.meaning}</>}</span><span class="small muted ck-val">{r.item.value}</span></td>
+                  <td class="wide" data-l="datasheet:">{r.state === "S" || r.state === "P" || r.state === "L" || r.state === "X" ? r.text : r.state === "N" && r.note ? r.note : <span class="muted">{r.item.provable_by?.includes("datasheet") ? (c.sheet ? "not stated" : "no sheet") : "—"}</span>}</td>
+                  <td class="wide" data-l="document:">{r.state === "D" ? <>covered by the {c.doc?.kind === "declaration" ? "declaration" : "certificate"} (type tests to the edition it cites)</> : r.state === "O" ? <>covered for the edition it cites; {r.note}</> : r.state === "I" ? <span class="muted">{r.note}</span> : <span class="muted">{r.item.provable_by?.includes("document") ? (c.doc ? "also within the certificate's scope" : c.named.length ? "not a kind this operator takes" : "no document") : "—"}</span>}</td>
                   <td class="wide" data-l=""><span class={`ck-st ck-st-${r.state}`}><span aria-hidden="true">{GLYPH[r.state]}</span> {STATE_WORD[r.state]}</span></td>
                 </tr>
               ))}
@@ -90,6 +93,8 @@ const ids = checks.map((c) => c.cc);
   .ck-st-D { background: var(--cloud); color: var(--surface); }
   .ck-st-O { background: var(--cloud-bg); color: var(--cloud); box-shadow: inset 0 0 0 var(--rule-w) var(--cloud); font-weight: 400; }
   .ck-st-N { background: var(--unk-bg); color: var(--unk); font-weight: 400; }
+  .ck-st-P { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 var(--rule-w) var(--ok); }
+  .ck-st-L { background: var(--cloud-bg); color: var(--cloud); outline: var(--rule-w) dotted var(--cloud); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
   .ck-st-X { background: var(--no-bg); color: var(--no); box-shadow: inset 0 0 0 var(--rule-w) var(--no); }
   .ck-st-I { background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 var(--rule-w) var(--rule); font-weight: 400; }
   @media (min-width: 48rem) {

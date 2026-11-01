@@ -3,6 +3,8 @@ what neither says — one state per requirement of every country profile, for ev
 
     python tools/check/run.py              # writes web/.data/checks.json, prints coverage per country
     python tools/check/run.py --validate   # only checks the profiles' `check` blocks against the schema (docs/checks.md)
+    python tools/check/run.py --fixture tools/check/fixtures/gr --out web/.data/checks-fixture.json
+                                           # the same run over a test fixture (profiles/, specs/, evidence/, registers.json)
 
 Inputs: data/profiles/*.yaml (`edition`, `document_must_cite`, `must_meet[].check`), data/specs/*.yaml (the datasheet
 layer, matched like tools/specs/build.py), data/evidence/*.yaml (the maker's documents, matched like
@@ -28,12 +30,27 @@ REG = ROOT / "web/.data/registers.json"
 PROFILES, SPECS, EVIDENCE = ROOT / "data/profiles", ROOT / "data/specs", ROOT / "data/evidence"
 
 CLASSES = ("inverter", "hybrid", "battery", "plug-in")   # a wallbox has no model-level grid requirement in these profiles
-KINDS = {"range", "max", "min", "phases", "cosphi", "document", "none"}
-FIELDS = {"ac_kw", "ac_kva", "phases", "freq_hz", "vac_pct", "cosphi", "idc_pct"}
-PROVERS = {"datasheet", "document"}
-# states: S meets by datasheet, D meets by maker's document, O documented for an older edition (this item changed since),
-# N not shown, X outside by datasheet, I no check (optional / installation-level)
-STATES = ("S", "D", "O", "N", "X", "I")
+KINDS = {"range", "max", "min", "phases", "cosphi", "stated", "settable", "document", "none"}
+# the sheet fields a check reads; all but phases/ac_kw/ac_kva are optional in data/specs, present only where the sheet states them
+FIELDS = {"ac_kw", "ac_kva", "ac_a", "phases", "freq_hz", "vac_v", "vac_pct", "cosphi", "idc_pct", "thdi_pct", "fsw_khz", "isc_a"}
+RANGE_FIELDS = {"freq_hz", "vac_v", "vac_pct"}
+PROVERS = {"datasheet", "document", "operator"}
+# what a power or current line means in that country: the RfG type, a procedure (notification vs full application),
+# the phase rule, the EMC standard class (IEC 61000-3-2/-3 up to 16 A per phase, -3-11/-3-12 above), where protection sits
+MEANINGS = {"rfg-type", "procedure", "phases", "emc-class", "protection"}
+# which kind of maker's document the country's operator takes as evidence
+ACCEPTS = {"generic-en50549-1", "national-declaration", "country-release"}
+GENERIC = ("EN 50549", "EN 50438")
+# states: S meets by datasheet, P the sheet's range covers it and the operator sets the values at commissioning,
+# D meets by maker's document, O documented for an older edition (this item changed since), N not shown,
+# L over a line by datasheet (another RfG type, procedure, EMC class or protection set-up applies — not a breach),
+# X outside by datasheet, I no check (optional / installation-level)
+STATES = ("S", "P", "D", "O", "N", "L", "X", "I")
+LINES = {"rfg-type", "procedure", "emc-class", "protection"}   # over these the rule changes; over "phases" it is broken
+UNIT = {"ac_kw": " kW", "ac_kva": " kVA", "ac_a": " A", "idc_pct": " %", "thdi_pct": " %", "fsw_khz": " kHz", "isc_a": " A", "cosphi": "",
+        "freq_hz": " Hz", "vac_v": " V"}
+LABEL = {"thdi_pct": "current THD", "idc_pct": "DC injection", "fsw_khz": "switching frequency", "isc_a": "short-circuit current",
+         "cosphi": "cos φ", "ac_a": "max AC current", "freq_hz": "frequency range", "vac_v": "voltage range"}
 YM = re.compile(r"(20\d\d)-(\d\d)")
 
 
@@ -49,6 +66,9 @@ def validate_profile(p: dict, name: str) -> list[str]:
         errs.append(f"{name}: edition needs norm, id, date (YYYY-MM), label")
     elif not YM.fullmatch(e["date"]):
         errs.append(f"{name}: edition.date must be YYYY-MM, got {e['date']!r}")
+    acc = p.get("accepts")
+    if not isinstance(acc, list) or not acc or not set(acc) <= ACCEPTS:
+        errs.append(f"{name}: accepts must be a non-empty subset of {sorted(ACCEPTS)}")
     cite = p.get("document_must_cite")
     if not isinstance(cite, list) or not cite or not all(isinstance(c, str) and c for c in cite):
         errs.append(f"{name}: document_must_cite must be a non-empty list of strings")
@@ -84,6 +104,23 @@ def validate_profile(p: dict, name: str) -> list[str]:
             pb = []
         if kind == "document" and pb != ["document"]:
             errs.append(f"{where}: kind document is provable_by [document] only")
+        if ("operator" in pb) != (kind == "settable"):
+            errs.append(f"{where}: operator in provable_by goes with kind settable, and only with it")
+        if kind == "settable":
+            if c.get("field") not in RANGE_FIELDS:
+                errs.append(f"{where}: kind settable reads a range field {sorted(RANGE_FIELDS)}")
+            if "datasheet" not in pb:
+                errs.append(f"{where}: kind settable needs datasheet in provable_by")
+            r = c.get("range")
+            if r is not None and not (isinstance(r, list) and len(r) == 2 and r[0] < r[1]):
+                errs.append(f"{where}: range, when given, must be [low, high]")
+        if kind == "stated" and (c.get("field") not in FIELDS or "datasheet" not in pb):
+            errs.append(f"{where}: kind stated needs a field and datasheet in provable_by")
+        mean = c.get("meaning")
+        if kind == "max" and c.get("field") in ("ac_kw", "ac_kva", "ac_a") and mean is None:
+            errs.append(f"{where}: a power or current line needs a meaning {sorted(MEANINGS)}")
+        if mean is not None and mean not in MEANINGS:
+            errs.append(f"{where}: meaning must be one of {sorted(MEANINGS)}, got {mean!r}")
         if kind in ("range", "max", "min", "cosphi"):
             if c.get("field") not in FIELDS:
                 errs.append(f"{where}: field must be one of {sorted(FIELDS)}, got {c.get('field')!r}")
@@ -102,8 +139,10 @@ def validate_profile(p: dict, name: str) -> list[str]:
         if kind == "phases" and not isinstance(c.get("three_phase_above_kw"), (int, float)):
             errs.append(f"{where}: kind phases needs three_phase_above_kw")
         ap = c.get("applies") or {}
-        if not isinstance(ap, dict) or not set(ap) <= {"classes", "below_kw", "above_kw"}:
-            errs.append(f"{where}: applies may hold classes, below_kw, above_kw only")
+        if not isinstance(ap, dict) or not set(ap) <= {"classes", "below_kw", "above_kw", "phases"}:
+            errs.append(f"{where}: applies may hold classes, below_kw, above_kw, phases only")
+        elif ap.get("phases") is not None and not set(ap["phases"]) <= {1, 2, 3}:
+            errs.append(f"{where}: applies.phases must be within [1, 2, 3]")
         elif ap.get("classes") is not None and not set(ap["classes"]) <= set(CLASSES):
             errs.append(f"{where}: applies.classes must be within {CLASSES}")
         ch = c.get("changed_in")
@@ -187,9 +226,22 @@ def edition_of(doc: dict) -> str | None:
     return (m.group(0)[:7] if m.re is YM else f"{m.group(2)}-{m.group(1)}") if m else None
 
 
-def cites(doc: dict, must: list[str]) -> bool:
+def cites(doc: dict, must) -> bool:
     text = " ".join(doc.get("standards") or []).lower()
     return any(c.lower() in text for c in must)
+
+
+def classes_of(doc: dict, prof: dict) -> set:
+    """What kind of evidence a document is for this country: the maker's released-countries table, a generic
+    EN 50549-1 / EN 50438 certificate, or a declaration against the country's own rule (document_must_cite)."""
+    out = set()
+    if doc.get("kind") == "country-release":
+        out.add("country-release")
+    if cites(doc, GENERIC):
+        out.add("generic-en50549-1")
+    if cites(doc, [c for c in prof["document_must_cite"] if not any(g.lower() in c.lower() for g in GENERIC)]):
+        out.add("national-declaration")
+    return out
 
 
 def short_standards(doc: dict) -> str:
@@ -227,10 +279,15 @@ def fmt(x) -> str:
 
 
 # ---- one requirement for one model -------------------------------------------------------------------------------------
-def applies(c: dict, cls: str, kw) -> tuple[bool, str]:
+def applies(c: dict, cls: str, kw, ph) -> tuple[bool, str]:
     ap = c.get("applies") or {}
     if ap.get("classes") and cls not in ap["classes"]:
         return False, ""
+    if ap.get("phases"):
+        if ph is None:
+            return True, "phases not collected, so whether this applies is not known"
+        if ph not in ap["phases"]:
+            return False, ""
     if "below_kw" in ap or "above_kw" in ap:
         if kw is None:
             return True, "rated power not collected, so whether this applies is not known"
@@ -255,6 +312,18 @@ def by_sheet(c: dict, sheet: dict | None):
     v = field_of(sheet, field)
     if v is None:
         return None
+    if kind == "stated":
+        return ("S", f"the sheet states {LABEL.get(field, field)} {'≤ ' if field == 'thdi_pct' else ''}{fmt(v)}{UNIT.get(field, '')}")
+    if kind == "settable":
+        if field == "vac_pct":
+            plo, phi, vlo, vhi, un = v
+            span, lo_hi = f"{fmt(vlo)}–{fmt(vhi)} V ({fmt(plo)}–{fmt(phi)} % of {fmt(un)} V)", (plo, phi)
+        else:
+            span, lo_hi = f"{fmt(v[0])}–{fmt(v[1])}{UNIT.get(field, '')}", (v[0], v[1])
+        r = c.get("range")
+        if r and not (lo_hi[0] <= r[0] and lo_hi[1] >= r[1]):
+            return ("X", f"settable {span}, does not cover {fmt(r[0])}–{fmt(r[1])}")
+        return ("P", f"settable {span}" + (f", covers {fmt(r[0])}–{fmt(r[1])}" if r else "") + "; the operator sets the values at commissioning")
     if kind == "range":
         lo, hi = c["range"]
         if field == "vac_pct":
@@ -264,7 +333,7 @@ def by_sheet(c: dict, sheet: dict | None):
         unit = {"freq_hz": "Hz"}.get(field, "")
         ok = v[0] <= lo and v[1] >= hi
         return ("S" if ok else "X", f"{fmt(v[0])}–{fmt(v[1])} {unit}, {'covers' if ok else 'does not cover'} {fmt(lo)}–{fmt(hi)} {unit}".strip())
-    unit = {"ac_kw": " kW", "ac_kva": " kVA", "idc_pct": " %", "cosphi": ""}.get(field, "")
+    unit = UNIT.get(field, "")
     if kind == "max":
         ok = v <= c["limit"]
         return ("S" if ok else "X", f"{fmt(v)}{unit} — {'within' if ok else c['over'] + ' (limit'} {fmt(c['limit'])}{unit}" + ("" if ok else ")"))
@@ -279,11 +348,12 @@ def by_sheet(c: dict, sheet: dict | None):
 
 def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[dict]) -> dict:
     cc = prof["cc"]
-    covering = [d for d in docs if cites(d, prof["document_must_cite"])]
+    acc = set(prof["accepts"])
+    covering = [d for d in docs if classes_of(d, prof) & acc]
     covering.sort(key=lambda d: edition_of(d) or "", reverse=True)
     best = covering[0] if covering else None
     best_ed = edition_of(best) if best else None
-    kw = field_of(sheet, "ac_kw")
+    kw, ph = field_of(sheet, "ac_kw"), field_of(sheet, "phases")
     rows, na = {}, []
     counts = dict.fromkeys(STATES, 0)
     for i, m in enumerate(items):
@@ -293,7 +363,7 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
         if c["kind"] == "none":
             counts["I"] += 1
             continue
-        ok, note = applies(c, m["_cls"], kw)
+        ok, note = applies(c, m["_cls"], kw, ph)
         if not ok:
             na.append(i)
             continue
@@ -304,6 +374,8 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
         res = by_sheet(c, sheet) if "datasheet" in c["provable_by"] else None
         if res:
             st, text = res
+            if st == "X" and c.get("meaning") in LINES:
+                st = "L"
             rows[i] = [st, text]
             counts[st] += 1
             continue
@@ -326,12 +398,18 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
         if len(covering) > 1:
             out["doc"]["more"] = [{"title": d["title"], "url": d["url"], "edition": edition_of(d)} for d in covering[1:]]
     elif docs:
-        out["named"] = [{"title": d["title"], "url": d["url"], "kind": d.get("kind", "")} for d in docs]
+        out["named"] = [{"title": d["title"], "url": d["url"], "kind": d.get("kind", ""), "is": sorted(classes_of(d, prof)) or ["no standard cited"]} for d in docs]
     return out
 
 
 # ---- the run ------------------------------------------------------------------------------------------------------------
-def main(validate_only: bool = False):
+def main(validate_only: bool = False, fixture: str | None = None, out: str | None = None):
+    global PROFILES, SPECS, EVIDENCE, REG, OUT
+    if fixture:
+        fx = Path(fixture).resolve()
+        PROFILES, SPECS, EVIDENCE, REG = fx / "profiles", fx / "specs", fx / "evidence", fx / "registers.json"
+    if out:
+        OUT = Path(out).resolve()
     profiles = load_profiles()
     print(f"profiles ok: {', '.join(f'{cc} ({len(p['must_meet'])} items, edition {p['edition']['id']})' for cc, p in profiles.items())}")
     if validate_only:
@@ -342,10 +420,10 @@ def main(validate_only: bool = False):
     devs = [d for d in json.loads(REG.read_text(encoding="utf-8"))["devices"] if not d["unmatched"] and d["cls"] in CLASSES]
     out_prof = {}
     for cc, p in profiles.items():
-        out_prof[cc] = {"country": p["country"], "norm": p["edition"]["norm"], "edition": p["edition"], "decided_by": p["decided_by"],
+        out_prof[cc] = {"country": p["country"], "norm": p["edition"]["norm"], "edition": p["edition"], "decided_by": p["decided_by"], "accepts": p["accepts"],
                         "items": [{"id": m["id"], "rule": m["rule"], "value": m["value"], **{k: v for k, v in m["check"].items()}} for m in p["must_meet"]]}
     models = {}
-    stats = {cc: {"models": 0, "sheet_any": 0, "sheet_rows": 0, "covered": 0, "doc": 0, "outside": 0, "older": 0} for cc in profiles}
+    stats = {cc: {"models": 0, "sheet_any": 0, "sheet_rows": 0, "covered": 0, "doc": 0, "outside": 0, "over_line": 0, "older": 0} for cc in profiles}
     for d in devs:
         sheet = sheet_of(specs, d["brand"], d["model"])
         per = {}
@@ -355,8 +433,9 @@ def main(validate_only: bool = False):
             per[cc] = r
             s, st = r["sum"], stats[cc]
             st["models"] += 1
-            st["sheet_rows"] += s.get("S", 0) + s.get("X", 0)
-            if s.get("S") or s.get("X"):
+            by_sheet_n = s.get("S", 0) + s.get("P", 0) + s.get("L", 0) + s.get("X", 0)
+            st["sheet_rows"] += by_sheet_n
+            if by_sheet_n:
                 st["sheet_any"] += 1
             if not s.get("N"):
                 st["covered"] += 1
@@ -366,6 +445,8 @@ def main(validate_only: bool = False):
                     st["older"] += 1
             if s.get("X"):
                 st["outside"] += 1
+            if s.get("L"):
+                st["over_line"] += 1
         entry = {"cc": per}
         if sheet:
             entry["sheet"] = {"code": sheet["code"], **sheet["src"]}
@@ -376,11 +457,13 @@ def main(validate_only: bool = False):
     print(OUT, f"{len(models)} models × {len(profiles)} countries, {OUT.stat().st_size // 1024} kB")
     for cc, st in stats.items():
         print(f"{cc}: {st['models']} models · at least one datasheet row {st['sheet_any']} ({st['sheet_rows']} rows) · every item covered {st['covered']} · "
-              f"with a maker's document {st['doc']} (of which {st['older']} for an older edition) · outside by datasheet {st['outside']}")
+              f"with a maker's document {st['doc']} (of which {st['older']} for an older edition) · over a line {st['over_line']} · outside by datasheet {st['outside']}")
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--validate", action="store_true")
+    ap.add_argument("--fixture", help="a directory with profiles/, specs/, evidence/ and registers.json (tests)")
+    ap.add_argument("--out", help="where to write the result (default web/.data/checks.json)")
     a = ap.parse_args()
-    main(a.validate)
+    main(a.validate, a.fixture, a.out)

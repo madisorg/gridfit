@@ -24,11 +24,12 @@ edition:
   in_force: "2026-05-12"
   label: "Orden TED/749/2020 as amended by Orden TED/82/2026 (in force 12 May 2026)"
 document_must_cite: ["RD 647", "647/2020", "TED/749", "749/2020", "NTS", "Norma Técnica de Supervisión", "UNE 217002"]
+accepts: [national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
 must_meet:
   - id: power-class
     rule: "Plant size class (RD 647/2020, article 8.1)"
     value: "type A from 0.8 kW to 100 kW below 110 kV; above 100 kW type B, a procedure of its own with conformity per installation"
-    check: { kind: max, field: ac_kw, limit: 100, over: "over 100 kW: type B, a procedure of its own", provable_by: [datasheet, document], source: "RD 647/2020 article 8.1" }
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 100, over: "over 100 kW: type B, a procedure of its own", provable_by: [datasheet, document], source: "RD 647/2020 article 8.1" }
   - id: freq-range
     rule: "Frequency ranges (TED/749/2020 annex I, 1.1, table 1, peninsular Spain)"
     value: "47.5–48.5 Hz for 30 min; 48.5–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
@@ -64,7 +65,7 @@ must_meet:
   - id: phases
     rule: "Phases (RD 1699/2011, article 12.2, as amended by RD 244/2019)"
     value: "above 15 kW the connection is three-phase with less than 5 kW imbalance between phases; a generator on an internal network behind a three-phase supply is three-phase too"
-    check: { kind: phases, three_phase_above_kw: 15, provable_by: [datasheet, document], source: "RD 1699/2011 article 12.2" }
+    check: { kind: phases, meaning: phases, three_phase_above_kw: 15, provable_by: [datasheet, document], source: "RD 1699/2011 article 12.2" }
   - id: anti-export
     rule: "Self-consumption without export (RD 244/2019, article 3.k and 4.1.a)"
     value: "an anti-export device that stops any export, meeting ITC-BT-40; e-distribución asks for the installation certificate of that device (makers' certificates cite UNE 217001)"

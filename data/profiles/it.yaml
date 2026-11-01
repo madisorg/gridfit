@@ -29,11 +29,12 @@ edition:
   in_force: "2026-08-01"
   label: "CEI 0-21:2026-07"
 document_must_cite: ["CEI 0-21"]
+accepts: [national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
 must_meet:
   - id: power-class
     rule: "Plant size class (ARERA 592/2018; CEI 0-21 3.x)"
     value: "type A from 0.8 kW to 11.08 kW; above 11.08 kW type B, with fault ride-through, a rectangular reactive capability, Q(U) and remote set-points — a procedure of its own"
-    check: { kind: max, field: ac_kw, limit: 11.08, over: "over 11.08 kW: type B, a procedure of its own", provable_by: [datasheet, document], source: "ARERA 592/2018; CEI 0-21:2026-07 3.x" }
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 11.08, over: "over 11.08 kW: type B, a procedure of its own", provable_by: [datasheet, document], source: "ARERA 592/2018; CEI 0-21:2026-07 3.x" }
   - id: freq-range
     rule: "Frequency range (CEI 0-21 8.4.4, table 9)"
     value: "an inverter stays connected without time limit from 47.5 to 51.5 Hz"
@@ -57,7 +58,7 @@ must_meet:
   - id: spi-integrated
     rule: "Where the interface protection sits (8.6.2, 8.2.2)"
     value: "up to 11.08 kW in total it may be built into the inverter and is checked by its own autotest; above 11.08 kW it must be a separate protection relay, tested with a relay test set, and up to three interface switches may each have their own"
-    check: { kind: max, field: ac_kw, limit: 11.08, over: "over 11.08 kW: a separate protection relay, tested with a relay test set", provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.6.2, 8.2.2.2" }
+    check: { kind: max, meaning: protection, field: ac_kw, limit: 11.08, over: "over 11.08 kW: a separate protection relay, tested with a relay test set", provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.6.2, 8.2.2.2" }
   - id: iec-61850
     rule: "The operator's signals over IEC 61850 (8.6.2)"
     value: "the interface protection must accept the operator's signals over IEC 61850 (data-network presence for the narrow thresholds, remote trip), certified at level A by an accredited laboratory or body; not below 800 W"
@@ -85,7 +86,7 @@ must_meet:
   - id: phases
     rule: "Phases (8.3)"
     value: "up to 6 kW single-phase (the operator may allow 10 kW); above it three-phase with the units spread over the phases; an imbalance above the limit must be corrected automatically, or the plant disconnects after 30 min (6–10 kW) or 1 min (above 10 kW)"
-    check: { kind: phases, three_phase_above_kw: 6, provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.3" }
+    check: { kind: phases, meaning: phases, three_phase_above_kw: 6, provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.3" }
   - id: storage
     rule: "Storage (8.5, 8.5.3.4, annex Bbis)"
     value: "a battery inverter meets the same converter rules and also responds to frequency: from 50.2 Hz it stops discharging and charges, from 49.8 Hz it stops charging and discharges, within its 10–90 % charge band; storage is type-tested to Allegato Bbis, and the declaration lists the battery makes, models and BMS firmware usable with each converter"

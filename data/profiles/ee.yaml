@@ -23,12 +23,13 @@ edition:
   date: "2023-06"
   in_force: "2023-06-01"
   label: "A-type technical conditions of 1 June 2023 (EVS-EN 50549-1)"
-document_must_cite: ["EN 50549", "EN 50438", "2016/631", "RfG"]
+document_must_cite: ["2016/631", "RfG", "Elektrilevi"]
+accepts: [generic-en50549-1, national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
 must_meet:
   - id: power-class
     rule: "Plant size class (RfG as Elering applies it)"
     value: "type A below 500 kW; from 500 kW type B–D with their own conditions"
-    check: { kind: max, field: ac_kw, limit: 500, over: "500 kW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "Elektrilevi A-type conditions 2023-06-01" }
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 500, over: "500 kW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "Elektrilevi A-type conditions 2023-06-01" }
   - id: freq-range
     rule: "Frequency ranges"
     value: "47.5–49.0 Hz for 30 min; 49.0–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"

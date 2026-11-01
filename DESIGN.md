@@ -343,9 +343,12 @@ The states are the design: **meets by datasheet** (green, filled ✓ — a numbe
 rule), **meets by maker's document** (amber, filled ✓ — the document releases the model for the country *and* cites
 the profile's norm), **documented for an older edition** (amber, outlined ~ — the item changed after the edition the
 document cites; the summary line says "documented for CEI 0-21:2022-03; V1; V2 — 2 items of 2026-07 unverified"),
-**not shown** (grey — neither says it; never "fails"), **outside by datasheet** (red, outlined ✕ — only with a number
-that is present and clearly outside: an 8 kW single-phase unit where over 6 kW needs three phases, a unit over the
-type-A line) and **no check** (an optional or installation-level item, listed so the reader sees the whole rule).
+**range covers; set at commissioning** (green, outlined ○ — where the operator writes the protection values per
+installation, the sheet can only show its settable range takes them), **over a line: other procedure** (amber,
+dotted B — over an RfG type, procedure, EMC-class or protection line: the model is not unfit, another procedure
+applies, the traffic light's B), **not shown** (grey — neither says it; never "fails"), **outside by datasheet** (red,
+outlined ✕ — only with a number that breaks the rule: an 8 kW single-phase unit where over 6 kW needs three phases)
+and **no check** (an optional or installation-level item, listed so the reader sees the whole rule).
 The same amber as the traffic light's "the operator decides" (§8e): a document is the maker's word, the operator still
 decides, and every block ends by saying so. Each country is a `<details>`, the one with the most to say open; the
 front door's `gf-cc` cookie moves the reader's own country to the top. The requirement's `value` sentence hides under
@@ -356,7 +359,9 @@ What it refuses to do, on purpose: it does not use a list's kVA or phases as "da
 maker's figure), it does not read a declaration's tick boxes as separate facts yet, and a released-countries table
 that names the country but cites no standard proves none of the rows — the block says that in one line rather than
 colouring anything amber. The profiles' `must_meet` entries gained an `id` and a machine-readable `check` block
-(kind, field, limit or range, who can prove it, which edition changed it); the sentences the country page prints stayed.
+(kind, field, limit or range, what a line means, who can prove it, which edition changed it) and each profile says
+which kinds of maker's document its operator takes (`accepts`: a national declaration, a generic EN 50549-1 certificate,
+the maker's released-countries table); the sentences the country page prints stayed.
 
 ## 9. Adding a page
 
@@ -623,7 +628,9 @@ this country" fourteen times (now "no document" per row, the reason once above).
 suite: 124 529 checks, 0 failures — the states of every model × country sum to the applicable items, every datasheet
 verdict carries its number, and the hand example holds (TRIO-8.5 × IT: 6 / 8 / 2022-03 + V1 + V2 against 2026-07).
 Coverage: 670 models with a datasheet row per country; every item covered for 352 models in Estonia (EN 50549-1
-certificates), 319 in Italy, 146 in Spain; outside by datasheet 272 in Italy, 22 in Spain.
+certificates), 319 in Italy, 146 in Spain; over a line 260 in Italy, 21 in Spain; outside by datasheet 16 in Italy, 1 in
+Spain. A Greek test fixture (GoodWe GW10K-ET-20) proves the schema carries several lines per country, operator-set values
+and a generic certificate as accepted evidence.
 
 The example model itself has no page: the register holds it as ABB "TRIO-8.5-TL-OUTD" (Estonia), as Fimer
 "TRIO-8.5-TL-OUTD-*-400" (Netherlands) and as Fimer "…-Y-400 (*) NOTE…" (Belgium), three spellings under two brand
