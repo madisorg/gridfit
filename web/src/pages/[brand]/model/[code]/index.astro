@@ -6,6 +6,7 @@ import Ext from "../../../../components/Ext.astro";
 import Glance from "../../../../components/Glance.astro";
 import GridBlock from "../../../../components/GridBlock.astro";
 import Status from "../../../../components/Status.astro";
+import Checklist from "../../../../components/Checklist.astro";
 import { COUNTRIES, REGS, RC, RS, RSHORT, META, SNAP_DATE, faq, best, type Device } from "../../../../lib/registers";
 import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, kindOf, releasesOfModel } from "../../../../lib/devices";
 import { localOf } from "../../../../lib/devices";
@@ -69,6 +70,7 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
           </dl>
         </>
       )}
+      <Checklist d={d} />
       <h3>List by list</h3>
       <div class="lists">
         {listed.map((c) => (

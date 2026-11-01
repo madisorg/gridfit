@@ -1,0 +1,73 @@
+# TEST FIXTURE, not a site profile (there is no data/profiles/gr.yaml yet). The Greek hand example of 2026-11-01
+# (GoodWe GW10K-ET-20) as the gridfit-omanik session wrote it down, used by web/test/checks.mjs to prove the schema
+# carries: several kW/A lines with different meanings, operator-set protection values, datasheet fields the operator
+# asks for, and a generic EN 50549-1 certificate as accepted evidence. The rule values are the owner session's
+# reading of RAE 1165/2020, ΥΠΕΝ/ΔΑΠΕΕΚ/93976/2772 and HEDNO's document list of 2026-02-20; re-read them from the
+# sources before a real Greek profile is written.
+cc: GR
+country: Greece
+decided_by: "HEDNO (ΔΕΔΔΗΕ), the distribution grid operator, at the connection application"
+edition:
+  norm: "RAE 1165/2020 (RfG for Greece)"
+  id: "2020-12"
+  date: "2020-12"
+  label: "RAE decision 1165/2020"
+document_must_cite: ["1165/2020", "RAE"]
+accepts: [generic-en50549-1]
+must_meet:
+  - id: rfg-type
+    rule: "RfG type (RAE 1165/2020)"
+    value: "type A below 1 MW"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 1000, over: "1 MW or more: type B", provable_by: [datasheet, document], source: "RAE 1165/2020" }
+  - id: notification-3ph
+    rule: "Notification procedure, three-phase (ΥΠΕΝ/ΔΑΠΕΕΚ/93976/2772)"
+    value: "up to 10 kW of production on a three-phase supply (10.8 kW installed): a notification instead of the full connection procedure"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 10, over: "over 10 kW: the full connection procedure", applies: { phases: [3] }, provable_by: [datasheet], source: "ΥΠΕΝ/ΔΑΠΕΕΚ/93976/2772" }
+  - id: notification-1ph
+    rule: "Notification procedure, single-phase (ΥΠΕΝ/ΔΑΠΕΕΚ/93976/2772)"
+    value: "up to 5 kW on a single-phase supply: a notification instead of the full connection procedure"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 5, over: "over 5 kW single-phase: the full connection procedure", applies: { phases: [1] }, provable_by: [datasheet], source: "ΥΠΕΝ/ΔΑΠΕΕΚ/93976/2772" }
+  - id: emc-class
+    rule: "EMC declaration class (IEC 61000-3-2/-3 vs -3-11/-3-12)"
+    value: "up to 16 A per phase the declaration is against IEC 61000-3-2 and -3-3, above it against -3-11 and -3-12"
+    check: { kind: max, meaning: emc-class, field: ac_a, limit: 16, over: "over 16 A per phase: IEC 61000-3-11 / -3-12", provable_by: [datasheet], source: "IEC 61000-3-2 / -3-3 / -3-11 / -3-12" }
+  - id: freq-range
+    rule: "Frequency range (RAE 1165/2020)"
+    value: "stay connected 47.5–51.5 Hz, in 30-minute steps outside 49–51 Hz"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "RAE 1165/2020" }
+  - id: protection-frequency
+    rule: "Protection settings, frequency (HEDNO letter per substation; art. 123 N. 5106/2024)"
+    value: "the operator writes the values for each installation; the inverter must be able to take them"
+    check: { kind: settable, field: freq_hz, provable_by: [datasheet, operator], source: "art. 123 N. 5106/2024; HEDNO letter" }
+  - id: protection-voltage
+    rule: "Protection settings, voltage (HEDNO letter per substation)"
+    value: "the operator writes the values for each installation; the inverter must be able to take them"
+    check: { kind: settable, field: vac_v, provable_by: [datasheet, operator], source: "art. 123 N. 5106/2024; HEDNO letter" }
+  - id: rocof
+    rule: "Rate of change of frequency (RAE 1165/2020)"
+    value: "stay connected up to 2 Hz/s over 500 ms"
+    check: { kind: document, provable_by: [document], source: "RAE 1165/2020" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (RAE 1165/2020)"
+    value: "from 50.2 Hz, droop 2–12 %, 5 % by default"
+    check: { kind: document, provable_by: [document], source: "RAE 1165/2020" }
+  - id: reconnection
+    rule: "Reconnection (RAE 1165/2020)"
+    value: "within 49.5–50.5 Hz"
+    check: { kind: document, provable_by: [document], source: "RAE 1165/2020" }
+  - id: sheet-thdi
+    rule: "Datasheet states current THD (HEDNO document list § 11)"
+    value: "the inverter datasheet handed in must state the current THD"
+    check: { kind: stated, field: thdi_pct, provable_by: [datasheet], source: "HEDNO, documents for a new connection, 2026-02-20, § 11" }
+  - id: sheet-idc
+    rule: "Datasheet states DC injection (HEDNO document list § 11)"
+    value: "the inverter datasheet handed in must state the DC injection"
+    check: { kind: stated, field: idc_pct, provable_by: [datasheet], source: "HEDNO, documents for a new connection, 2026-02-20, § 11" }
+  - id: sheet-fsw
+    rule: "Datasheet states switching frequency (HEDNO document list § 11)"
+    value: "the inverter datasheet handed in must state the switching frequency"
+    check: { kind: stated, field: fsw_khz, provable_by: [datasheet], source: "HEDNO, documents for a new connection, 2026-02-20, § 11" }
+  - id: sheet-isc
+    rule: "Datasheet states short-circuit current (HEDNO document list § 11)"
+    value: "the inverter datasheet handed in must state the three-phase short-circuit current"
+    check: { kind: stated, field: isc_a, provable_by: [datasheet], source: "HEDNO, documents for a new connection, 2026-02-20, § 11" }
