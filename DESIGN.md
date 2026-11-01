@@ -396,8 +396,9 @@ type-A limit when the profile's ceiling says so (Estonia 500 kW), possibly fit w
 certificate at the operational notification) and sit in the hover, in the note under the count line and on the device
 page's list row ("Not on the list — likely fit: the maker's document names Estonia · Elektrilevi takes …"). The status
 group's labels say "Not on the list — likely fit …" when every chosen country has a list, so the ladder reads as the
-second level it is. Estonia on 2026-11-01: 2 214 on the list; off the list 41 likely, 9 850 possibly, 1 252 over the
-type-A limit, 535 nothing known (all of them legacy, hidden by default). "Type A fits" was asked for and not added: under
+second level it is. Estonia on 2026-11-01: 2 214 on the list; off the list 854 likely (41 before the evidence session's makers' code tables and
+the `accepted_in` rule — an EN 50549-1 certificate counts in Estonia because Elektrilevi names it), 9 079 possibly, 1 252 over the
+type-A limit, 493 nothing known (mostly legacy, hidden by default). "Type A fits" was asked for and not added: under
 the ceiling is the normal case, so it would mark everything and say nothing.
 
 ## 9. Adding a page
