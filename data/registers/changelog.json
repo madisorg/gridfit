@@ -1,5 +1,19 @@
 [
  {
+  "date": "2026-11-01",
+  "baseline": false,
+  "previous": "2026-10-31",
+  "registers": {
+   "NL": {
+    "source_date": "2026-10-31",
+    "previous_source_date": "2026-10-30",
+    "added": [],
+    "removed": [],
+    "changed": []
+   }
+  }
+ },
+ {
   "date": "2026-10-31",
   "baseline": false,
   "previous": "2026-10-29",

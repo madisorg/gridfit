@@ -1,5 +1,24 @@
 [
  {
+  "date": "2026-11-01",
+  "added": [],
+  "removed": [],
+  "changed": [
+   {
+    "row": "evcc:huawei-smartlogger:SmartLogger:Huawei | SUN2000 inverters (string and hybrid)",
+    "field": "control",
+    "old": "write",
+    "new": "read"
+   },
+   {
+    "row": "evcc:huawei-smartlogger:SmartLogger:Huawei | SUN2000 inverters (string and hybrid)",
+    "field": "class",
+    "old": "hybrid",
+    "new": "inverter"
+   }
+  ]
+ },
+ {
   "date": "2026-10-31",
   "added": [
    "evcc:huawei-emma:SmartAssistant (EMMA):Huawei | SUN2000 inverters (string and hybrid)",

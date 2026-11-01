@@ -287,6 +287,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "3674C1A": {
+  "baseline": false,
+  "brand": "Fox ESS",
+  "code": "3674c1a",
+  "first_seen": "2026-11-01",
+  "source": "evcc-releases"
+ },
  "36BAD45": {
   "baseline": true,
   "brand": "ABL",
@@ -532,6 +539,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "5FAF778": {
+  "baseline": false,
+  "brand": "Fox ESS",
+  "code": "5faf778",
+  "first_seen": "2026-11-01",
+  "source": "evcc-releases"
+ },
  "61FE041": {
   "baseline": true,
   "brand": "Huawei",
@@ -726,6 +740,13 @@
   "brand": "Anker SOLIX",
   "code": "8dd67f1",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "8F14AE4": {
+  "baseline": false,
+  "brand": "Fox ESS",
+  "code": "8f14ae4",
+  "first_seen": "2026-11-01",
   "source": "evcc-releases"
  },
  "8FCA47D": {

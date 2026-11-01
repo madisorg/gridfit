@@ -34,7 +34,7 @@
 "EE": {
 "name": "Estonia - Inverterite nimekiri (Elektrilevi)",
 "url": "https://elektrilevi.ee/et/inverterite-nimekiri",
-"snapshot": "2026-10-31",
+"snapshot": "2026-11-01",
 "scope": {
 "inverter": "list",
 "hybrid": "list",
@@ -51,7 +51,7 @@
 "NL": {
 "name": "Netherlands - Goedgekeurde omvormers type A (opwek + opslag)",
 "url": "https://www.energieleveren.nl/",
-"snapshot": "2026-10-30",
+"snapshot": "2026-10-31",
 "scope": {
 "inverter": "list",
 "hybrid": "list",
