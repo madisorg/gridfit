@@ -3,6 +3,7 @@
 // the "Any" count equals the sum of its options, always — and a model's status in a country is one
 // category, never a silent gap. Plain JS so Node runs it without a build.
 //
+// Nothing chosen: every country the site covers (`data.countries`) is a column.
 // Row shape (web/src/pages/grid/index.json.ts): [brandIdx, model, cls, url, cells, marks, family, phases, kva, mppt, doc]
 //   cells: one letter per read list — L listed, R restricted, T time-limited, O other, P end date passed,
 //          E expired, N refused, - not on the list;  marks: Home Assistant + evcc, W/L/C/B/-;

@@ -1,0 +1,8 @@
+[
+ {"name": "avaleht", "url": "", "wait": 1.5},
+ {"name": "grid", "url": "grid/", "wait": 3.0},
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 3.0},
+ {"name": "grid-de", "url": "grid/de/", "wait": 3.0},
+ {"name": "grid-es", "url": "grid/es/", "wait": 3.0},
+ {"name": "mudel-goodwe-gw5000m-es-20-grid", "url": "goodwe/model/gw5000m-es-20/", "js": "document.getElementById('grid').scrollIntoView()", "wait": 2.0}
+]

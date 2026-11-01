@@ -3,9 +3,12 @@
 # rows marked checked / search / unverified there. States: list = a public list covers the class; rule = no list but a
 # notification, registration or certificate rule applies; free = no list and no model-level rule; banned = not allowed;
 # unknown = not confirmed. The 7 parsed lists (AT, BE, CZ, EE, NL, PL, SE) are the ones with model rows on this site.
+# scope: in = on the site (Madis, 2026-11-01: AT, BE, CZ, DE, EE, ES, IT, NL, PL, SE); out = kept here, no page — /grid/{cc}/
+# answers 301 to /grid/ (web/public/_redirects). Flip a row back to `in` and drop its redirect to bring the country back.
 
 - cc: AL
   country: Albania
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -21,6 +24,7 @@
     wallbox: unverified
 - cc: AT
   country: Austria
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -36,6 +40,7 @@
     wallbox: checked
 - cc: BA
   country: Bosnia and Herzegovina
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -51,6 +56,7 @@
     wallbox: unverified
 - cc: BE
   country: Belgium
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -66,6 +72,7 @@
     wallbox: search
 - cc: BG
   country: Bulgaria
+  scope: out
   list: "no"
   classes:
     inverter: unknown
@@ -81,6 +88,7 @@
     wallbox: checked
 - cc: CH
   country: Switzerland
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -96,6 +104,7 @@
     wallbox: search
 - cc: CY
   country: Cyprus
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -111,6 +120,7 @@
     wallbox: checked
 - cc: CZ
   country: Czechia
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -126,6 +136,7 @@
     wallbox: checked
 - cc: DE
   country: Germany
+  scope: in
   list: "partial"
   classes:
     inverter: list
@@ -141,6 +152,7 @@
     wallbox: checked
 - cc: DK
   country: Denmark
+  scope: out
   list: "yes"
   classes:
     inverter: list
@@ -156,6 +168,7 @@
     wallbox: search
 - cc: EE
   country: Estonia
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -171,6 +184,7 @@
     wallbox: unverified
 - cc: ES
   country: Spain
+  scope: in
   list: "no"
   classes:
     inverter: rule
@@ -186,6 +200,7 @@
     wallbox: search
 - cc: FI
   country: Finland
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -201,6 +216,7 @@
     wallbox: checked
 - cc: FR
   country: France
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -216,6 +232,7 @@
     wallbox: search
 - cc: GB
   country: Great Britain
+  scope: out
   list: "yes"
   classes:
     inverter: list
@@ -231,6 +248,7 @@
     wallbox: search
 - cc: GE
   country: Georgia
+  scope: out
   list: "no"
   classes:
     inverter: unknown
@@ -246,6 +264,7 @@
     wallbox: unverified
 - cc: GR
   country: Greece
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -261,6 +280,7 @@
     wallbox: search
 - cc: HR
   country: Croatia
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -276,6 +296,7 @@
     wallbox: search
 - cc: HU
   country: Hungary
+  scope: out
   list: "yes"
   classes:
     inverter: list
@@ -291,6 +312,7 @@
     wallbox: unverified
 - cc: IE
   country: Ireland
+  scope: out
   list: "yes"
   classes:
     inverter: list
@@ -306,6 +328,7 @@
     wallbox: checked
 - cc: IS
   country: Iceland
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -321,6 +344,7 @@
     wallbox: unverified
 - cc: IT
   country: Italy
+  scope: in
   list: "partial"   # ANIE's members-only list; no operator list. Classes checked 2026-11-01 against CEI 0-21:2026-07 (data/profiles/it.yaml)
   classes:
     inverter: rule
@@ -336,6 +360,7 @@
     wallbox: checked
 - cc: LI
   country: Liechtenstein
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -351,6 +376,7 @@
     wallbox: unverified
 - cc: LT
   country: Lithuania
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -366,6 +392,7 @@
     wallbox: search
 - cc: LU
   country: Luxembourg
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -381,6 +408,7 @@
     wallbox: checked
 - cc: LV
   country: Latvia
+  scope: out
   list: "partial"
   classes:
     inverter: list
@@ -396,6 +424,7 @@
     wallbox: unverified
 - cc: MD
   country: Moldova
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -411,6 +440,7 @@
     wallbox: unverified
 - cc: ME
   country: Montenegro
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -426,6 +456,7 @@
     wallbox: unverified
 - cc: MK
   country: North Macedonia
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -441,6 +472,7 @@
     wallbox: unverified
 - cc: MT
   country: Malta
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -456,6 +488,7 @@
     wallbox: search
 - cc: NI
   country: Northern Ireland
+  scope: out
   list: "yes"
   classes:
     inverter: list
@@ -471,6 +504,7 @@
     wallbox: unverified
 - cc: NL
   country: Netherlands
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -486,6 +520,7 @@
     wallbox: unverified
 - cc: NO
   country: Norway
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -501,6 +536,7 @@
     wallbox: search
 - cc: PL
   country: Poland
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -516,6 +552,7 @@
     wallbox: search
 - cc: PT
   country: Portugal
+  scope: out
   list: "partial"
   classes:
     inverter: list
@@ -531,6 +568,7 @@
     wallbox: unverified
 - cc: RO
   country: Romania
+  scope: out
   list: "partial"
   classes:
     inverter: list
@@ -546,6 +584,7 @@
     wallbox: unverified
 - cc: RS
   country: Serbia
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -561,6 +600,7 @@
     wallbox: unverified
 - cc: SE
   country: Sweden
+  scope: in
   list: "yes"
   classes:
     inverter: list
@@ -576,6 +616,7 @@
     wallbox: unverified
 - cc: SI
   country: Slovenia
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -591,6 +632,7 @@
     wallbox: search
 - cc: SK
   country: Slovakia
+  scope: out
   list: "partial"
   classes:
     inverter: rule
@@ -606,6 +648,7 @@
     wallbox: search
 - cc: TR
   country: Türkiye
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -621,6 +664,7 @@
     wallbox: unverified
 - cc: UA
   country: Ukraine
+  scope: out
   list: "no"
   classes:
     inverter: rule
@@ -636,6 +680,7 @@
     wallbox: unverified
 - cc: XK
   country: Kosovo
+  scope: out
   list: "no"
   classes:
     inverter: rule

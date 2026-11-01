@@ -1,5 +1,7 @@
 // The EU+ grid-connection table (data/countries.yaml): per country, whether a public list exists and what
 // applies per device class. The 7 parsed lists carry model rows on this site; the rest carry this table only.
+// The site shows only the rows marked `scope: in` (10 countries since 2026-11-01); the others stay in the data,
+// and every page, picker and file lists countries through IN_SCOPE, never COUNTRIES_ALL.
 import { readFileSync } from "node:fs";
 import { parse } from "yaml";
 import { DATA } from "./data";
@@ -7,12 +9,16 @@ import { DATA } from "./data";
 export type ListFlag = "yes" | "partial" | "no";
 export type ClassState = "list" | "rule" | "free" | "banned" | "unknown";
 export type Country = {
-  cc: string; country: string; list: ListFlag; list_url?: string;
+  cc: string; country: string; scope: "in" | "out"; list: ListFlag; list_url?: string;
   classes: Record<string, ClassState>; confidence: Record<string, string>;
 };
 
 export const COUNTRIES_ALL: Country[] = parse(readFileSync(DATA + "countries.yaml", "utf-8"));
 export const COUNTRY_BY: Record<string, Country> = Object.fromEntries(COUNTRIES_ALL.map((c) => [c.cc, c]));
+export const IN_SCOPE: Country[] = COUNTRIES_ALL.filter((c) => c.scope === "in").sort((a, b) => a.cc.localeCompare(b.cc));
+export const SCOPE: string[] = IN_SCOPE.map((c) => c.cc);
+export const inScope = (cc: string) => SCOPE.includes(cc);
+if (IN_SCOPE.length + COUNTRIES_ALL.filter((c) => c.scope === "out").length !== COUNTRIES_ALL.length) throw new Error("countries.yaml: every row needs scope: in or out");
 export const COUNTRIES_SOURCE = "EU+ grid-connection table, 2026-10-29";
 
 export const LIST_WORD: Record<ListFlag, string> = {
