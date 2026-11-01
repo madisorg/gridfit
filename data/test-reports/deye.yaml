@@ -1,0 +1,82 @@
+# Test-report layer (pre-certification pilot, 2026-11-01) — the settable range and the default of every EN 50549-1
+# function as the maker's certificate or test report prints it, with the PDF page. Facts only; no text of the
+# document is copied. Schema: docs/pre-cert.md. Model codes are joined by `match`, a regex over the register code
+# (upper case, spaces removed, comma read as a point), as in data/evidence/.
+brand: Deye
+documents:
+- id: tuvr-a3-50714707-sg06lp3
+  title: TÜV Rheinland certificate A3 50714707 0001 with the EN 50549-1:2019+A1 Annex C parameter table — SUN-3…8K-SG06LP3-EU-CM2/BM2
+  url: https://www.deyeinverter.com/deyeinverter/2026/03/12/Certificate_EN50549-10.pdf
+  kind: certificate-annex-c
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50714707 0001
+  report_no: CN269EL4 001
+  issued: '2026-02-05'
+  standards: [EN 50549-1:2019+A1, EN 50549-10:2022]
+  firmware: 2207-1175-1809
+  pages: 12            # 6 pages English, 6 French; the table is pages 3–6
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: SG06LP3 three-phase low-voltage hybrid 3–8 kW
+    match: ^SUN-[3-8]K-SG06LP3-EU-[BC]M2$
+  functions: &deye_annexc
+    freq_bands: {page: 3, band_47_5_48_5_min: {range: [30, 90], default: 30}, band_51_51_5_min: {range: [30, 90], default: 30}}
+    uf_power: {page: 3, threshold_hz: {range: [49, 49.5], default: 49.5}, reduction_pct_hz: {range: [2, 10], default: 2}}
+    rocof: {page: 3, immunity_hz_s: {max: 3.5, default: 2}}
+    uvrt: {page: 3, curve: "EN 50549-1 figure 6, most stringent (0.2 pu at 0.15 s, 0.85 pu at 1.5 s)"}
+    lfsm_o: {page: 3, f1_hz: {range: [50.2, 52], default: 50.2}, droop_pct: {range: [2, 12], default: 5}}
+    lfsm_u: {page: 4, f1_hz: {range: [46, 49.8], default: 49.8}, droop_pct: {range: [2, 12], default: 5}}
+    cosphi: {page: 4, min_cosphi: {range: [0.8, 1]}}
+    q_modes: {page: 4, modes: [q_setpoint, q_u, q_p, cosphi_setpoint, cosphi_p]}
+    uv1: {page: 5, threshold_un: {range: [0.2, 1]}, time_s: {range: [0.1, 100]}}
+    uv2: {page: 5, threshold_un: {range: [0.2, 1]}, time_s: {range: [0.1, 5]}}
+    ov1: {page: 5, threshold_un: {range: [1.0, 1.2]}, time_s: {range: [0.1, 100]}}
+    ov2: {page: 5, threshold_un: {range: [1.0, 1.3]}, time_s: {range: [0.1, 5]}}
+    ov10: {page: 5, threshold_un: {range: [1.0, 1.15]}}
+    uf1: {page: 5, threshold_hz: {range: [47, 50]}, time_s: {range: [0.1, 100]}}
+    uf2: {page: 6, threshold_hz: {range: [47, 50]}, time_s: {range: [0.1, 5]}}
+    of1: {page: 6, threshold_hz: {range: [50, 52]}, time_s: {range: [0.1, 100]}}
+    of2: {page: 6, threshold_hz: {range: [50, 52]}, time_s: {range: [0.1, 5]}}
+    reconnect: {page: 6, f_low_hz: {range: [47, 50], default: 49.5}, f_high_hz: {range: [50, 52], default: 50.2}, u_low_un: {range: [0.5, 1], default: 0.85},
+                u_high_un: {range: [1, 1.2], default: 1.1}, observation_s: {range: [10, 600], default: 60}, ramp_pct_min: {range: [6, 3000], default: 10}}
+    start: {page: 6, f_low_hz: {range: [47, 50], default: 49.5}, f_high_hz: {range: [50, 52], default: 50.1}, u_low_un: {range: [0.5, 1], default: 0.85},
+            u_high_un: {range: [1, 1.2], default: 1.1}, observation_s: {range: [10, 600], default: 60}}
+  note: "The protection rows give the settable range only (default '--'): the country values are set at commissioning. P(U), DC injection and anti-islanding are not rows of Annex C."
+- id: tuvr-a3-50717844-sg06lp1
+  title: TÜV Rheinland certificate A3 50717844 0001 with the EN 50549-1:2019+A1 Annex C parameter table — SUN-3…6K-SG06LP1-EU
+  url: https://www.deyeinverter.com/deyeinverter/2026/03/13/Certificate_EN50549-10.pdf
+  kind: certificate-annex-c
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50717844 0001
+  report_no: CN26R22P 001
+  issued: '2026-03-11'
+  standards: [EN 50549-1:2019+A1, EN 50549-10:2022]
+  firmware: '4389'
+  pages: 12
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: SG06LP1 single-phase low-voltage hybrid 3–6 kW
+    match: ^SUN-(3|3\.6|4|4\.6|5|6)K-SG06LP1(-24)?-EU-[BC]M[12]$
+  functions: *deye_annexc
+  note: "Every range of the table is the same as in A3 50714707 0001 (60 of 60 range strings compared)."
+- id: bv-u24-0954-g04
+  title: Bureau Veritas certificate U24-0954 (EN 50549-1:2019, RfG type A) — SUN-18…36K-G04
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_europe+en50549-1_eng-1.pdf
+  kind: certificate
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U24-0954
+  report_no: ASUE-ESH-P22010036-R1
+  issued: '2024-09-27'
+  standards: [EN 50549-1:2019, DIN VDE V 0124-100:2020, (EU) 2016/631]
+  firmware: 5412-0324
+  pages: 3
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: G04 three-phase string 18–36 kW
+    match: ^SUN-(18|20|25|30|33|35|36)K-G04$
+  tested: [freq_bands, uf_power, rocof, uvrt, lfsm_o, lfsm_u, cosphi, q_modes, p_u, dc_injection, uv1, uv2, ov1, ov2, ov10, uf1, uf2, of1, of2, islanding, reconnect, start]
+  functions: {}
+  note: "The certificate lists the clauses assessed (4.4–4.11, 4.13) and says the protection settings are password-protected and adjustable; it prints no range or value. The annex is an extract of the test report's ratings only."

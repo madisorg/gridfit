@@ -1,0 +1,34 @@
+# Test-report layer (pre-certification pilot, 2026-11-01). Schema: docs/pre-cert.md. Facts only, with the PDF page.
+brand: Growatt
+documents:
+- id: intertek-cn-pves-260337-moda
+  title: Intertek certificate CN-PVES-260337 (EN 50549-1:2019+A1:2023, EN 50549-10:2022) with an interface-protection table — MODA 4000…15KTL3-HU-Y
+  url: https://en.growatt.com/upload/file/MODA_All-In-One_50549_Certificate_202610.pdf
+  kind: certificate-table
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PVES-260337
+  report_no: 260706132GZU-001
+  issued: '2026-08-31'
+  standards: [EN 50549-1:2019+A1:2023, EN 50549-10:2022]
+  pages: 4
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: MODA all-in-one three-phase hybrid 4–15 kW (Y = 1…7)
+    match: ^MODA(4000|5000|6000|8000|10K|12K|15K)TL3-HU-[1-7]$
+  functions:
+    uv1: {page: 4, threshold_un: {range: [0.2, 1]}, time_s: {range: [0.1, 100]}}
+    uv2: {page: 4, threshold_un: {range: [0.2, 1]}, time_s: {range: [0.1, 5]}}
+    ov1: {page: 4, threshold_un: {range: [1.0, 1.2]}, time_s: {range: [0.1, 100]}}
+    ov2: {page: 4, threshold_un: {range: [1.0, 1.3]}, time_s: {range: [0.1, 5]}}
+    ov10: {page: 4, threshold_un: {range: [1.0, 1.15]}}
+    uf1: {page: 4, threshold_hz: {range: [47, 50]}, time_s: {range: [0.1, 100]}}
+    uf2: {page: 4, threshold_hz: {range: [47, 50]}, time_s: {range: [0.1, 5]}}
+    of1: {page: 4, threshold_hz: {range: [50, 52]}, time_s: {range: [0.1, 100]}}
+    of2: {page: 4, threshold_hz: {range: [50, 52]}, time_s: {range: [0.1, 5]}}
+    reconnect: {page: 4, f_low_hz: {range: [47, 52], default: 49.5}, f_high_hz: {range: [47, 52], default: 50.2}, u_low_un: {range: [0.5, 1.2], default: 0.85},
+                u_high_un: {range: [0.5, 1.2], default: 1.1}, observation_s: {range: [10, 60], default: 60}, ramp_pct_min: {range: [6, 3000], default: 10}}
+    start: {page: 4, f_low_hz: {range: [47, 52], default: 49.5}, f_high_hz: {range: [47, 52], default: 50.1}, observation_s: {range: [10, 60], default: 60}}
+    dc_injection: {page: 4, max_pct: {fixed: 0.5}}
+    islanding: {page: 4, method: "EN 62116, within 2 s"}
+  note: "The maker's own table format (not Annex C): interface protection, reconnection, DC injection and loss of mains only. LFSM-O/U, RoCoF, reactive power and P(U) are not printed. The observation time is settable 10–60 s only."

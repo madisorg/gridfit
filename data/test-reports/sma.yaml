@@ -1,0 +1,41 @@
+# Test-report layer (pre-certification pilot, 2026-11-01). Schema: docs/pre-cert.md. Facts only, with the PDF page.
+brand: SMA
+documents:
+- id: tuvsud-d070122-0013-stp110-60
+  title: TÜV SÜD compliance document D 070122 0013 Rev. 02 (EN 50549-1:2019/AC:2019) with the parameter table — STP 110-60
+  url: https://www.memodo.cz/mwdownloads/9e22b875c5985010accceeacbe3a3979
+  kind: certificate-annex-c
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: D 070122 0013 Rev. 02
+  report_no: 704092001830-02
+  issued: '2023-06-06'
+  standards: [EN 50549-1:2019/AC:2019]
+  pages: 6
+  text_layer: true
+  seen: '2026-11-01'
+  copy_of: "a distributor's copy (memodo.cz); SMA's own download not located"
+  families:
+  - name: Sunny Tripower CORE2 110 kW
+    match: (STP|CORE2)110-60$
+  functions:
+    freq_bands: {page: 4, band_47_5_48_5_min: {range: [30, 90], default: .inf}, band_51_51_5_min: {range: [30, 90], default: .inf}}
+    uf_power: {page: 4, threshold_hz: {range: [49, 49.5]}, reduction_pct_hz: {range: [2, 10], default: 0}}
+    rocof: {page: 4, immunity_hz_s: {max: 5}}
+    uvrt: {page: 4, curve: "EN 50549-1 figure 6 (0.05 pu at 0.25 s, 0.85 pu at 3 s)"}
+    lfsm_o: {page: 4, f1_hz: {range: [50.2, 52], default: 50.2}, droop_pct: {range: [2, 12], default: 5}}
+    lfsm_u: {page: 5, f1_hz: {range: [46, 49.8], default: 49.8}, droop_pct: {range: [2, 12], default: 5}}
+    cosphi: {page: 5, min_cosphi: {range: [0.9, 1], default: 0.9}}
+    q_modes: {page: 5, modes: [q_setpoint, q_u, cosphi_setpoint, cosphi_p]}
+    uv1: {page: 5, threshold_un: {range: [0.2, 1], default: 0.5}, time_s: {range: [0.1, 100], default: 100}}
+    uv2: {page: 5, threshold_un: {range: [0.2, 1], default: 0.2}, time_s: {range: [0.1, 5], default: 5}}
+    ov1: {page: 5, threshold_un: {range: [1.0, 1.2], default: 1.2}, time_s: {range: [0.1, 100], default: 100}}
+    ov2: {page: 5, threshold_un: {range: [1.0, 1.3], default: 1.3}, time_s: {range: [0.1, 5], default: 5}}
+    ov10: {page: 5, threshold_un: {range: [1.0, 1.15], default: 1.1}}
+    uf1: {page: 5, threshold_hz: {range: [47, 50], default: 47.5}, time_s: {range: [0.1, 100], default: 100}}
+    uf2: {page: 6, threshold_hz: {range: [47, 50], default: 47}, time_s: {range: [0.1, 5], default: 5}}
+    of1: {page: 6, threshold_hz: {range: [50, 52], default: 51.5}, time_s: {range: [0.1, 100], default: 100}}
+    of2: {page: 6, threshold_hz: {range: [50, 52], default: 52}, time_s: {range: [0.1, 5], default: 5}}
+    reconnect: {page: 6, f_low_hz: {range: [47, 50], default: 49.5}, f_high_hz: {range: [50, 52], default: 50.2}, u_low_un: {range: [0.5, 1], default: 0.85},
+                u_high_un: {range: [1, 1.2], default: 1.1}, observation_s: {range: [10, 600], default: 60}, ramp_pct_min: {range: [6, 3000], default: 10}}
+    start: {page: 6, f_low_hz: {range: [47, 50], default: 49.5}, f_high_hz: {range: [50, 52], default: 50.1}, observation_s: {range: [10, 600], default: 60}}
+  note: "Interface protection is built in, but the table says an external interface protection system is required for this 110 kW unit (a dedicated device). P(U), DC injection and anti-islanding are not rows."

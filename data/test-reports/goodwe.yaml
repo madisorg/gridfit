@@ -1,0 +1,54 @@
+# Test-report layer (pre-certification pilot, 2026-11-01). Schema: docs/pre-cert.md. Facts only, with the PDF page.
+brand: GoodWe
+documents:
+- id: tuvr-a3-50588989-et-g2
+  title: TÜV Rheinland certificate A3 50588989 0001 (EN 50549-1:2019) — GW6000…15K-ET-20 / BT-20
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ET-G2_Certificate-EN50549-1.pdf
+  kind: certificate
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50588989 0001
+  report_no: CN23S3O6 001
+  issued: '2023-06-16'
+  standards: [EN 50549-1:2019]
+  firmware: '000006'
+  pages: 2
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: ET G2 / BT G2 three-phase 6–15 kW
+    match: ^GW(6000|8000|9900|10K|12K|15K)K?-(ET|BT)-20$
+  functions: {}
+  note: "Two pages: holder, models, firmware, standard, report number. No clause list, no range — every function is 'not in document'; the test report CN23S3O6 001 is not public."
+- id: goodwe-et-12-30-manual-presets
+  title: GoodWe ET 12–30 kW user manual, 10.5 Safety standards / countries (the firmware's grid-code presets)
+  url: https://en.goodwe.com/Ftp/EN/Downloads/User%20Manual/GW_Residential-Smart-Inverter-Solutions_User-Manual-ET12-30kW-EN.pdf
+  kind: country-presets
+  issuer: GoodWe
+  standards: []
+  pages: 328
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: ET 12–30 kW three-phase hybrid
+    match: ^GW(12|15|20|25|29\.9|30)K-ET(-10)?$
+  presets: {page: 315, EE: EE, ES: "ES-A, ES-B, ES-C, ES-D, ES-island", IT: "IT-CEI 0-21", GR: GR, generic: "EN 50549-1"}
+  functions: {}
+  note: "Pages 315–322 list 109 European presets by name only; the values behind a preset are not printed. The manual's 10.6 Australia section does print the AS/NZS 4777.2 volt-var set points — the European ones are absent."
+- id: tuvr-a3-50561246-et
+  title: TÜV Rheinland certificate A3 50561246 0001 (EN 50549-1:2019) — GW5K…10K-ET (first generation)
+  url: https://ahlsell.se/external-assets/Documents/32/49/AssetDocument76803249.pdf
+  kind: certificate
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50561246 0001
+  report_no: 50354118 004
+  standards: [EN 50549-1:2019]
+  firmware: '090922'
+  pages: 2
+  text_layer: true
+  seen: '2026-11-01'
+  copy_of: "a distributor's copy (ahlsell.se)"
+  families:
+  - name: ET first generation 5–10 kW
+    match: ^(GW(5|6\.5|8|10)KN?-ET|GEH(5\.0|6\.5|8\.0|10)-3U-10)$
+  functions: {}
+  note: "Same two-page form as the ET G2 certificate: no values."

@@ -1,0 +1,43 @@
+# Test-report layer (pre-certification pilot, 2026-11-01). Schema: docs/pre-cert.md. Facts only, with the PDF page.
+brand: Solplanet
+documents:
+- id: bv-u22-0354-asw-lt-g2-pro
+  title: Bureau Veritas certificate U22-0354 (EN 50549-1:2019 / PN-EN 50549-1, RfG type A, Polish PTPiREE rules) with a parameter table — ASW3…20K-LT-G2 Pro
+  url: https://www.solplanet.net/wp-content/uploads/2023/04/AISW_ASWxxK-LT-G2-Pro_UNBED_EN-50549-1_Typ-A_EN_U22-0354.pdf
+  kind: certificate-annex-c
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U22-0354
+  report_no: PVPL2203WDG0348-1
+  issued: '2022-06-03'
+  valid_until: '2027-06-02'
+  standards: [EN 50549-1:2019, PN-EN 50549-1:2019, (EU) 2016/631, PTPiREE 2021-04]
+  firmware: "Main V610-03043-01, Slave V610-60009-00"
+  pages: 7
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: ASW LT-G2 Pro three-phase string 3–20 kW
+    match: ^ASW(3|4|5|6|8|10|12|13|15|17|20)K-LT-G2PRO(-BE)?$
+  functions:
+    freq_bands: {page: 4, band_47_5_48_5_min: {range: [30, 90], default: 30}, band_51_51_5_min: {range: [30, 90], default: 30}}
+    uf_power: {page: 4, reduction_pct_hz: {max: 2}}
+    rocof: {page: 4, immunity_hz_s: {range: [0.5, 10], default: 2.5}}
+    lfsm_o: {page: 4, f1_hz: {range: [50.2, 52], default: 50.2}, droop_pct: {range: [2, 12], default: 5}}
+    lfsm_u: {page: 4, f1_hz: {range: [46, 49.8]}, droop_pct: {range: [2, 12]}}
+    cosphi: {page: 5, min_cosphi: {range: [0.8, 1], default: 1}}
+    q_modes: {page: 5, modes: [q_setpoint, q_u, cosphi_setpoint, cosphi_p]}
+    uv1: {page: 5, threshold_un: {range: [0.2, 1], default: 0.85}, time_s: {range: [0, 300], default: 1.3}}
+    uv2: {page: 5, threshold_un: {range: [0.2, 1]}, time_s: {range: [0, 300]}}
+    ov1: {page: 5, threshold_un: {range: [1.0, 1.3], default: 1.15}, time_s: {range: [0, 300], default: 0.1}}
+    ov2: {page: 5, threshold_un: {range: [1.0, 1.3]}, time_s: {range: [0, 300]}}
+    ov10: {page: 5, threshold_un: {range: [1.0, 1.3], default: 1.1}}
+    uf1: {page: 5, threshold_hz: {range: [45, 50], default: 47.5}, time_s: {range: [0, 300], default: 0.4}}
+    uf2: {page: 6, threshold_hz: {range: [45, 50]}, time_s: {range: [0, 300]}}
+    of1: {page: 6, threshold_hz: {range: [50, 55], default: 52}, time_s: {range: [0, 300], default: 0.4}}
+    of2: {page: 6, threshold_hz: {range: [50, 55]}, time_s: {range: [0, 300]}}
+    islanding: {page: 6, method: "EN 62116, 2 s"}
+    reconnect: {page: 6, f_low_hz: {range: [47, 50], default: 49}, f_high_hz: {range: [50, 52], default: 50.05}, u_low_un: {range: [0.5, 1], default: 0.85},
+                u_high_un: {range: [1, 1.2], default: 1.1}, observation_s: {range: [60, 600], default: 60}, ramp_pct_min: {range: [5, 3000], default: 9}}
+    start: {page: 6, f_low_hz: {range: [47, 50], default: 49}, f_high_hz: {range: [50, 52], default: 50.05}, observation_s: {range: [60, 600], default: 60}}
+  tested: [p_u]
+  note: "The defaults are Poland's settings. P(U) appears only as a word in the Q(U) row; no P(U) setting is printed. A full test report for Belgium/Netherlands of the same family is public as well (solplanet.net, PV2203WDG0348-1), not read here."

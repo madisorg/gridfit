@@ -1,0 +1,38 @@
+# Test-report layer (pre-certification pilot, 2026-11-01). Schema: docs/pre-cert.md. Facts only, with the PDF page.
+brand: Sungrow
+documents:
+- id: dnv-tc-gcc-0124-07602-sg-rt-pl
+  title: DNV component certificate TC-GCC-DNVGL-SE-0124-07602-0 (NC RfG type A, Poland PSE 2018-12 / PTPiREE 2021-04) — SG3.0RT…SG20RT
+  url: https://solar-distribution.baywa-re.pl/out/media/2_-_SG(3-4)RT_EN_Sungrow_SG(3-20)RT_certyfikat_zgodnosci_NC_RfG_01.pdf
+  kind: grid-code-certificate
+  issuer: DNV Renewables Certification (Germanischer Lloyd Industrial Services GmbH)
+  cert_no: TC-GCC-DNVGL-SE-0124-07602-0
+  report_no: 10285372-A-4-A
+  issued: '2021-07-02'
+  standards: [(EU) 2016/631, PSE 2018-12, PTPiREE 2021-04, DNVGL-SE-0124]
+  firmware: LCD_BERYL-S_V11_V01_A / MDSP_BERYL-S_V11_V01_A
+  pages: 5
+  text_layer: true
+  seen: '2026-11-01'
+  copy_of: "a distributor's copy (BayWa r.e. Poland)"
+  families:
+  - name: SG RT three-phase string 3–20 kW
+    match: ^SG(3|4|5|6|7|8|10|12|15|17|20)(\.0)?RT$
+  tested: [freq_bands, rocof, lfsm_o]
+  functions: {}
+  note: "Four functions assessed as compliant against Poland's values (frequency range, RoCoF, remote cessation, LFSM-O); the values are in the certification report, not here. 'Protection settings has not been part of the assessment.'"
+- id: sungrow-country-code-overview-2025-04
+  title: Sungrow Product Certification and Country Code Overview (Europe), 2025-04
+  url: https://info-support.sungrowpower.com/application/pdf/2025/04/21/Product%20Certification%20and%20Country%20Code%20Overview%20(Europe).pdf
+  kind: country-presets
+  issuer: Sungrow
+  standards: []
+  pages: 0     # the PDF reports no page count; ~3 400 text lines
+  text_layer: true
+  seen: '2026-11-01'
+  families:
+  - name: residential and C&I families (per row of the overview)
+    match: null
+  presets: {EE: "EN50549-1 — 'Manual Settings' (Elektrilevi)", ES: "NTS SEPE 2.0 / RD 631,413,1699", IT: "CEI021", GR: "EN50549-1"}
+  functions: {}
+  note: "A matrix of certificate status and iSolarCloud country code per family and firmware; 'Manual Settings' marks a country whose values the installer types in. No parameter value."
