@@ -5,7 +5,7 @@ import { data, summary, familyUrl, slug, type Family } from "./data";
 import { devices as regDevices, COUNTRIES, REGS, META, RS, best, anchor, type Device as RegDevice, type Entry } from "./registers";
 import { COUNTRIES_ALL, COUNTRY_BY, CLASS_KEY, type ClassState } from "./countries";
 import { LIMITS, NOT_LISTED } from "./profiles";
-import { releasesOf, type Release } from "./evidence";
+import { releasesOf, fitsIn, type Release } from "./evidence";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
@@ -264,7 +264,7 @@ export type Other = { cc: string; country: string; list: string; list_url?: stri
 export function tierOf(cc: string, state: ClassState, positive: string[], releases: Release[], kva: number | null): { tier: Tier; release: Release | null } {
   if (state === "banned") return { tier: "X", release: null };
   if (state === "free") return { tier: "F", release: null };
-  const rel = releases.find((r) => r.countries.includes(cc));
+  const rel = releases.find((r) => fitsIn(r, cc));
   if (rel) return { tier: "D", release: rel };
   if (state === "unknown") return { tier: "?", release: null };
   const lim = LIMITS[cc]?.max_kw;

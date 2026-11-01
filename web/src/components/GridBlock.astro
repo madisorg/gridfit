@@ -9,7 +9,7 @@ import { othersTiered, positiveOf, subTiers, GRID_WORD, TIER_WORD, type GridStat
 import { NOT_LISTED } from "../lib/profiles";
 import { COUNTRY_BY, CONF_WORD } from "../lib/countries";
 import { CLASS } from "../lib/data";
-import type { Release } from "../lib/evidence";
+import { fitsIn, type Release } from "../lib/evidence";
 import { LIMITS } from "../lib/profiles";
 const { cells, entries, cls, releases = [], kva = null, brand = "" } = Astro.props as
   { cells: Record<string, GridState>; entries: Record<string, Entry[]>; cls: string; releases?: Release[]; kva?: number | null; brand?: string };
@@ -23,7 +23,7 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const docsUsed = [...new Map(releases.map((r) => [r.doc.id, { doc: r.doc, fams: releases.filter((x) => x.doc.id === r.doc.id) }])).values()];
 const n = positive.length;
 const why: Record<Tier, string> = {
-  D: `${brand || "The maker"}'s own document names these countries — the grid operator still decides at the application.`,
+  D: `${brand || "The maker"}'s own document names these countries, or is a certificate against the standard their grid operator names (an EN 50549-1 certificate in Estonia) — the grid operator still decides at the application.`,
   K: n ? `On ${n} EU list${n === 1 ? "" : "s"} (${positive.join(", ")}): the maker has had the model certified and ${n === 1 ? "one grid operator accepts" : `${n} grid operators accept`} it. Nothing is checked in these countries themselves: where there is no list the grid operator reads the maker's certificate for that country — ask the maker or installer for it; where a list exists that GridFit has not read, check the model there.` : "",
   B: `Above the type-A ceiling (${[...new Set(others.filter((o) => o.tier === "B").map((o) => `${LIMITS[o.cc]?.max_kw} kW in ${o.country}`))].join(", ")}): type B, a procedure of its own — conformity per installation, not a certificate per model.`,
   F: "No list and no model-level rule for this kind of device: nothing to approve, so the model is fit here as far as a list goes.",
@@ -39,7 +39,7 @@ const why: Record<Tier, string> = {
     const r = e ? REGS[e.reg] : REGS[cc];
     const m = META[e ? e.reg : cc];
     const st = cells[cc];
-    const rel = releases.find((x) => x.countries.includes(cc));
+    const rel = releases.find((x) => fitsIn(x, cc));
     return (
       <li id={`grid-${cc.toLowerCase()}`}>
         <span class="k"><a href={`/grid/${cc.toLowerCase()}/`}>{cc}</a></span>

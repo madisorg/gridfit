@@ -5,7 +5,7 @@ import Status from "./Status.astro";
 import Matrix from "./Matrix.astro";
 import { COUNTRIES } from "../lib/registers";
 import { LOCAL_WORD, type LocalState, type GridState } from "../lib/devices";
-import type { Release } from "../lib/evidence";
+import { releaseCountries, type Release } from "../lib/evidence";
 import { subTiers } from "../lib/devices";
 const { local, routes = [], cells, entries = {}, cls, seen, listDate, releases = [], kva = null } = Astro.props as
   { local: LocalState; routes?: string[]; cells: Record<string, GridState>; entries?: Record<string, any[]>; cls?: string; seen: string; listDate?: string; releases?: Release[]; kva?: number | null };
@@ -13,7 +13,7 @@ const subs = subTiers(cells, releases, kva);
 const likely = Object.values(subs).filter((s) => s.tier === "D").length, possibly = Object.values(subs).filter((s) => s.tier === "K").length;
 const mark = local === "control" ? "write" : local === "read" ? "local" : local === "cloud" ? "cloud" : "none";
 const on = COUNTRIES.filter((k) => cells[k] === "listed" || cells[k] === "restricted");
-const docCc = [...new Set(releases.flatMap((r) => r.countries))].filter((c) => !COUNTRIES.includes(c));
+const docCc = releaseCountries(releases).filter((c) => !COUNTRIES.includes(c));
 const gridWord = (on.length ? `fit in ${on.join(", ")}` : `on none of the ${COUNTRIES.length} lists read`) + (likely ? ` · off the list but likely in ${likely}` : "") + (possibly ? ` · possibly in ${possibly}` : "") + (docCc.length ? ` · by the maker's document in ${docCc.length} more countries` : "");
 ---
 <div class="glance" role="group" aria-label="At a glance">

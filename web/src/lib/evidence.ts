@@ -7,8 +7,12 @@ import { DATA } from "./data";
 
 export type Doc = { id: string; title: string; url: string; version?: string; doc_no?: string; seen: string; kind: string; note?: string;
   issuer?: string; cert_no?: string; issued?: string; valid_until?: string; standards?: string[]; firmware?: string };
-export type Release = { brand: string; family: string; note?: string; countries: string[]; doc: Doc };
-type Brand = { brand: string; rule: string; documents: (Doc & { families: { name: string; match?: string; note?: string; countries: string[] }[] })[] };
+// countries: what the document itself names; accepted: countries whose grid operator names the certificate's standard
+// (tools/evidence/build.py derives it from data/evidence/rules/accepts.yaml — an EN 50549-1 certificate in Estonia)
+export type Release = { brand: string; family: string; note?: string; countries: string[]; accepted: string[]; doc: Doc };
+export const fitsIn = (r: Release, cc: string) => r.countries.includes(cc) || r.accepted.includes(cc);
+export const releaseCountries = (rs: Release[]) => [...new Set(rs.flatMap((r) => [...r.countries, ...r.accepted]))];
+type Brand = { brand: string; rule: string; documents: (Doc & { families: { name: string; match?: string; note?: string; countries: string[]; accepted_in?: string[] }[] })[] };
 
 const idx = new Map<string, { rx: RegExp; rel: Release }[]>();
 export const EVIDENCE_BRANDS: string[] = [];
@@ -21,15 +25,15 @@ try {
     const list: { rx: RegExp; rel: Release }[] = [];
     for (const d of b.documents) {
       const { families: fams, ...doc } = d;
-      for (const cc of new Set(fams.flatMap((x) => x.countries))) {
+      for (const cc of new Set(fams.flatMap((x) => x.countries ?? []))) {
         if (!byCountry.has(cc)) byCountry.set(cc, []);
-        byCountry.get(cc)!.push({ brand: b.brand, families: fams.filter((x) => x.countries.includes(cc)).map((x) => x.name), doc });
+        byCountry.get(cc)!.push({ brand: b.brand, families: fams.filter((x) => (x.countries ?? []).includes(cc)).map((x) => x.name), doc });
       }
     }
     for (const d of b.documents) for (const fam of d.families) {
       if (!fam.match) continue;
       const { families: _f, ...doc } = d;
-      list.push({ rx: new RegExp(fam.match), rel: { brand: b.brand, family: fam.name, note: fam.note, countries: fam.countries, doc } });
+      list.push({ rx: new RegExp(fam.match), rel: { brand: b.brand, family: fam.name, note: fam.note, countries: fam.countries ?? [], accepted: fam.accepted_in ?? [], doc } });
     }
     idx.set(b.brand.toLowerCase(), list);
     EVIDENCE_BRANDS.push(b.brand);
