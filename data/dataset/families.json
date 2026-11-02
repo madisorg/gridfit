@@ -19869,6 +19869,30 @@
  },
  {
   "brand": "Mennekes",
+  "family": "AMTRON 4Business 600",
+  "class": "wallbox",
+  "curated": false,
+  "faq": {
+   "q": "Does Mennekes AMTRON 4Business 600 work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally and lets evcc control it (needs an evcc sponsor token)."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
+  "brand": "Mennekes",
+  "family": "AMTRON 4Business 600 (OCPP)",
+  "class": "wallbox",
+  "curated": false,
+  "faq": {
+   "q": "Does Mennekes AMTRON 4Business 600 (OCPP) work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally and lets evcc control it (needs an evcc sponsor token)."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
+  "brand": "Mennekes",
   "family": "AMTRON 4Business 700 11 kW",
   "class": "wallbox",
   "curated": false,

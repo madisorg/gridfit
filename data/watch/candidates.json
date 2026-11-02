@@ -2,12 +2,88 @@
  "candidates": [
   {
    "baseline": false,
+   "brand": "Victron Energy",
+   "brands": [
+    "Victron Energy"
+   ],
+   "code": "",
+   "date": "2026-11-02T08:23:27Z",
+   "family": "",
+   "in_lists": [],
+   "kind": "feed",
+   "norm": "",
+   "partial": [],
+   "source": "evcc-templates",
+   "specs": false,
+   "title": "Victron VRM: fetch solar forecast for up to 7 days (#35710)",
+   "url": "https://github.com/evcc-io/evcc/commit/7a4bf99292d994a175f4341b8dc9c393a0d42d52",
+   "verdict": "no model code"
+  },
+  {
+   "baseline": false,
+   "brand": "Mennekes",
+   "brands": [
+    "Mennekes"
+   ],
+   "code": "",
+   "date": "2026-11-02T05:40:22Z",
+   "family": "",
+   "in_lists": [],
+   "kind": "feed",
+   "norm": "",
+   "partial": [],
+   "source": "evcc-templates",
+   "specs": false,
+   "title": "Add Mennekes Amtron 4Business 600 (OCPP) (#35426)",
+   "url": "https://github.com/evcc-io/evcc/commit/b08a93b11b09af60be1ab3eff87776eeedae185c",
+   "verdict": "no model code"
+  },
+  {
+   "baseline": false,
+   "brand": "Mennekes",
+   "brands": [
+    "Mennekes"
+   ],
+   "code": "",
+   "date": "2026-11-02T05:39:49Z",
+   "family": "",
+   "in_lists": [],
+   "kind": "feed",
+   "norm": "",
+   "partial": [],
+   "source": "evcc-templates",
+   "specs": false,
+   "title": "Add Mennekes Amtron 4Business 600 (Modbus TCP) (#35427)",
+   "url": "https://github.com/evcc-io/evcc/commit/31e8781a2a3870040686e26eaeeb17733f9b41d3",
+   "verdict": "no model code"
+  },
+  {
+   "baseline": false,
+   "brand": "SMA",
+   "brands": [
+    "SMA"
+   ],
+   "code": "",
+   "date": "2026-11-02T05:37:05Z",
+   "family": "",
+   "in_lists": [],
+   "kind": "feed",
+   "norm": "",
+   "partial": [],
+   "source": "evcc-templates",
+   "specs": false,
+   "title": "SMA Hybrid: fix battery power and energy (#35508)",
+   "url": "https://github.com/evcc-io/evcc/commit/bcd5f760201b59074d7cacfb883476cd745fa802",
+   "verdict": "no model code"
+  },
+  {
+   "baseline": false,
    "brand": "Huawei",
    "brands": [
     "Huawei"
    ],
    "code": "",
-   "date": "2026-11-01T08:38:05Z",
+   "date": "2026-11-02T05:13:48Z",
    "family": "",
    "in_lists": [],
    "kind": "feed",
@@ -15,18 +91,18 @@
    "partial": [],
    "source": "evcc-templates",
    "specs": false,
-   "title": "Huawei SmartLogger: remove battery (BC) (#35658)",
-   "url": "https://github.com/evcc-io/evcc/commit/15d06c8955b75a63374e7093df9ed198e8f33f86",
+   "title": "Huawei SUN2000 Inverter: reduce default timeout (#35687)",
+   "url": "https://github.com/evcc-io/evcc/commit/7ef3f3ab8f195775392b7bec76d4d01d4aa304cb",
    "verdict": "no model code"
   },
   {
    "baseline": false,
-   "brand": "Fox ESS",
+   "brand": "SolaX",
    "brands": [
-    "Fox ESS"
+    "SolaX"
    ],
    "code": "",
-   "date": "2026-11-01T07:44:18Z",
+   "date": "2026-11-02T05:12:54Z",
    "family": "",
    "in_lists": [],
    "kind": "feed",
@@ -34,91 +110,101 @@
    "partial": [],
    "source": "evcc-templates",
    "specs": false,
-   "title": "FoxESS H3: hold via max discharge current instead of remote active po…",
-   "url": "https://github.com/evcc-io/evcc/commit/2b5cafe284c963d526e2363a0584eab524808cb6",
+   "title": "Solax: drop grid energy (not phase-balanced) (#35707)",
+   "url": "https://github.com/evcc-io/evcc/commit/83939b5f701517ea0389f1833e935a7e1377a8c1",
    "verdict": "no model code"
   },
   {
    "baseline": false,
-   "brand": "Fox ESS",
+   "brand": "SolaX",
    "brands": [
-    "Fox ESS"
+    "SolaX"
    ],
-   "code": "3674c1a",
-   "date": "2026-11-01T09:39:37Z",
+   "code": "32-bit",
+   "date": "2026-11-02T05:04:21Z",
    "family": "",
    "in_lists": [],
    "kind": "feed",
-   "norm": "3674C1A",
+   "norm": "32BIT",
    "partial": [],
-   "source": "evcc-releases",
+   "source": "evcc-templates",
    "specs": false,
-   "title": "0.318.2",
-   "url": "https://github.com/evcc-io/evcc/releases/tag/0.318.2",
+   "title": "Solax G2: fix 32-bit word order (#35590)",
+   "url": "https://github.com/evcc-io/evcc/commit/a76e81949f06926a9ddb9958a9b46d6a90e2a22b",
    "verdict": "new to GridFit"
   },
   {
    "baseline": false,
-   "brand": "Fox ESS",
+   "brand": "Anker SOLIX",
    "brands": [
+    "Anker SOLIX",
     "Fox ESS"
    ],
-   "code": "5faf778",
-   "date": "2026-11-01T09:39:37Z",
+   "code": "10-year",
+   "date": "Mon, 02 Nov 2026 08:08:55 +0000",
    "family": "",
    "in_lists": [],
    "kind": "feed",
-   "norm": "5FAF778",
+   "norm": "10YEAR",
    "partial": [],
-   "source": "evcc-releases",
+   "source": "pv-magazine",
    "specs": false,
-   "title": "0.318.2",
-   "url": "https://github.com/evcc-io/evcc/releases/tag/0.318.2",
+   "title": "Outer Space debuts solar pavilion with hidden battery storage decking",
+   "url": "https://www.pv-magazine.com/2026/11/02/outer-space-debuts-solar-pavilion-with-hidden-battery-storage-decking/",
    "verdict": "new to GridFit"
   },
   {
    "baseline": false,
-   "brand": "Fox ESS",
+   "brand": "Anker SOLIX",
    "brands": [
+    "Anker SOLIX",
     "Fox ESS"
    ],
-   "code": "8f14ae4",
-   "date": "2026-11-01T09:39:37Z",
+   "code": "H1-11.4-US",
+   "date": "Mon, 02 Nov 2026 08:08:55 +0000",
    "family": "",
    "in_lists": [],
    "kind": "feed",
-   "norm": "8F14AE4",
+   "norm": "H1114US",
    "partial": [],
-   "source": "evcc-releases",
+   "source": "pv-magazine",
    "specs": false,
-   "title": "0.318.2",
-   "url": "https://github.com/evcc-io/evcc/releases/tag/0.318.2",
+   "title": "Outer Space debuts solar pavilion with hidden battery storage decking",
+   "url": "https://www.pv-magazine.com/2026/11/02/outer-space-debuts-solar-pavilion-with-hidden-battery-storage-decking/",
    "verdict": "new to GridFit"
   },
   {
    "baseline": false,
-   "brand": "Fox ESS",
+   "brand": "Sigenergy",
    "brands": [
-    "Fox ESS"
+    "Sigenergy"
    ],
-   "code": "H3-Pro/Smart",
-   "date": "2026-11-01T09:39:37Z",
-   "family": "H3 / H3-Pro / AC3 / AIO-H3 (three-phase)",
+   "code": "4-Megawattstunden-Speichers",
+   "date": "Mon, 02 Nov 2026 12:02:32 +0000",
+   "family": "",
    "in_lists": [],
    "kind": "feed",
-   "norm": "H3PROSMART",
+   "norm": "4MEGAWATTSTUNDENSPEICHERS",
    "partial": [],
-   "source": "evcc-releases",
+   "source": "pv-magazine-de",
    "specs": false,
-   "title": "0.318.2",
-   "url": "https://github.com/evcc-io/evcc/releases/tag/0.318.2",
-   "verdict": "family known, in no list yet"
+   "title": "Sigenergy bringt platzsparenden Gewerbespeicher auf den Markt",
+   "url": "https://www.pv-magazine.de/2026/11/02/sigenergy-bringt-platzsparenden-gewerbespeicher-auf-den-markt/",
+   "verdict": "new to GridFit"
   }
  ],
  "log": [],
  "mode": "http",
  "registers_pending": {
-  "lists": {},
+  "lists": {
+   "NL": {
+    "added": [],
+    "changed": [],
+    "previous_source_date": "2026-10-31",
+    "removed": [],
+    "source_date": "2026-11-01"
+   }
+  },
   "skipped": {
    "AT": "robots.txt of www.wechselrichterliste.at disallows this user agent",
    "AT-EV": "robots.txt of www.wechselrichterliste.at disallows this user agent"
@@ -126,6 +212,6 @@
   "snapshot": "2026-11-01"
  },
  "requests": 64,
- "run": "2026-11-01",
+ "run": "2026-11-02",
  "snapshot": "2026-11-01"
 }

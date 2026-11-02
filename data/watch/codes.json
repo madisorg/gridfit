@@ -83,6 +83,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "10YEAR": {
+  "baseline": false,
+  "brand": "Anker SOLIX",
+  "code": "10-year",
+  "first_seen": "2026-11-02",
+  "source": "pv-magazine"
+ },
  "128VLITHIUMSUPERPACK": {
   "baseline": true,
   "brand": "Victron Energy",
@@ -258,6 +265,13 @@
   "code": "319ded8",
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
+ },
+ "32BIT": {
+  "baseline": false,
+  "brand": "SolaX",
+  "code": "32-bit",
+  "first_seen": "2026-11-02",
+  "source": "evcc-templates"
  },
  "32C86AB": {
   "baseline": true,
@@ -447,6 +461,13 @@
   "code": "4ec1028",
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
+ },
+ "4MEGAWATTSTUNDENSPEICHERS": {
+  "baseline": false,
+  "brand": "Sigenergy",
+  "code": "4-Megawattstunden-Speichers",
+  "first_seen": "2026-11-02",
+  "source": "pv-magazine-de"
  },
  "4YOU4BUSINESS": {
   "baseline": true,
@@ -1834,6 +1855,13 @@
   "code": "G-MAX",
   "first_seen": "2026-10-31",
   "source": "foxess-products"
+ },
+ "H1114US": {
+  "baseline": false,
+  "brand": "Anker SOLIX",
+  "code": "H1-11.4-US",
+  "first_seen": "2026-11-02",
+  "source": "pv-magazine"
  },
  "H1AC1": {
   "baseline": true,

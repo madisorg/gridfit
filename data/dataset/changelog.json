@@ -1,5 +1,14 @@
 [
  {
+  "date": "2026-11-02",
+  "added": [
+   "evcc:bender-icc:AMTRON 4Business 600:Mennekes | AMTRON 4Business 600",
+   "evcc:ocpp-mennekes-4you:AMTRON 4Business 600 (OCPP):Mennekes | AMTRON 4Business 600 (OCPP)"
+  ],
+  "removed": [],
+  "changed": []
+ },
+ {
   "date": "2026-11-01",
   "added": [],
   "removed": [],

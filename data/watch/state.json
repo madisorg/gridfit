@@ -1,6 +1,6 @@
 {
  "deye-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 105,
   "kind": "sitemap",
@@ -10,7 +10,7 @@
  },
  "evcc-releases": {
   "changed": "2026-11-01",
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "W/\"8f54eb1f6faccf87bd6cca52abc5360e\"",
   "items": 10,
@@ -18,60 +18,60 @@
   "last_modified": "",
   "new": 1,
   "sha256": "8f54eb1f6faccf87bd6cca52abc5360e85eecfa0438b8cf36df179eb15853f4e",
-  "status": "changed"
+  "status": "unchanged (304)"
  },
  "evcc-templates": {
-  "changed": "2026-11-01",
-  "checked": "2026-11-01",
+  "changed": "2026-11-02",
+  "checked": "2026-11-02",
   "error": "",
-  "etag": "\"fa502af9d8e96407457285c601dee667\"",
+  "etag": "\"b2399d65dd7547ef9ccbbd25d8df12b7\"",
   "items": 20,
   "kind": "feed",
   "last_modified": "",
-  "new": 2,
-  "sha256": "2064372e30f9c70454f4ae63a4f9e9382b38621cdbe53af4891f1f588e9c3076",
+  "new": 7,
+  "sha256": "c5e7a7df3c60b1d592a76b5acafc42a35cb4a72a42709583397ef818ba18dc9b",
   "status": "changed"
  },
  "foxess-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 57,
   "kind": "sitemap",
   "new": 0,
-  "sha256": "5791e6d77736c5f414b73c80612dfda6e74771039d178c7fa058c3e2a4b5a40d",
+  "sha256": "cb2ea40fa9e94a3161fa78e71543c1f03f5f7a5a6709d4e39caa93c408204b9f",
   "status": "unchanged items"
  },
  "fronius-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 135,
   "kind": "sitemap",
   "new": 0,
-  "sha256": "32113830bdf5c880a9f649c148c07a8f140369377e08245b82baa15dbf12830d",
+  "sha256": "02b9716b0370f7e2bd362c079c38dcb41db8ad7e5dfe1c9de3cddbb2e56f4697",
   "status": "unchanged items"
  },
  "goodwe-pages": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 17,
   "kind": "sitemap",
   "new": 0,
-  "sha256": "3126184d532b9343e2c70d22cc4c7ab91c10b654545901e28e9c74e46dacd204",
+  "sha256": "c3e8c3fa4e9c9e1a9f486dd2694a000614d3c3c06c8320d67f064b456913d19a",
   "status": "unchanged items"
  },
  "ha-integrations": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
-  "etag": "\"08508efaa175c7f07faea466233171765c2c8e3d3532f17900a8eda7edd78bb6\"",
+  "etag": "\"4de6b48180384751a2f411edfc1330125594bc5060f7ab5844905276c2eec75c\"",
   "items": 44,
   "kind": "keys",
   "last_modified": "",
   "new": 0,
-  "sha256": "bd9ec0cc0bc3b829af344fe750f5af3f5fe6ecba6e55517e28c75ab5ec5a23c2",
-  "status": "unchanged (304)"
+  "sha256": "8789f2ac5e1d14436776c2fae593d9f91345e67b6f287e8d07ab44d17d223a6d",
+  "status": "unchanged items"
  },
  "hacs-integrations": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "\"1e544216129decb57cba924925ca0d88\"",
   "items": 424,
@@ -82,7 +82,7 @@
   "status": "unchanged (304)"
  },
  "hoymiles-releases": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 28,
   "kind": "sitemap",
@@ -91,7 +91,7 @@
   "status": "unchanged items"
  },
  "kostal-countries": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "",
   "items": 11,
@@ -102,49 +102,51 @@
   "status": "unchanged (304)"
  },
  "kostal-pages": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 13,
   "kind": "sitemap",
   "new": 0,
-  "sha256": "30d97d917dc3118992a566ccddcd0161afe15c436e403e75adc716fc0300ce95",
+  "sha256": "0cb12f3aa574e75afb25d1cc0bca8cbb7e41ed71f759f01b961c8e7c9a0bd829",
   "status": "unchanged items"
  },
  "pv-magazine": {
-  "checked": "2026-11-01",
+  "changed": "2026-11-02",
+  "checked": "2026-11-02",
+  "error": "",
+  "etag": "",
+  "items": 2,
+  "kind": "feed",
+  "last_modified": "Mon, 02 Nov 2026 11:39:44 GMT",
+  "new": 1,
+  "sha256": "3ecb138293665608ae7bd85322ba1fbaa630a7e09925e9d8e82b698e9e199b38",
+  "status": "changed"
+ },
+ "pv-magazine-de": {
+  "changed": "2026-11-02",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "",
   "items": 1,
   "kind": "feed",
-  "last_modified": "Sat, 31 Oct 2026 18:26:04 GMT",
-  "new": 0,
-  "sha256": "c4d358799cdf70463851435e483422f017e0ea69269622cdf21a6c4d74aaee4b",
-  "status": "unchanged (304)"
- },
- "pv-magazine-de": {
-  "checked": "2026-11-01",
-  "error": "",
-  "etag": "",
-  "items": 0,
-  "kind": "feed",
-  "last_modified": "Fri, 30 Oct 2026 16:18:50 GMT",
-  "new": 0,
-  "sha256": "faf7da207ef8af59c72016365e3594a06261f5aebf14e463c2d1ce456a7dc092",
-  "status": "unchanged (304)"
+  "last_modified": "Mon, 02 Nov 2026 12:22:06 GMT",
+  "new": 1,
+  "sha256": "772d36db5927796d08029d37d10cd921d5ddd8fdf45ec6787cdc31802788eb93",
+  "status": "changed"
  },
  "pv-tech": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
-  "etag": "W/\"9219ac7090c0b22932ed3198f85ddd21\"",
+  "etag": "W/\"e82f660a8e9583b58fbcbfd992049ac0\"",
   "items": 0,
   "kind": "feed",
-  "last_modified": "Fri, 30 Oct 2026 21:58:47 GMT",
+  "last_modified": "Mon, 02 Nov 2026 12:25:10 GMT",
   "new": 0,
-  "sha256": "dcff19bd91dbf1d3c9bdfd5360c00724011420ae63128c5a9f444cefae1233e8",
-  "status": "unchanged (304)"
+  "sha256": "4ca277e457e5a16a7a5c407425ca431f49f05d7cd396ca2aa8474af895642493",
+  "status": "unchanged items"
  },
  "reg-ie": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "",
   "items": 1,
@@ -155,14 +157,14 @@
   "status": "unchanged items"
  },
  "registers": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "files": {
    "be_c10_26.xlsx": "4c4160ee29a0ab833ced0a1f7a4a7a11822d5c384d294721299ff46e1745e952",
    "cz_seznam.xlsx": "cf8ea651baff3d08d4111c19b2f62ac4ca920c34f1654e33f479384702dd8a43",
-   "ee_inverterite-nimekiri.html": "feb1082abceca1633aa655d639995febf21bbd6d9e8e659fd5b0c5807a963912",
-   "nl_electrical_storage.xlsx": "20150fb170bab1f901993456025fc302c17b747eb001fed7002aafa32a97e3ed",
-   "nl_power_generating.xlsx": "7fe4403d31f1c8d164709ce927e5936682749a7de3aab3aecdd152211afeef6c",
+   "ee_inverterite-nimekiri.html": "785e5b6d171547d6aadb0ce82c89933c92a9cc9d98563a613c012a7b546f7ea0",
+   "nl_electrical_storage.xlsx": "1bb11cac7528f7edb2a9c6a1bcc5a5230a474b3c35c309beaf191f6f50d0921b",
+   "nl_power_generating.xlsx": "c26c5080dc258d2d267cd6b00d51f29b50c2a36fcd4e4417a0c881e9f6da8cd8",
    "pl__2026-10-26-Wykaz-urzadzen_1.3.pdf": "ec33a421090005c3f565db974ba68e2d899392142015c8e94aadab8d529e2d28",
    "se__rikta-ratt-26-10-23.csv": "ae11472d234a5ed6515cd37872c6b94964e2bfd24cd91a64afc782b72940d1a6"
   },
@@ -171,7 +173,7 @@
   "status": "changed"
  },
  "sma-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 29,
   "kind": "sitemap",
@@ -180,7 +182,7 @@
   "status": "unchanged items"
  },
  "sofar-pv-inverters": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "",
   "items": 6,
@@ -191,7 +193,7 @@
   "status": "unchanged (same content)"
  },
  "sofar-storage-inverters": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "",
   "items": 6,
@@ -202,18 +204,18 @@
   "status": "unchanged (same content)"
  },
  "solarserver": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "etag": "",
   "items": 0,
   "kind": "feed",
   "last_modified": "",
   "new": 0,
-  "sha256": "c8d5f5b4762d6457173d8a5ef8209cb0139d23f22fdc4d367a3b22dafda007ef",
-  "status": "unchanged (same content)"
+  "sha256": "ba1e623e4d39877aba1ce01510c43b9649db51df9b1487122221c2b0f60e72ff",
+  "status": "unchanged items"
  },
  "solax-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 105,
   "kind": "sitemap",
@@ -222,16 +224,16 @@
   "status": "unchanged items"
  },
  "solis-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 14,
   "kind": "sitemap",
   "new": 0,
-  "sha256": "aac083fbd38aef6310481e4edddfbc89018dab45eb3277fa9b3cae05eae79b0f",
+  "sha256": "df2fb347a86956b6c1df6e12e8d380a4f030c12d26e3418ea94157cf964ee2ae",
   "status": "unchanged items"
  },
  "victron-products": {
-  "checked": "2026-11-01",
+  "checked": "2026-11-02",
   "error": "",
   "items": 38,
   "kind": "sitemap",
