@@ -214,6 +214,12 @@ sources:
   title: datasheet-sun-3-6k-sg06lp1-eu-bm2-en.pdf
   sha256: e9d108066ba4f18710a1979f110ef1fc67ae0a174bea71a814bbc6d4fdb1320e
   seen: '2026-11-01'
+- id: b_datasheet_sun-bk80-250-5.12kwh-eu-am2-18-32l_20260910en
+  url: https://deye.com/wp-content/uploads/2026/11/%E3%80%90b%E3%80%91datasheet_sun-bk80-250-5.12kwh-eu-am2-18-32l_20260910en.pdf
+  file: b_datasheet_sun-bk80-250-5.12kwh-eu-am2-18-32l_20260910en.pdf
+  title: b_datasheet_sun-bk80-250-5.12kwh-eu-am2-18-32l_20260910en.pdf
+  sha256: 4db3e681c0740a690aea2c4626e42b563e6490266efd25865660823b35405a29
+  seen: '2026-11-09'
 models:
 - code: SUN-1K-G04
   mppt: 1
@@ -2600,3 +2606,27 @@ models:
     ac_a: 18/17.3 20/19.2 21/20 25.0/24.0 30/28.7
     pv_w: 5760 6400 7360 8000 9600
     phases: 220/230V 0.85Un-1.1Un
+- code: SUN-BK80-5.12KWH-EU-AM2-18L
+  mppt: 2
+  ac_kw: 0.8
+  ac_kva: null
+  ac_a: 4.0
+  phases: null
+  pv_kw: null
+  source: b_datasheet_sun-bk80-250-5.12kwh-eu-am2-18-32l_20260910en
+  raw:
+    mppt: 2/2+2
+    ac_w: 800W
+    ac_a: 4A 3.9A
+- code: SUN-BK100-5.12KWH-EU-AM2-18L
+  mppt: 2
+  ac_kw: 1.0
+  ac_kva: null
+  ac_a: 5.0
+  phases: null
+  pv_kw: null
+  source: b_datasheet_sun-bk80-250-5.12kwh-eu-am2-18-32l_20260910en
+  raw:
+    mppt: 2/2+2
+    ac_w: 1000W
+    ac_a: 5A 4.8A

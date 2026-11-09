@@ -3,6 +3,7 @@ aurora_abb_powerone
 blue_current
 bluetti_modbus
 danfoss_air
+e3dc
 enphase_envoy
 envertech_evt800
 exicom_spin_ble

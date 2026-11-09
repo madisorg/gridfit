@@ -27526,6 +27526,18 @@
   ]
  },
  {
+  "brand": "Sigenergy",
+  "family": "SigenStor EC",
+  "class": "hybrid",
+  "curated": false,
+  "faq": {
+   "q": "Does Sigenergy SigenStor EC work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally and lets evcc control it."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
   "brand": "Silla",
   "family": "Prism EVSE",
   "class": "wallbox",
