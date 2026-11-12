@@ -180,3 +180,258 @@ documents:
     match: ^(SUNNYTRIPOWER)?(STP)?(3\.0|4\.0|5\.0|6\.0|8\.0|10\.0)-3AV-40$
     countries: [DE]
     note: Unit certificate only (report 18TH0325-VDE-0124-100_0, programme NSOP-0032-DEU-ZE-V01); no NA-protection table in this file.
+- id: es-nts-sb-1vl-40-2022
+  title: Certificado de Conformidad 2621/0434-B-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — Sunny Boy 1.5/2.0/2.5 (SBx.x-1VL-40)
+  url: https://files.sma.de/downloads/ZE_SB-1VL-40_TED749-NTS_es_10.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2621/0434-B-CER
+  issued: '2022-02-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 3.10.7.R
+  families:
+  - name: Sunny Boy 1.5 / 2.0 / 2.5 (SB1.5-1VL-40, SB2.0-1VL-40, SB2.5-1VL-40; 1.5–2.5 kW, single-phase)
+    match: ^(SUNNYBOY)?(SB)?(1\.5|2\.0|2\.5)-1VL-40$
+    countries:
+    - ES
+- id: es-une217002-sb-1vl-40-2021
+  title: Certificado de conformidad U21-0511 — UNE 217002:2020, UNE 206007-1:2013, UNE 206006:2011, RD 1699/2011, RD 413/2014 — SB 1.5/2.0/2.5-1VL-40
+  url: https://files.sma.de/downloads/ZE_SBxxVL-40_UNBED_UNE217002_206007-1_206006_RD1699_U21-0511-es-10.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0511
+  issued: '2021-06-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - UNE 206007-1:2013
+  - UNE 206006:2011
+  - IEC 62109-2:2012 (4.8.2.1, 4.8.3.5.2, 4.8.3.5.3)
+  - DIN V VDE V 0126-1-1:2006 (4.1)
+  - RD 1663/2000
+  - RD 661/2007
+  - RD 1699/2011
+  - RD 413/2014
+  families:
+  - name: Sunny Boy 1.5 / 2.0 / 2.5 (SB 1.5-1VL-40, SB 2.0-1VL-40, SB 2.5-1VL-40; single-phase)
+    match: ^(SUNNYBOY)?(SB)?(1\.5|2\.0|2\.5)-1VL-40$
+    countries:
+    - ES
+    note: Report 14TH0397-UNE206007-1_2.
+- id: es-nts-sb-1av-41-2022
+  title: Certificado de Conformidad 2621/0434-C-CER/E1 — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — Sunny Boy 3.0/3.6/4.0/5.0/6.0
+    (SBx.x-1AV-41)
+  url: https://files.sma.de/downloads/ZE_SB-1AV-41_TED749-NTS_es_11.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2621/0434-C-CER/E1
+  issued: '2022-11-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 3.10.39.R
+  families:
+  - name: Sunny Boy 3.0 / 3.6 / 4.0 / 5.0 / 6.0 (SBx.x-1AV-41; 3–6 kW, single-phase)
+    match: ^(SUNNYBOY)?(SB)?(3\.0|3\.6|4\.0|5\.0|6\.0)-1AV-41$
+    countries:
+    - ES
+    note: 'First issued 2022-02-24; this E1 supersedes 2621/0434-C-CER. The register''s bare "SUNNYBOY4.0 / 5.0 / 6.0" (no type suffix)
+      are not taken: they could be -1AV-40 or -1AV-41.'
+- id: es-nts-stp-3av-40-2022
+  title: Certificado de Conformidad 2621/0434-D-E1-CER/E1 — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — Sunny Tripower 3.0–10.0
+    (STPx.x-3AV-40)
+  url: https://files.sma.de/downloads/ZE_STP-3AV-40_TED749-NTS_es_11.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2621/0434-D-E1-CER/E1
+  issued: '2022-11-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 3.10.16.R / 3.10.15.R
+  families:
+  - name: Sunny Tripower 3.0 / 4.0 / 5.0 / 6.0 / 8.0 / 10.0 (STPx.x-3AV-40; 3–10 kW, three-phase)
+    match: ^(SUNNYTRIPOWER)?(STP)?(3\.0|4\.0|5\.0|6\.0|8\.0|10\.0)-3AV-40$
+    countries:
+    - ES
+    note: First issued 2022-02-24; supersedes 2621/0434-D-E1-CER.
+- id: es-nts-stp-x-12-25-2025
+  title: Certificados de Conformidad 2622/0215-B-1-A-CER (NTS UE 2016/631 rev. 2.1, Tipo A y B) and 2623/0061-A-CER (NTS P.O. 12.2 SENP
+    rev. 1.1), with simulation-model certificates — Sunny Tripower X STP 12-50/15-50/20-50/25-50
+  url: https://files.sma.de/downloads/ZE_STPxx50_TED749-NTS_es_11.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0215-B-1-A-CER
+  issued: '2023-02-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  - P.O. 12.2 (SENP) (febrero 2018)
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de Electricidad según el P.O. 12.2 SENP, revisión 1.1
+    (2021-07-09)
+  firmware: 2.02.05.R or greater (NTS SEPE); 02.02.09.R or greater (SENP, 2623/0061-A-CER)
+  families:
+  - name: Sunny Tripower X 12 / 15 / 20 / 25 (STP 12-50, STP 15-50, STP 20-50, STP 25-50; three-phase)
+    match: ^(SUNNYTRIPOWER)?(STP)?(12|15|20|25)-50$|^SUNNYTRIPOWERX(12|15|20|25)$
+    countries:
+    - ES
+    note: '8-page bundle: 2622/0215-B-1-A-CER (product, 2023-02-16), 2622/0215-B-1-B-CER (dynamic simulation model, 2023-02-16), 2623/0061-A-CER
+      (SENP, 2025-01-08), 2623/0061-B-CER (SENP simulation model, 2025-01-08). The register''s "SUNNYTRIPOWERX12..X25" is the trade
+      name of STP 12-50..25-50. Supersedes ZE_STPxx50_TED749-NTS_es_10.pdf (product certificate only).'
+- id: es-une217002-stp-tl-30-2021
+  title: Certificado de conformidad U21-0510 — UNE 217002:2020, UNE 206007-1:2013, UNE 206006:2011, RD 1699/2011, RD 413/2014 — STP
+    15000/17000/20000/25000TL-30
+  url: https://files.sma.de/downloads/ZE_STPTL-30_UNE217002_es_10.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0510
+  issued: '2021-06-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - UNE 206007-1:2013
+  - UNE 206006:2011
+  - IEC 62109-2:2012 (4.8.2.1, 4.8.3.5.2, 4.8.3.5.3)
+  - DIN V VDE V 0126-1-1:2006 (4.1)
+  - RD 661/2007
+  - RD 1699/2011
+  - RD 413/2014
+  families:
+  - name: Sunny Tripower 15000TL / 17000TL / 20000TL / 25000TL (-30; 15–25 kW, three-phase)
+    match: ^(SUNNYTRIPOWER)?(STP)?(15000|17000|20000|25000)TL-30$
+    countries:
+    - ES
+    note: Report 14TH0304-UNE206007-1_1.
+- id: es-nts-stp-core1-2023
+  title: Certificado de Conformidad 2620/0183-2-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A y B — Sunny Tripower CORE1 STP50-40
+    / STP50-41
+  url: https://files.sma.de/downloads/ZE_STP50-4x_TED749-NTS_es_11.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2620/0183-2-CER
+  issued: '2023-04-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 3.11.04.R or greater (STP50-40); 3.16.01.R or greater (STP50-41)
+  families:
+  - name: Sunny Tripower CORE1 STP50-40 / STP50-41 (50 kW, three-phase)
+    match: ^(SUNNYTRIPOWER|CORE1/)?STP50-4[01]$
+    countries:
+    - ES
+- id: es-une217002-stp-core1-2021
+  title: Certificado de conformidad U21-0487 — UNE 217002:2020, UNE 206007-1:2013, UNE 206006:2011, RD 1699/2011, RD 413/2014 — STP
+    50-40 / STP 50-41
+  url: https://files.sma.de/downloads/ZE_STP50-4x_UNE217002_es_10.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0487
+  issued: '2021-06-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - UNE 206007-1:2013
+  - UNE 206006:2011
+  - IEC 62109-2:2012 (4.8.2.1, 4.8.3.5.2, 4.8.3.5.3)
+  - DIN V VDE V 0126-1-1:2006 (4.1)
+  - RD 661/2007
+  - RD 1699/2011
+  - RD 413/2014
+  families:
+  - name: Sunny Tripower CORE1 STP 50-40 / STP 50-41 (50 kW, three-phase)
+    match: ^(SUNNYTRIPOWER|CORE1/)?STP50-4[01]$
+    countries:
+    - ES
+    note: Report 17TH0199-UNE206007-1_1.
+- id: es-une217002-stp-x-50-60-2025
+  title: Certificado de Conformidad 250362RECO03-A-CER/E1 — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I apdo. 2.3.6
+    y 5.3 — STP 50-80 / STP 60-80
+  url: https://files.sma.de/downloads/ZE_STPxx-80_UNE217002_es_10.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250362RECO03-A-CER/E1
+  issued: '2025-11-19'
+  valid_until: '2030-10-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 01.00.00.R
+  families:
+  - name: Sunny Tripower X 50 / X 60 (STP 50-80, STP 60-80; 50–60 kW, three-phase)
+    match: ^(SUNNYTRIPOWER)?(STP)?(50|60)-80$|^SUNNYTRIPOWERX(50|60)$
+    countries:
+    - ES
+    note: First issued 2025-10-30; E1 replaces 250362RECO03-A-CER. The register's "SUNNYTRIPOWERX50/X60" is the trade name of STP 50-80/60-80
+      (sma.de Sunny Tripower X 60 page).
+- id: es-nts-stp-125-70-2024
+  title: Certificado de Conformidad 240017RECO01-A-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A, B, C y D — STP 125-70
+  url: https://files.sma.de/downloads/ZE_STP125-70_TED749-NTS_es_10.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 240017RECO01-A-CER
+  issued: '2024-03-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 4.0.0.R
+  families:
+  - name: Sunny Tripower 125-70 (STP 125-70; 125 kW, three-phase)
+    match: ^(SUNNYTRIPOWER)?(STP)?125-70$
+    countries:
+    - ES
+- id: es-une217002-stp-125-70-2024
+  title: Certificado de Conformidad 240017RECO03-A-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+    — STP 125-70
+  url: https://files.sma.de/downloads/ZE_STP125-70_UNE217002_es_10.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 240017RECO03-A-CER
+  issued: '2024-03-22'
+  valid_until: '2029-03-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 4.0.0.R
+  families:
+  - name: Sunny Tripower 125-70 (STP 125-70; 125 kW, three-phase)
+    match: ^(SUNNYTRIPOWER)?(STP)?125-70$
+    countries:
+    - ES
+- id: es-nts-sunny-island-13-2022
+  title: Certificado de Conformidad 2621/0434-A-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — Sunny Island 4.4M / 6.0H / 8.0H
+    (-13)
+  url: https://files.sma.de/downloads/ZE_SIxx-13_TED749-NTS_es_11.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2621/0434-A-CER
+  issued: '2022-05-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 03.30.11.R
+  families:
+  - name: Sunny Island 4.4M / 6.0H / 8.0H (SI 4.4M-13, SI 6.0H-13, SI 8.0H-13; single-phase bidirectional)
+    match: ^(SUNNYISLAND)?(SI)?(4\.4M|6\.0H|8\.0H)-13$
+    countries:
+    - ES
+    note: The register's bare "SUNNYISLAND6.0H / 8.0H" (no -13 suffix) are not taken.

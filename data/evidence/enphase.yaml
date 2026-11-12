@@ -1,0 +1,90 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand.
+brand: Enphase
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: es-nts-iq8mc-iq8ac-iq8hc-iq8x-2024
+  title: Certificado de Conformidad 230013RECO05-E4-CER — NTS 2.1 tipo A — IQ8MC / IQ8AC / IQ8HC / IQ8X microinverters
+  url: https://enphase.com/es-es/download/iq8mc-iq8ac-iq8hc-iq8x-microinverter-certificado-de-conformidad-nts-ue-631-2016
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 230013RECO05-E4-CER
+  issued: '2024-03-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: 521-00005-r06-v08.05.02
+  families:
+  - name: IQ8MC / IQ8AC / IQ8HC (-72-M-INT, -ACM-INT, -ACM-INT-NM, -ACM-INT-RMA) and IQ8X-80-M-INT (single-phase microinverters)
+    match: ^((IQ8(HC|AC|MC)-72-M-(INT|ACM-INT|ACM-INT-NM|ACM-INT-RMA)|IQ8X-80-M-INT)"?((MIT|WITH).*)?|IQ8(AC|HC|MC)"IQ8(AC|HC|MC)-72-M-INT"WITH.*)$
+    countries:
+    - ES
+    note: First issued 2023-04-04. Also takes the register's accessory-combination codes of the listed models (with Q-Relay, IQ Gateway,
+      IQ System Controller or IQ-BALC) and the quote-polluted spellings IQ8MC-72-M-INT" and IQ8AC"IQ8AC-72-M-INT"WITH…. Not listed,
+      so not taken - IQ8X-72-M-INT, IQ8A/IQ8H/IQ8M/IQ8PLUS-72-M-INT.
+- id: es-nts-iq7-2023
+  title: Certificado de Conformidad 230183RECO02-CER — NTS 2.1 tipo A — IQ7 / IQ7+ / IQ7X / IQ7A microinverters
+  url: https://enphase.com/es-es/download/iq7-iq7x-iq7-iq7a-microinverter-certificado-de-conformidad-nts-ue-631-2016
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 230183RECO02-CER
+  issued: '2023-07-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: 520-00082-r01-v04.30.23
+  families:
+  - name: IQ7A-72-2-INT / IQ7X-96-2-INT / IQ7PLUS-72-2-INT / IQ7-60-2-INT / IQ7PLUS-72-ACM-INT / IQ7-60-ACM-INT (single-phase microinverters)
+    match: ^(IQ7A-72-2-INT|IQ7X-96-2-INT|IQ7PLUS-72-2-INT|IQ7-60-2-INT|IQ7PLUS-72-ACM-INT|IQ7-60-ACM-INT)((MIT|WITH).*)?$
+    countries:
+    - ES
+    note: Also takes the register's "…MITQ-RELAY…" accessory-combination codes of the listed models. The register has no plain IQ7X-96-2-INT,
+      IQ7PLUS-72-ACM-INT or IQ7-60-ACM-INT; its generic codes (IQ7-60-X-Y-INT, IQ7A-72-M-INT, …) are not taken.
+- id: es-nts-iq9n-2025
+  title: Certificado de Conformidad 250399REIN02-CER — NTS 2.1 tipo A — IQ9N-A-INT microinverter
+  url: https://enphase.com/es-es/download/iq9n-microinverter-certificado-de-conformidad-nts-ue-631-2016
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 250399REIN02-CER
+  issued: '2025-10-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: 521-000013-r01-v10.21.01
+  families:
+  - name: IQ9N-A-INT (427 VA single-phase microinverter)
+    match: ^IQ9N-A-INT((MIT|WITH|WR).*)?$
+    countries:
+    - ES
+    note: Also takes the register's accessory-combination codes of IQ9N-A-INT. Not listed, so not taken - IQ9N-A-ACM-INT(-NM).
+- id: es-une217002-iq-battery-5p-flexphase-2025
+  title: Certificado de Conformidad 250104RECO01-A-CER — UNE 217002:2020 + IEC 62116 + Orden TED/749/2020 — IQ Battery 5P with FlexPhase
+    (IQBATTERY-5P-3P-INT)
+  url: https://enphase.com/es-es/download/iq-battery-5p-flexphase-certificado-de-conformidad-une-2170022020
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 250104RECO01-A-CER
+  issued: '2025-03-20'
+  valid_until: '2030-03-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020, Anexo I, apartado 2.3.6 y 5.3
+  firmware: 'PCU: 10.05.20 or later'
+  families:
+  - name: IQ Battery 5P with FlexPhase, IQBATTERY-5P-3P-INT at 3.84 kVA three-phase
+    match: ^IQBATTERY-5P-3P-INT(-3\.84-3P)?((MIT|WITH|AND).*)?$
+    countries:
+    - ES
+    note: The certificate lists one rating, 3.84 kVA 230/400 Vac three-phase; the register's other power/phase settings (-1.65-1P …
+      -3.84-1P, -1.84-3P … -3.68-3P) are not taken. Companion RD 647/413/1699 certificate 250104RECO01-B-CER (same model, same dates)
+      at https://enphase.com/es-es/download/iq-battery-5p-flexphase-certificado-de-conformidad-rd-647-rd-413-rd-1699

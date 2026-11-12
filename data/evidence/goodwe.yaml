@@ -270,3 +270,286 @@ documents:
     match: ^GW((25|30)K-SDT-30|40K-SDT-P30)$
     countries: [PL]
     note: WiPWC 1.2 era (PTPiREE 2021-04); file 6199637.50. Capability table (p. 2).
+- id: es-une217002-esa-5-30kw-2026
+  title: Certificado de Conformidad Nº 250008RECO29-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — ESA ETA-G20 / BTA-G20
+    5–30 kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ESA-5-30kW_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250008RECO29-A–CER
+  issued: '2026-01-16'
+  valid_until: '2031-01-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: '010101'
+  families:
+  - name: ESA hybrid ETA-G20 / BTA-G20 three-phase 5–30 kW
+    match: ^GW(5|6|8|9\.999|10|12|15|20|25|29\.999|29\.99|30)K-(ETA|BTA)-G20$
+    countries:
+    - ES
+    note: '"GW29.99K-ETA-G20" is taken as the register''s spelling of the listed GW29.999K-ETA-G20.'
+- id: es-nts-esa-5-30kw-2026
+  title: Certificado de Conformidad Nº 250008RECO26-1–CER — NTS revisión 2.1 (+ corrección 1.0), Tipo A — ESA ETA-G20 / BTA-G20 5–30
+    kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ESA-5-30kW_Certificate-NTS-SEPE.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250008RECO26-1–CER
+  issued: '2026-01-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de Electricidad según el Reglamento UE 2016/631, revisión
+    2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, revisión 1.0 del 8 de octubre de 2021
+  firmware: '010101'
+  families:
+  - name: ESA hybrid ETA-G20 / BTA-G20 three-phase 5–30 kW
+    match: ^GW(5|6|8|9\.999|10|12|15|20|25|29\.999|29\.99|30)K-(ETA|BTA)-G20$
+    countries:
+    - ES
+    note: Type A. A twin NTS SENP certificate (250008RECO26-2, non-peninsular systems) is at GW_ESA-5-30kW_Certificate-NTS-SENP.pdf.
+- id: es-nts-et-bt-g2-2024
+  title: Certificado de Conformidad Nº 230027RECO19-CER — NTS revisión 2.1 (+ corrección 1.0), Tipo A — ET-20 / BT-20 6–15 kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ET-G2_Certificate-NTS.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230027RECO19-CER
+  issued: '2024-03-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, revisión 1.0 del 8 de octubre de 2021
+  firmware: '000006'
+  families:
+  - name: ET G2 / BT G2 three-phase hybrid 6–15 kW (ET-20, BT-20)
+    match: ^GW(6000|8000|10K|12K|15K)-(ET|BT)-20$|^GW(6000|8000)K-ET-20$
+    countries:
+    - ES
+    note: '"GW6000K-ET-20" / "GW8000K-ET-20" are taken as register spellings of GW6000-ET-20 / GW8000-ET-20; GW9900-ET-20 / -BT-20 are
+      not listed. The certificate also lists the GEH…-3U-20 rebrands (second trademark).'
+- id: es-une217002-et-bt-g2-2024
+  title: Certificado de Conformidad Nº 230027RECO21-A-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — ET-20 / BT-20 6–15
+    kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ET-G2_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230027RECO21-A-CER
+  issued: '2024-03-12'
+  valid_until: '2029-03-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: '000006'
+  families:
+  - name: ET G2 / BT G2 three-phase hybrid 6–15 kW (ET-20, BT-20)
+    match: ^GW(6000|8000|10K|12K|15K)-(ET|BT)-20$|^GW(6000|8000)K-ET-20$
+    countries:
+    - ES
+    note: The RD 647/413/1699 companion (230027RECO21-B-CER, protection functions only) is GW_ET-G2_Certificate-RD647_RD413_RD1699.pdf.
+- id: es-nts-et-40-50kw-2024
+  title: Certificado De Conformidad A3 50650918 0001 — NTS Version 2.1 (+ Correction 1.0), Tipo A/B — GW40K-ET-10, GW50K-ET-10
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ET40-50kW_Certificate-NTS.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50650918 0001
+  issued: '2024-10-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1 - Correction 1.0
+  firmware: 010109
+  families:
+  - name: ET 40–50 kW three-phase hybrid (ET-10)
+    match: ^GW(40|50)K-ET-10$
+    countries:
+    - ES
+- id: es-rd647-et-40-50kw-2024
+  title: Certificate of Conformity AK 50648007 0001 (Certificado De Conformidad) — RD 647:2020, UNE 217002:2020 — GW40K-ET-10, GW50K-ET-10
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ET40-50kW_Certificate-UNE217002.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50648007 0001
+  issued: '2024-10-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647:2020
+  - RD 1699:2011
+  - RD 661:2007
+  - RD 413:2014
+  - UNE 217002:2020
+  - RD 244:2019 (Anexo I)
+  firmware: 010109
+  families:
+  - name: ET 40–50 kW three-phase hybrid (ET-10)
+    match: ^GW(40|50)K-ET-10$
+    countries:
+    - ES
+- id: es-une217002-sdt-g3-8-20k-2024
+  title: Certificado de Conformidad Nº 230027RECO29-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — SDT G3 8–20 kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SDT-G3-8-20K_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230027RECO29-A–CER
+  issued: '2024-08-02'
+  valid_until: '2029-08-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.04.04
+  families:
+  - name: SDT G3 three-phase string 8–20 kW (SDT-30)
+    match: ^GW(8000|10K|12K|15K|17K|20K)-SDT-30$|^GW10K-SDT-EU30$
+    countries:
+    - ES
+    note: GW4000/5000/6000-SDT-30 are not listed.
+- id: es-nts-sdt-g3-25-40kw-2024
+  title: Certificado de Conformidad Nº 240135RECO10–CER — NTS revisión 2.1 (+ corrección 1.0), Tipo A — GW25K-SDT-30, GW30K-SDT-30,
+    GW40K-SDT-P30
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SDT-G3-25-40kW_Certificate-NTS.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 240135RECO10–CER
+  issued: '2024-10-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la conformidad de los Módulos de Generación de Electricidad según el Reglamento UE 2016/631, revisión
+    2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, revisión 1.0 del 8 de octubre de 2021
+  firmware: V1.00.00
+  families:
+  - name: SDT G3 three-phase string 25–40 kW
+    match: ^GW(25K-SDT-30|30K-SDT-30|40K-SDT-P30)$
+    countries:
+    - ES
+- id: es-une217002-sdt-g3-25-40kw-2024
+  title: Certificado de Conformidad Nº 240135RECO08-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — GW25K-SDT-30, GW30K-SDT-30,
+    GW40K-SDT-P30
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SDT-G3-25-40kW_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 240135RECO08-A–CER
+  issued: '2024-10-25'
+  valid_until: '2029-10-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.00.00
+  families:
+  - name: SDT G3 three-phase string 25–40 kW
+    match: ^GW(25K-SDT-30|30K-SDT-30|40K-SDT-P30)$
+    countries:
+    - ES
+    note: GW50K-SDT-C30 is not listed. RD 647 companion (240135RECO08-B, protection functions only) is GW_SDT-G3-25-40kW_Certificate-RD647_RD413_RD1699.pdf.
+- id: es-une217002-dns-g4-2025
+  title: Certificado de Conformidad Nº 250008RECO05-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — DNS G4 3–6 kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_DNS-G4_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250008RECO05-A–CER
+  issued: '2025-05-28'
+  valid_until: '2030-05-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.00.00
+  families:
+  - name: DNS G4 single-phase string 3–6 kW
+    match: ^GW(3|3\.6|4\.2|5|6)K-DNS-G40$
+    countries:
+    - ES
+    note: RD 647 companion (250008RECO05-B, protection functions only) is GW_DNS-G4_Certificate-RD647_RD413_RD1699.pdf.
+- id: es-une217002-dns-g3-2022
+  title: Certificado de Conformidad Nº 2622/0230-2-A-CER — UNE 217002:2020, IEC 62116, Orden TED/749/2020 — DNS G3 3–6 kW (DNS-30)
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_DNS%20G3_Cerficate-UNE%20217002.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0230-2-A-CER
+  issued: '2022-07-13'
+  valid_until: '2027-07-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.00.00
+  families:
+  - name: DNS G3 single-phase string 3–6 kW (DNS-30)
+    match: ^GW(3000|3600|4200|5000|6000)-DNS-30$
+    countries:
+    - ES
+    note: The register's GW5000-DNS-EU30 is a different suffix and is not taken.
+- id: es-une217002-xs-g3-2024
+  title: Certificado de Conformidad Nº 230027RECO18-A-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — XS G3 0.7–3 kW
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_XS-G3_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230027RECO18-A-CER
+  issued: '2024-02-15'
+  valid_until: '2029-02-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.05.00
+  families:
+  - name: XS G3 single-phase string 0.7–3 kW (XS-30)
+    match: ^GW(700|1000|1500|2000|2500|3000)-XS-30$
+    countries:
+    - ES
+    note: GW3300-XS-30 is not listed.
+- id: es-une217002-gt-2024
+  title: Certificado de Conformidad Nº 240135RECO04-A–CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — GW100K/110K/125K-GT
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_GT_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 240135RECO04-A–CER
+  issued: '2024-07-31'
+  valid_until: '2029-07-31'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.02.02
+  families:
+  - name: GT three-phase string 100–125 kW
+    match: ^GW(100|110|125)K-GT$
+    countries:
+    - ES
+    note: The GT-G30 / GT-L-G30 / GT-G10 codes are not listed. Also lists GEP100/110/125-20 (second trademark). RD 647 companion (240135RECO04-B,
+      protection functions only) is GW_GT_Certificate-RD647.pdf.
+- id: es-une217002-ht-1500v-2024
+  title: Certificado de Conformidad Nº 240135RECO01-A-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — GW225K/250K-HT (1500
+    V)
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_HT%201500V_Certificate-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 240135RECO01-A-CER
+  issued: '2024-04-26'
+  valid_until: '2029-04-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: V1.15.15
+  families:
+  - name: HT 1500 V three-phase string 225–250 kW
+    match: ^GW(225|250)KN?-HT$
+    countries:
+    - ES
+    note: RD 647 companion (240135RECO01-B, protection functions only) is GW_HT%201500V_Certificate-RD647_RD413_RD1699.pdf. The 1100
+      V HT (75–136 kW) is not covered.

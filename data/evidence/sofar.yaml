@@ -21,3 +21,243 @@ documents:
   - name: HYD 5–20KTL-3PH
     match: ^(SOFAR)?HYD-?(5|6|8|10|15|20)KTL-3PH
     countries: [AT, BE, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, IE, IT, LT, LV, NL, 'NO', PL, RO, SE, SI, SK, TR, UA]
+- id: es-nts-ktlx-g3-3-12-2022
+  title: SGS Tecnos 2621/0147-1-CER — NTS 2.1 + Corrección 1.0, Type A — SOFAR 3.3…12KTLX-G3 (+ -A)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126821856084687.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2621/0147-1-CER
+  issued: '2022-03-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: SOFAR KTLX-G3 three-phase string 3.3–12 kW
+    match: ^(SOFAR)?((3\.3|4\.4|5\.5|6\.6|8\.8|11|12)KTLX-G3|(5|8\.8|10|11)KTLX-G3-A)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - ES
+    note: Type A. The register writes the same models with and without the "SOFAR" prefix and some with the product description glued
+      on ("-GRIDCONNECTEDPHOTOVOLTAICINVERTER"); the regex takes those spellings. Garbled codes ("SOFAR3.3LKTLX-G3.-…", "SOFAR5KTLX-G3-A-3-…")
+      are not taken.
+- id: es-nts-ktlx-g3-15-24-2022
+  title: SGS Tecnos 2622/0142-1-CER — NTS 2.1 + Corrección 1.0, Type A — SOFAR 15…24KTLX-G3 (+ -A)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126929015055973.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0142-1-CER
+  issued: '2022-03-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V010000
+  families:
+  - name: SOFAR KTLX-G3 three-phase string 15–24 kW
+    match: ^(SOFAR)?((15|17|20|22|24)K(TLX|LTX)-G3|(15|20|24)KTLX-G3-A)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - ES
+    note: Type A. Lists 15, 15-A, 17, 20, 20-A, 22, 24, 24-A. The regex also takes the register's "KLTX" misspelling and prefix/description
+      variants of the same models. Not the newer KTLX-G3P series (different product).
+- id: es-nts-ktlx-g3-25-50-2022
+  title: SGS Tecnos 2621/0362-7-CER — NTS 2.1 + Corrección 1.0, Type A — SOFAR 25…50KTLX-G3 (+ -A, -HV)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127018437004446.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2621/0362-7-CER
+  issued: '2022-03-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: SOFAR KTLX-G3 three-phase string 25–50 kW
+    match: ^(SOFAR)?((25|30|33|36|40|45|50)KTLX-G3|30KTLX-G3-A|(40|50)KTLX-G3-HV)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - ES
+    note: Type A. The regex takes prefix and "-SOLARGRID-TIEDINVERTER" description variants of the listed models.
+- id: es-nts-ktlx-g3-60-80-2023
+  title: SGS Tecnos 2622/0135-E1-CER — NTS 2.1 + Corrección 1.0, Type A — SOFAR 60/60(2)/70/80KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127118659088889.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0135-E1-CER
+  issued: '2023-01-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: SOFAR KTLX-G3 three-phase string 60–80 kW
+    match: ^(SOFAR)?(60KTLX-G3|60KTLX2-G3|70KTLX-G3|80KTLX-G3)$
+    countries:
+    - ES
+    note: Type A. First issued 2022-05-30; this edition (E1) dated Madrid 2023-01-25 (the maker's listing calls it 2023-05-30). The
+      earlier 2022-05-30 edition is also on the site.
+- id: es-nts-ktlm-g3-3-6-2022
+  title: SGS Tecnos 2622/0074-CER — NTS 2.1 + Corrección 1.0, Type A — SOFAR 3…6KTLM-G3 (+ 5KTLM-G3-A)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126800572024116.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0074-CER
+  issued: '2022-02-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: SOFAR KTLM-G3 single-phase string 3–6 kW
+    match: ^(SOFAR)?((3|3\.6|4|4\.6|5|6)KTLM-G3|5KTLM-G3-A)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - ES
+    note: Type A. KTLM-G2 models in the register are not listed.
+- id: es-nts-tl-g3-1-3-2022
+  title: SGS Tecnos 2622/0061-CER — NTS 2.1 + Corrección 1.0, Type A — SOFAR 1100…3300TL-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127600513039414.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0061-CER
+  issued: '2022-02-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V3.6
+  families:
+  - name: SOFAR TL-G3 single-phase string 1.1–3.3 kW
+    match: ^SOFAR(1100|1600|2200|2700|3000|3300)TL-G3$
+    countries:
+    - ES
+    note: Type A. The register's "SOFARx.xKTL3-G3" codes are not listed on the certificate and are not taken.
+- id: es-nts-ktlx-g4-100-125-2023
+  title: SGS Tecnos 230039RECO09-A-CER — NTS 2.1 + Corrección 1.0, Type A/B/C/D — SOFAR 100…125KTLX-G4
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127194780043426.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230039RECO09-A-CER
+  issued: '2023-07-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: SOFAR KTLX-G4 three-phase string 100–125 kW
+    match: ^(SOFAR)?(100|110|125)KTLX-G4(-A)?$
+    countries:
+    - ES
+    note: Types A, B, C and D. Lists 100, 110, 125 and 125KTLX-G4-A; the register's -ESS variants are not taken. A separate SGS certificate
+      230039RECO09-B-CER of the same date validates the dynamic simulation model only.
+- id: es-nts-hyd-ep-2023
+  title: SGS Tecnos 2622/0137-1-E2-CER — NTS 2.1 + Corrección 1.0, Type A — HYD 3000…6000-EP
+  url: https://www.sofarsolar.com/upload/file/20240206/1707190257568015682.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0137-1-E2-CER
+  issued: '2023-12-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: HYD-EP single-phase hybrid 3–6 kW
+    match: ^HYD(3000|3680|4000|4600|5000|5500|6000)-EP$
+    countries:
+    - ES
+    note: Type A. The maker lists it as "2023-12-14 (C Version,16A,Type A)"; the certificate prints 15 Dec 2023. Earlier editions 2622/0137-1-E1-CER
+      (2023-07-19) and the 2022-03-25 one cover the same seven models.
+- id: es-nts-hyd-es-2022
+  title: SGS Tecnos 2622/0138-CER — NTS 2.1 + Corrección 1.0, Type A — HYD 3000…6000-ES
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129627184086988.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0138-CER
+  issued: '2022-03-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: HYD-ES single-phase hybrid 3–6 kW
+    match: ^(ENERGYSTORAGEINVERTER)?HYD(3000|3600|4000|4600|5000|6000)-ES$
+    countries:
+    - ES
+    note: Type A. The regex also takes the register's "ENERGYSTORAGEINVERTERHYD4000-ES" (description glued in front of the same model).
+- id: es-nts-hyd-3ph-2023
+  title: SGS Tecnos 2622/0100-E2-CER — NTS 2.1 + Corrección 1.0, Type A — HYD 5…20KTL-3PH
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129545360026771.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0100-E2-CER
+  issued: '2023-11-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V2.00
+  families:
+  - name: HYD-3PH three-phase hybrid 5–20 kW
+    match: ^(SOFAR)?HYD(5|6|8|10|15|20)KTL-3PH$|^(SOFAR)?HYD10KTL-3PH-A$
+    countries:
+    - ES
+    note: Type A. Lists 5, 6, 8, 10, 10-A, 15, 20. Earlier 2022-03-03 editions (with and without "C Version") are also on the site.
+- id: es-nts-me-3ph-2022
+  title: SGS Tecnos 2622/0101-CER — NTS 2.1 + Corrección 1.0, Type A — ME 5…20KTL-3PH
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129649656041697.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0101-CER
+  issued: '2022-03-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V000001
+  families:
+  - name: ME-3PH three-phase AC-coupled storage inverter 5–20 kW
+    match: ^ME(5|6|8|10|15|20)KTL-3PH$
+    countries:
+    - ES
+- id: es-nts-esi-s1-2022
+  title: Intertek CN-PV-220172 — NTS 631 version 2.1 — ESI 3…6K-S1
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129482259010983.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220172
+  issued: '2022-08-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS 631 version 2.1, 9 July 2021
+  firmware: V000001
+  families:
+  - name: ESI-S1 single-phase storage inverter module 3–6 kW
+    match: ^(SOFAR|SOFARPOWERALL)?ESI(3|3\.68|4|4\.6|5|6)K-S1$|^(SOFAR|SOFARPOWERALL)?ESI5K-S1-A$
+    countries:
+    - ES
+    note: Type A, test report 220511060GZU-006. The register writes these as "SOFARESI…" and "SOFARPOWERALLESI…" (the PowerAll system
+      name in front); both are the listed ESI models. Companion Intertek certificate (RD 647, UNE 206006, UNE 206007-1, UNE 217002,
+      2022-12-30) is on the site too.
+- id: es-nts-me3000sp-2022
+  title: SGS Tecnos 2622/0069-CER — NTS 2.1 + Corrección 1.0, Type A — ME 3000SP
+  url: https://www.sofarsolar.com/upload/file/20231223/1703317155508083005.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0069-CER
+  issued: '2022-02-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Revisión 2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V1.00
+  families:
+  - name: ME 3000SP single-phase AC-coupled storage inverter 3 kW
+    match: ^ME3000SP$
+    countries:
+    - ES
+    note: Type A.

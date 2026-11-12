@@ -64,3 +64,146 @@ documents:
     match: ^(ASW05KH\-T2|ASW05KH\-T3|ASW06KH\-T2|ASW06KH\-T3|ASW08KH\-T2|ASW08KH\-T3|ASW10KH\-T2|ASW10KH\-T3|ASW12KH\-T2|ASW12KH\-T3)(-O|-DG)?$
     countries: []
     accepted_in: [EE, NL, SE]
+- id: es-nts-asw-s-g2-1-2k5-2023
+  title: Certificado de Conformidad 230028RECO25-CER — NTS 2.1 tipo A — ASW1000–2500-S-G2
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-TypeA_ASW1000-2500-S-G2_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 230028RECO25-CER
+  issued: '2023-09-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-01055-02, Slave V610-01056-02, Safety V610-10010-02
+  families:
+  - name: ASW S-G2 1–2.5 kW (single-phase)
+    match: ^ASW(1000|1500|2000|2500)-S-G2$
+    countries:
+    - ES
+- id: es-nts-asw-s-g2-3-6k-2022
+  title: Certificado de Conformidad 2622/0462-3-CER — NTS 2.1 tipo A — ASW3000–6000-S-G2
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-Type-A_ASW3000-6000-S-G2_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 2622/0462-3-CER
+  issued: '2022-11-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-01055-02, Slave V610-01056-02, Safety V610-010010-02
+  families:
+  - name: ASW S-G2 3–6 kW (single-phase)
+    match: ^ASW(3000|3680|4000|5000|6000)-S-G2$
+    countries:
+    - ES
+    note: The certificate does not list the -BE variant ASW5000-S-G2-BE.
+- id: es-nts-asw-h-s2-2023
+  title: Certificado de Conformidad 2622/0263-E1-CER — NTS 2.1 tipo A — ASW3000–6000H-S2 hybrid
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-Type-A_ASW3000-6000H-S2_es_V02.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 2622/0263-E1-CER
+  issued: '2023-04-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Main DSP V610-02003-01, Slave DSP V610-60009-00, Safety package V610-10008-03
+  families:
+  - name: ASW H-S2 3–6 kW (single-phase hybrid)
+    match: ^ASW(3000|3680|4000|5000|6000)H-S2$
+    countries:
+    - ES
+    note: Supersedes 2622/0263-CER (first issued 2022-08-17).
+- id: es-nts-asw-lt-g2-pro-2023
+  title: Certificado de Conformidad 2622/0284-1-E1-CER — NTS 2.1 tipo A — ASW3–20K-LT-G2 Pro
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-Type-A_ASW3-20K-LT-G2-Pro_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 2622/0284-1-E1-CER
+  issued: '2023-02-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-03043-06, Slave V610-60015-00, Safety V610-11009-02
+  families:
+  - name: ASW LT-G2 Pro 3–20 kW (three-phase)
+    match: ^ASW(3|4|5|6|8|10|12|13|15|17|20)K-LT-G2PRO$
+    countries:
+    - ES
+    note: Not listed, so not taken - ASW10K-LT-G2PRO-BE and the 40–50 kW LT-G2 Pro.
+- id: es-nts-asw-kh-t2-t3-2024
+  title: Certificado de Conformidad 230028RECO30-CER — NTS 2.1 tipo A — ASW05–12kH-T2/T3(-O) hybrid
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-Type-A_ASW05-12kH-T2-T3-O_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 230028RECO30-CER
+  issued: '2024-02-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-05001-01, Slave V610-60015-00, Safety V610-11022-00
+  families:
+  - name: ASW kH-T2 / kH-T3 5–12 kW (three-phase hybrid, incl. -O)
+    match: ^ASW0?(5|6|8|10|12)KH-T[23](-O)?$
+    countries:
+    - ES
+    note: The register's ASW8KH-T3 / ASW8KH-T3-O are its spelling of the certificate's ASW08kH-T3 / ASW08kH-T3-O. Not listed, so not
+      taken - kH-T1, the -DG variants and ASW15KH-T3-DG.
+- id: es-nts-asw-lt-g3-25-40k-2023
+  title: Certificado de Conformidad 2622/0455-A-CER — NTS 2.1 tipo A y B — ASW25–40K-LT-G3
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-Type-B_ASW25-40K-LT-G3_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 2622/0455-A-CER
+  issued: '2023-05-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A y B
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-03041-07, Slave V610-60009-00, Safety V610-11007-04
+  families:
+  - name: ASW LT-G3 25–40 kW (three-phase)
+    match: ^ASW(25|27|30|33|36|40)K-LT-G3$
+    countries:
+    - ES
+    note: A type-A-only certificate 2622/0445-3-CER (2022-11-03) for the same models sits beside it on the site.
+- id: es-nts-asw-lt-g3-45-60k-2024
+  title: Certificado de Conformidad 230028RECO12-A-CER — NTS 2.1 tipo A y B — ASW45–60K-LT-G3
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-TYPE-A-B_ASW45-60K-LT-G3_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 230028RECO12-A-CER
+  issued: '2024-11-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A y B
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-03030-04.004, Slave V610-60015-00, Safety V610-11021-14
+  families:
+  - name: ASW LT-G3 45–60 kW (three-phase)
+    match: ^ASW(45|50|60)K-LT-G3$
+    countries:
+    - ES
+    note: An older type-A certificate 230028RECO11-CER (2024-02-19, firmware V610-03030-01) sits beside it on the site.
+- id: es-nts-asw-lt-75-110k-2023
+  title: Certificado de Conformidad 2623/0042-B-1-CER — NTS 2.1 tipo A y B — ASW75–110K-LT
+  url: https://solplanet.net/wp-content/uploads/2025/06/Cer_NTS-Type-B_ASW110K-LT_es_V01.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid)
+  cert_no: 2623/0042-B-1-CER
+  issued: '2023-03-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Módulos de Generación según Reglamento UE 2016/631, Revisión 2.1 (2021-07-09) — tipo A y B
+  - Corrección de errores de la versión 2.1 de la NTS, Revisión 1.0 (2021-10-08)
+  firmware: Master V610-04001-02, Slave V610-12001-00
+  families:
+  - name: ASW LT 75–110 kW (three-phase)
+    match: ^ASW(75|80|100|110)K-LT$
+    countries:
+    - ES

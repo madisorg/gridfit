@@ -191,3 +191,283 @@ documents:
     countries: [DE]
     note: Unit certificate (report 19TH0374-BI-G2-VDE0124-100:2020_0); E.5 values; lists the usable batteries (BYD Battery-Box, Nilar,
       BMZ Hyperion, AXIstorage, LG RESU FLEX). The first-generation BI 5.5/26 and 10/26 rows are not joined.
+- id: es-nts-plenticore-g3-2026
+  title: Certificado 24-109-01 — NTS-631 SEPE versión 2.1 (Reglamento UE 2016/631), Tipo A — PLENTICORE S G3 / M G3 / L G3, PLENTICORE
+    BI 25 G3
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2121_Z-SOP-9-1-15-GCC_NTS-631_UNE-2016-631_G3_es.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 24-109-01
+  issued: '2026-03-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - SOP-9-1_15 GCC Certification Program, 09/21
+  - NTS-631 versión 2.1 (Norma técnica de supervisión de la conformidad de los módulos de generación de electricidad según el Reglamento
+    UE 2016/631)
+  firmware: 3.03.20
+  families:
+  - name: PLENTICORE S G3 4.0/5.5/7.0, M G3 8.5/10.0/12.5, L G3 15.0/17.5/20.0 kW (three-phase hybrid, power extension levels)
+    match: ^PLENTICORE([SML]G3((4|5\.5|7|8\.5|10|12\.5|15|17\.5|20)(\.0)?(KW)?)?|G3[SML])$
+    countries:
+    - ES
+    note: Report 22PP512-11_1. The register's bare size codes ("10", "12.5", "15" ...) are not taken. A non-peninsular companion, 24-110-01
+      (NTS P.O. 12.2 SENP v1.1, same date), is at .../Zertifikate-Herstellererklaerungen/2122_Z-SOP-9-1-15-GCC_PO-12-2-SENP-v1-1_G3_es.pdf.
+  - name: PLENTICORE BI 25 G3 (25 kW battery inverter)
+    match: ^PLENTICOREBI25G3$
+    countries:
+    - ES
+- id: es-une217002-plenticore-g3-2026
+  title: Certificado 24-111-01 — UNE 217002 (octubre 2020), RD 1699/2011 y RD 647/2020 — PLENTICORE L G3 / M G3 / S G3, PLENTICORE BI
+    25 G3
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/2123_Z-SOP-9-1-15-GCC_UNE-217002_RD1699-2011_G3_es.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 24-111-01
+  issued: '2026-06-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - SOP-9-1_15 GCC Certification Program, 09/21
+  - UNE 217002:2020 (octubre 2020)
+  - RD 1699/2011
+  - RD 647/2020
+  families:
+  - name: PLENTICORE S G3 / M G3 / L G3 (4–20 kW, three-phase hybrid)
+    match: ^PLENTICORE([SML]G3((4|5\.5|7|8\.5|10|12\.5|15|17\.5|20)(\.0)?(KW)?)?|G3[SML])$
+    countries:
+    - ES
+    note: Report 22PP512-13_1. The certificate names the families without kW sizes.
+  - name: PLENTICORE BI 25 G3 (battery inverter)
+    match: ^PLENTICOREBI25G3$
+    countries:
+    - ES
+- id: es-nts-une217002-plenticore-mp-g3-2025
+  title: Certificado de conformidad U25-0538 — NTS:2021 rev. 2.1, UNE 217002:2020, RD 647/2020, Orden TED/749/2020 Anexo I apdo. 2.3.6
+    y 5.3 — PLENTICORE MP S G3 3.0/3.6/4.0, MP M G3 4.6/5.0/6.0/7.0
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2263_Z-NTS-2021_UNE-217002-2020_RD647-2020_PLENTICORE-MP-G3_S-M_esp.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U25-0538
+  issued: '2025-06-05'
+  valid_until: '2030-06-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS:2021 (Norma Técnica de Supervisión, Reglamento UE 2016/631, revisión 2.1 de 2021-07-09; corrección rev. 1.0 de 2021-10-08)
+  - UNE 217002:2020
+  - IEC 62109-2:2011 (4.8.2.1, 4.8.3.5.2, 4.8.3.5.3)
+  - RD 647/2020
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 3.05.00.19100
+  families:
+  - name: PLENTICORE MP S G3 3.0/3.6/4.0, MP M G3 4.6/5.0/6.0/7.0 (single-phase hybrid, Type A)
+    match: ^PLENTICOREMP(S|M)?G3$|^PLENTICOREMP(SG3(3\.0|3\.6|4\.0)|MG3(4\.6|5\.0|6\.0|7\.0))$
+    countries:
+    - ES
+    note: 'Report 25TH0195_UNE217002_0. The dates are printed with their labels swapped ("Fecha de expedición: 2030-06-04 / Fecha de
+      caducidad: 2025-06-05"); read as issued 2025-06-05, valid to 2030-06-04. RD 647 part covers ONLY protection functions; MP M 6.0
+      / 7.0 G3 need a permanent 5 kW limit on a single-phase connection (printed). The register''s bare "PLENTICOREMPSG3"/"PLENTICOREMPMG3"
+      are taken because every S and M size is listed.'
+- id: es-nts-plenticore-plus-bi-2022
+  title: Certificado de Conformidad 2622/0030-BA-E1-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — PLENTICORE plus 3.0–10.0,
+    PLENTICORE BI 5.5/26, BI 10/26
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1966_Z_NTS_UE_2016631_Tipo_A_PLENTICORE_es.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0030-BA-E1-CER
+  issued: '2022-09-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: '01.70'
+  families:
+  - name: PLENTICORE plus 3.0 / 4.2 / 5.5 / 7.0 / 8.5 / 10.0 (three-phase hybrid)
+    match: ^PLENTICOREPLUS(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries:
+    - ES
+    note: First issued 2022-04-07; replaces 2622/0030-BA-CER. Lists the plain PLENTICORE plus, not G2 — the register's G2 codes are
+      left to the Kiwa UNE 217002 document. Register "PLENTICOREPLUS10" = the certificate's "10.0".
+  - name: PLENTICORE BI 5.5/26 and BI 10/26 (battery inverter)
+    match: ^PLENTICOREBI(5\.5|10)/26$
+    countries:
+    - ES
+    note: The G2 battery inverters (BI ... G2) are a different model and are not taken.
+- id: es-une217002-plenticore-plus-g1-g2-piko-iq-2023
+  title: Certificado 18-181-03 — UNE 206007-1:2013 IN, UNE 217002:2020 (cap. 4.1, 4.2, 4.3) — PLENTICORE plus 3.0–10.0 and G2, PIKO
+    IQ 3.0–10
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2006_Z-UNE-206007-1-2013-IN_UNE-217002-2020_Hybrid_es.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 18-181-03
+  issued: '2023-03-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - SOP-9-1_15 GCC Certification Program, 09/21
+  - UNE 206007-1:2013 IN
+  - UNE 217002:2020 (capítulos 4.1, 4.2, 4.3)
+  families:
+  - name: PLENTICORE plus 3.0 / 4.2 / 5.5 / 7.0 / 8.5 / 10.0 and the same sizes G2 (three-phase hybrid)
+    match: ^PLENTICOREPLUS(3\.0|4\.2|5\.5|7\.0|8\.5|10)(G2)?$|^PLENTICOREPLUSG2(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries:
+    - ES
+    note: Report 17PP205-21_3. Register spellings "PLENTICOREPLUSG2 3.0" (G2 before the size) and "10" for "10.0" are the same models.
+      A sister certificate 18-182-03 (UNE 206006:2011 IN + UNE 217002:2020 cap. 4.3, same models and date) is 2005_Z-UNE-206006-2011-IN_UNE-217002-2020_Hybrid_es.pdf.
+  - name: PIKO IQ 3.0 / 4.2 / 5.5 / 7.0 / 8.5 / 10 (three-phase string)
+    match: ^PIKOIQ(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries:
+    - ES
+- id: es-nts-piko-iq-2022
+  title: Certificado de Conformidad 2622/0030-BB-E1-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — PIKO IQ 3.0–10
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1967_Z_NTS_UE_2016631_Tipo_A_PIKO-IQ_es.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0030-BB-E1-CER
+  issued: '2022-09-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: '01.70'
+  families:
+  - name: PIKO IQ 3.0 / 4.2 / 5.5 / 7.0 / 8.5 / 10 (three-phase string)
+    match: ^PIKOIQ(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries:
+    - ES
+    note: First issued 2022-04-07; replaces 2622/0030-BB-CER.
+- id: es-nts-piko-10-20-2022
+  title: Certificado de Conformidad 2622/0030-C-E1-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — PIKO 10 / 12 / 15 / 17 / 20
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1968_Z_NTS_UE_2016631_Tipo_A_PIKO-10-20_es.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0030-C-E1-CER
+  issued: '2022-09-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 'FW: D6.17, UI: 06.53, HW: 0100, PAR: 03.50'
+  families:
+  - name: PIKO 10 / 12 / 15 / 17 / 20 (three-phase string)
+    match: ^PIKO(10|12|15|17|20)$
+    countries:
+    - ES
+    note: First issued 2022-04-07; replaces 2622/0030-C-CER.
+- id: es-nts-piko-mp-plus-2022
+  title: Certificado de Conformidad 2622/0030-A-CER/E1 — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — PIKO MP plus 1.5-1 … 5.0-2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1965_Z_NTS_UE_2016631_Tipo_A_PIKO-MP-pkus_es.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0030-A-CER/E1
+  issued: '2022-09-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: HMI3.17.0 - PU4.6.50_PAR23.0.20 - ENS1.35.0
+  families:
+  - name: PIKO MP plus 1.5-1, 2.0-1, 2.5-1, 3.0-1, 3.0-2, 3.6-1, 3.6-2, 4.6-2, 5.0-2 (single-phase)
+    match: ^PIKOMPPLUS(1\.5-1|2\.0-1|2\.5-1|3\.0-1|3\.0-2|3\.6-1|3\.6-2|4\.6-2|5\.0-2)$
+    countries:
+    - ES
+    note: First issued 2022-04-07.
+- id: es-nts-piko-ci-30-60-2022
+  title: Certificado de Conformidad 2622/0030-D-1-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A y B — PIKO CI 30 / 50 / 60
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1973_Z_NTS-UE-2016-631-Tipo-AB_PIKO-CI-30-50-60.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0030-D-1-CER
+  issued: '2022-11-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: '600101'
+  families:
+  - name: PIKO CI 30 / 50 / 60 (three-phase string)
+    match: ^PIKOC[IL](30|50|60)$
+    countries:
+    - ES
+    note: The register also spells these "PIKO CL 30/50/60" (same models; taken). A dynamic simulation-model certificate is a separate
+      file (1974_Z-NTS-UE-2016-631-Modelo-de-Simulation-PIKO-CI-30-50-60.pdf).
+- id: es-nts-piko-ci-100-2023
+  title: Certificado de Conformidad 230329RECO01-A-M2-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A y B — PIKO CI 100
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2062_Z_NTS-UE-2016-631-Tipo-AB_PIKO-CI-100_es.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230329RECO01-A-M2-CER
+  issued: '2023-11-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: C10001
+  families:
+  - name: PIKO CI 100 (100 kW, three-phase)
+    match: ^PIKOC[IL]100$
+    countries:
+    - ES
+- id: es-une217002-piko-ci-100-2023
+  title: Certificado AK 50599577 0001 — UNE 217002:2020, UNE 206007-1 IN:2013, UNE 206006 IN:2011, RD 1699/2011, RD 661/2007, RD 413/2014
+    — PIKO CI 100
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2053_Z-PIKO-CI-100_UNE-217002_en-es.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50599577 0001
+  issued: '2023-10-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 1699/2011
+  - RD 661/2007
+  - RD 413/2014
+  - UNE 206006 IN:2011
+  - UNE 206007-1 IN:2013
+  - UNE 217002:2020
+  firmware: C10001
+  families:
+  - name: PIKO CI 100 (100 kW, three-phase)
+    match: ^PIKOC[IL]100$
+    countries:
+    - ES
+    note: Report CN22ADOD 004.
+- id: es-nts-piko-ci-g2-2024
+  title: Certificado de Conformidad A3 50642178 0001 — NTS Version 2.1 (+ Corrección 1.0), Tipo A/B — PIKO CI 30 G2, PIKO CI 50 G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2240_Z-PIKO_CI_30_50_G2_NTS-TypeA_TypeB.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50642178 0001
+  issued: '2024-09-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1 (Norma técnica de supervisión ... Reglamento UE 2016/631, revisión 2.1 de 2021-07-09)
+  - NTS Version 2.1-Correction 1.0 (2021-10-08)
+  firmware: '306011'
+  families:
+  - name: PIKO CI 30 G2 / PIKO CI 50 G2 (three-phase string)
+    match: ^PIKOC[IL](30|50)G2$
+    countries:
+    - ES
+    note: Report CN23AJK1 004.
+- id: es-une217002-piko-ci-g2-2024
+  title: Certificate AK 50644047 0001 — RD 647/2020, RD 244/2019, UNE 217002:2020 — PIKO CI 30 G2, PIKO CI 50 G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2244_Z-PIKO_CI_30_50_G2_UNE_217002.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50644047 0001
+  issued: '2024-10-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  - RD 244/2019
+  - UNE 217002:2020
+  firmware: '306011'
+  families:
+  - name: PIKO CI 30 G2 / PIKO CI 50 G2 (three-phase string)
+    match: ^PIKOC[IL](30|50)G2$
+    countries:
+    - ES
+    note: Report CN234STH 005.

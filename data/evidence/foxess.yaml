@@ -270,3 +270,236 @@ documents:
     match: ^S(600|700|800|1000|1500|2000|2500|3000|3300)-G2$
     countries: [DE]
     note: Unit certificate, 32 pp.; no symmetry device, so the installer limits unbalance to ≤ 4.6 kVA.
+- id: es-nts-t-g3-2022
+  title: Certificado de Conformidad 2622/0288-1-CER — NTS 2.1 (+ corrección 1.0), Tipo A — T3…T25-G3
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0288-1_CER-Type-A.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0288-1-CER
+  issued: '2022-08-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS (Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación según el Reglamento UE 2016/631) Revisión 2.1 del
+    9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: 'Master: V1.18, Slave: V1.00, ARM: VA.08'
+  families:
+  - name: T-G3 three-phase string 3–25 kW (incl. Dual)
+    match: ^(T(3|4|5|6|8|10|12|15|17|20|23|25)-G3|T(8|10|12)\(DUAL\)-G3)$
+    countries:
+    - ES
+    note: Type A. The register's plain T3…T25 codes (no -G3) are a different generation and are left out.
+- id: es-rd647-t-g3-2022
+  title: Certificado de Conformidad 2622/0288-B-CER — RD 647/2020 — T3…T25-G3
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0288-B-CER-RD647.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0288-B-CER
+  issued: '2022-06-24'
+  valid_until: '2027-06-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  firmware: 'Master: V1.18, Slave: V1.00, ARM: VA.08'
+  families:
+  - name: T-G3 three-phase string 3–25 kW (incl. Dual)
+    match: ^(T(3|4|5|6|8|10|12|15|17|20|23|25)-G3|T(8|10|12)\(DUAL\)-G3)$
+    countries:
+    - ES
+- id: es-une217002-t-g3-2022
+  title: Certificado de Conformidad 2622/0288-A-CER — UNE 217002:2020, IEC 62116, Orden TED/749/2020 — T3…T25-G3
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0288-A-CER%20-UNE217002.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0288-A-CER
+  issued: '2022-06-24'
+  valid_until: '2027-06-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 'Master: V1.18, Slave: V1.00, ARM: VA.08'
+  families:
+  - name: T-G3 three-phase string 3–25 kW (incl. Dual)
+    match: ^(T(3|4|5|6|8|10|12|15|17|20|23|25)-G3|T(8|10|12)\(DUAL\)-G3)$
+    countries:
+    - ES
+- id: es-nts-h1-ac1-g2-2023
+  title: Certificado de Conformidad 2622/0261-E1-CER/E2 — NTS 2.1 (+ corrección 1.0), Tipo A — H1/AC1-3.0…6.0-E(-G2), AIO-H1/AIO-AC1
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622-0261-E1-CER-E2.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0261-E1-CER/E2
+  issued: '2023-07-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS (Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación según el Reglamento UE 2016/631) Revisión 2.1 del
+    9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: 'Master: 1.44; Slave: 1.02; Comm: 1.40'
+  families:
+  - name: H1/AC1 (G2) single-phase hybrid / AC-coupled 3.0–6.0 kW
+    match: ^((H1|AC1)-(3\.0|3\.7|4\.6|5\.0|6\.0)-E-G2|(H1|AC1)-(4\.6|5\.0)-E1-G2|H1-(3\.0|3\.7|4\.6|5\.0|6\.0)-E/AIO-H1-(3\.0|3\.7|4\.6|5\.0|6\.0)|AC1-(3\.0|3\.7|4\.6|5\.0|6\.0)-E/AIO-AC1-(3\.0|3\.7|4\.6|5\.0|6\.0))$
+    countries:
+    - ES
+    note: 'First issued 2022-06-27; edition E2 dated Madrid 2023-07-11. Type A. The register''s combined codes "H1-x-E/AIO-H1-x" join
+      two names the certificate lists separately. Left out: the -WL variants (H1/AC1-x-E-G2-WL) and the codes with "E1" without G2 or
+      an "AIO-…E" suffix (e.g. H1-4.6-E1/AIO-H1-4.6E), which the certificate does not list.'
+- id: es-rd647-h1-ac1-g2-2023
+  title: Certificado de Conformidad 2622/0261-2-A-B-E1-CER/E2 — RD 647/2020, RD 413/2014, RD 1699/2011 — H1/AC1-3.0…6.0-E(-G2), AIO-H1/AIO-AC1
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622-0261-2-A-B-E1-CER-E2.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0261-2-A-B-E1-CER/E2
+  issued: '2023-07-11'
+  valid_until: '2027-06-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  - RD 413/2014
+  - RD 1699/2011
+  firmware: 'Master: 1.44; Slave: 1.02; Comm: 1.40'
+  families:
+  - name: H1/AC1 (G2) single-phase hybrid / AC-coupled 3.0–6.0 kW
+    match: ^((H1|AC1)-(3\.0|3\.7|4\.6|5\.0|6\.0)-E-G2|(H1|AC1)-(4\.6|5\.0)-E1-G2|H1-(3\.0|3\.7|4\.6|5\.0|6\.0)-E/AIO-H1-(3\.0|3\.7|4\.6|5\.0|6\.0)|AC1-(3\.0|3\.7|4\.6|5\.0|6\.0)-E/AIO-AC1-(3\.0|3\.7|4\.6|5\.0|6\.0))$
+    countries:
+    - ES
+    note: First issued 2022-06-15; edition E2 dated Madrid 2023-07-11. Same model list and exclusions as the NTS certificate 2622/0261-E1-CER/E2.
+- id: es-une217002-h1-ac1-g2-2023
+  title: Certificado de Conformidad 2622/0261-2-A-A-E1-CER/E2 — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 — H1/AC1-3.0…6.0-E(-G2),
+    AIO-H1/AIO-AC1
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622-0261-2-A-A-E1-CER-E2.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0261-2-A-A-E1-CER/E2
+  issued: '2023-07-11'
+  valid_until: '2027-06-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 'Master: 1.44; Slave: 1.02; Comm: 1.40'
+  families:
+  - name: H1/AC1 (G2) single-phase hybrid / AC-coupled 3.0–6.0 kW
+    match: ^((H1|AC1)-(3\.0|3\.7|4\.6|5\.0|6\.0)-E-G2|(H1|AC1)-(4\.6|5\.0)-E1-G2|H1-(3\.0|3\.7|4\.6|5\.0|6\.0)-E/AIO-H1-(3\.0|3\.7|4\.6|5\.0|6\.0)|AC1-(3\.0|3\.7|4\.6|5\.0|6\.0)-E/AIO-AC1-(3\.0|3\.7|4\.6|5\.0|6\.0))$
+    countries:
+    - ES
+    note: First issued 2022-06-15; edition E2 dated Madrid 2023-07-11. Same model list and exclusions as the NTS certificate.
+- id: es-nts-r75-110-2023
+  title: Certificado de Conformidad 230026RECO02-A-CER — NTS 2.1 (+ corrección 1.0), Tipo A y B — R75 / R100 / R110
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/230026RECO02-A-CER_NTS_SEPE.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 230026RECO02-A-CER
+  issued: '2023-06-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS (Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación según el Reglamento UE 2016/631) Revisión 2.1 del
+    9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: Manager_V1.06; Master_V1.04; Slave_V1.00; CPLD_V1.01; AFCI_V1.03
+  families:
+  - name: R three-phase string 75–110 kW
+    match: ^R(75|100|110)$
+    countries:
+    - ES
+    note: Types A and B. The companion 230026RECO02-B-CER (same models) validates the DIgSILENT simulation model under the NTS. R-G2
+      codes are a different generation and are left out.
+- id: es-rd647-h3-pro-p3-pro-2025
+  title: Certificado de Conformidad 250061RECO11-B–CER — RD 647/2020, RD 413/2014, RD 1699/2011 — H3-Pro/P3-Pro-15.0…30.0, AC3-Pro/P3-Pro-…-AC
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/250061RECO11-B-CER.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250061RECO11-B–CER
+  issued: '2025-04-25'
+  valid_until: '2030-04-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  - RD 413/2014
+  - RD 1699/2011
+  firmware: master V1.53, manager V1.11
+  families:
+  - name: H3-Pro / AC3-Pro / P3-Pro three-phase 15–30 kW
+    match: ^((H3|AC3|P3)-PRO-(15\.0|20\.0|25\.0|30\.0)|P3-PRO-(15\.0|20\.0|25\.0|30\.0)-AC)$
+    countries:
+    - ES
+    note: The certificate lists each model with its P3-Pro alias (H3-Pro-x / P3-Pro-x; AC3-Pro-x / P3-Pro-x-AC). The existing UNE 217002
+      document 250061RECO11-A lists the same aliases but its match omits P3-PRO; consider widening it. 10.0/12.0/22.0/24.9/29.9 kW are
+      not listed.
+- id: es-nts-h3-pro-p3-pro-2025
+  title: Certificado de Conformidad 250061RECO12–CER — NTS 2.1 (+ corrección 1.0), Tipo A — H3-Pro/P3-Pro-15.0…30.0, AC3-Pro/P3-Pro-…-AC
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/250061RECO12-CER.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250061RECO12–CER
+  issued: '2025-04-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS (Norma Técnica de Supervisión de la conformidad de los Módulos de Generación según el Reglamento UE 2016/631) Revisión 2.1 del
+    9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: master V1.53, manager V1.11
+  families:
+  - name: H3-Pro / AC3-Pro / P3-Pro three-phase 15–30 kW
+    match: ^((H3|AC3|P3)-PRO-(15\.0|20\.0|25\.0|30\.0)|P3-PRO-(15\.0|20\.0|25\.0|30\.0)-AC)$
+    countries:
+    - ES
+    note: Type A. Same model list as 250061RECO11-B.
+- id: es-nts-s-g2-2022
+  title: Certificado de Conformidad 2622/0287-1-CER — NTS 2.1 (+ corrección 1.0), Tipo A — S700…S3300-G2
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0287_1_CER_NTS_TypeA.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0287-1-CER
+  issued: '2022-07-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS (Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación según el Reglamento UE 2016/631) Revisión 2.1 del
+    9 de julio de 2021
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: 'Master: V1.22, Slave: V0.14, ARM: V0.29'
+  families:
+  - name: S-G2 single-phase string 0.7–3.3 kW
+    match: ^S(700|1000|1500|2000|2500|3000|3300)-G2$
+    countries:
+    - ES
+    note: Type A. Adds the NTS certificate to the family already covered by une217002-s-g2-2022.
+- id: es-rd647-s-g2-2022
+  title: Certificado de Conformidad 2622/0287-B-CER — RD 647/2020 — S700…S3300-G2
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0287-B-CER_UNE217002.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0287-B-CER
+  issued: '2022-06-24'
+  valid_until: '2027-06-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  firmware: 'Master: V1.22, Slave: V0.14, ARM: V0.29'
+  families:
+  - name: S-G2 single-phase string 0.7–3.3 kW
+    match: ^S(700|1000|1500|2000|2500|3000|3300)-G2$
+    countries:
+    - ES
+    note: The file name on the site says UNE217002 but the document is the RD 647/2020 certificate (-B).
+- id: es-rd647-h3-e-ac3-e-2022
+  title: Certificado de Conformidad 2622/0374-1-B-CER — RD 647/2020 — H3-5.0…12.0-E, AC3-5.0…12.0-E
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2622_0374-1-B-CER.pdf
+  issuer: SGS Tecnos, S.A.
+  cert_no: 2622/0374-1-B-CER
+  issued: '2022-10-10'
+  valid_until: '2027-10-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  firmware: 'Master: 1.31 / Slave: 1.02 / Comm: 1.42'
+  families:
+  - name: H3-E / AC3-E three-phase hybrid / AC-coupled 5–12 kW
+    match: ^(H3|AC3)-(5\.0|6\.0|8\.0|10\.0|12\.0)-E$
+    countries:
+    - ES
+    note: Companion of une217002-h3-e-ac3-e-2022 (2622/0374-1-A-CER), same models.

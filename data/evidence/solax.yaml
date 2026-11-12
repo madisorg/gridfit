@@ -334,3 +334,215 @@ documents:
       National settings table with numbers (pp. 1–4) for the 2021 edition of Příloha 4 (older than the 2025 table). Firmware not stated.
       The register writes X3-FTH-80K…125K without the -O suffix; those rows are not joined (the -O variant is not confirmed to be the
       same).
+- id: es-rd647-x3-hybrid-g4-2023
+  title: Certificate of Conformity AK 50573008 0001-0002 (Certificado de conformidad) — RD 647/2020, UNE 217002:2020 — X3-Hybrid-x-D/M,
+    X3-Fit-y-M/W
+  url: https://at.solaxpower.com/uploads/file/ak-50573008-0001-0002-cn210kox-003-extsigned-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50573008 0001-0002
+  issued: '2023-02-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 1699:2011
+  - RD 661:2007
+  - RD 413:2014
+  - RD 647:2020
+  - UNE 217002:2020
+  firmware: DSP 2.07, ARM 2.03
+  families:
+  - name: X3-Hybrid G4 three-phase hybrid 5–15 kW (-D / -M)
+    match: ^(SOLAX)?X3-HYBRID-(5\.0|6\.0|8\.0|10\.0|12\.0|15\.0)K?-(D|M|D/M)$
+    countries:
+    - ES
+    note: The certificate lists X3-Hybrid-x-D and -M only; the register's -D-C, -D-E, -N-C, -N-E, the T codes and the suffix-less X3HYBRIDG4xx
+      codes are left out. "10.0K-D" and "D/M" are the register's spellings of the same models.
+  - name: X3-Fit G4 three-phase AC-coupled 6–15 kW (-M / -W)
+    match: ^X3-FIT-(G4-)?(6\.0|8\.0|10\.0|15\.0)K?-(M|W|M/W)$
+    countries:
+    - ES
+    note: '"X3-FIT-G4-x-M/W" and "10.0K-W" are the register''s spellings of the listed models; the C, E and T codes are not listed.'
+- id: es-nts-x3-hybrid-g4-2023
+  title: Certificado de Conformidad A3 50573017 0001 — NTS Version 2.1 — X3-Hybrid-x-D/M, X3-Fit-y-M/W
+  url: https://au.solaxpower.com/uploads/file/a3-50573017-0001-cn210kox-004-extsigned-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50573017 0001
+  issued: '2023-02-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - UNE 217001:2020
+  firmware: DSP 2.07, ARM 2.03
+  families:
+  - name: X3-Hybrid G4 three-phase hybrid 5–15 kW (-D / -M)
+    match: ^(SOLAX)?X3-HYBRID-(5\.0|6\.0|8\.0|10\.0|12\.0|15\.0)K?-(D|M|D/M)$
+    countries:
+    - ES
+    note: Same model list as AK 50573008; -D-C, -D-E, -N-C, -N-E, T and the suffix-less X3HYBRIDG4xx codes are left out.
+  - name: X3-Fit G4 three-phase AC-coupled 6–15 kW (-M / -W)
+    match: ^X3-FIT-(G4-)?(6\.0|8\.0|10\.0|15\.0)K?-(M|W|M/W)$
+    countries:
+    - ES
+- id: es-rd647-x1-hybrid-g4-2023
+  title: Certificate of Conformity AK 50568635 0001-0002 (Certificado de conformidad) — RD 647/2020, UNE 217002:2020 — X1-Hybrid-x-D/M,
+    X1-Fit-x-M/W
+  url: https://au.solaxpower.com/uploads/file/ak-50568635-0001-0002-cn219fpt-004-extsigned-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50568635 0001-0002
+  issued: '2023-02-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 1699:2011
+  - RD 661:2007
+  - RD 413:2014
+  - RD 647:2020
+  - UNE 217002:2020
+  firmware: DSP 2.07, ARM 2.03
+  families:
+  - name: X1-Hybrid G4 / X1-Fit G4 single-phase 3.0–7.5 kW
+    match: ^(SOLAX)?X1-(HYBRID-(3\.0|3\.7|5\.0|6\.0|7\.5)K?-[DM]|FIT-(3\.0|3\.7|5\.0|6\.0|7\.5)K?-[MW])$
+    countries:
+    - ES
+    note: Newer companion of x1-hybrid-g4-nts-2022 (RD 647 + UNE 217002 instead of NTS). "5.0K-D" / "5.0K-W" are register spellings
+      of the listed models.
+- id: es-rd647-x3-mga-g2-2023
+  title: Certificado De Conformidad AK 50579850 0001~0002 — UNE 217002:2020, RD 244/2019 Anexo I, RD 647/2020 — X3-MGA-40/50/60K-G2
+  url: https://at.solaxpower.com/uploads/file/ak-50579850-0001-0002-cn2205xd-003-pl-extsigned-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50579850 0001~0002
+  issued: '2023-04-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 1699:2011
+  - RD 661:2007
+  - RD 413:2014
+  - UNE 217002:2020
+  - RD 647:2020
+  firmware: Master V003.00, Slaver V003.00, Manager V003.00
+  families:
+  - name: X3-MEGA G2 three-phase string 40–60 kW
+    match: ^X3-?(MGA|MEGA)-?(40|50|60)K-G2(\(KASUTAMISEKSTÖÖSTUSKESKKONNAS\))?$
+    countries:
+    - ES
+    note: '"X3 MEGA xxK-G2 (kasutamiseks tööstuskeskkonnas)" is the register''s spelling of X3-MGA-xxK-G2; the -LV 20–35 kW models and
+      the first-generation X3-MEGA are not listed.'
+- id: es-nts-x3-mga-g2-2023
+  title: Certificado De Conformidad A3 50579851 0001 — NTS Version 2.1 (+ Corrección 1.0) — X3-MGA-40/50/60K-G2
+  url: https://br.solaxpower.com/uploads/file/a3-50579851-0001-cn2205xd-004-pl-extsigned-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50579851 0001
+  issued: '2023-04-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1 - Correction 1.0
+  - UNE 217001:2020
+  firmware: Master V003.00, Slaver V003.00, Manager V003.00
+  families:
+  - name: X3-MEGA G2 three-phase string 40–60 kW
+    match: ^X3-?(MGA|MEGA)-?(40|50|60)K-G2(\(KASUTAMISEKSTÖÖSTUSKESKKONNAS\))?$
+    countries:
+    - ES
+- id: es-rd647-x3-forth-2022
+  title: Certificado de conformidad AK 50562377 0001-0002 — RD 647:2020, UNE 217002:2020 — X3-FTH 40–150 kW
+  url: https://at.solaxpower.com/uploads/file/solax-x3-forth-rd1699-spanish.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50562377 0001-0002
+  issued: '2022-10-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD647:2020
+  - RD661:2007
+  - RD413:2014
+  - UNE 217002:2020
+  firmware: XFORTH V005.00
+  families:
+  - name: X3-FORTH three-phase string 40–150 kW (LV / standard / MV)
+    match: ^X3-FTH-((40|50|60|70)K-LV|(80|100|110|120|125)K|(136|150)K-MV)$
+    countries:
+    - ES
+    note: The register's X3-FTH-75K, 75K-P-LV and the -P hybrids (120–150K-P) are not listed. The file is the Spanish annex only (no
+      TÜV cover page).
+- id: es-nts-x3-forth-2022
+  title: Certificado De Conformidad A3 50562506 0001 — NTS Version 2.1 (+ Corrección 1.0) — X3-FTH 40–150 kW
+  url: https://au.solaxpower.com/uploads/file/solax-x3-forth-nts-a3-spanish.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50562506 0001
+  issued: '2022-10-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1 - Correction 1.0
+  - UNE 217001:2020
+  firmware: XFORTH V005.00
+  families:
+  - name: X3-FORTH three-phase string 40–150 kW (LV / standard / MV)
+    match: ^X3-FTH-((40|50|60|70)K-LV|(80|100|110|120|125)K|(136|150)K-MV)$
+    countries:
+    - ES
+    note: X3-FTH-75K and the -P hybrids are not listed.
+- id: es-nts-x3-pro-g2-2022
+  title: Certificate of Conformity A3 50544047 0001 (Certificado de conformidad) — NTS Version 2.0 — X3-PRO-xK-G2 8–30 kW
+  url: https://at.solaxpower.com/uploads/file/solax-x3-pro-g2-nts-spanish.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50544047 0001
+  issued: '2022-05-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.0
+  - UNE 217001:2020
+  firmware: Master 1.00, Manager 1.00
+  families:
+  - name: X3-PRO G2 three-phase string 8–30 kW
+    match: ^X3-PRO-(8|10|12|15|17|20|25|30)KW?-G2$
+    countries:
+    - ES
+    note: NTS 2.0, not 2.1. "10KW-G2" is the register's spelling of X3-PRO-10K-G2; the -LV models are not listed.
+- id: es-une217002-x3-pro-g2-2022
+  title: Certificado de conformidad AK 50544040 0001-0002 — RD 1699:2011, RD 413:2014, UNE 217002:2020 — X3-PRO-xK-G2 8–30 kW
+  url: https://pk.solaxpower.com/uploads/file/solax-x3-pro-g2-rd1699-ak-50544040-0001-spain.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50544040 0001-0002
+  issued: '2022-05-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 1699:2011
+  - RD661:2007
+  - RD413:2014
+  - UNE 206006 IN:2011
+  - UNE 206007-1 IN:2013
+  - UNE 217002:2020
+  firmware: Master 1.00, Manager 1.00
+  families:
+  - name: X3-PRO G2 three-phase string 8–30 kW
+    match: ^X3-PRO-(8|10|12|15|17|20|25|30)KW?-G2$
+    countries:
+    - ES
+    note: No RD 647 on this one; the -LV models are not listed. The TÜV cover pages of the same certificate are at br.solaxpower.com/uploads/file/solax-x3-pro-g2-rd1699-spanish.pdf.
+- id: es-nts-x1-boost-g4-2022
+  title: Certificado de Conformidad Nº 2622/0499-CER — NTS revisión 2.1 (+ corrección 1.0), Tipo A — X1-BOOST G4
+  url: https://br.solaxpower.com/uploads/file/x1-boost-g4-nts-spanish.pdf
+  issuer: SGS Tecnos S.A.U.
+  cert_no: 2622/0499-CER
+  issued: '2022-11-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 del 9 de julio de 2021
+  - Corrección de errores de la versión 2.1, revisión 1.0 del 8 de octubre de 2021
+  firmware: Manager 1.00; Master 1.00
+  families:
+  - name: X1-BOOST G4 single-phase string 2.5–6 kW
+    match: ^(X1\-BOOST\-2\.5K\-G4|X1\-BOOST\-3K\-G4|X1\-BOOST\-3\.3K\-G4|X1\-BOOST\-3\.6K\-G4|X1\-BOOST\-4\.2K\-G4|X1\-BOOST\-5K\-G4|X1\-BOOST\-6K\-G4)(-BE)?$
+    countries:
+    - ES
+    note: The NTS companion of the RD 647 / UNE 217002 certificates already in the data (same SGS file family 2622/0499).
