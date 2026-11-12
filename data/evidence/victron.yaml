@@ -1,7 +1,7 @@
 # Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
 # are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
 # generated ones here: change the mapping in sources.yaml and rebuild.
-brand: Victron Energy
+brand: Victron
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
   the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with

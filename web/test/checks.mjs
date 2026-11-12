@@ -139,6 +139,21 @@ if (trio) {
 const one = Object.entries(C.models).find(([, m]) => m.cc.IT.rows && Object.values(m.cc.IT.rows).some((r) => r[0] === "X" && /1-phase/.test(r[1])));
 ok(one, "an 8 kW single-phase unit is outside the Italian phase rule by its datasheet");
 
+// every maker's-document file joins its brand: the engine and the page key data/evidence/<brand>.yaml on its `brand`,
+// lower-cased, against the register brand, so a display name there ("Victron Energy" for the register's "Victron")
+// silently joins nothing (found 2026-11-12: Victron's AT/BE/PL/DE documents reached no model)
+{
+  const { readdirSync } = await import("node:fs");
+  const R = JSON.parse(readFileSync(resolve(here, "../.data/registers.json"), "utf-8"));
+  const regBrands = new Set(R.devices.map((d) => d.brand.toLowerCase()));
+  const evDir = resolve(here, "../../data/evidence");
+  for (const f of readdirSync(evDir).filter((x) => x.endsWith(".yaml"))) {
+    const b = yaml.parse(readFileSync(resolve(evDir, f), "utf-8")).brand;
+    ok(regBrands.has(String(b).toLowerCase()), `data/evidence/${f}: brand "${b}" is a register brand`);
+  }
+  const vic = Object.entries(C.models).find(([k]) => /^Victron\|MultiPlus-II 48\/10000\/140-100/i.test(k));
+  ok(vic && Object.values(vic[1].cc).some((r) => r.doc), "Victron MultiPlus-II 48/10000/140-100 carries its maker's document in some country");
+}
 console.log(`${checks} checks, ${fails} failures · ${models} models × ${ccs.length} countries`);
 for (const cc of ccs) console.log(`${cc}: datasheet row ${C.stats[cc].sheet_any} · every item covered ${C.stats[cc].covered} · document ${C.stats[cc].doc} (older edition ${C.stats[cc].older}) · outside ${C.stats[cc].outside}`);
 process.exit(fails ? 1 : 0);
