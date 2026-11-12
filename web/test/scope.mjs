@@ -27,7 +27,7 @@ ok(idx.rows.every((r) => !r[10] || r[10].split(",").every((c) => IN.includes(c))
 const door = /new Set\(\[([^\]]*)\]\)/.exec(readFileSync(join(root, "functions/index.js"), "utf-8"));
 eq(door ? [...door[1].matchAll(/"([A-Z]{2})"/g)].map((m) => m[1]).sort() : null, IN, "front door country set");
 
-const redir = readFileSync(join(here, "../public/_redirects"), "utf-8").split("\n").filter((l) => /^\/grid\/[a-z]{2}\/? /.test(l));
+const redir = readFileSync(join(here, "../public/_redirects"), "utf-8").split(/\r?\n/).filter((l) => /^\/grid\/[a-z]{2}\/? /.test(l));
 const want = OUT.flatMap((c) => [`/grid/${c.toLowerCase()}/ /grid/ 301`, `/grid/${c.toLowerCase()} /grid/ 301`]);
 eq(redir.slice().sort(), want.slice().sort(), "_redirects block");
 

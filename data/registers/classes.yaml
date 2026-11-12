@@ -1,0 +1,77 @@
+# Register devices that are not inverters, batteries or wallboxes: class `other` (CHP, wind, generators), which the site
+# does not show (gridfit/registers.py PAGE_CLASSES). Two lists put such units into an inverter or battery class: Belgium's
+# C10/26 flags "Backup power system" (generator sets) and tools/registers/parse.py read that flag as storage until
+# 2026-11-12; the Netherlands' POWER_GENERATING file lists every generating unit in one sheet with no type column.
+#
+# `makers` is derived, not chosen: a register maker every one of whose Belgian rows (the power-generating-units and the
+# expired-homologations sheets) carries no Solar energy or Energy storage flag — only CHP, Wind or Backup power system —
+# and that has no inverter, battery or wallbox entry on the AT, CZ, EE, PL or SE lists. Read 2026-11-12 from the
+# C10/26 file dated 2026-10-30 (the same edition as the 2026-11-01 snapshot). The flags of each maker's rows follow it.
+# `also` and `models` are by hand, each with its reason. Read by gridfit/registers.py _class.
+source: "Synergrid C10/26 list of power-generating units, file dated 2026-10-30, columns Solar energy / Wind energy / CHP / Energy storage / Backup power system"
+source_url: https://www.synergrid.be/images/downloads/c10_26_list_of_pgu_compliant_with_c10_11_ed2_1_12_2019.xlsx
+read: "2026-11-12"
+makers:
+  - "2G Heek GmbH"   # BE rows: CHP 95
+  - "A-TRON Blockheizkraftwerke GmbH"   # BE rows: CHP 3
+  - "BERGEN ENGINES"   # BE rows: CHP 2
+  - "BestWatt"   # BE rows: wind 3
+  - "Biolectric"   # BE rows: CHP 12
+  - "Bobinindus Power Systems"   # BE rows: backup power 32
+  - "CAT"   # BE rows: CHP 225, backup power 2
+  - "Caterpillar"   # BE rows: backup power 123, CHP 11
+  - "Centrica / ENER-G"   # BE rows: CHP 4
+  - "Centrica / MAN"   # BE rows: CHP 3
+  - "Centrica / MTU"   # BE rows: CHP 9
+  - "Centrica / Perkins"   # BE rows: CHP 3
+  - "COGENGREEN"   # BE rows: CHP 18
+  - "Cummins"   # BE rows: backup power 11, CHP 8
+  - "De Pretto Industrie S.r.l."   # BE rows: CHP 2
+  - "Dordtech"   # BE rows: CHP 3
+  - "DORMAN"   # BE rows: backup power 1
+  - "EC Power"   # BE rows: CHP 5
+  - "Elektro Hagl KG"   # BE rows: CHP 9
+  - "ENERCON"   # BE rows: wind 41
+  - "EVW"   # BE rows: backup power 90, CHP 19
+  - "EWT Systems"   # BE rows: wind 9
+  - "FAIRWIND"   # BE rows: wind 2
+  - "Fröling"   # BE rows: CHP 1
+  - "Green power Systems SRL"   # BE rows: backup power 1
+  - "Howden"   # BE rows: no source flag 1
+  - "Hulst Wind Energy"   # BE rows: wind 1
+  - "Hunter & Van Twist"   # BE rows: backup power 4
+  - "Indop"   # BE rows: CHP 8
+  - "INNIO Jenbacher"   # BE rows: CHP 651
+  - "KOHLER"   # BE rows: backup power 1
+  - "KW ENERGIETECHNIK"   # BE rows: CHP 11
+  - "LEKHABO"   # BE rows: CHP 24
+  - "M+M"   # BE rows: CHP 1
+  - "MITSUBISHI"   # BE rows: backup power 1
+  - "MTU"   # BE rows: CHP 129
+  - "MWM"   # BE rows: CHP 225
+  - "Nordex"   # BE rows: wind 13
+  - "QVT-Power"   # BE rows: CHP 9
+  - "Rehlko"   # BE rows: backup power 1
+  - "Remeha"   # BE rows: CHP 15
+  - "RMB/Energie"   # BE rows: CHP 18
+  - "ROLLS ROYCE BERGEN ENGINES"   # BE rows: CHP 1
+  - "Rolls-Royce"   # BE rows: CHP 4
+  - "Ryse Energy"   # BE rows: wind 1
+  - "SDM-Projects"   # BE rows: backup power 41, CHP 1
+  - "Siemens Gamesa"   # BE rows: wind 1
+  - "SOKRATHERM"   # BE rows: CHP 28
+  - "Solar Turbines"   # BE rows: CHP 26
+  - "SOLIDpower"   # BE rows: CHP 1
+  - "Spanner Re² GmbH"   # BE rows: CHP 4
+  - "TEDOM"   # BE rows: CHP 34
+  - "TGM Kanis Turbinen GmbH"   # BE rows: no source flag 1
+  - "TGM Turbinas"   # BE rows: CHP 2
+  - "TranzCom-Omexom"   # BE rows: no source flag 1
+  - "Vestas"   # BE rows: wind 62
+also:
+  - maker: "2G Energy"
+    why: "2G Energy AG of Heek, the maker the Belgian list spells '2G Heek GmbH' (CHP 95 rows); its Dutch rows are agenitor gas engines"
+models:
+  - maker: Viessmann
+    match: "^VITOBLOC"
+    why: "Vitobloc is Viessmann's CHP range (Belgian rows flagged CHP); the maker's PV and storage units keep their class"

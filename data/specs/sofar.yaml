@@ -1,0 +1,1032 @@
+brand: Sofar
+maker_site: https://www.sofarsolar.eu/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%201100-3300TL-G3_Datasheet_2023-06-06_V4.0_en-EU.pdf
+  file: SOFAR_1100-3300TL-G3_Datasheet_2023-06-06_V4.0_en-EU.pdf
+  version: V4.0, 2023-06-06
+  note: 'no text layer: read from the rendered page'
+  seen: '2026-11-01'
+- id: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%203.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  file: SOFAR_3.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU.pdf
+  version: V2.0, 2026-01-23
+  note: 'column order on the sheet: ... 8.8K, 11K, 10K-A, 12K; MPPT row spans all'
+  seen: '2026-11-01'
+- id: sofar-15-24ktlx-g3-datasheet-2023-05-29-v1-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2015-24KTLX-G3_Datasheet_2023-05-29_V1.0_en-EU.pdf
+  file: SOFAR_15-24KTLX-G3_Datasheet_2023-05-29_V1.0_en-EU.pdf
+  version: V1.0, 2023-05-29
+  note: 'no text layer: read from the rendered page (stamp OV2023052901)'
+  seen: '2026-11-01'
+- id: sofar-15-25ktlx-g3p-datasheet-2026-08-27-v3-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2015-25KTLX-G3P_Datasheet_%202026-08-27_V3.0_en-EU.pdf
+  file: SOFAR_15-25KTLX-G3P_Datasheet__2026-08-27_V3.0_en-EU.pdf
+  version: V3.0, 2026-08-27
+  note: the 20 kW column is 20KTLX2-G3P (not 20KTLX-G3P)
+  seen: '2026-11-01'
+- id: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2025-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  file: SOFAR_25-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  version: V2.0, 2025-11-20
+  note: 25-36 kW 3 MPPT, 40-50 kW 4 MPPT (spanned cells read by position)
+  seen: '2026-11-01'
+- id: sofar-60-80ktlx-g3-datasheet-2026-03-10-v2-1-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2060-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU.pdf
+  file: SOFAR_60-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU.pdf
+  version: V2.1, 2026-03-10
+  note: the 60 kW column is 60KTLX2-G3 (not 60KTLX-G3)
+  seen: '2026-11-01'
+- id: sofar-100-125ktlx-g4-datasheet-2025-11-20-v2-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  file: SOFAR_100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU.pdf
+  version: V2.0, 2025-11-20
+  note: rated power as the sheet states it (110K column 100 kW, 125K 110 kW, 125K-A 125 kW); max apparent power is the @45°C
+    figure (the sheet also gives a lower @50°C one); current at 400 V
+  seen: '2026-11-01'
+- id: sofar-80-125ktlx-g4-ess-datasheet-2026-07-27-v2-6-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%2080-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU.pdf
+  file: SOFAR_80-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU.pdf
+  version: V2.6, 2026-07-27
+  note: hybrid; current at 400 V; one PL entry is written 'FAR 125KTLX-G4-ESS'
+  seen: '2026-11-01'
+- id: sofar-250-350ktlx0-datasheet-2024-08-02-v1-3-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU.pdf
+  file: SOFAR_250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU.pdf
+  version: V1.3, 2024-08-02
+  note: 250 kW 6 MPPT, 330/350 kW 8 MPPT (spanned); the 350 kW column states 352 kW / 352 kVA
+  seen: '2026-11-01'
+- id: sofar-250-255ktl-hv-datasheet-2023-05-11-v1-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU.pdf
+  file: SOFAR_250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU.pdf
+  version: V1.0, 2023-05-11
+  note: 'the sheet heads the columns 250KTLX-HV / 255KTLX-HV, its file name says 250-255KTL-HV (the lists: 255KTL-HV); it
+    states only ''AC output power'' in kVA (rated kW not stated): ac_kva is the @40°C figure (225 kVA @45°C, 202.5 kVA @50°C);
+    800 V 3/PE'
+  seen: '2026-11-01'
+- id: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%203000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU.pdf
+  file: HYD_3000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU.pdf
+  version: V5.1, 2023-09-19
+  note: AC Output (Grid) block; the MPPT row reads '1/1' (spanned, beside 'Max. Input Current 13/13 A') and states no count,
+    so mppt is null; PV row is headed 'Commended Max. PV Power'; the 5500-EP column states 5 kW rated / 5.5 kVA (stamp OV2023091905)
+  seen: '2026-11-01'
+- id: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%203000-6000-ES_Datasheet_2020-08_V1.0_en-EU.pdf
+  file: HYD_3000-6000-ES_Datasheet_2020-08_V1.0_en-EU.pdf
+  version: V1.0, 2020-08
+  note: '''Max. Output Power'' (VA) taken as ac_kva; ac_a is the single ''Max. Input / Output current'' figure; the 3600-ES
+    column states 3680 W; 4600-ES is marked ''available only for some designated countries''; NL writes ''Energy Storage inverter
+    HYD 4000-ES'''
+  seen: '2026-11-01'
+- id: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD%205-20KTL-3PH_Datasheet_with%20SH-20-digit%20SN_2025-11-27%20(Available%20from%202024)_V2.0_en-EU.pdf
+  file: HYD_5-20KTL-3PH_Datasheet_with_SH-20-digit_SN_2025-11-27_(Available_from_2024)_V2.0_en-EU.pdf
+  version: V2.0, 2025-11-27
+  note: 'units with SH serial numbers (from 2024); the older SP-serial sheet (V5.0, 2023-08-31) gives the same AC and PV figures
+    but writes the strings-per-MPPT figures (''1/1'', ''2/2'') in its MPPT row, so it is not used; grid ''Max. Apparent Power''
+    is printed in ''kW''; current at 400 V; footnote: with the Belgian code max apparent power is 10 kVA'
+  seen: '2026-11-01'
+- id: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU.pdf
+  file: HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU.pdf
+  version: V1.4, 2026-09-07
+  note: AC Grid block; current at 400 V; the sheet lists only the -PLUS 29.9K/30K units
+  seen: '2026-11-01'
+- id: hyd-40-60k-t1-datasheet-2025-11-26-v1-1-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU.pdf
+  file: HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU.pdf
+  version: V1.1, 2025-11-26
+  note: 'AC Grid block; current at 400 V; PV row: 100 kWp spans 49.9K-A and 50K (read by position); CZ writes HYD-49.9-T1-A
+    / HYD-50-T1 / HYD-60-T1'
+  seen: '2026-11-01'
+- id: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ME%205-20KTL-3PH_Datasheet_2023-06-06_V4.0_en-EU.pdf
+  file: ME_5-20KTL-3PH_Datasheet_2023-06-06_V4.0_en-EU.pdf
+  version: V4.0, 2023-06-06
+  note: 'AC-coupled storage inverter; no text layer: read from the rendered page; AC output (on-grid) block; the sheet has
+    no PV input block but lists ''PV reverse connection protection'', so mppt is null, not 0'
+  seen: '2026-11-01'
+- id: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI%203-6K-S1_Datasheet_2026-01-27_V2.4_en-EU.pdf
+  file: ESI_3-6K-S1_Datasheet_2026-01-27_V2.4_en-EU.pdf
+  version: V2.4, 2026-01-27
+  note: 'AC Grid block; current at 230 V; sheet stamp V2.4 20260126; the PowerAll 1PH system sheet names the same ESI x-S1
+    module (BE/NL write ''SOFAR PowerAll ESI 3K-S1''); footnote: with the Belgian/Australian code ESI 5K-S1 is 5 kVA / 21.7
+    A'
+  seen: '2026-11-01'
+- id: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf
+  file: ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU.pdf
+  version: V1.1, 2025-03-04
+  note: inverter-module sheet; AC Grid block; current at 400 V (the newer PowerAll 3PH system sheet V2.1 misprints the 5K
+    grid column as 6.5 kW / 7.15 kVA, so this sheet is used)
+  seen: '2026-11-01'
+- id: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic%202.0_Datasheet_2026-06-22%20(PCS)_V1.1_en-EU.pdf
+  file: SOFAR_PowerMagic_2.0_Datasheet_2026-06-22_(PCS)_V1.1_en-EU.pdf
+  version: V1.1, 2026-06-22
+  note: 'battery PCS (no PV block, not stated as having none: mppt null); ''Rated Continuous Output Active Power'', ''Maximum
+    Continuous Output Apparent Power'', ''Maximum Continuous Output Current''; 230/400 V 3L+N+PE'
+  seen: '2026-11-01'
+- id: sofar-powermagic-datasheet-2026-01-26-v2-1-en-eu
+  url: https://downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/SOFAR%20PowerMagic_Datasheet_2026-01-26_V2.1_en-EU.pdf
+  file: SOFAR_PowerMagic_Datasheet_2026-01-26_V2.1_en-EU.pdf
+  version: V2.1, 2026-01-26
+  note: 'only the EBI 99K-R / 125K-R PCS page of this system sheet (battery PCS, no PV block: mppt null); AC Side (Grid-on):
+    ''Rated AC Power'', ''Maximum AC Apparent Power'', ''Maximum AC Current''; 400 V 3W+PE'
+  seen: '2026-11-01'
+models:
+- code: SOFAR 1100TL-G3
+  mppt: 1
+  ac_kw: 1.1
+  ac_kva: 1.1
+  ac_a: 5.3
+  phases: 1
+  pv_kw: null
+  source: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+- code: SOFAR 1600TL-G3
+  mppt: 1
+  ac_kw: 1.6
+  ac_kva: 1.6
+  ac_a: 7.7
+  phases: 1
+  pv_kw: null
+  source: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+- code: SOFAR 2200TL-G3
+  mppt: 1
+  ac_kw: 2.2
+  ac_kva: 2.2
+  ac_a: 10.6
+  phases: 1
+  pv_kw: null
+  source: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+- code: SOFAR 2700TL-G3
+  mppt: 1
+  ac_kw: 2.7
+  ac_kva: 2.7
+  ac_a: 13.0
+  phases: 1
+  pv_kw: null
+  source: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+- code: SOFAR 3000TL-G3
+  mppt: 1
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 14.5
+  phases: 1
+  pv_kw: null
+  source: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+- code: SOFAR 3300TL-G3
+  mppt: 1
+  ac_kw: 3.3
+  ac_kva: 3.3
+  ac_a: 16.0
+  phases: 1
+  pv_kw: null
+  source: sofar-1100-3300tl-g3-datasheet-2023-06-06-v4-0-en-eu
+- code: SOFAR 3.3KTLX-G3
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 5.0
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?3\.3(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 4.4KTLX-G3
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.7
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?4\.4(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 5.5KTLX-G3
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.3
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?5\.5(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 6.6KTLX-G3
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?6\.6(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 8.8KTLX-G3
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.3
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?8\.8(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 11KTLX-G3
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.7
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?11(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 10KTLX-G3-A
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 15.2
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?10(KTLX|LKTLX|KLTX)\-G3\-A(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 12KTLX-G3
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 20.0
+  phases: 3
+  pv_kw: null
+  source: sofar-3-3-12ktlx-g3-datasheet-2026-01-23-v2-0-en-eu
+  match: ^(SOFAR)?12(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 15KTLX-G3
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 23.9
+  phases: 3
+  pv_kw: null
+  source: sofar-15-24ktlx-g3-datasheet-2023-05-29-v1-0-en-eu
+  match: ^(SOFAR)?15(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 17KTLX-G3
+  mppt: 2
+  ac_kw: 17.0
+  ac_kva: 18.7
+  ac_a: 27.1
+  phases: 3
+  pv_kw: null
+  source: sofar-15-24ktlx-g3-datasheet-2023-05-29-v1-0-en-eu
+  match: ^(SOFAR)?17(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 20KTLX-G3
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: null
+  source: sofar-15-24ktlx-g3-datasheet-2023-05-29-v1-0-en-eu
+  match: ^(SOFAR)?20(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 22KTLX-G3
+  mppt: 2
+  ac_kw: 22.0
+  ac_kva: 24.2
+  ac_a: 35.1
+  phases: 3
+  pv_kw: null
+  source: sofar-15-24ktlx-g3-datasheet-2023-05-29-v1-0-en-eu
+  match: ^(SOFAR)?22(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 24KTLX-G3
+  mppt: 2
+  ac_kw: 24.0
+  ac_kva: 26.4
+  ac_a: 38.3
+  phases: 3
+  pv_kw: null
+  source: sofar-15-24ktlx-g3-datasheet-2023-05-29-v1-0-en-eu
+  match: ^(SOFAR)?24(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 15KTLX-G3P
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 25.1
+  phases: 3
+  pv_kw: 22.5
+  source: sofar-15-25ktlx-g3p-datasheet-2026-08-27-v3-0-en-eu
+  match: ^(SOFAR)?15KTLX\-G3P$
+- code: SOFAR 17KTLX-G3P
+  mppt: 2
+  ac_kw: 17.0
+  ac_kva: 18.7
+  ac_a: 28.5
+  phases: 3
+  pv_kw: 25.5
+  source: sofar-15-25ktlx-g3p-datasheet-2026-08-27-v3-0-en-eu
+  match: ^(SOFAR)?17KTLX\-G3P$
+- code: SOFAR 20KTLX2-G3P
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 33.5
+  phases: 3
+  pv_kw: 30.0
+  source: sofar-15-25ktlx-g3p-datasheet-2026-08-27-v3-0-en-eu
+  match: ^(SOFAR)?20KTLX2\-G3P$
+- code: SOFAR 23KTLX-G3P
+  mppt: 2
+  ac_kw: 23.0
+  ac_kva: 25.3
+  ac_a: 38.5
+  phases: 3
+  pv_kw: 34.5
+  source: sofar-15-25ktlx-g3p-datasheet-2026-08-27-v3-0-en-eu
+  match: ^(SOFAR)?23KTLX\-G3P$
+- code: SOFAR 25KTLX-G3P
+  mppt: 2
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 41.8
+  phases: 3
+  pv_kw: 37.5
+  source: sofar-15-25ktlx-g3p-datasheet-2026-08-27-v3-0-en-eu
+  match: ^(SOFAR)?25KTLX\-G3P$
+- code: SOFAR 25KTLX-G3
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 28.0
+  ac_a: 42.4
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?25(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 30KTLX-G3
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 34.0
+  ac_a: 51.5
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?30(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 33KTLX-G3
+  mppt: 3
+  ac_kw: 33.0
+  ac_kva: 37.0
+  ac_a: 56.0
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?33(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 36KTLX-G3
+  mppt: 3
+  ac_kw: 36.0
+  ac_kva: 40.0
+  ac_a: 60.6
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?36(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 40KTLX-G3
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 66.7
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?40(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 45KTLX-G3
+  mppt: 4
+  ac_kw: 45.0
+  ac_kva: 50.0
+  ac_a: 75.8
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?45(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 50KTLX-G3
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 83.3
+  phases: 3
+  pv_kw: null
+  source: sofar-25-50ktlx-g3-datasheet-2025-11-20-v2-0-en-eu
+  match: ^(SOFAR)?50(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 60KTLX2-G3
+  mppt: 6
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 100.0
+  phases: 3
+  pv_kw: null
+  source: sofar-60-80ktlx-g3-datasheet-2026-03-10-v2-1-en-eu
+- code: SOFAR 80KTLX-G3
+  mppt: 6
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 133.3
+  phases: 3
+  pv_kw: null
+  source: sofar-60-80ktlx-g3-datasheet-2026-03-10-v2-1-en-eu
+  match: ^(SOFAR)?80(KTLX|LKTLX|KLTX)\-G3(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?$
+- code: SOFAR 100KTLX-G4
+  mppt: 10
+  ac_kw: 100.0
+  ac_kva: 100.0
+  ac_a: 145.0
+  phases: 3
+  pv_kw: null
+  source: sofar-100-125ktlx-g4-datasheet-2025-11-20-v2-0-en-eu
+- code: SOFAR 110KTLX-G4
+  mppt: 10
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.5
+  phases: 3
+  pv_kw: null
+  source: sofar-100-125ktlx-g4-datasheet-2025-11-20-v2-0-en-eu
+- code: SOFAR 125KTLX-G4
+  mppt: 10
+  ac_kw: 110.0
+  ac_kva: 125.0
+  ac_a: 181.2
+  phases: 3
+  pv_kw: null
+  source: sofar-100-125ktlx-g4-datasheet-2025-11-20-v2-0-en-eu
+- code: SOFAR 125KTLX-G4-A
+  mppt: 10
+  ac_kw: 125.0
+  ac_kva: 125.0
+  ac_a: 181.2
+  phases: 3
+  pv_kw: null
+  source: sofar-100-125ktlx-g4-datasheet-2025-11-20-v2-0-en-eu
+- code: SOFAR 80KTLX-G4-ESS
+  mppt: 9
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 127.0
+  phases: 3
+  pv_kw: 160.0
+  source: sofar-80-125ktlx-g4-ess-datasheet-2026-07-27-v2-6-en-eu
+  match: ^((SO)?FAR)?80KTLX\-G4\-ESS$
+- code: SOFAR 99KTLX-G4-ESS
+  mppt: 9
+  ac_kw: 99.99
+  ac_kva: 99.99
+  ac_a: 144.3
+  phases: 3
+  pv_kw: 200.0
+  source: sofar-80-125ktlx-g4-ess-datasheet-2026-07-27-v2-6-en-eu
+  match: ^((SO)?FAR)?99KTLX\-G4\-ESS$
+- code: SOFAR 100KTLX-G4-ESS
+  mppt: 9
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 158.7
+  phases: 3
+  pv_kw: 200.0
+  source: sofar-80-125ktlx-g4-ess-datasheet-2026-07-27-v2-6-en-eu
+  match: ^((SO)?FAR)?100KTLX\-G4\-ESS$
+- code: SOFAR 110KTLX-G4-ESS
+  mppt: 9
+  ac_kw: 110.0
+  ac_kva: 121.0
+  ac_a: 174.6
+  phases: 3
+  pv_kw: 220.0
+  source: sofar-80-125ktlx-g4-ess-datasheet-2026-07-27-v2-6-en-eu
+  match: ^((SO)?FAR)?110KTLX\-G4\-ESS$
+- code: SOFAR 125KTLX-G4-ESS
+  mppt: 9
+  ac_kw: 125.0
+  ac_kva: 125.0
+  ac_a: 180.4
+  phases: 3
+  pv_kw: 225.0
+  source: sofar-80-125ktlx-g4-ess-datasheet-2026-07-27-v2-6-en-eu
+  match: ^((SO)?FAR)?125KTLX\-G4\-ESS$
+- code: SOFAR 250KTLX0
+  mppt: 6
+  ac_kw: 250.0
+  ac_kva: 250.0
+  ac_a: 180.5
+  phases: 3
+  pv_kw: null
+  source: sofar-250-350ktlx0-datasheet-2024-08-02-v1-3-en-eu
+- code: SOFAR 330KTLX0
+  mppt: 8
+  ac_kw: 330.0
+  ac_kva: 330.0
+  ac_a: 238.2
+  phases: 3
+  pv_kw: null
+  source: sofar-250-350ktlx0-datasheet-2024-08-02-v1-3-en-eu
+- code: SOFAR 350KTLX0
+  mppt: 8
+  ac_kw: 352.0
+  ac_kva: 352.0
+  ac_a: 254.1
+  phases: 3
+  pv_kw: null
+  source: sofar-250-350ktlx0-datasheet-2024-08-02-v1-3-en-eu
+- code: SOFAR 250KTLX-HV
+  mppt: 9
+  ac_kw: null
+  ac_kva: 250.0
+  ac_a: 180.5
+  phases: 3
+  pv_kw: null
+  source: sofar-250-255ktl-hv-datasheet-2023-05-11-v1-0-en-eu
+  match: ^(SOFAR)?250KTLX?-HV(\(KASUTAMISEKS.*\))?$
+- code: SOFAR 255KTLX-HV
+  mppt: 9
+  ac_kw: null
+  ac_kva: 255.0
+  ac_a: 184.0
+  phases: 3
+  pv_kw: null
+  source: sofar-250-255ktl-hv-datasheet-2023-05-11-v1-0-en-eu
+  match: ^(SOFAR)?255KTLX?-HV(\(KASUTAMISEKS.*\))?$
+- code: HYD 3000-EP
+  mppt: null
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 14.3
+  phases: 1
+  pv_kw: 4.5
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 3680-EP
+  mppt: null
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 5.4
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 4000-EP
+  mppt: null
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 19.1
+  phases: 1
+  pv_kw: 6.0
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 4600-EP
+  mppt: null
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.0
+  phases: 1
+  pv_kw: 6.9
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 5000-EP
+  mppt: null
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 21.7
+  phases: 1
+  pv_kw: 7.5
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 5500-EP
+  mppt: null
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 23.9
+  phases: 1
+  pv_kw: 7.5
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 6000-EP
+  mppt: null
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 26.1
+  phases: 1
+  pv_kw: 9.0
+  source: hyd-3000-6000-ep-datasheet-2023-09-19-v5-1-en-eu
+- code: HYD 3000-ES
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 13.7
+  phases: 1
+  pv_kw: 3.99
+  source: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+- code: HYD 3600-ES
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 4.79
+  source: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+- code: HYD 4000-ES
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 18.2
+  phases: 1
+  pv_kw: 5.32
+  source: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+  match: ^(ENERGYSTORAGEINVERTER)?HYD4000-ES$
+- code: HYD 4600-ES
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 21.0
+  phases: 1
+  pv_kw: 6.12
+  source: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+- code: HYD 5000-ES
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 22.8
+  phases: 1
+  pv_kw: 6.65
+  source: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+- code: HYD 6000-ES
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.3
+  phases: 1
+  pv_kw: 7.98
+  source: hyd-3000-6000-es-datasheet-2020-08-v1-0-en-eu
+- code: HYD 5KTL-3PH
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 7.5
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD5KTL\-3PH$
+- code: HYD 6KTL-3PH
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 9.0
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD6KTL\-3PH$
+- code: HYD 8KTL-3PH
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 12.0
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD8KTL\-3PH$
+- code: HYD 10KTL-3PH
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 15.9
+  phases: 3
+  pv_kw: 15.0
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD10KTL\-3PH$
+- code: HYD 10KTL-3PH-A
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 10.0
+  ac_a: 14.5
+  phases: 3
+  pv_kw: 15.0
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD10KTL\-3PH\-A$
+- code: HYD 15KTL-3PH
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 23.9
+  phases: 3
+  pv_kw: 22.5
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD15KTL\-3PH$
+- code: HYD 20KTL-3PH
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: 30.0
+  source: hyd-5-20ktl-3ph-datasheet-with-sh-20-digit-sn-2025-11-27-available-from-2024-v2-0-en-eu
+  match: ^(SOFAR)?HYD20KTL\-3PH$
+- code: HYD-14.9K-T1-A
+  mppt: 3
+  ac_kw: 14.9
+  ac_kva: 14.9
+  ac_a: 21.5
+  phases: 3
+  pv_kw: 30.0
+  source: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+- code: HYD-15K-T1
+  mppt: 3
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 23.8
+  phases: 3
+  pv_kw: 30.0
+  source: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+- code: HYD-20K-T1
+  mppt: 3
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.8
+  phases: 3
+  pv_kw: 40.0
+  source: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+- code: HYD-25K-T1
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 39.7
+  phases: 3
+  pv_kw: 50.0
+  source: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+- code: HYD-29.9K-T1-A-PLUS
+  mppt: 3
+  ac_kw: 29.9
+  ac_kva: 29.9
+  ac_a: 43.2
+  phases: 3
+  pv_kw: 60.0
+  source: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+- code: HYD-30K-T1-PLUS
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 33.0
+  ac_a: 47.6
+  phases: 3
+  pv_kw: 60.0
+  source: hyd-14-9-30k-t1-datasheet-2026-09-07-v1-4-en-eu
+- code: HYD-40K-T1
+  mppt: 4
+  ac_kw: 40.0
+  ac_kva: 44.0
+  ac_a: 63.5
+  phases: 3
+  pv_kw: 80.0
+  source: hyd-40-60k-t1-datasheet-2025-11-26-v1-1-en-eu
+- code: HYD-49.9K-T1-A
+  mppt: 4
+  ac_kw: 49.9
+  ac_kva: 49.9
+  ac_a: 72.0
+  phases: 3
+  pv_kw: 100.0
+  source: hyd-40-60k-t1-datasheet-2025-11-26-v1-1-en-eu
+  match: ^HYD-49\.9K?-T1-A$
+- code: HYD-50K-T1
+  mppt: 4
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 79.4
+  phases: 3
+  pv_kw: 100.0
+  source: hyd-40-60k-t1-datasheet-2025-11-26-v1-1-en-eu
+  match: ^HYD-50K?-T1$
+- code: HYD-60K-T1
+  mppt: 4
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 95.3
+  phases: 3
+  pv_kw: 120.0
+  source: hyd-40-60k-t1-datasheet-2025-11-26-v1-1-en-eu
+  match: ^HYD-60K?-T1$
+- code: ME 5KTL-3PH
+  mppt: null
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: null
+  source: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  match: ^ME-?5KTL-3PH$
+- code: ME 6KTL-3PH
+  mppt: null
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 10.0
+  phases: 3
+  pv_kw: null
+  source: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  match: ^ME-?6KTL-3PH$
+- code: ME 8KTL-3PH
+  mppt: null
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.0
+  phases: 3
+  pv_kw: null
+  source: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  match: ^ME-?8KTL-3PH$
+- code: ME 10KTL-3PH
+  mppt: null
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: null
+  source: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  match: ^ME-?10KTL-3PH$
+- code: ME 15KTL-3PH
+  mppt: null
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.0
+  phases: 3
+  pv_kw: null
+  source: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  match: ^ME-?15KTL-3PH$
+- code: ME 20KTL-3PH
+  mppt: null
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 32.0
+  phases: 3
+  pv_kw: null
+  source: me-5-20ktl-3ph-datasheet-2023-06-06-v4-0-en-eu
+  match: ^ME-?20KTL-3PH$
+- code: ESI 3K-S1
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 14.3
+  phases: 1
+  pv_kw: 6.0
+  source: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  match: ^(SOFAR)?(POWERALL)?ESI3K\-S1$
+- code: ESI 3.68K-S1
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 7.36
+  source: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  match: ^(SOFAR)?(POWERALL)?ESI3\.68K\-S1$
+- code: ESI 4K-S1
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 19.1
+  phases: 1
+  pv_kw: 8.0
+  source: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  match: ^(SOFAR)?(POWERALL)?ESI4K\-S1$
+- code: ESI 4.6K-S1
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: 4.6
+  ac_a: 20.0
+  phases: 1
+  pv_kw: 9.2
+  source: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  match: ^(SOFAR)?(POWERALL)?ESI4\.6K\-S1$
+- code: ESI 5K-S1
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 23.9
+  phases: 1
+  pv_kw: 10.0
+  source: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  match: ^(SOFAR)?(POWERALL)?ESI5K\-S1$
+- code: ESI 6K-S1
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 28.7
+  phases: 1
+  pv_kw: 12.0
+  source: esi-3-6k-s1-datasheet-2026-01-27-v2-4-en-eu
+  match: ^(SOFAR)?(POWERALL)?ESI6K\-S1$
+- code: ESI-5K-T1
+  mppt: 3
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 10.0
+  source: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  match: ^(SOFAR)?ESI\-5K\-T1$
+- code: ESI-6.5K-T1
+  mppt: 3
+  ac_kw: 6.5
+  ac_kva: 7.15
+  ac_a: 10.3
+  phases: 3
+  pv_kw: 13.0
+  source: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  match: ^(SOFAR)?ESI\-6\.5K\-T1$
+- code: ESI-8K-T1
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 16.0
+  source: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  match: ^(SOFAR)?ESI\-8K\-T1$
+- code: ESI-9.9K-T1-A
+  mppt: 3
+  ac_kw: 9.9
+  ac_kva: 9.9
+  ac_a: 14.3
+  phases: 3
+  pv_kw: 20.0
+  source: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  match: ^(SOFAR)?ESI\-9\.9K\-T1\-A$
+- code: ESI-10K-T1
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 15.9
+  phases: 3
+  pv_kw: 20.0
+  source: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  match: ^(SOFAR)?ESI\-10K\-T1$
+- code: ESI-12K-T1
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.1
+  phases: 3
+  pv_kw: 24.0
+  source: esi-5-12k-t1-datasheet-2025-03-04-v1-1-en-eu
+  match: ^(SOFAR)?ESI\-12K\-T1$
+- code: EBI44K-R-G2
+  mppt: null
+  ac_kw: 44.0
+  ac_kva: 48.0
+  ac_a: 70.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+- code: EBI66K-R-G2
+  mppt: null
+  ac_kw: 66.0
+  ac_kva: 73.0
+  ac_a: 105.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+- code: EBI87K-R-G2
+  mppt: null
+  ac_kw: 87.0
+  ac_kva: 96.0
+  ac_a: 138.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+- code: EBI99K-R-G2
+  mppt: null
+  ac_kw: 99.0
+  ac_kva: 99.99
+  ac_a: 144.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+- code: EBI124.9K-R-G2
+  mppt: null
+  ac_kw: 124.9
+  ac_kva: 137.0
+  ac_a: 198.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+- code: EBI125K-R-G2
+  mppt: null
+  ac_kw: 125.0
+  ac_kva: 138.0
+  ac_a: 198.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-2-0-datasheet-2026-06-22-pcs-v1-1-en-eu
+- code: EBI 99K-R
+  mppt: null
+  ac_kw: 99.99
+  ac_kva: 99.99
+  ac_a: 144.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-datasheet-2026-01-26-v2-1-en-eu
+  match: ^(SOFAR)?EBI99K\-R$
+- code: EBI 125K-R
+  mppt: null
+  ac_kw: 125.0
+  ac_kva: 138.0
+  ac_a: 198.0
+  phases: 3
+  pv_kw: null
+  source: sofar-powermagic-datasheet-2026-01-26-v2-1-en-eu
+  match: ^(SOFAR)?EBI125K\-R$

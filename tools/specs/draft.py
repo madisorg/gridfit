@@ -396,7 +396,9 @@ def foxess():
 # recommended PV power (for module STC)". "11000VA*" is read as 11000. MOD 17-33KTL3-X3: the MPPT row spans "2" over 17/20/25 K and
 # "3" over 30/33 K (string row 2/2 vs 2/2/1). SPA (storage AC inverters) sheets have no PV input block at all: AC-coupled, mppt 0.
 # Lists spell the same hardware "MIN 2500TL-X" / "2500TL-X", "MOD 10000TL3-XH" / sheet "MOD10KTL3-XH", "MIN 4200TL-X2" / sheet
-# "MIN 4200TL-X2 (Pro)": handled by `match`. Old TL3-S / -S / TL-XE / XA units and the MID-XH/MOD-XA/HU lines have no readable sheet.
+# "MIN 4200TL-X2 (Pro)", "MIC 1000-X" for the sheet's "MIC 1000TL-X", "MAX50000TL3 LV" for "MAX 50KTL3 LV": handled by `match`.
+# Old TL3-S / -S / TL-XE units and the MID-XH line have no cached sheet; GROWATT_ADD (2026-11-12) adds the WIT, SPH BL-UP, MOD/MID HU,
+# MIN XH2/XA, MODA/MINA, SPM and NEO sheets.
 GROWATT = {  # file stem: (phases, version, [(code, mppt, ac_kw, ac_kva, ac_a, pv_kw)])
     "MOD_3000_9000TL3-X_2026.5_Update": (3, "2026.5", [
         ("MOD 3000TL3-X", 2, 3.0, 3.3, 5.0, 4.5), ("MOD 4000TL3-X", 2, 4.0, 4.4, 6.7, 6.0), ("MOD 5000TL3-X", 2, 5.0, 5.5, 8.3, 7.5), ("MOD 6000TL3-X", 2, 6.0, 6.6, 10.0, 9.0),
@@ -487,6 +489,134 @@ GROWATT = {  # file stem: (phases, version, [(code, mppt, ac_kw, ac_kva, ac_a, p
 }
 
 
+# Growatt: new GROWATT entries for tools/specs/draft.py, read 2026-11-12 from the cached sheets in
+# gridfit/cache/specs/growatt/. Same tuple shape as GROWATT: stem: (phases, version, [(code, mppt, ac_kw, ac_kva, ac_a, pv_kw)]).
+#
+# Reviewer notes, read before merging:
+# - All of these sheets except MINA, MIC1000 X2 (Pro), MIN X2 (Pro E), MIN XA and NEO 600-1000 are image-only PDFs: the harvester's
+#   .txt is empty and pdfplumber finds no characters. Their values were read from page renders (PyMuPDF, 200-300 dpi). Recheck them
+#   against the PDF, not the .txt.
+# - Hybrid "WIT" sheets give the grid block as "AC input/output nominal power(Grid) 8000W/4000W", "Max. AC input/output apparent
+#   power", "Max. input/output current": the output (second) figure is taken, as for WIT 29.9-50K-XHU already in GROWATT.
+# - Spanned MPPT rows: WIT 4-15K-HU and -XHU have "1" spanning 4/5/6K and "2" spanning 8K..15K. MID X3 LV has "4" spanning 15..25K and
+#   "5" spanning 30/36K. MID 36-60KTL3-X3 has "4" spanning 36/40/50K and "5" for 60K. MID 29.9-50K-HU has "3" spanning 29.9..36K and
+#   "4" spanning 40/50K.
+# - WIT 50-100K: every column header names two models, "WIT 50K-H" over "WIT 50K-HU", so both codes get a row with the same numbers.
+#   Footnote *2: the backup block applies to -HU only, so the grid figures are the same for both. The cover says "Preliminary Version".
+#   The sheet names neither -A nor -AU, so the list entries WIT 50K-AU / WIT50K-A / WIT 100K-A ... are NOT mapped here.
+# - SPH 3000-6000TL BL-UP has no "rated" active-power row. The grid output block is "Max. AC output power 3000W", "Rated AC output
+#   apparent power 3000VA" and "Rated. output current 13.5A". ac_kw is taken from the max output power row because it is the only
+#   active-power row. ac_kva comes from the rated apparent power row, as for SPH 3000-6000TL-HUB. ac_a = None because the sheet gives
+#   no max current. Its rated currents are 13.5/16/17.5/20/22/27 A. Phases 1 ("AC grid connection type: Single phase").
+# - MID 29.9-50KTL3-HU (Battery Compatibility sheet, 3 pages, no date): the grid block "Output data (AC)" has only "AC nominal INPUT
+#   power" 35.9..60 kW, "Max. AC apparent power" 35.9..60 kVA and "Max. input current" 54.4..90.9 A, which are higher than the model
+#   ratings, i.e. grid import. No grid output figure is stated, so ac_kw/ac_kva/ac_a = None. The "Backup output (AC)" block (off-grid)
+#   reads 29.9/30/33/36/40/50 kW, the same kVA, and max output current 45.3/45.5/54.5/50/60.6/75.8 A. The 36K value of 50 A is as
+#   printed, below the 33K value.
+# - MODA / MINA (all-in-one ESS sheets): only the "Inverter Model" columns are taken, not the "System Model" battery bundles
+#   (MODA 4-15kTL3-HU-1..6, MINA 3-10kTL-HU-1..12). Their grid apparent power row is "Rated AC apparent power", taken as ac_kva as for
+#   HUB. ac_a is the output half of "Max.input/output current 63A/6.7A". MODA phases 3 ("AC connection 3W+N+PE/3W+PE") although the
+#   nominal voltage row says "230V/195.5-253V". MINA phases 1 ("Single phase (L/N/PE)"). The sheet spells the MODA codes with a lower-case
+#   k ("MODA 4kTL3-HU"). That is kept, and normalisation upper-cases it.
+# - SPM 2.5-6KTL-HU2: the table has no "AC grid connection type" row. Phases 1 is taken from "Nominal AC voltage 220V/230V/240V" and the
+#   cover's "Supports forming a 400V three-phase system" (by stacking units), so a reviewer should confirm it. SPM 8-10K-HU2 states
+#   "Single phase". Its "Max. output current 50A" spans both columns. Its PV row is labelled "Max. PV Input Power (W)".
+# - MIN 2500-6000TL-XA: no PV block at all (AC-coupled, "Input data (DC battery)" only), so mppt 0 and pv None, as for SPA. The sheet
+#   writes "MIN2500TL-XA" with no space. The comment above GROWATT ("XA ... no readable sheet") is out of date for this one.
+# - MIC 1000-3300TL-X2 (Pro): the sheet writes "MIC 2000TL-X2(Pro)" without the space before "(Pro)". It is written with the space
+#   here so that growatt()'s auto-`match` regex (which wants " (Pro)") applies like the other (Pro) rows. Normalised, the code is
+#   unchanged. Side effect to check: the auto regex for "MIC 1000TL-X2 (Pro)" (`^(MIC)?1000TL-X2(\(PRO\))?$`) also matches the plain
+#   list name "MIC 1000TL-X2", which the existing MIC_600_3300TL-X2 rows already match exactly (same for 2000/3000/3300). All five
+#   numbers are identical between the Pro and non-Pro sheets for these four sizes. Still, make sure the matcher prefers the exact row or
+#   tolerates two hits.
+# - MIN 4200/5000TL-X2 (Pro E): growatt()'s regex does not cover "(Pro E)", so these match the lists exactly only.
+# - NEO 600-1000M-X (WiFi): the sheet writes "NEO 600M-X（WiFi）" with full-width parentheses. "(WiFi)" is dropped as for
+#   NEO 1600-2500M-X2-WiFi. ac_a = None: the sheet gives only "Rated output current 2.61/3.48/4.35A". pv_kw = None: the sheet gives
+#   only a per-module range ("240W to 405W+").
+# - MIN 2500-6000TL-XH2: growatt()'s regex `-X[23H]?$` does not match "XH2", so XH2 codes match exactly only, and the XH regex does not
+#   catch them either.
+#
+# Sheets deliberately NOT added:
+# - WIT_63_125K-XHU_Datasheet_EN_20260901.pdf: the cached file is an HTML page (starts "<!doctype html>"), not a PDF. It needs a
+#   re-download.
+# - MOD_3000_10000TL3-XH-BP_Datasheet_EN_202608: its table heads are the plain codes "MOD 3000TL3-XH" .. "MOD 10KTL3-XH", and every
+#   value we keep is identical to MOD_3000-10000TL3-XH_Datasheet_202209 (mppt 2/1, 3..10 kW, 3.3..11 kVA, 5.0..16.7 A, 6..20 kW PV).
+#   Adding it would duplicate codes. Optionally re-point those rows' source to this newer 2026-08 sheet.
+# - Growatt_MID_17_22KTL3-X_EU_2026.5_Update ("MID17KTL3-X/MID20KTL3-X/MID22KTL3-X") duplicates rows already in MID_15_25KTL3-X with
+#   identical numbers (2 MPPT, 17/20/22 kW, 18.8/22/24.4 kVA, 27.4/31.9/35.5 A, 25.5/30/33 kW). Footnote: "Only the latest version with
+#   max. input current 27A per MPP tracker".
+# - MID_33_50KTL3-X2_2026.5_Update duplicates MID 33/36/40/50KTL3-X2 already in MID_30_50KTL3-X2 with identical numbers.
+GROWATT_ADD = {
+    "WIT_4-15K-HU_Datasheet_EN_202605": (3, "2026-05", [
+        ("WIT 4K-HU", 1, 4.0, 4.4, 6.7, 6.4), ("WIT 5K-HU", 1, 5.0, 5.5, 8.4, 8.0), ("WIT 6K-HU", 1, 6.0, 6.6, 10.0, 9.6),
+        ("WIT 8K-HU", 2, 8.0, 8.8, 13.3, 12.8), ("WIT 10K-HU", 2, 10.0, 11.0, 16.7, 16.0), ("WIT 12K-HU", 2, 12.0, 13.2, 20.0, 19.2),
+        ("WIT 15K-HU", 2, 15.0, 16.5, 25.0, 24.0)]),
+    "WIT_4-15K-XHU_Datasheet_EN_202605": (3, "2026-05", [
+        ("WIT 4K-XHU", 1, 4.0, 4.4, 6.66, 8.0), ("WIT 5K-XHU", 1, 5.0, 5.5, 8.3, 10.0), ("WIT 6K-XHU", 1, 6.0, 6.6, 10.0, 12.0),
+        ("WIT 8K-XHU", 2, 8.0, 8.8, 13.33, 16.0), ("WIT 10K-XHU", 2, 10.0, 11.0, 16.67, 20.0), ("WIT 12K-XHU", 2, 12.0, 13.2, 20.0, 24.0),
+        ("WIT 15K-XHU", 2, 15.0, 16.5, 25.0, 30.0)]),
+    "WIT_17-25K-HU_Datasheet_EN_202605": (3, "2026-05", [
+        ("WIT 17K-HU", 2, 17.0, 18.7, 28.33, 34.0), ("WIT 18K-HU", 2, 18.0, 19.8, 30.0, 36.0), ("WIT 20K-HU", 2, 20.0, 22.0, 33.33, 40.0),
+        ("WIT 22K-HU", 2, 22.0, 24.2, 36.66, 44.0), ("WIT 25K-HU", 2, 25.0, 27.5, 41.67, 50.0)]),
+    "WIT_17-25K-XHU_Datasheet_EN_202605": (3, "2026-05", [
+        ("WIT 17K-XHU", 2, 17.0, 18.7, 28.33, 34.0), ("WIT 20K-XHU", 2, 20.0, 22.0, 33.33, 40.0), ("WIT 25K-XHU", 2, 25.0, 27.5, 41.67, 50.0)]),
+    "WIT_50_100K_HU_Datasheet_EN_20260316": (3, "2026-03", [  # each column is headed "WIT 50K-H / WIT 50K-HU"
+        ("WIT 50K-H", 7, 50.0, 55.0, 83.3, 109.2), ("WIT 63K-H", 8, 63.0, 69.3, 105.0, 124.8), ("WIT 75K-H", 10, 75.0, 82.5, 125.0, 156.0),
+        ("WIT 100K-H", 10, 100.0, 110.0, 166.7, 156.0),
+        ("WIT 50K-HU", 7, 50.0, 55.0, 83.3, 109.2), ("WIT 63K-HU", 8, 63.0, 69.3, 105.0, 124.8), ("WIT 75K-HU", 10, 75.0, 82.5, 125.0, 156.0),
+        ("WIT 100K-HU", 10, 100.0, 110.0, 166.7, 156.0)]),
+    "SPH_3000-6000TL_BL-UP_Datasheet_202604": (1, "2026-04", [  # ac_kw from "Max. AC output power"; no max current stated
+        ("SPH 3000TL BL-UP", 2, 3.0, 3.0, None, 6.5), ("SPH 3600TL BL-UP", 2, 3.68, 3.68, None, 7.5), ("SPH 4000TL BL-UP", 2, 4.0, 4.0, None, 8.5),
+        ("SPH 4600TL BL-UP", 2, 4.6, 4.6, None, 9.0), ("SPH 5000TL BL-UP", 2, 5.0, 5.0, None, 9.5), ("SPH 6000TL BL-UP", 2, 6.0, 6.0, None, 10.6)]),
+    "MOD_3000_9000TL3-HU_Datasheet_EN_202608": (3, "2026-08", [
+        ("MOD 3000TL3-HU", 2, 3.0, 3.3, 5.0, 6.0), ("MOD 4000TL3-HU", 2, 4.0, 4.4, 6.7, 8.0), ("MOD 5000TL3-HU", 2, 5.0, 5.5, 8.3, 10.0),
+        ("MOD 6000TL3-HU", 2, 6.0, 6.6, 10.0, 12.0), ("MOD 7000TL3-HU", 2, 7.0, 7.7, 11.7, 14.0), ("MOD 8000TL3-HU", 2, 8.0, 8.8, 13.3, 16.0),
+        ("MOD 9000TL3-HU", 2, 9.0, 9.9, 15.0, 18.0)]),
+    "MOD_10-15KTL3-HU_Datasheet_EN_202608": (3, "2026-08", [
+        ("MOD 10KTL3-HU", 3, 10.0, 11.0, 16.7, 20.0), ("MOD 11KTL3-HU", 3, 11.0, 12.1, 18.3, 22.0), ("MOD 12KTL3-HU", 3, 12.0, 13.2, 20.0, 24.0),
+        ("MOD 13KTL3-HU", 3, 13.0, 14.3, 21.7, 26.0), ("MOD 15KTL3-HU", 3, 15.0, 16.5, 25.0, 30.0)]),
+    "MIN_2500_6000_TL-XH2_Datasheet_202607": (1, "2026-07", [
+        ("MIN 2500TL-XH2", 2, 2.5, 2.5, 11.3, 5.0), ("MIN 3000TL-XH2", 2, 3.0, 3.0, 13.6, 6.0), ("MIN 3600TL-XH2", 2, 3.6, 3.6, 16.0, 7.2),
+        ("MIN 4200TL-XH2", 2, 4.2, 4.2, 19.0, 8.4), ("MIN 4600TL-XH2", 2, 4.6, 4.6, 20.9, 9.2), ("MIN 5000TL-XH2", 2, 5.0, 5.0, 22.7, 10.0),
+        ("MIN 6000TL-XH2", 2, 6.0, 6.0, 27.2, 10.0)]),
+    "MIN_2500-6000TL-XA_Datasheet_202208": (1, "2022-08", [  # AC-coupled: no PV block
+        ("MIN2500TL-XA", 0, 2.5, 2.5, 11.3, None), ("MIN3000TL-XA", 0, 3.0, 3.0, 13.6, None), ("MIN3600TL-XA", 0, 3.6, 3.6, 16.0, None),
+        ("MIN4200TL-XA", 0, 4.2, 4.2, 19.0, None), ("MIN4600TL-XA", 0, 4.6, 4.6, 20.9, None), ("MIN5000TL-XA", 0, 5.0, 5.0, 22.7, None)]),
+    "MIN_4200_5000_TL-X2_Pro_E_2026.5_Update": (1, "2026.5", [
+        ("MIN 4200TL-X2 (Pro E)", 1, 4.2, 4.2, 19.0, 6.3), ("MIN 5000TL-X2 (Pro E)", 1, 5.0, 5.0, 22.7, 7.5)]),
+    "MIC1000_3300TL-X2_Pro_2026.5_Update": (1, "2026.5", [
+        ("MIC 1000TL-X2 (Pro)", 1, 1.0, 1.0, 4.8, 1.5), ("MIC 2000TL-X2 (Pro)", 1, 2.0, 2.0, 9.5, 3.0), ("MIC 3000TL-X2 (Pro)", 1, 3.0, 3.0, 14.3, 4.5),
+        ("MIC 3300TL-X2 (Pro)", 1, 3.3, 3.3, 14.3, 4.95)]),
+    "NEO_600_1000M-X_WiFi_2026.5_Update": (1, "2026.5", [  # only "Rated output current" and a per-module PV range: ac_a/pv None
+        ("NEO 600M-X", 2, 0.6, 0.6, None, None), ("NEO 800M-X", 2, 0.8, 0.8, None, None), ("NEO 1000M-X", 2, 1.0, 1.0, None, None)]),
+    "MID_15-36KTL3-X3_LV_Datasheet_EN_202608": (3, "2026-08", [
+        ("MID 15KTL3-X3 LV", 4, 15.0, 16.6, 43.7, 22.5), ("MID 17KTL3-X3 LV", 4, 17.0, 18.8, 49.6, 25.5), ("MID 20KTL3-X3 LV", 4, 20.0, 22.2, 58.3, 30.0),
+        ("MID 22KTL3-X3 LV", 4, 22.0, 24.4, 64.2, 33.0), ("MID 25KTL3-X3 LV", 4, 25.0, 27.7, 72.9, 37.5), ("MID 30KTL3-X3 LV", 5, 30.0, 33.3, 87.5, 45.0),
+        ("MID 36KTL3-X3 LV", 5, 36.0, 36.0, 94.5, 54.0)]),
+    "MID_36-60KTL3-X3_Datasheet_EN_202608": (3, "2026-08", [
+        ("MID 36KTL3-X3", 4, 36.0, 40.0, 60.6, 54.0), ("MID 40KTL3-X3", 4, 40.0, 44.4, 67.3, 60.0), ("MID 50KTL3-X3", 4, 50.0, 55.5, 84.1, 75.0),
+        ("MID 60KTL3-X3", 5, 60.0, 66.6, 100.9, 90.0)]),
+    "MID_29.9_50KTL3-HU_Datasheet_Battery_Compatibility_EN": (3, "", [  # grid block states input figures only: ac_* None
+        ("MID 29.9K-HU", 3, None, None, None, 59.8), ("MID 30K-HU", 3, None, None, None, 60.0), ("MID 33K-HU", 3, None, None, None, 66.0),
+        ("MID 36K-HU", 3, None, None, None, 72.0), ("MID 40K-HU", 4, None, None, None, 80.0), ("MID 50K-HU", 4, None, None, None, 100.0)]),
+    "MODA_All-In-One_ESS_Datasheet_202609_EN": (3, "2026-09", [
+        ("MODA 4kTL3-HU", 3, 4.0, 4.0, 6.7, 8.0), ("MODA 5kTL3-HU", 3, 5.0, 5.0, 8.3, 10.0), ("MODA 6kTL3-HU", 3, 6.0, 6.0, 10.0, 12.0),
+        ("MODA 8kTL3-HU", 3, 8.0, 8.0, 13.3, 16.0), ("MODA 10kTL3-HU", 3, 10.0, 10.0, 16.7, 20.0), ("MODA 12kTL3-HU", 3, 12.0, 12.0, 20.0, 24.0),
+        ("MODA 15kTL3-HU", 3, 15.0, 15.0, 25.0, 30.0)]),
+    "MINA_All-In-One_ESS_EU_Datasheet_202609_EN": (1, "2026-09", [
+        ("MINA 3000TL-HU", 3, 3.0, 3.0, 13.6, 6.0), ("MINA 3600TL-HU", 3, 3.6, 3.6, 16.0, 7.2), ("MINA 4200TL-HU", 3, 4.2, 4.2, 19.0, 8.4),
+        ("MINA 4600TL-HU", 3, 4.6, 4.6, 20.9, 9.2), ("MINA 5000TL-HU", 3, 5.0, 5.0, 22.7, 10.0), ("MINA 6000TL-HU", 3, 6.0, 6.0, 27.2, 12.0),
+        ("MINA 8000TL-HU", 3, 8.0, 8.0, 38.3, 16.0), ("MINA 10000TL-HU", 3, 10.0, 10.0, 45.5, 20.0)]),
+    "SPM_2500-6000TL-HU2_Datasheet_EN_202610": (1, "2026-10", [  # phases inferred: no connection-type row (see note)
+        ("SPM 2500TL-HU2", 2, 2.5, 2.5, 10.9, 4.0), ("SPM 3000TL-HU2", 2, 3.0, 3.0, 13.1, 4.8), ("SPM 3600TL-HU2", 2, 3.6, 3.6, 15.7, 5.76),
+        ("SPM 5000TL-HU2", 2, 5.0, 5.0, 21.8, 8.0), ("SPM 6000TL-HU2", 2, 6.0, 6.0, 26.1, 9.6)]),
+    "SPM_8000-10000TL-HU2_Datasheet_EN_202610": (1, "2026-10", [
+        ("SPM 8000TL-HU2", 2, 8.0, 8.0, 50.0, 12.8), ("SPM 10000TL-HU2", 2, 10.0, 10.0, 50.0, 16.0)]),
+}
+
+GROWATT = {**GROWATT, **GROWATT_ADD}
+
+
 def growatt():
     urls = dict(line.split(" ", 1) for line in (CACHE / "growatt/SOURCES.txt").read_text(encoding="utf-8").splitlines() if " " in line)
     sources, models = [], []
@@ -502,6 +632,11 @@ def growatt():
                 ser, pw, rest, pro = mm.groups()
                 body = f"({pw}K|{pw}000){re.escape(rest[1:])}" if rest.startswith("K") else f"{pw}{re.escape(rest)}"
                 m["match"] = f"^({ser})?{body}{r'(\(PRO\))?' if pro else ''}$"
+            mx = re.match(r"^MAX (\d+)KTL3 LV$", code)
+            if mx:  # the lists write "MAX50000TL3 LV" for the sheet's "MAX 50KTL3 LV"
+                m["match"] = rf"^MAX({mx[1]}K|{mx[1]}000)TL3LV$"
+            if re.match(r"^MIC \d+TL-X$", code):  # the Elektrilevi list writes "MIC 1000-X" for the sheet's "MIC 1000TL-X"
+                m["match"] = m["match"].replace("TL\\-X$", "(TL)?\\-X$")
             models.append(m)
     dump("growatt", {"brand": "Growatt", "maker_site": "https://en.growatt.com/", "rule": RULE, "sources": sources, "models": models})
 
@@ -607,13 +742,18 @@ def hand_brand(key, brand, site, cache_dir, table, src_note=""):
     """table: {pdf stem: (phases, version, note, rows)}; a row is (code, mppt, ac_kw, ac_kva, ac_a, pv_kw[, match]).
     The rows are typed from the sheet's table (cache/specs/<brand>/<stem>.txt, spanned cells read by x-position with
     pdfplumber); the source id is the stem in lower case. A code is matched exactly unless the row carries a `match` regex."""
-    urls = dict(line.split(" ", 1) for line in (CACHE / cache_dir / "SOURCES.txt").read_text(encoding="utf-8").splitlines() if " " in line)
+    # SOURCES.txt (hand downloads: "<file> <url>") or the harvester's HARVEST.txt ("<file> <url> <seen>", tools/specs/harvest.py)
+    man = CACHE / cache_dir / "SOURCES.txt"
+    harvest = not man.exists()
+    lines = (CACHE / cache_dir / ("HARVEST.txt" if harvest else "SOURCES.txt")).read_text(encoding="utf-8").splitlines()
+    urls = {x.split(" ")[0]: x.split(" ", 1)[1] for x in lines if " " in x}
     sources, models = [], []
     for stem, (ph, ver, note, rows) in table.items():
         pdf = stem + ".pdf"
         sid = re.sub(r"[^a-z0-9]+", "-", stem.lower()).strip("-")
-        url = urls.get(pdf, "").split(" (")[0]
-        sources.append({"id": sid, "url": url, "file": pdf, "version": ver, "note": (note + ("; " if note and src_note else "") + src_note).strip(), "seen": SEEN})
+        got = urls.get(pdf, "")
+        url, seen = (got.split(" ")[0], (got.split(" ") + [SEEN])[1]) if harvest else (got.split(" (")[0], SEEN)
+        sources.append({"id": sid, "url": url, "file": pdf, "version": ver, "note": (note + ("; " if note and src_note else "") + src_note).strip(), "seen": seen})
         for r in rows:
             code, mp, ackw, kva, aca, pv = r[:6]
             m = row(code, mp, ackw, kva, aca, ph, pv, sid)
@@ -1024,6 +1164,184 @@ def zcs():
     hand_brand("zcs", "ZCS Azzurro", "https://www.zcsazzurro.com/", "zcs", ZCS)
 
 
+# Sungrow: https://en.sungrowpower.com/ download centre; the PDFs are served from info-support.sungrowpower.com (named
+# DS_YYYYMMDD_<models>_Datasheet_Vnn_EN, or by UUID under /datasheet-material(s)/; HARVEST.txt maps file -> URL -> seen date).
+# Read by hand from the text layer (pdfplumber, one value per model column). Of the 50 cached files only these are inverter
+# sheets for register models; the rest are loggers, WiNet, iSolarCloud, iHomeManager, batteries (SBR/SBH/SBS), BESS containers
+# and PowerStacks (ST...), MV turnkey skids (MVS..., SG...UD-MV) and EV chargers (AC22E-01, IDC...E): left out.
+# ac_kw = "Rated AC output power"; ac_kva = "Max. AC output apparent power"; ac_a = "Max. AC output current" (left null where the
+# sheet gives it per grid voltage or per inverter unit); mppt = "No. of independent MPP trackers / inputs"; pv_kw = the sheet's
+# "(Recommended) max. PV input power" row per model (the Growatt convention). The utility sheets (SG320HX, SG...UD) give no rated
+# kW, only kVA per ambient temperature: ac_kva is the highest stated figure, ac_kw null. "+ Logger..." entries on the lists are
+# the same inverter certified with its plant logger: handled by `match`.
+# DS_20240328_SH15_20_25T_Datasheet_V3_EN(AU) carries the same figures as the global SH15/20/25T sheet and is not used.
+SUNGROW = {
+    "DS_20240320_SH3.0_3.6_4.0_5.0_6.0RS_Datasheet_V18_EN": (1, "V18 (DS_20240320)", "pv_kw is the 'Recommended max. PV input power' row; its "
+        "footnote says max. input PV power is 13,000 Wp for all five", [
+        ("SH3.0RS", 2, 3.0, 3.0, 13.7, 4.5), ("SH3.6RS", 2, 3.68, 3.68, 16.0, 5.4), ("SH4.0RS", 2, 4.0, 4.0, 18.2, 6.0), ("SH5.0RS", 2, 5.0, 5.0, 22.8, 7.5),
+        ("SH6.0RS", 2, 6.0, 6.0, 27.3, 9.0)]),
+    "DS_20231201_SH15_20_25T_Datasheet_V3_EN": (3, "V3 (DS_20231201)", "pv_kw is the 'Recommended max. PV input power' row (the AU edition of the "
+        "sheet heads the same figures 'Max. PV input power'); SH15TA..SH30TA on the lists are another series, not on this sheet", [
+        ("SH15T", 3, 15.0, 15.0, 22.8, 30.0), ("SH20T", 3, 20.0, 20.0, 30.4, 40.0), ("SH25T", 3, 25.0, 25.0, 37.9, 50.0)]),
+    "1cb442be-4d2c-4a92-b7b4-99527176776c": (3, "Version 4 (p.1) / Version 1 EUR (p.2), 2025", "max. AC output current is the sheet's figure "
+        "'at 220V'", [("SG75CX-P2", 8, 75.0, 75.0, 113.9, 105.0)]),
+    "a33f2659-00b8-4301-b514-9c3b19937a3d": (3, "Version 7, 2025", "max. AC output current is given per grid voltage (250.7 A @ 380 V; "
+        "240.6 A @ 400/415 V; 200.5 A @ 480 V) and left null", [("SG150CX", 7, 150.0, 165.0, None, 210.0)]),
+    "56037c44-9a2d-47fd-b1a8-6faae8393577": (3, "Version 5, 2026", "C&I hybrid; the lists also write 'SH125CX + Logger1000A- EU'", [
+        ("SH125CX", 10, 125.0, 125.0, 189.9, 250.0, r"^SH125CX(\+LOGGER1000A-EU)?$")]),
+    "DS_20221121_SG320HX_Datasheet_V17_EN": (3, "V17 (DS_20221121)", "800 V utility string inverter: no rated kW, AC power 352 kVA @ 30 C / "
+        "320 kVA @ 40 C / 295 kVA @ 50 C (ac_kva = 352); MPPT 12, optional 16; no PV power row; the lists also write 'SG320HX + Logger4000'", [
+        ("SG320HX", 12, None, 352.0, 254.0, None, r"^SG320HX(\+LOGGER4000)?$")]),
+    "DS_20250121_SG320HX-20_Datasheet_V8_EN": (3, "V8 (DS_20250121)", "800 V utility string inverter: no rated kW, AC power 352 kVA @ 30 C / "
+        "320 kVA @ 40 C / 301.8 kVA @ 50 C (ac_kva = 352); no PV power row; the lists also write 'SG320HX-20 + Logger4000'", [
+        ("SG320HX-20", 6, None, 352.0, 254.0, None, r"^SG320HX-20(\+LOGGER4000)?$")]),
+    "DS_20250610_SG3300UD_SG4400UD_Datasheet_V21_EN": (3, "V21 (DS_20250610)", "630 V central inverters: no rated kW, AC power per "
+        "temperature (3300/4400 kVA @ 45 C, 3399/4532 @ 40 C, 3795/5060 @ 22.5 C; ac_kva = the 22.5 C figure); max. AC current given per "
+        "inverter unit (3 * / 4 * 1160 A) and left null; no PV power row", [
+        ("SG3300UD", 3, None, 3795.0, None, None), ("SG4400UD", 4, None, 5060.0, None, None)]),
+}
+
+
+def sungrow():
+    hand_brand("sungrow", "Sungrow", "https://en.sungrowpower.com/", "sungrow", SUNGROW)
+
+
+
+# Sofar: www.sofarsolar.eu download centre (downloads.sofarsolar.eu/wp-content/uploads/sofar/Datasheets/EN/, English en-EU sheets).
+# Rows typed by hand from the sheets: text sheets read with pdfplumber (spanned cells put under their columns by x-position);
+# SOFAR 1100-3300TL-G3, SOFAR 15-24KTLX-G3 and ME 5-20KTL-3PH have their text as outlines (no text layer) and were read from
+# a rendering of the page. Version = the file name's version and date (the sheet's own stamp is the same unless the note says).
+# ac_kw = 'Rated output power' (grid side, never the backup/EPS block); ac_kva = 'Max. apparent power' (grid side); ac_a =
+# 'Max. output current': where the sheet gives three figures at 380/400/415 V (or 220/230/240 V) the 400 V (230 V) figure is
+# taken; pv_kw = 'Recommended max. PV (input) power' [Wp], the only PV power row these sheets have; null where the sheet has
+# none. phases from 'Rated output voltage' / grid row (3/N/PE, 3N~+PE, 3/PE -> 3; L/N/PE, L+N+PE -> 1).
+# The lists write the string inverters with or without the 'SOFAR ' prefix, with a comma ('4,4KTLX-G3'), the NL list adds
+# ' - Grid connected photovoltaic inverter' / ' - Solar Grid-tied Inverter' and misspells KTLX as LKTLX / KLTX; one PL entry is
+# 'FAR 125KTLX-G4-ESS'; the EE list adds ' ( kasutamiseks tööstuskeskkonnas )': handled by `match`.
+# Other generations and suffixes on the lists are other models and get no row: TL-G2 / KTL-G2 / KTLM-G2 / KTL-X / plain
+# '3000TL', '3000TLM', '50000TL', 'xxKTL', 'xxKTL-HV' (100-136K), KTLM-G3 (3-6 kW: no sheet cached), KTL3-G3, -G3-A variants
+# the sheets do not list (5K, 8.8K, 11K, 30K), 20/30KTLX-G3P, 60KTLX-G3 (sheet: 60KTLX2-G3), HYD-29.9K-T1-A / HYD-30K-T1
+# without -PLUS, ESI-9.9K-T1 without -A, ESI 5K-S1-A, 99KTLX-G4, 330/333/350KTLX1, 333KTLX0, EBI 215K(-R), EBI 1725K and
+# BT5000A (those two sheets do not state the phase count).
+_NL = r"(\.?-(GRIDCONNECTEDPHOTOVOLTAICINVERTER|SOLARGRID-TIEDINVERTER))?"
+
+
+def sofar_x(code):  # "SOFAR 4.4KTLX-G3" -> also "4,4KTLX-G3", "SOFAR 4.4LKTLX-G3 .- Grid connected photovoltaic inverter", "SOFAR 15KLTX-G3"
+    body = re.escape(code.upper().removeprefix("SOFAR ")).replace("KTLX", "(KTLX|LKTLX|KLTX)")
+    return rf"^(SOFAR)?{body}{_NL}$"
+
+
+def sofar_p(code, prefix="(SOFAR)?"):  # optional maker prefix, spaces dropped
+    body = re.escape(re.sub(r"\s+", "", code.upper().removeprefix("SOFAR ")))
+    return rf"^{prefix}{body}$"
+
+
+SOFAR = {
+    "SOFAR_1100-3300TL-G3_Datasheet_2023-06-06_V4.0_en-EU": (1, "V4.0, 2023-06-06", "no text layer: read from the rendered page", [
+        ("SOFAR 1100TL-G3", 1, 1.1, 1.1, 5.3, None), ("SOFAR 1600TL-G3", 1, 1.6, 1.6, 7.7, None), ("SOFAR 2200TL-G3", 1, 2.2, 2.2, 10.6, None),
+        ("SOFAR 2700TL-G3", 1, 2.7, 2.7, 13.0, None), ("SOFAR 3000TL-G3", 1, 3.0, 3.0, 14.5, None), ("SOFAR 3300TL-G3", 1, 3.3, 3.3, 16.0, None)]),
+    "SOFAR_3.3-12KTLX-G3_Datasheet_2026-01-23_V2.0_en-EU": (3, "V2.0, 2026-01-23", "column order on the sheet: ... 8.8K, 11K, 10K-A, 12K; MPPT row spans all", [
+        ("SOFAR 3.3KTLX-G3", 2, 3.0, 3.3, 5.0, None, sofar_x("SOFAR 3.3KTLX-G3")), ("SOFAR 4.4KTLX-G3", 2, 4.0, 4.4, 6.7, None, sofar_x("SOFAR 4.4KTLX-G3")),
+        ("SOFAR 5.5KTLX-G3", 2, 5.0, 5.5, 8.3, None, sofar_x("SOFAR 5.5KTLX-G3")), ("SOFAR 6.6KTLX-G3", 2, 6.0, 6.6, 10.0, None, sofar_x("SOFAR 6.6KTLX-G3")),
+        ("SOFAR 8.8KTLX-G3", 2, 8.0, 8.8, 13.3, None, sofar_x("SOFAR 8.8KTLX-G3")), ("SOFAR 11KTLX-G3", 2, 10.0, 11.0, 16.7, None, sofar_x("SOFAR 11KTLX-G3")),
+        ("SOFAR 10KTLX-G3-A", 2, 10.0, 10.0, 15.2, None, sofar_x("SOFAR 10KTLX-G3-A")), ("SOFAR 12KTLX-G3", 2, 12.0, 13.2, 20.0, None, sofar_x("SOFAR 12KTLX-G3"))]),
+    "SOFAR_15-24KTLX-G3_Datasheet_2023-05-29_V1.0_en-EU": (3, "V1.0, 2023-05-29", "no text layer: read from the rendered page (stamp OV2023052901)", [
+        ("SOFAR 15KTLX-G3", 2, 15.0, 16.5, 23.9, None, sofar_x("SOFAR 15KTLX-G3")), ("SOFAR 17KTLX-G3", 2, 17.0, 18.7, 27.1, None, sofar_x("SOFAR 17KTLX-G3")),
+        ("SOFAR 20KTLX-G3", 2, 20.0, 22.0, 31.9, None, sofar_x("SOFAR 20KTLX-G3")), ("SOFAR 22KTLX-G3", 2, 22.0, 24.2, 35.1, None, sofar_x("SOFAR 22KTLX-G3")),
+        ("SOFAR 24KTLX-G3", 2, 24.0, 26.4, 38.3, None, sofar_x("SOFAR 24KTLX-G3"))]),
+    "SOFAR_15-25KTLX-G3P_Datasheet__2026-08-27_V3.0_en-EU": (3, "V3.0, 2026-08-27", "the 20 kW column is 20KTLX2-G3P (not 20KTLX-G3P)", [
+        ("SOFAR 15KTLX-G3P", 2, 15.0, 16.5, 25.1, 22.5, sofar_p("SOFAR 15KTLX-G3P")), ("SOFAR 17KTLX-G3P", 2, 17.0, 18.7, 28.5, 25.5, sofar_p("SOFAR 17KTLX-G3P")),
+        ("SOFAR 20KTLX2-G3P", 2, 20.0, 22.0, 33.5, 30.0, sofar_p("SOFAR 20KTLX2-G3P")), ("SOFAR 23KTLX-G3P", 2, 23.0, 25.3, 38.5, 34.5, sofar_p("SOFAR 23KTLX-G3P")),
+        ("SOFAR 25KTLX-G3P", 2, 25.0, 27.5, 41.8, 37.5, sofar_p("SOFAR 25KTLX-G3P"))]),
+    "SOFAR_25-50KTLX-G3_Datasheet_2025-11-20_V2.0_en-EU": (3, "V2.0, 2025-11-20", "25-36 kW 3 MPPT, 40-50 kW 4 MPPT (spanned cells read by position)", [
+        ("SOFAR 25KTLX-G3", 3, 25.0, 28.0, 42.4, None, sofar_x("SOFAR 25KTLX-G3")), ("SOFAR 30KTLX-G3", 3, 30.0, 34.0, 51.5, None, sofar_x("SOFAR 30KTLX-G3")),
+        ("SOFAR 33KTLX-G3", 3, 33.0, 37.0, 56.0, None, sofar_x("SOFAR 33KTLX-G3")), ("SOFAR 36KTLX-G3", 3, 36.0, 40.0, 60.6, None, sofar_x("SOFAR 36KTLX-G3")),
+        ("SOFAR 40KTLX-G3", 4, 40.0, 44.0, 66.7, None, sofar_x("SOFAR 40KTLX-G3")), ("SOFAR 45KTLX-G3", 4, 45.0, 50.0, 75.8, None, sofar_x("SOFAR 45KTLX-G3")),
+        ("SOFAR 50KTLX-G3", 4, 50.0, 55.0, 83.3, None, sofar_x("SOFAR 50KTLX-G3"))]),
+    "SOFAR_60-80KTLX-G3_Datasheet_2026-03-10_V2.1_en-EU": (3, "V2.1, 2026-03-10", "the 60 kW column is 60KTLX2-G3 (not 60KTLX-G3)", [
+        ("SOFAR 60KTLX2-G3", 6, 60.0, 66.0, 100.0, None), ("SOFAR 80KTLX-G3", 6, 80.0, 88.0, 133.3, None, sofar_x("SOFAR 80KTLX-G3"))]),
+    "SOFAR_100-125KTLX-G4_Datasheet_2025-11-20_V2.0_en-EU": (3, "V2.0, 2025-11-20",
+        "rated power as the sheet states it (110K column 100 kW, 125K 110 kW, 125K-A 125 kW); max apparent power is the @45°C figure "
+        "(the sheet also gives a lower @50°C one); current at 400 V", [
+        ("SOFAR 100KTLX-G4", 10, 100.0, 100.0, 145.0, None), ("SOFAR 110KTLX-G4", 10, 100.0, 110.0, 159.5, None),
+        ("SOFAR 125KTLX-G4", 10, 110.0, 125.0, 181.2, None), ("SOFAR 125KTLX-G4-A", 10, 125.0, 125.0, 181.2, None)]),
+    "SOFAR_80-125KTLX-G4-ESS_Datasheet_2026-07-27_V2.6_en-EU": (3, "V2.6, 2026-07-27", "hybrid; current at 400 V; one PL entry is written 'FAR 125KTLX-G4-ESS'", [
+        ("SOFAR 80KTLX-G4-ESS", 9, 80.0, 88.0, 127.0, 160.0, sofar_p("SOFAR 80KTLX-G4-ESS", "((SO)?FAR)?")),
+        ("SOFAR 99KTLX-G4-ESS", 9, 99.99, 99.99, 144.3, 200.0, sofar_p("SOFAR 99KTLX-G4-ESS", "((SO)?FAR)?")),
+        ("SOFAR 100KTLX-G4-ESS", 9, 100.0, 110.0, 158.7, 200.0, sofar_p("SOFAR 100KTLX-G4-ESS", "((SO)?FAR)?")),
+        ("SOFAR 110KTLX-G4-ESS", 9, 110.0, 121.0, 174.6, 220.0, sofar_p("SOFAR 110KTLX-G4-ESS", "((SO)?FAR)?")),
+        ("SOFAR 125KTLX-G4-ESS", 9, 125.0, 125.0, 180.4, 225.0, sofar_p("SOFAR 125KTLX-G4-ESS", "((SO)?FAR)?"))]),
+    "SOFAR_250-350KTLX0_Datasheet_2024-08-02_V1.3_en-EU": (3, "V1.3, 2024-08-02", "250 kW 6 MPPT, 330/350 kW 8 MPPT (spanned); the 350 kW column states 352 kW / 352 kVA", [
+        ("SOFAR 250KTLX0", 6, 250.0, 250.0, 180.5, None), ("SOFAR 330KTLX0", 8, 330.0, 330.0, 238.2, None), ("SOFAR 350KTLX0", 8, 352.0, 352.0, 254.1, None)]),
+    "SOFAR_250-255KTL-HV_Datasheet_2023-05-11_V1.0_en-EU": (3, "V1.0, 2023-05-11",
+        "the sheet heads the columns 250KTLX-HV / 255KTLX-HV, its file name says 250-255KTL-HV (the lists: 255KTL-HV); it states only "
+        "'AC output power' in kVA (rated kW not stated): ac_kva is the @40°C figure (225 kVA @45°C, 202.5 kVA @50°C); 800 V 3/PE", [
+        ("SOFAR 250KTLX-HV", 9, None, 250.0, 180.5, None, r"^(SOFAR)?250KTLX?-HV(\(KASUTAMISEKS.*\))?$"),
+        ("SOFAR 255KTLX-HV", 9, None, 255.0, 184.0, None, r"^(SOFAR)?255KTLX?-HV(\(KASUTAMISEKS.*\))?$")]),
+    "HYD_3000-6000-EP_Datasheet_2023-09-19_V5.1_en-EU": (1, "V5.1, 2023-09-19",
+        "AC Output (Grid) block; the MPPT row reads '1/1' (spanned, beside 'Max. Input Current 13/13 A') and states no count, so mppt "
+        "is null; PV row is headed 'Commended Max. PV Power'; the 5500-EP column states 5 kW rated / 5.5 kVA (stamp OV2023091905)", [
+        ("HYD 3000-EP", None, 3.0, 3.3, 14.3, 4.5), ("HYD 3680-EP", None, 3.68, 3.68, 16.0, 5.4), ("HYD 4000-EP", None, 4.0, 4.4, 19.1, 6.0),
+        ("HYD 4600-EP", None, 4.6, 4.6, 20.0, 6.9), ("HYD 5000-EP", None, 5.0, 5.0, 21.7, 7.5), ("HYD 5500-EP", None, 5.0, 5.5, 23.9, 7.5),
+        ("HYD 6000-EP", None, 6.0, 6.0, 26.1, 9.0)]),
+    "HYD_3000-6000-ES_Datasheet_2020-08_V1.0_en-EU": (1, "V1.0, 2020-08",
+        "'Max. Output Power' (VA) taken as ac_kva; ac_a is the single 'Max. Input / Output current' figure; the 3600-ES column states "
+        "3680 W; 4600-ES is marked 'available only for some designated countries'; NL writes 'Energy Storage inverter HYD 4000-ES'", [
+        ("HYD 3000-ES", 2, 3.0, 3.0, 13.7, 3.99), ("HYD 3600-ES", 2, 3.68, 3.68, 16.0, 4.79),
+        ("HYD 4000-ES", 2, 4.0, 4.0, 18.2, 5.32, r"^(ENERGYSTORAGEINVERTER)?HYD4000-ES$"),
+        ("HYD 4600-ES", 2, 4.6, 4.6, 21.0, 6.12), ("HYD 5000-ES", 2, 5.0, 5.0, 22.8, 6.65), ("HYD 6000-ES", 2, 6.0, 6.0, 27.3, 7.98)]),
+    "HYD_5-20KTL-3PH_Datasheet_with_SH-20-digit_SN_2025-11-27_(Available_from_2024)_V2.0_en-EU": (3, "V2.0, 2025-11-27",
+        "units with SH serial numbers (from 2024); the older SP-serial sheet (V5.0, 2023-08-31) gives the same AC and PV figures but "
+        "writes the strings-per-MPPT figures ('1/1', '2/2') in its MPPT row, so it is not used; grid 'Max. Apparent Power' is printed "
+        "in 'kW'; current at 400 V; footnote: with the Belgian code max apparent power is 10 kVA", [
+        ("HYD 5KTL-3PH", 2, 5.0, 5.5, 8.0, 7.5, sofar_p("HYD 5KTL-3PH")), ("HYD 6KTL-3PH", 2, 6.0, 6.6, 9.6, 9.0, sofar_p("HYD 6KTL-3PH")),
+        ("HYD 8KTL-3PH", 2, 8.0, 8.8, 12.8, 12.0, sofar_p("HYD 8KTL-3PH")), ("HYD 10KTL-3PH", 2, 10.0, 11.0, 15.9, 15.0, sofar_p("HYD 10KTL-3PH")),
+        ("HYD 10KTL-3PH-A", 2, 10.0, 10.0, 14.5, 15.0, sofar_p("HYD 10KTL-3PH-A")), ("HYD 15KTL-3PH", 2, 15.0, 16.5, 23.9, 22.5, sofar_p("HYD 15KTL-3PH")),
+        ("HYD 20KTL-3PH", 2, 20.0, 22.0, 31.9, 30.0, sofar_p("HYD 20KTL-3PH"))]),
+    "HYD-14.9-30K-T1_Datasheet_2026-09-07_V1.4_en-EU": (3, "V1.4, 2026-09-07", "AC Grid block; current at 400 V; the sheet lists only the -PLUS 29.9K/30K units", [
+        ("HYD-14.9K-T1-A", 3, 14.9, 14.9, 21.5, 30.0), ("HYD-15K-T1", 3, 15.0, 16.5, 23.8, 30.0), ("HYD-20K-T1", 3, 20.0, 22.0, 31.8, 40.0),
+        ("HYD-25K-T1", 3, 25.0, 27.5, 39.7, 50.0), ("HYD-29.9K-T1-A-PLUS", 3, 29.9, 29.9, 43.2, 60.0), ("HYD-30K-T1-PLUS", 3, 30.0, 33.0, 47.6, 60.0)]),
+    "HYD-40-60K-T1_Datasheet_2025-11-26_V1.1_en-EU": (3, "V1.1, 2025-11-26",
+        "AC Grid block; current at 400 V; PV row: 100 kWp spans 49.9K-A and 50K (read by position); CZ writes HYD-49.9-T1-A / HYD-50-T1 / HYD-60-T1", [
+        ("HYD-40K-T1", 4, 40.0, 44.0, 63.5, 80.0), ("HYD-49.9K-T1-A", 4, 49.9, 49.9, 72.0, 100.0, r"^HYD-49\.9K?-T1-A$"),
+        ("HYD-50K-T1", 4, 50.0, 55.0, 79.4, 100.0, r"^HYD-50K?-T1$"), ("HYD-60K-T1", 4, 60.0, 66.0, 95.3, 120.0, r"^HYD-60K?-T1$")]),
+    "ME_5-20KTL-3PH_Datasheet_2023-06-06_V4.0_en-EU": (3, "V4.0, 2023-06-06",
+        "AC-coupled storage inverter; no text layer: read from the rendered page; AC output (on-grid) block; the sheet has no PV input "
+        "block but lists 'PV reverse connection protection', so mppt is null, not 0", [
+        ("ME 5KTL-3PH", None, 5.0, 5.5, 8.0, None, r"^ME-?5KTL-3PH$"), ("ME 6KTL-3PH", None, 6.0, 6.6, 10.0, None, r"^ME-?6KTL-3PH$"),
+        ("ME 8KTL-3PH", None, 8.0, 8.8, 13.0, None, r"^ME-?8KTL-3PH$"), ("ME 10KTL-3PH", None, 10.0, 11.0, 16.0, None, r"^ME-?10KTL-3PH$"),
+        ("ME 15KTL-3PH", None, 15.0, 16.5, 24.0, None, r"^ME-?15KTL-3PH$"), ("ME 20KTL-3PH", None, 20.0, 22.0, 32.0, None, r"^ME-?20KTL-3PH$")]),
+    "ESI_3-6K-S1_Datasheet_2026-01-27_V2.4_en-EU": (1, "V2.4, 2026-01-27",
+        "AC Grid block; current at 230 V; sheet stamp V2.4 20260126; the PowerAll 1PH system sheet names the same ESI x-S1 module "
+        "(BE/NL write 'SOFAR PowerAll ESI 3K-S1'); footnote: with the Belgian/Australian code ESI 5K-S1 is 5 kVA / 21.7 A", [
+        ("ESI 3K-S1", 2, 3.0, 3.3, 14.3, 6.0, sofar_p("ESI 3K-S1", "(SOFAR)?(POWERALL)?")),
+        ("ESI 3.68K-S1", 2, 3.68, 3.68, 16.0, 7.36, sofar_p("ESI 3.68K-S1", "(SOFAR)?(POWERALL)?")),
+        ("ESI 4K-S1", 2, 4.0, 4.4, 19.1, 8.0, sofar_p("ESI 4K-S1", "(SOFAR)?(POWERALL)?")),
+        ("ESI 4.6K-S1", 2, 4.6, 4.6, 20.0, 9.2, sofar_p("ESI 4.6K-S1", "(SOFAR)?(POWERALL)?")),
+        ("ESI 5K-S1", 2, 5.0, 5.5, 23.9, 10.0, sofar_p("ESI 5K-S1", "(SOFAR)?(POWERALL)?")),
+        ("ESI 6K-S1", 2, 6.0, 6.6, 28.7, 12.0, sofar_p("ESI 6K-S1", "(SOFAR)?(POWERALL)?"))]),
+    "ESI-5-12K-T1_Datasheet_2025-03-04_V1.1_en-EU": (3, "V1.1, 2025-03-04",
+        "inverter-module sheet; AC Grid block; current at 400 V (the newer PowerAll 3PH system sheet V2.1 misprints the 5K grid "
+        "column as 6.5 kW / 7.15 kVA, so this sheet is used)", [
+        ("ESI-5K-T1", 3, 5.0, 5.5, 8.0, 10.0, sofar_p("ESI-5K-T1")), ("ESI-6.5K-T1", 3, 6.5, 7.15, 10.3, 13.0, sofar_p("ESI-6.5K-T1")),
+        ("ESI-8K-T1", 3, 8.0, 8.8, 12.8, 16.0, sofar_p("ESI-8K-T1")), ("ESI-9.9K-T1-A", 3, 9.9, 9.9, 14.3, 20.0, sofar_p("ESI-9.9K-T1-A")),
+        ("ESI-10K-T1", 3, 10.0, 11.0, 15.9, 20.0, sofar_p("ESI-10K-T1")), ("ESI-12K-T1", 3, 12.0, 13.2, 19.1, 24.0, sofar_p("ESI-12K-T1"))]),
+    "SOFAR_PowerMagic_2.0_Datasheet_2026-06-22_(PCS)_V1.1_en-EU": (3, "V1.1, 2026-06-22",
+        "battery PCS (no PV block, not stated as having none: mppt null); 'Rated Continuous Output Active Power', 'Maximum Continuous "
+        "Output Apparent Power', 'Maximum Continuous Output Current'; 230/400 V 3L+N+PE", [
+        ("EBI44K-R-G2", None, 44.0, 48.0, 70.0, None), ("EBI66K-R-G2", None, 66.0, 73.0, 105.0, None), ("EBI87K-R-G2", None, 87.0, 96.0, 138.0, None),
+        ("EBI99K-R-G2", None, 99.0, 99.99, 144.0, None), ("EBI124.9K-R-G2", None, 124.9, 137.0, 198.0, None), ("EBI125K-R-G2", None, 125.0, 138.0, 198.0, None)]),
+    "SOFAR_PowerMagic_Datasheet_2026-01-26_V2.1_en-EU": (3, "V2.1, 2026-01-26",
+        "only the EBI 99K-R / 125K-R PCS page of this system sheet (battery PCS, no PV block: mppt null); AC Side (Grid-on): 'Rated AC "
+        "Power', 'Maximum AC Apparent Power', 'Maximum AC Current'; 400 V 3W+PE", [
+        ("EBI 99K-R", None, 99.99, 99.99, 144.0, None, sofar_p("EBI 99K-R")), ("EBI 125K-R", None, 125.0, 138.0, 198.0, None, sofar_p("EBI 125K-R"))]),
+}
+
+
+def sofar():
+    hand_brand("sofar", "Sofar", "https://www.sofarsolar.eu/", "sofar", SOFAR)
+
+
 if __name__ == "__main__":
     deye()
     fronius()
@@ -1039,3 +1357,5 @@ if __name__ == "__main__":
     invt()
     afore()
     zcs()
+    sungrow()
+    sofar()

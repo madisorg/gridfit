@@ -29,7 +29,11 @@ for (const cc of ccs) {
   const ids = p.items.map((x) => x.id);
   eq(new Set(ids).size, ids.length, `${cc}: item ids unique`);
 }
-let models = 0, sheetAny = {}, covered = {}, outside = {}, overLine = {};
+// the items a country's list stands in for: read back from the profile file, not from the engine's output
+import yaml from "yaml";
+const LISTS = {};
+const listItems = (cc) => (LISTS[cc] ??= new Set(yaml.parse(readFileSync(resolve(here, `../../data/profiles/${cc.toLowerCase()}.yaml`), "utf-8")).list_checks?.items ?? []));
+let models = 0, sheetAny = {}, covered = {}, outside = {}, overLine = {}, listedN = {};
 for (const [key, m] of Object.entries(C.models)) {
   models++;
   for (const cc of ccs) {
@@ -50,6 +54,8 @@ for (const [key, m] of Object.entries(C.models)) {
       if (row[0] === "X") ok(!LINES.has(items[i].meaning), `${key} ${cc}: ${items[i].id} a procedure line is never "outside"`);
       if (row[0] === "D" || row[0] === "O") ok(r.doc, `${key} ${cc}: ${items[i].id} ${row[0]} has a document`);
       if (row[0] === "O") ok(items[i].changed_in && r.doc.edition < items[i].changed_in, `${key} ${cc}: ${items[i].id} is older than the change`);
+      // checked by the operator's list: only on a model the country's own list admits, only for an item the profile names
+      if (row[0] === "R") ok(r.listed && (C.profiles[cc].list ? true : false) && listItems(cc).has(items[i].id), `${key} ${cc}: ${items[i].id} R only for a listed model and a list item`);
     }
     if (r.sum.X) ok(m.sheet, `${key} ${cc}: outside only with a datasheet`);
     if (r.doc && C.profiles[cc].accepts.includes("national-declaration") && !C.profiles[cc].accepts.includes("generic-en50549-1"))
@@ -61,6 +67,8 @@ for (const [key, m] of Object.entries(C.models)) {
     if (r.sum.L) overLine[cc] = (overLine[cc] ?? 0) + 1;
     if (!r.sum.N) covered[cc] = (covered[cc] ?? 0) + 1;
     if (r.sum.X) outside[cc] = (outside[cc] ?? 0) + 1;
+    if (r.sum.R) listedN[cc] = (listedN[cc] ?? 0) + 1;
+    if (r.sum.R) ok(r.listed, `${key} ${cc}: R rows only with the listed flag`);
   }
 }
 for (const cc of ccs) {
@@ -68,6 +76,20 @@ for (const cc of ccs) {
   eq(covered[cc] ?? 0, C.stats[cc].covered, `${cc}: covered stat`);
   eq(outside[cc] ?? 0, C.stats[cc].outside, `${cc}: outside stat`);
   eq(overLine[cc] ?? 0, C.stats[cc].over_line, `${cc}: over-a-line stat`);
+  eq(listedN[cc] ?? 0, C.stats[cc].listed, `${cc}: checked-by-the-list stat`);
+  // a country whose profile words both cases (on its list / off it) leaves no "not shown" row without a reason
+  if (C.profiles[cc].list && C.profiles[cc].on_application) eq(C.stats[cc].bare, 0, `${cc}: every "not shown" row says why`);
+}
+// Estonia: every model on Elektrilevi's list, in a class the profile checks, has its list items checked by the list
+{
+  const reg = JSON.parse(readFileSync(resolve(here, "../.data/registers.json"), "utf-8"));
+  const onList = reg.devices.filter((d) => !d.unmatched && ["inverter", "hybrid", "battery", "plug-in"].includes(d.cls) && (d.cells.EE ?? []).some((e) => ["listed", "restricted", "limited"].includes(e.show)));
+  eq(C.stats.EE.listed, onList.length, "EE: every listed model is checked by the list");
+  const lst = listItems("EE"), items = C.profiles.EE.items;
+  for (const d of onList.slice(0, 400)) {
+    const r = C.models[d.brand + "|" + d.model].cc.EE, na = new Set(r.na ?? []);
+    for (const [i, it] of items.entries()) if (lst.has(it.id) && !na.has(i)) ok(["S", "P", "L", "X", "R"].includes(r.rows?.[String(i)]?.[0]), `${d.brand} ${d.model} EE: ${it.id} answered by sheet or list`);
+  }
 }
 
 // the worked example

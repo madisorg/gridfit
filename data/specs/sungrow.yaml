@@ -1,0 +1,186 @@
+brand: Sungrow
+maker_site: https://en.sungrowpower.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: ds-20240320-sh3-0-3-6-4-0-5-0-6-0rs-datasheet-v18-en
+  url: https://info-support.sungrowpower.com/application/pdf/2025/06/30/DS_20240320_SH3.0_3.6_4.0_5.0_6.0RS_Datasheet_V18_EN.pdf
+  file: DS_20240320_SH3.0_3.6_4.0_5.0_6.0RS_Datasheet_V18_EN.pdf
+  version: V18 (DS_20240320)
+  note: pv_kw is the 'Recommended max. PV input power' row; its footnote says max. input PV power is 13,000 Wp for all five
+  seen: '2026-11-01'
+- id: ds-20231201-sh15-20-25t-datasheet-v3-en
+  url: https://info-support.sungrowpower.com/application/pdf/2024/09/13/DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf
+  file: DS_20231201_SH15_20_25T_Datasheet_V3_EN.pdf
+  version: V3 (DS_20231201)
+  note: pv_kw is the 'Recommended max. PV input power' row (the AU edition of the sheet heads the same figures 'Max. PV input
+    power'); SH15TA..SH30TA on the lists are another series, not on this sheet
+  seen: '2026-11-01'
+- id: 1cb442be-4d2c-4a92-b7b4-99527176776c
+  url: https://info-support.sungrowpower.com/datasheet-materials/1cb442be-4d2c-4a92-b7b4-99527176776c.pdf
+  file: 1cb442be-4d2c-4a92-b7b4-99527176776c.pdf
+  version: Version 4 (p.1) / Version 1 EUR (p.2), 2025
+  note: max. AC output current is the sheet's figure 'at 220V'
+  seen: '2026-11-01'
+- id: a33f2659-00b8-4301-b514-9c3b19937a3d
+  url: https://info-support.sungrowpower.com/datasheet-materials/a33f2659-00b8-4301-b514-9c3b19937a3d.pdf
+  file: a33f2659-00b8-4301-b514-9c3b19937a3d.pdf
+  version: Version 7, 2025
+  note: max. AC output current is given per grid voltage (250.7 A @ 380 V; 240.6 A @ 400/415 V; 200.5 A @ 480 V) and left
+    null
+  seen: '2026-11-01'
+- id: 56037c44-9a2d-47fd-b1a8-6faae8393577
+  url: https://info-support.sungrowpower.com/datasheet-materials/56037c44-9a2d-47fd-b1a8-6faae8393577.pdf
+  file: 56037c44-9a2d-47fd-b1a8-6faae8393577.pdf
+  version: Version 5, 2026
+  note: C&I hybrid; the lists also write 'SH125CX + Logger1000A- EU'
+  seen: '2026-11-01'
+- id: ds-20221121-sg320hx-datasheet-v17-en
+  url: https://info-support.sungrowpower.com/application/pdf/2022/11/30/DS_20221121_SG320HX_Datasheet_V17_EN.pdf
+  file: DS_20221121_SG320HX_Datasheet_V17_EN.pdf
+  version: V17 (DS_20221121)
+  note: '800 V utility string inverter: no rated kW, AC power 352 kVA @ 30 C / 320 kVA @ 40 C / 295 kVA @ 50 C (ac_kva = 352);
+    MPPT 12, optional 16; no PV power row; the lists also write ''SG320HX + Logger4000'''
+  seen: '2026-11-01'
+- id: ds-20250121-sg320hx-20-datasheet-v8-en
+  url: https://info-support.sungrowpower.com/application/pdf/2025/01/23/DS_20250121_SG320HX-20_Datasheet_V8_EN.pdf
+  file: DS_20250121_SG320HX-20_Datasheet_V8_EN.pdf
+  version: V8 (DS_20250121)
+  note: '800 V utility string inverter: no rated kW, AC power 352 kVA @ 30 C / 320 kVA @ 40 C / 301.8 kVA @ 50 C (ac_kva =
+    352); no PV power row; the lists also write ''SG320HX-20 + Logger4000'''
+  seen: '2026-11-01'
+- id: ds-20250610-sg3300ud-sg4400ud-datasheet-v21-en
+  url: https://info-support.sungrowpower.com/application/pdf/2025/06/16/DS_20250610_SG3300UD_SG4400UD_Datasheet_V21_EN.pdf
+  file: DS_20250610_SG3300UD_SG4400UD_Datasheet_V21_EN.pdf
+  version: V21 (DS_20250610)
+  note: '630 V central inverters: no rated kW, AC power per temperature (3300/4400 kVA @ 45 C, 3399/4532 @ 40 C, 3795/5060
+    @ 22.5 C; ac_kva = the 22.5 C figure); max. AC current given per inverter unit (3 * / 4 * 1160 A) and left null; no PV
+    power row'
+  seen: '2026-11-01'
+models:
+- code: SH3.0RS
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.0
+  ac_a: 13.7
+  phases: 1
+  pv_kw: 4.5
+  source: ds-20240320-sh3-0-3-6-4-0-5-0-6-0rs-datasheet-v18-en
+- code: SH3.6RS
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 5.4
+  source: ds-20240320-sh3-0-3-6-4-0-5-0-6-0rs-datasheet-v18-en
+- code: SH4.0RS
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.0
+  ac_a: 18.2
+  phases: 1
+  pv_kw: 6.0
+  source: ds-20240320-sh3-0-3-6-4-0-5-0-6-0rs-datasheet-v18-en
+- code: SH5.0RS
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.0
+  ac_a: 22.8
+  phases: 1
+  pv_kw: 7.5
+  source: ds-20240320-sh3-0-3-6-4-0-5-0-6-0rs-datasheet-v18-en
+- code: SH6.0RS
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.0
+  ac_a: 27.3
+  phases: 1
+  pv_kw: 9.0
+  source: ds-20240320-sh3-0-3-6-4-0-5-0-6-0rs-datasheet-v18-en
+- code: SH15T
+  mppt: 3
+  ac_kw: 15.0
+  ac_kva: 15.0
+  ac_a: 22.8
+  phases: 3
+  pv_kw: 30.0
+  source: ds-20231201-sh15-20-25t-datasheet-v3-en
+- code: SH20T
+  mppt: 3
+  ac_kw: 20.0
+  ac_kva: 20.0
+  ac_a: 30.4
+  phases: 3
+  pv_kw: 40.0
+  source: ds-20231201-sh15-20-25t-datasheet-v3-en
+- code: SH25T
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 25.0
+  ac_a: 37.9
+  phases: 3
+  pv_kw: 50.0
+  source: ds-20231201-sh15-20-25t-datasheet-v3-en
+- code: SG75CX-P2
+  mppt: 8
+  ac_kw: 75.0
+  ac_kva: 75.0
+  ac_a: 113.9
+  phases: 3
+  pv_kw: 105.0
+  source: 1cb442be-4d2c-4a92-b7b4-99527176776c
+- code: SG150CX
+  mppt: 7
+  ac_kw: 150.0
+  ac_kva: 165.0
+  ac_a: null
+  phases: 3
+  pv_kw: 210.0
+  source: a33f2659-00b8-4301-b514-9c3b19937a3d
+- code: SH125CX
+  mppt: 10
+  ac_kw: 125.0
+  ac_kva: 125.0
+  ac_a: 189.9
+  phases: 3
+  pv_kw: 250.0
+  source: 56037c44-9a2d-47fd-b1a8-6faae8393577
+  match: ^SH125CX(\+LOGGER1000A-EU)?$
+- code: SG320HX
+  mppt: 12
+  ac_kw: null
+  ac_kva: 352.0
+  ac_a: 254.0
+  phases: 3
+  pv_kw: null
+  source: ds-20221121-sg320hx-datasheet-v17-en
+  match: ^SG320HX(\+LOGGER4000)?$
+- code: SG320HX-20
+  mppt: 6
+  ac_kw: null
+  ac_kva: 352.0
+  ac_a: 254.0
+  phases: 3
+  pv_kw: null
+  source: ds-20250121-sg320hx-20-datasheet-v8-en
+  match: ^SG320HX-20(\+LOGGER4000)?$
+- code: SG3300UD
+  mppt: 3
+  ac_kw: null
+  ac_kva: 3795.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: ds-20250610-sg3300ud-sg4400ud-datasheet-v21-en
+- code: SG4400UD
+  mppt: 4
+  ac_kw: null
+  ac_kva: 5060.0
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: ds-20250610-sg3300ud-sg4400ud-datasheet-v21-en
