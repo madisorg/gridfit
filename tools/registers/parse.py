@@ -171,7 +171,8 @@ def read_at():
             continue
         marke, typ, pw, ps, ph, art, zul, fw, bef, usv = (list(r) + [None] * 10)[:10]
         a = s(art).lower()
-        cls = ("hybrid" if "hybrid" in a else "battery" if "batterie" in a or "speicher" in a
+        # "Windenergie-Wechselrichter" is a wind turbine's inverter, not a PV one: class other (data/registers/classes.yaml)
+        cls = ("other" if "wind" in a else "hybrid" if "hybrid" in a else "battery" if "batterie" in a or "speicher" in a
                else "inverter" if "wechselrichter" in a else "other")
         add("AT", marke, typ, cls, at_status(zul), zul, fw=fw, valid=bef, kva=num(ps) or num(pw),
             extra={"phases": s(ph), "type": s(art)})
