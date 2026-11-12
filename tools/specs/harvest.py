@@ -29,13 +29,13 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-import urllib.robotparser
 from pathlib import Path
 
 import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 
 
 def _load(name, path):
@@ -50,42 +50,11 @@ norm_model = watch.norm_model
 
 
 class Net(watch.Net):
-    """The watch's Net, with robots.txt read the way RFC 9309 and the search engines read it: the most specific
-    (longest) matching rule wins. urllib.robotparser takes the first matching rule, so "Allow: /" followed by
-    "Disallow: /upload/" (en.growatt.com) would let every file through; the maker meant the opposite."""
-
-    def allowed(self, url):
-        host = self._host(url)
-        if host not in self.robots:  # as the watch reads it, but decoded with utf-8-sig: a BOM (en.goodwe.com) hides the first group
-            rp = urllib.robotparser.RobotFileParser()
-            try:
-                status, _, body = self._raw(host + "/robots.txt", {})
-                if status == 200:
-                    rp.parse(body.decode("utf-8-sig", "replace").splitlines())
-                elif status in (401, 403):
-                    rp.disallow_all = True
-                else:
-                    rp.allow_all = True
-            except Exception:  # noqa: BLE001 - no robots.txt reachable: the standard says allowed
-                rp.allow_all = True
-            self.robots[host] = rp
-            self.delay[host] = max(1.0, float(rp.crawl_delay(watch.UA) or 0))
-        if not super().allowed(url):
-            return False
-        rp = self.robots[host]
-        entry = next((e for e in rp.entries if e.applies_to(watch.UA)), None) or rp.default_entry
-        if entry is None:
-            return True
-        path = urllib.parse.quote(urllib.parse.urlparse(url).path or "/")
-        best = None
-        for rl in entry.rulelines:
-            if rl.path == "*" or path.startswith(rl.path):
-                if best is None or len(rl.path) > len(best.path):
-                    best = rl
-        return True if best is None else bool(best.allowance)
+    """The watch's Net. robots.txt is read by gridfit/robots.py for every tool (RFC 9309: the longest matching rule
+    wins, so "Allow: /" before "Disallow: /upload/" on en.growatt.com keeps the uploads out; a BOM is ignored)."""
 
 TODAY = datetime.date.today().isoformat()
-CFG = yaml.safe_load((Path(__file__).parent / "harvest.yaml").read_text(encoding="utf-8"))
+CFG = strictyaml.load((Path(__file__).parent / "harvest.yaml").read_text(encoding="utf-8"))
 UA = CFG.get("ua") or watch.UA
 watch.UA = UA
 CACHE = ROOT / "cache/specs"
@@ -472,7 +441,7 @@ def draft_rows(d, sid):
 
 def write_draft(brand, sheet, table, dry):
     p = DRAFTS / f"{slug(brand)}.yaml"
-    doc = yaml.safe_load(p.read_text(encoding="utf-8")) if p.exists() else None
+    doc = strictyaml.load(p.read_text(encoding="utf-8")) if p.exists() else None
     doc = doc or {"brand": brand, "status": "draft", "rule": RULE, "sources": [], "models": []}
     sid = re.sub(r"\.pdf$", "", sheet["file"], flags=re.I).lower()
     doc["sources"] = [s for s in doc["sources"] if s["id"] != sid] + [

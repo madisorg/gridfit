@@ -40,6 +40,11 @@ edition:
   date: "2026-03"
   in_force: "2026-03-01"
   label: "VDE-AR-N 4105:2026-03"
+# a bare year in a citation is read as that norm's one edition of the year ("VDE-AR-N 4105:2018" = 2018-11); without it a
+# 2026 certificate to the 2018 edition fell back to its issue month and counted as the 2026-03 edition (tools/check/run.py)
+edition_years:
+  "VDE-AR-N 4105": {"2011": "2011-08", "2018": "2018-11", "2026": "2026-03"}
+  "DIN VDE V 0124-100": {"2020": "2020-06"}
 document_must_cite: ["VDE-AR-N 4105"]
 # why national-declaration only: NELEV § 2(1) proof to the grid operator; VDE-AR-N 4105:2026-03 § 9 as VDE FNN
 # summarises it: "Für Erzeugungsanlagen und Speicher, die in den Anwendungsbereich dieser Anwendungsregel fallen,

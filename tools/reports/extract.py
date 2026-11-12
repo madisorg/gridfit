@@ -16,9 +16,10 @@ import sys
 from pathlib import Path
 from urllib.parse import unquote, urlparse
 
-import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 NUM = r"(\d+(?:[.,]\d+)?)"
 UNIT = {"un": r"(?:U\s*n|Un|U\s*c)", "s": r"s(?![a-z])", "hz": r"Hz(?!/)", "hzs": r"Hz\s*/\s*s(?:ec)?", "pct": r"%"}
 # a label family: (regex, unit kind, the (function, parameter) slots it fills in order of appearance)
@@ -97,7 +98,7 @@ def text_for(pdf_dir: Path, url: str):
 def score(cache: Path):
     tot = {"slots": 0, "found": 0, "right": 0}
     for f in sorted((ROOT / "data/test-reports").glob("*.yaml")):
-        b = yaml.safe_load(f.read_text(encoding="utf-8"))
+        b = strictyaml.load(f.read_text(encoding="utf-8"))
         for d in b["documents"]:
             funcs = d.get("functions") or {}
             want = {(fn, p): hand(funcs.get(fn, {}).get(p)) for fn, p in SLOTS + [("rocof", "immunity_hz_s")]}
@@ -134,7 +135,7 @@ def corpus(dirs: list[Path], registers: Path | None):
     norm = lambda c: re.sub(r"\s+", "", c.upper()).replace(",", ".")
     rows, models = [], {"table": set(), "no-table": set(), "not-cached": set()}
     for f in sorted((ROOT / "data/evidence").glob("*.yaml")):
-        b = yaml.safe_load(f.read_text(encoding="utf-8"))
+        b = strictyaml.load(f.read_text(encoding="utf-8"))
         for d in b["documents"]:
             if not any("50549" in s for s in d.get("standards") or []):
                 continue

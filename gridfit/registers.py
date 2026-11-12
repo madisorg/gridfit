@@ -21,6 +21,7 @@ import sys
 from pathlib import Path
 
 from .brands import slug
+from . import strictyaml  # a key written twice is an error, not a silent last-wins
 
 UA = ("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
       "Chrome/130.0 Safari/537.36")
@@ -392,7 +393,7 @@ def _other_rules(path: Path):
     if not path.exists():
         return lambda brand, norm: False
     import yaml
-    c = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    c = strictyaml.load(path.read_text(encoding="utf-8")) or {}
     makers = {m.upper() for m in c.get("makers") or []} | {a["maker"].upper() for a in c.get("also") or []}
     pats = [(m["maker"].upper(), re.compile(m["match"])) for m in c.get("models") or []]
     return lambda brand, norm: brand.upper() in makers or any(b == brand.upper() and rx.search(norm) for b, rx in pats)

@@ -19,12 +19,13 @@ import sys
 from datetime import date
 from pathlib import Path
 
-import yaml
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # the coverage line has × and · (a cp1252 console)
 
 ROOT = Path(__file__).resolve().parents[2]  # runs from web/ (npm run build) as well as from the repo root
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 OUT = ROOT / "web/.data/checks.json"
 REG = ROOT / "web/.data/registers.json"
 PROFILES, SPECS, EVIDENCE = ROOT / "data/profiles", ROOT / "data/specs", ROOT / "data/evidence"
@@ -170,7 +171,7 @@ def validate_profile(p: dict, name: str) -> list[str]:
 def load_profiles() -> dict:
     out, errs = {}, []
     for f in sorted(PROFILES.glob("*.yaml")):
-        p = yaml.safe_load(f.read_text(encoding="utf-8"))
+        p = strictyaml.load(f.read_text(encoding="utf-8"))
         errs += validate_profile(p, f.name)
         out[p["cc"]] = p
     if errs:
@@ -180,22 +181,40 @@ def load_profiles() -> dict:
 
 
 # ---- the two evidence layers --------------------------------------------------------------------------------------
+def _brand_keys() -> dict:
+    """spelling -> canonical name, both lower case, from data/curated/brands.yaml: an evidence or datasheet file that
+    writes "Victron" and a register that writes "Victron Energy" are one brand, never a join to nothing."""
+    keys = {}
+    for canon, spellings in (strictyaml.load((ROOT / "data/curated/brands.yaml").read_text(encoding="utf-8")) or {}).items():
+        for s in [canon, *(spellings or [])]:
+            keys[str(s).strip().lower()] = str(canon).strip().lower()
+    return keys
+
+
+BRAND_KEYS = _brand_keys()
+
+
+def bkey(brand: str) -> str:
+    b = (brand or "").strip().lower()
+    return BRAND_KEYS.get(b, b)
+
+
 def load_specs() -> dict:
     idx = {}
     for f in sorted(SPECS.glob("*.yaml")):
-        doc = yaml.safe_load(f.read_text(encoding="utf-8"))
+        doc = strictyaml.load(f.read_text(encoding="utf-8"))
         src = {s["id"]: s for s in doc["sources"]}
         rows = []
         for m in doc["models"]:
             s = src[m["source"]]
             rows.append((norm(m["code"]), re.compile(m["match"]) if m.get("match") else None,
                          {**m, "src": {"url": s["url"], "version": s.get("version") or "", "seen": s["seen"], "title": s.get("title") or s.get("file") or ""}}))
-        idx[doc["brand"].lower()] = rows
+        idx.setdefault(bkey(doc["brand"]), []).extend(rows)   # two files of one brand are joined, never last-wins
     return idx
 
 
 def sheet_of(idx: dict, brand: str, model: str):
-    rows = idx.get(brand.lower())
+    rows = idx.get(bkey(brand))
     if not rows:
         return None
     n = norm(model)
@@ -208,21 +227,22 @@ def sheet_of(idx: dict, brand: str, model: str):
 def load_evidence() -> dict:
     idx = {}
     for f in sorted(EVIDENCE.glob("*.yaml")):
-        b = yaml.safe_load(f.read_text(encoding="utf-8"))
+        b = strictyaml.load(f.read_text(encoding="utf-8"))
         lst = []
         for d in b["documents"]:
             doc = {k: v for k, v in d.items() if k != "families"}
+            doc["_brand"] = b["brand"]   # the file's own spelling: the site keys doc_accepted by it (web/src/lib/checks.ts)
             for fam in d["families"]:
                 if fam.get("match"):
                     lst.append((re.compile(fam["match"]), doc, fam))
-        idx[b["brand"].lower()] = lst
+        idx.setdefault(bkey(b["brand"]), []).extend(lst)   # two files of one brand are joined, never last-wins
     return idx
 
 
 def docs_of(idx: dict, brand: str, model: str, cc: str) -> list[dict]:
     n = norm(model)
     out, seen = [], set()
-    for rx, doc, fam in idx.get(brand.lower(), []):
+    for rx, doc, fam in idx.get(bkey(brand), []):
         # `countries` is what the document names; `accepted_in` is derived by tools/evidence/build.py from data/evidence/rules
         if (cc in (fam.get("countries") or []) or cc in (fam.get("accepted_in") or [])) and rx.search(n) and doc["id"] not in seen:
             seen.add(doc["id"])
@@ -230,9 +250,23 @@ def docs_of(idx: dict, brand: str, model: str, cc: str) -> list[dict]:
     return out
 
 
-def edition_of(doc: dict) -> str | None:
-    """The newest edition a document cites (YYYY-MM from its standards), else the month it was issued."""
-    dates = [f"{y}-{m}" for s in (doc.get("standards") or []) for y, m in YM.findall(s)]
+MMYY = re.compile(r"/(\d\d)\.(\d\d)(?!\d)")        # "VDE-AR-N 4105/11.18" = 2018-11
+BARE_YEAR = re.compile(r"[: ](20\d\d)(?![\d-])")  # "VDE-AR-N 4105:2018" — the profile's edition_years says which month
+
+
+def edition_of(doc: dict, prof: dict | None = None) -> str | None:
+    """The newest edition a document cites: YYYY-MM, MM.YY after a slash, or a bare year of a norm that had one edition
+    that year (the profile's `edition_years`, per norm); only then the month it was issued, which is not an edition."""
+    norms = (prof or {}).get("edition_years") or {}
+    dates = []
+    for s in doc.get("standards") or []:
+        found = [f"{y}-{m}" for y, m in YM.findall(s)] + [f"20{yy}-{mm}" for mm, yy in MMYY.findall(s)]
+        if not found:
+            for norm_name, years in norms.items():
+                if norm_name.lower() in s.lower():
+                    table = {str(k): str(v) for k, v in years.items()}
+                    found += [table[y] for y in BARE_YEAR.findall(s) if y in table]
+        dates += found
     if dates:
         return max(dates)
     iss = str(doc.get("issued") or "")
@@ -241,8 +275,11 @@ def edition_of(doc: dict) -> str | None:
 
 
 def cites(doc: dict, must) -> bool:
+    """Whether the standards name one of `must` where a term starts: Spain's "NTS" is not the end of "requirements".
+    The key may run on, because several keys are prefixes by design ("OVE-Richtlinie R" names "OVE-Richtlinie R25",
+    "EN 50549" names "EN 50549-1:2019" and "NEN-EN 50549-1")."""
     text = " ".join(doc.get("standards") or []).lower()
-    return any(c.lower() in text for c in must)
+    return any(re.search(r"(?<![a-z0-9])" + re.escape(c.lower()), text) for c in must)
 
 
 def classes_of(doc: dict, prof: dict) -> set:
@@ -366,9 +403,9 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
     by_list = set(lc.get("items") or []) if listed else set()
     acc = set(prof["accepts"])
     covering = [d for d in docs if classes_of(d, prof) & acc]
-    covering.sort(key=lambda d: edition_of(d) or "", reverse=True)
+    covering.sort(key=lambda d: edition_of(d, prof) or "", reverse=True)
     best = covering[0] if covering else None
-    best_ed = edition_of(best) if best else None
+    best_ed = edition_of(best, prof) if best else None
     kw, ph = field_of(sheet, "ac_kw"), field_of(sheet, "phases")
     rows, na = {}, []
     counts = dict.fromkeys(STATES, 0)
@@ -419,7 +456,7 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
                       "standards": short_standards(best), "edition": best_ed, "older": bool(best_ed and best_ed < prof["edition"]["date"]),
                       "firmware": best.get("firmware", "")}
         if len(covering) > 1:
-            out["doc"]["more"] = [{"title": d["title"], "url": d["url"], "edition": edition_of(d)} for d in covering[1:]]
+            out["doc"]["more"] = [{"title": d["title"], "url": d["url"], "edition": edition_of(d, prof)} for d in covering[1:]]
     elif docs:
         out["named"] = [{"title": d["title"], "url": d["url"], "kind": d.get("kind", ""), "is": sorted(classes_of(d, prof)) or ["no standard cited"]} for d in docs]
     return out
@@ -485,9 +522,17 @@ def main(validate_only: bool = False, fixture: str | None = None, out: str | Non
         if sheet:
             entry["sheet"] = {"code": sheet["code"], **sheet["src"]}
         models[d["brand"] + "|" + d["model"]] = entry
+    # per maker's document, the countries whose operator takes its kind: the site's "likely fit" (evidence.ts fitsIn) reads
+    # it, so the grid cell, the model page's tiers and this check never disagree about one document
+    doc_accepted = {}
+    for lst in evidence.values():
+        for _, doc, _ in lst:
+            k = f"{doc['_brand']}|{doc['id']}"
+            if k not in doc_accepted:
+                doc_accepted[k] = sorted(cc for cc, p in profiles.items() if classes_of(doc, p) & set(p["accepts"]))
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    OUT.write_text(json.dumps({"built": date.today().isoformat(), "states": list(STATES), "profiles": out_prof, "models": models, "stats": stats},
-                              ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+    OUT.write_text(json.dumps({"built": date.today().isoformat(), "states": list(STATES), "profiles": out_prof, "models": models, "stats": stats,
+                               "doc_accepted": doc_accepted}, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     print(OUT, f"{len(models)} models × {len(profiles)} countries, {OUT.stat().st_size // 1024} kB")
     for cc, st in stats.items():
         print(f"{cc}: {st['models']} models · at least one datasheet row {st['sheet_any']} ({st['sheet_rows']} rows) · every item covered {st['covered']} · "

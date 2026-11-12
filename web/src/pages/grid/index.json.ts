@@ -22,6 +22,7 @@ export const GET: APIRoute = () => {
     b.n - a.n || (lc(a.brand) < lc(b.brand) ? -1 : lc(a.brand) > lc(b.brand) ? 1 : 0) || (lc(a.model) < lc(b.model) ? -1 : lc(a.model) > lc(b.model) ? 1 : 0));
   const rows = order.map((d) => {
     const f = familyOf(d), s = specOf(d), mk = marksOfModel(d), rel = releasesOf(d.brand, d.model);
+    // row[10]: releaseCountries keeps a country only where its operator takes the document's kind (evidence.ts fitsIn)
     return [bidx.get(brandSlugOf(d)), d.model, d.cls, modelUrl(d), COUNTRIES.map((c) => (d.cells[c] ? CODE[best(d.cells[c])] : "-")).join(""),
       mk.ha + mk.evcc, f ? f.name : "", s.phases, s.kva, s.mppt, releaseCountries(rel).filter(inScope).join(","), legacyOf(d).tier, (() => { const c = codeOf(d); return c ? [c.kw, c.phases] : null; })()];
   });

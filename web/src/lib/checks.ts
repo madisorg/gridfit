@@ -28,7 +28,7 @@ export type Named = { title: string; url: string; kind: string; is: string[] };
 type Raw = { built: string; profiles: Record<string, { country: string; norm: string; edition: Edition; decided_by: string; accepts: string[]; items: Item[];
     list?: ListCheck; on_application?: string }>;
   models: Record<string, { sheet?: Sheet; cc: Record<string, { sum: Partial<Record<State, number>>; rows?: Record<string, [State, string?, string?]>; na?: number[]; doc?: Doc; named?: Named[]; listed?: boolean }> }>;
-  stats: Record<string, Record<string, number>> };
+  stats: Record<string, Record<string, number>>; doc_accepted?: Record<string, string[]> };
 const C: Raw = JSON.parse(readFileSync(resolve(process.cwd(), ".data/checks.json"), "utf-8"));
 export const CHECK_BUILT: string = C.built;
 export const CHECK_STATS = C.stats;
@@ -38,6 +38,15 @@ export const ACCEPT_WORD: Record<string, string> = {
   "generic-en50549-1": "an EN 50549-1 certificate", "national-declaration": "a declaration against the national rule", "country-release": "the maker's released-countries table",
   "no standard cited": "a document that cites no standard",
 };
+
+// per maker's document (evidence file's brand | document id): the countries whose operator takes its kind (`accepts`),
+// as tools/check/run.py classed it. evidence.ts fitsIn reads it, so the grid's "likely fit", the model page's list tiers
+// and the requirement check never disagree about one document. null: no profile for the country, so no rule to apply.
+const DOC_ACCEPTED = new Map(Object.entries(C.doc_accepted ?? {}).map(([k, v]) => [k, new Set(v)]));
+export function docAccepted(brand: string, id: string, cc: string): boolean | null {
+  if (!(cc in C.profiles)) return null;
+  return DOC_ACCEPTED.get(brand + "|" + id)?.has(cc) ?? false;
+}
 
 export function checksOf(d: { brand: string; model: string }): CountryCheck[] {
   const m = C.models[d.brand + "|" + d.model];

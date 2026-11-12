@@ -20,9 +20,10 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 KINDS = {"inverter", "hybrid", "battery", "plug-in"}
 norm = lambda s: re.sub(r"\s+", "", s.upper()).replace(",", ".")  # noqa: E731 — as web/src/lib/evidence.ts
 
@@ -39,7 +40,7 @@ def load_evidence(ref=None):
         texts = [p.read_text(encoding="utf-8") for p in sorted((ROOT / "data" / "evidence").glob("*.yaml"))]
     out = {}
     for t in texts:
-        b = yaml.safe_load(t)
+        b = strictyaml.load(t)
         lst = out.setdefault(b["brand"].lower(), [])
         for d in b["documents"]:
             for fam in d["families"]:
