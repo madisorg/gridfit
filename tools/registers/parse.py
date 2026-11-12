@@ -286,7 +286,10 @@ def read_se():
         cls = ("hybrid" if "sol" in src and "batteri" in src else "battery" if "batteri" in src
                else "inverter" if "sol" in src else "other")
         status, word = ("restricted", comment) if SE_THREE_PHASE_ONLY.search(comment) else ("listed", "listed")
-        add("SE", r[1], r[2], cls, status, word, rid=r[0], fw=r[3], date=se_date(r[7]), kva=num(r[4]),
+        # 40 Pylontech rows (3313–3362) read "FH3X?8K?HY?3P?10D": a dash the export could not encode, as the family's
+        # other rows (2511 "FH3X-8K-HY-3P-10") show
+        model = re.sub(r"(?<=[0-9A-Za-z])\?(?=[0-9A-Za-z])", "-", s(r[2]))
+        add("SE", r[1], model, cls, status, word, rid=r[0], fw=r[3], date=se_date(r[7]), kva=num(r[4]),
             extra={"phases": s(r[5]), "source": s(r[6]), "comment": comment})
 
 

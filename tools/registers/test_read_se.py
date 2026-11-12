@@ -1,4 +1,4 @@
-"""Test of the Rikta Rätt reader (tools/registers/parse.py read_se) on a five-row file in both code pages it has come in.
+"""Test of the Rikta Rätt reader (tools/registers/parse.py read_se) on a six-row file in both code pages it has come in.
 
     python tools/registers/test_read_se.py
 
@@ -20,6 +20,7 @@ ROWS = [
     "1002;Växel AB;Kraftö 5K;1.0;5;3;Sol/Batteri;2023-03-01;Hybrid;",
     "3377;Solplanet;ASW150K-LT;V1;150;3;Aiswei B.V.;2026-06-01;;",
     "3395;Growatt ;WIT 50K-HU;TO1.0;50;3;Sol/Batteri;25/09/2026;Hybrid;",
+    "3316;Pylontech;FH3X?8K?HY?3P?10D;V1;10;3;Sol/Batteri;2026-08-31;Hybrid;",
 ]
 
 
@@ -40,7 +41,7 @@ def main():
         rows, errs = parse(enc)
         by = {r["id"]: r for r in rows}
         checks = [
-            (len(rows) == 5, f"5 rows, got {len(rows)}"),
+            (len(rows) == 6, f"6 rows, got {len(rows)}"),
             (by["437"]["extra"]["comment"] == "Licens från Fimer Group", f"comment {by['437']['extra']['comment']!r}"),
             (by["1002"]["model_raw"] == "Kraftö 5K", f"model {by['1002']['model_raw']!r}"),
             (by["1001"]["status"] == "restricted" and "trefaskoppling" in by["1001"]["word"], "three-phase only → restricted"),
@@ -48,6 +49,7 @@ def main():
             (by["3377"]["cls"] == "inverter" and "3377" in errs, "misplaced energy source → PV, reported"),
             (by["3395"]["date"] == "2026-09-25", f"date {by['3395']['date']!r}"),
             (by["1002"]["cls"] == "hybrid", "Sol/Batteri → hybrid"),
+            (by["3316"]["model_raw"] == "FH3X-8K-HY-3P-10D", f"lost dash {by['3316']['model_raw']!r}"),
             ("header not recognised" not in errs, "header recognised"),
         ]
         for ok, what in checks:
