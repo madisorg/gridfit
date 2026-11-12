@@ -50,7 +50,7 @@ documents:
 - id: it-cei021-poweruno-2026
   title: Dichiarazione di Conformità del Generatore — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — FIM-HY-X.X-SE-A-1PH (PowerUNO) with
     FIM-BATT
-  url: https://fimer.com/sites/default/files/FIM-HY-X.X-SE-A-1PH%20_DichConfCEI0-21%3B%20Rev%2013-01-2025.pdf
+  url: https://www.fimer.com/single-phase/poweruno
   issuer: MA SOLAR ITALY S.R.L. (FIMER) declaration, Terranuova B.ni 07/09/2026; RdP TÜV Rheinland Italia IT24WXMZ 001, IT24427N 001
   issued: '2026-09-07'
   seen: '2026-11-12'
@@ -60,6 +60,8 @@ documents:
   - CEI 0-21;V1:2022-11
   - CEI 0-21;V2:2024-01
   firmware: 2439A (2439B for the 2.0)
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links FIMER's PowerUNO product
+    page instead of the file; GridFit could not confirm that page lists this declaration. Read on 2026-11-12.
   families:
   - name: FIMER PowerUNO FIM-HY 2.0-6.0 kW single-phase hybrid
     match: ^FIM-HY-(2\.0|3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)-SE-A-1PH$

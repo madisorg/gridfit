@@ -303,7 +303,7 @@ documents:
     note: converter tested to Annex B only — no integrated SPI stated; Verto Plus not named
 - id: it-cei021-symo-advanced-2023
   title: Dichiarazione di conformità alla norma CEI 021 — CEI 0-21 ed. 2022-11 V1 — Fronius Symo Advanced 10.0-20.0-3 M
-  url: https://www.fronius.com/~/downloads/Solar%20Energy/Declaration%20of%20Conformity%20myFronius/SE_EC_Declaration_Conformity_CEI021_FroniusSymoAdvanced10-20_CI_IT.pdf
+  url: https://www.fronius.com/en/help-center/solar-energy/products/solar-inverters/snapinverter-symo-primo-eco-/symo-advanced/symo-advanced-10-0-3-m-wlanlanwebserver
   issuer: Fronius International GmbH declaration (Thalheim, 04.07.2023); tests TÜV Rheinland Italia S.r.l., ACCREDIA 1356 (RdP IT23D868
     001)
   issued: '2023-07-04'
@@ -312,6 +312,8 @@ documents:
   standards:
   - CEI 0-21;V1:2022-11
   firmware: SYMOPS V1.9.3.1, SYMOFIL V1.0.0.1, RECERBO V0.3.27.2 e successive
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: Fronius Symo Advanced 10.0-20.0 kW 3-phase
     match: ^(FRONIUS|SYMO)?(SYMO)?ADVANCED(10\.0|12\.5|15\.0|17\.5|20\.0)-3-M$

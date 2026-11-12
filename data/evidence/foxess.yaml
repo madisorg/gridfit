@@ -273,7 +273,7 @@ documents:
 - id: it-cei021-h3-pro-2026-07
   title: TÜV Rheinland Certificate of Conformity A3 50749480 0001 — CEI 0-21:2026-07 — H3-Pro / AC3-Pro 10.0…30.0 (in the maker's Dichiarazione
     CEI 0-21 with CQ7-80)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20261028/DichiarazioneCEI021H3PROCQ780.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
   cert_no: A3 50749480 0001
   issued: '2026-10-16'
@@ -282,6 +282,8 @@ documents:
   standards:
   - CEI 0-21:2026-07
   firmware: 'Software: 1.63, Hardware: 1.20'
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: H3-Pro / AC3-Pro three-phase HV hybrid 10–30 kW
     match: ^(H3|AC3)-PRO-(10\.0|12\.0|15\.0|20\.0|22\.0|24\.9|25\.0|29\.9|30\.0)$
@@ -292,7 +294,7 @@ documents:
 - id: it-cei021-h3-plus-2026
   title: TÜV Rheinland Certificate of Conformity A3 50740601 0001 — CEI 0-21:2022-03 … V3:2025-10 — H3-50…125-Plus (in the maker's Dichiarazione
     CEI 0-21 with CQ7 / CQ7-80 / CQ16)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260831/DichiarazioneCEI021H3PlusCQ7CQ780CQ16.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
   cert_no: A3 50740601 0001
   issued: '2026-08-13'
@@ -306,6 +308,8 @@ documents:
   - CEI 0-21;V2/EC2:2025-02
   - CEI 0-21;V3:2025-10
   firmware: V1.00
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: H3-Plus three-phase C&I hybrid 50–125 kW
     match: ^H3-(50|60|75|80|100|125)-PLUS$
@@ -315,7 +319,7 @@ documents:
 - id: it-cei021-p100-p100e-2026
   title: Bureau Veritas Certificato di conformità U26-0653_1 — CEI 0-21:2022-03 / V1 / V2 / V2/EC / V2/EC2:2025-02, Allegati A, B, Bbis,
     L — P100 / P100E / EVO 10 (in the maker's Dichiarazione CEI 0-21)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20261028/DichiarazioneCEI021P100P100E.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00, ISO/IEC 17065)
   cert_no: U26-0653_1
   issued: '2026-09-17'
@@ -328,6 +332,8 @@ documents:
   - CEI 0-21;V2/EC:2024-03
   - CEI 0-21;V2/EC2:2025-02
   firmware: master 9.29 / slave 1.00 / manager 0.48 / smart wilan 2.06; master 1.15 / slave 1.00 / manager 1.10 / smart wilan 2.06
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: P100 single-phase all-in-one hybrid / AC storage 5–10 kW
     match: ^P100-((5|6|7|8|9|10)-(H|AC)|(5|6|7\.5|9\.9)-(H|AC)-L)$
@@ -352,18 +358,18 @@ documents:
   - CEI 0-21;V2:2024-01
   - CEI 0-21;V2/EC:2024-03
   - CEI 0-21;V2/EC2:2025-02
-  firmware: Master V1.17, Slave V1.01, Manager V1.18 (from the maker's declaration DichiarazioneCEI021H320251027.pdf)
+  firmware: Master V1.17, Slave V1.01, Manager V1.18 (from the maker's H3 declaration, listed on it.fox-ess.com/downloads/declaration)
   families:
   - name: H3-E / AC3-E three-phase HV hybrid 5–12 kW
     match: ^(FOX)?(H3|AC3)-(5\.0|6\.0|8\.0|10\.0|12\.0)-E$
     countries: [IT]
     note: Interface device + protection + static converter; "for plants of each power". Test report BL-DG2530172-201 (Dongguan BALUN).
-      Image-only PDF. The maker's declaration (it.fox-ess.com …/20260622/DichiarazioneCEI021H320251027.pdf) names ECS, EQ and EP batteries
-      and lists the integrated SPI for 5–10 kW only. The -E1, AIO-H3 and H3-…-M register rows are not named.
+      Image-only PDF. The maker's H3 declaration (listed on it.fox-ess.com/downloads/declaration) names ECS, EQ and EP batteries and
+      lists the integrated SPI for 5–10 kW only. The -E1, AIO-H3 and H3-…-M register rows are not named.
 - id: it-cei021-r-g2-2025
   title: Lyns-tci Certificato di conformità LS250028GCC-0 — CEI 0-21:2022-03 + V1:2022-11 + V2:2024-01 — R75…R136-G2 (in the maker's
     Dichiarazione CEI 0-21)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260622/DichiarazioneCEI021RG2.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: Lyns-tci Technology Guangdong Co., Ltd. (IAS PCA-159, ISO/IEC 17065)
   cert_no: LS250028GCC-0
   issued: '2025-04-07'
@@ -374,6 +380,8 @@ documents:
   - CEI 0-21;V1:2022-11
   - CEI 0-21;V2:2024-01
   firmware: Master V1.11, Slave V1.00, Manager V1.13
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: R-G2 three-phase string 75–136 kW
     match: ^R(75|80|100|110|125|136)-G2$
@@ -382,7 +390,7 @@ documents:
 - id: it-cei021-r-2024
   title: Kiwa Primara Certificato di conformità 23-189-01 — CEI 0-21 2022-03; V1:2022-11; V2:2024-01 — R75…R110 (in the maker's Dichiarazione
     CEI 0-21)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260622/DichiarazioneCEI021R20251027.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, ISO/IEC 17065)
   cert_no: 23-189-01
   issued: '2024-12-17'
@@ -393,6 +401,8 @@ documents:
   - CEI 0-21;V1:2022-11
   - CEI 0-21;V2:2024-01
   firmware: Master V1.04, Slave V1.00, Manager V1.06
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: R three-phase string 75–110 kW (first generation)
     match: ^R(75|80|90|95|100|110)$
@@ -402,7 +412,7 @@ documents:
 - id: it-cei021-v-2024
   title: TÜV NORD Certificate of Conformity COCPVP10035/24B-01 — CEI 0-21:2022-03 … V2/EC:2024-03 — V30…V75 (in the maker's Dichiarazione
     CEI 0-21)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260622/DichiarazioneCEI021V.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: TÜV NORD (Hangzhou) Co., Ltd. (CNAS C183-P, ISO/IEC 17065)
   cert_no: COCPVP10035/24B-01
   issued: '2024-12-20'
@@ -414,6 +424,8 @@ documents:
   - CEI 0-21;V2:2024-01
   - CEI 0-21;V2/EC:2024-03
   firmware: DSP V1.01, ARM V1.02, AFCI V1.0.0
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: V three-phase string 30–75 kW
     match: ^V(30|33|36|40|50|60|75)$
@@ -422,7 +434,7 @@ documents:
 - id: it-cei021-s-g2-2025
   title: Kiwa Primara Certificato di conformità 22-103-03 — CEI 0-21:2019, 2020, 2022-03; V1:2022-11; V2:2024-01 — S700…S3300-G2 (in
     the maker's Dichiarazione CEI 0-21)
-  url: https://it.fox-ess.com/Public/Uploads/uploadfile/files/20260828/DichiarazioneCEI021SG22.pdf
+  url: https://it.fox-ess.com/downloads/declaration
   issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, ISO/IEC 17065)
   cert_no: 22-103-03
   issued: '2025-02-13'
@@ -435,6 +447,8 @@ documents:
   - CEI 0-21;V1:2022-11
   - CEI 0-21;V2:2024-01
   firmware: V0.16
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links the page that lists
+    it, not the file. Read on 2026-11-12.
   families:
   - name: S-G2 single-phase string 0.7–3.3 kW
     match: ^S(700|1000|1500|2000|2500|3000|3300)-G2$

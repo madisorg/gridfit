@@ -455,7 +455,7 @@ documents:
       also named (not in register). The GT-G30 battery rows are other models.
 - id: it-cei021-eh-declaration-2022
   title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — EH series GW3600/5000/6000(N)-EH
-  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_EH,EH%20PLUS+_Declaration%20of%20Conformity_IT.pdf
+  url: https://en.goodwe.com/download
   issuer: GoodWe Technologies Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) A3 50549015 0001 / AK 50548240 0001 and
     TÜV SÜD Guangzhou D 083373 …)
   issued: '2022-11-08'
@@ -464,6 +464,8 @@ documents:
   standards:
   - CEI 0-21:2019-04
   firmware: 020210 e successive
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links GoodWe's download centre
+    (Certificate) instead of the file; GridFit could not confirm that page lists this declaration. Read on 2026-11-12.
   families:
   - name: EH single-phase hybrid 3.6–6 kW
     match: ^GW(3600|5000|6000)N?-EH$
@@ -472,7 +474,7 @@ documents:
       Force-H1/H2/PowerCube, BYD HVM/HVS …). The English text says "2016-04", the Italian 2019-04. The -BE rows are not joined.
 - id: it-cei021-bh-declaration-2022
   title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — BH series GW3K/3600/5000/6000-BH
-  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_BH_Declaration%20of%20Conformity_IT.pdf
+  url: https://en.goodwe.com/download
   issuer: GoodWe Technologies Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) and TÜV SÜD Guangzhou)
   issued: '2022-11-08'
   seen: '2026-11-12'
@@ -480,6 +482,8 @@ documents:
   standards:
   - CEI 0-21:2019-04
   firmware: 020210 e successive
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links GoodWe's download centre
+    (Certificate) instead of the file; GridFit could not confirm that page lists this declaration. Read on 2026-11-12.
   families:
   - name: BH single-phase AC-coupled 3.6–6 kW
     match: ^GW(3600|5000|6000)-BH$
@@ -487,7 +491,7 @@ documents:
     note: SPI integrated as declared. Battery list as EH (Lynx Home F, Pylontech, BYD). GW3K-BH also named (not in register).
 - id: it-cei021-bt-declaration-2022
   title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — BT series GW5K/6K/8K/10K-BT
-  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_BT_Declaration%20of%20Conformity_IT.pdf
+  url: https://en.goodwe.com/download
   issuer: GoodWe Technologies Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) reports 50191777 010–016)
   issued: '2022-11-08'
   seen: '2026-11-12'
@@ -495,6 +499,8 @@ documents:
   standards:
   - CEI 0-21:2019-04
   firmware: 030310 e successive
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links GoodWe's download centre
+    (Certificate) instead of the file; GridFit could not confirm that page lists this declaration. Read on 2026-11-12.
   families:
   - name: BT (G1) three-phase AC-coupled 5–10 kW
     match: ^GW(5|6|8|10)K-BT$
@@ -520,7 +526,7 @@ documents:
       the same model with the series name prefixed. Older edition only.
 - id: it-cei021-em-declaration-2021
   title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — EM series GW3048/3648/5048-EM
-  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_EM_Declaration%20of%20Conformity_IT.pdf
+  url: https://en.goodwe.com/download
   issuer: Jiangsu GoodWe Power Supply Technology Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) report 50148429 002/005/007)
   issued: '2021-11-23'
   seen: '2026-11-12'
@@ -528,6 +534,8 @@ documents:
   standards:
   - CEI 0-21:2019-04
   firmware: 0707A e successive
+  note: The maker's file also carries a copy of the signer's identity document (DPR 445/2000), so GridFit links GoodWe's download centre
+    (Certificate) instead of the file; GridFit could not confirm that page lists this declaration. Read on 2026-11-12.
   families:
   - name: EM single-phase hybrid 3–5 kW
     match: ^GW(3048|3648|5048)-EM$
