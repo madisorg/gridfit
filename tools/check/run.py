@@ -543,7 +543,8 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
             # whether it applies is not known from the sheet: the list's own figure may decide a power line, and the
             # list's yes answers an item it checks whatever the power
             res = by_figure(c, fig, sheet)
-            rows[i] = (["N", "", res[2]] if res[0] == "N" else [res[0], res[1]]) if res else ["R"] if m["id"] in by_list else ["N", "", note]
+            rows[i] = ((["N", "", res[2]] if res[0] == "N" else [res[0], res[1]]) if res else ["R"] if m["id"] in by_list
+                       else ["N", "", list_why.get(m["id"], note)])   # the list's own reason says more than "power unknown"
             counts[rows[i][0]] += 1
             continue
         res = by_sheet(c, sheet) if "datasheet" in c["provable_by"] else None
