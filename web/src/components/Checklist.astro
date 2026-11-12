@@ -5,23 +5,32 @@
 // says it ("not shown", never "fails" without a number that breaks the rule).
 // The grid operator decides; this is what the papers show. Data: web/src/lib/checks.ts over .data/checks.json.
 import Ext from "./Ext.astro";
-import { checksOf, STATE_WORD, ACCEPT_WORD, type State, type CountryCheck } from "../lib/checks";
+import { checksOf, STATE_WORD, ACCEPT_WORD, dayWords, type State, type CountryCheck } from "../lib/checks";
 import type { Device } from "../lib/registers";
 const { d } = Astro.props as { d: Device };
 const checks: CountryCheck[] = checksOf(d);
-const GLYPH: Record<State, string> = { S: "✓", P: "○", D: "✓", O: "~", R: "≡", N: "–", L: "B", X: "✕", I: "·" };
-// the operator's own list in the country's words ("checked by Elektrilevi's list"), else the generic word
-const word = (c: CountryCheck, s: State) => (s === "R" && c.list ? c.list.word : STATE_WORD[s]);
+const GLYPH: Record<State, string> = { S: "✓", P: "○", D: "✓", O: "~", R: "≡", V: "#", W: "B", N: "–", L: "B", X: "✕", I: "·" };
+// the operator's own list in the country's words ("checked by Elektrilevi's list"), else the generic word; a document
+// whose edition's transition has ended is "documented for a withdrawn edition"
+const word = (c: CountryCheck, s: State) => (s === "R" && c.list ? c.list.word : s === "O" && c.doc?.withdrawn ? "documented for a withdrawn edition" : STATE_WORD[s]);
 const n = (c: CountryCheck, s: State) => c.sum[s] ?? 0;
+// a generator's "not applicable" line leaves out the items written for a charging point (Italy's Allegato X)
+const naGen = (c: CountryCheck) => c.na.filter((x) => !x.applies?.classes?.includes("wallbox"));
 const docN = (c: CountryCheck) => n(c, "D") + n(c, "O");
+const until = (c: CountryCheck) => c.doc?.until
+  ? (c.doc.withdrawn ? `; the transition to ${c.edition.label} ended on ${dayWords(c.doc.until)}, so the operator asks for a certificate to it`
+    : `; accepted until ${dayWords(c.doc.until)}, the end of the transition to ${c.edition.label}`)
+  : "";
 const editionLine = (c: CountryCheck) => c.doc
-  ? (c.doc.older && n(c, "O")
+  ? (c.doc.withdrawn ? `documented for ${c.doc.standards || c.doc.edition}`
+    : c.doc.older && n(c, "O")
     ? `documented for ${c.doc.standards || c.doc.edition}; ${n(c, "O")} item${n(c, "O") === 1 ? "" : "s"} of ${c.edition.label} unverified`
     : c.doc.older ? `documented for ${c.doc.standards || c.doc.edition}, issued before the ${c.edition.id} conditions; none of these items changed since`
-    : `documented for ${c.doc.standards || c.doc.edition}`)
+    : `documented for ${c.doc.standards || c.doc.edition}`) + until(c)
   : "";
 const summaryOf = (c: CountryCheck) => [
-  n(c, "R") ? `${n(c, "R")} checked by the list` : "", `${n(c, "S")} by datasheet`, n(c, "P") ? `${n(c, "P")} set at commissioning` : "", `${docN(c)} by the maker's document`,
+  n(c, "R") ? `${n(c, "R")} checked by the list` : "", `${n(c, "S")} by datasheet`, n(c, "P") ? `${n(c, "P")} set at commissioning` : "",
+  n(c, "V") + n(c, "W") ? `${n(c, "V") + n(c, "W")} by the list's figure` : "", `${docN(c)} by the maker's document`,
   n(c, "L") ? `${n(c, "L")} over a line` : "", n(c, "X") ? `${n(c, "X")} outside by datasheet` : "", `${n(c, "N")} not shown`,
 ].filter(Boolean).join(" · ");
 const ids = checks.map((c) => c.cc);
@@ -49,14 +58,16 @@ const LINE_WORD: Record<string, string> = { "rfg-type": "the RfG type line", pro
               {c.rows.map((r) => (
                 <tr class={`ck-row ck-${r.state}`}>
                   <td class="fam"><span class="ck-rule">{r.item.rule}</span><span class="small muted ck-src">{r.item.source}{r.item.meaning && r.item.meaning !== "phases" && <> · {LINE_WORD[r.item.meaning] ?? r.item.meaning}</>}</span><span class="small muted ck-val">{r.item.value}</span></td>
-                  <td class="wide" data-l="datasheet:">{r.state === "S" || r.state === "P" || r.state === "L" || r.state === "X" ? r.text : r.state === "N" && r.note ? r.note : <span class="muted">{r.item.provable_by?.includes("datasheet") ? (c.sheet ? "not stated" : "no sheet") : "—"}</span>}</td>
-                  <td class="wide" data-l="document:">{r.state === "R" ? <>read by the operator before listing</> : r.state === "D" ? <>covered by the {c.doc?.kind === "declaration" ? "declaration" : "certificate"} (type tests to the edition it cites)</> : r.state === "O" ? <>covered for the edition it cites; {r.note}</> : r.state === "I" ? <span class="muted">{r.note}</span> : <span class="muted">{r.item.provable_by?.includes("document") ? (c.doc ? "also within the certificate's scope" : c.named.length ? "not a kind this operator takes" : "no document") : "—"}</span>}</td>
+                  <td class="wide" data-l="datasheet:">{"SPLXVW".includes(r.state) ? r.text : r.state === "N" && r.note ? r.note : <span class="muted">{r.item.provable_by?.includes("datasheet") ? (c.sheet ? "not stated" : "no sheet") : "—"}</span>}</td>
+                  <td class="wide" data-l="document:">{r.state === "R" ? <>read by the operator before listing</> : r.state === "D" ? <>covered by the {c.doc?.kind === "declaration" ? "declaration" : "certificate"} (type tests to the edition it cites)</> : r.state === "O" ? <>covered for the edition it cites; {r.note}</> : r.state === "V" || r.state === "W" ? <span class="muted">the list's figure, not the maker's sheet</span> : r.state === "I" ? <span class="muted">{r.note}</span> : <span class="muted">{r.item.provable_by?.includes("document") ? (c.doc ? "also within the certificate's scope" : c.named.length ? "not a kind this operator takes" : "no document") : "—"}</span>}</td>
                   <td class="wide" data-l=""><span class={`ck-st ck-st-${r.state}`}><span aria-hidden="true">{GLYPH[r.state]}</span> {word(c, r.state)}</span></td>
                 </tr>
               ))}
             </tbody>
           </table>
-          {c.na.length > 0 && <p class="small muted">Not applicable to this model: {c.na.map((x) => x.rule.split(" (")[0]).join("; ")}.</p>}
+          {c.charger
+            ? c.na.length > 0 && <p class="small muted">The other {c.na.length} items are a generator's rules; they do not apply to a charging point.</p>
+            : naGen(c).length > 0 && <p class="small muted">Not applicable to this model: {naGen(c).map((x) => x.rule.split(" (")[0]).join("; ")}.</p>}
           <p class="small muted">Decided by {c.decided_by.split(" (")[0].split(";")[0].replace(/^The /, "the ")}; what the papers show is not an approval.</p>
         </div>
       </details>
@@ -99,6 +110,9 @@ const LINE_WORD: Record<string, string> = { "rfg-type": "the RfG type line", pro
   .ck-st-N { background: var(--unk-bg); color: var(--unk); font-weight: 400; }
   .ck-st-P { background: var(--ok-bg); color: var(--ok); box-shadow: inset 0 0 0 var(--rule-w) var(--ok); }
   .ck-st-L { background: var(--cloud-bg); color: var(--cloud); outline: var(--rule-w) dotted var(--cloud); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
+  /* the list's figure: the same tones as the datasheet's answers (✓ / B), dashed and unfilled — a list's number, not the maker's */
+  .ck-st-V { background: var(--ok-bg); color: var(--ok); outline: var(--rule-w) dashed var(--ok); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
+  .ck-st-W { background: var(--cloud-bg); color: var(--cloud); outline: var(--rule-w) dashed var(--cloud); outline-offset: calc(-1 * var(--rule-w)); font-weight: 400; }
   .ck-st-X { background: var(--no-bg); color: var(--no); box-shadow: inset 0 0 0 var(--rule-w) var(--no); }
   .ck-st-I { background: transparent; color: var(--ink-2); box-shadow: inset 0 0 0 var(--rule-w) var(--rule); font-weight: 400; }
   @media (min-width: 48rem) {

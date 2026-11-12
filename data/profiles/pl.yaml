@@ -56,8 +56,12 @@ accepts: [national-declaration]
 list_checks:
   word: "checked by PTPiREE's list"
   what: "The five PTPiREE grid operators list a model after verifying its equipment certificate (an ISO/IEC 17065 body, issued under WiPWC 1.3), which for a type-A unit confirms LFSM-O, the frequency range, RoCoF and the 'Bank Nastaw dla Polski' settings set (protection, under-frequency, Q(U), P(U), reconnection) — WiPWC 1.3 §§3, 6; list page, file of 2026-11-06. Each row names the WOS edition and the date until which the certificate is accepted."
-  items: [certificate, freq-range, lfsm-o, under-frequency, protection-settings, reconnection, p-of-u, reactive, anti-islanding, storage]
-  not_carried: "PTPiREE's list carries no rated power or phases, and even for a listed model the OSD checks the micro-installation regulation and its IRiESD itself on the notification (voltage band, RS-485 with SunSpec); a row certified to WOS 2018 confirms RoCoF at 2.0 Hz/s, not WOS 2025's 2.5 Hz/s"
+  items: [certificate, freq-range, rocof, lfsm-o, under-frequency, protection-settings, reconnection, p-of-u, reactive, anti-islanding, storage]
+  not_carried: "PTPiREE's list carries no rated power or phases, and even for a listed model the OSD checks the micro-installation regulation and its IRiESD itself on the notification (voltage band, RS-485 with SunSpec)"
+  # Each list row names the WOS edition its certificate was issued against; WOS 2025 raised RoCoF to 2.5 Hz/s, so only a
+  # WOS 2025 row proves it (the row's `wos`; a column bleed may put the maker's name before it, hence a search).
+  only_where:
+    rocof: { field: wos, match: "WOS 2025", else: "none of PTPiREE's rows for this type names WOS 2025 (they cite WOS 2018, or the edition cell did not read), and a WOS 2018 certificate confirms RoCoF at 2.0 Hz/s, not WOS 2025's 2.5 Hz/s; the OSD applies WOS 2025 to a type-A module whose notification is filed from 1 January 2027" }
 # A model off the list, for a row neither a datasheet nor a document GridFit holds shows (PTPiREE list page and guide)
 on_application: "neither a datasheet nor a document GridFit holds shows it; off PTPiREE's list the OSD does not take the model on the notification — its maker must have a WiPWC certificate entered on the list first (PTPiREE's guide); a 1.2-list certificate counts only until 31 December 2026"
 must_meet:

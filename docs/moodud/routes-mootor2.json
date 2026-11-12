@@ -1,0 +1,6 @@
+[
+  {"name": "mudel-at-nimekirja-arv", "url": "bluesun/model/bse30kh3/", "js": "document.querySelectorAll('#checks details.ck').forEach((x) => { x.open = x.id === 'ck-at'; }); document.getElementById('ck-at').scrollIntoView()", "wait": 2.0},
+  {"name": "mudel-se-nimekirja-arv", "url": "alpha-ess/model/alp150-0-4/", "js": "document.querySelectorAll('#checks details.ck').forEach((x) => { x.open = x.id === 'ck-se'; }); document.getElementById('ck-se').scrollIntoView()", "wait": 2.0},
+  {"name": "mudel-it-laadija", "url": "volvo/model/vol22e202/", "js": "var c = document.getElementById('ck-it'); if (c) { c.open = true; c.scrollIntoView(); } else { window.scrollTo(0, document.body.scrollHeight); }", "wait": 2.0},
+  {"name": "mudel-de-ulemineku", "url": "anker-solix/model/a17e23z1-35/", "js": "document.querySelectorAll('#checks details.ck').forEach((x) => { x.open = x.id === 'ck-de'; }); document.getElementById('ck-de').scrollIntoView()", "wait": 2.0}
+]

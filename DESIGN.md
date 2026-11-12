@@ -370,6 +370,19 @@ is the country's own ("checked by Elektrilevi's list"), and the block says once,
 and that the list is undated. Every "not shown" row of such a country now carries its reason in the datasheet column —
 the list does not carry the rated power, or the operator checks it on the application — so no row is left blank.
 
+**By the list's figure** (2026-11-12, engine round 2): two states for a power line the maker's sheet does not answer on a
+listed model, where the list itself states the type's power and phases (Austria, Sweden). **Within by the list's figure**
+is the datasheet's green and **over a line by the list's figure** the amber of "over a line", both unfilled with a
+**dashed** outline and the glyphs **#** and **B**: the same answer as the sheet's, said more quietly, because it is the
+applicant's number on the operator's list and not the maker's. Never the filled ✓ — the earlier rule that a list's kVA is
+not datasheet evidence stands; the sheet and the maker's document both outrank it. The datasheet column carries the
+figure ("the list: 8 kVA — within 30 kVA") and the document column says "the list's figure, not the maker's sheet".
+
+Two dated words join it. A document for an edition with a transition (Germany: VDE-AR-N 4105:2018-11 until 1 March 2027)
+says "accepted until 1 March 2027" on its edition line and on every ~ row; after that day the ~ reads "documented for a
+withdrawn edition". An Italian charging point gets one row, CEI 0-21 Allegato X, "required from 1 January 2027" until
+then, and one muted line instead of a list of the generator rules that do not apply to it.
+
 ## 8g. Legacy models (2026-11-01)
 
 Madis: old models nobody searches for any more are noise in the table — hide them by default, with a way to include them.
@@ -775,3 +788,17 @@ limit or nothing known), and no other field of any row. Four routes ([`routes-mo
 (lowest 5.29), 0 tap targets under 44 px. One finding, not from this change: the Sungrow SH family page overflows a
 390 px phone by 71 px — the list cells' "PL · not on the list — nothing known" and a datasheet file name without a break
 point; the same words are on the live page. Left for a UI pass.
+
+## 35. Measured, 2026-11-12 — by the list's figure, list rows, dated rows (engine round 2)
+
+The requirement check gained two states and two dated words (§8f): **within / over a line by the list's figure** (dashed
+# and B, AT and SE power lines on a listed model without a sheet), list items read from the model's own list rows (NL
+storage file, PL WOS 2025, CZ VM category A2), Italy's charging-point row (CEI 0-21 Allegato X, "required from 1 January
+2027") and Germany's transition ("accepted until 1 March 2027"). Re-read model by model against `main` a5717e7: the grid
+index is byte-identical (0 cell changes in all ten countries); in the check, AT 2 315 and SE 2 482 models answer power
+lines by the list's figure, and no "not shown" row is without a reason in any country, before or after. Four model pages
+([`routes-mootor2.json`](docs/moodud/routes-mootor2.json): Bluesun BSE30KH3 × AT, Alpha ESS ALP150-0-4 × SE, Volvo
+VOL22E202 × IT, Anker SOLIX A17E23Z1-35 × DE) × 3440/390 × light/dark, before ([`mootor2-enne.json`](docs/moodud/mootor2-enne.json))
+and after ([`mootor2.json`](docs/moodud/mootor2.json)): 16 + 16 pictures, 0 console errors, 0 px overflow at 390 px,
+smallest text 13 px, lowest contrast 6.13 (before 6.26), 0 tap targets under 44 px. The pictures show the new badges
+apart from the filled ✓ in greyscale, and the charging point's one row with a single muted line for the 18 generator rules.

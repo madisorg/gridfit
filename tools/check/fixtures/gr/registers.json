@@ -1,4 +1,16 @@
 {"devices": [
   {"brand": "GoodWe", "model": "GW10K-ET-20", "cls": "hybrid", "unmatched": false},
-  {"brand": "Synthetic", "model": "ONE-PHASE-6K", "cls": "inverter", "unmatched": false}
+  {"brand": "Synthetic", "model": "ONE-PHASE-6K", "cls": "inverter", "unmatched": false,
+   "cells": {"QA": [{"show": "listed", "kva": 9, "model_raw": "ONE-PHASE-6K", "extra": {"phases": "3", "list": "generation"}}]}},
+  {"brand": "Synthetic", "model": "LISTED-40", "cls": "inverter", "unmatched": false,
+   "cells": {"QA": [{"show": "listed", "kva": 40, "model_raw": "LISTED-40", "extra": {"phases": "3", "list": "generation"}}]}},
+  {"brand": "Synthetic", "model": "LISTED-1PH-HYB", "cls": "hybrid", "unmatched": false,
+   "cells": {"QA": [{"show": "listed", "kva": 3, "model_raw": "LISTED-1PH-HYB", "extra": {"phases": "1", "list": "generation"}}]}},
+  {"brand": "Synthetic", "model": "TREFAS-1PH", "cls": "inverter", "unmatched": false,
+   "cells": {"QA": [{"show": "restricted", "kva": 3, "model_raw": "TREFAS-1PH", "extra": {"phases": "1", "comment": "Får enbart anslutas i trefaskoppling"}}]}},
+  {"brand": "Synthetic", "model": "MULTI 230 V 48/3000", "cls": "hybrid", "unmatched": false,
+   "cells": {"QA": [{"show": "listed", "kva": 2.4, "model_raw": "MULTI 230 V 48/3000", "extra": {"phases": "3", "list": "storage"}}]}},
+  {"brand": "Synthetic", "model": "WALLBOX-11", "cls": "wallbox", "unmatched": false},
+  {"brand": "Synthetic", "model": "WALLBOX-22", "cls": "wallbox", "unmatched": false},
+  {"brand": "Synthetic", "model": "WALLBOX-NODOC", "cls": "wallbox", "unmatched": false}
 ]}

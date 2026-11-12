@@ -105,6 +105,12 @@ must_meet:
     rule: "Back-up interface switch above 20 kW (8.2.2.4; TICA 10.10ter)"
     value: "above 20 kW in total a back-up device (rincalzo) must open if the interface switch fails; up to 20 kW the operator may take the producer's self-declaration instead of a site visit"
     check: { kind: max, meaning: protection, field: ac_kw, limit: 20, over: "over 20 kW: a back-up interface switch", provable_by: [datasheet, document], source: "CEI 0-21:2026-07 8.2.2.4; ARERA TICA 10.10ter" }
+  # The one item for a charging point: every other item is a generator's and does not apply to a wallbox
+  # (tools/check/run.py). Before `from` the row says when it starts; a covering document must cite Allegato X itself.
+  - id: charging-controller
+    rule: "Charging-point controller, CEI 0-21 Allegato X (art. 45-bis D.Lgs 199/2021; ARERA 352/2026)"
+    value: "every new or replaced non-public standard-power charging point installed from 1 January 2027 must be certified to CEI 0-21 Allegato X: a controller (CIR) that adjusts charging to the supply's total draw, talks to the 2G smart meter (Chain 2) and responds to under-frequency; a basic controller has a one-year transition under the new Allegato X (to about August–September 2027)"
+    check: { kind: document, provable_by: [document], applies: { classes: [wallbox] }, from: "2027-01-01", before: "a new charging point needs no Allegato X certificate", cite: ["Allegato X"], source: "CEI 0-21;V1:2026-08 Allegato X; art. 45-bis D.Lgs 199/2021; ARERA 352/2026" }
 documents_for_listing:
   - "the maker's Dichiarazione di conformità to CEI 0-21 for the model and firmware, on the Allegato C form: a self-certification under article 47 of DPR 445/2000 naming the models, firmware, phases, whether the interface protection is integrated, whether the unit is fit for plants above 11.08 kW, the storage data with the usable batteries, and the test reports behind it; when an accredited certification body issues it, it is titled a certificate (certificato)"
   - "behind the declaration, type-test reports from a laboratory accredited to ISO/IEC 17025, or from the maker's own laboratory under the surveillance of a certification body accredited to ISO/IEC 17065: Allegato A (interface protection), B (inverter), Bbis (storage); the maker keeps them 20 years and makes them available to the grid operator on its website"
