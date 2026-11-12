@@ -1,0 +1,6 @@
+[
+ {"name": "brandid", "url": "brands/", "wait": 2.0},
+ {"name": "brandid-s", "url": "brands/", "js": "document.getElementById('l-s').scrollIntoView()", "wait": 2.0},
+ {"name": "avaleht", "url": "", "wait": 2.0},
+ {"name": "jalus", "url": "about/", "js": "document.querySelector('footer.foot').scrollIntoView()", "wait": 2.0}
+]

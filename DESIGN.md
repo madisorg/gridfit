@@ -730,3 +730,17 @@ plug-in unit on the list (the nano-producer row), `/grid/ee/` at "What changes" 
 2023 listing guide and now cites the one served in 2026. `npm test`: 52 + 936 + 822 298 checks, 0 failures (the checks suite
 now also proves every listed Estonian model is checked by the list on its list items, and that no Estonian "not shown" row
 is without a reason). Coverage before/after: [`docs/coverage.md`](docs/coverage.md).
+
+## 32. Measured, 2026-11-12 — every page reachable by a plain link
+
+The grid and country tables are built by JavaScript, so a crawler reading HTML reached 3 826 of the sitemap's 4 334 pages:
+178 brand pages and 331 family pages had no static link (the count after the genset brands left in § 31). A new page,
+**`/brands/` — Brands A–Z**, lists every brand in plain links under letter headings with a letter row on top, each with its
+count of families and models; the home page's brand count links to it ("638 brands A–Z") and the footer carries "all brands
+A–Z". Brand pages already link every family and model, so every page is now reached: brands at 2 clicks, families and model
+pages at 3 (`web/test/links.mjs`, part of `npm test`; with the A–Z page removed it fails with the 178 + 331 orphans). Four
+routes ([`routes-sitemap.json`](docs/moodud/routes-sitemap.json): `/brands/` at the top and at "S", the home page, the
+footer) × 3440/390 × light/dark: [`sitemap.json`](docs/moodud/sitemap.json), 16 pictures, 0 console errors, 0 overflow, 0
+under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 6.13). One finding, fixed: the home page's new "brands A–Z" link was
+18 px tall on a phone; it joined the kit's "not inside a sentence" rule (44 px), re-measured 0 of 19 under 44 px.
+

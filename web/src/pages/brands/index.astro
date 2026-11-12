@@ -1,0 +1,49 @@
+---
+// /brands/ — every brand page, A–Z, in plain links: the one static path from the home page to each brand page and,
+// through it, to every family and model page (web/test/links.mjs holds it there: no page in the sitemap is an orphan).
+import Base from "../../layouts/Base.astro";
+import { BRANDS, nf } from "../../lib/devices";
+
+const letterOf = (name: string) => {
+  const c = name.normalize("NFD").replace(/[̀-ͯ]/g, "").trim().charAt(0).toUpperCase();
+  return /[A-Z]/.test(c) ? c : "#";
+};
+const groups = new Map<string, typeof BRANDS>();
+for (const b of BRANDS) {
+  const k = letterOf(b.name);
+  if (!groups.has(k)) groups.set(k, []);
+  groups.get(k)!.push(b);
+}
+const letters = [...groups.keys()].sort((a, b) => (a === "#" ? -1 : b === "#" ? 1 : a.localeCompare(b)));
+const what = (n: number, one: string, many: string) => (n ? `${nf(n)} ${n === 1 ? one : many}` : "");
+---
+<Base title={`All ${nf(BRANDS.length)} brands A–Z: inverters, batteries and wallboxes`} current="/grid/"
+      description={`Every brand GridFit knows, A–Z: ${nf(BRANDS.length)} makers of solar inverters, home batteries and wallboxes, each with its product families and its models on the EU grid-connection lists.`}>
+  <nav class="crumbs" aria-label="Breadcrumb"><a href="/grid/">Grid lists</a></nav>
+  <header class="head">
+    <h1>Brands A–Z</h1>
+    <p class="kind"><span>{nf(BRANDS.length)} brands</span><span aria-hidden="true">·</span><span>each page lists the brand's families with a smart-home route and every model on the grid lists</span></p>
+  </header>
+  <nav class="chips az-jump" aria-label="Letters">{letters.map((l) => <a href={`#l-${l === "#" ? "0" : l.toLowerCase()}`}>{l}</a>)}</nav>
+  {letters.map((l) => (
+    <section class="sec az-sec" aria-labelledby={`l-${l === "#" ? "0" : l.toLowerCase()}`}>
+      <header><h2 id={`l-${l === "#" ? "0" : l.toLowerCase()}`}>{l === "#" ? "0–9 and others" : l}</h2><p>{groups.get(l)!.length}</p></header>
+      <ul class="az">
+        {groups.get(l)!.map((b) => (
+          <li><a href={`/${b.slug}/`}>{b.name}</a><span class="small muted">{[what(b.families.length, "family", "families"), what(b.models.length, "model", "models")].filter(Boolean).join(" · ")}</span></li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .az-jump { margin-block: var(--s3) var(--s5); }
+  .az { list-style: none; margin: 0; padding: 0; columns: 16rem auto; column-gap: var(--s6); }
+  .az li { break-inside: avoid; display: flex; flex-wrap: wrap; align-items: baseline; gap: 0 var(--s2); padding-block: var(--s1); }
+  .az a { font-weight: 600; }
+  @media (max-width: 47.99rem) {
+    .az li { min-height: var(--hit); align-items: center; padding-block: 0; }
+    .az a { display: inline-flex; align-items: center; min-height: var(--hit); }
+  }
+</style>

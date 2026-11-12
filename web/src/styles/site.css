@@ -345,7 +345,7 @@ span.rs-none { box-shadow: inset 0 0 0 var(--rule-w) var(--rule); }
 }
 @media (max-width: 47.99rem) {
   /* links that are not inside a sentence get the full 44px on a phone */
-  .tbl .link-ext, h2 .link-ext, .kind a, .facts-dl .link-ext, .panel h3 a { display: inline-flex; align-items: center; min-height: var(--hit); }
+  .tbl .link-ext, h2 .link-ext, .kind a, .facts-dl .link-ext, .panel h3 a, .facts a.facts-az { display: inline-flex; align-items: center; min-height: var(--hit); }
   .xv th a { min-height: var(--hit); width: 100%; justify-content: center; }
 }
 
