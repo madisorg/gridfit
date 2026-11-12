@@ -1,0 +1,103 @@
+brand: HYXi POWER
+maker_site: https://www.hyxipower.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models. The optional grid-side fields (freq_hz, vac_v, vac_un, cosphi) are written only where
+  the sheet states them.'
+# Written by hand 2026-11-12 (Belgium's coverage pass, docs/coverage/be.md) from the datasheets linked on the product pages of
+# www.hyxipower.com/en, each table read off the rendered page (the PDFs have no text tables). Current: the 230 V figure on
+# single-phase sheets, the 400 V figure on three-phase ones. "-S" and "-SW" microinverters differ only in the radio (Sub-1G /
+# Wi-Fi), as the sheet heads them in one column. The MS3000 sheets name the -BP-1 … -BP-5 battery-pack variants themselves.
+# Not covered: the "-HS" hybrids (the sheet on the site is the "-HS1" revision — another suffix, another model) and the
+# "-800" MS3000 variants (no sheet names them).
+sources:
+- id: hyxi-m300-500-be
+  url: https://webfile.hyxipower.com/soft/20260714/DS_HYX-M(300-500)-S(SW)_Datasheet_V1.2-20260630_EN.pdf
+  file: DS_HYX-M(300-500)-S(SW)_Datasheet_V1.2-20260630_EN.pdf
+  version: V1.2-20260630
+  note: microinverter 1-in-1, module-level MPPT for one module; nominal output in VA; current at 220 / 230 / 240 V
+  seen: '2026-11-12'
+- id: hyxi-m600-1000-be
+  url: https://webfile.hyxipower.com/soft/20250603/DS_HYX-M(600-1000)-S(SW)_Datasheet_V1.0-2025_EN.pdf
+  file: DS_HYX-M(600-1000)-S(SW)_Datasheet_V1.0-2025_EN.pdf
+  version: V1.0-2025
+  note: microinverter 2-in-1 (2 × 16 A input; the MPPT count is not stated); adjustable output 183–276 V and 45–55 Hz; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: hyxi-m1600-2000-be
+  url: https://webfile.hyxipower.com/soft/20250603/DS_HYX-M(1600-2000)-S(SW)_Datasheet_V1.0-2025_EN.pdf
+  file: DS_HYX-M(1600-2000)-S(SW)_Datasheet_V1.0-2025_EN.pdf
+  version: V1.0-2025
+  note: microinverter 4-in-1 (4 × 16 A input; the MPPT count is not stated); adjustable output 183–276 V and 45–55 Hz; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: hyxi-s3-7k5-s-be
+  url: https://webfile.hyxipower.com/soft/20260610/DS_HYX-S(3-7.5)K-S__Datasheet_V1.5-20260519_EN.pdf
+  file: DS_HYX-S(3-7.5)K-S__Datasheet_V1.5-20260519_EN.pdf
+  version: V1.5-20260519
+  note: single-phase string inverter, 1/N/PE; this sheet prints the grid frequency as 60 Hz, so no frequency range is taken from it
+  seen: '2026-11-12'
+- id: hyxi-s8-12k-t-be
+  url: https://webfile.hyxipower.com/soft/20260714/DS_HYX-S(8-12)K-T_Datasheet_V1.4-20260618_EN.pdf
+  file: DS_HYX-S(8-12)K-T_Datasheet_V1.4-20260618_EN.pdf
+  version: V1.4-20260618
+  note: three-phase string inverter, 3L/N/PE; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: hyxi-s15-25k-t-be
+  url: https://webfile.hyxipower.com/soft/20250304/DS_HYX-S(15-25)K-T_Datasheet_V1.3-2024_EN.pdf
+  file: DS_HYX-S(15-25)K-T_Datasheet_V1.3-2024_EN.pdf
+  version: V1.3-2024
+  note: three-phase string inverter, 3/N/PE; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: hyxi-h5-12k-ht-be
+  url: https://webfile.hyxipower.com/soft/20260513/DS_HYX-H(5-12)K-HT_Datasheet_V1.7-20260319_EN.pdf
+  file: DS_HYX-H(5-12)K-HT_Datasheet_V1.7-20260319_EN.pdf
+  version: V1.7-20260319
+  note: three-phase hybrid, 3/N/PE; max PV input = the sheet's max array power; frequency 45–55 Hz; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: hyxi-ms3000-be
+  url: https://webfile.hyxipower.com/soft/20260728/DS_MS3000MS3000B_Datasheet_V1.6-20260713_EN.pdf
+  file: DS_MS3000MS3000B_Datasheet_V1.6-20260713_EN.pdf
+  version: V1.6-20260713
+  note: balcony PV + battery unit; max AC output 800 VA by default, 1 500 VA as "Premium" — C10/11 §4.1.8 ignores firmware limits, so 1.5 kVA is taken; 183–276 V, 45–55 Hz
+  seen: '2026-11-12'
+- id: hyxi-ms3000ac-be
+  url: https://webfile.hyxipower.com/soft/20261028/DS_HYX-MS3000ACHYX-MS3000B_Datasheet_V1.7-20261028_EN.pdf
+  file: DS_HYX-MS3000ACHYX-MS3000B_Datasheet_V1.7-20261028_EN.pdf
+  version: V1.7-20261028
+  note: AC-coupled balcony battery; max AC output 1 500 VA (MS3000AC) and 3 000 VA (MS3000AC-BP series); 183–276 V, 45–55 Hz
+  seen: '2026-11-12'
+models:
+- {code: HYX-M300-S, mppt: 1, ac_kw: null, ac_kva: 0.3, ac_a: 1.30, phases: 1, pv_kw: null, source: hyxi-m300-500-be, match: '^HYX-M300-SW?$'}
+- {code: HYX-M400-S, mppt: 1, ac_kw: null, ac_kva: 0.4, ac_a: 1.74, phases: 1, pv_kw: null, source: hyxi-m300-500-be, match: '^HYX-M400-SW?$'}
+- {code: HYX-M500-S, mppt: 1, ac_kw: null, ac_kva: 0.5, ac_a: 2.17, phases: 1, pv_kw: null, source: hyxi-m300-500-be, match: '^HYX-M500-SW?$'}
+- {code: HYX-M600-S, mppt: null, ac_kw: null, ac_kva: 0.6, ac_a: 2.61, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m600-1000-be, match: '^HYX-M600-SW?$'}
+- {code: HYX-M700-S, mppt: null, ac_kw: null, ac_kva: 0.7, ac_a: 3.04, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m600-1000-be, match: '^HYX-M700-SW?$'}
+- {code: HYX-M800-S, mppt: null, ac_kw: null, ac_kva: 0.8, ac_a: 3.48, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m600-1000-be, match: '^HYX-M800-SW?$'}
+- {code: HYX-M900-S, mppt: null, ac_kw: null, ac_kva: 0.9, ac_a: 3.91, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m600-1000-be, match: '^HYX-M900-SW?$'}
+- {code: HYX-M1000-S, mppt: null, ac_kw: null, ac_kva: 1.0, ac_a: 4.35, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m600-1000-be, match: '^HYX-M1000-SW?$'}
+- {code: HYX-M1600-S, mppt: null, ac_kw: null, ac_kva: 1.6, ac_a: 6.96, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m1600-2000-be, match: '^HYX-M1600-SW?$'}
+- {code: HYX-M1800-S, mppt: null, ac_kw: null, ac_kva: 1.8, ac_a: 7.83, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m1600-2000-be, match: '^HYX-M1800-SW?$'}
+- {code: HYX-M2000-S, mppt: null, ac_kw: null, ac_kva: 2.0, ac_a: 8.70, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-m1600-2000-be, match: '^HYX-M2000-SW?$'}
+- {code: HYX-S3K-S, mppt: 2, ac_kw: 3.0, ac_kva: 3.3, ac_a: 15.0, phases: 1, pv_kw: 4.8, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S3K6-S, mppt: 2, ac_kw: 3.6, ac_kva: 3.96, ac_a: 18.0, phases: 1, pv_kw: 5.76, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S4K-S, mppt: 2, ac_kw: 4.0, ac_kva: 4.4, ac_a: 20.0, phases: 1, pv_kw: 6.4, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S4K6-S, mppt: 2, ac_kw: 4.6, ac_kva: 5.06, ac_a: 23.0, phases: 1, pv_kw: 7.36, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S5K-S, mppt: 2, ac_kw: 5.0, ac_kva: 5.5, ac_a: 25.0, phases: 1, pv_kw: 8.0, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S6K-S, mppt: 2, ac_kw: 6.0, ac_kva: 6.6, ac_a: 30.0, phases: 1, pv_kw: 9.6, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S7K3-S, mppt: 2, ac_kw: 7.3, ac_kva: 7.3, ac_a: 33.2, phases: 1, pv_kw: 11.68, cosphi: 0.8, source: hyxi-s3-7k5-s-be}
+- {code: HYX-S8K-T, mppt: 2, ac_kw: 8.0, ac_kva: 8.8, ac_a: 12.7, phases: 3, pv_kw: 12.8, cosphi: 0.8, source: hyxi-s8-12k-t-be}
+- {code: HYX-S10K-T, mppt: 2, ac_kw: 10.0, ac_kva: 11.0, ac_a: 15.8, phases: 3, pv_kw: 16.0, cosphi: 0.8, source: hyxi-s8-12k-t-be}
+- {code: HYX-S12K-T, mppt: 2, ac_kw: 12.0, ac_kva: 13.2, ac_a: 19.1, phases: 3, pv_kw: 19.2, cosphi: 0.8, source: hyxi-s8-12k-t-be}
+- {code: HYX-S15K-T, mppt: 2, ac_kw: 15.0, ac_kva: 16.5, ac_a: 23.9, phases: 3, pv_kw: 24.0, cosphi: 0.8, source: hyxi-s15-25k-t-be}
+- {code: HYX-S17K-T, mppt: 2, ac_kw: 17.0, ac_kva: 18.7, ac_a: 27.1, phases: 3, pv_kw: 27.2, cosphi: 0.8, source: hyxi-s15-25k-t-be}
+- {code: HYX-S20K-T, mppt: 2, ac_kw: 20.0, ac_kva: 22.0, ac_a: 31.9, phases: 3, pv_kw: 32.0, cosphi: 0.8, source: hyxi-s15-25k-t-be}
+- {code: HYX-S25K-T, mppt: 2, ac_kw: 25.0, ac_kva: 27.5, ac_a: 39.9, phases: 3, pv_kw: 40.0, cosphi: 0.8, source: hyxi-s15-25k-t-be}
+- {code: HYX-H5K-HT, mppt: 2, ac_kw: 5.0, ac_kva: 5.5, ac_a: 8.4, phases: 3, pv_kw: 10.0, freq_hz: [45, 55], cosphi: 0.8, source: hyxi-h5-12k-ht-be}
+- {code: HYX-H6K-HT, mppt: 2, ac_kw: 6.0, ac_kva: 6.6, ac_a: 10.0, phases: 3, pv_kw: 12.0, freq_hz: [45, 55], cosphi: 0.8, source: hyxi-h5-12k-ht-be}
+- {code: HYX-H8K-HT, mppt: 2, ac_kw: 8.0, ac_kva: 8.8, ac_a: 13.4, phases: 3, pv_kw: 16.0, freq_hz: [45, 55], cosphi: 0.8, source: hyxi-h5-12k-ht-be}
+- {code: HYX-H10K-HT, mppt: 2, ac_kw: 10.0, ac_kva: 11.0, ac_a: 16.7, phases: 3, pv_kw: 20.0, freq_hz: [45, 55], cosphi: 0.8, source: hyxi-h5-12k-ht-be}
+- {code: HYX-H12K-HT, mppt: 2, ac_kw: 12.0, ac_kva: 13.2, ac_a: 20.0, phases: 3, pv_kw: 24.0, freq_hz: [45, 55], cosphi: 0.8, source: hyxi-h5-12k-ht-be}
+- {code: HYX-MS3000, mppt: 4, ac_kw: null, ac_kva: 1.5, ac_a: 6.53, phases: 1, pv_kw: 2.4, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-ms3000-be, match: '^HYX-MS3000(-BP-[1-5])?$'}
+- {code: HYX-MS3000AC, mppt: null, ac_kw: null, ac_kva: 1.5, ac_a: 6.53, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-ms3000ac-be}
+- {code: HYX-MS3000AC-BP, mppt: null, ac_kw: null, ac_kva: 3.0, ac_a: 13.05, phases: 1, pv_kw: null, freq_hz: [45, 55], vac_v: [183, 276], vac_un: 230, cosphi: 0.8, source: hyxi-ms3000ac-be, match: '^HYX-MS3000AC-BP-[1-5]$'}
