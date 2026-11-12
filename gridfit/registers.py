@@ -134,8 +134,8 @@ REGISTERS = {
                     "device type, model, PPM type and firmware.",
         "terms": "No reuse terms are stated (© footer).",
         "use": "document number, date and firmware per row, with a link to the list",
-        "date_label": "date in the column 'Document acceptance date' (mostly in the future — read it as the "
-                      "certificate's end date and check the certificate)",
+        "date_label": "accepted until: the last day the certificate counts in a connection, PTPiREE's notice of "
+                      "2026-10-05",
         "fw_label": "firmware",
         "files": [("pl", "page", "https://ptpiree.pl/kodeksy-sieci/wykaz-certyfikatow/",
                    r'href="([^"]*Wykaz-urzadzen_1\.3\.pdf)"')],
