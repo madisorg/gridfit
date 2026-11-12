@@ -26,6 +26,9 @@ edition:
   label: "Orden TED/749/2020 as amended by Orden TED/82/2026 (in force 12 May 2026)"
 document_must_cite: ["RD 647", "647/2020", "TED/749", "749/2020", "NTS", "Norma Técnica de Supervisión", "UNE 217002"]
 accepts: [national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
+# Spain has no list, so every model is "off the list": a row neither a datasheet nor an accepted document shows gets this
+# reason (RD 647/2020 article 9 and annex IV; NTS 2.1 section 4.2.1; TED/749 additional provision 1 for storage)
+on_application: "neither a datasheet nor a Spanish equipment certificate GridFit holds shows it; in Spain there is no list — the installer proves it at the operational notification with the maker's equipment certificate for this model family (RD 647/2020, Orden TED/749/2020, NTS), and the grid operator decides (storage is exempt from presenting the certificate)"
 must_meet:
   - id: power-class
     rule: "Plant size class (RD 647/2020, article 8.1)"
@@ -132,14 +135,14 @@ commissioning: "Low voltage up to 100 kW: the installer's CIE (plus the regional
 changes:
   - "12 May 2026: Orden TED/82/2026 in force — fault ride-through for type A (figure 14), storage follows the generation-module rules in both directions, end of the self-consumption exemption, PO 12.2 rules for small modules in the non-peninsular systems"
   - "22 March 2026: Real Decreto-ley 7/2026 (BOE 2026-03-21) — collective self-consumption up to 5 km, the 'gestor de autoconsumo', 10 % of reserved capacity freed for self-consumption; administrative only, no inverter requirement"
-  - "pending: a new self-consumption Royal Decree is announced and not adopted on 2026-11-01"
-  - "the NTS (how conformity is proven) is still version 2.1 of July 2021; no edition with type A fault ride-through tests was found — how a certificate proves figure 14 for type A is open"
+  - "pending: the royal decree on self-consumption and distributed storage (draft heard in October 2025) is not adopted on 2026-11-12; RD 244/2019 as amended by RDL 7/2026 still applies"
+  - "the NTS (how conformity is proven) is still version 2.1 of July 2021 with its October 2021 errata (REE's grid-code page read 2026-11-12); the only later item is a June 2025 annex on inertia-emulation and oscillation-damping reports, not a type A matter; no edition with type A fault ride-through tests was found — how a certificate proves figure 14 for type A is open"
   - "2 February 2024: limited operational notifications without certificates ended (Orden TED/724/2022)"
 evidence_for_documented: "The maker's Spanish equipment certificate for the exact model family: issued by an accredited certifier, naming RD 647/2020, Orden TED/749/2020 and the NTS version, plus UNE 217002 for the inverter and UNE 217001 where zero export is claimed. Certificates issued against NTS 2.0 stay valid per requirement under the equivalence table of NTS 2.1 (7.1.4.2). GridFit shows the document and its date; the grid operator decides at the operational notification."
 sources:
   - title: "Real Decreto 647/2020, de 7 de julio (consolidated text, last change 12 February 2026)"
     url: https://www.boe.es/eli/es/rd/2020/07/07/647/con
-    seen: "2026-10-31"
+    seen: "2026-11-12"
   - title: "Orden TED/749/2020, de 16 de julio — requisitos técnicos para la conexión a la red (BOE-A-2020-8965, annex I)"
     url: https://boe.es/boe/dias/2020/08/01/pdfs/BOE-A-2020-8965.pdf
     date: "2020-08-01"
@@ -149,6 +152,9 @@ sources:
   - title: "Norma Técnica de Supervisión de la conformidad de los módulos de generación de electricidad según el Reglamento UE 2016/631, version 2.1 (English)"
     url: https://www.ree.es/sites/default/files/00_CONOCENOS/Documentos/codigos_de_red/EN_NormaTecnicaSupervision631_v2.1.pdf
     date: "2021-07"
+  - title: "REE — Códigos de red europeos: the NTS editions in force (NTS SEPE 2.1 of 2021-07-09 with the errata of 2021-10-08; NTS SENP 1.1; annex on oscillations 2025-06-02)"
+    url: https://www.ree.es/es/conocenos/marco-regulatorio/codigos-de-red-europeos
+    seen: "2026-11-12"
   - title: "Real Decreto 1699/2011, de 18 de noviembre (consolidated)"
     url: https://www.boe.es/eli/es/rd/2011/11/18/1699/con
     seen: "2026-10-31"
