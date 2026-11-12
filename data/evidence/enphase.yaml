@@ -88,17 +88,6 @@ documents:
     note: The certificate lists one rating, 3.84 kVA 230/400 Vac three-phase; the register's other power/phase settings (-1.65-1P …
       -3.84-1P, -1.84-3P … -3.68-3P) are not taken. Companion RD 647/413/1699 certificate 250104RECO01-B-CER (same model, same dates)
       at https://enphase.com/es-es/download/iq-battery-5p-flexphase-certificado-de-conformidad-rd-647-rd-413-rd-1699
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
-brand: Enphase
-maker_site: https://enphase.com/de-de
-rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
-documents:
 - id: de-vde4105-iq7-system-2022-06
   title: TÜV Rheinland A3 60164292 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis (unit + NA protection) — IQ7 / IQ7+ / IQ7A / IQ7X
     with IQ Gateway and Q-Relay
@@ -270,17 +259,6 @@ documents:
     note: Report IT22OA34 001. Self-consumption single-phase storage system; SEmax 1.28 kVA per B03 unit. Supersedes for the same unit
       the maker-hosted A3 60165459 0001 of 2022-08-23 ("Encharge", report IT21TRQE 001, https://enphase.com/de-de/download/b03-t01-int00-1-2-iq-battery-vde-arn-4105-konformitatsnachweis).
       ENCHARGE-3T/10T-1P-INT are joined as the earlier product name of the IQ Battery 3T/10T built from B03 units.
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
-brand: Enphase
-maker_site: ''
-rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
-documents:
 - id: it-cei021-iq9n-2025
   title: TÜV Rheinland Certificate of Conformity AK 60185374 0001 + Certificato del generatore — CEI 0-21:2022-03 … V2/EC2:2025-02 —
     IQ9N-A-INT microinverter with IQ-RELAY-2-3P-ITA and IQ Gateway ENV-S-WM-230 / ENV-S-EM-230

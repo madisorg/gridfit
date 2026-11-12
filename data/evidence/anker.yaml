@@ -40,17 +40,6 @@ documents:
     countries: [AT]
     note: Confidential file 4950666.50. Linked from ankersolix.com /de/products/ae103. The register rows that carry '(HB:SOLARBANK4)' in the code
       are not joined. No settings table.
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
-brand: Anker
-maker_site: ''
-rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
-documents:
 - id: de-vde4105-eze-solarbank2-2024
   title: SGS PCS-24-1041 — Unit Certificate / Einheitenzertifikat VDE-AR-N 4105:2018-11 + Correction 1:2020 — Solarbank 2 (A17C1, A17C3)
   url: https://cdn.shopify.com/s/files/1/0491/8227/7795/files/German_Grid_connection_Cert02.pdf?v=1726826944

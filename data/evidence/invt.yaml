@@ -92,17 +92,6 @@ documents:
     countries:
     - ES
     note: Report BSNK-ESH-P23040505-2. Inside the same RAR archive as U24-0186.
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
-brand: INVT
-maker_site: ''
-rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
-documents:
 - id: it-cei021-xg100-136ktr-2022
   title: Intertek Certificate of Conformity CN-PV-220254 — CEI 0-21:2022 — iMars XG100KTR / XG110KTR / XG136KTR (-F, -L, -LF, -X, -XF)
   url: https://www.invt-solar.com/userfiles/files/download/Certificates/INVT%20Solar%20XG100-136KTR_CEI%200-21.pdf

@@ -44,17 +44,6 @@ documents:
     countries: [AT]
     note: A verification of compliance by an ISO/IEC 17025 laboratory (R25 report HC2407160090GC01, 2025-04-11). Carries an Austria parameter
       list (A.4, as images).
-# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
-# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
-# generated ones here: change the mapping in sources.yaml and rebuild.
-brand: Sigenergy
-maker_site: ''
-rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
-  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
-  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
-  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
-  case, spaces removed, comma read as a point).'
-documents:
 - id: it-cei021-sigen-tp-2024
   title: Intertek Certificate of Conformity CN-PVES-240079 — CEI 0-21:2022-03 + V1:2022-11 — SigenStor EC / SigenStor AC / Sigen Hybrid
     / Sigen PV Max x TP (5.0–30.0) with SigenStor BAT 5.0 / 8.0
