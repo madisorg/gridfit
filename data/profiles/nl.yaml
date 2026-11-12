@@ -1,0 +1,196 @@
+# Netherlands — requirement profile for a grid-connected inverter, battery or hybrid (RfG type A, 0.8 kW to below 1 MW).
+# The rule is the Systeemcode elektriciteit 2026 (ACM; it replaced the Netcode elektriciteit on 21 February 2026 with
+# the same type-A values), chapter 3. Netbeheer Nederland, for all Dutch grid operators, publishes two type-A lists
+# (generation and storage) and a one-page table of the Dutch settings; the owner registers the installation, with the
+# inverter's make and type, on energieleveren.nl or on the grid operator's own site. Facts only, with the source of each;
+# the grid operator decides. Written 2026-11-01 from the consolidated Systeemcode on wetten.overheid.nl, Netbeheer
+# Nederland's own documents and the energieleveren.nl site.
+cc: NL
+country: Netherlands
+type_a_max_kw: 1000   # Systeemcode elektriciteit 2026 art. 3.1: type B starts at 1 MW, so type A is 0.8 kW to below 1 MW
+not_listed_short: "a model that is not on Netbeheer Nederland's list needs the maker's EN 50549-1 conformity certificate from an accredited body; the maker or supplier asks Netbeheer Nederland to add it"
+decided_by: "The regional grid operator of the connection (Liander, Stedin, Enexis, Westland Infra, Coteq, RENDO) at registration, from the installation document entered on energieleveren.nl or on the operator's own site. Netbeheer Nederland keeps the shared type-A lists for all of them; ACM (Autoriteit Consument en Markt) sets the Systeemcode."
+list:
+  name: "Goedgekeurde omvormers type A — opwek (generation) and opslag (storage), Netbeheer Nederland"
+  url: https://www.netbeheernederland.nl/requirements-generators
+  meaning: "The list's own heading: type-A inverters 'for which it has been shown for the Netherlands that the requirements of the RfG are met'. It is not exhaustive and is updated regularly. Two files (generation, storage), brand and type only — no firmware, certificate or date per row. Version 31 October 2026."
+  gate: "De facto. Since 27 April 2021 the grid operators check type-A conformity at registration (Netbeheer Nederland note of 2020-10-21); the registration asks for the inverter's make and type and records a conformity status (energieleveren.nl: Conform / Niet-conform / Onbekend). The note says a certificate to EN 50549-1 (or NEN-EN 50549-1) from an accredited body is in any case sufficient, and without a certificate the grid operator decides what it needs instead."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG), articles 5, 13 and 30 — type A requirements and the installation document"
+  - "Systeemcode elektriciteit 2026 (ACM decision of 5 February 2026, ACM/UIT/666113, Stcrt. 2026, 4089; in force 21 February 2026; consolidated text in force from 1 October 2026), chapter 2 (§ 2.1 art. 2.9 storage, art. 2.25 phases) and chapter 3 (§ 3.2 below 800 W, § 3.3 type A, art. 3.10–3.12)"
+  - "Netcode elektriciteit (BWBR0037940) — the predecessor, withdrawn 21 February 2026; makers' certificates cite it ('ACM/DE/2016/202151'). ACM: the 2026 codes contain only policy-neutral changes from the Energiewet"
+  - "Energiewet (in force 1 January 2026) — the basis of the Systeemcode (article 3.121)"
+  - "ACM derogation ACM/UIT/510824 of 18 April 2019 — grid operators' type-A conformity check postponed to 27 April 2021"
+  - "NEN-EN 50549-1 (identical to EN 50549-1) — the accepted standard for type-A certificates in low voltage (Netbeheer Nederland note 2020-10-21)"
+  - "Commission Regulation (EU) 2017/2196 (NC ER), article 15(3) — storage switches automatically from charging to generating (Systeemcode art. 2.9(3)(b))"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). The Systeemcode carried the Netcode's type-A
+# values over unchanged; the last substantive changes were the 2020-12 frequency-protection and 2021-09 RoCoF decisions
+# (see changed_in). A document citing the Netcode elektriciteit is a declaration against the same values, so the edition
+# date is the last substantive change (2021-09), not the Systeemcode's own date.
+edition:
+  norm: "Systeemcode elektriciteit 2026"
+  id: "2021-09"
+  date: "2021-09"
+  in_force: "2026-02-21"
+  label: "Systeemcode elektriciteit 2026 (in force 21 February 2026), whose type-A values are the Netcode's as last changed in 2021-09 (RoCoF), with Netbeheer Nederland's country settings (2026-09)"
+document_must_cite: ["Netcode elektriciteit", "Systeemcode elektriciteit", "NEN-EN 50549"]
+accepts: [generic-en50549-1, national-declaration]
+# why: Netbeheer Nederland, 'Informatie certificering van Elektriciteitsproductie-eenheden van het Type A' (2020-10-21):
+# a certificate on the basis of EN 50549-1 / EN 50549-2, or the identical NEN-EN 50549-1 / -2, issued by a body accredited
+# for it, is in any case sufficient ("is in iedere geval voldoende"). Makers' Dutch certificates (Bureau Veritas for Deye)
+# name the Netcode elektriciteit beside NEN-EN 50549-1 — those are the national-declaration kind.
+must_meet:
+  - id: power-class
+    rule: "Plant size class (Systeemcode elektriciteit 2026 art. 3.1; RfG art. 5)"
+    value: "type A from 0.8 kW to below 1 MW; from 1 MW type B, with a Power Generating Module Document (PGMD) or, for storage, an ESMD instead of an installation document"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 1000, over: "1 MW or more: type B, a PGMD / ESMD procedure of its own", provable_by: [datasheet, document], source: "Systeemcode elektriciteit 2026 art. 3.1" }
+  - id: protection-11kw
+    rule: "Above 11 kW on low voltage (art. 3.10(3), 3.12)"
+    value: "a unit above 11 kW on a low-voltage connection needs its protection on all three phases (including under-voltage 0.2 s at 70 % Un and an overload protection), a measurement of the current it delivers and a signal showing whether it runs in parallel with the grid; after the grid voltage returns it may reconnect only after some minutes"
+    check: { kind: max, meaning: protection, field: ac_kw, limit: 11, over: "over 11 kW on low voltage: three-phase protection with U<< 70 % 0.2 s, current measurement and parallel signal (art. 3.12)", provable_by: [datasheet, document], source: "Systeemcode elektriciteit 2026 art. 3.10(3), 3.12" }
+  - id: phases
+    rule: "Phases (art. 2.25)"
+    value: "power-electronic converters above 5 kW are connected on three phases, unless the grid operator agrees a higher value in the individual case; a connection expected to stay at or below 5.75 kVA is single-phase"
+    check: { kind: phases, meaning: phases, three_phase_above_kw: 5, provable_by: [datasheet, document], source: "Systeemcode elektriciteit 2026 art. 2.25(1), (5)" }
+  - id: freq-range
+    rule: "Frequency ranges (art. 3.11(1); RfG art. 13(1)(a))"
+    value: "47.5–48.5 Hz for 30 min; 48.5–49.0 Hz for 30 min; 49.0–51.0 Hz unlimited; 51.0–51.5 Hz for 30 min"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "Systeemcode elektriciteit 2026 art. 3.11(1)" }
+  - id: rocof
+    rule: "Rate of change of frequency (art. 3.11(2))"
+    value: "a power park module (any inverter-connected unit) stays connected up to 2 Hz/s measured over a 500 ms moving window; a synchronous unit 1 Hz/s, or lower by agreement"
+    check: { kind: document, provable_by: [document], changed_in: "2021-09", changed: "ACM decision of 2021-09-09 (Stcrt. 2021, 40915) set 2 Hz/s for power park modules and 1 Hz/s for synchronous units", source: "Systeemcode elektriciteit 2026 art. 3.11(2)" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (art. 3.11(4))"
+    value: "reduce active power from 50.2 Hz (settable 50.2–50.5 Hz) with a droop of 5 % by default (settable 4–12 %), Pref = the power actually generated when 50.2 Hz is reached; keep running at the minimum regulating level"
+    check: { kind: document, provable_by: [document], source: "Systeemcode elektriciteit 2026 art. 3.11(4); Netbeheer Nederland country settings 2026-09" }
+  - id: under-frequency
+    rule: "Active power below 49.5 Hz (art. 3.11(5); RfG art. 13(4)-(5))"
+    value: "where the unit's technology needs it, the owner and the grid operator agree in the connection contract that output may fall below 49.5 Hz by at most 10 % of maximum capacity per 1 Hz"
+    check: { kind: document, provable_by: [document], source: "Systeemcode elektriciteit 2026 art. 3.11(5)" }
+  - id: protection-settings
+    rule: "Protection settings (art. 3.6(2), 3.12(2); Netbeheer Nederland country settings for type A)"
+    value: "under-voltage U< 80 % Un in 2 s; over-voltage U> 110 % Un in 2 s; frequency f< 47.5 Hz and f> 51.5 Hz in 2 s; U<< 70 % Un in 0.2 s (the code asks it above 11 kW on low voltage and for synchronous units; Netbeheer Nederland's table lists it for all type A); no 10-minute average over-voltage stage is set"
+    check: { kind: document, provable_by: [document], changed_in: "2020-12", changed: "ACM decision of 2020-12-03 (Stcrt. 2020, 63486) moved the frequency protection from 48 / 51 Hz to 47.5 / 51.5 Hz (units connected before 2021 keep 48 / 51 Hz)", source: "Systeemcode elektriciteit 2026 art. 3.6(2), 3.12(2); Netbeheer Nederland, Country settings type A and B PGMs (2026-09)" }
+  - id: reconnection
+    rule: "Automatic connection and reconnection (art. 3.11(7); RfG art. 13(7))"
+    value: "connect only with the voltage at 0.90–1.10 pu and the frequency at 49.9–50.1 Hz for at least 60 s; active power rises at no more than 20 % of maximum capacity per minute (Netbeheer Nederland's country settings: 10 %/min)"
+    check: { kind: document, provable_by: [document], source: "Systeemcode elektriciteit 2026 art. 3.11(7); Netbeheer Nederland country settings 2026-09" }
+  - id: remote-stop
+    rule: "Logic interface to stop (art. 3.11(6); RfG art. 13(6))"
+    value: "equipment that can bring active power to zero within five seconds on a remote signal, to uniform specifications the grid operators agree and publish (no published type-A specification found; the Realtime Interface is for type B and larger)"
+    check: { kind: document, provable_by: [document], source: "Systeemcode elektriciteit 2026 art. 3.11(6)" }
+  - id: reactive
+    rule: "Power factor (art. 3.4, 2.19; country settings)"
+    value: "default setting power factor 1; at the connection point of a low-voltage unit the power factor stays between 0.9 capacitive and 0.9 inductive; at commissioning the grid operator can add requirements"
+    check: { kind: document, provable_by: [document], source: "Systeemcode elektriciteit 2026 art. 3.4 (via 3.10(2)-(3)); Netbeheer Nederland country settings 2026-09" }
+  - id: frt
+    rule: "Fault ride-through (country settings)"
+    value: "none for type A (Netbeheer Nederland's table: FRT and fast fault-current injection 'None' for type A, active for type B); a power-electronic unit below 11 kW may disconnect when the voltage leaves the protection limits and reconnect at once (art. 3.9(2))"
+    check: { kind: none, why: "not required for type A in the Netherlands", source: "Netbeheer Nederland country settings 2026-09; Systeemcode elektriciteit 2026 art. 3.9(2)" }
+  - id: anti-islanding
+    rule: "Loss-of-mains / islanding (EN 50549-1 4.9.4, the accepted standard)"
+    value: "the Systeemcode names no islanding test for an inverter (art. 3.8(6) asks a synchronous unit to trip when the grid voltage disappears); the EN 50549-1 certificate the grid operators accept includes loss-of-mains detection"
+    check: { kind: document, provable_by: [document], source: "NEN-EN 50549-1 4.9.4, accepted per Netbeheer Nederland note 2020-10-21; Systeemcode elektriciteit 2026 art. 3.8(6)" }
+  - id: dc-injection
+    rule: "DC injection"
+    value: "the Systeemcode sets no DC-injection limit for a type-A unit (not found in chapters 2–3)"
+    check: { kind: none, why: "no Dutch limit found", source: "Systeemcode elektriciteit 2026 chapters 2–3 (searched 2026-11-01)" }
+  - id: p-of-u
+    rule: "Voltage-dependent power reduction P(U)"
+    value: "not required by the Systeemcode or the country settings for type A"
+    check: { kind: none, why: "not a Dutch requirement for type A", source: "Systeemcode elektriciteit 2026 § 3.3; Netbeheer Nederland country settings 2026-09" }
+  - id: storage
+    rule: "Storage (art. 2.9(3); ESM compliance verification 4.2.1)"
+    value: "a storage unit of 0.8 kW to below 1 MW meets the type-A rules in both directions; it can switch automatically from charging to generating and disconnect (NC ER art. 15(3)); limited under-frequency response LFSM-U from 49.8 Hz with a 2 % droop in both modes (Netbeheer Nederland's ESM document v2.0 of 2024 still prints 1 %); a unit that cannot, disconnects at 49.7 Hz within 10 s and at once at 49.3 Hz while charging"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "Systeemcode elektriciteit 2026 art. 2.9(3)(a)-(b), (g); Netbeheer Nederland ESM compliance verification v2.0 (2024-04-01) 4.2.1" }
+  - id: export-limit
+    rule: "Export limitation"
+    value: "no general export-limit rule for type A in the Systeemcode; transport capacity and any cap are set per connection in the connection and transport agreement"
+    check: { kind: none, why: "set per connection, not a check on the model", source: "Systeemcode elektriciteit 2026 (searched 2026-11-01)" }
+documents_for_listing:
+  - "for the list: the maker's or supplier's request to Netbeheer Nederland (by e-mail to its RfG mailbox, as the list's header says), with a conformity certificate to EN 50549-1 / NEN-EN 50549-1 from a certification body accredited for it"
+  - "energieleveren.nl also carries a form 'Nieuwe omvormer registreren': brand, type, firmware version, rated active power, maximum apparent power, application (solar, wind, CHP, storage, backup, other) and an uploaded certificate, checked before approval — who may use it is not stated publicly (seen in the site's own page text, 2026-11-01)"
+  - "for each installation, the installation document (RfG art. 30): location and EAN, connection date, maximum capacity in kW, primary energy source, a reference to the equipment certificates, the owner's and installer's contact details; for storage also storage power (kW) and capacity (kWh)"
+apply:
+  who: "the owner of the installation, or the installer on the owner's behalf (installers can register many at once)"
+  how: "register the installation with the inverter's make and type on energieleveren.nl (homes and small businesses by postcode, house number and meter number; large connections by EAN); where the grid operator is Enexis, Liander or Westland Infra, register on that operator's own site. A paper form by letter or e-mail to the operator also meets the RfG; the operator then enters it."
+  guide_url: https://www.energieleveren.nl/faq
+  guide_date: "energieleveren.nl, seen 2026-11-01 (undated pages)"
+  processing_time: "not stated"
+not_listed: "Netbeheer Nederland's list says it is not exhaustive: if a model is missing, ask the inverter's supplier; if the supplier confirms it is missing, the supplier contacts Netbeheer Nederland. Under the RfG the installation document then carries 'information as requested by the grid operator' instead of a certificate reference — in Netbeheer Nederland's words, without a certificate the grid operator decides what must be there instead. The grid operator refuses a unit that does not meet the RfG (RfG art. 3). GridFit found no public statement of what the registration does with an unlisted type beyond the recorded status (Onbekend / Conform / Niet-conform)."
+thresholds:
+  - "below 800 W: outside RfG types, but the Systeemcode's § 3.2 still applies (automatic paralleling, protection 80 % / 110 % Un and 47.5 / 51.5 Hz in 2 s, power factor 0.9 capacitive to 0.9 inductive at the connection point); registration on energieleveren.nl applies to every generating or storage installation"
+  - "type A: 0.8 kW to below 1 MW (generation and storage alike); type B from 1 MW, type C from 50 MW, type D from 60 MW or at 110 kV and above"
+  - "single-phase connection up to 5.75 kVA; three-phase for converters above 5 kW unless the grid operator agrees otherwise"
+  - "11 kW on low voltage: from here three-phase protection with U<< 70 % 0.2 s, current measurement and a parallel signal; the 'reconnect at once' allowance of art. 3.9(2) no longer applies"
+  - "all inverter-connected units behind one connection point form one power park module and are classified by their summed capacity (Netbeheer Nederland note 2022-01-28)"
+  - "storage of 0.8 kW to below 1 MW: type-A rules plus LFSM-U (2 % droop); from 1 MW: 1 % droop and type-B procedure"
+commissioning: "Before connection the installation is registered (installation document); the grid operator checks the type at registration and approves it before connection. The country settings for the Netherlands are to be selected in the inverter; the power factor default is 1 and the grid operator can add requirements at commissioning. The owner must be able to prove compliance at the operator's request for the life of the installation (RfG art. 40)."
+changes:
+  - "21 February 2026: the Systeemcode elektriciteit 2026 replaced the Netcode elektriciteit under the Energiewet; ACM calls the change policy-neutral and the type-A values are unchanged; makers' certificates still cite the Netcode"
+  - "September 2026: Netbeheer Nederland reissued its one-page 'Country settings generation units type A and B' (file dated 2026-09-04)"
+  - "1 October 2026: the consolidated Systeemcode text in force (amendments of 1 March, 1 May, 8 May, 1 July, 9 July and 1 October 2026; none of them read here as touching § 3.3)"
+  - "1 January 2027: the salderingsregeling (net metering) ends; until 1 January 2030 the supplier's feed-in compensation is at least 50 % of the agreed supply price, and feed-in costs follow the rules for supply costs (Wet van 18 december 2024, Stb. 2025, 17)"
+  - "1 January 2027: a Systeemcode amendment (Stcrt. 2026, 4110) takes effect; its article list was not read"
+  - "the EU revision of the generator code (RfG 2.0) is not adopted"
+evidence_for_documented: "A certificate of conformity to EN 50549-1 or NEN-EN 50549-1 from an accredited certification body for the model and firmware, preferably one that names the Netcode elektriciteit / the Dutch settings (Bureau Veritas issues these for Deye as 'Verklaring van geen bezwaar'). GridFit shows the document and Netbeheer Nederland's list status; the grid operator decides."
+sources:
+  - title: "Systeemcode elektriciteit 2026 (BWBR0052336), consolidated text in force from 2026-10-01"
+    url: https://wetten.overheid.nl/BWBR0052336/2026-10-01/0
+    seen: "2026-11-01"
+  - title: "ACM — Systeemcode elektriciteit 2026, Staatscourant 2026, 4089 (decision of 2026-02-05)"
+    url: https://zoek.officielebekendmakingen.nl/stcrt-2026-4089.pdf
+    date: "2026-02-05"
+  - title: "ACM — ACM stelt nieuwe codes elektriciteit en gas vast onder de Energiewet"
+    url: https://www.acm.nl/nl/node/28866
+    date: "2026-02-20"
+  - title: "Netcode elektriciteit (BWBR0037940), withdrawn 2026-02-21 (last text 2025-12-31)"
+    url: https://wetten.overheid.nl/BWBR0037940/
+    seen: "2026-11-01"
+  - title: "Netbeheer Nederland — Country settings, generation units type A and B"
+    url: https://www.netbeheernederland.nl/sites/default/files/2026-09/country_settings_type_a_and_b_pgms.pdf
+    date: "2026-09-04"
+  - title: "Netbeheer Nederland — Informatie certificering van Elektriciteitsproductie-eenheden van het Type A"
+    url: https://www.netbeheernederland.nl/media/13813/download?attachment
+    date: "2020-10-21"
+  - title: "Netbeheer Nederland — Requirements generators (lists and documents)"
+    url: https://www.netbeheernederland.nl/requirements-generators
+    seen: "2026-11-01"
+  - title: "Netbeheer Nederland — Goedgekeurde opwek omvormers type A (xlsx, 'Versie 31 oktober 2026')"
+    url: https://api.energieleveren.nl/api/v2/files/homologation-file/POWER_GENERATING
+    date: "2026-10-31"
+  - title: "Netbeheer Nederland — Goedgekeurde opslag omvormers type A (xlsx, 'Versie 31 oktober 2026')"
+    url: https://api.energieleveren.nl/api/v2/files/homologation-file/ELECTRICAL_STORAGE
+    date: "2026-10-31"
+  - title: "Netbeheer Nederland — Electricity Storage Modules compliance verification, version 2.0"
+    url: https://www.netbeheernederland.nl/sites/default/files/2024-03/esm_compliance_verification_document_v2.0.pdf
+    date: "2024-04-01"
+  - title: "Netbeheer Nederland — Power-Generating Modules compliance verification (RfG), version 1.4"
+    url: https://www.netbeheernederland.nl/media/13808/download?attachment
+    date: "2022-11-08"
+  - title: "Netbeheer Nederland — Installatiedocument elektriciteitsopslageenheid (0.8–1000 kW)"
+    url: https://www.netbeheernederland.nl/media/13821/download?attachment
+    date: "2022 Q2"
+  - title: "Netbeheer Nederland — Type-indeling op basis van NC RfG in bijzondere gevallen"
+    url: https://www.netbeheernederland.nl/media/13817/download?attachment
+    date: "2022-01-28"
+  - title: "energieleveren.nl — registration (home page) and FAQ"
+    url: https://www.energieleveren.nl/faq
+    seen: "2026-11-01"
+  - title: "ACM decision of 2020-12-03 (ACM/19/036454): voltage requirements and frequency bands, Stcrt. 2020, 63486"
+    url: https://zoek.officielebekendmakingen.nl/stcrt-2020-63486.html
+    date: "2020-12-03"
+  - title: "ACM decision of 2021-09-09 (ACM/UIT/539196): rate of change of frequency, Stcrt. 2021, 40915"
+    url: https://zoek.officielebekendmakingen.nl/stcrt-2021-40915.html
+    date: "2021-09-09"
+  - title: "Wet van 18 december 2024, beëindiging salderingsregeling (Stb. 2025, 17)"
+    url: https://zoek.officielebekendmakingen.nl/stb-2025-17.html
+    date: "2025-01-29"
+  - title: "Netbeheer Nederland — De Realtime Interface in het kort"
+    url: https://www.netbeheernederland.nl/sites/default/files/2025-05/realtime_interface_in_het_kort_-_april_2025.pdf
+    date: "2024-12-13"
+  - title: "Solar Magazine — Netbeheerders publiceren lijst met omvormers (list derived from Synergrid C10/26)"
+    url: https://solarmagazine.nl/nieuws-zonne-energie/i24188/netbeheerders-publiceren-lijst-met-omvormers-voor-zonnepanelen-die-aan-nieuwe-wettelijke-eisen-voldoen
+    date: "2021-04-21"

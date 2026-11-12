@@ -26,4 +26,4 @@ documents:
   - name: PWS2-29P/30P-EX
     match: ^(PWS2\-29P\-EX|PWS2\-30P\-EX)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]

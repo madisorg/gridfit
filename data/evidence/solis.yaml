@@ -193,4 +193,118 @@ documents:
   - name: S6-EH3P 3–10K-H-EU
     match: ^(S6\-EH3P10K\-H\-EU|S6\-EH3P3K\-H\-EU|S6\-EH3P4K\-H\-EU|S6\-EH3P5K\-H\-EU|S6\-EH3P6K\-H\-EU|S6\-EH3P8K\-H\-EU)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
+- id: at-tor-r25-5g-pro-2023
+  title: TÜV Rheinland A3 50585950 0001 — TOR Erzeuger Typ A/B V1.2, OVE-Richtlinie R25 — Solis-80…125K-5G-PRO
+  url: https://portal.segen.co.uk/reseller/docs/Solis_certificate_TOR%20R25_(80-125)K-5G-PRO_Austria_V01.pdf
+  copy_of: Segen (UK wholesaler); not found on solisinverters.com
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50585950 0001
+  issued: '2023-05-15'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A Version 1.2
+  - TOR Erzeuger Typ B Version 1.2
+  - OVE-Richtlinie R25/03.20
+  firmware: A1
+  families:
+  - name: 5G-PRO three-phase string 80–125 kW
+    match: ^SOLIS-(80|100|110|125)K-5G-PRO$
+    countries: [AT]
+    note: Report CN23ZG2Q 001. No settings table.
+- id: be-glv081-29-s6-eh3p-h-be-2026
+  title: Synergrid GLV081-29 — C10/26 declaration of conformity — Solis S6-EH3P(3-10)K-H-BE
+  url: https://dev.synergrid.be/images/downloads/GLV081-29_Solis_S6-EH3P3-10K-H-BE_20260925_Signed.pdf
+  issuer: Synergrid (homologation) / Ginlong (Solis)
+  cert_no: GLV081-29
+  issued: '2026-09-25'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.1.4 (10/2025)
+  firmware: A1
+  families:
+  - name: S6-EH3P 3–10K-H-BE (Belgium-only series)
+    match: ^S6-EH3P(3|4|5|6|8|10)K-H-BE$
+    countries: [BE]
+    note: Homologated by Synergrid 25/09/2026; 6 list rows (GLV081-29-0001…0006), power control by SDM630MCT / SDM630M. No settings
+      table.
+- id: en50549-1p-gr1p-2022
+  title: TÜV Rheinland A3 50556672 0001 — EN 50549-1:2019 — Solis-1P…K-4G, S5-GR1P…K, S6-GR1P…K (2.5–6 kW)
+  url: https://www.solisinverters.com/uploads/file/Solis_certificate_EN50549-1_1P(2,5-6)K-4G_S5-GR1P(2,5-6)K_S6-GR1P(2,5-6)K_Europe_V01(Dakks).pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50556672 0001
+  issued: '2022-08-26'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  firmware: A1
+  families:
+  - name: Solis-1PxxK-4G, S5-GR1PxxK, S6-GR1PxxK (xx = 2.5, 3, 3.6, 4, 4.6, 5, 6)
+    match: ^(SOLIS-1P(2\.5|3|3\.6|4|4\.6|5|6)K-4G|S[56]-GR1P(2\.5|3|3\.6|4|4\.6|5|6)K)$
+    countries: []
+    note: Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Report 50330358
+      006. The -M, -S, -UM and K01-NV-YD variants are not joined. No settings table.
+    accepted_in: [EE, NL, SE]
+- id: pl-pse-s6-eh3p-k02-nv-yd-l-2024
+  title: TÜV Rheinland A3 50649005 0001 — NC RfG, PSE 2018-12-18, PTPiREE:2021-04-28 — S6-EH3P8…15K02-NV-YD-L
+  url: https://solisinverters.com/uploads/file/Solis_certificate_PN_EN_50549-1_S6-EH3P(8-15)K02-NV-YD-L_Poland_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50649005 0001
+  issued: '2024-10-14'
+  valid_until: '2029-10-14'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 2016/631 EU (NC RfG)
+  - PSE 2018-12-18
+  - PTPiREE:2021-04-28
+  firmware: A2
+  families:
+  - name: S6-EH3P K02-NV-YD-L three-phase hybrid 8–15 kW
+    match: ^S6-EH3P(8|10|12|15)K02-NV-YD-L$
+    countries: [PL]
+    note: Power park module type A; report CN24JSRM 001; WiPWC 1.2 era. Capability table only. The 5, 6 and 18 kW K02 models are not
+      named.
+- id: pl-pse-s6-gr1p-s-2023
+  title: TÜV Rheinland A3 50613150 0001 — NC RfG, PSE 2018-12-18, PTPiREE:2021-04-28 — S6-GR1P2.5…6K-S
+  url: https://www.solisinverters.com/uploads/file/Solis_certificate_PN-EN_50549-1_S6-GR1P%282%2C5-6%29K-S_Poland_V01%28bilingual%29.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50613150 0001
+  issued: '2023-12-21'
+  valid_until: '2028-12-20'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 2016/631 EU (NC RfG)
+  - PSE 2018-12-18
+  - PTPiREE:2021-04-28
+  firmware: A2
+  families:
+  - name: S6-GR1P-S single-phase string 2.5–6 kW
+    match: ^S6-GR1P(2\.5|3|3\.6|4|4\.6|5|6)K-S(\(21A\))?$
+    countries: [PL]
+    note: Power park module type A; report CN23WMMB 001; WiPWC 1.2 era. Capability table only. The register writes these as "S6-GR1PxK-S
+      (21A)".
+- id: de-vde4105-rhi-48es-5g-s5-eh1p-2022
+  title: TÜV SÜD ESY 086470 0118 Rev. 00 — VDE-AR-N 4105:2018 — RHI-3…6K-48ES-5G, S5-EH1P3…6K-L
+  url: https://www.Solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_RHI-(3-6)K-48ES-5G_S5-EH1P(3-6)K-L_GER_V02(GER).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0118 Rev. 00
+  issued: '2022-07-04'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020
+  firmware: NA-Schutz software A1
+  families:
+  - name: RHI-48ES-5G and S5-EH1P-L single-phase LV hybrid 3–6 kW
+    match: ^(RHI-(3|3\.6|4\.6|5|6)K-48ES-5G|S5-EH1P(3|3\.6|4\.6|5|6)K-L)$
+    countries: [DE]
+    note: Report 64.290.22.30504.01. NA-protection settings table with numbers p. 16 (U>> 1.25 Un 287.8 V 129 ms, U> 1.10 Un 10-min
+      mean, U< 0.8 Un 183.4 V 3019 ms, U<< 0.45 Un 104.1 V 329 ms, f< 47.5 Hz 133 ms, f> 51.5 Hz 121 ms); above 4.6 kVA single-phase
+      only with unbalance ≤ 4.6 kVA. The edition is printed without month (2018).

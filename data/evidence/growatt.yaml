@@ -33,4 +33,81 @@ documents:
   - name: MODA all-in-one (Y = 1…7)
     match: ^MODA(4000|5000|6000|8000|10K|12K|15K)TL3-HU-[1-7]$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
+- id: at-tor-r25-mid-x2-2024
+  title: Intertek CN-PVES-240239 — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R 25 — MID 17…50KTL3-X2
+  url: https://b2b.offgridtec.com/media/product_attachements/Growatt_MID_30_50KTL3_X2_Certificate_of_Conformity.pdf
+  copy_of: Offgridtec (German retailer); not found on growatt.com
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PVES-240239
+  issued: '2024-06-04'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A Version 1.2:18.04.2022
+  - OVE-Richtlinie R 25:2020-03-01
+  families:
+  - name: MID X2 three-phase string 17–50 kW
+    match: ^MID(17|20|25|30|33|36|40|50)KTL3-X2(-1)?$
+    countries: [AT]
+    note: Test report 220908145GZU-008 (2024-06-03). Firmware not on page 1. MID 30KTL3-X2-1 is named in the certificate. No settings
+      table.
+- id: be-glv044-36-aura-2026
+  title: Synergrid GLV044-36 — C10/26 declaration of conformity — Growatt AURA series
+  url: https://dev.synergrid.be/images/downloads/GLV044-36_Growatt_AURA_Series_20260918_Signed.pdf
+  issuer: Synergrid (homologation) / Growatt
+  cert_no: GLV044-36
+  issued: '2026-09-18'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.4.1 (04/2026)
+  firmware: 06.00.07.04.9000.4025
+  families:
+  - name: AURA 5000-800 / 5000-2500
+    match: ^AURA5000-(800|2500)$
+    countries: [BE]
+    note: Homologated by Synergrid 18/09/2026; 2 list rows (GLV044-36-0001, -0002), power control SEM5-1, Shelly Pro 3EM or P1 port.
+      No settings table.
+- id: en50549-mic-x-x2-2025
+  title: Intertek CN-PVES-250300 — EN 50549-1:2019+A1:2023, EN 50549-10:2022 — MIC 600…3300TL-X / -X2
+  url: https://pim.4blue.nl/Growatt/Growatt%20Omvormers/1-fase/Growatt%20MIC-X2/Documenten%20NL/Certificate/MIC_600-3300TL-X2_50549-1.pdf
+  copy_of: 4blue (Dutch distributor, "Documenten NL" folder); not found on growatt.com
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PVES-250300
+  issued: '2025-07-30'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019+A1:2023
+  - EN 50549-10:2022
+  firmware: GH1.0
+  families:
+  - name: MIC TL-X and TL-X2 single-phase string 0.6–3.3 kW
+    match: ^MIC(600|750|800|1000|1500|2000|2500|3000|3300)TL-X2?$
+    countries: []
+    note: 'Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Test report
+      250506112GZU-001 (2025-07-22); type A and B. p. 6: interface-protection settable ranges (U< 0.2–1 Un / 0.1–100 s; U> 1.0–1.2 Un;
+      f< 47–50 Hz; f> 50–52 Hz; reconnection 60 s, 10 %/min). The MIC …-X rows without "TL" are not joined.'
+    accepted_in: [EE, NL, SE]
+- id: en50549-mod-x-2020
+  title: Intertek CN-PV-200096 — EN 50549-1 (February 2019) — MOD 3000…15KTL3-X
+  url: https://media.greenchoice.nl/media/m0unkgft/certificaat-en-50549-1-growatt-mod-3000-15000tl3-x.pdf
+  copy_of: Greenchoice (Dutch energy supplier); not found on growatt.com
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-200096
+  issued: '2020-07-28'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 'EN 50549-1: February 2019'
+  - COMMISSION REGULATION (EU) 2016/631 (NC RfG)
+  firmware: DL 1.0
+  families:
+  - name: MOD TL3-X three-phase string 3–15 kW
+    match: ^MOD(3000|4000|5000|6000|7000|8000|9000|10K|11K|12K|13K|15K)TL3-X$
+    countries: []
+    note: Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Test report
+      200427169GZU-001; type B approval; ratings only. The XA/XH/HU variants are not joined.
+    accepted_in: [EE, NL, SE]

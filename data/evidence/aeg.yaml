@@ -29,7 +29,7 @@ documents:
   - name: AS-ICH02 hybrid
     match: ^AS-ICH02-(5000|6500|8000|10000)-2/HV
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-ic02-2-2021
   title: EN 50549-1 — AS-IC02-2 4–15 kW
   url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/three-phase-AS-IC02-2_(4-15kW)/Certification_AS-IC02-2_4-15kW_EN50549-1-2019+VDE0126-1-1-2006_20210322.pdf
@@ -52,7 +52,7 @@ documents:
   - name: AS-IC02-2 three-phase
     match: ^(AS\-IC02\-10000\-2|AS\-IC02\-12000\-2|AS\-IC02\-15000\-2|AS\-IC02\-4000\-2|AS\-IC02\-5000\-2|AS\-IC02\-6000\-2|AS\-IC02\-8000\-2)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-ir02-2-2021
   title: EN 50549-1 — AS-IR02-2 3–6 kW
   url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/three-phase-AS-IR02-2_(3-6kW)/Certification_AS-IR02-2_3-6kW_EN50549-1-2019+VDE01261-1-2006_20210323.pdf
@@ -73,7 +73,7 @@ documents:
   - name: AS-IR02-2
     match: ^(AS\-IR02\-3000\-2|AS\-IR02\-3600\-2|AS\-IR02\-4200\-2|AS\-IR02\-5000\-2|AS\-IR02\-6000\-2)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-ir02-2021
   title: EN 50549-1 — AS-IR02 0.7–3 kW
   url: https://aeg-solar.com/wp-content/uploads/downloads/inverters/certificates/vde-4105/single-phase_AS-IR02_(700kW-3kW)/Certification_AS-IR02_0.7-3kW_EN50549-1-2019+VDE0126-1-1-2016_20210323.pdf
@@ -95,4 +95,4 @@ documents:
   - name: AS-IR02 single-phase
     match: ^(AS\-IR02\-1000|AS\-IR02\-1500|AS\-IR02\-2000|AS\-IR02\-2500|AS\-IR02\-3000|AS\-IR02\-700)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]

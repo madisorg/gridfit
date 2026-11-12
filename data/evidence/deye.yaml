@@ -246,4 +246,360 @@ documents:
   - name: SUN-18–36K-G04
     match: ^(SUN\-18K\-G04|SUN\-20K\-G04|SUN\-25K\-G04|SUN\-30K\-G04|SUN\-33K\-G04|SUN\-35K\-G04|SUN\-36K\-G04)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
+- id: at-tor-r25-sg04lp3-2022
+  title: Bureau Veritas U22-0466 — TOR Erzeuger Typ A, OVE-Richtlinie R25 — SUN-5…12K-SG04LP3-EU
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_austria+torerzeuger+ove-richtlinier25.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0466
+  issued: '2022-07-27'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A:2019-12
+  - OVE-Richtlinie R25:2020-03
+  families:
+  - name: SG04LP3 three-phase LV hybrid 5–12 kW
+    match: ^SUN-(5|6|8|10|12)K-SG04LP3-EU$
+    countries: [AT]
+    note: Report CDAN-ESH-P21110559-R1, programme NSOP-0032-DEU-ZE-V01; R25 clauses 5.1–5.6. No Austrian settings table. Firmware not
+      stated. The -BE register variants are not named.
+- id: at-tor-r25-sg05lp3-sm2-2025
+  title: DEKRA 6213883.01COC — TOR Erzeuger Type A V1.3, OVE-Richtlinie R 25 — SUN-14…20K-SG05LP3-EU-SM2
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_austria+torerzeuger.pdf
+  issuer: DEKRA Testing and Certification (Shanghai) Ltd.
+  cert_no: 6213883.01COC
+  issued: '2025-03-21'
+  valid_until: '2030-03-21'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Type A Version 1.3:2024-07-01
+  - OVE-Richtlinie R 25:2020-03-01
+  families:
+  - name: SG05LP3-SM2 three-phase LV hybrid 14–20 kW
+    match: ^SUN-(14|15|16|18|20)K-SG05LP3-EU-SM2$
+    countries: [AT]
+    note: File 6213883.50; annex has ratings only, no settings table. Firmware not stated.
+- id: at-tor-r25-g04-18-36k-2023
+  title: TÜV Rheinland AK 50570443 0001 — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R25 — SUN-18…36K-G04
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/09/Certificate_Austria+TORErzeuger+OVE-RichtlinieR25.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50570443 0001
+  issued: '2023-01-19'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Typ A Version 1.2
+  - OVE-Richtlinie R25/03.20
+  firmware: '3180'
+  families:
+  - name: G04 three-phase string 18–36 kW
+    match: ^SUN-(18|20|25|30|33|35|36)K-G04$
+    countries: [AT]
+    note: Report CN22MTTK 001. No settings table.
+- id: be-c1011-sg04lp3-2022
+  title: Bureau Veritas U22-0136 — EN 50549-1, C10/11:2021-03 — SUN-5…12K-SG04LP3-EU
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_belgium+nbn-en50549-1+c10-11.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0136
+  issued: '2022-03-31'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019-02, NBN EN 50549-1:2019-02
+  - C10/11:2021-03
+  - DIN V VDE V 0126-1-1:2006 (4.1 Functional safety)
+  - Commission Regulation (EU) 2016/631
+  firmware: beginning with V1090
+  families:
+  - name: SG04LP3 three-phase LV hybrid 5–12 kW
+    match: ^SUN-(5|6|8|10|12)K-SG04LP3-EU$
+    countries: [BE]
+    note: Report ASUE-ESH-P22010048; annex "C10/11 for Belgium" has ratings only, no settings table. Belgian operators take the Synergrid
+      C10/26 listing (GLV); this certificate is supporting evidence. The -BE register variants are not named.
+    accepted_in: [EE, NL, SE]
+- id: be-glv188-29-sg02lp1-2026
+  title: Synergrid GLV188-29 — C10/26 declaration of conformity — SUN-5~12K-SG02LP1-EU-AM2/3-P
+  url: https://dev.synergrid.be/images/downloads/GLV188-29_Deye_SUN-7.612K-SG02LP1-EU-AM2-3-P_20260921_Signed.pdf
+  issuer: Synergrid (homologation) / Deye
+  cert_no: GLV188-29
+  issued: '2026-09-21'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.1.4 (10/2025)
+  firmware: 3386 or higher
+  families:
+  - name: SG02LP1 single-phase hybrid 5–12 kW (AM2/AM3, -P)
+    match: ^SUN-((5|6)K-SG02LP1-EU-AM2|(7\.6|8)K-SG02LP1-EU-AM2(-P)?|(10|12)K-SG02LP1-EU-AM3(-P)?)$
+    countries: [BE]
+    note: Homologated by Synergrid 21/09/2026; 10 list rows (GLV188-29-0001…0010), power control by Eastron meter. No settings table.
+- id: nl-netcode-g04-18-36k-2024
+  title: Bureau Veritas U24-0950 — Verklaring van geen bezwaar, Netcode elektriciteit, NEN-EN 50549-1 — SUN-18…36K-G04
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/09/Certificate_Netherlands+NEN-EN50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U24-0950
+  issued: '2024-09-27'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Netcode elektriciteit (Besluit ACM van 21 april 2016, kenmerk ACM/DE/2016/202151)
+  - EN 50549-1:2019, NEN-EN 50549-1:2019
+  - DIN VDE V 0124-100:2020 (5.5.2.1)
+  - Verordening (EU) 2016/631
+  firmware: 5412-0324
+  families:
+  - name: G04 three-phase string 18–36 kW
+    match: ^SUN-(18|20|25|30|33|35|36)K-G04$
+    countries: [NL]
+    note: Report ASUE-ESH-P22091417-R1, type A. Supersedes U22-0643 (2022-10-21, SUN-18/20/25K-G04, fw 3117). No settings table.
+    accepted_in: [EE, SE]
+- id: nl-netcode-sg04lp1-2023
+  title: Bureau Veritas U23-1082 — Verklaring van geen bezwaar, Netcode elektriciteit, NEN-EN 50549-1 — SUN-3…6K-SG04LP1-EU
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/01/certificate_netherlands+nen-en50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-1082
+  issued: '2023-11-28'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Netcode elektriciteit (Besluit ACM van 21 april 2016, kenmerk ACM/DE/2016/202151)
+  - EN 50549-1:2019, NEN-EN 50549-1:2019
+  - Verordening (EU) 2016/631
+  firmware: '4384'
+  families:
+  - name: SG04LP1 single-phase LV hybrid 3–6 kW
+    match: ^SUN-(3K-SG04LP1(-24)?-EU(-SM1)?|(3\.6|5|6)K-SG04LP1-EU(-SM2)?)$
+    countries: [NL]
+    note: Report ASUE-ESH-P22010033-R1, type A and B. The -SM1/-SM2 variants named in the certificate are not in the register. No settings
+      table.
+    accepted_in: [EE, SE]
+- id: nl-netcode-sg01hp3-bm-2023
+  title: Bureau Veritas U23-0155 — Verklaring van geen bezwaar, Netcode elektriciteit, NEN-EN 50549-1 — SUN-29.9…50K-SG01HP3-EU-BM3/BM4
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/14/certificate_netherlands+nen-en50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0155
+  issued: '2023-03-08'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Netcode elektriciteit (Besluit ACM van 21 april 2016, kenmerk ACM/DE/2016/202151)
+  - EN 50549-1:2019, NEN-EN 50549-1:2019
+  - DIN VDE V 0124-100:2020 (5.5.2.1)
+  - Verordening (EU) 2016/631
+  firmware: '1020'
+  families:
+  - name: SG01HP3 three-phase HV hybrid 29.9–50 kW (BM3/BM4)
+    match: ^SUN-((29\.9|30|35)K-SG01HP3-EU-BM3|(40|50)K-SG01HP3-EU-BM4)$
+    countries: [NL]
+    note: Report ASUE-ESH-P22110229, type A and B. No settings table.
+    accepted_in: [EE, SE]
+- id: nl-netcode-g05-2022
+  title: Bureau Veritas U22-0642 — Verklaring van geen bezwaar, Netcode elektriciteit, NEN-EN 50549-1 — SUN-3…15K-G05(-P)
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/05/certificate_netherlands+nen-en50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0642
+  issued: '2022-10-21'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Netcode elektriciteit (Besluit ACM van 21 april 2016, kenmerk ACM/DE/2016/202151)
+  - EN 50549-1:2019, NEN-EN 50549-1:2019
+  - DIN VDE V 0124-100:2020 (5.5.2.1)
+  - Verordening (EU) 2016/631
+  firmware: Ver5111
+  families:
+  - name: G05 three-phase string 3–15 kW (and -P)
+    match: ^SUN-(3|4|5|6|7|8|9|10|12|15)K-G05(-1)?(-P)?$
+    countries: [NL]
+    note: Report ASUE-ESH-P22091416, type A and B. Combined register rows such as SUN-10K-G03/G05 are not joined. No settings table.
+    accepted_in: [EE, SE]
+- id: nl-netcode-sg03lp1-2022
+  title: Bureau Veritas U22-0231 — Verklaring van geen bezwaar, Netcode elektriciteit, NEN-EN 50549-1 — SUN-3.6K/5K-SG03LP1-EU
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/12/certificate_netherlands+nen-en50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0231
+  issued: '2022-05-25'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Netcode elektriciteit (Besluit ACM van 21 april 2016, kenmerk ACM/DE/2016/202151)
+  - EN 50549-1:2019, NEN-EN 50549-1:2019
+  - DIN V VDE V 0126-1-1:2006-02 (4.1)
+  - Verordening (EU) 2016/631
+  firmware: beginning with Ver2131
+  families:
+  - name: SG03LP1 single-phase LV hybrid 3.6–5 kW
+    match: ^SUN-(3\.6|5)K-SG03LP1-EU$
+    countries: [NL]
+    note: Report ASUE-ESH-P22030299, type A. No settings table.
+    accepted_in: [EE, SE]
+- id: nl-netcode-sg04lp3-2022
+  title: Bureau Veritas U22-0168 — Verklaring van geen bezwaar, Netcode elektriciteit, NEN-EN 50549-1 — SUN-5…12K-SG04LP3-EU
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/13/certificate_netherlands+nen-en50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0168
+  issued: '2022-03-30'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Netcode elektriciteit (Besluit ACM van 21 april 2016, kenmerk ACM/DE/2016/202151)
+  - EN 50549-1:2019, NEN-EN 50549-1:2019
+  - DIN V VDE V 0126-1-1:2006-02 (4.1)
+  - Verordening (EU) 2016/631
+  firmware: beginning with V1090
+  families:
+  - name: SG04LP3 three-phase LV hybrid 5–12 kW
+    match: ^SUN-(5|6|8|10|12)K-SG04LP3-EU$
+    countries: [NL]
+    note: Report ASUE-ESH-P22010034, type A and B. No settings table.
+    accepted_in: [EE, SE]
+- id: pl-wipwc13-sg02hp3-am3-2026
+  title: Lyns-tci LS260155GCC-0 — NC RfG, WOS 2025-05, WiPWC 1.3, Bank Nastaw 1.1 — SUN-25/29.9/30K-SG02HP3-EU-AM3
+  url: https://www.deyeinverter.com/deyeinverter/2026/06/09/CertificatePolandNCRfG1.pdf
+  issuer: Lyns-tci Technology Guangdong Co., Ltd. (ISO/IEC 17065)
+  cert_no: LS260155GCC-0
+  issued: '2026-06-02'
+  valid_until: '2031-06-01'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - NC RfG — Rozporządzenie Komisji (UE) 2016/631
+  - WOS, May 2025
+  - WIPWC, version 1.3 dated 01.10.2024
+  - Bank Nastaw dla Polski, version 1.1 dated 01.10.2024
+  firmware: Ver 3002-1100-2010
+  families:
+  - name: SG02HP3 three-phase HV hybrid 25–30 kW (AM3)
+    match: ^SUN-(25|29\.9|30)K-SG02HP3-EU-AM3$
+    countries: [PL]
+    note: PPM type A; set of settings POLAND_A_V1; scheme CMPD-01_PL. Annex A3.2 also names EN 50549-1:2019+A1:2023 / PN-EN 50549-1
+      as a further normative reference. Capability annex; settings by the named Bank Nastaw set.
+- id: pl-wipwc13-sg05lp1-2026
+  title: Bureau Veritas U26-0545 — NC RfG, WOS, WiPWC 1.3, EN 50549-1 — SUN-3.6…10K-SG05LP1-EU(-AM2-P), AI-W5.1-…P1-EU-B
+  url: https://www.deyeinverter.com/deyeinverter/2026/07/30/CertificatePolandPN-EN50549-12.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U26-0545
+  issued: '2026-07-21'
+  valid_until: '2031-07-20'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - Rozporządzenie Komisji (UE) 2016/631
+  - Wymogi Ogólnego Stosowania (WOS) — Decyzja Prezesa URE DRE.WOSE.7128.550.2.2018.ZJ z dnia 2 stycznia 2019 r.
+  - WiPWC wersja 1.3 (PTPiREE 2024-10-01)
+  - EN 50549-1:2019/A1:2023, PN-EN 50549-1:2019
+  - EN 50549-10:2022, PN EN 50549-10:2023
+  firmware: B389
+  families:
+  - name: SG05LP1 single-phase LV hybrid 3.6–10 kW and AI-W5.1 all-in-one
+    match: ^(SUN-(3\.6|5|6|7|7\.6|8|10)K-SG05LP1-EU(-AM2-P)?|AI-W5\.1-(3\.6|5|6|7|7\.6|8|10)P1-EU-B)$
+    countries: [PL]
+    note: Type A; report ASUE-ESH-P25031593-R1. Cites WOS 2018 (URE decision of 2019-01-02), not WOS 2025; the PTPiREE 1.3 list of 2026-10-26
+      carries a later revision U26-0545_1 as WOS 2025. EN 50549-1 settings extract with settable range and Polish value (pp. 10–11),
+      capability table p. 13.
+    accepted_in: [EE, NL, SE]
+- id: pl-pse-pcs01hp3-2025
+  title: TÜV Rheinland A3 50689264 0001-0002 — NC RfG, PSE 2018-12-18, PTPiREE 2024-10-01 — SUN-100K/125K-PCS01HP3
+  url: https://www.deyeinverter.com/deyeinverter/2026/08/03/CertificatePolandPSE.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50689264 0001-0002
+  issued: '2025-08-15'
+  valid_until: '2030-08-15'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 2016/631 EU (NC RfG)
+  - PSE 2018-12-18
+  - 'PTPiREE: 2024-10-01'
+  firmware: 6011-1108-MS
+  families:
+  - name: PCS01HP3 storage PCS 100–125 kW
+    match: ^SUN-(100|125)K-PCS01HP3$
+    countries: [PL]
+    note: Energy storage system, power park module type A; report CN250CHX 001. Also certifies the combinations with SUN-MPPT-L01-EU-AM8
+      and SUN-STS500L (not separate register rows). Capability table only.
+- id: de-vde4105-sg06lp1-2026
+  title: TÜV Rheinland A3 50734054 0001 — VDE-AR-N 4105/11.18 — SUN-3…6K-SG06LP1-EU (CM/BM)
+  url: https://www.deyeinverter.com/deyeinverter/2026/07/17/CertificateGermanyVDE-AR-N4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50734054 0001
+  issued: '2026-06-23'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18
+  - DIN VDE V 0124-100/06.20
+  firmware: '4389'
+  families:
+  - name: SG06LP1 single-phase LV hybrid 3–6 kW
+    match: ^SUN-((3\.6|4|4\.6|5|6)K-SG06LP1-EU-(CM2|BM2)|3K-SG06LP1(-24)?-EU-(CM1|BM1))$
+    countries: [DE]
+    note: Report CN26F4B3 001; E.4–E.7 with an NA-protection settings table (2018-11 settings). PEmax 4.6 kW for the 5 and 6 kW variants.
+      No SG06LP1 model is in the register yet — the match joins nothing.
+- id: cz-ppds-szu-sg02hp3-em6-2026
+  title: SZÚ B-00337-26 — PPDS Příloha 4 (2025) — SUN-60…80K-SG02HP3-EU-EM6
+  url: https://download.axilogi.com/deye/certification/SZU-B-00337-26.pdf
+  copy_of: Axilogi s.r.o. (Plzeň), the Czech importer and certificate holder; no copy on deyeinverter.com found
+  issuer: Strojírenský zkušební ústav (SZÚ), certification body 3040
+  cert_no: B-00337-26 (revision 0)
+  issued: '2026-03-12'
+  valid_until: '2029-03-11'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 'PPDS: Příloha 4 (2025)'
+  - Metodika 0100 M 043 Postup ověření požadavků PPDS – Střídače a komponenty pro výrobní moduly
+  firmware: HMI Ver 2001-C03F; MAIN Ver 3403-F430-2010
+  families:
+  - name: SG02HP3 three-phase HV hybrid 60–80 kW (EM6)
+    match: ^SUN-(60|70|75|80)K-SG02HP3-EU-EM6$
+    countries: [CZ]
+    note: Accredited certificate (SZÚ, ČIA-accredited to ISO/IEC 17065; scheme SZÚ-1a:2020.00) — the kind Czech operators take. Category
+      A2 non-synchronous; setting EN50549_CZ-PPDS(>16A); final report 32-11318/EZ of 2026-03-12 (unpublished). No settings table in
+      the certificate.
+- id: cz-ppds-bv-sg01hp3-bm-2022
+  title: Bureau Veritas U23-0156 — Potvrzení o nezávadnosti, PPDS Příloha 4:2022, EN 50549-1 — SUN-29.9…50K-SG01HP3-EU-BM3/BM4
+  url: https://www.deyeinverter.com/deyeinverter/2024/04/25/certificate_czechrepublic+ppds.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0156
+  issued: '2022-03-08'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 'PPDS Příloha 4: 2022'
+  - EN 50549-1:2019, ČSN 50549-1:2019
+  - DIN VDE V 0124-100:2020 (5.5.2.1)
+  - Nařízení komise (EU) 2016/631
+  firmware: '1020'
+  families:
+  - name: SG01HP3 three-phase HV hybrid 29.9–50 kW (BM3/BM4)
+    match: ^SUN-((29\.9|30|35)K-SG01HP3-EU-BM3|(40|50)K-SG01HP3-EU-BM4)$
+    countries: [CZ]
+    note: Foreign accredited certificate citing PPDS (DAkkS, not ČIA) — background only; Czech operators take an SZÚ/ČIA certificate
+      or a ČEZd/EG.D lab protocol. Printed issue date 2022-03-08 although the number reads U23 (as printed). Report ASUE-ESH-P22110230.
+      No settings table.
+    accepted_in: [EE, NL, SE]
+- id: cz-ppds-bv-sg04lp3-2023
+  title: Bureau Veritas U22-0790 — Potvrzení o nezávadnosti, PPDS Příloha 4:2022, EN 50549-1 — SUN-5…12K-SG04LP3-EU
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/13/certificate_czechrepublic+csn50549-1.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0790
+  issued: '2023-01-13'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - 'PPDS Příloha 4: 2022'
+  - EN 50549-1:2019, ČSN 50549-1:2019
+  - DIN VDE V 0124-100:2020 (5.5.2.1)
+  - Nařízení komise (EU) 2016/631
+  firmware: V1090
+  families:
+  - name: SG04LP3 three-phase LV hybrid 5–12 kW
+    match: ^SUN-(5|6|8|10|12)K-SG04LP3-EU$
+    countries: [CZ]
+    note: Foreign accredited certificate citing PPDS (DAkkS, not ČIA) — background only; Czech operators take an SZÚ/ČIA certificate
+      or a ČEZd/EG.D lab protocol. Report ASUE-ESH-P22030586-R1. No settings table.
+    accepted_in: [EE, NL, SE]

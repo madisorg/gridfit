@@ -44,7 +44,7 @@ documents:
   - name: BluE-G single-phase
     match: ^(BLUE\-G3000D|BLUE\-G3000D\-M0|BLUE\-G3000D\-M1|BLUE\-G3000S|BLUE\-G3000S\-M1|BLUE\-G3600D|BLUE\-G3600D\-M0|BLUE\-G3600D\-M1|BLUE\-G4000D|BLUE\-G4000D\-M0|BLUE\-G4000D\-M1|BLUE\-G4200D|BLUE\-G4200D\-M0|BLUE\-G4200D\-M1|BLUE\-G4600D|BLUE\-G4600D\-M1|BLUE\-G5000D|BLUE\-G5000D\-M1|BLUE\-G6000D|BLUE\-G6000D\-M1)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-blue-s-2023
   title: TÜV SÜD — EN 50549-1 — BluE-S 3680–6000D
   url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_%20EN%2050549-1_BluE-S(3.68-6)D-M1_EN_V1.0.pdf
@@ -66,7 +66,7 @@ documents:
   - name: BluE-S single-phase hybrid
     match: ^(BLUE\-S3680D|BLUE\-S3680D\-M1|BLUE\-S5000D|BLUE\-S5000D\-M1|BLUE\-S6000D|BLUE\-S6000D\-M1)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-kac50dp
   title: TÜV SÜD — EN 50549-1 — KAC50DP
   url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_%20EN%2050549-1_KAC50DP_EN_V1.0.pdf
@@ -83,7 +83,7 @@ documents:
   - name: KAC50DP
     match: ^(KAC50DP)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-e8-12kt
   title: TÜV SÜD — EN 50549-1 — E8KT / E10KT / E12KT
   url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_EN%2050549-1_E(8-12)KT_EN_V1.0.pdf
@@ -102,7 +102,7 @@ documents:
   - name: E8–12KT
     match: ^(E10KT|E12KT|E8KT)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-kac80-125dp2
   title: TÜV SÜD — EN 50549-1 / -2 / -10 — KAC80–125DP2
   url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_EN%2050549_KAC125DP2_EN_V1.0.pdf
@@ -127,7 +127,7 @@ documents:
   - name: KAC80–125DP2
     match: ^(KAC100DP2|KAC100DP2\-S0|KAC110DP2|KAC125DP2|KAC125DP2\-S0|KAC80DP2|KAC80DP2\-S0)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-kac20-50dp2
   title: TÜV SÜD — EN 50549-1 / -2 / -10 — KAC20–50DP2
   url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_EN%2050549_KAC50DP2_EN_V1.0.pdf
@@ -159,4 +159,4 @@ documents:
   - name: KAC20–50DP2
     match: ^(KAC20DP2|KAC20DP2\-S0|KAC25DP2|KAC25DP2\-S0|KAC29\.9DP2|KAC29\.9DP2\-S0|KAC30DP2|KAC30DP2\-S0|KAC40DP2|KAC40DP2\-S0|KAC49\.9DP2|KAC49\.9DP2\-S0|KAC50DP2|KAC50DP2\-S0)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]

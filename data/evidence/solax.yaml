@@ -260,3 +260,77 @@ documents:
   - name: X3-FORTH
     match: ^X3-FORTH
     countries: [AT, BE, BG, CY, CZ, DE, DK, EE, ES, FR, GB, GR, IE, IT, LT, NL, 'NO', PL, PT, RO, SE, SI, SK]
+- id: be-glv105-43-x3-ies-p-2026
+  title: Synergrid GLV105-43 — C10/26 declaration of conformity — SolaX X3-IES-P series
+  url: https://dev.synergrid.be/images/downloads/GLV105-43_SolaxPower_X3-IES-P_Series_20260306_Signed.pdf
+  issuer: Synergrid (homologation) / SolaX
+  cert_no: GLV105-43
+  issued: '2026-03-05'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - C10/11 ed2.4 (15/10/2025)
+  - GLV ed2.1.4 (10/2025)
+  firmware: 'DSP: 2.07, ARM: 2.03'
+  families:
+  - name: X3-IES-P three-phase hybrid 4–15 kW
+    match: ^X3-IES-(4|5|6|8|10|12|15)K-P$
+    countries: [BE]
+    note: Homologated by Synergrid 05/03/2026; 7 list rows (GLV105-43-0001…0007). The X3-IES without -P are not joined. No settings
+      table.
+- id: en50549-x1-hybrid-fit-g4-2023
+  title: TÜV Rheinland A3 50569101 0001 — EN 50549-1:2019 — X1-Hybrid G4 / X1-Fit G4 3.0–7.5
+  url: https://uz.solaxpower.com/uploads/file/solax-x1-hybrid-g4-en50549-1-a3-50569101-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50569101 0001
+  issued: '2023-01-16'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  firmware: 'DSP: 2.07, ARM: 2.03'
+  families:
+  - name: X1-Hybrid-x-D/M, X1-Fit-x-M/W (x = 3.0, 3.7, 4.6, 5.0, 6.0, 7.5)
+    match: ^(X1-HYBRID(-G4)?-(3\.0|3\.7|4\.6|5\.0|6\.0|7\.5)-(D|M|D/M)|X1-FIT(-G4)?-(3\.0|3\.7|4\.6|5\.0|6\.0|7\.5)-(M|W|M/W)|X1-HYBRID-5\.0K-D|X1-FIT-5\.0K-W)$
+    countries: []
+    note: Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Report CN2119YA
+      007; "power limits depend on national deviation". The G3 rows with -C/-E/-I/-T suffixes are not joined. No settings table.
+    accepted_in: [EE, NL, SE]
+- id: en50549-x3-hybrid-fit-g4-2023
+  title: TÜV Rheinland A3 50573244 0001 — EN 50549-1:2019 — X3-Hybrid G4 5.0–15.0 / X3-Fit G4 6.0–15.0
+  url: https://at.solaxpower.com/uploads/file/solax-x3-hybrid-g4-en50549-a3-50573244-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50573244 0001
+  issued: '2023-02-10'
+  seen: '2026-11-01'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  firmware: 'DSP: 2.07, ARM: 2.03'
+  families:
+  - name: X3-Hybrid-x-D/M (x = 5.0…15.0), X3-Fit-v-M/W (v = 6.0, 8.0, 10.0, 15.0)
+    match: ^(SOLAX)?(X3-HYBRID-(5|6|8|10|12|15)\.0-(D|M|D/M)|X3-FIT(-G4)?-(6|8|10|15)\.0-(M|W|M/W)|X3-HYBRID-1[02]\.0K-D|X3-FIT-10\.0K-W)$
+    countries: []
+    note: Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Report CN21ZTNH
+      009. The G3 rows with -C/-E/-N/-T suffixes are not joined. No settings table.
+    accepted_in: [EE, NL, SE]
+- id: cz-ppds-2021-decl-mga-fth-2022
+  title: SolaX "Prohlášení o shodě s PPDS 2022 a s vybranými vlastnostmi dle regulace RfG 2016/631" — X3-MGA-G2, X3-FTH-O
+  url: https://www.memodo.cz/mwdownloads/a3d0b5506e685b28ae076355e6976d33
+  copy_of: memodo.cz (Czech distributor); not found on solaxpower.com
+  issuer: SolaX Power Network Technology (Zhejiang) Co., Ltd. (maker's declaration)
+  issued: '2022-12-20'
+  seen: '2026-11-01'
+  kind: declaration
+  standards:
+  - EN50549-1
+  - RfG 2016/631
+  - PPDS 2021, příloha č. 4
+  families:
+  - name: X3-MGA G2 40–60 kW, X3-FTH-O 80–125 kW
+    match: ^(X3-MGA-(40|50|60)K-G2|X3-FTH-(80|100|110|120|125)K-O)$
+    countries: [CZ]
+    note: Maker's declaration, not an accredited certificate — Czech operators take only an SZÚ/ČIA certificate or a ČEZd/EG.D lab protocol.
+      National settings table with numbers (pp. 1–4) for the 2021 edition of Příloha 4 (older than the 2025 table). Firmware not stated.
+      The register writes X3-FTH-80K…125K without the -O suffix; those rows are not joined (the -O variant is not confirmed to be the
+      same).

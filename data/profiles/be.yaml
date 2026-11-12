@@ -1,0 +1,201 @@
+# Belgium — requirement profile for a grid-connected inverter, battery, hybrid or bidirectional charger (type A, below 1 MW).
+# What the grid operator checks is one thing: is the unit's type on Synergrid's C10/26 list. Synergrid (the
+# association of the Belgian grid operators) homologates each unit against Annex D of its technical prescription
+# C10/11 from the maker's test reports; the grid operators (Fluvius, ORES, RESA, AIEG, AIESH, REW, Sibelga) accept
+# only listed types. Facts only, with the source of each; the grid operator decides. Written 2026-11-01 from the full
+# C10/11 ed. 2.4 text (Synergrid publishes it free in NL, FR and EN), the C10/26 list of 2026-10-30, the C10/26
+# application template ed. 2.4.1 (04/2026), Synergrid's plug&play pages and the "Grid Update" amendment draft in
+# public consultation until 2026-12-01.
+cc: BE
+country: Belgium
+norm: C10/11
+type_a_max_kw: 1000   # C10/11 §1.2, after the regulators' decisions VREG BESL-2018-108, Brugel DECISION-20181116-73, CWaPE CD-18k16-CWaPE-0245: type A 0.8 kW ≤ Pmax < 1 MW; type B 1 MW to < 25 MW
+not_listed_short: "a type that is not on Synergrid's C10/26 list cannot be connected: the maker or importer must have it homologated first"
+description: "C10/11 in Belgium: Synergrid's C10/26 list is the gate. What an inverter, battery, hybrid or bidirectional charger must meet under C10/11 ed. 2.4, the 5 kVA single-phase and 10 kVA three-phase lines, and the 2026 Grid Update draft."
+summary: "C10/11 is the grid operators' technical prescription for every generating unit that can run in parallel with the Belgian distribution grid, batteries and bidirectional EV chargers included; the edition in force is 2.4 of 15 October 2025. A unit must be on Synergrid's C10/26 list before the connection procedure may start. For small installations (up to 5 kVA single-phase or 10 kVA three-phase, storage counted separately) the built-in automatic separation system is set to Annex C table 8 — 10-minute mean over-voltage at 230 V + 10 %, 230 V + 15 %, 230 V − 20 %, 51.5 Hz and 47.5 Hz, each tripping within 200 ms — the installer signs a settings declaration, the installation is inspected under the AREI/RGIE and then notified to the grid operator. A draft amendment (public consultation until 1 December 2026) would raise the small-installation limits to 18 kVA single-phase and 33 kVA three-phase with an injection cap, add 3 s delays to the separation settings and make Q(U) mandatory on low voltage."
+decided_by: "The distribution grid operator of the area — Fluvius (Flanders); ORES, RESA, AIEG, AIESH and REW (Wallonia); Sibelga (Brussels) — on the notification (small installation) or after a grid study (other installations). Synergrid vzw/asbl, the grid operators' federation, writes C10/11 and decides the C10/26 homologation. The regional regulators (VREG, CWaPE, Brugel) set the RfG thresholds and approve each operator's additional rules; the AREI/RGIE inspection is done by an accredited inspection body."
+list:
+  name: "Synergrid C10/26 — list of power-generating units homologated according to Annex D of C10/11"
+  url: https://www.synergrid.be/nl/homologatie/elektriciteit/decentrale-productie-eenheden
+  meaning: "Every type of power-generating unit — PV and battery inverters, hybrids, plug&play units, bidirectional chargers, gensets, CHP, wind — for which the maker filed the C10/26 technical file (the Annex D checklist with accredited test reports, preferably to EN 50549-1/-2/-10) and Synergrid approved it. Per row: Synergrid reference (GLVxxx-yy-zzzz), brand, series, model, firmware, the storage power-control system (EnFluRi or P1), rated active power and Smax, phases, ticks for the optional characteristics and limitations, application, approval date and any later correction. A second sheet holds expired homologations; a separate plug&play extract (PDF) lists the plug-in units. The xlsx header date is the last update (2026-10-30 on 2026-11-01)."
+  gate: "Yes. C10/11 §5.2 step 0 and §5.3 step 1: the user must check that the unit's type is on the C10/26 list; if it is not, the simplified procedure may not be used and the maker or importer must follow the homologation procedure. Synergrid: all units must have a C10/26 type homologation and be on the list before the connection procedure may start; a plug&play unit that is not on the list may not be plugged in."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG) — C10/11 covers the Belgian grid operators' national implementation (C10/11 §1.2)"
+  - "Regional regulators' decisions on the RfG thresholds: VREG BESL-2018-108, Brugel DECISION-20181116-73, CWaPE CD-18k16-CWaPE-0245 (cited in C10/11 §2.1, footnote 3) — type A 0.8 kW to < 1 MW, type B 1 MW to < 25 MW"
+  - "Synergrid technical prescription C10/11 ed. 2.4 (15.10.2025), consolidated: ed. 2.1 of 1 September 2019 + amendments of 15 March 2021, 17 October 2024 (no fixed connection required — plug&play) and 15 October 2025 (P1 port as an alternative to the EnFluRi sensor)"
+  - "EN 50549-1:2019 and EN 50549-2:2019 — C10/11 Annex D refers to them clause by clause and adds Belgian deviations"
+  - "Synergrid homologation procedure S1/01 and the specific procedure C10/26 (the application template, checklist ed. 2.4.1, 04/2026)"
+  - "Regional technical regulations for electricity distribution (Flanders, Wallonia, Brussels) and each grid operator's approved additional rules (C10/11 §1.4)"
+  - "AREI/RGIE (the general regulation on electrical installations) — the inspection before notification; NBN EN 60038"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). Synergrid's GLV declarations print the edition
+# as "C10/11 ed2.4 (15/10/2025)" and the labs as "C10/11:2021-03": the edition parser must map both to a YYYY-MM.
+edition:
+  norm: "C10/11"
+  id: "2.4"
+  date: "2025-10"
+  in_force: "2025-10-15"
+  label: "C10/11 ed. 2.4 (15.10.2025)"
+document_must_cite: ["C10/11", "C10/26"]
+accepts: [national-declaration]   # Synergrid: "the declaration of conformity needed to start the connection procedure with the grid operator can be downloaded via the link at the unit in this list (column 4)" — the GLV is a C10/11 document; a bare EN 50549-1 certificate is input to the homologation, not something a grid operator takes
+must_meet:
+  - id: power-class
+    rule: "Plant size class (C10/11 §1.2; regional regulators' RfG decisions)"
+    value: "type A from 0.8 kW to below 1 MW; type B from 1 MW to below 25 MW, with fault ride-through, set-point reduction and remote monitoring; units below 1 MW may be listed as 'type B ready'"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 1000, over: "1 MW or more: type B, a procedure of its own", provable_by: [datasheet, document], source: "C10/11 ed. 2.4 §1.2, §2.1" }
+  - id: single-phase-5kva
+    rule: "Single-phase limit (C10/11 §4.1.7 table 2, §8.2.5.1; C10/26 list legend)"
+    value: "a unit above 5 kVA must be connected over several phases; a small installation on a single-phase connection takes at most 5 kVA of generation plus 5 kVA of storage. Single-phase units above 5 kVA are marked pink on the list: on a single-phase connection Fluvius, ORES and Sibelga (since 17.10.2024) refuse them and RESA allows up to 10 kVA (Synergrid, situation 11/2024); they may be used on a three-phase connection if the phase imbalance stays within 5 kVA"
+    check: { kind: max, meaning: procedure, field: ac_kva, limit: 5, over: "single-phase over 5 kVA: only on a three-phase connection with phase balance, or where the grid operator allows it (RESA up to 10 kVA)", applies: { phases: [1] }, provable_by: [datasheet, document], source: "C10/11 ed. 2.4 §4.1.7, §8.2.5.1; C10/26 list, explanation sheet" }
+  - id: small-installation
+    rule: "Small power-generating installation — the simplified procedure (C10/11 §4.1.7, §5.3)"
+    value: "up to 5 kVA single-phase or 10 kVA three-phase (high voltage: 10 kVA) of generation, and separately the same again of storage; a hybrid counts as generation. Within it: no prior approval, the installer's settings declaration, the AREI/RGIE inspection and a notification. Above it: the standard procedure with a request in principle, a technical file and a grid study"
+    check: { kind: max, meaning: procedure, field: ac_kva, limit: 10, over: "over 10 kVA: the standard procedure with a grid study", provable_by: [datasheet, document], source: "C10/11 ed. 2.4 §4.1.7 table 2, §5.2, §5.3" }
+  - id: integrated-separation
+    rule: "Integrated automatic separation system, up to 30 kVA (C10/11 Annex D.3, §7.5.2, §7.6.2)"
+    value: "a unit up to 30 kVA may carry the automatic separation system built in (over-voltage 10-min mean, over-voltage, under-voltage, over- and under-frequency, loss of mains tested to EN 62116, single-fault tolerance per EN 50549-1 4.13); an installation above 30 kVA needs a separate interface protection relay from Synergrid's C10/21 or C10/23 list and a lockable safety switch accessible to the grid operator"
+    check: { kind: max, meaning: protection, field: ac_kva, limit: 30, over: "over 30 kVA: a separate C10/21 interface protection relay", provable_by: [datasheet, document], source: "C10/11 ed. 2.4 Annex D.3, §7.5.2, §7.6.2" }
+  - id: freq-range
+    rule: "Operating frequency range (Annex D.4.1)"
+    value: "47.5–49.0 Hz for 30 min; 49.0–51.0 Hz permanently; 51.0–51.5 Hz for 30 min. The homologation also records whether the unit can run at 51.5–52.5 Hz and for how long (an optional column on the list)"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "C10/11 ed. 2.4 Annex D.4.1; EN 50549-1:2019 4.4.2" }
+  - id: voltage-range
+    rule: "Continuous operating voltage range (Annex D.4.3)"
+    value: "85 % < U < 110 % of Un = 230 V on low voltage (90–110 % Uc on high voltage); apparent power may be reduced below 95 %"
+    check: { kind: range, field: vac_pct, range: [85, 110], provable_by: [datasheet, document], source: "C10/11 ed. 2.4 Annex D.4.3" }
+  - id: under-frequency
+    rule: "Maximum power reduction at under-frequency (Annex D.4.2.1, table 10)"
+    value: "a non-synchronous unit may reduce its output by at most 2 % of Pmax per Hz below 49 Hz (the strictest curve of EN 50549-1)"
+    check: { kind: document, provable_by: [document], source: "C10/11 ed. 2.4 Annex D.4.2.1, table 10" }
+  - id: rocof
+    rule: "RoCoF immunity (Annex D.5.1)"
+    value: "stay connected and operating through the frequency-time profiles of figure 10: at most 2 Hz/s over a 500 ms sliding window, for every technology"
+    check: { kind: document, provable_by: [document], source: "C10/11 ed. 2.4 Annex D.5.1, figure 10" }
+  - id: frt
+    rule: "Under-voltage ride-through (Annex D.5.2)"
+    value: "mandatory only for units in a module of 1 MW or more (type B): non-synchronous profile down to 0.15 pu for 0.2 s, back to 0.85 pu by 1.5 s, power back to 90 % within 1 s. Below 1 MW it is indicative only, but the homologation must state the real withstand; over-voltage ride-through has no requirement in this edition"
+    check: { kind: none, why: "not required below 1 MW; the list's 'type B ready' column says whether a unit meets it", source: "C10/11 ed. 2.4 Annex D.5.2, figure 12; D.5.3" }
+  - id: lfsm-o
+    rule: "Power response to over-frequency, LFSM-O (Annex D.6.1, tables 13 and 14)"
+    value: "from 50.2 Hz (settable 50.2–52 Hz) with 5 % droop (settable 2–12 %), no intentional delay (0–2 s), fstop deactivated; reference power Pmax for storage, the momentary power for other inverters; step response: −50 % Pmax within 2 s (settled within 20 s), +50 % within 10 s; after the event power returns at no more than 10 % Pmax per minute; settings protected by password or seal; disconnection instead of droop is not allowed"
+    check: { kind: document, provable_by: [document], source: "C10/11 ed. 2.4 Annex D.6.1, tables 13–14" }
+  - id: lfsm-u
+    rule: "Power response to under-frequency, LFSM-U (Annex D.6.2, table 15)"
+    value: "mandatory for energy storage (optional for other units, but if activated it must follow this): from 49.8 Hz (settable 46–49.8 Hz), droop 2 % (100 % Pref/Hz) for storage, 5 % for other units, no intentional delay; the same step-response times as LFSM-O. Storage of 1 MW or more: 1 % droop, and disconnect while charging at a threshold of 49–49.2 Hz"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "C10/11 ed. 2.4 Annex D.6.2, table 15" }
+  - id: separation-settings
+    rule: "Settings of the automatic separation system (Annex C.1, table 8)"
+    value: "over-voltage 10-minute mean 230 V + 10 %; over-voltage 230 V + 15 %; under-voltage 230 V − 20 %; over-frequency 51.5 Hz; under-frequency 47.5 Hz — each with no added delay, total disconnection time at most 200 ms; loss of mains per EN 62116. The installer declares on honour that these are set. (An external C10/21 relay above 30 kVA has its own table 9: U>> 115 % 0 s, U> 110 % 1 s, U< 70 % 1.5 s, U<< 15 % 0.25 s, f> 51.5 Hz / f< 47.5 Hz 0 s, U0 20 % 1.5 s, RoCoF 1–2 Hz/s 200 ms and a narrower 50.3 / 49.7 Hz window on local voltage criteria)"
+    check: { kind: document, provable_by: [document], source: "C10/11 ed. 2.4 Annex C.1 table 8, C.2 table 9; §5.3 step 3" }
+  - id: loss-of-mains
+    rule: "Loss-of-mains detection and single-fault tolerance (Annex D.3)"
+    value: "an island-detection method according to EN 50549-1 4.9.4, tested to EN 62116 (the homologation names the method and its settings); the separation system is single-fault tolerant per EN 50549-1 4.13"
+    check: { kind: document, provable_by: [document], applies: { below_kw: 30 }, source: "C10/11 ed. 2.4 Annex D.3; C10/26 checklist ed. 2.4.1" }
+  - id: reconnection
+    rule: "Connection and reconnection (Annex D.8, table 16)"
+    value: "after a protection trip and at normal start alike: frequency within 49.9–50.1 Hz and voltage within 85–110 % Un for 60 s; power then ramps at most 10 % Pmax per minute after a trip (a unit that cannot ramp adds a delay) and 20 % per minute at a normal start"
+    check: { kind: document, provable_by: [document], source: "C10/11 ed. 2.4 Annex D.8, table 16" }
+  - id: reactive
+    rule: "Voltage support by reactive power (Annex D.7.1)"
+    value: "the capability of EN 50549-1 4.7.2 (cos φ 0.9 over- to 0.9 under-excited, modes Q set-point, Q(U), cos φ set-point, cos φ(P)); in a small installation by default cos φ = 1 up to 105 % Un and above it free under-excited operation down to cos φ 0.9 (over-excited not allowed); in other installations the grid operator sets the mode; settings protected"
+    check: { kind: cosphi, field: cosphi, limit: 0.9, provable_by: [datasheet, document], source: "C10/11 ed. 2.4 Annex D.7.1, D.7.1.1" }
+  - id: p-of-u
+    rule: "Voltage-related active power reduction P(U) (Annex D.7.2)"
+    value: "optional but recommended; if implemented it follows EN 50549-1 4.7.3 (figure 15 gives an example curve between 100 and 112 % Un, not a setting). The list has a column for it"
+    check: { kind: none, why: "optional in C10/11 ed. 2.4; the list's P(U) column shows whether the unit has it", source: "C10/11 ed. 2.4 Annex D.7.2" }
+  - id: cease-active-power
+    rule: "Ceasing active power on command (Annex D.9.1)"
+    value: "above 800 W a logic interface (input port, a contact unless the grid operator defines otherwise) that stops active power within 5 s of an instruction; remote operation optional"
+    check: { kind: document, provable_by: [document], applies: { above_kw: 0.8 }, source: "C10/11 ed. 2.4 Annex D.9.1" }
+  - id: phase-balance
+    rule: "Phase imbalance (C10/11 §8.2.5, §7.6.7, §7.11.1)"
+    value: "the imbalance between phases may never exceed 5 kVA (storage: a one-minute mean); single-phase PV and single-phase storage go on the same phase; where several single-phase units can exceed it, a power-imbalance relay set to 5 kVA (not in a small installation, which must guarantee it by design)"
+    check: { kind: none, why: "a design rule at the installation's level", source: "C10/11 ed. 2.4 §8.2.5, §7.6.7, §7.11.1" }
+  - id: storage-power-control
+    rule: "Power control system for storage (C10/11 §7.11.2, §4.1.7)"
+    value: "an installation with a storage system needs a power control system that keeps injection under a set limit, reading the injection either from the P1 port of the grid operator's digital meter (allowed since 15.10.2025, small installations only) or from an EnFluRi sensor per the VDE FNN note (other directional meters only outside small installations); readings at least every 500 ms (P1: at the meter's rate), a step error cut to below 10 % within 3 s, and a failure must stop over-injection within one minute. In a small installation the limit is the summed power of the other generating units — zero without PV. The list names the homologated control system per storage unit; a hybrid in a small installation needs none"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery] }, changed_in: "2025-10", changed: "ed. 2.4 admits the P1 port of the digital meter as an alternative to the EnFluRi sensor", source: "C10/11 ed. 2.4 §7.11.2, §4.1.7 condition 3" }
+  - id: export-limit
+    rule: "Export limitation relay (C10/11 §7.6.4, list C10/25)"
+    value: "where the grid study imposes an export limit, a C10/25-homologated relay: zero-export at most 3 % of contracted import within 10 s, or a two-level injection limiter with immediate disconnection within 3 % of the limit"
+    check: { kind: none, why: "imposed per installation by the grid study, not a check on the model", source: "C10/11 ed. 2.4 §7.6.4" }
+  - id: remote-control
+    rule: "Remote monitoring and control, set-point reduction (Annex D.9.2, D.10; §7.13)"
+    value: "only for modules of 1 MW or more, or installations above 250 kVA if the grid operator requires it: real-time measurements every second and the operator's set-points"
+    check: { kind: none, why: "applies above 250 kVA at the operator's request, at the installation's level", source: "C10/11 ed. 2.4 Annex D.9.2, D.10, §7.13" }
+documents_for_listing:
+  - "the C10/26 application workbook (template ed. 2.4.1, 04/2026), all sheets: 1 GLV — the declaration of conformity signed by the manufacturer and, on approval, by Synergrid; 2 — the list of units with brand, series, model reference, firmware, rated power, Smax, phases, characteristics and limitations; 3 — the Annex D checklist (non-synchronous, synchronous or emergency group), where column K counts as the manufacturer's declaration of honour"
+  - "test reports from a laboratory accredited to ISO/IEC 17025 (or certificates from a body accredited to ISO/IEC 17065) for every checklist line that requires one; international reports are accepted, preferably to EN 50549-1, -2 or -10; in Dutch, French, English or German, each a separate document"
+  - "the commercial datasheets of the units; Smax must match on the test report, the datasheet and the nameplate — a firmware power limit is not taken into account (C10/11 §4.1.8), so a Belgium-only lower rating needs a separate model reference (e.g. a '-BE' suffix), its own nameplate and datasheet"
+  - "for storage: the name and reference of the power control system (EnFluRi sensor, P1 port, or another directional meter for non-small installations), homologated together with the unit"
+  - "for a rebranded OEM unit: the 'rebranding – OEM declaration' signed by both companies in place of the checklist and test reports"
+apply:
+  who: "the manufacturer or importer applies for the homologation; the grid user (in practice the installer) then notifies or applies for the installation"
+  how: "Homologation: the workbook and proofs through Synergrid's C10/26 web tool; Synergrid studies the file only (no sample), free of charge, and adds the units to the published list. Installation: in a small installation the installer sets the separation system to Annex C table 8 and signs a declaration, an accredited inspection body inspects under the AREI/RGIE, and the user notifies the grid operator with the single-line diagram, the installer's declarations and each unit's C10/26 reference (Fluvius: Mijn Fluvius; ORES: 'Nouvelle production d'énergie – déclaration'; RESA, AIEG, AIESH: the notification form for installations up to 10 kVA; REW: its plug-and-play page; Sibelga: 'Melding zonnepanelen' and 'Melding batterij'); correct completion counts as permission. Other installations: request in principle, technical file and grid study, inspection by the operator or an accredited body, energisation under supervision and written final permission"
+  guide_url: https://www.synergrid.be/images/downloads/Technical_prescription_C10-11_ed2-4_20251015_tekst_EN.pdf
+  guide_date: "C10/11 ed. 2.4, 15 October 2025 (§5 procedure; Annex B homologation); Synergrid's page 'Decentrale productie-eenheden' seen 2026-11-01"
+  processing_time: "homologation: not stated (Synergrid gives no information on files in progress except to the applicant). Small installation: no prior permission — the notification is the permission. Notification deadline in Flanders: secondary sources give 30 days after the inspection, others 3 months for PV and 30 days for batteries — not confirmed from Fluvius"
+not_listed: "Without a C10/26 listing there is no way in: C10/11 forbids the simplified procedure (§5.3 step 1) and makes the listing step 0 of the standard procedure (§5.2), and only the maker or importer can file the homologation — the installer cannot. Synergrid's FAQ gives three reasons a unit may be missing: an old download of the list (check the online version), an old unit that no longer meets the requirements ('such inverters may no longer be newly installed'), or a unit still in homologation or not yet known in Belgium (ask the maker or importer to file it). A plug&play unit that is not on the list may not be plugged in. The grid operator may forbid parallel operation of a unit not correctly notified, and the user bears the cost of a check that finds non-compliance."
+thresholds:
+  - "below 0.8 kW: outside the RfG types but not outside C10/11 — every unit that can run in parallel needs the C10/26 homologation, plug-in units included; units only homologated for modules below 800 W are flagged on the list"
+  - "plug&play (a household plug, no fixed connection): allowed since 17.04.2025 if CE-marked and on the C10/26 list (also on Synergrid's plug&play extract, ed. 09.10.2026, 444 entries); Synergrid states a power limit of 2,600 W in principle (a household circuit under the AREI) and that several bodies advise 600–800 W; no AREI inspection for the device itself. Flanders: notification required at 800 W combined or more, without a digital meter, or to be paid for injection; Wallonia and Brussels: every plug&play unit is notified"
+  - "small installation: ≤ 5 kVA single-phase / ≤ 10 kVA three-phase of generation, plus the same of storage (Smax from the C10/26 list; firmware limits do not count) — simplified procedure; some operators allow more (RESA 10 kVA single-phase)"
+  - "a unit above 5 kVA must be multi-phase; multi-phase strongly recommended above 3.6 kVA; imbalance ≤ 5 kVA"
+  - "≤ 30 kVA: integrated automatic separation system allowed, no separate safety switch (§7.5.2); above 30 kVA: a C10/21 interface protection relay"
+  - "> 250 kVA: the operator may impose remote monitoring, set-point control, an under-voltage relay or a transformer (HV)"
+  - "type A 0.8 kW to < 1 MW; type B 1 MW to < 25 MW (fault ride-through, set-point reduction, remote control mandatory)"
+  - "one-directional EV chargers are outside C10/11 and need no homologation; bidirectional ones (V2G, also V2H without injection per the Grid Update webinar) need it, as a charger + vehicle 'duo' where the inverter sits in the car"
+commissioning: "Small installation: the AREI/RGIE inspection by an accredited body (the report date is the reference date for which C10/11 edition applies), with the separation-system type if external and a disconnection test that proves galvanic separation within 5 s; then the notification. Other installations: an inspection of the connection rules by the grid operator or an accredited body — type and serial number of the interface relay against its test report, its actual settings against the operator's values, a functional test of each protection function, export-limit and imbalance relays, the parallel-coupling system — and a functional loss-of-mains test at energisation under the operator's supervision, then written final permission. Every later change is notified in writing; replacing a unit with an identical or comparable model within 10 years of first commissioning keeps the old rules except for the Annex C settings."
+changes:
+  - "2026-10-01 to 2026-12-01: public consultation on the C10/11 amendment 'Grid Update' (webinar 2026-10-29). Proposed: small installations up to 5 kVA single-phase or 11 kVA three-phase without an injection limit, or up to 18 kVA single-phase / 33 kVA three-phase with injection capped at 5 kW / 11 kW, no longer split between generation and storage, and a power control system only where an injection limit applies; the integrated separation system allowed up to 56 kVA (was 30 kVA); separation settings with 3 s delays on over-voltage 1.15 Un, under-voltage 0.80 Un and 51.5 / 47.5 Hz (10-minute mean unchanged), and if implemented RoCoF 2 Hz/s 700 ms, a narrow 50.3 / 49.7 Hz window 3 s or vector shift 7°; Q(U) mandatory on low voltage — from 105 % Un, full 33 % PD absorption at 108 %, 3 s time constant — with P(U) only from 108 % Un; definitions of off-grid, island and backup operation with break-before-make changeover; a manufacturer's duty to hand the grid operator event logs, measurements and the settings file within one month. No date of entry into force is given; Synergrid says the C10/26 template, procedure and list will need 'limited adaptations', timing and method still under study"
+  - "the amendment draft's own words: a thorough revision of C10/11 and the C10/26 homologation follows the EU RfG 2.0 code, expected to be more drastic"
+  - "Flanders, July 2026: a draft decree (not adopted on 2026-11-01) would move the duty to notify PV, chargers and batteries to Fluvius from the owner to the inspector and raise the grid-study threshold from 10 to 25 kVA (Solar Magazine, 2026-07-14)"
+  - "2025-10-15 (ed. 2.4): the P1 port of the digital meter admitted as an alternative to the EnFluRi sensor for storage control in small installations"
+  - "2025-04-17 (ed. 2.3 of 17.10.2024 in force): homologated plug&play devices may be connected"
+evidence_for_documented: "The Synergrid GLV declaration of conformity for the exact series and firmware, linked from the model's row on the C10/26 list: signed by the manufacturer and by Synergrid, it names the C10/11 edition and the GLV template it was filed under. A maker's own C10/11 certificate from an accredited body (e.g. 'C10/11:2021-03' with EN 50549-1) is supporting evidence, but the grid operator looks only at the listing. GridFit shows whether the model is listed, the GLV link and its date; the grid operator decides."
+sources:
+  - title: "Synergrid — Technical prescription C10/11 ed. 2.4 (15.10.2025), English text"
+    url: https://www.synergrid.be/images/downloads/Technical_prescription_C10-11_ed2-4_20251015_tekst_EN.pdf
+    date: "2025-10-15"
+  - title: "Synergrid — Technisch voorschrift C10/11 editie 2.4 (15.10.2025), Dutch text (the one read in full)"
+    url: https://www.synergrid.be/images/downloads/Technical_prescription_C10-11_ed2-4_20251015_tekst_NL.pdf
+    date: "2025-10-15"
+  - title: "Synergrid — Decentrale productie-eenheden (homologation page, C10/26 list, FAQ)"
+    url: https://www.synergrid.be/nl/homologatie/elektriciteit/decentrale-productie-eenheden
+    seen: "2026-11-01"
+  - title: "Synergrid — C10/26 list of power-generating units homologated according to Annex D of C10/11 ed. 2.4 (xlsx, last update 2026-10-30)"
+    url: https://www.synergrid.be/images/downloads/c10_26_list_of_pgu_compliant_with_c10_11_ed2_1_12_2019.xlsx
+    date: "2026-10-30"
+  - title: "Synergrid — C10/26 conformity document / application template ed. 2.4.1 (ReadMe, GLV, list, Annex D checklists)"
+    url: "https://www.synergrid.be/images/downloads/C10_26_conformity_document_EN_ed2.4.1_2026.04(webtool).xlsx"
+    date: "2026-04"
+  - title: "Synergrid — FAQ C10/11 (edition 4, 10.2025)"
+    url: https://www.synergrid.be/images/downloads/FAQ_C10-11_vanaf_2019_NL.pdf
+    date: "2025-10"
+  - title: "Synergrid — Plug&Play: information for the user (FAQ incl. power limit and notification per region)"
+    url: https://www.synergrid.be/nl/homologatie/elektriciteit/plug-play
+    seen: "2026-11-01"
+  - title: "Synergrid — Plug&Play list, extract of the C10/26 list, ed. 09.10.2026"
+    url: https://www.synergrid.be/images/downloads/Synergrid_Plug-and-play_lijst-liste_NL-FR.pdf
+    date: "2026-10-09"
+  - title: "Synergrid — Info 11.2024: Plug & Play in Belgium (homologation guide for manufacturers)"
+    url: https://www.synergrid.be/images/downloads/INFO_fabrikanten_2024.11_C10-11_ed2.3_plug-and-play_EN.pdf
+    date: "2024-11"
+  - title: "Synergrid — INFO 02.2023: corrective action for the C10/26 list (firmware limitations of Smax)"
+    url: https://www.synergrid.be/images/downloads/Newsletter%20Synergrid%2002.2023%20-%20Actie%20C10-26%20firmware%20EN.pdf
+    date: "2023-02"
+  - title: "Synergrid — public consultation 'Amendement C10/11 Grid Update' (2026-10-01 to 2026-12-01)"
+    url: https://www.synergrid.be/nl/documentencentrum/openbare-raadpleging/amendement-c10-11-grid-update
+    seen: "2026-11-01"
+  - title: "Synergrid — C10/11 amendment 2.4 'Grid Update', text proposal (EN)"
+    url: https://www.synergrid.be/images/downloads/Public_Consultations/C10_11_octo26/C10-11_amend2.4_grid_update_EN_2026.pdf
+    date: "2026-10-01"
+  - title: "Synergrid — webinar C10/11 amendment 'Grid Update', slides with questions and answers"
+    url: "https://www.synergrid.be/images/downloads/2026.10.29%20-%20webinar%20C10-11(amend%20grid%20update).pdf"
+    date: "2026-10-29"
+  - title: "Synergrid — Algemene voorwaarden voor het gebruik van de website (reuse terms)"
+    url: https://www.synergrid.be/nl/algemene-voorwaarden/algemene-voorwaarden-voor-het-gebruik-van-de-website
+    seen: "2026-11-01"
+  - title: "Solar Magazine — Vlaanderen wil meldingsplicht zonnepanelen verschuiven naar keurder (draft decree)"
+    url: https://solarmagazine.nl/nieuws-zonne-energie/i44284/einde-aan-boetes-voor-te-laat-aanmelden-zonnepanelen-vlaanderen-wil-meldingsplicht-verschuiven-naar-keurder
+    date: "2026-07-14"

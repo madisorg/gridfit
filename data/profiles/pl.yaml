@@ -1,0 +1,203 @@
+# Poland — requirement profile for a grid-connected inverter, battery or hybrid in low voltage (type A, < 200 kW).
+# What the grid operator checks is an equipment certificate (certyfikat sprzętu) to NC RfG + PSE's requirements of
+# general application (WOS), issued by an accredited certification body under PTPiREE's certification rules (WiPWC),
+# and the device must be on PTPiREE's list of accepted devices. From 1 January 2027 only certificates issued under
+# WiPWC 1.3 (which takes in the "Bank Nastaw dla Polski" settings set) count for new type-A connections. Facts only,
+# with the source of each; the distribution grid operator (OSD) decides. Written 2026-11-01 from PSE's WOS 2025 and
+# the URE decision, PTPiREE's WiPWC 1.3, Bank Nastaw 1.1, the list page and notice of 2026-10-05, the Minister of
+# Climate's micro-installation regulation (Dz.U. 2023 poz. 1098) and ENEA Operator's notification form.
+cc: PL
+country: Poland
+norm: "NC RfG + WOS (PSE) + WiPWC / Bank Nastaw (PTPiREE)"
+type_a_max_kw: 200   # URE decision DRE.WOSE.7128.184.3.2018.ZJ (July 2018): type B from 0.2 MW, C from 10 MW, D from 75 MW or >= 110 kV
+not_listed_short: "From 1 January 2027 a model must be on PTPiREE's WiPWC 1.3 list (or its maker must get it there); a model on the 1.2 list only is not accepted for new type-A connections"
+description: "Poland's NC RfG rules for an inverter, battery or hybrid: PSE's WOS 2025, PTPiREE's certificate rules (WiPWC 1.3) and settings set (Bank Nastaw), the device list the five big grid operators check, the 50 kW micro-installation notification and the 3.68 kW single-phase line."
+summary: "In Poland every generating unit from 0.8 kW is an NC RfG power-generating module; below 200 kW it is type A. The distribution grid operator wants an equipment certificate from an accredited certification body confirming NC RfG and PSE's requirements of general application, issued under PTPiREE's rules (WiPWC), and checks the model on PTPiREE's list of accepted devices. The certificate must show that the inverter offers the 'Bank Nastaw dla Polski' settings set — under-voltage 0.85 Un in 1.2 s, over-voltage 1.10 Un (10-minute mean) in 3 s and 1.15 Un in 0.1 s, 47.5 Hz in 1 s, 51.5 Hz in 0.3 s, RoCoF 2.5 Hz/s in 0.5 s, LFSM-O from 50.2 Hz at 5 %, reconnection within 49.00–50.05 Hz after 60 s at 10 %/min — and an RS-485 port with SunSpec. From 1 January 2027 only certificates issued under WiPWC 1.3 count for new type-A connections; the 1.2 list ends on 31 December 2026."
+decided_by: "The distribution grid operator (OSD) of the area — PGE Dystrybucja, TAURON Dystrybucja, ENEA Operator, ENERGA-OPERATOR and Stoen Operator, the five members of PTPiREE that verify certificates together; smaller local OSDs (e.g. PGE Energetyka Kolejowa, OSD PZL Świdnik) publish PTPiREE's documents too, but whether each of them gates on the list was not checked. PSE (the TSO) writes the requirements of general application (WOS) and URE approves them; PTPiREE keeps the device list. Final verification happens at the operational notification (pozwolenie na użytkowanie, NC RfG art. 30–36)."
+list:
+  name: "Wykaz certyfikowanych urządzeń (PTPiREE) — WiPWC 1.3 list (accepted from 2024-11-01) and WiPWC 1.2 list (accepted until 2026-12-31)"
+  url: https://ptpiree.pl/kodeksy-sieci/wykaz-certyfikatow/
+  meaning: "Devices whose certificates the OSDs that are PTPiREE members have verified positively for use in connecting power-generating modules: per row the certificate number, the date until which the document is accepted ('Data akceptacji dokumentu'), the WOS edition (1.3 list only), maker, device kind, model, PPM types A–D and firmware. Listed is not connected: PTPiREE's page says the OSD still checks the regulation on micro-installations and the IRiESD (e.g. RS-485 with SunSpec) and may refuse a listed device; a device struck off after a nonconformity may be refused from the day it is struck off."
+  gate: "Yes. WiPWC 1.3 §10: from 1 January 2027 certificates issued under WiPWC 1.3 are mandatory; PTPiREE's notice of 2026-10-05: devices on the 1.2 list will not be accepted for type-A modules whose connection conditions are issued, or whose connection notification is filed, from 1 January 2027. Until 31 December 2026 both lists count."
+basis:
+  - "Commission Regulation (EU) 2016/631 (NC RfG), articles 13 (type A), 30–36 (operational notification), 41 (equipment certificates)"
+  - "URE decision DRE.WOSE.7128.184.3.2018.ZJ (July 2018) — power thresholds: type B from 0.2 MW, C from 10 MW, D from 75 MW (or any module at >= 110 kV)"
+  - "PSE 'Wymogi ogólnego stosowania wynikające z Rozporządzenia Komisji (UE) 2016/631 … (NC RfG) – Maj 2025 r.' (WOS 2025), approved by URE decision DRE.WKP.744.18.15.2024.WŻ.MKo4 of 2025-05-15, in force 2025-12-01; for type A it applies where connection conditions are issued, or the connection notification is filed, after 2026-12-31 — earlier type-A modules stay on WOS 2019 (the December 2018 text, approved 2019-01-02)"
+  - "PTPiREE 'Warunki i procedury wykorzystania certyfikatów w procesie przyłączania modułów wytwarzania energii do sieci elektroenergetycznych' (WiPWC) version 1.3, published 2024-10-01, in force 2024-11-01, mandatory from 2027-01-01; binds ENEA Operator, ENERGA-OPERATOR, Stoen Operator, PGE Dystrybucja and TAURON Dystrybucja"
+  - "PTPiREE 'Bank Nastaw dla Polski' version 1.1, published 2024-10-01, in force 2024-11-01 — the settings set for type A and B that a certified device must offer as a named selectable profile"
+  - "Rozporządzenie Ministra Klimatu i Środowiska z dnia 31 maja 2023 r. w sprawie wymagań technicznych, warunków przyłączania oraz współpracy mikroinstalacji z systemem elektroenergetycznym (Dz.U. 2023 poz. 1098), in force 2023-06-14 — micro-installation technical requirements and the notification form"
+  - "Prawo energetyczne art. 7 ust. 8d4 (notification of a micro-installation) and art. 9ga (WOS); ustawa o OZE art. 2 pkt 19 (micro-installation up to 50 kW below 110 kV)"
+  - "each OSD's IRiESD (Instrukcja ruchu i eksploatacji sieci dystrybucyjnej) and connection forms — not read in full; see notes"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). WOS 2025 applies to type A from 2027-01-01;
+# WiPWC 1.3 and Bank Nastaw 1.1 are of 2024-10. A certificate citing PTPiREE 2021-04 (WiPWC 1.2) and PSE 2018-12
+# is shown as "documented for <that edition>", with the items that changed since marked unverified.
+edition:
+  norm: "NC RfG + WOS 2025 + WiPWC 1.3 / Bank Nastaw 1.1"
+  id: "2025-05"
+  date: "2025-05"
+  in_force: "2027-01-01"
+  label: "WOS 2025 (PSE, May 2025) with WiPWC 1.3 and Bank Nastaw dla Polski 1.1 (PTPiREE, 2024-10-01)"
+document_must_cite: ["WiPWC", "PTPiREE", "WOS", "PSE 20"]
+# accepts — why: WiPWC 1.3 §3 "Certyfikaty wydane na podstawie programów certyfikacji niezgodnych z wytycznymi
+# zawartymi w niniejszym Dokumencie, nie będą akceptowane przez właściwego OS"; PTPiREE's list guide:
+# "Certyfikaty, wydane na zgodność z dokumentami innymi niż obowiązującymi w Polsce … nie zostaną wprowadzone do
+# wykazu". So a bare EN 50549-1 certificate or a maker's released-countries table is not taken.
+accepts: [national-declaration]
+must_meet:
+  - id: power-class
+    rule: "Plant size class (URE decision of July 2018 on NC RfG art. 5 thresholds)"
+    value: "type A from 0.8 kW to below 200 kW; from 200 kW type B, which adds fault ride-through (Uret 0.05 pu, tclear 0.25 s, Urec2 0.85 pu at 2.5 s in Bank Nastaw), fast fault current, post-fault power recovery and remote power reduction — a procedure and settings set of its own; type A needs no FRT"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 200, over: "200 kW or more: type B, its own certificate scope and settings set", provable_by: [datasheet, document], source: "URE DRE.WOSE.7128.184.3.2018.ZJ; WiPWC 1.3 §6 table; Bank Nastaw 1.1 type B" }
+  - id: micro-installation
+    rule: "Micro-installation line (ustawa o OZE art. 2 pkt 19; Prawo energetyczne art. 7 ust. 8d4)"
+    value: "a renewable installation up to 50 kW connected below 110 kV is a micro-installation: if its installed power is not above the supply's contracted connection power, the owner (or installer) only files a notification (zgłoszenie) with the OSD; above 50 kW, or above the connection power, an application for connection conditions (wniosek) — a different procedure"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 50, over: "over 50 kW: not a micro-installation — application for connection conditions", provable_by: [datasheet, document], source: "ustawa o OZE art. 2 pkt 19; Prawo energetyczne art. 7 ust. 8d4; Dz.U. 2023 poz. 1098 annex 2" }
+  - id: certificate
+    rule: "Equipment certificate under WiPWC (WiPWC 1.3 §§3–4, 9, annex 1; micro regulation annex 2 item 13.3)"
+    value: "a certificate of conformity with NC RfG and WOS from a certification body accredited to ISO/IEC 17065, issued under a programme that follows WiPWC (ISO/IEC 17067 scheme), naming model and firmware, valid at most 5 years, in Polish (or bilingual with Polish, or with a Polish translation), carrying the WiPWC capability table; from 2027-01-01 only WiPWC 1.3 certificates count; the model must be on PTPiREE's list"
+    check: { kind: document, provable_by: [document], changed_in: "2024-10", changed: "WiPWC 1.3 adds the Bank Nastaw settings set, the change log and the production-site address; mandatory from 2027-01-01", source: "WiPWC 1.3 §§3, 9, 10, annex 1; PTPiREE notice 2026-10-05" }
+  - id: freq-range
+    rule: "Frequency ranges (NC RfG art. 13(1)(a) table 2; WOS 2025 table 1; micro regulation ch. I part I)"
+    value: "47.5–48.5 Hz for 30 min, 48.5–49.0 Hz for 30 min, 49.0–51.0 Hz without limit, 51.0–51.5 Hz for 30 min"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "WOS 2025 art. 13(1)(a)(i); NC RfG table 2; Dz.U. 2023 poz. 1098 annex 1 ch. I.I.1" }
+  - id: voltage-range
+    rule: "Voltage band (micro regulation ch. I part IV)"
+    value: "a converter-connected micro-installation operates in the voltage band 0.85 Un to 1.10 Un with the reactive power the OSD sets"
+    check: { kind: range, field: vac_pct, range: [85, 110], provable_by: [datasheet, document], source: "Dz.U. 2023 poz. 1098 annex 1 ch. I.IV" }
+  - id: rocof
+    rule: "Rate of change of frequency (WOS 2025 art. 13(1)(b))"
+    value: "a power park module stays connected up to 2.5 Hz/s, measured as a mean over a sliding 500 ms window (WOS 2019: 2.0 Hz/s); limiting it lower is not allowed unless it follows from the agreed LoM setting"
+    check: { kind: document, provable_by: [document], changed_in: "2025-05", changed: "2.0 Hz/s in WOS 2019, 2.5 Hz/s for power park modules in WOS 2025", source: "WOS 2025 art. 13(1)(b)" }
+  - id: lfsm-o
+    rule: "Over-frequency response, LFSM-O (WOS 2025 art. 13(2); Bank Nastaw 1.1; micro regulation ch. I.I.2)"
+    value: "reduce active power from 50.2 Hz (settable 50.2–50.5 Hz) with a 5 % droop (settable 2–12 %), Pref = the actual output when the threshold is reached; respond as fast as technically possible with an initial delay of at most 2 s; disconnecting instead of LFSM-O is not allowed; the TSO may block LFSM-O"
+    check: { kind: document, provable_by: [document], source: "WOS 2025 art. 13(2)(a),(b),(f); Bank Nastaw 1.1 type A; Dz.U. 2023 poz. 1098 annex 1 ch. I.I.2" }
+  - id: under-frequency
+    rule: "Admissible power reduction at falling frequency (WOS 2025 art. 13(4))"
+    value: "a power park module may lose at most 2 % of maximum power per 1 Hz below 49 Hz"
+    check: { kind: document, provable_by: [document], source: "WOS 2025 art. 13(4)(c); Bank Nastaw 1.1" }
+  - id: protection-settings
+    rule: "Interface protection — Bank Nastaw dla Polski, type A (values relative to the phase voltage, 230 V)"
+    value: "U< 0.85 Un (195.5 V) in 1.2 s; U> 1.10 Un (253 V) as a 10-minute sliding mean, 3 s; U>> 1.15 Un (264.5 V) in 0.1 s; f< 47.5 Hz in 1 s; f> 51.5 Hz in 0.3 s; LoM by RoCoF 2.5 Hz/s, at most 0.5 s; every time settable at least 0–10 s; the set must be selectable by name in the inverter (e.g. 'type A – PL_v1.xx'), protected against tampering, with an undeletable time-stamped change log"
+    check: { kind: document, provable_by: [document], changed_in: "2024-10", changed: "Bank Nastaw 1.1 is new with WiPWC 1.3; WiPWC 1.2 certificates do not confirm it", source: "Bank Nastaw dla Polski 1.1 (2024-10-01), type A table; WiPWC 1.3 §3" }
+  - id: reconnection
+    rule: "Automatic connection and reconnection (WOS 2025 art. 13(7); Bank Nastaw 1.1; micro regulation ch. II.I)"
+    value: "only with the frequency within 49.00–50.05 Hz, after at least 60 s from its return into that window, and active power rising at most 10 % of maximum power per minute; the micro regulation adds a voltage window of 0.85–1.10 Un and a 60 s observation (its own frequency window is 47.5–50.1 Hz); synchronisation fully automatic"
+    check: { kind: document, provable_by: [document], source: "WOS 2025 art. 13(7); Bank Nastaw 1.1; Dz.U. 2023 poz. 1098 annex 1 ch. II.I" }
+  - id: p-of-u
+    rule: "Voltage-driven active power reduction P(U) (Bank Nastaw 1.1)"
+    value: "the inverter reduces active power from its current output once the voltage exceeds 1.08 pu, with a droop of 2.5 (Bank Nastaw's figure; the zero point is not stated in words)"
+    check: { kind: document, provable_by: [document], changed_in: "2024-10", changed: "set by Bank Nastaw 1.1", source: "Bank Nastaw dla Polski 1.1, type A, P(U)" }
+  - id: reactive
+    rule: "Reactive power (micro regulation ch. I.IV; Bank Nastaw 1.1 Q(U))"
+    value: "cos φ from 0.9 inductive to 0.9 capacitive on the OSD's curve at 20 % of rated power or more; below 20 % reactive power changes by at most 10 % of rated power; Bank Nastaw's default Q(U): ±0.4843 PD (cos φ 0.9), dead band 0.94–1.06 pu, full Q at 0.92 / 1.08 pu, droop 2.222 — single-phase units may use the absorbing half only"
+    check: { kind: cosphi, field: cosphi, limit: 0.9, provable_by: [datasheet, document], source: "Dz.U. 2023 poz. 1098 annex 1 ch. I.IV; Bank Nastaw 1.1 Q(U)" }
+  - id: remote-stop
+    rule: "Remote cessation of active power and the communication port (WOS 2025 art. 13(6); micro regulation ch. I.III.2)"
+    value: "the module must cease active power on the OSD's remote command; it must have an RS-485 input port supporting at least the SunSpec protocol unless the OSD names another standard (WOS 2019 left the standard to the OSD); set values must be readable from the display, user interface or the port"
+    check: { kind: document, provable_by: [document], changed_in: "2025-05", changed: "RS-485 + SunSpec written into WOS 2025", source: "WOS 2025 art. 13(6); Dz.U. 2023 poz. 1098 annex 1 ch. I.III" }
+  - id: anti-islanding
+    rule: "Loss-of-mains protection (micro regulation ch. I.II; Bank Nastaw 1.1)"
+    value: "built-in protection with two-stage over-voltage, under-voltage, under- and over-frequency and loss-of-mains (LoM) functions, settings changeable on site only by an authorised person; LoM by RoCoF 2.5 Hz/s within 0.5 s; an automatic switch must isolate the installation while the OSD grid is dead"
+    check: { kind: document, provable_by: [document], source: "Dz.U. 2023 poz. 1098 annex 1 ch. I.II, ch. II.I.3, II.III.4–5; Bank Nastaw 1.1" }
+  - id: phases
+    rule: "Single-phase limit (OSD notification forms; PTPiREE connection criteria)"
+    value: "the total installed power on a single-phase supply may not exceed 3.68 kW; above it three-phase. For PV the forms count the sum of the panels' maximum power, not the inverter's AC rating; PTPiREE's older connection criteria also cap the difference between phases at 4.6 kW (not confirmed current)"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 3.68, applies: { phases: [1] }, over: "single-phase over 3.68 kW: not on a single-phase supply — a three-phase supply with the phases balanced", provable_by: [datasheet, document], source: "ENEA Operator WZ-MI form (202309, file of 2025-07); Tauron form (search snippet); PTPiREE 'Kryteria przyłączania … nN' table 2" }
+  - id: storage
+    rule: "Storage and hybrids (PTPiREE list; ENEA Operator form; micro regulation)"
+    value: "a battery converter or hybrid is a power park module like a PV inverter: the same WiPWC certificate and the same list (the list names 'przekształtnik do współpracy z magazynem energii', 'falownik hybrydowy', storage systems); a battery's installed power is not added to the micro-installation's power when its power and the total power the installation can export are not above the micro-installation's installed power — otherwise it is added; with more than one inverter one common controller (integrator) is required"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "PTPiREE WiPWC 1.3 list (2026-10-26); ENEA Operator WZ-MI form; Prawo energetyczne art. 7 ust. 8d" }
+  - id: export-limit
+    rule: "Export limitation"
+    value: "no national export-limiter rule for type A was found; the OSD may cap export in its connection conditions"
+    check: { kind: none, why: "not found as a model requirement; at the installation's level", source: "not found in WOS 2025, WiPWC 1.3, Bank Nastaw 1.1 or Dz.U. 2023 poz. 1098" }
+documents_for_listing:
+  - "the equipment certificate (certyfikat sprzętu / certyfikat typu / certyfikat zgodności) from a certification body accredited to ISO/IEC 17065, confirming NC RfG and WOS, issued under a programme that follows WiPWC 1.3, with the contents of WiPWC 1.3 annex 1: body and assessment site, unique number on every page, applicant, maker and production site, model and firmware, the full names of NC RfG / WOS / WiPWC / Bank Nastaw, the Bank Nastaw settings set selectable in the software, the programme type (ISO/IEC 17067), the test reports, accreditation symbol and number, date and validity (at most 5 years), signature, and the capability table per PPM type"
+  - "in Polish, bilingual with Polish, or with a Polish translation"
+  - "signed with a qualified electronic signature (EU trusted list, eIDAS) by a person authorised to represent the certification body; sent electronically"
+  - "sent by the maker or its representative to PTPiREE (or to an OSD); PTPiREE does not review draft certificates"
+  - "PTPiREE's coding of the most frequent nonconformities (v1.0, 2025-10-02) lists 28 defects, e.g. missing firmware version, missing Bank Nastaw confirmation or change log, no accreditation number"
+apply:
+  who: "the maker or its official representative sends the certificate to PTPiREE; the installer or owner then files the micro-installation notification with the OSD"
+  how: "List: the certificate goes electronically to PTPiREE's certificates mailbox (named on the list page); the OSDs verify it in order of arrival within 14 working days and PTPiREE updates the list at least monthly. Connection: the owner (or installer with a power of attorney) files the zgłoszenie on the form of Dz.U. 2023 poz. 1098 annex 2 — or the OSD's own version of it — at least 30 days before the planned start, with the single-line diagram, the data sheets of the generating and converter units (and storage), the NC RfG equipment certificate, the installer's qualification statement; the form names every inverter's maker, model, rated power and phase"
+  guide_url: https://ptpiree.pl/wp-content/uploads/2024/09/przewodnik.pdf
+  guide_date: "PTPiREE 'Przewodnik korzystania z wykazu certyfikowanych urządzeń' (file of 2023-08-01, uploaded 2025-03); WiPWC 1.3 of 2024-10-01"
+  processing_time: "list: verification within 14 working days of a complete submission (PTPiREE list page); notification: connection not earlier than 30 days after the notification is delivered (form of Dz.U. 2023 poz. 1098); an incomplete application is called back within 7 days with at least 30 days to complete it (§ 5)"
+not_listed: "A model that is not on the list cannot be used truthfully: PTPiREE's guide says the device name in the notification must match the certificate exactly, and that if a device is missing from the list the buyer should contact the maker, who must obtain a certificate and send it to PTPiREE; certificates against documents other than those in force in Poland are not entered. From 1 January 2027 a model on the WiPWC 1.2 list only is in the same position for a new type-A connection. A device struck off after a nonconformity may be refused from the day it is struck off. Only the maker can fix it; an installer cannot."
+thresholds:
+  - "below 0.8 kW: outside NC RfG (no type); no Polish plug-in rule was found — a balcony unit is still a micro-installation and is notified to the OSD (not confirmed in a primary source; a simplified ≤ 800 W procedure was only discussed)"
+  - "type A from 0.8 kW to below 200 kW; B from 200 kW, C from 10 MW, D from 75 MW (URE 2018)"
+  - "micro-installation up to 50 kW below 110 kV: notification (zgłoszenie) when the installed power is not above the connection power; otherwise an application for connection conditions"
+  - "single-phase supply: total installed power up to 3.68 kW (for PV the sum of panel power), three-phase above"
+  - "battery: its power is not added to the micro-installation when both the battery's power and the total exportable power are not above the micro-installation's installed power"
+  - "PTPiREE's older connection criteria (2020 copy): central protection above 40 kW, remote power reduction above 100 kW, phase difference at most 4.6 kW — not confirmed current"
+  - "WOS 2025 for type A only where connection conditions or the notification come after 2026-12-31; until then WOS 2019"
+commissioning: "For a micro-installation the notification serves as the NC RfG installation document (ENEA's form says so); the OSD installs the metering and connects it, and checks the certificate, the list and the IRiESD requirements (RS-485 / SunSpec) at that point. PTPiREE's list page: the final verification of NC RfG / WOS compliance and of the certificate's validity happens at the operational notification (NC RfG art. 30–36). Protection settings may be changed only by a person with UDT or SEP group E qualifications, in a way that identifies that person (code or seal). PTPiREE's testing procedure 3.0 (from 2026-01-01) covers PGMs whose readiness statement is filed after that date (type B–D field tests mostly)."
+changes:
+  - "2026-04-07: PTPiREE struck WOS 2018 certificates whose acceptance had ended from the lists (reported by GLOBEnergia 2026-04-17/30; the list page confirms WOS 2018 certificates were struck); type B–D devices named in connection conditions issued before 2025-12-01 keep their certificate until the date in the column"
+  - "2026-10-05: PTPiREE's notice — the WiPWC 1.2 list ends on 31 December 2026, regardless of the certificates' own validity"
+  - "2026-12-31: last day the WiPWC 1.2 list counts; 1.2 rows carry 31.12.2026 or an earlier date in the acceptance column"
+  - "2027-01-01: WiPWC 1.3 certificates mandatory for type A whose connection conditions are issued, or notification filed, from that day; WOS 2025 applies to those type-A modules (RoCoF 2.5 Hz/s, RS-485 + SunSpec, Pref = actual output)"
+  - "2026: a draft amendment of the RES act (UD332) was in consultation; a stakeholder proposal asks for a 150 kWp micro-installation line with 50 kW export — not adopted as far as found"
+  - "the EU revision of the generator code (RfG 2.0) is not adopted"
+evidence_for_documented: "A WiPWC certificate from an accredited certification body for the exact model and firmware, citing NC RfG, WOS (2018-12 or 2025-05) and WiPWC (PTPiREE 2021-04 = 1.2, PTPiREE 2024-10-01 = 1.3), and for 1.3 the Bank Nastaw settings-set name — plus the row on PTPiREE's list with its acceptance date. GridFit shows the document, the list row and the WiPWC version; a 1.2 certificate is documented only until 31 December 2026; the OSD decides."
+sources:
+  - title: "PTPiREE — Wykaz certyfikowanych urządzeń (list page with the WiPWC 1.3 and 1.2 lists)"
+    url: https://ptpiree.pl/kodeksy-sieci/wykaz-certyfikatow/
+    seen: "2026-11-01"
+  - title: "PTPiREE — Wykaz urządzeń WiPWC 1.3 (225 pp., Lp. 1–2491)"
+    url: https://ptpiree.pl/wp-content/uploads/2026/10/2026-10-26-Wykaz-urzadzen_1.3.pdf
+    date: "2026-10-26"
+  - title: "PTPiREE — Wykaz urządzeń WiPWC 1.2 (851 pp., Lp. 1–8531), accepted until 2026-12-31"
+    url: https://ptpiree.pl/wp-content/uploads/2026/10/2026-10-26-Wykaz-urzadzen_1.2.pdf
+    date: "2026-10-26"
+  - title: "PTPiREE — Komunikat dotyczący wykazu urządzeń zgodnych z wymaganiami NC RfG"
+    url: https://ptpiree.pl/kodeksy-sieci/komunikat/
+    date: "2026-10-05"
+  - title: "PTPiREE — Warunki i procedury (page with WiPWC 1.3, Bank Nastaw, WiPWC 1.2 and the nonconformity coding)"
+    url: https://ptpiree.pl/kodeksy-sieci/warunki-i-procedury/
+    seen: "2026-11-01"
+  - title: "PTPiREE — WiPWC version 1.3"
+    url: https://ptpiree.pl/wp-content/uploads/2024/12/wipwc_2024_10_01-1.pdf
+    date: "2024-10-01, in force 2024-11-01"
+  - title: "PTPiREE — Bank Nastaw dla Polski version 1.1"
+    url: https://ptpiree.pl/wp-content/uploads/2024/12/bn_2024_10_01-1.pdf
+    date: "2024-10-01, in force 2024-11-01"
+  - title: "PTPiREE — Kodyfikacja niezgodności w certyfikatach v1.0 (PL/EN)"
+    url: https://ptpiree.pl/wp-content/uploads/2025/10/2025_10_02_Wykaz_niezgodnosci-PL-EN-v.1.0.pdf
+    date: "2025-10-02"
+  - title: "PTPiREE — Przewodnik korzystania z wykazu certyfikowanych urządzeń"
+    url: https://ptpiree.pl/wp-content/uploads/2024/09/przewodnik.pdf
+    date: "2023-08-01"
+  - title: "PTPiREE — Konsultacje (WiPWC 1.3 and Bank Nastaw consultation, dates of mandatory use)"
+    url: https://ptpiree.pl/kodeksy-sieci/konsultacje/
+    seen: "2026-11-01"
+  - title: "PSE — Zatwierdzenie wymogów ogólnego stosowania dla przyłączania jednostek wytwórczych (WOS 2025, application rules)"
+    url: https://www.pse.pl/-/zatwierdzenie-wymogow-ogolnego-stosowania-dla-przylaczania-jednostek-wytworczych
+    date: "2025-05-30"
+  - title: "PSE — NCRfG_art_7_4_wymogi_ogolnego_stosowania.zip (WOS 2025 PL/EN, URE decision 2025-05-15, WOS 2019)"
+    url: https://www.pse.pl/documents/20182/772549960/NCRfG_art_7_4_wymogi_ogolnego_stosowania.zip/b45f8987-c958-43de-a952-4b9100894d8b?safeargs=646f776e6c6f61643d74727565
+    date: "2025-05-15 (decision); English text file 2025-09-15"
+  - title: "URE decision DRE.WOSE.7128.184.3.2018.ZJ — NC RfG power thresholds (hosted by PSE)"
+    url: https://www.pse.pl/documents/20182/31216853/20180806_decyzja_ure/717e22be-85b2-4aa3-b006-c365ae577f05
+    date: "2018-07"
+  - title: "Rozporządzenie MKiŚ z 31 maja 2023 r. — mikroinstalacje (Dz.U. 2023 poz. 1098)"
+    url: https://api.sejm.gov.pl/eli/acts/DU/2023/1098/text.pdf
+    date: "2023-05-31, in force 2023-06-14"
+  - title: "ENEA Operator — WZ-MI wniosek / zgłoszenie mikroinstalacji (form 202309)"
+    url: "https://www.operator.enea.pl/sites/operator/files/dokumenty/WZ-MI%20zg%C5%82oszenie-wniosek_edytowalny_0.pdf"
+    date: "form 2023-09; file modified 2024-08-30, served 2025-07-02"
+  - title: "PTPiREE — Kryteria przyłączania oraz wymagania techniczne dla mikroinstalacji i małych instalacji … nN (copy published by OSD PZL Świdnik)"
+    url: "https://www.osd.pzl.swidnik.pl/downl/kryteria_przylaczania_mikroinstalacji_do_sieci_(nN).pdf"
+    date: "file 2020-02-14"
+  - title: "PTPiREE — Procedura testowania wersja 3.0 (from 2026-01-01)"
+    url: https://ptpiree.pl/kodeksy-sieci/procedura-testowania/
+    seen: "2026-11-01"
+  - title: "Gramwzielone.pl — Montaż falownika: certyfikat PTPiREE (WiPWC 1.2 ends 2026-12-31)"
+    url: https://www.gramwzielone.pl/energia-sloneczna/20380023/montaz-falownika-certyfikat-ptpiree
+    date: "2026-10-06"
+  - title: "GLOBEnergia — 'Wielkie czystki' na liście PTPiREE (sponsored, 7 April 2026 update)"
+    url: https://globenergia.pl/wielkie-czystki-na-liscie-ptpiree-po-weryfikacji-technicznej-systemow-magazynowania/
+    date: "2026-04-17"

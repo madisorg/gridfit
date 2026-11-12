@@ -32,7 +32,7 @@ documents:
   - name: H3 single-phase hybrid (EK60 kit)
     match: ^(EK60H3\-2\.9K\-LS2|EK60H3\-3\.6K\-LS2|EK60H3\-3K\-LS2|EK60H3\-4\.6K\-LS2|EK60H3\-4K\-LS2|EK60H3\-5K\-LS2|EK60H3\-6K\-LS2|EK60H3\-6K\-LS2\-IE)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-chs2-2025
   title: TÜV Rheinland A3 50661611 0001 — EN 50549-1 — CHS2 29.9–50K
   url: https://www.saj-electric.com/hubfs/crm-properties-file-values/CHS2_Series_EN50549-1-2019_Certificate_en_EU.pdf
@@ -55,4 +55,4 @@ documents:
   - name: CHS2 commercial hybrid
     match: ^CHS2-(29\.9|30|40|50)K-T[45]
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]

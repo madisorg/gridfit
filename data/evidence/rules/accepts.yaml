@@ -11,3 +11,14 @@
     a listed model, and the micro-producer form asks an EN 50438:2013 certificate and a type-test protocol for a model that is
     not on the list (data/profiles/ee.yaml: documents_for_listing, not_listed, evidence_for_documented)."
   source: https://www.elektrilevi.ee/-/doc/8644141/liitumised/vaiketootjale/failid/inverterite_lisamine_elektrilevi_nimekirja_est.pdf
+- cc: NL
+  standards: ['EN 50549-1', 'EN 50549-2']
+  why: "Netbeheer Nederland's note on type-A certification (2020-10-21): a certificate on the basis of EN 50549-1 / EN 50549-2 (or the
+    identical NEN-EN 50549-1 / -2) issued by a body accredited for it 'is in any case sufficient' (data/profiles/nl.yaml: accepts, list.gate)."
+  source: https://www.netbeheernederland.nl/requirements-generators
+- cc: SE
+  standards: ['EN 50549-1']
+  why: "Energiföretagen's Rikta Rätt page asks a certificate that the product meets 'RfG (EU 2016/631) och/eller EN 50549-1', and Ellevio's
+    type-A form lets the owner rely on equipment certificates from an authorised certification body; the forms ask the Swedish settings
+    beside it (data/profiles/se.yaml: accepts, not_listed)."
+  source: https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller

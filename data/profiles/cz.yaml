@@ -1,0 +1,230 @@
+# Czechia — requirement profile for a grid-connected inverter, battery or hybrid in low voltage (PPDS Příloha 4).
+# Three regional grid operators (ČEZ Distribuce, EG.D, PREdistribuce) apply one common text, Příloha 4 of the
+# Pravidla provozování distribučních soustav (PPDS), approved by the regulator ERÚ. Since 1 January 2025 a type A
+# unit (A1 up to 11 kW, A2 above 11 kW to below 100 kW) connects only with an "approved type": a PPDS Příloha 4
+# certificate from an accredited body, a grid operator's laboratory protocol, or an ERÚ exemption. ČEZ Distribuce
+# publishes the list of approved inverters. Facts only, with the source of each; the grid operator decides.
+# Written 2026-11-01 from PPDS Příloha 4 (2025 edition, ČEZd and PREdi copies), the three operators' installation
+# documents and notices, ČEZd's LV connection conditions (2025-09-01) and the Energy Act (zakonyprolidi, version 52).
+cc: CZ
+country: Czechia
+norm: PPDS Příloha 4
+type_a_max_kw: 100   # PPDS P4 2025 Tab. 1: type A = A1 (≥ 800 W, ≤ 11 kW) + A2 (> 11 kW, < 100 kW); B1 from 100 kW
+not_listed_short: "A model that is not on ČEZ Distribuce's list still connects if the installation document carries a valid PPDS Příloha 4 certificate from an accredited body (in practice SZÚ Brno), a grid operator's laboratory protocol (EG.D and PREdi: only protocols issued by 2025-12-31, and only until 2026-12-31) or an ERÚ exemption"
+description: "PPDS Příloha 4 in Czechia: what an inverter, battery or hybrid must meet under the 2025 edition, the A1/A2 split at 11 kW, ČEZ Distribuce's list of approved inverters and the certificate or protocol behind each entry."
+summary: "Czech grid operators connect a home inverter, battery or hybrid only if its type is proven to meet Příloha 4 of the distribution grid rules (PPDS), the Czech implementation of the EU generator code. A unit up to 11 kW is category A1, above it up to 100 kW category A2 with stricter rules (fault ride-through recovery, a power-reduction input, an external protection relay above 30 kW at ČEZ). The proof is a certificate from an accredited body (in practice the SZÚ institute in Brno), a grid operator's laboratory protocol or an ERÚ exemption; ČEZ Distribuce publishes the list of approved inverters with firmware and settings profile. From 2027 EG.D and PREdistribuce take only certificates."
+decided_by: "The regional distribution grid operator: ČEZ Distribuce (most of the country), EG.D (south Moravia and south Bohemia) or PREdistribuce (Prague), plus local distribution grids (LDS) with their own PPDS-based rules. The regulator ERÚ approves the PPDS and grants exemptions; the common Příloha 4 text is written by the operators together."
+list:
+  name: "Seznam schválených střídačů a otestovaných ochran (ČEZ Distribuce)"
+  url: https://www.cezdistribuce.cz/cs/pro-vyrobce/overeni-souladu-s-rfg
+  meaning: "Inverters and storage units whose type ČEZ Distribuce has approved for A1/A2 modules: per row the maker, model, approved firmware, the settings profile to select, the kind of proof (Certifikát (SZÚ), Protokol (ČEZd), Protokol (EGD)) with its issue date, the date of entry and the VM category (A1, A1/A2, B1/B2). An xlsx with four sheets: inverters (state 2026-08-21), storage units (ZUE, state 2026-08-06), tested network protection relays, and an empty sheet for expired entries."
+  gate: "Yes for A1/A2 at ČEZ Distribuce since 2025-01-01: 'only with an approved inverter type verified or certified in the relevant laboratory'; the proof itself is the certificate or protocol attached to the installation document, and the list is where ČEZd shows the approved types. Whether ČEZd also takes a valid SZÚ certificate for a model not yet on the list is not stated (the forms suggest it does). EG.D's own lab list is not reachable for automated access; PREdi publishes no list and refers to a future national list."
+basis:
+  - "Commission Regulation (EU) 2016/631 (RfG) — implemented for distribution grids by PPDS Příloha 4"
+  - "Zákon č. 458/2000 Sb. (Energetický zákon), § 28(5) — a customer may run one generating or storage unit up to 100 kW at a supply point under a connection contract; up to 10.8 kW by notification; § 3(4)(e) — no licence up to 100 kW for own use"
+  - "PPDS Příloha 4 'Pravidla pro paralelní provoz výroben a akumulačních zařízení se sítí PDS', 2025 edition (prepared February 2022, revised August 2024), approved by ERÚ on 2025-07-02 (PREdi copy); ČEZd lists it as updated in September 2025"
+  - "ČSN EN 50549-1 and -2 (cited by PPDS P4 as [28], [29]); PNE 33 3430-8-1 (generators above 16 A per phase) and PNE 33 3430-0 (back-effects)"
+  - "Metodika ověřování a prokazování souladu výroben s požadavky, 'MPO 2023' (PPDS P4 [47]) — the test procedure the DSO laboratories and the accredited laboratory use"
+  - "The operators' 'Instalační dokument nesynchronního výrobního modulu typu A1 / A2' (common form, published 2024-10-01, valid from 2025-01-01)"
+  - "ČEZ Distribuce 'Připojovací podmínky nn' (valid from 2025-09-01) with annexes VP_05 (protection settings), VP_08 (autonomous Q(U), P(U), P(f) curves), VP_09"
+# The edition every requirement below is written against, and what a maker's document must cite to count as
+# evidence for it (tools/check/run.py; the schema is docs/checks.md). A document that cites an older edition
+# (PPDS Příloha 4: 2018, 2020, 2021, 2022) is shown as "documented for <that edition>"; the protection table and the
+# LFSM-O return frequency changed in the 2025 edition.
+edition:
+  norm: "PPDS Příloha 4"
+  id: "2025"
+  date: "2025-07"          # ERÚ approval 2025-07-02 on the PREdi copy; the in-force date is not printed (ČEZd: "updated September 2025")
+  label: "PPDS Příloha 4 (2025)"
+document_must_cite: ["PPDS"]
+accepts: [national-declaration]
+# why: the operators' installation document says a certificate "for the needs of the Czech Republic" can only be a
+# certificate of conformity with PPDS P4 requirements issued by a body accredited by the Czech Accreditation
+# Institute (ČIA); alternatively protocols of the DSOs' laboratories ("jako certifikát pro potřeby ČR je možné použít
+# pouze certifikát o souladu s požadavky PPDS P4 vydaný subjektem příslušně akreditovaným ... u Českého institutu pro
+# akreditaci"). A generic EN 50549-1 certificate is therefore not taken. GridFit's "national-declaration" kind (a
+# document citing PPDS) is the closest kind, but it is wider than the operators' words: a maker's self-declaration
+# or a foreign lab's certificate that cites PPDS is not what the form asks for (see notes.md).
+must_meet:
+  - id: power-class
+    rule: "Plant size class (PPDS P4 2025 part 2, Tab. 1)"
+    value: "type A from 800 W to below 100 kW (A1 up to 11 kW, A2 above 11 kW); B1 from 100 kW to below 1 MW, B2 1–30 MW; from 100 kW a plant needs dispatch control equipment and the trial-operation procedure (UPOS)"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 100, over: "100 kW or more: category B1, trial operation (UPOS) and a module document of its own", provable_by: [datasheet, document], source: "PPDS P4 2025, Tab. 1; Energy Act § 23(2)(o)" }
+  - id: a2-line
+    rule: "A1 / A2 split at 11 kW (PPDS P4 2025 Tab. 1, Tab. 2; installation documents A1 and A2)"
+    value: "up to 11 kW the A1 installation document; above 11 kW category A2, which adds the RfG type-B rules 14.2 (power-reduction input), 14.3, 14.4 and 20.3 (active power back within 1 s after a fault), and at ČEZd an external network protection relay for modules above 30 kW"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 11, over: "over 11 kW: category A2 — the A2 installation document and its extra requirements", provable_by: [datasheet, document], source: "PPDS P4 2025 Tab. 1, Tab. 2; ČEZd A2 installation document (2025-01-01)" }
+  - id: microsource-16a
+    rule: "Microsource and the 16 A per phase line (PPDS P4 2025 part 1, 8.1, 8.2)"
+    value: "a mikrozdroj is up to 16 A per phase and 10 kW in total (PPDS P4 definition; ČEZd's connection conditions and the Energy Act use 10.8 kW); up to 16 A the protection table 7 applies and ČSN EN 50549-1 directly; above 16 A per phase table 8 for the interface protection and PNE 33 3430-8-1"
+    check: { kind: max, meaning: procedure, field: ac_a, limit: 16, over: "over 16 A per phase: not a microsource; interface protection under PPDS P4 8.2", provable_by: [datasheet, document], source: "PPDS P4 2025 part 1 'Mikrozdroj', 8.1, 8.2; ČEZd Připojovací podmínky nn 2025-09-01" }
+  - id: notification-line
+    rule: "Connection by notification up to 10.8 kW (Energy Act § 28(5); PPDS P4 4.6)"
+    value: "a generating or storage unit up to 10.8 kW installed may be connected at an existing supply point by notifying the grid operator, without a new connection contract: the operator has 30 days to refuse; no change of the main breaker or reserved capacity, a loop impedance below 0.47 Ω (16 A) or 0.75 Ω (10 A), storage behind the same inverter, the protection table 7, and a logic input that stops export within 5 s. Above 10.8 kW, up to 100 kW, a connection application and contract"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 10.8, over: "over 10.8 kW: a connection application and contract, not the notification route", provable_by: [datasheet, document], source: "Energy Act § 28(5) (version 52, 2026-11-01); PPDS P4 2025 4.6.1" }
+  - id: phases
+    rule: "Single-phase limit (PPDS P4 2025 part 2; ČEZd connection conditions 4.1.7)"
+    value: "single-phase connection is limited to 3.7 kVA per phase (inverter rating) at one connection point; above it three-phase. Voltage protection must be three-phase except for one- and two-phase units up to 3.7 kVA per phase"
+    check: { kind: phases, meaning: phases, three_phase_above_kw: 3.7, provable_by: [datasheet, document], source: "PPDS P4 2025 part 2 and 8.1; ČEZd Připojovací podmínky nn 4.1.7" }
+  - id: freq-range
+    rule: "Frequency range (PPDS P4 2025 9.1.1, Tab. 9; RfG 13.1a)"
+    value: "47.5–48.5 Hz for 30 min, 48.5–49 Hz for 90 min, 49–51 Hz without limit, 51–51.5 Hz for 30 min; also for units below 800 W"
+    check: { kind: range, field: freq_hz, range: [47.5, 51.5], provable_by: [datasheet, document], source: "PPDS P4 2025 9.1.1, Tab. 9" }
+  - id: voltage-range
+    rule: "Continuous operating voltage in LV (PPDS P4 2025 9.1.2.1)"
+    value: "continuous operation from Un −15 % to Un +10 %; below Un the output may fall in proportion to the voltage"
+    check: { kind: range, field: vac_pct, range: [85, 110], provable_by: [datasheet, document], source: "PPDS P4 2025 9.1.2.1" }
+  - id: rocof
+    rule: "Rate of change of frequency (PPDS P4 2025 9.1.1; RfG 13.1b)"
+    value: "stay connected up to ±2 Hz/s, measured as the mean derivative over 500 ms"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 9.1.1" }
+  - id: lfsm-o
+    rule: "Over-frequency power reduction, LFSM-O (PPDS P4 2025 9.3.1; RfG 13.2)"
+    value: "from 50.2 Hz with 5 % droop (the threshold set by the TSO within 50.05–50.5 Hz, droop 4–10 %); dead band at most 10 mHz; power may rise again only once the frequency is back at or below 50.2 Hz, at about 10 % of rated power per minute (the 2024-10 installation documents still say 50.05 Hz)"
+    check: { kind: document, provable_by: [document], changed_in: "2025-07", changed: "the 2025 edition returns at f ≤ 50.2 Hz; earlier editions at f ≤ 50.05 Hz or on the dispatcher's release", source: "PPDS P4 2025 9.3.1; ČEZd VP_08" }
+  - id: under-frequency
+    rule: "Under-frequency power reduction (PPDS P4 2025 9.3.2; RfG 13.4, 13.5, 13.3)"
+    value: "hold active power when the frequency falls; where the technology cannot, below 49 Hz at most 2 % of maximum capacity per Hz; otherwise constant power regardless of frequency"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 9.3.2; installation document A1 items 4–5" }
+  - id: protection-settings
+    rule: "Interface protection settings (PPDS P4 2025 8.1 Tab. 7 up to 16 A; 8.2 Tab. 8 above; ČEZd VP_05)"
+    value: "U>> 1.2 Un in 0.1 s; U> 1.15 Un in 5 s; 10-minute mean 1.11 Un (or 1.11 Un in 60 s where a 10-minute mean cannot be set); U< 0.7 Un in 2.7 s (non-synchronous); U<< 0.45 Un in 0.2 s; f> 51.5 Hz and f< 47.5 Hz in 0.1 s. Without a second over-voltage stage, U> 1.15 Un in 0.1 s. The operator confirms the settings for each site; settings are password-protected and the operator may seal them"
+    check: { kind: document, provable_by: [document], changed_in: "2025-07", changed: "the 2025 edition replaced the protection tables (earlier: three over-voltage stages up to 1.25 Un, U<< 0.3 Un)", source: "PPDS P4 2025 8.1 Tab. 7, 8.2 Tab. 8; ČEZd VP_05" }
+  - id: reconnection
+    rule: "Automatic reconnection (PPDS P4 2025 9.5; RfG 13.7)"
+    value: "only after voltage 85–110 % Un and frequency 47.5–50.05 Hz have held for 300 s, then a ramp of at most 10 % of rated power per minute; a unit that cannot ramp reconnects after a delay the operator sets within 0–20 min (5–20 min in the installation document)"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 9.5; installation document A1 item 7" }
+  - id: frt
+    rule: "Fault ride-through, UVRT and OVRT (PPDS P4 2025 9.2.2.1, 9.2.2.2, Tab. 12)"
+    value: "non-synchronous modules from A1 upward stay connected above the curve 0.05 pu for 0–0.15 s, rising to 0.85 pu at 3 s; and through over-voltage up to 120 % for 1 s and 115 % for 60 s"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 9.2.2.1 Tab. 12, 9.2.2.2" }
+  - id: power-recovery
+    rule: "Active power recovery after a fault, A2 and above (PPDS P4 2025 9.2.2.4; RfG 20.3)"
+    value: "back to the pre-fault active power (±5 %) within 1 s of the voltage reaching 85 %; if reactive power had priority, from 95 % voltage and within 1 s"
+    check: { kind: document, provable_by: [document], applies: { above_kw: 11 }, source: "PPDS P4 2025 9.2.2.4; installation document A2 item 15" }
+  - id: p-of-u
+    rule: "Voltage-dependent power reduction P(U) (PPDS P4 2025 9.3.5; ČEZd VP_08)"
+    value: "required for every inverter up to 16 A per phase and every LV unit above it: 100 % power at 109 % Un, 50 % at 110 %, 0 % at 111 % (non-synchronous), first-order filter about 5 s; ČEZd requires it activated"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 9.3.5; ČEZd VP_08, Připojovací podmínky nn 4.1.4" }
+  - id: reactive
+    rule: "Reactive power capability and modes (PPDS P4 2025 9.2.1, 9.4.1)"
+    value: "cos φ 0.90 inductive to 0.90 capacitive (|Q| up to 0.484 P at rated power); the operator chooses fixed Q, Q(U), Q(P), fixed cos φ, cos φ(U), cos φ(P) or a voltage set-point; a cos φ(P) curve settles within 10 s; up to 100 kVA control is autonomous, above it remotely controllable"
+    check: { kind: cosphi, field: cosphi, limit: 0.9, provable_by: [datasheet, document], source: "PPDS P4 2025 9.2.1.1, 9.4.1" }
+  - id: q-of-u
+    rule: "Q(U) curve (PPDS P4 2025 9.4.2; ČEZd VP_08)"
+    value: "settable four-point curve; ČEZd requires it active in LV with 0.94 Un → full Q supply, 0.97 and 1.05 Un → 0, 1.08 Un → full Q absorption, time constant 20 s"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 9.4.2; ČEZd VP_08, Připojovací podmínky nn 4.1.4" }
+  - id: logic-interface
+    rule: "Logic interface to stop export (PPDS P4 2025 5.1 a); RfG 13.6)"
+    value: "plants up to 1 MW with A1, A2 and B1 modules have an input port that stops active power output within 5 s of a command (for example from a ripple-control receiver); the switching element stays functional after the unit disconnects. At ČEZd below 100 kW the operator's ripple-control receiver drives it as 0 / 100 %"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 5.1 a); ČEZd Připojovací podmínky nn 4.1.3, 4.1.5" }
+  - id: power-reduction-input
+    rule: "Power-reduction interface for A2 (PPDS P4 2025 5.1 b), 9.3.6; RfG 14.2)"
+    value: "A2 modules and storage can run at reduced power and reduce output on an input-port command (steps such as 60, 30, 0 % for PV and storage) without disconnecting, within one minute; for A2 the interface needs only to be prepared for now"
+    check: { kind: document, provable_by: [document], applies: { above_kw: 11 }, source: "PPDS P4 2025 5.1 b), 9.3.6; installation document A2 item 6" }
+  - id: grid-monitoring
+    rule: "Grid monitoring with an assigned switch, anti-islanding (PPDS P4 2025 5, 8.1)"
+    value: "the always-accessible isolating point is replaced, for single-phase units up to 3.7 kVA and three-phase up to 30 kVA, by a grid-monitoring device with an assigned switching element (it may be inside the inverter), verified by an accredited laboratory; a unit able to run islanded must disconnect the whole supply point when the grid fails; vector-shift or power-step relays may detect loss of mains"
+    check: { kind: document, provable_by: [document], source: "PPDS P4 2025 part 5, 8.1; ČEZd Připojovací podmínky nn 4.1.8" }
+  - id: storage
+    rule: "Storage (PPDS P4 2025 part 2, 9.3.4.2, 9.3.6, part 5)"
+    value: "in discharge mode storage meets every generator rule; in charge mode PPDS Příloha 6. It must be able to give an under-frequency response in both directions: threshold programmable at least 49.8–49.5 Hz, droop at least 0.1–12 %, own delay ≤ 2 s, full response ≤ 30 s, blocked until the TSO sets values; at 49.0 Hz it switches to discharge or disconnects. Storage and PV power add up for the connection unless a common inverter or approved measures keep export within the reserved power; storage below 10 kW at a no-export site up to 10 kW is not counted"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "PPDS P4 2025 9.3.4.2, part 5; ČEZd Připojovací podmínky nn 4" }
+  - id: dc-injection
+    rule: "DC injection"
+    value: "PPDS Příloha 4 (2025) sets no DC-injection limit of its own (searched 2026-11-01); the harmonic limits refer to ČSN EN 61000-3-2 / -3-12"
+    check: { kind: none, why: "no Czech limit found in PPDS P4 2025", source: "PPDS P4 2025 11.2.1 (searched)" }
+  - id: unbalance
+    rule: "Voltage unbalance (PPDS P4 2025 10.2)"
+    value: "a single customer may cause at most 0.7 % negative-sequence voltage (PNE 33 3430-0); the grid total stays within 2 % (ČSN EN 50160); checked at connection with the 3.7 kVA single-phase limit above"
+    check: { kind: none, why: "a site-level calculation by the operator, not a check on the model", source: "PPDS P4 2025 10.2" }
+  - id: export-limit
+    rule: "Export within the reserved power (PPDS P4 2025 part 5)"
+    value: "the operator sets the reserved power; storage and generation are added unless technical measures the operator approves keep simultaneous export within it"
+    check: { kind: none, why: "installation-level, not a check on the model", source: "PPDS P4 2025 part 5" }
+documents_for_listing:
+  - "for ČEZ Distribuce's list: a certificate of conformity with PPDS Příloha 4 from an accredited body — in Czechia, the SZÚ product certification body 3040 (accredited by ČIA to ISO/IEC 17065) on tests by the SZÚ/VUT Brno laboratory — naming models, firmware, settings profile and VM category; or a protocol of the ČEZd or EG.D laboratory, tested to the operators' methodology (MPO 2023), from which it is clear that the module 'including the firmware and settings used' meets Příloha 4"
+  - "with the connection: the installation document of the A1 or A2 module (maker, type, serial number, firmware, settings group of each inverter; the battery behind a common inverter; for A2 above 30 kW the external network protection), with the certificates or protocols attached; or an ERÚ exemption"
+  - "the protocol of the protection settings, the initial electrical inspection reports (revize) of the plant and the connection, the single-line diagram and the installer's confirmation"
+apply:
+  who: "the customer who holds the connection contract (žadatel), usually through the installer; the maker or importer has the type certified or tested"
+  how: "up to 10.8 kW: a notification to the operator's electronic contact; otherwise a connection application on the operator's portal (ČEZd: Distribuční portál or online form; EG.D and PREdi: their own portals), a connection contract, the installation, then a request for permanent operation (UTP) with the installation document; the operator issues the final operating notice (Konečné provozní oznámení). For A1/A2 the trial operation (UPOS) is replaced by the installation document"
+  guide_url: https://www.cezdistribuce.cz/cs/pro-vyrobce/pripojeni-mikrozdroje-vyrobny-nebo-akumulace-spojene-s-vyrobnou-do-100-kw
+  guide_date: "ČEZ Distribuce web page, seen 2026-11-01; connection conditions 'Připojovací podmínky nn' valid from 2025-09-01"
+  processing_time: "the operator decides on permanent operation within 30 days of a complete UTP request (PPDS P4 12.3); under the notification route the connection stands if the operator does not refuse within 30 days (Energy Act § 28(5)). Testing at the EG.D laboratory: about two working days of tests plus two for the report (EG.D, via search)"
+not_listed: "There is no national list yet: PREdi's installation document (2026-02) refers to a future 'seznam osvědčených zařízení … pro Českou republiku' and says the operators will announce where it is published; GridFit has not found it. ČEZ Distribuce's list is the published one, built from SZÚ certificates and the ČEZd and EG.D laboratory protocols. A model that is not on it connects only with a valid accredited PPDS Příloha 4 certificate (or a protocol, or an ERÚ exemption) attached to the installation document. EG.D and PREdi accept laboratory protocols issued by 2025-12-31 only until 2026-12-31; from 2027-01-01 they take only an accredited certificate or an exemption. ČEZd's page says it accepts protocols 'during their validity' and states no end date, and its list carries 88 rows whose ČEZd or EG.D protocol was issued in 2026 — protocols that EG.D's and PREdi's notices do not take. Only the maker or importer can fix a missing certificate; an installer cannot."
+thresholds:
+  - "below 800 W: outside RfG; ČSN EN 50549-1 and the protection table 7 apply, frequency ranges too; a plug-in 800 VA rule ('zásuvkový mikrozdroj') was passed by the Chamber but rejected by the Senate on 2026-08-20 — status not confirmed; each operator has its own notification rule"
+  - "A1: 800 W to 11 kW; A2: above 11 kW to below 100 kW (PPDS P4 2025 Tab. 1; ČEZd's VP_05 prints A1 < 11 kW, A2 ≥ 11 kW)"
+  - "mikrozdroj: up to 16 A per phase and 10 kW (PPDS P4 definition) or 10.8 kW (ČEZd connection conditions, Energy Act)"
+  - "notification instead of a connection contract: up to 10.8 kW (Energy Act § 28(5))"
+  - "single-phase: up to 3.7 kVA per phase; grid-monitoring switch instead of an accessible isolator: single-phase up to 3.7 kVA, three-phase up to 30 kVA"
+  - "A2 above 30 kW: external network protection relay (ČEZd A2 installation document)"
+  - "100 kW: type B1 from here; licence-free generation up to 100 kW for own use (Energy Act § 3(4)(e)); from 100 kW dispatch control equipment (§ 23(2)(o)), a control unit with 0-30-60-100 % steps (ČEZd), a remotely controlled isolating switch and remotely controllable reactive power (from 100 kVA)"
+  - "storage: power of the inverter counts; AC-coupled storage adds to the plant's power unless approved measures cap export; storage below 10 kW at a no-export site up to 10 kW is not counted"
+commissioning: "For A1/A2 the request for permanent operation (UTP) carries the installation document with the certificate or protocol, the protection-settings protocol and inspection reports; the operator may inspect the site, test the protections (three-phase and single-phase loss of mains, frequency deviations), the reconnection conditions and the reactive-power control, then issues the final operating notice (KPO) within 30 days. Settings are password-protected; the operator may seal the protections. Switches, protections and remote-control equipment are tested at least every four years by the operator of the plant, with a protocol kept for the grid operator."
+changes:
+  - "2025-01-01: A1/A2 modules connect only with an approved inverter type — an accredited certificate, a ČEZd/EG.D laboratory protocol or an ERÚ exemption — on the new installation document (ČEZd, EG.D and PREdi notices)"
+  - "2025-07-02: ERÚ approved the 2025 edition of PPDS Příloha 4 (ČEZd: 'updated September 2025'); new interface-protection tables (Tab. 7, Tab. 8) and LFSM-O return at 50.2 Hz (change-marked ERÚ version)"
+  - "2025-12-31: last issue date of a DSO laboratory protocol that EG.D and PREdi still accept"
+  - "2026-08-20: the Senate rejected the plug-in microsource amendment (800 VA inverter, 2 kWp, no battery); whether the Chamber overrode it is not confirmed"
+  - "2026-12-31: EG.D and PREdi stop accepting laboratory protocols; from 2027-01-01 only an accredited certificate or an ERÚ exemption for A1/A2. ČEZd states no end date — not confirmed whether it follows"
+  - "pending: a national list of certified devices for Czechia, announced in the operators' installation document; not found published on 2026-11-01"
+  - "the Energy Act versions published to 2028 (zakonyprolidi) keep the 10.8 kW notification and 100 kW lines of § 28(5)"
+  - "the EU revision of the generator code (RfG 2.0) is not adopted (GridFit IT research, 2026-10-31)"
+evidence_for_documented: "An SZÚ certificate of conformity with PPDS Příloha 4 (certification body 3040, accredited by ČIA) for the exact model family and firmware, naming the settings profile and the VM category (A1 or A2) and its validity date; a ČEZd or EG.D laboratory protocol, as shown on ČEZ Distribuce's list. A maker's own declaration or a foreign laboratory's EN 50549-1 certificate that cites PPDS is shown, but it is not the kind of document the operators' forms ask for. GridFit shows the document, its date and the PPDS edition it cites; the grid operator decides."
+sources:
+  - title: "ČEZ Distribuce — Ověření souladu s RfG (list, documents per category, accepted proof)"
+    url: https://www.cezdistribuce.cz/cs/pro-vyrobce/overeni-souladu-s-rfg
+    seen: "2026-11-01"
+  - title: "ČEZ Distribuce — Seznam schválených střídačů a otestovaných ochran (xlsx; inverters 'Stav k' 2026-08-21, ZUE 2026-08-06)"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/legislativa/seznam_schvalenych_stridacu.xlsx
+    date: "2026-08-21"
+  - title: "PPDS ČEZ Distribuce — Příloha 4: Pravidla pro paralelní provoz výroben a akumulačních zařízení se sítí PDS (2025)"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/ppds/ppds-2025_priloha-4.pdf
+    date: "2025 (PDF 2025-07-02; ČEZd: updated September 2025)"
+  - title: "PPDS PREdistribuce — Příloha 4 (2025), title page 'Schválil ERÚ: 2.7.2025'"
+    url: https://www.predistribuce.cz/Files/legislativa/ppds-priloha-4/
+    date: "2025-07-02"
+  - title: "ERÚ — PPDS Příloha 4, change-marked version (February 2022 / August 2024)"
+    url: https://eru.gov.cz/sites/default/files/obsah/prilohy/ppds-priloha-4-zmevnova-verze.pdf
+    seen: "2026-11-01"
+  - title: "ČEZ Distribuce — Pravidla provozování distribuční soustavy 2025 (page listing the current annexes)"
+    url: https://www.cezdistribuce.cz/cs/elektroenergeticka-legislativa/pravidla-provozovani-ds/pravidla-provozovani-distribucni-soustavy-2025
+    seen: "2026-11-01"
+  - title: "ČEZ Distribuce — Instalační dokument nesynchronního výrobního modulu typu A1 (published 2024-10-01, valid from 2025-01-01)"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/formulare/instalace_vyrobniho_modulu_a1_nesynchro_form.pdf
+    date: "2024-10-01 (file modified 2026-03-19)"
+  - title: "ČEZ Distribuce — Instalační dokument nesynchronního výrobního modulu typu A2"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/formulare/instalace_vyrobniho_modulu_a2_nesynchro_form.pdf
+    date: "2024-10-01"
+  - title: "ČEZ Distribuce — Změny v procesu připojování výrobního modulu A1/A2 (from 2025-01-01)"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/formulare/zmeny_vyrobni_modul_a1_a2.pdf
+    date: "2025-01-13"
+  - title: "ČEZ Distribuce — Připojovací podmínky nn (valid from 2025-09-01)"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/ppnn/2026/pripojovaci_podminky_nn.pdf
+    date: "2025-09-01"
+  - title: "ČEZ Distribuce — VP_05 Požadované nastavení ochran výrobny nn"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/ppnn/vp_5.pdf
+    date: "2023-09-01 (valid from 2025-02-01)"
+  - title: "ČEZ Distribuce — VP_08 Autonomní charakteristiky VM nn (Q(U), P(U), P(f), FRT)"
+    url: https://www.cezdistribuce.cz/file/edee/distribuce/ppnn/vp_8.pdf
+    date: "2023-09-01 (valid from 2025-02-01)"
+  - title: "PREdistribuce — Změny procesu připojení VM (protocols until 2025-12-31, accepted until 2026-12-31; certificates only from 2027-01-01)"
+    url: https://www.predistribuce.cz/Files/vyrobci/zmeny-procesu-pripojeni-vm-predi/
+    date: "2024-11-28"
+  - title: "PREdistribuce — Dokument výrobního modulu A1 nesynchronní (refers to a future national list)"
+    url: https://www.predistribuce.cz/Files/vyrobci/dokument-vyrobniho-modulu-a1-nesynchronni/
+    date: "2026-02-13"
+  - title: "EG.D — Změna procesu prokázání souladu s RfG (seen through search; egd.cz refuses automated access)"
+    url: https://www.egd.cz/zmena-procesu-prokazani-souladu-s-rfg
+    seen: "2026-11-01"
+  - title: "Zákon č. 458/2000 Sb. (Energetický zákon), consolidated version 52 (2026-11-01 to 2026-12-31), § 3(4)(e), § 28(5)"
+    url: https://www.zakonyprolidi.cz/cs/2000-458
+    seen: "2026-11-01"
+  - title: "VUT Brno — the first Czech accredited inverter compliance laboratory (with SZÚ)"
+    url: https://vut.cz/old/tiskove-zpravy-f19527/na-vut-vznikla-prvni-ceska-akreditovana-zkusebna-souladu-stridacu-zvysi-spolehlivost-elektrizacni-soustavy-d256614
+    date: "2024-04-12"
+  - title: "arecenze.cz — plug-in PV amendment rejected by the Senate on 2026-08-20 (secondary)"
+    url: https://www.arecenze.cz/clanky/balkonova-fotovoltaika-z-lidlu-2026-cesi-si-mysleli-ze-ji-proste-zapoji-do-zasuvky-narazili-na-zakon-novela-to-ma-zmenit/
+    date: "2026-08-31"

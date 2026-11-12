@@ -36,7 +36,7 @@ documents:
   - name: ASW 3–5K-LT-G2 Pro
     match: ^(ASW10K\-LT\-G2PRO|ASW12K\-LT\-G2PRO|ASW13K\-LT\-G2PRO|ASW15K\-LT\-G2PRO|ASW17K\-LT\-G2PRO|ASW20K\-LT\-G2PRO|ASW3K\-LT\-G2PRO|ASW4K\-LT\-G2PRO|ASW5K\-LT\-G2PRO|ASW6K\-LT\-G2PRO|ASW8K\-LT\-G2PRO)$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
 - id: en50549-asw-kh-t2-2024
   title: Bureau Veritas U24-0093 — EN 50549-1 — ASW05–12kH-T2
   url: https://www.solplanet.net/wp-content/uploads/2023/12/Cer_EN-50549-1_ASW5-12kH-T3_en_V02.pdf
@@ -63,4 +63,4 @@ documents:
   - name: ASW05–12kH-T2/T3 hybrid
     match: ^(ASW05KH\-T2|ASW05KH\-T3|ASW06KH\-T2|ASW06KH\-T3|ASW08KH\-T2|ASW08KH\-T3|ASW10KH\-T2|ASW10KH\-T3|ASW12KH\-T2|ASW12KH\-T3)(-O|-DG)?$
     countries: []
-    accepted_in: [EE]
+    accepted_in: [EE, NL, SE]
