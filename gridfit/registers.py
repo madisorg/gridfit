@@ -142,11 +142,13 @@ REGISTERS = {
     },
     "SE": {
         "country": "Sweden", "short": "Swedish Rikta Rätt inverter list",
-        "name": "Rikta Rätt — växelriktare för solceller",
+        "name": "Rikta Rätt — omriktare för det svenska lågspänningsnätet",
         "operator": "Energiföretagen Sverige",
         "url": "https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller",
         "basis": "Ellagen; RfG / EN 50549-1; EIFS 2018:2. A 2.0 XML database is announced.",
-        "gate": "No (\"not binding\"); listing in Rikta Rätt 2.0 is expected from Q2 2027.",
+        "gate": "No (\"not binding\"); Rikta Rätt 2.0 listing opens at the turn of 2026/2027 and is required beside a 1.0 "
+                "listing from Q2 2027; no new 1.0 listings from September 2027, and the 1.0 CSV is unpublished at the "
+                "turn of 2027/2028.",
         "contains": "PV, battery and hybrid inverters with the list's running number, firmware, power, phases, "
                     "energy source and review date.",
         "terms": "No reuse terms are stated.",

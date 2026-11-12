@@ -1417,6 +1417,39 @@ def drazice():
     dump("drazice", {"brand": "Dražice", "maker_site": DZD, "rule": RULE, "sources": sources, "models": models})
 
 
+# Sunways (sunways-tech.com/downloads/, WordPress, robots allow all; read 2026-11-12 for Sweden, where Rikta Rätt lists 56
+# Sunways models). Columns as the sheets print them: rated output power, max. apparent power, max. output current,
+# max. input power. The sheet's own suffix is kept: STH-…-HSS is not the list's STH-…-HS (another suffix is another model);
+# the STS-…-S-P and STT-…-SE sheets are not read, no list carries those codes (the lists have STS-…-S and STT-100KTL). The STH-HT figures come from the user manual V1.4's
+# technical data (no separate sheet is served).
+SUNWAYS = {
+    "03_SWS_STH-4-12KTL-HT_20240125_V1.4": (3, "V1.4 2024-01-25", "user manual, technical data", [
+        ("STH-4KTL-HT", 2, 4, 4.4, 6.7, 5.2), ("STH-5KTL-HT", 2, 5, 5.5, 8.3, 6.5), ("STH-6KTL-HT", 2, 6, 6.6, 10, 7.8),
+        ("STH-8KTL-HT", 2, 8, 8.8, 13.3, 10.4), ("STH-10KTL-HT", 2, 10, 11, 16.5, 13), ("STH-12KTL-HT", 2, 12, 13.2, 20, 15.6)]),
+    "04_SWS-Data-Sheet-STT-425K-P_EN-20240423": (3, "2024-04-23", "", [
+        ("STT-4KTL-P", 2, 4, 4.4, 6.7, 6.4), ("STT-5KTL-P", 2, 5, 5.5, 8.4, 8), ("STT-6KTL-P", 2, 6, 6.6, 10, 9.6),
+        ("STT-8KTL-P", 2, 8, 8.8, 13.3, 12.8), ("STT-10KTL-P", 2, 10, 11, 16.5, 16), ("STT-12KTL-P", 2, 12, 13.2, 20, 19.2),
+        ("STT-15KTL-P", 2, 15, 16.5, 25, 24), ("STT-17KTL-P", 2, 17, 18.7, 28.4, 27.2), ("STT-20KTL-P", 2, 20, 22, 31.9, 32),
+        ("STT-25KTL-P", 2, 25, 25, 39, 40)]),
+    "05_SWS-Data-Sheet-STT-30-60K_EN-20240423": (3, "2024-04-23", "", [
+        ("STT-29.9KTL", 4, 29.9, 29.9, 43.3, 47.84), ("STT-30KTL", 4, 30, 33, 47.8, 48), ("STT-33KTL", 4, 33, 36.3, 52.6, 52.8),
+        ("STT-36KTL", 4, 36, 39.6, 57.4, 57.6), ("STT-40KTL", 4, 40, 44, 63.8, 64), ("STT-45KTL", 4, 45, 49.5, 71.7, 72),
+        ("STT-50KTL-M", 4, 50, 55, 79.7, 80), ("STT-60KTL-M", 4, 60, 66, 95.7, 96)]),
+    "18_SWS_DataSheet_STH-38KTL-LS_EN_20251009": (1, "2025-10-09", "low-voltage battery hybrid; the sheet states no max. PV input power", [
+        ("STH-3KTL-LSS", 1, 3, 3.3, 15, None), ("STH-3.6KTL-LSS", 1, 3.68, 3.68, 16, None), ("STH-4KTL-LS", 2, 4, 4.4, 20, None),
+        ("STH-4.6KTL-LS", 2, 4.6, 5.06, 23, None), ("STH-5KTL-LS", 2, 5, 5.5, 25, None), ("STH-6KTL-LS", 2, 6, 6.6, 30, None),
+        ("STH-7.5KTL-LS", 2, 7.5, 8.25, 37.5, None), ("STH-8KTL-LS", 2, 8, 8.8, 40, None)]),
+    "19_SWS_DataSheet_STH-38KTL-HS_EN_20250526": (1, "2025-05-26", "high-voltage battery hybrid; 5 kW: max. output current 25 A (21.7 A at 4.6 kVA)", [
+        ("STH-3KTL-HSS", 1, 3, 3.3, 15, 4.8), ("STH-3.6KTL-HSS", 1, 3.6, 3.96, 18, 5.76), ("STH-4.2KTL-HS", 2, 4.2, 4.6, 21, 6.72),
+        ("STH-4.6KTL-HS", 2, 4.6, 4.6, 21, 7.36), ("STH-5KTL-HS", 2, 5, 5.5, 25, 8), ("STH-6KTL-HS", 2, 6, 6.6, 28.7, 9.6),
+        ("STH-7KTL-HS", 2, 7, 7.7, 35, 11.2), ("STH-8KTL-HS", 2, 8, 8, 36.3, 12.8)]),
+}
+
+
+def sunways():
+    hand_brand("sunways", "Sunways", "https://www.sunways-tech.com/", "sunways", SUNWAYS)
+
+
 if __name__ == "__main__":
     drazice()
     deye()
@@ -1435,3 +1468,4 @@ if __name__ == "__main__":
     zcs()
     sungrow()
     sofar()
+    sunways()
