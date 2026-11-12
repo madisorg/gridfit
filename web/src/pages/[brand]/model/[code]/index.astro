@@ -8,7 +8,7 @@ import GridBlock from "../../../../components/GridBlock.astro";
 import Status from "../../../../components/Status.astro";
 import Checklist from "../../../../components/Checklist.astro";
 import { COUNTRIES, REGS, RC, RS, RSHORT, META, SNAP_DATE, faq, best, type Device } from "../../../../lib/registers";
-import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, kindOf, releasesOfModel } from "../../../../lib/devices";
+import { modelPages, brandSlugOf, gridOfModel, localOfModel, LOCAL_WORD, brandOf, sheetOf, specOf, codeOf, kindOf, releasesOfModel } from "../../../../lib/devices";
 import { localOf } from "../../../../lib/devices";
 import { familyUrl, REPO } from "../../../../lib/data";
 import { legacyOf, TIER_WORD } from "../../../../lib/legacy";
@@ -26,7 +26,7 @@ const sheet = sheetOf(d);
 const qa = faq(d);
 // only families of the same kind can claim this code: a hybrid is never an ENECTOR wallbox or a KSEM meter
 const routes = (brand?.families ?? []).filter((f) => kindOf(f.class) === kindOf(d.cls) && ["control", "read"].includes(localOf(f)));
-const spec = specOf(d), releases = releasesOfModel(d), legacy = legacyOf(d);
+const spec = specOf(d), code = codeOf(d), releases = releasesOfModel(d), legacy = legacyOf(d);
 const ld = {
   "@context": "https://schema.org",
   "@graph": [
@@ -59,6 +59,18 @@ const issue = `${REPO}/issues/new?template=fix-a-row.yml&title=${encodeURICompon
         {qa.map((f) => <><h3>{f.q}</h3><p class="a">{f.a}</p>{f.de && <p lang="de" class="small muted">{f.de}</p>}</>)}
       </div>
       <GridBlock cells={cells} entries={d.cells} cls={d.cls} releases={releases} kva={spec.kva} brand={d.brand} />
+      {code && (
+        <>
+          <h3>From the model code</h3>
+          <dl class="facts-dl">
+            {code.kw !== null && <><dt>Rated power</dt><dd>≈ {code.kw} kW</dd></>}
+            {code.phases !== null && <><dt>Phases</dt><dd>≈ {code.phases === 1 ? "single-phase" : "three-phase"}</dd></>}
+            <dt>How</dt><dd>{d.brand}'s naming: {code.rule.note}. Checked against the {d.brand} models whose figure a list or datasheet states —
+              {code.kw !== null && ` kW agrees on ${code.rule.kw_agree[0]} of ${code.rule.kw_agree[1]}`}{code.kw !== null && code.phases !== null && ";"}{code.phases !== null && ` phases on ${code.rule.ph_agree[0]} of ${code.rule.ph_agree[1]}`}.{" "}
+              <span class="muted">A level below the datasheet: not used by the requirement check, the grid status or the filters.</span></dd>
+          </dl>
+        </>
+      )}
       {sheet && (
         <>
           <h3>Datasheet</h3>

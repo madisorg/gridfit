@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "python ../tools/site_data.py && python ../tools/specs/build.py && python ../tools/check/run.py && astro telemetry disable && astro build",
+    "build": "python ../tools/site_data.py && python ../tools/specs/build.py && python ../tools/specs/codes.py && python ../tools/check/run.py && astro telemetry disable && astro build",
     "dev": "astro dev --port 8396",
     "test": "node test/scope.mjs && node test/links.mjs && node test/facets.mjs && python ../tools/check/run.py --fixture ../tools/check/fixtures/gr --out .data/checks-fixture.json && node test/checks.mjs"
   },
