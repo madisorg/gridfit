@@ -1,0 +1,6 @@
+[
+  {"name": "grid-ee", "url": "grid/ee/", "wait": 2.0},
+  {"name": "grid-it", "url": "grid/it/", "wait": 2.0},
+  {"name": "pere-sungrow-sh", "url": "sungrow/sh-hybrid-inverters/", "wait": 1.0},
+  {"name": "pere-solax-g3g4", "url": "solax/x1-x3-hybrid-g3-g4/", "wait": 1.0}
+]

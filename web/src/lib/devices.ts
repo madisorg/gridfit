@@ -223,7 +223,7 @@ export function tipOf(cc: string, state: GridState, es: Entry[], cls?: string, s
     const r = REGS[cc];
     const then = NOT_LISTED[cc] ?? "the grid operator decides outside the list";
     const lines = [`${r ? r.name : country}${META[cc]?.source_date ? `, dated ${META[cc].source_date}` : ""}`];
-    if (sub?.tier === "D") return { title: "not on the list \u2014 likely fit: the maker's document names " + country, lines: [...lines, `${sub.release?.brand ?? "the maker"}: \u201c${sub.release?.doc.title}\u201d (${sub.release?.doc.seen})`, then], href: r?.url ?? c?.list_url, hrefText: "open the list" };
+    if (sub?.tier === "D") return { title: "not on the list \u2014 likely fit: a maker's document the operator in " + country + " takes", lines: [...lines, `${sub.release?.brand ?? "the maker"}: \u201c${sub.release?.doc.title}\u201d (${sub.release?.doc.seen})`, then], href: r?.url ?? c?.list_url, hrefText: "open the list" };
     if (sub?.tier === "K") return { title: `not on the list \u2014 possibly fit: accepted on ${sub.positive.length} other EU list${sub.positive.length === 1 ? "" : "s"}`, lines: [...lines, `on the lists of ${sub.positive.join(", ")}; nothing checked here`, then], href: r?.url ?? c?.list_url, hrefText: "open the list" };
     if (sub?.tier === "B") return { title: `not on the list \u2014 over the type-A limit (${LIMITS[cc]?.max_kw} kW): type B`, lines: [...lines, "a procedure of its own"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
     return { title: "not on the list \u2014 nothing known", lines: [...lines, then, "the list may spell the model differently \u2014 never \u201cnot approved\u201d"], href: r?.url ?? c?.list_url, hrefText: "open the list" };
@@ -271,7 +271,7 @@ export const COUNTS = {
 // (web/src/lib/grid-filter.js cellCode): the maker's own document, the type-A ceiling, then what other EU lists say.
 export type Tier = "D" | "K" | "B" | "F" | "?" | "X" | "-";
 export const TIER_WORD: Record<Tier, string> = {
-  D: "likely fit: the maker's document names the country", K: "possibly fit: accepted on other EU lists", B: "other procedure: over the type-A limit",
+  D: "likely fit: a maker's document of the kind the operator takes", K: "possibly fit: accepted on other EU lists", B: "other procedure: over the type-A limit",
   F: "fit: nothing to approve for this kind of device", "?": "unknown: not confirmed", X: "not fit: not allowed", "-": "unknown: nothing known",
 };
 export type Other = { cc: string; country: string; list: string; list_url?: string; state: ClassState; confidence: string; tier: Tier; release: Release | null };

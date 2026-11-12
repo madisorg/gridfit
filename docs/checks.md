@@ -111,10 +111,23 @@ should read that table too.
 
 ## The document's edition
 
-The newest `YYYY-MM` in the document's `standards` strings (CEI 0-21;V2:2024-01 → 2024-01), else the month it was
-issued. Compared with the profile's `edition.date`: older → the summary says "documented for <standards>; n items
-of <edition> unverified", and each item whose `changed_in` is later than the document's edition is `O`. Where
-several documents cover a model in a country, the newest edition is the one shown; the others are counted.
+The newest edition the document's `standards` strings cite: a `YYYY-MM` (CEI 0-21;V2:2024-01 → 2024-01), an `MM.YY`
+after a slash (OVE-Richtlinie R25/03.20 → 2020-03, VDE-AR-N 4105/11.18 → 2018-11), or a bare year of a norm that had one
+edition that year, from the profile's `edition_years` (per norm: `"VDE-AR-N 4105": {"2018": "2018-11"}`); only then the
+month it was issued, which is not an edition (a 2026 certificate to the 2018 edition must not count as 2026-03). Compared
+with the profile's `edition.date`: older → the summary says "documented for <standards>; n items of <edition>
+unverified", and each item whose `changed_in` is later than the document's edition is `O`. Where several documents
+cover a model in a country, the newest edition is the one shown; the others are counted.
+
+A key of `document_must_cite` (and the generic EN 50549 / EN 50438) counts where a term starts in the standards text:
+Spain's "NTS" is not the end of "requirements", while a key may run on ("OVE-Richtlinie R" names "OVE-Richtlinie R25").
+Brands are keyed through `data/curated/brands.yaml` on both sides (evidence, datasheets, registers), and two files of one
+brand are joined, never last-wins.
+
+**One rule for "likely fit".** `checks.json` carries `doc_accepted`: per maker's document, the countries whose
+`accepts` take its kind. The site's grid cell, the model page's list tiers and this check read the same answer
+(`web/src/lib/evidence.ts` `fitsIn`): a firmware grid-code list or a released-countries table that names a country
+is shown on the model page ("named", with its kind), but it is not "likely fit" there.
 
 ## The worked example (the test)
 

@@ -249,6 +249,11 @@ def read_nl():
 
 
 # ---------------------------------------------------------------- CZ
+# both sheets carry hybrids under their own names (Dražice IN.HYBRID, Turbo Energy, OIG "Battery Box … se střídačem" =
+# with an inverter): the sheet's own class would call them a plain inverter or battery
+CZ_HYBRID = re.compile(r"HYB|se střídačem", re.I)
+
+
 def read_cz():
     f = one("cz_*.xlsx")
     first = sheet_rows(f, "Schválené střídače")
@@ -259,7 +264,7 @@ def read_cz():
                 continue
             for model in str(r[1]).split("\n"):  # one cell may carry several models
                 if s(model):
-                    add("CZ", r[0], model, cls, "listed", "listed", fw=r[2], cert=r[4], date=r[6],
+                    add("CZ", r[0], model, "hybrid" if CZ_HYBRID.search(s(model)) else cls, "listed", "listed", fw=r[2], cert=r[4], date=r[6],
                         extra={"setup": s(r[3]), "cert_date": iso(r[5]), "category": s(r[7]), "note": s(r[8])[:200]})
 
 

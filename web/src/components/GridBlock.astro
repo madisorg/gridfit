@@ -23,7 +23,7 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 const docsUsed = [...new Map(releases.map((r) => [r.doc.id, { doc: r.doc, fams: releases.filter((x) => x.doc.id === r.doc.id) }])).values()];
 const n = positive.length;
 const why: Record<Tier, string> = {
-  D: `${brand || "The maker"}'s own document names these countries, or is a certificate against the standard their grid operator names (an EN 50549-1 certificate in Estonia) — the grid operator still decides at the application.`,
+  D: `${brand || "The maker"}'s own document is a kind these countries' grid operators take: a certificate or declaration against their rule, or a certificate against the standard the operator names (an EN 50549-1 certificate in Estonia). A grid-code list or released-countries table that only names a country does not count. The grid operator still decides at the application.`,
   K: n ? `On ${n} EU list${n === 1 ? "" : "s"} (${positive.join(", ")}): the maker has had the model certified and ${n === 1 ? "one grid operator accepts" : `${n} grid operators accept`} it. Nothing is checked in these countries themselves: where there is no list the grid operator reads the maker's certificate for that country — ask the maker or installer for it; where a list exists that GridFit has not read, check the model there.` : "",
   B: `Above the type-A ceiling (${[...new Set(others.filter((o) => o.tier === "B").map((o) => `${LIMITS[o.cc]?.max_kw} kW in ${o.country}`))].join(", ")}): type B, a procedure of its own — conformity per installation, not a certificate per model.`,
   F: "No list and no model-level rule for this kind of device: nothing to approve, so the model is fit here as far as a list goes.",
@@ -50,7 +50,7 @@ const why: Record<Tier, string> = {
               {e.valid && <>, until {e.valid}</>}{e.fw && e.reg !== "BE" && <> · {r.fw_label} <code>{e.fw.slice(0, 60)}</code></>}
               {es.length > 1 && <span class="muted"> · {es.length} rows</span>}</>
           ) : (
-            <>{st === "" && subs[cc] ? <>Not on the list — {subs[cc].tier === "D" ? <>likely fit: the maker's document names {COUNTRY_BY[cc]?.country ?? cc}</> : subs[cc].tier === "K" ? <>possibly fit: accepted on {subs[cc].positive.length} other EU list{subs[cc].positive.length === 1 ? "" : "s"} ({subs[cc].positive.join(", ")})</> : subs[cc].tier === "B" ? <>over the type-A limit: type B, a procedure of its own</> : <>nothing known</>}<span class="muted"> · {NOT_LISTED[cc] ?? "the grid operator decides outside the list"}</span></> : cap(GRID_WORD[st])}</>
+            <>{st === "" && subs[cc] ? <>Not on the list — {subs[cc].tier === "D" ? <>likely fit: a maker's document {COUNTRY_BY[cc]?.country ?? cc}'s operator takes</> : subs[cc].tier === "K" ? <>possibly fit: accepted on {subs[cc].positive.length} other EU list{subs[cc].positive.length === 1 ? "" : "s"} ({subs[cc].positive.join(", ")})</> : subs[cc].tier === "B" ? <>over the type-A limit: type B, a procedure of its own</> : <>nothing known</>}<span class="muted"> · {NOT_LISTED[cc] ?? "the grid operator decides outside the list"}</span></> : cap(GRID_WORD[st])}</>
           )}
           <span class="small muted"> · <Ext href={r.url}>{r.short}</Ext>{m?.source_date ? ` dated ${m.source_date}` : " (undated)"}{m?.seen ? `, read ${m.seen}` : ""}</span>
         </span>

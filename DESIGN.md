@@ -758,3 +758,20 @@ Autarco model page at the block) × 3440/390 × light/dark: [`koodikiht.json`](d
 console errors, 0 overflow, 0 under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. By eye:
 a missing space before the block's last sentence, fixed.
 
+
+## 34. Measured, 2026-11-12 — "likely fit" counts only a document the operator takes
+
+The grid's amber ✓ "likely fit (maker's document)" and the model page's tiers now read the requirement check's own
+answer (`doc_accepted` in `checks.json`, `web/src/lib/evidence.ts` `fitsIn`): a maker's document counts in a country
+only where it is a kind that country's operator takes (its profile's `accepts`). A firmware grid-code list or a
+released-countries table that names the country stays on the model page, marked with its kind, but the cell moves to
+the next rung. The owner chose this strict reading over a separate weaker state (2026-11-12). Every place that explains
+the ✓ says so: the legend, the grid's hover and note, the model page's list block and tiers. Re-read model by model
+against `main`: only `likely fit` cells moved (AT 525 → 180, BE 271 → 4, CZ 572 → 0, DE 1 831 → 1 257, EE 940 → 409,
+ES 1 886 → 1 359, IT 2 297 → 1 774, NL 572 → 268, PL 691 → 50, SE 855 → 417; each to possibly fit, over the type-A
+limit or nothing known), and no other field of any row. Four routes ([`routes-mootor.json`](docs/moodud/routes-mootor.json):
+`/grid/ee/`, `/grid/it/`, the Sungrow SH and SolaX G3/G4 family pages) × 3440/390 × light/dark:
+[`mootor.json`](docs/moodud/mootor.json), 16 pictures, 0 console errors, 0 under 12 px (smallest 13 px), 0 under 4.5:1
+(lowest 5.29), 0 tap targets under 44 px. One finding, not from this change: the Sungrow SH family page overflows a
+390 px phone by 71 px — the list cells' "PL · not on the list — nothing known" and a datasheet file name without a break
+point; the same words are on the live page. Left for a UI pass.
