@@ -302,3 +302,22 @@ documents:
     match: ^ZPM-PCS(125|215)K-R$
     countries: [AT]
     note: Report HC2406170059GC03. The intended-use text names OVE R25; the list of test bases does not. No settings table.
+- id: es-rd647-hyd-zp1-2023
+  title: Certificate of Conformity CN-PV-230095 — RD 647:2020, UNE 217002:2020 — AZZURRO 1PH HYD3000–HYD6000 ZP1
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-UNE-217-002-HYD3000-6000-ZP1.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-230095
+  issued: '2023-03-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647:2020
+  - UNE 206006 IN:2011
+  - UNE 206007-1 IN:2013
+  - UNE 217002:2020
+  firmware: V000001
+  families:
+  - name: 1PH HYD ZP1 single-phase hybrid 3–6 kW
+    match: ^(AZZURRO)?1PHHYD(3000|3680|4000|4600|5000|6000)ZP1$
+    countries:
+    - ES

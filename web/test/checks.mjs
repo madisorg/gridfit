@@ -8,7 +8,7 @@
 // EN 50549-1 certificate as the evidence the country accepts.
 //
 //     node web/test/checks.mjs            (npm test runs the fixture first; or python tools/check/run.py by hand)
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -138,6 +138,20 @@ if (trio) {
 // an honest "outside": a single-phase unit over 6 kW in Italy, judged on its sheet
 const one = Object.entries(C.models).find(([, m]) => m.cc.IT.rows && Object.values(m.cc.IT.rows).some((r) => r[0] === "X" && /1-phase/.test(r[1])));
 ok(one, "an 8 kW single-phase unit is outside the Italian phase rule by its datasheet");
+
+// every evidence file is keyed by a brand the register has: the loaders join by `brand:` lowercased, so a display name
+// ("Victron Energy" for the register's "Victron") silently joins nothing (found 2026-11-12, Spain)
+{
+  const R = JSON.parse(readFileSync(resolve(here, "../.data/registers.json"), "utf-8"));
+  const have = new Set(R.devices.map((d) => d.brand.toLowerCase()));
+  const evDir = resolve(here, "../../data/evidence");
+  for (const f of readdirSync(evDir).filter((x) => x.endsWith(".yaml"))) {
+    const b = /^brand:\s*(.+?)\s*$/m.exec(readFileSync(resolve(evDir, f), "utf-8"))?.[1]?.replace(/^['"]|['"]$/g, "");
+    ok(b && have.has(b.toLowerCase()), `data/evidence/${f}: brand ${JSON.stringify(b)} is not a register brand`);
+  }
+  const mp = C.models["Victron|MultiPlus-II 48/8000/110-100/100"];
+  ok(mp?.cc?.ES?.doc, "Victron MultiPlus-II 48/8000/110-100/100 × ES: the Spanish NTS certificate joins");
+}
 
 console.log(`${checks} checks, ${fails} failures · ${models} models × ${ccs.length} countries`);
 for (const cc of ccs) console.log(`${cc}: datasheet row ${C.stats[cc].sheet_any} · every item covered ${C.stats[cc].covered} · document ${C.stats[cc].doc} (older edition ${C.stats[cc].older}) · outside ${C.stats[cc].outside}`);

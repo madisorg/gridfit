@@ -367,3 +367,125 @@ documents:
     match: ^(AF(3|4|5|6|8|10|12|15|17|20|25|30)K-TH|AF(3|4|5|6|8|10|12)K-THP)$
     countries: [AT]
     note: Confidential file 6162741.50. The battery-less -0 variants and the THA models are not named. No firmware, no settings table.
+- id: es-nts-af-sl-2024
+  title: Bureau Veritas U24-0251 — NTS:2021 (Rev. 2.1 + Corrección 1.0), Type A — AF…K-SL / -SLP / -SL-0 / -SL-1
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【Spain】NTS-Type-A_U24-0251-Low-Voltage-Hybrid-Inverter-3-6kW.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U24-0251
+  issued: '2024-04-04'
+  valid_until: '2029-04-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS:2021 (Revisión 2.1 del 9 de julio de 2021)
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: '1.01'
+  families:
+  - name: AF-SL / SLP / SL-0 / SL-1 single-phase LV hybrid and AC-coupled 1–6 kW
+    match: ^(HYBRIDINVERTER)?AF(3|3\.6|4|4\.6|5|5\.5|6)K-SL$|^AF(4|4\.6|5|5\.5|6)K-SLP$|^AF(1|1\.5|2|2\.5|3|3\.6|4|4\.6|5|5\.5|6)K-SL-0$|^AF(1|1\.5|2|2\.5|3|3\.6)K-SL-1$
+    countries:
+    - ES
+    note: Report AFR-ESH-P23020243-A1-3. The regex also takes the register's "HYBRIDINVERTERAF…K-SL" (description glued in front of
+      the same model). AF…K-ASL (all-in-one) is not on this certificate and is not taken. Companion certificate U24-0249 (2024-04-04,
+      UNE 217002:2020, IEC 62109-2:2011, RD 647:2020) lists the same models. Supersedes U23-0567/U23-0568 (2023-07-13, without the SLP
+      models), also on the site.
+- id: es-ted749-af-sl-2024
+  title: Bureau Veritas U24-0250 — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I 2.3.6 y 5.3 — AF…K-SL / -SLP / -SL-0
+    / -SL-1
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【Spain】UNE217002-IEC62116-Low-Voltage-Hybrid-Inverter-3-6kW.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U24-0250
+  issued: '2024-04-04'
+  valid_until: '2029-04-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden Ministerial TED/749/2020, Anexo I, apartado 2.3.6 y 5.3
+  firmware: '1.01'
+  families:
+  - name: AF-SL / SLP / SL-0 / SL-1 single-phase LV hybrid and AC-coupled 1–6 kW
+    match: ^(HYBRIDINVERTER)?AF(3|3\.6|4|4\.6|5|5\.5|6)K-SL$|^AF(4|4\.6|5|5\.5|6)K-SLP$|^AF(1|1\.5|2|2\.5|3|3\.6|4|4\.6|5|5\.5|6)K-SL-0$|^AF(1|1\.5|2|2\.5|3|3\.6)K-SL-1$
+    countries:
+    - ES
+    note: Report AFR-ESH-P23020243-A1-2. Same model list as U24-0251.
+- id: es-nts-bnt-3-25-2023
+  title: Bureau Veritas U23-1037 — NTS:2021 (Rev. 2.1 + Corrección 1.0), Type A — BNT003…025KTL
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【Spain】NTS-Three-Phase-3-25kW.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-1037
+  issued: '2023-11-24'
+  valid_until: '2028-11-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS:2021 (Revisión 2.1 del 9 de julio de 2021)
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V06
+  families:
+  - name: BNT three-phase string 3–25 kW
+    match: ^BNT0(03|04|05|06|08|10|12|13|15|17|20|25)KTL$
+    countries:
+    - ES
+    note: Report AFR-ESH-P23090909-3. Companion U23-1035 (2023-11-24, UNE 217002, IEC 62109-2, RD 647:2020) lists the same twelve models.
+- id: es-ted749-bnt-3-25-2023
+  title: Bureau Veritas U23-1036 — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I 2.3.6 y 5.3 — BNT003…025KTL
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【Spain】UNE、IEC-Three-Phase-3-25kW.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-1036
+  issued: '2023-11-24'
+  valid_until: '2028-11-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden Ministerial TED/749/2020, Anexo I, apartado 2.3.6 y 5.3
+  firmware: V06
+  families:
+  - name: BNT three-phase string 3–25 kW
+    match: ^BNT0(03|04|05|06|08|10|12|13|15|17|20|25)KTL$
+    countries:
+    - ES
+    note: Report AFR-ESH-P23090909-2.
+- id: es-nts-bnt-30-60-2023
+  title: Bureau Veritas U23-1040 — NTS:2021 (Rev. 2.1 + Corrección 1.0), Type A — BNT030…060KTL
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【Spain】NTS-Three-Phase-30-60kW.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-1040
+  issued: '2023-11-23'
+  valid_until: '2028-11-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS:2021 (Revisión 2.1 del 9 de julio de 2021)
+  - Corrección de errores de la versión 2.1, Revisión 1.0 del 8 de octubre de 2021
+  firmware: V06
+  families:
+  - name: BNT three-phase string 30–60 kW
+    match: ^BNT0(30|36|40|50|60)KTL$
+    countries:
+    - ES
+    note: Report AFR-ESH-P23081301-3. The register's BNT040/050/060KTA are a different suffix and are not taken. Companion U23-1038
+      (2023-11-23, UNE 217002, IEC 62109-2, RD 647:2020) lists the same five.
+- id: es-ted749-bnt-30-60-2023
+  title: Bureau Veritas U23-1039 — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I 2.3.6 y 5.3 — BNT030…060KTL
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/【Spain】UNE、IEC-Three-Phase-30-60kW.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-1039
+  issued: '2023-11-23'
+  valid_until: '2028-11-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden Ministerial TED/749/2020, Anexo I, apartado 2.3.6 y 5.3
+  firmware: V06
+  families:
+  - name: BNT three-phase string 30–60 kW
+    match: ^BNT0(30|36|40|50|60)KTL$
+    countries:
+    - ES
+    note: Report AFR-ESH-P23081301-2.
