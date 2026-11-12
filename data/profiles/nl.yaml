@@ -40,6 +40,15 @@ accepts: [generic-en50549-1, national-declaration]
 # a certificate on the basis of EN 50549-1 / EN 50549-2, or the identical NEN-EN 50549-1 / -2, issued by a body accredited
 # for it, is in any case sufficient ("is in iedere geval voldoende"). Makers' Dutch certificates (Bureau Veritas for Deye)
 # name the Netcode elektriciteit beside NEN-EN 50549-1 — those are the national-declaration kind.
+# A model on Netbeheer Nederland's list (either file): the list stands in for the certificate its supplier showed
+# (docs/checks.md, state R). Items = what an EN 50549-1 type certificate covers; the kW lines are the installation's.
+list_checks:
+  word: "checked by Netbeheer Nederland's list"
+  what: "Netbeheer Nederland lists a type, for all Dutch grid operators, once its supplier has shown that it meets the RfG as the Netherlands applies it; a conformity certificate to EN 50549-1 / NEN-EN 50549-1 from an accredited body is in any case enough (the list's own heading, read in the version of 11 November 2026; certification note of 2020-10-21; energieleveren.nl's form for a new inverter asks brand, type, firmware, rated active power, maximum apparent power and the certificate). The rows carry brand and type only — no firmware, certificate or date — so the edition each type was read against is not stated."
+  items: [freq-range, rocof, lfsm-o, under-frequency, protection-settings, reconnection, remote-stop, reactive, anti-islanding, storage]
+  not_carried: "the list names brand and type only — no rated power or phases; the grid operator applies this line to the installation at registration, from the maximum capacity on the installation document"
+# A model off the list, for a row neither a datasheet nor a document GridFit holds shows (certification note 2020-10-21)
+on_application: "neither a datasheet nor a document GridFit holds shows it; off the list, the grid operator decides at registration on energieleveren.nl — an EN 50549-1 / NEN-EN 50549-1 certificate from an accredited body is in any case enough, and without one the operator says what it needs instead"
 must_meet:
   - id: power-class
     rule: "Plant size class (Systeemcode elektriciteit 2026 art. 3.1; RfG art. 5)"
@@ -133,13 +142,13 @@ changes:
   - "September 2026: Netbeheer Nederland reissued its one-page 'Country settings generation units type A and B' (file dated 2026-09-04)"
   - "1 October 2026: the consolidated Systeemcode text in force (amendments of 1 March, 1 May, 8 May, 1 July, 9 July and 1 October 2026; none of them read here as touching § 3.3)"
   - "1 January 2027: the salderingsregeling (net metering) ends; until 1 January 2030 the supplier's feed-in compensation is at least 50 % of the agreed supply price, and feed-in costs follow the rules for supply costs (Wet van 18 december 2024, Stb. 2025, 17)"
-  - "1 January 2027: a Systeemcode amendment (Stcrt. 2026, 4110) takes effect; its article list was not read"
+  - "1 January 2027: a Systeemcode amendment (ACM/UIT/668130, Stcrt. 2026, 4110) takes effect; it sets the group transport agreement and amends chapter 7, not the type-A rules of chapter 3 (read 2026-11-12)"
   - "the EU revision of the generator code (RfG 2.0) is not adopted"
 evidence_for_documented: "A certificate of conformity to EN 50549-1 or NEN-EN 50549-1 from an accredited certification body for the model and firmware, preferably one that names the Netcode elektriciteit / the Dutch settings (Bureau Veritas issues these for Deye as 'Verklaring van geen bezwaar'). GridFit shows the document and Netbeheer Nederland's list status; the grid operator decides."
 sources:
   - title: "Systeemcode elektriciteit 2026 (BWBR0052336), consolidated text in force from 2026-10-01"
     url: https://wetten.overheid.nl/BWBR0052336/2026-10-01/0
-    seen: "2026-11-01"
+    seen: "2026-11-12"
   - title: "ACM — Systeemcode elektriciteit 2026, Staatscourant 2026, 4089 (decision of 2026-02-05)"
     url: https://zoek.officielebekendmakingen.nl/stcrt-2026-4089.pdf
     date: "2026-02-05"
@@ -157,7 +166,7 @@ sources:
     date: "2020-10-21"
   - title: "Netbeheer Nederland — Requirements generators (lists and documents)"
     url: https://www.netbeheernederland.nl/requirements-generators
-    seen: "2026-11-01"
+    seen: "2026-11-12"
   - title: "Netbeheer Nederland — Goedgekeurde opwek omvormers type A (xlsx, 'Versie 31 oktober 2026')"
     url: https://api.energieleveren.nl/api/v2/files/homologation-file/POWER_GENERATING
     date: "2026-10-31"
