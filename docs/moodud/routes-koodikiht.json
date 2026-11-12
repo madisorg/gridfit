@@ -1,0 +1,5 @@
+[
+ {"name": "grid-ee-sigenergy", "url": "grid/ee/?brand=Sigenergy", "wait": 3.0},
+ {"name": "grid-ee-livoltek", "url": "grid/ee/?brand=Livoltek", "wait": 3.0},
+ {"name": "mudel-autarco-kood", "url": "autarco/model/s2-ld10000-miii/", "js": "[...document.querySelectorAll('h3')].find((h) => h.textContent.startsWith('From the model code'))?.scrollIntoView()", "wait": 2.0}
+]

@@ -2,11 +2,12 @@
 // one-letter codes, the smart-home lens as two marks (Home Assistant, evcc), phases, kVA, MPPT count and the
 // countries the maker's own document releases the model for — plus what applies per class in each of the countries
 // the site covers (`countries`, the default columns) and the type-A ceilings, so a chosen country without a list still gets one status per model; row[11] is the
-// legacy tier (web/src/lib/legacy.ts), hidden by default in the view
+// legacy tier (web/src/lib/legacy.ts), hidden by default in the view; row[12] is the model-code reading [kW, phases] where
+// neither a list nor a datasheet gives the figure (display only, never a filter or a status)
 // (web/src/lib/grid-filter.js decides it; web/test/facets.mjs proves the counts add up).
 import type { APIRoute } from "astro";
 import { devices, COUNTRIES, best } from "../../lib/registers";
-import { BRANDS, brandSlugOf, modelUrl, familyOf, marksOfModel, specOf } from "../../lib/devices";
+import { BRANDS, brandSlugOf, modelUrl, familyOf, marksOfModel, specOf, codeOf } from "../../lib/devices";
 import { IN_SCOPE, SCOPE, inScope } from "../../lib/countries";
 import { LIMITS, PROFILES, NOT_LISTED } from "../../lib/profiles";
 import { releasesOf, releaseCountries } from "../../lib/evidence";
@@ -22,7 +23,7 @@ export const GET: APIRoute = () => {
   const rows = order.map((d) => {
     const f = familyOf(d), s = specOf(d), mk = marksOfModel(d), rel = releasesOf(d.brand, d.model);
     return [bidx.get(brandSlugOf(d)), d.model, d.cls, modelUrl(d), COUNTRIES.map((c) => (d.cells[c] ? CODE[best(d.cells[c])] : "-")).join(""),
-      mk.ha + mk.evcc, f ? f.name : "", s.phases, s.kva, s.mppt, releaseCountries(rel).filter(inScope).join(","), legacyOf(d).tier];
+      mk.ha + mk.evcc, f ? f.name : "", s.phases, s.kva, s.mppt, releaseCountries(rel).filter(inScope).join(","), legacyOf(d).tier, (() => { const c = codeOf(d); return c ? [c.kw, c.phases] : null; })()];
   });
   const scope = Object.fromEntries(IN_SCOPE.map((c) => [c.cc, c.classes]));
   const names = Object.fromEntries(IN_SCOPE.map((c) => [c.cc, c.country]));

@@ -130,7 +130,9 @@ def deye():
             if code.endswith("-G04-LV") or code.endswith("-G05-LV"):
                 code = code  # the LV sheets write the full code already
             phs = str((r.get("phases") or {}).get(m, ""))
-            ph = 3 if "3L" in phs or re.search(r"(LP3|HP3|P3|G0[345]-LV|K-G0[345]$)", code) and not re.search(r"P1|M\d", code) else 1
+            # "SUN-M…" is a microinverter; the hardware suffixes -SM2 / -BM2 / -AM2 are not (until 2026-11-12 "M\d" matched them
+            # and wrote the three-phase SG05LP3 / G06P3 rows as single-phase; the model-code check in tools/specs/codes.py found it)
+            ph = 3 if "3L" in phs or re.search(r"(LP3|HP3|P3|G0[345]-LV|K-G0[345]$)", code) and not re.search(r"P1|SUN-M\d", code) else 1
             # Deye writes "max AC input/output current" as in/out; the output side is the grid-side figure
             out_a = str((r.get("ac_a") or {}).get(m, "")).split("/")
             aca = out_a[1] if len(out_a) > 1 else out_a[0]

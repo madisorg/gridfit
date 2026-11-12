@@ -1,0 +1,1386 @@
+{
+ "koodikiht--grid-ee-sigenergy--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 9381,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 355
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    214,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    214,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    214,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    215,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    215,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    131,
+    17,
+    ". Sigenergy Sigen 50"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    236,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    243,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ]
+  ],
+  "nhit": 61,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 358,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 232,
+  "radius": {
+   "4px": 9,
+   "2px": 144
+  },
+  "kontrast": {
+   "n": 358,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-sigenergy--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 9381,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 355
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    214,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    214,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    214,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    206,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    215,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    215,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    207,
+    17,
+    ". Sigenergy SigenSto"
+   ],
+   [
+    131,
+    17,
+    ". Sigenergy Sigen 50"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    251,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    236,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    243,
+    17,
+    ". Sigenergy Sigen En"
+   ],
+   [
+    244,
+    17,
+    ". Sigenergy Sigen En"
+   ]
+  ],
+  "nhit": 61,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 358,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 232,
+  "radius": {
+   "4px": 9,
+   "2px": 144
+  },
+  "kontrast": {
+   "n": 358,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-sigenergy--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 19562,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 25,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 58,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 232,
+  "radius": {
+   "4px": 5,
+   "2px": 18
+  },
+  "kontrast": {
+   "n": 58,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-sigenergy--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 19562,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 25,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 58,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 232,
+  "radius": {
+   "4px": 5,
+   "2px": 18
+  },
+  "kontrast": {
+   "n": 58,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-livoltek--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8215,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 355
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    127,
+    17,
+    ". Livoltek PCS-125KG"
+   ],
+   [
+    118,
+    17,
+    ". Livoltek GT1-1K6S1"
+   ],
+   [
+    118,
+    17,
+    ". Livoltek GT1-2K2S1"
+   ],
+   [
+    118,
+    17,
+    ". Livoltek GT1-3K3S1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT1-3K6D1"
+   ],
+   [
+    110,
+    17,
+    ". Livoltek GT1-3KS1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT1-4K6D1"
+   ],
+   [
+    111,
+    17,
+    ". Livoltek GT1-5KD1"
+   ],
+   [
+    111,
+    17,
+    ". Livoltek GT1-6KD1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-15KT2"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-20KT2"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-25KT2"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-30KT2"
+   ],
+   [
+    121,
+    17,
+    ". Livoltek Hyper-300"
+   ],
+   [
+    121,
+    17,
+    ". Livoltek Hyper-368"
+   ],
+   [
+    121,
+    17,
+    ". Livoltek Hyper-500"
+   ],
+   [
+    122,
+    17,
+    ". Livoltek GT3-100K-"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-10KD1"
+   ],
+   [
+    122,
+    17,
+    ". Livoltek GT3-110K-"
+   ],
+   [
+    122,
+    17,
+    ". Livoltek GT3-125K-"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-15KD1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-20KD1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-25KD1"
+   ],
+   [
+    117,
+    17,
+    ". Livoltek GT3-30KT1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-40KQ1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-50KQ1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-60KQ1"
+   ],
+   [
+    115,
+    17,
+    ". Livoltek GT3-75K-1"
+   ],
+   [
+    120,
+    17,
+    ". Livoltek HP3-10KD1"
+   ],
+   [
+    120,
+    17,
+    ". Livoltek HP3-12KD1"
+   ],
+   [
+    120,
+    17,
+    ". Livoltek HP3-15KD1"
+   ]
+  ],
+  "nhit": 61,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 358,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 166,
+  "radius": {
+   "4px": 9,
+   "2px": 144
+  },
+  "kontrast": {
+   "n": 358,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-livoltek--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 8215,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 355
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [
+   [
+    16,
+    32,
+    ". EE"
+   ],
+   [
+    127,
+    17,
+    ". Livoltek PCS-125KG"
+   ],
+   [
+    118,
+    17,
+    ". Livoltek GT1-1K6S1"
+   ],
+   [
+    118,
+    17,
+    ". Livoltek GT1-2K2S1"
+   ],
+   [
+    118,
+    17,
+    ". Livoltek GT1-3K3S1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT1-3K6D1"
+   ],
+   [
+    110,
+    17,
+    ". Livoltek GT1-3KS1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT1-4K6D1"
+   ],
+   [
+    111,
+    17,
+    ". Livoltek GT1-5KD1"
+   ],
+   [
+    111,
+    17,
+    ". Livoltek GT1-6KD1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-15KT2"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-20KT2"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-25KT2"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek HP3-30KT2"
+   ],
+   [
+    121,
+    17,
+    ". Livoltek Hyper-300"
+   ],
+   [
+    121,
+    17,
+    ". Livoltek Hyper-368"
+   ],
+   [
+    121,
+    17,
+    ". Livoltek Hyper-500"
+   ],
+   [
+    122,
+    17,
+    ". Livoltek GT3-100K-"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-10KD1"
+   ],
+   [
+    122,
+    17,
+    ". Livoltek GT3-110K-"
+   ],
+   [
+    122,
+    17,
+    ". Livoltek GT3-125K-"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-15KD1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-20KD1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-25KD1"
+   ],
+   [
+    117,
+    17,
+    ". Livoltek GT3-30KT1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-40KQ1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-50KQ1"
+   ],
+   [
+    119,
+    17,
+    ". Livoltek GT3-60KQ1"
+   ],
+   [
+    115,
+    17,
+    ". Livoltek GT3-75K-1"
+   ],
+   [
+    120,
+    17,
+    ". Livoltek HP3-10KD1"
+   ],
+   [
+    120,
+    17,
+    ". Livoltek HP3-12KD1"
+   ],
+   [
+    120,
+    17,
+    ". Livoltek HP3-15KD1"
+   ]
+  ],
+  "nhit": 61,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 358,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 166,
+  "radius": {
+   "4px": 9,
+   "2px": 144
+  },
+  "kontrast": {
+   "n": 358,
+   "min": 6.15,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-livoltek--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 18033,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 25,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 58,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 166,
+  "radius": {
+   "4px": 5,
+   "2px": 18
+  },
+  "kontrast": {
+   "n": 58,
+   "min": 5.29,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--grid-ee-livoltek--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 18033,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 3,
+   "GF Text": 55
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 25,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 58,
+  "fs12ex": [],
+  "inputs": [
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   13.3333,
+   14,
+   14,
+   14
+  ],
+  "canvas": 0,
+  "svg": 166,
+  "radius": {
+   "4px": 5,
+   "2px": 18
+  },
+  "kontrast": {
+   "n": 58,
+   "min": 6.62,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--mudel-autarco-kood--lai-hele": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 4718,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 4,
+   "GF Text": 107
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 1,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 111,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 15
+  },
+  "kontrast": {
+   "n": 111,
+   "min": 6.26,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--mudel-autarco-kood--lai-tume": {
+  "w": 3440,
+  "cw": 3440,
+  "sw": 3440,
+  "sh": 4718,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": false,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 4,
+   "GF Text": 107
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 1,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 111,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {
+   "2px": 15
+  },
+  "kontrast": {
+   "n": 111,
+   "min": 6.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--mudel-autarco-kood--tel-hele": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 10078,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": false,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 4,
+   "GF Text": 19
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 1,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 23,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {},
+  "kontrast": {
+   "n": 23,
+   "min": 6.98,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ },
+ "koodikiht--mudel-autarco-kood--tel-tume": {
+  "w": 390,
+  "cw": 390,
+  "sw": 390,
+  "sh": 10078,
+  "pans": [],
+  "fitpx": 0,
+  "coarse": true,
+  "dark": true,
+  "csp": [],
+  "body": "\"GF Text\", \"Segoe UI\", system-ui, sans-serif",
+  "fam": {
+   "GF Head": 4,
+   "GF Text": 19
+  },
+  "loaded": [
+   "GF Head",
+   "GF Text"
+  ],
+  "small": [],
+  "nhit": 1,
+  "overpx": 0,
+  "over": [],
+  "nover": 0,
+  "minfs": 13,
+  "fs12": 0,
+  "nfs": 23,
+  "fs12ex": [],
+  "inputs": [],
+  "canvas": 0,
+  "svg": 10,
+  "radius": {},
+  "kontrast": {
+   "n": 23,
+   "min": 7.72,
+   "fail": {}
+  },
+  "noodatud": 0,
+  "vead": [],
+  "blokitud": [],
+  "rahunes": true
+ }
+}

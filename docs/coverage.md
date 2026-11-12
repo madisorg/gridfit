@@ -101,3 +101,21 @@ What changed, and why:
 - **Documents only a browser gets** (owner's list): Fronius "Conformity with requirements from Estonia" (downloads.fronius.com,
   WAF), SolarEdge "Countries supported by SolarEdge inverters" v1.1 (Cloudflare), Sigenergy's Intertek EN 50549-1
   certificates and datasheets (403 to scripts), Huawei SUN2000 datasheets (by hand only, its terms).
+
+## Estonia, the model-code level (2026-11-12, second pass)
+
+The 846 listed models without kW and phases, after the makers' download centres refused scripts and the owner could not open
+the PDFs either: `data/specs/naming/codes.yaml` reads the maker's naming, and `tools/specs/codes.py` keeps a rule only where it
+agrees with stated figures (68 rules over 28 brands, 56 kept in some part; every kept part agrees on at least 3 and at least 90 % of the models a list or
+sheet states, most on all of them — SolaX 163/163 and 175/175, GoodWe 104/104, Sofar 100/100, Sigenergy 62/62).
+Listed models with kW and phases at some level: **1 370 → 1 746 of 2 214**; all models: 7 095 + 757 with some part from the
+code. Status re-read: 0 changed (display only). Left: 470 listed models — 294 with neither figure, 176 with kW but no phases.
+They are brands whose naming no stated figure can check (ABB / FIMER's Estonian spellings, Kehua SPI, Elecod, Kstar KSG, INVT
+BD, Fox ESS AC, Renac KR3, Huawei SUN2000L) and the industrial converters (Tecloman, Elecod, Kehua BCS, Weiheng). For those the
+route is ZEREZ, the German unit register (`docs/zerez.md`): a registered account and FGW's permission, which the owner has a
+draft letter for.
+
+The check paid for itself once: Deye's `…-SM2` / `…-BM2` three-phase hybrids had been written into `data/specs/deye.yaml` as
+single-phase (the drafter's microinverter test `M\d` matched the hardware suffix). Eleven rows were corrected, and four
+Italian "outside by datasheet" verdicts went with them (27 → 23).
+
