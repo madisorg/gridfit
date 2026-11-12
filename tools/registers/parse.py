@@ -243,17 +243,51 @@ def read_cz():
 
 
 # ---------------------------------------------------------------- SE
+# "får enbart/endast anslutas/monteras i trefaskoppling" (also misspelt "anlsutas"): a single-phase unit listed only
+# as part of a three-phase set — listed with a restriction, the comment is the restriction's wording
+SE_THREE_PHASE_ONLY = re.compile(r"\b(enbart|endast)\b.{0,30}\btrefas", re.I)
+
+
+def se_text(raw):
+    """The CSV's code page changes between issues (2026-10-23 cp1252, 2026-11-09 cp850): the header names
+    'Löp-nummer' and 'Energikälla', so the code page that spells them is the file's."""
+    if raw.startswith(b"\xef\xbb\xbf"):
+        return raw[3:].decode("utf-8")
+    for enc in ("utf-8", "cp1252", "cp850"):
+        try:
+            t = raw.decode(enc)
+        except UnicodeDecodeError:
+            continue
+        if "Löp" in t[:200] and "Energikälla" in t[:300]:
+            return t
+    errors.append("SE: header not recognised in utf-8 / cp1252 / cp850 — read as cp1252")
+    return raw.decode("cp1252", errors="replace")
+
+
+def se_date(v):
+    """ISO as written; four Growatt rows carry dd/mm/yyyy."""
+    m = re.fullmatch(r"(\d{1,2})/(\d{1,2})/(\d{4})", s(v))
+    return f"{m[3]}-{int(m[2]):02d}-{int(m[1]):02d}" if m else s(v)
+
+
 def read_se():
     f = one("se_*.csv")
     meta["SE"] = {"file": f.name, "source_date": date_in_name(f.name, "")}
-    for i, r in enumerate(csv.reader(f.read_text(encoding="cp1252").splitlines(), delimiter=";")):
+    for i, r in enumerate(csv.reader(se_text(f.read_bytes()).splitlines(), delimiter=";")):
         if i == 0 or len(r) < 8 or not s(r[1]):
             continue
+        comment = s(r[8])[:200] if len(r) > 8 else ""
         src = s(r[6]).lower()
+        if not re.search(r"sol|batteri|vind|nät", src):
+            # the energy-source cell holds something else (row 3377: the maker's company name): a PV inverter unless
+            # the comment says hybrid
+            errors.append(f"SE: energy source {s(r[6])!r} id={s(r[0])} — read as PV")
+            src = "sol batteri" if "hybrid" in comment.lower() else "sol"
         cls = ("hybrid" if "sol" in src and "batteri" in src else "battery" if "batteri" in src
                else "inverter" if "sol" in src else "other")
-        add("SE", r[1], r[2], cls, "listed", "listed", rid=r[0], fw=r[3], date=r[7], kva=num(r[4]),
-            extra={"phases": s(r[5]), "source": s(r[6]), "comment": s(r[8])[:200] if len(r) > 8 else ""})
+        status, word = ("restricted", comment) if SE_THREE_PHASE_ONLY.search(comment) else ("listed", "listed")
+        add("SE", r[1], r[2], cls, status, word, rid=r[0], fw=r[3], date=se_date(r[7]), kva=num(r[4]),
+            extra={"phases": s(r[5]), "source": s(r[6]), "comment": comment})
 
 
 # ---------------------------------------------------------------- EE (HTML: one accordion per maker)
