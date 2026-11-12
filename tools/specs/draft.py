@@ -1450,6 +1450,41 @@ def sunways():
     hand_brand("sunways", "Sunways", "https://www.sunways-tech.com/", "sunways", SUNWAYS)
 
 
+# Luxpower (PL list, 2026-11-12): LuxpowerTek's EU catalogue, one page per series with the datasheet's own table. The
+# catalogue is the newest sheet that has the GEN3-LB-EU 3-5K columns; GEN3 6.5K and 7K, also on the PL list, are on no
+# sheet the maker serves. Spanned cells (max PV input, MPPT count) apply to every column of the series.
+LUXPOWER_CAT = "LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10"
+LUXPOWER = [  # (catalogue page, phases, note, [(code, mppt, ac_kw, ac_kva, ac_a, pv_kw)])
+    (8, 1, "GEN3-LB-EU 3-8K page: 'Rated AC output power', 'Rated AC output current' at 230 V; the 4.6K column prints 25 A "
+           "against 4 600 W (20 A at 230 V), so its current is left null", [
+        ("GEN3-LB-EU 3K", 2, 3.0, None, 13.0, 12.0), ("GEN3-LB-EU 3.6K", 2, 3.6, None, 16.0, 12.0),
+        ("GEN3-LB-EU 4K", 2, 4.0, None, 20.0, 12.0), ("GEN3-LB-EU 4.6K", 2, 4.6, None, None, 12.0),
+        ("GEN3-LB-EU 5K", 2, 5.0, None, 21.7, 12.0), ("GEN3-LB-EU 6K", 2, 6.0, None, 26.0, 12.0),
+        ("GEN3-LB-EU 8K", 2, 8.0, None, 34.7, 12.0)]),
+    (9, 1, "GEN PRO-LB-EU 8-12K page: 'Rated AC output power', 'Rated AC output current' at 230 V; max PV input 16 000 W "
+           "(8K) and 20 000 W (10K, 12K)", [
+        ("GEN PRO-LB-EU 8K", 3, 8.0, None, 34.7, 16.0), ("GEN PRO-LB-EU 10K", 3, 10.0, None, 43.5, 20.0),
+        ("GEN PRO-LB-EU 12K", 3, 12.0, None, 52.0, 20.0)]),
+    (10, 3, "TriP2-LB-3P 5-20K page: 3L/N/PE 230/400 V; 'Rated AC output power', 'Rated AC output current'", [
+        ("TriP2-LB-3P 5K", 3, 5.0, None, 7.2, 7.5), ("TriP2-LB-3P 6K", 3, 6.0, None, 8.7, 9.0),
+        ("TriP2-LB-3P 8K", 3, 8.0, None, 11.6, 12.0), ("TriP2-LB-3P 10K", 3, 10.0, None, 14.5, 15.0),
+        ("TriP2-LB-3P 12K", 3, 12.0, None, 17.4, 18.0), ("TriP2-LB-3P 15K", 3, 15.0, None, 21.7, 22.5),
+        ("TriP2-LB-3P 20K", 3, 20.0, None, 29.0, 30.0)]),
+]
+
+
+def luxpower():
+    got = (CACHE / "luxpower" / "HARVEST.txt").read_text(encoding="utf-8").split()
+    sources, models = [], []
+    for page, ph, note, rows in LUXPOWER:
+        sid = f"luxpower-eu-catalogue-2026-04-10-p{page}"
+        sources.append({"id": sid, "url": got[1], "file": got[0], "version": f"catalogue 2026.04.10, page {page}",
+                        "note": note, "seen": got[2]})
+        models += [row(code, mp, ackw, kva, aca, ph, pv, sid) for code, mp, ackw, kva, aca, pv in rows]
+    dump("luxpower", {"brand": "Lux Power", "maker_site": "https://luxpowertek.com/", "rule": RULE,
+                      "sources": sources, "models": models})
+
+
 if __name__ == "__main__":
     drazice()
     deye()
@@ -1469,3 +1504,4 @@ if __name__ == "__main__":
     sungrow()
     sofar()
     sunways()
+    luxpower()

@@ -1,0 +1,165 @@
+brand: Lux Power
+maker_site: https://luxpowertek.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: luxpower-eu-catalogue-2026-04-10-p8
+  url: https://luxpowertek.com/wp-content/uploads/2026/04/LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10.pdf
+  file: LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10.pdf
+  version: catalogue 2026.04.10, page 8
+  note: 'GEN3-LB-EU 3-8K page: ''Rated AC output power'', ''Rated AC output current'' at 230 V; the 4.6K column prints 25
+    A against 4 600 W (20 A at 230 V), so its current is left null'
+  seen: '2026-11-12'
+- id: luxpower-eu-catalogue-2026-04-10-p9
+  url: https://luxpowertek.com/wp-content/uploads/2026/04/LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10.pdf
+  file: LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10.pdf
+  version: catalogue 2026.04.10, page 9
+  note: 'GEN PRO-LB-EU 8-12K page: ''Rated AC output power'', ''Rated AC output current'' at 230 V; max PV input 16 000 W
+    (8K) and 20 000 W (10K, 12K)'
+  seen: '2026-11-12'
+- id: luxpower-eu-catalogue-2026-04-10-p10
+  url: https://luxpowertek.com/wp-content/uploads/2026/04/LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10.pdf
+  file: LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10.pdf
+  version: catalogue 2026.04.10, page 10
+  note: 'TriP2-LB-3P 5-20K page: 3L/N/PE 230/400 V; ''Rated AC output power'', ''Rated AC output current'''
+  seen: '2026-11-12'
+models:
+- code: GEN3-LB-EU 3K
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: null
+  ac_a: 13.0
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN3-LB-EU 3.6K
+  mppt: 2
+  ac_kw: 3.6
+  ac_kva: null
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN3-LB-EU 4K
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: null
+  ac_a: 20.0
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN3-LB-EU 4.6K
+  mppt: 2
+  ac_kw: 4.6
+  ac_kva: null
+  ac_a: null
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN3-LB-EU 5K
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: null
+  ac_a: 21.7
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN3-LB-EU 6K
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: null
+  ac_a: 26.0
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN3-LB-EU 8K
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: null
+  ac_a: 34.7
+  phases: 1
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p8
+- code: GEN PRO-LB-EU 8K
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: null
+  ac_a: 34.7
+  phases: 1
+  pv_kw: 16.0
+  source: luxpower-eu-catalogue-2026-04-10-p9
+- code: GEN PRO-LB-EU 10K
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: null
+  ac_a: 43.5
+  phases: 1
+  pv_kw: 20.0
+  source: luxpower-eu-catalogue-2026-04-10-p9
+- code: GEN PRO-LB-EU 12K
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: null
+  ac_a: 52.0
+  phases: 1
+  pv_kw: 20.0
+  source: luxpower-eu-catalogue-2026-04-10-p9
+- code: TriP2-LB-3P 5K
+  mppt: 3
+  ac_kw: 5.0
+  ac_kva: null
+  ac_a: 7.2
+  phases: 3
+  pv_kw: 7.5
+  source: luxpower-eu-catalogue-2026-04-10-p10
+- code: TriP2-LB-3P 6K
+  mppt: 3
+  ac_kw: 6.0
+  ac_kva: null
+  ac_a: 8.7
+  phases: 3
+  pv_kw: 9.0
+  source: luxpower-eu-catalogue-2026-04-10-p10
+- code: TriP2-LB-3P 8K
+  mppt: 3
+  ac_kw: 8.0
+  ac_kva: null
+  ac_a: 11.6
+  phases: 3
+  pv_kw: 12.0
+  source: luxpower-eu-catalogue-2026-04-10-p10
+- code: TriP2-LB-3P 10K
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: null
+  ac_a: 14.5
+  phases: 3
+  pv_kw: 15.0
+  source: luxpower-eu-catalogue-2026-04-10-p10
+- code: TriP2-LB-3P 12K
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: null
+  ac_a: 17.4
+  phases: 3
+  pv_kw: 18.0
+  source: luxpower-eu-catalogue-2026-04-10-p10
+- code: TriP2-LB-3P 15K
+  mppt: 3
+  ac_kw: 15.0
+  ac_kva: null
+  ac_a: 21.7
+  phases: 3
+  pv_kw: 22.5
+  source: luxpower-eu-catalogue-2026-04-10-p10
+- code: TriP2-LB-3P 20K
+  mppt: 3
+  ac_kw: 20.0
+  ac_kva: null
+  ac_a: 29.0
+  phases: 3
+  pv_kw: 30.0
+  source: luxpower-eu-catalogue-2026-04-10-p10
