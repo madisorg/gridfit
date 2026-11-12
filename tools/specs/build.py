@@ -8,12 +8,14 @@ coverage printed here is what the pages will show. Nothing is guessed: a registe
 "not collected".
 """
 import json
+import sys
 import re
 from pathlib import Path
 
-import yaml
 
 ROOT = Path(__file__).resolve().parents[2]  # runs from web/ (npm run build) as well as from the repo root
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 OUT = ROOT / "web/.data/specs.json"
 REG = ROOT / "web/.data/registers.json"
 SPECS = ROOT / "data/specs"
@@ -26,7 +28,7 @@ def norm(code: str) -> str:
 def main():
     brands = []
     for f in sorted(SPECS.glob("*.yaml")):
-        doc = yaml.safe_load(f.read_text(encoding="utf-8"))
+        doc = strictyaml.load(f.read_text(encoding="utf-8"))
         src = {s["id"]: s for s in doc["sources"]}
         rows = []
         for m in doc["models"]:

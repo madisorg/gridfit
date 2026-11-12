@@ -9,9 +9,9 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-import yaml
 
 from .brands import Brands, slug
+from . import strictyaml  # a key written twice is an error, not a silent last-wins
 
 CONN_LABEL = {
     "modbus_tcp": "Modbus TCP", "modbus_rtu": "Modbus RTU (RS485)", "http": "HTTP / REST",
@@ -134,7 +134,7 @@ def evcc_rows(evcc_dir: Path, brands: Brands, seen):
     rows = []
     for typ in ("meter", "charger"):
         for f in sorted((evcc_dir / "templates/definition" / typ).glob("*.yaml")):
-            t = yaml.safe_load(f.read_text(encoding="utf-8"))
+            t = strictyaml.load(f.read_text(encoding="utf-8"))
             if t.get("deprecated") or t.get("group") in SKIP_GROUPS:
                 continue
             tname = t.get("template") or f.stem
@@ -318,4 +318,4 @@ def faq(f):
 
 
 def load_yaml(path: Path):
-    return yaml.safe_load(path.read_text(encoding="utf-8"))
+    return strictyaml.load(path.read_text(encoding="utf-8"))

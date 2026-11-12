@@ -19,12 +19,13 @@ import re
 import sys
 from pathlib import Path
 
-import yaml
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 REPORTS, HERE = ROOT / "data/test-reports", Path(__file__).resolve().parent
 STATES = ("covers", "outside", "untested", "absent", "operator")
 MARK = {"covers": "✓", "outside": "✗", "untested": "?", "absent": "–", "operator": "op"}
@@ -146,13 +147,13 @@ def requirement_state(states: list[str]) -> str:
 def load():
     countries = {}
     for f in ("country_values.yaml", "gr_draft.yaml"):
-        countries.update(yaml.safe_load((HERE / f).read_text(encoding="utf-8")))
+        countries.update(strictyaml.load((HERE / f).read_text(encoding="utf-8")))
     docs = []
     for f in sorted(REPORTS.glob("*.yaml")):
-        b = yaml.safe_load(f.read_text(encoding="utf-8"))
+        b = strictyaml.load(f.read_text(encoding="utf-8"))
         for d in b["documents"]:
             docs.append({**d, "brand": b["brand"]})
-    floor = yaml.safe_load((HERE / "floor.yaml").read_text(encoding="utf-8"))
+    floor = strictyaml.load((HERE / "floor.yaml").read_text(encoding="utf-8"))
     floor = {**floor, "brand": "EN 50549-1", "kind": "standard-floor"}
     return countries, docs, floor
 

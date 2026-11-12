@@ -14,11 +14,12 @@ import re
 import sys
 from pathlib import Path
 
-import yaml
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 RULES = ROOT / "data/specs/naming/codes.yaml"
 REG, SPECS, OUT = ROOT / "web/.data/registers.json", ROOT / "web/.data/specs.json", ROOT / "web/.data/codes.json"
 MIN_N, MIN_SHARE, LO, HI = 3, 0.9, 0.87, 1.15
@@ -64,7 +65,7 @@ def known_of(d: dict, sheets: list):
 
 
 def main():
-    cfg = yaml.safe_load(RULES.read_text(encoding="utf-8"))
+    cfg = strictyaml.load(RULES.read_text(encoding="utf-8"))
     devs = [d for d in json.loads(REG.read_text(encoding="utf-8"))["devices"] if not d["unmatched"]]
     spec = {b["brand"].lower(): [(r["norm"], re.compile(r["match"]) if r["match"] else None, r) for r in b["models"]]
             for b in json.loads(SPECS.read_text(encoding="utf-8"))["brands"]}

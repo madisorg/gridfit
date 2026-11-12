@@ -27,14 +27,14 @@ import time
 import urllib.error
 import urllib.parse
 import urllib.request
-import urllib.robotparser
 from pathlib import Path
 
-import yaml
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 from gridfit import registers  # noqa: E402
+from gridfit.robots import Robots  # noqa: E402 — RFC 9309: the longest matching rule wins
 
 UA = "GridFit watch (+https://gridfit.eu)"
 WATCH = ROOT / "data/watch"
@@ -63,21 +63,20 @@ class Net:
     def allowed(self, url):
         host = self._host(url)
         if host not in self.robots:
-            rp = urllib.robotparser.RobotFileParser()
             try:
                 status, _, body = self._raw(host + "/robots.txt", {})
                 if status == 200:
-                    rp.parse(body.decode("utf-8", "replace").splitlines())
+                    rp = Robots(body.decode("utf-8-sig", "replace"))
                 elif status in (401, 403):
-                    rp.disallow_all = True
+                    rp = Robots("User-agent: *\nDisallow: /")
                 else:
-                    rp.allow_all = True
+                    rp = Robots("")
             except Exception:  # noqa: BLE001 - no robots.txt reachable: the standard says allowed
-                rp.allow_all = True
+                rp = Robots("")
             self.robots[host] = rp
             cd = rp.crawl_delay(UA)
             self.delay[host] = max(1.0, float(cd or 0))
-        return self.robots[host].can_fetch(UA, url)
+        return self.robots[host].allowed(UA, url)
 
     def _raw(self, url, headers):
         self._wait(self._host(url))
@@ -171,13 +170,13 @@ class Known:
             reg = registers.COUNTRY_OF.get(e["reg"], e["reg"])
             self.lists.setdefault(e["norm"], set()).add(reg)
             self.by_maker.setdefault(e["maker"], set()).add(e["norm"])
-        fam = yaml.safe_load((ROOT / "data/curated/families.yaml").read_text(encoding="utf-8"))
+        fam = strictyaml.load((ROOT / "data/curated/families.yaml").read_text(encoding="utf-8"))
         self.families = {b: [(f["name"], re.compile(f["match"])) for f in fs if f.get("match")] for b, fs in fam.items()}
         self.specs = set()
         for p in (ROOT / "data/specs").glob("*.yaml"):
-            for m in (yaml.safe_load(p.read_text(encoding="utf-8")) or {}).get("models") or []:
+            for m in (strictyaml.load(p.read_text(encoding="utf-8")) or {}).get("models") or []:
                 self.specs.add(norm_model(m.get("code")))
-        brands = yaml.safe_load((ROOT / "data/curated/brands.yaml").read_text(encoding="utf-8"))
+        brands = strictyaml.load((ROOT / "data/curated/brands.yaml").read_text(encoding="utf-8"))
         self.alias = {}
         for canon, spellings in brands.items():
             for s in [canon.lower(), *spellings]:
@@ -413,7 +412,7 @@ def main(argv=None):
     ap.add_argument("--dry-run", action="store_true", help="fetch and print, write nothing")
     a = ap.parse_args(argv)
 
-    cfg = yaml.safe_load((Path(__file__).parent / "sources.yaml").read_text(encoding="utf-8"))["sources"]
+    cfg = strictyaml.load((Path(__file__).parent / "sources.yaml").read_text(encoding="utf-8"))["sources"]
     only = set(filter(None, a.only.split(",")))
     srcs = [s for s in cfg if (s["kind"] == "edge") == a.edge and (not only or s["id"] in only)]
     suffix = "-edge" if a.edge else ""

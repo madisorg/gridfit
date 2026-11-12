@@ -25,6 +25,8 @@ import yaml  # noqa: E402
 import parse  # noqa: E402
 
 ROOT = HERE.parents[1]
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 CACHE = ROOT / "cache" / "evidence"
 DATA = ROOT / "data" / "evidence"
 HEADER = """# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
@@ -95,7 +97,7 @@ def document(src, manifest, key, warn):
 def accepts():
     """[(regex over a standard's name, cc)] from data/evidence/rules/accepts.yaml."""
     f = DATA / "rules" / "accepts.yaml"
-    rows = yaml.safe_load(f.read_text(encoding="utf-8")) if f.exists() else []
+    rows = strictyaml.load(f.read_text(encoding="utf-8")) if f.exists() else []
     return [(re.compile(re.escape(s.replace(" ", "")) + r"(?![0-9])", re.I), r["cc"]) for r in rows for s in r["standards"]]
 
 
@@ -116,7 +118,7 @@ def main():
     ap.add_argument("brands", nargs="*")
     ap.add_argument("--check", action="store_true")
     a = ap.parse_args()
-    sources = yaml.safe_load((HERE / "sources.yaml").read_text(encoding="utf-8"))
+    sources = strictyaml.load((HERE / "sources.yaml").read_text(encoding="utf-8"))
     mf = CACHE / "manifest.json"
     manifest = json.loads(mf.read_text(encoding="utf-8")) if mf.exists() else {}
     warnings, changed, rules = [], [], accepts()
@@ -126,7 +128,7 @@ def main():
         if a.brands and key not in a.brands:
             continue
         path = DATA / f"{key}.yaml"
-        cur = yaml.safe_load(path.read_text(encoding="utf-8")) if path.exists() else None
+        cur = strictyaml.load(path.read_text(encoding="utf-8")) if path.exists() else None
         brand = (cur or {}).get("brand") or next((s["brand"] for s in srcs if s.get("brand")), key.title())
         docs = list((cur or {}).get("documents") or [])
         for src in srcs:

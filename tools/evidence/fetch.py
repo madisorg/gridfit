@@ -17,16 +17,17 @@ import sys
 import time
 import urllib.parse
 import urllib.request
-import urllib.robotparser
 from datetime import date
 from pathlib import Path
 
-import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from parse import file_name as file_of  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[2]
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
+from gridfit.robots import Robots  # noqa: E402 — RFC 9309: the longest matching rule wins (urllib's first match let en.growatt.com/upload/ through)
 CACHE = ROOT / "cache" / "evidence"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36"
 PAUSE = 2.0
@@ -37,15 +38,13 @@ def allowed(url):
     p = urllib.parse.urlsplit(url)
     host = f"{p.scheme}://{p.netloc}"
     if host not in _robots:
-        rp = urllib.robotparser.RobotFileParser()
         try:
             req = urllib.request.Request(host + "/robots.txt", headers={"User-Agent": UA})
             with urllib.request.urlopen(req, timeout=20) as r:
-                rp.parse(r.read().decode("utf-8", "replace").splitlines())
+                _robots[host] = Robots(r.read().decode("utf-8-sig", "replace"))
         except Exception:  # noqa: BLE001 — no robots.txt: allowed
-            rp.parse([])
-        _robots[host] = rp
-    return _robots[host].can_fetch("*", url)
+            _robots[host] = Robots("")
+    return _robots[host].allowed("*", url)
 
 
 def fetch(src, brand, manifest, force, max_age):
@@ -80,7 +79,7 @@ def main():
     ap.add_argument("--force", action="store_true")
     ap.add_argument("--max-age", type=int, default=7)
     a = ap.parse_args()
-    sources = yaml.safe_load((Path(__file__).parent / "sources.yaml").read_text(encoding="utf-8"))
+    sources = strictyaml.load((Path(__file__).parent / "sources.yaml").read_text(encoding="utf-8"))
     mf = CACHE / "manifest.json"
     manifest = json.loads(mf.read_text(encoding="utf-8")) if mf.exists() else {}
     n = 0

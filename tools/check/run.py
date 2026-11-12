@@ -19,12 +19,13 @@ import sys
 from datetime import date
 from pathlib import Path
 
-import yaml
 
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8", errors="replace")  # the coverage line has × and · (a cp1252 console)
 
 ROOT = Path(__file__).resolve().parents[2]  # runs from web/ (npm run build) as well as from the repo root
+sys.path.insert(0, str(ROOT))  # gridfit/ (strictyaml); -I leaves the repo off the path
+from gridfit import strictyaml  # noqa: E402 — a key written twice is an error, not a silent last-wins
 OUT = ROOT / "web/.data/checks.json"
 REG = ROOT / "web/.data/registers.json"
 PROFILES, SPECS, EVIDENCE = ROOT / "data/profiles", ROOT / "data/specs", ROOT / "data/evidence"
@@ -170,7 +171,7 @@ def validate_profile(p: dict, name: str) -> list[str]:
 def load_profiles() -> dict:
     out, errs = {}, []
     for f in sorted(PROFILES.glob("*.yaml")):
-        p = yaml.safe_load(f.read_text(encoding="utf-8"))
+        p = strictyaml.load(f.read_text(encoding="utf-8"))
         errs += validate_profile(p, f.name)
         out[p["cc"]] = p
     if errs:
@@ -183,7 +184,7 @@ def load_profiles() -> dict:
 def load_specs() -> dict:
     idx = {}
     for f in sorted(SPECS.glob("*.yaml")):
-        doc = yaml.safe_load(f.read_text(encoding="utf-8"))
+        doc = strictyaml.load(f.read_text(encoding="utf-8"))
         src = {s["id"]: s for s in doc["sources"]}
         rows = []
         for m in doc["models"]:
@@ -208,7 +209,7 @@ def sheet_of(idx: dict, brand: str, model: str):
 def load_evidence() -> dict:
     idx = {}
     for f in sorted(EVIDENCE.glob("*.yaml")):
-        b = yaml.safe_load(f.read_text(encoding="utf-8"))
+        b = strictyaml.load(f.read_text(encoding="utf-8"))
         lst = []
         for d in b["documents"]:
             doc = {k: v for k, v in d.items() if k != "families"}

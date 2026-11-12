@@ -2,7 +2,7 @@
 import re
 from pathlib import Path
 
-import yaml
+from . import strictyaml  # a key written twice is an error, not a silent last-wins
 
 LEGAL = re.compile(
     r"\b(co\.?,?\s*ltd\.?|co\.?|ltd\.?|limited|gmbh|ag|s\.?p\.?a\.?|inc\.?|llc|b\.?v\.?|a/?s|s\.?a\.?|oy|ab|sp\.? z o\.?o\.?)\s*$",
@@ -20,7 +20,7 @@ def _clean(name: str) -> str:
 
 class Brands:
     def __init__(self, path: Path):
-        data = yaml.safe_load(path.read_text(encoding="utf-8"))
+        data = strictyaml.load(path.read_text(encoding="utf-8"))
         self.canonical = list(data)
         self.lookup = {}
         for canon, spellings in data.items():
