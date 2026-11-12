@@ -241,7 +241,7 @@ export const BRANDS: Brand[] = [...names.entries()]
 export const brandOf = (s: string) => BRANDS.find((b) => b.slug === s);
 
 // reserved first path segments: a brand slug must never collide with a section
-export const RESERVED = new Set(["local", "grid", "changes", "about", "model", "search", "data", "devices", "sitemap", "404", "llms", "robots", "models"]);
+export const RESERVED = new Set(["local", "grid", "changes", "about", "model", "search", "data", "devices", "sitemap", "404", "llms", "robots", "models", "brands", "sitemaps"]);
 for (const b of BRANDS) if (RESERVED.has(b.slug)) throw new Error(`brand slug collides with a reserved path: ${b.slug}`);
 for (const f of data.families) if (f.slug === "model") throw new Error(`family slug "model" collides with the model pages: ${f.brand}`);
 
