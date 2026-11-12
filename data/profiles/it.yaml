@@ -30,6 +30,8 @@ edition:
   label: "CEI 0-21:2026-07"
 document_must_cite: ["CEI 0-21"]
 accepts: [national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
+# Italy has no list, so every row a datasheet or document GridFit holds does not show is worded with this (docs/checks.md)
+on_application: "neither a datasheet nor a document GridFit holds shows it; Italy has no list: the maker's CEI 0-21 declaration of conformity (Allegato C), named in the operating rules the customer signs, is what the grid operator (e-distribuzione, Areti, Unareti or the local operator) reads at activation, with the on-site autotest of the interface protection"
 must_meet:
   - id: power-class
     rule: "Plant size class (ARERA 592/2018; CEI 0-21 3.x)"
@@ -53,7 +55,7 @@ must_meet:
     check: { kind: document, provable_by: [document], source: "CEI 0-21:2026-07 8.5.3.2, annex F.3" }
   - id: spi-settings
     rule: "Interface protection settings (8.6.2.1, table 13)"
-    value: "over-voltage 59.S1 at 1.10 Un as a 10-minute average (trip within 603 s) and 59.S2 at 1.15 Un (0.2 s in the 2022 text and in the 2026 edition's operating-rules form; table 13 of the 2026 edition prints 0.5 s — ask the operator); under-voltage 27.S1 at 0.85 Un in 1.5 s and 27.S2 at 0.15 Un in 0.2 s; frequency 81>.S2 51.5 Hz and 81<.S2 47.5 Hz in 0.1 s (1 s and 4 s once the operator's signal is connected); the narrow 50.2 / 49.8 Hz thresholds (81.S1, 0.1 s) only when the external signal and the local command ask for them"
+    value: "over-voltage 59.S1 at 1.10 Un as a 10-minute average (trip within 603 s) and 59.S2 at 1.15 Un (table 13 of the 2026 edition prints 0.5 s, and so does table 14 below 800 W; the 2022–2025 text had 0.2 s, and the 2026 edition's operating-rules form for plants above 11.08 kW, Allegato G, still prints 0.2 s — ask the operator which it enters); under-voltage 27.S1 at 0.85 Un in 1.5 s and 27.S2 at 0.15 Un in 0.2 s; frequency 81>.S2 51.5 Hz and 81<.S2 47.5 Hz in 0.1 s (1 s and 4 s once the operator's signal is connected); the narrow 50.2 / 49.8 Hz thresholds (81.S1, 0.1 s) only when the external signal and the local command ask for them"
     check: { kind: document, provable_by: [document], changed_in: "2026-07", changed: "table 13 prints 0.5 s for 59.S2 where the 2022 text had 0.2 s", source: "CEI 0-21:2026-07 8.6.2.1, table 13" }
   - id: spi-integrated
     rule: "Where the interface protection sits (8.6.2, 8.2.2)"
@@ -139,6 +141,10 @@ sources:
   - title: "CEI 0-21:2026-07 — Regola tecnica di riferimento per la connessione di Utenti attivi e passivi alle reti BT (catalogue entry, fascicolo 26363)"
     url: https://mycatalogo.ceinorme.it/cei/item/0000026363
     date: "2026-07, in force 2026-08-01"
+  - title: "CEI 0-21:2026-07, full text published by CEI (fascicolo 26363; table 13 on p. 98, Allegato G's settings form on p. 269)"
+    url: https://static.ceinorme.it/strumenti-online/doc/26363.pdf
+    date: "2026-07"
+    seen: "2026-11-12"
   - title: "CEI 0-21, consolidated working version 2025-10 (2022-03 + V1 + V2 + EC + EC2 + V3), published by CEI"
     url: https://static.ceinorme.it/strumenti-online/doc/0-21consolidata.pdf
     date: "2025-10"

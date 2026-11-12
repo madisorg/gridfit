@@ -397,3 +397,108 @@ documents:
     - ES
     note: Test report 64290253072601. The same file series also has "…001_KAC50DP2…" = ESY 075386 0321 (UNE 217001:2020 + RD 244:2019,
       zero-export), left out.
+- id: it-cei021-blue-kt-m-2023
+  title: TÜV NORD Certificate of Conformity COCPVP03041/21B-10 — CEI 0-21:2019-04, V1:2020-12, 2022-03 — BluE-3…25KT-M0/M1/M2/M3
+  url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_CEI%20021_BluE-(3-25)KT-M1_EN_V1.0.pdf
+  issuer: TÜV NORD (Hangzhou) Co., Ltd. (CNAS C183-P); tests Dongguan BALUN Testing Technology Co., Ltd. (CNAS L14701), report BL-DG2140414-B01
+  cert_no: COCPVP03041/21B-10
+  issued: '2023-04-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  - CEI 0-21:2022-03
+  families:
+  - name: BluE KT-M three-phase string 3–25 kW
+    match: ^(BLUE-?)?(3|3\.6|4|5|6|8|10|12|15|17|20|22|23|25)KT-M[0-3]$
+    countries: [IT]
+    note: Interface device + interface protection + static conversion device (SPI integrated); "The device is for plants of each power".
+      Image-only PDF. Edition 2022-03 without V1:2022-11. Bare register codes (10KT-M1 …, BE/NL lists) read as BluE-…KT-M1.
+- id: it-cei021-blue-g-2023
+  title: TÜV SÜD Compliance Document D 075386 0224 Rev. 00 — CEI 0-21:2022, CEI 0-21:2022/V1:2022 — BluE-G 3000S…6000D(-M0/-M1)
+  url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_CEI%20021_BluE-G%20(3000-6000)D-M1_EN_V1.0.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich); tests TÜV SÜD Certification and Testing (China) Co., Ltd. Guangzhou Branch, DAkkS D-PL-19065-01-01
+  cert_no: D 075386 0224 Rev. 00
+  issued: '2023-08-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  - CEI 0-21:2022/V1:2022
+  firmware: V1.3.00
+  families:
+  - name: BluE-G single-phase 3–6 kW
+    match: ^(BLUE-G)?(3000S(-M1)?|3000D(-M[01])?|3600D(-M[01])?|4000D(-M[01])?|4200D(-M[01])?|4600D(-M1)?|5000D-M1|6000D(-M1)?)$|^BLUE-G5000D$
+    countries: [IT]
+    note: SPI integrated; "is suitable for installation in systems with an output power of more than 11.08 kW" NOT ticked. Bare "5000D"
+      is left out (the register files it as a hybrid = BluE-S 5000D).
+- id: it-cei021-kac50dp-2023
+  title: TÜV SÜD Compliance Document D 075386 0229 Rev. 00 — CEI 0-21:2022, CEI 0-21:2022/V1:2022 — KAC50DP hybrid with BC100DE battery
+  url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_CEI%20021_KAC50DP%26BC100DE_EN_V1.0.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich); tests TÜV SÜD Certification and Testing (China) Co., Ltd. Guangzhou Branch, DAkkS D-PL-19065-01-01
+  cert_no: D 075386 0229 Rev. 00
+  issued: '2023-09-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  - CEI 0-21:2022/V1:2022
+  firmware: V000B000D001
+  families:
+  - name: KAC50DP C&I hybrid 50 kW three-phase
+    match: ^(KAC)?50DP$
+    countries: [IT]
+    note: Battery BC100DE; suitable for systems above 11.08 kW. Same file also on it.kstarnewenergy.com ("…CEI0-21_Italy.pdf"). KAC50DP+EXTERNÍEMS
+      / KAC49.9DP rows not named.
+- id: it-cei021-e8-12kt-2023
+  title: TÜV SÜD Compliance Document D 075386 0211 Rev. 00 — CEI 0-21:2022 — E8KT / E10KT / E12KT hybrid with BluE-PACK-5.1-16S-100A-F/N
+  url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_CEI%20021_E(8-12)KT%26BluE-Pack-(5.1-25.5)-16S-100A-F(N)_EN_V1.0.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich); tests TÜV SÜD Certification and Testing (China) Co., Ltd. Guangzhou Branch
+  cert_no: D 075386 0211 Rev. 00
+  issued: '2023-04-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  firmware: V1.0.0
+  families:
+  - name: E8–12KT three-phase hybrid
+    match: ^E(8|10|12)KT$
+    countries: [IT]
+    note: SPI integrated; suitable above 11.08 kW, but "E12KT … may exceed 11.08kW on grid connection point, external interface protection
+      system is required". Batteries BluE-PACK-5.1-16S-100A-F / -N. Older edition (2022 without V1). -D22 and BE variants not named.
+- id: it-cei021-ksg-25-40kt-2023
+  title: TÜV NORD Certificate of Conformity COCPVP03041/21B-09 — CEI 0-21:2019-04, V1:2020-12, 2022-03 — KSG-25/30/33/36/40KT-M0…M5
+  url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_CEI%20021_KSG-(25-40)KT-M0_EN_V1.0.pdf
+  issuer: TÜV NORD (Hangzhou) Co., Ltd. (CNAS C183-P); tests Dongguan BALUN Testing Technology Co., Ltd. (CNAS L14701), report BL-DG2140414-B02
+  cert_no: COCPVP03041/21B-09
+  issued: '2023-04-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  - CEI 0-21:2022-03
+  families:
+  - name: KSG 25–40 kW three-phase string
+    match: ^KSG-(25KT-M[0-3]|(30|33|36|40)KT-M[0-5])$|^25KT-M1KSG$
+    countries: [IT]
+    note: Interface device + interface protection integrated; "The device is above 11.08kVA". Image-only PDF. One register row is written
+      "25KT-M1 KSG" (= KSG-25KT-M1).
+- id: it-cei021-blue-s-2021
+  title: TÜV SÜD Compliance Document D 075386 0134 Rev. 01 — CEI 0-21:2019 — BluE-S 3680D / 5000D (-M1) hybrid with BluE-PACK5.1
+  url: https://www.kstarnewenergy.com/DOWNLOADS/Certificate_CEI%20021_BluE-S(3.68-5)D-M1%26BluE-PACK5.1_EN_V1.0.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich); tests TÜV SÜD Certification and Testing (China) Co., Ltd. Guangzhou Branch, DAkkS D-PL-19065-01-00
+  cert_no: D 075386 0134 Rev. 01
+  issued: '2021-05-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019
+  firmware: 'DSP: V1.3.06, ARM: V1.3.08 (BMS V1.8)'
+  families:
+  - name: BluE-S single-phase hybrid 3.68–5 kW
+    match: ^BLUE-S(3680D|5000D)(-M1)?$|^(3680D|5000D)$
+    countries: [IT]
+    note: Only document for BluE-S, and an older edition (CEI 0-21:2019, before 2022-03). Battery BluE-PACK5.1. BluE-S 6000D not named.

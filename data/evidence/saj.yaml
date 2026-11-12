@@ -315,3 +315,119 @@ documents:
     note: Report CN24GK2A 002; 8 pp. with E.4 unit certificate, E.5 extract, E.6 NA-protection certificate and E.7 (integrated NA protection,
       interface switch Churod CHAR-112A150). X stands for the battery build (51.5/64.4/77.3/90.2 kWh); the register carries the code
       with the literal X.
+- id: it-cei021-hs3-s2-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50668152 0001-0002 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1 + V2:2024-01
+    — HS3-3K…6K-S2 all-in-one energy storage system
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/HS3/HS3-(3-6K)-S2%20Series%20Single-phase%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50668152 0001-0002
+  issued: '2025-03-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 'DSP: V1.100, MCU: V1.010'
+  families:
+  - name: HS3 S2 single-phase all-in-one hybrid 3–6 kW
+    match: ^HS3-(3|3\.6|4|4\.6|5|6)K-S2-[WG]-[BP]X$|^HS3-5K-S2-[WG]-[BP]X-BE$|^HS3-6K-S2-[WG]-[BP]X-IE$
+    countries: [IT]
+    note: 'Test report CN24QPQM 002 (TÜV Rheinland Shanghai, CNAS L3038). W = Wi-Fi, G = 4G; B / P = battery variant; X = 1…8 battery
+      modules BU3-5.0-TV2 (-BASE, -RPO, -PRO-BASE). Allegato ticks interface device, interface protection and static conversion: SPI
+      integrated. Names the -BE (5K) and -IE (6K) variants. AS3 (AC-coupled) is not named.'
+- id: it-cei021-hs3-t2-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50668151 0001-0002 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1 + V2:2024-01
+    — HS3-3K…12K-T2 all-in-one energy storage system
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/HS3/HS3-(3-12K)-T2%20Series%20Three-phase%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50668151 0001-0002
+  issued: '2025-03-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 'DSP: V1.010(U3), MCU: V2.010(U4)'
+  families:
+  - name: HS3 T2 three-phase all-in-one hybrid 3–12 kW
+    match: ^HS3-(3|4|5|6|8|10|12)K-T2-[WG]-[BP]X(;HS3-(3|4|5|6|8|10|12)K-T2-G-[BP]X\(X=1\.2\.3\.4\.5\.6\.7\.8\))?$|^HS3-10K-T2-[WG]-[BP]X-BE(;HS3-10K-T2-G-[BP]X-BE\(X=1\.2\.3\.4\.5\.6\.7\.8\))?$|^HS3-12K-T2-[WG]-[BP]X-IE(;HS3-12K-T2-G-[BP]X-IE\(X=1\.2\.3\.4\.5\.6\.7\.8\))?$
+    countries: [IT]
+    note: 'Test report CN24M47K 002 (TÜV Rheinland Shanghai, CNAS L3038). X = 1…8 battery modules BU3-5.0-TV2 (-BASE, -RPO, -PRO-BASE);
+      junction box BC3-TV above 3 modules. Allegato ticks interface device, interface protection and static conversion: SPI integrated.
+      Page 1 misprints two names (HS3-3K-2-G-BX, HS3-5K-T2-BX); the Allegato tables (image pages) name every W/G × BX/PX code, -BE for
+      10K and -IE for 12K. Combined register rows (W;G with X=1…8) are joined.'
+- id: it-cei021-h2-10-30k-t2-t3-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50633136 0001 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1:2022-11 —
+    H2-10K…30K-T2/T3
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/H2/H2-(10-30K)-(T2%2cT3)%20Series%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50633136 0001
+  issued: '2024-06-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Hybrid solar inverter V3.003; battery system V1.06
+  families:
+  - name: H2 T2/T3 three-phase hybrid 10–30 kW
+    match: ^H2-(10K-T3|12K-T3|15K-T2|15K-T3|20K-T2|20K-T3|25K-T3|25K-T3-BE|30K-T3|30K-T3-DE)$
+    countries: [IT]
+    note: 'Test report CN23DTBX 001. Batteries B2-5.0-HV1 / -HV5 (and B2-10.0-HV1 / -HV5 in later tables). Allegato ticks interface
+      device and static conversion but not interface protection: SPI external. Idc limited to 0.5 %.'
+- id: it-cei021-h2-5-10k-t2-2022
+  title: TÜV Rheinland Certificate of Conformity AK 50559162 0001 — CEI 0-21:2022-03 — H2-5K…10K-T2
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/H2/H2-(5-10K)-T2%20Series%20Three-phase%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (AK certificate; cover letter TÜV Rheinland (China) Ltd.)
+  cert_no: AK 50559162 0001
+  issued: '2022-09-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  families:
+  - name: H2 T2 three-phase hybrid 5–10 kW
+    match: ^H2-(5|6|8|10)K-T2$
+    countries: [IT]
+    note: Test report CN22B2GO 001. Image-only scan, 2 pages (certificate + cover letter); no Allegato, firmware or SPI statement and
+      no accreditation mark printed. Base edition only (no V1/V2). H2-10K-T2-B is not named, not joined.
+- id: it-cei021-chs2-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50661612 0001 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1 + V2:2024-01
+    — CHS2-29.9K…63K-T4/T5/T6-X C&I energy storage system
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/CHS2/CHS2-(29.9-63K)-(T4%2cT5%2cT6)-X%20Series%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50661612 0001
+  issued: '2025-01-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: V1.00
+  families:
+  - name: CHS2 commercial hybrid 29.9–63 kW
+    match: ^CHS2-(29\.9K-T4|30K-T4|40K-T5|50K-T6|63K-T6)-X$
+    countries: [IT]
+    note: 'Test report CN240GCT 002. X = battery configuration CB2-57.3/71.6/85.9/100.3-HV5 ×1/2/3. Allegato ticks interface device,
+      interface protection and static conversion: SPI integrated. CH2 (no S) rows are another model, not joined.'
+- id: it-cei021-c6-75-125k-2024
+  title: Intertek Certificate of Conformity CN-PVES-230068R1 — CEI 0-21:2022-03 + V1:2022-11 — C6-75K…125K-T6/T9/T12(-40)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/C6/C6-(75-125K)-(T6%2cT9%2cT12)Series%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA PRD N° 306B, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-230068R1
+  issued: '2024-04-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Master DSP V0.114, Slave DSP V0.083
+  families:
+  - name: C6 three-phase string 75–125 kW
+    match: ^C6-(75K-T6|100K-T9|110K-T12|125K-T12)(-40)?$
+    countries: [IT]
+    note: Test report 230221024GZU-001 Rev. 1 (2024-04-10); type approval for Type B; replaces CN-PV-230068 (2023-02-28). Image-only
+      scan. Allegato ticks device for conversion only (SPI external). C6-120K-T12 is not named, not joined.

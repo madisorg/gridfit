@@ -827,3 +827,332 @@ documents:
     - DE
     note: Report PVDE2505WDG0281-1; programme NSOP-0032-DEU-ZE-ES-V10. Companion NA-protection certificate U25-0892 (2025-10-07, integrated,
       with passive and active islanding detection) at https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SMT-G2-60kW_Certificate-VDE4105-2.pdf.
+- id: it-cei021-etr-btr-g10-2026
+  title: TÜV Rheinland Certificate of Conformity A3 50734765 0001–0002 — CEI 0-21 (to V3:2025-10) — GW75…125K-ETR-G10 / GW75…125K-BTR-G10
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ETR_Certificate-CEI-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd. (CNAS L3038)
+  cert_no: A3 50734765 0001-0002
+  issued: '2026-06-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  - CEI 0-21;V3:2025-10
+  firmware: '010101'
+  families:
+  - name: ETR / BTR G10 three-phase C&I hybrid 75–125 kW
+    match: ^GW(75|80|99\.99|100|110|124\.99|125)K-(ETR|BTR)-G10\.?$
+    countries: [IT]
+    note: Report CN268SFT 001. Annex A, B and Bbis; with battery systems GW208.9-BAT-LCD-G10 and GW261.2-BAT-LCD-G10 (combination tables,
+      15 pp.). The `\.?` only absorbs the register's trailing-dot typo on GW75K-ETR-G10. The -L- variants (GW50K/75K-ETR-L-G10, -BTR-L-G10)
+      are not named.
+- id: it-cei021-esa-bta-eta-g20-2026
+  title: TÜV Rheinland Certificate of Conformity A3 50713417 0001 — CEI 0-21 (to V2/EC2:2025-02) — GW5…30K-BTA-G20 / GW5…30K-ETA-G20
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ESA-5-30kW_Certificate-CEI-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd. (CNAS L3038)
+  cert_no: A3 50713417 0001
+  issued: '2026-02-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: '010101'
+  families:
+  - name: ESA hybrid BTA/ETA G20 three-phase 5–30 kW
+    match: ^GW(5|6|8|9\.999|10|12|15|20|25|29\.999|30)K-(BTA|ETA)-G20$
+    countries: [IT]
+    note: Report CN25BUFA 001. Annex A, B and Bbis; with Lynx battery systems GW5.1/8.3-BAT-D-G20 (G21) and GW6.0/9.0-BAT-D-G20 (combination
+      tables, 13 pp.). Register row GW29.99K-ETA-G20 (typo for 29.999?) not joined.
+- id: it-cei021-xs-g3-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50704182 0001 — CEI 0-21 (to V2/EC2:2025-02) — GW700…GW3300-XS-30
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_XS-G3_Certificate-CEI0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH; tests by TÜV Rheinland (Shanghai) Co., Ltd. (CNAS L3038)
+  cert_no: A3 50704182 0001
+  issued: '2025-12-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: V1.05.00
+  families:
+  - name: XS G3 single-phase string 0.7–3.3 kW
+    match: ^GW(700|1000|1500|2000|2500|3000|3300)-XS-30$
+    countries: [IT]
+    note: Report CN24N7ZA 003. Single-phase. The older XS (no suffix) and XS-11 rows are other models.
+- id: it-cei021-dns-g4-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50685251 0001 — CEI 0-21 (to V2/EC2:2025-02) — GW3…6K-DNS-G40, GW3.1K-DNS-L-G40
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_DNS-G4_Certificate-CEI-0-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50685251 0001
+  issued: '2025-07-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: V1.01.01
+  families:
+  - name: DNS G4 single-phase string 3–6 kW
+    match: ^GW((3|3\.6|4\.2|5|6)K-DNS-G40|3\.1K-DNS-L-G40)$
+    countries: [IT]
+    note: Report CN256ELD 001. Also listed on it.goodwe.com/download-dns-g4-series.
+- id: it-cei021-sdt-g3-25-40-2025
+  title: Bureau Veritas Certificato di conformità U25-1044 — CEI 0-21:2022-03 / V1 / V2 / V2/EC / V2/EC2 — GW25K/30K-SDT-30, GW40K-SDT-P30
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SDT-G3-25-40kW_Certificate-CEI0-21.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00); lab DAkkS D-PL-12024-03-04
+  cert_no: U25-1044
+  issued: '2025-11-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025
+  firmware: V1.00.00
+  families:
+  - name: SDT G3 three-phase string 25–40 kW
+    match: ^GW((25|30)K-SDT-30|40K-SDT-P30)$
+    countries: [IT]
+    note: Report PVIT2411WDG0312-1-R1; Allegato B. "Idoneo per installazione in impianti con potenza superiore a 11,08 kW". The edition
+      is printed "V2/EC2:2025" without month.
+- id: it-cei021-smt-g2-60-2025
+  title: Bureau Veritas Certificato di conformità U25-1067 — CEI 0-21:2022-03 / V1 / V2 / V2/EC / V2/EC2:2025-02 — GW60K-SMT-G20
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SMT-G2-60kW_Certificate-CEI0-21.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U25-1067
+  issued: '2025-12-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: V1.01.01
+  families:
+  - name: SMT G2 three-phase string 60 kW
+    match: ^GW60K-SMT-G20$
+    countries: [IT]
+    note: Allegato B. "Idoneo per installazione in impianti con potenza superiore a 11,08 kW". Only the 60 kW model is named.
+- id: it-cei021-sdt-g3-50-2025
+  title: Intertek Certificate of Conformity CN-PVES-250304 — CEI 0-21:2022-03 + V1 + V2 + V2/EC + V2/EC2:2025-02 — GW50K-SDT-C30
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SDT-G3-50kW_Certificate-CEI-0-21.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PVES-250304
+  issued: '2025-08-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: V1.01.01
+  families:
+  - name: SDT G3 three-phase string 50 kW (C30)
+    match: ^GW50K-SDT-C30$
+    countries: [IT]
+    note: Test report 250500200SHA-001. Intertek certificate (not a DAkkS-accredited body as printed); no SPI table.
+- id: it-cei021-et-g2-lynx-d-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50614223 0001 — CEI 0-21:2022-03, V1:2022-11 — GWxx-ET-20 / GWxx-BT-20 (6–15 kW)
+    with Lynx Home D
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_ET-G2_Certificate-CEI0-21_Lynx-D.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50614223 0001
+  issued: '2024-01-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: '000006'
+  families:
+  - name: ET G2 / BT G2 three-phase hybrid 6–15 kW
+    match: ^GW(6000|8000|10K|12K|15K)-(ET|BT)-20$
+    countries: [IT]
+    note: Report CN23DSRE 011; with Lynx Home D battery (GEHx-3U-20 also named). A sibling certificate A3 50598688 0001 (2023-09-15,
+      same editions, Lynx Home F G2) is at GW_ET-G2_Certificate-CEI0-21_Lynx-F-G2.pdf. GW9900-ET-20/BT-20 and the GW6000K/8000K-ET-20
+      rows are not named.
+- id: it-cei021-gt-2023
+  title: Bureau Veritas Certificato di conformità U23-0855 — CEI 0-21:2022-03 / V1:2022-11 — GW100K…125K-GT, GEP100…125-20
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_GT_Certificate-CEI0-21.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U23-0855
+  issued: '2023-10-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V1.00.00
+  families:
+  - name: GT three-phase string 100–125 kW (GoodWe GT and GE-branded GEP-20)
+    match: ^(GW(100|110|125)K-GT|GEP(100|110|125)-20)$
+    countries: [IT]
+    note: Report PVIT2308WDG0100-1; Allegato A and B. "Idoneo per installazione in impianti con potenza superiore a 11,08 kW". GW100K-GT-C10
+      also named (not in register). The GT-G30 battery rows are other models.
+- id: it-cei021-eh-declaration-2022
+  title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — EH series GW3600/5000/6000(N)-EH
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_EH,EH%20PLUS+_Declaration%20of%20Conformity_IT.pdf
+  issuer: GoodWe Technologies Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) A3 50549015 0001 / AK 50548240 0001 and
+    TÜV SÜD Guangzhou D 083373 …)
+  issued: '2022-11-08'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2019-04
+  firmware: 020210 e successive
+  families:
+  - name: EH single-phase hybrid 3.6–6 kW
+    match: ^GW(3600|5000|6000)N?-EH$
+    countries: [IT]
+    note: Interface device + interface protection + static conversion declared (SPI integrated). Battery list (Lynx Home F, Pylontech
+      Force-H1/H2/PowerCube, BYD HVM/HVS …). The English text says "2016-04", the Italian 2019-04. The -BE rows are not joined.
+- id: it-cei021-bh-declaration-2022
+  title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — BH series GW3K/3600/5000/6000-BH
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_BH_Declaration%20of%20Conformity_IT.pdf
+  issuer: GoodWe Technologies Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) and TÜV SÜD Guangzhou)
+  issued: '2022-11-08'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2019-04
+  firmware: 020210 e successive
+  families:
+  - name: BH single-phase AC-coupled 3.6–6 kW
+    match: ^GW(3600|5000|6000)-BH$
+    countries: [IT]
+    note: SPI integrated as declared. Battery list as EH (Lynx Home F, Pylontech, BYD). GW3K-BH also named (not in register).
+- id: it-cei021-bt-declaration-2022
+  title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — BT series GW5K/6K/8K/10K-BT
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_BT_Declaration%20of%20Conformity_IT.pdf
+  issuer: GoodWe Technologies Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) reports 50191777 010–016)
+  issued: '2022-11-08'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2019-04
+  firmware: 030310 e successive
+  families:
+  - name: BT (G1) three-phase AC-coupled 5–10 kW
+    match: ^GW(5|6|8|10)K-BT$
+    countries: [IT]
+    note: SPI integrated as declared; battery list attached. The BT-20 (G2) and BTA/BTR/BTC rows are other models.
+- id: it-cei021-mt-25-36-2021
+  title: Bureau Veritas Dichiarazione di conformità U21-0805 — CEI 0-21:2019-04, V1:2020-12 — GW25K/30K/36K-MT
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_SMT_Certificate-CEI%200-21.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U21-0805
+  issued: '2021-12-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  firmware: V1.05.05.05 e superiore
+  families:
+  - name: SMT (MT 25–36 kW) three-phase string
+    match: ^(SMT)?GW(25|30|36)K-MT$
+    countries: [IT]
+    note: Test files 20TH0225-CEI 0-21_1. "Per gli impianti di ogni potenza". Maker file name says SMT; the register's SMTGW25K-MT is
+      the same model with the series name prefixed. Older edition only.
+- id: it-cei021-em-declaration-2021
+  title: GoodWe Dichiarazione di conformità (Declaration of Conformity) — CEI 0-21:2019-04 — EM series GW3048/3648/5048-EM
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_EM_Declaration%20of%20Conformity_IT.pdf
+  issuer: Jiangsu GoodWe Power Supply Technology Co., Ltd. (maker's declaration; tests TÜV Rheinland (Shanghai) report 50148429 002/005/007)
+  issued: '2021-11-23'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2019-04
+  firmware: 0707A e successive
+  families:
+  - name: EM single-phase hybrid 3–5 kW
+    match: ^GW(3048|3648|5048)-EM$
+    countries: [IT]
+    note: SPI integrated as declared (interface relay Panasonic ALFG2PF12). Older edition only.
+- id: it-cei021-dns-g3-2022
+  title: TÜV Rheinland Certificate of Conformity A3 50537502 0001 — CEI 0-21:2019-04 — GW3000…6000-DNS-30
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_DNS%20G3_Certificate-CEI%200-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd. (CNAS L3038)
+  cert_no: A3 50537502 0001
+  issued: '2022-04-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: V1.00.00
+  families:
+  - name: DNS G3 single-phase string 3–6 kW
+    match: ^GW(3000|3600|4200|5000|6000)-DNS-30$
+    countries: [IT]
+    note: Report CN22RELF 001 (image-only PDF). Interface device + protection + conversion ticked (SPI integrated). GW5000-DNS-EU30
+      not named. Older edition only.
+- id: it-cei021-mt-50-80-2020
+  title: TÜV Rheinland Certificate of Conformity AK 50468125 0001 — CEI 0-21:2019-04 — MT 50–80 kW (K, KN, KBF, KHV)
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_MT_Certificate-CEI%200-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50468125 0001
+  issued: '2020-05-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: V1.02.02
+  families:
+  - name: MT three-phase string 50–80 kW
+    match: ^GW((50|60|80)K|(50|60)KN|(50|60|75|80)KBF|(70|80)KHV)-MT$
+    countries: [IT]
+    note: Report 50175839 003 (image-only PDF). GW50KS-MT / GW60KS-MT are not named. Older edition only.
+- id: it-cei021-xs-2020
+  title: Bureau Veritas Dichiarazione di conformità U20-0146 — CEI 0-21:2019-04 — GW700…3000-XS
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_XS_Certificate-CEI%200-21.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U20-0146
+  issued: '2020-03-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: V1.00.08 e superiore
+  families:
+  - name: XS (G1) single-phase string 0.7–3 kW
+    match: ^GW(700|1000|1500|2000|2500|3000)-XS$
+    countries: [IT]
+    note: Test files ZEM-19JY3060FTSHP. Interface device + protection + conversion ticked; "per impianti fino a 11,08 kW". The -XS-11
+      rows and GW2500N/3000N-XS are not named. Older edition only.
+- id: it-cei021-d-ns-2020
+  title: TÜV Rheinland Certificate of Conformity AK 50458557 0001 — CEI 0-21:2019-04 — GW3000…6000D-NS
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Certificate/GW_DNS_Certificate-CEI%200-21.pdf
+  issuer: TÜV Rheinland LGA Products GmbH; tests by TÜV Rheinland (Shanghai) Co., Ltd. (CNAS L3038)
+  cert_no: AK 50458557 0001
+  issued: '2020-03-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: V1.06.04
+  families:
+  - name: D-NS single-phase string 3–6 kW
+    match: ^GW(3000|3600|4200|5000|6000)D-NS$
+    countries: [IT]
+    note: Report 50144335 002 (image-only PDF). Interface device + protection + conversion ticked (SPI integrated). Older edition only.

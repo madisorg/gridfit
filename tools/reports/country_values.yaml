@@ -55,8 +55,9 @@ IT:
   - {id: rocof, item: rocof, label: "RoCoF withstand 2.5 Hz/s", checks: [[rocof, immunity_hz_s, 2.5]]}
   - {id: lfsm-o, item: lfsm-o, label: "LFSM-O 50.2 Hz settable 50–52 Hz; droop 2.6 %, settable 2–12 %",
      checks: [[lfsm_o, f1_hz, 50.2], [lfsm_o, f1_hz, {cover: [50.0, 52.0]}], [lfsm_o, droop_pct, 2.6], [lfsm_o, droop_pct, {cover: [2, 12]}]]}
-  - {id: protection-voltage-high, item: spi-settings, label: "59.S1 1.10 Un 10-min mean; 59.S2 1.15 Un 0.2 s",
-     checks: [[ov10, threshold_un, 1.10], [ov2, threshold_un, 1.15], [ov2, time_s, 0.2]]}
+  - {id: protection-voltage-high, item: spi-settings, label: "59.S1 1.10 Un 10-min mean; 59.S2 1.15 Un 0.2–0.5 s",
+     checks: [[ov10, threshold_un, 1.10], [ov2, threshold_un, 1.15], [ov2, time_s, [0.2, 0.5]]],
+     note: "CEI 0-21:2026-07 table 13 prints 0.5 s for 59.S2, the Allegato G settings form 0.2 s (the 2022–2025 text had 0.2 s); either is accepted here until the operators say which they enter"}
   - {id: protection-voltage-low, item: spi-settings, label: "27.S1 0.85 Un 1.5 s; 27.S2 0.15 Un 0.2 s",
      checks: [[uv1, threshold_un, 0.85], [uv1, time_s, 1.5], [uv2, threshold_un, 0.15], [uv2, time_s, 0.2]]}
   - {id: protection-frequency, item: spi-settings, label: "81>.S2 51.5 Hz / 81<.S2 47.5 Hz 0.1 s; narrow 81.S1 50.2 / 49.8 Hz 0.1 s",
