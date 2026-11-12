@@ -1,4 +1,11 @@
 {
+ "00BF334": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "00bf334",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "0162A25": {
   "baseline": true,
   "brand": "ABL",
@@ -83,12 +90,33 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "10YEAR": {
+  "baseline": false,
+  "brand": "Anker SOLIX",
+  "code": "10-year",
+  "first_seen": "2026-11-02",
+  "source": "pv-magazine"
+ },
  "128VLITHIUMSUPERPACK": {
   "baseline": true,
   "brand": "Victron Energy",
   "code": "12,8V-LITHIUM-SUPERPACK",
   "first_seen": "2026-10-31",
   "source": "victron-products"
+ },
+ "12BDB04": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "12bdb04",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "12CE81C": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "12ce81c",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
  },
  "133KTLG3": {
   "baseline": true,
@@ -109,6 +137,13 @@
   "brand": "Chint",
   "code": "15b0195",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "15D06C8": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "15d06c8",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "15EFA95": {
@@ -139,6 +174,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "18DA91B": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "18da91b",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "1A61DBE": {
   "baseline": true,
   "brand": "Chint",
@@ -151,6 +193,13 @@
   "brand": "Chint",
   "code": "1a8eeaf",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "1C125CD": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "1c125cd",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "1D4AB33": {
@@ -189,6 +238,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "2294B9D": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "2294b9d",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "24HOUR": {
   "baseline": true,
   "brand": "Must",
@@ -224,6 +280,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "2A1EF94": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "2a1ef94",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "2A77477": {
   "baseline": true,
   "brand": "E3/DC",
@@ -245,6 +308,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "30YEAR": {
+  "baseline": false,
+  "brand": "Solarwatt",
+  "code": "30-year",
+  "first_seen": "2026-11-09",
+  "source": "pv-magazine"
+ },
  "319CE7E": {
   "baseline": true,
   "brand": "Chint",
@@ -258,6 +328,20 @@
   "code": "319ded8",
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
+ },
+ "31E8781": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "31e8781",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "32BIT": {
+  "baseline": false,
+  "brand": "SolaX",
+  "code": "32-bit",
+  "first_seen": "2026-11-02",
+  "source": "evcc-templates"
  },
  "32C86AB": {
   "baseline": true,
@@ -315,6 +399,20 @@
   "first_seen": "2026-10-31",
   "source": "sofar-pv-inverters"
  },
+ "38AE402": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "38ae402",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "38E1891": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "38e1891",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "3938F43": {
   "baseline": true,
   "brand": "Anker SOLIX",
@@ -327,6 +425,13 @@
   "brand": "ABL",
   "code": "3ae3411",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "3AEB327": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "3aeb327",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "3D38F43": {
@@ -355,6 +460,20 @@
   "brand": "SMA",
   "code": "3ff457f",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "40A0B15": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "40a0b15",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "40CC59C": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "40cc59c",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "41B6389": {
@@ -448,6 +567,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "4MEGAWATTSTUNDENSPEICHERS": {
+  "baseline": false,
+  "brand": "Sigenergy",
+  "code": "4-Megawattstunden-Speichers",
+  "first_seen": "2026-11-02",
+  "source": "pv-magazine-de"
+ },
  "4YOU4BUSINESS": {
   "baseline": true,
   "brand": "Chint",
@@ -490,6 +616,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "5498EA2": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "5498ea2",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "582B9B0": {
   "baseline": true,
   "brand": "Chint",
@@ -509,6 +642,13 @@
   "brand": "ABL",
   "code": "5a6e51b",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "5A78163": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "5a78163",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "5C27C36": {
@@ -630,6 +770,20 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "6F05B23": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "6f05b23",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "6F3AE09": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "6f3ae09",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "70F3999": {
   "baseline": true,
   "brand": "ABL",
@@ -665,6 +819,20 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "7A0DD41": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "7a0dd41",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "7B0F3B7": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "7b0f3b7",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "7BF1E85": {
   "baseline": true,
   "brand": "ABL",
@@ -677,6 +845,13 @@
   "brand": "Anker SOLIX",
   "code": "7c2f4c5",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "7D274C7": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "7d274c7",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "7D61733": {
@@ -707,11 +882,25 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "8467E10": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "8467e10",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "86937D4": {
   "baseline": true,
   "brand": "ABL",
   "code": "86937d4",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "86ACC79": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "86acc79",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "87F7613": {
@@ -728,6 +917,20 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "898C4F6": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "898c4f6",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "8A4EDF5": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "8a4edf5",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "8B19105": {
   "baseline": true,
   "brand": "ABL",
@@ -735,11 +938,25 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "8BE4100": {
+  "baseline": false,
+  "brand": "",
+  "code": "8be4100",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "8DD67F1": {
   "baseline": true,
   "brand": "Anker SOLIX",
   "code": "8dd67f1",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "8E77086": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "8e77086",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "8F14AE4": {
@@ -756,11 +973,32 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "91FA61D": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "91fa61d",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "928F2BF": {
   "baseline": true,
   "brand": "Chint",
   "code": "928f2bf",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9404D82": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "9404d82",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "943B17F": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "943b17f",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "94730E9": {
@@ -777,11 +1015,25 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "957A8E3": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "957a8e3",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "9582E96": {
   "baseline": true,
   "brand": "Anker SOLIX",
   "code": "9582e96",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "96A578C": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "96a578c",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "9702DE9": {
@@ -796,6 +1048,13 @@
   "brand": "Chint",
   "code": "9ab65fe",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9B8CD05": {
+  "baseline": false,
+  "brand": "",
+  "code": "9b8cd05",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "9C2FEB0": {
@@ -817,6 +1076,13 @@
   "brand": "ABL",
   "code": "9dd69a7",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "9F0D5A4": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "9f0d5a4",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "A1": {
@@ -854,6 +1120,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "A56206D": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "a56206d",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "A5A74BA": {
   "baseline": true,
   "brand": "ABL",
@@ -880,6 +1153,13 @@
   "brand": "Chint",
   "code": "ac13f5e",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "AD1CCF4": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "ad1ccf4",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "ADA38EF": {
@@ -960,6 +1240,13 @@
   "listed": "2026-10-31",
   "source": "fronius-products"
  },
+ "B08A93B": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "b08a93b",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "B12193A": {
   "baseline": true,
   "brand": "Chint",
@@ -974,6 +1261,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "B3F2BF5": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "b3f2bf5",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "B4BD05F": {
   "baseline": true,
   "brand": "Chint",
@@ -986,6 +1280,13 @@
   "brand": "ABL",
   "code": "b4ffb44",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "B51025E": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "b51025e",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "B79E469": {
@@ -1029,6 +1330,13 @@
   "code": "BAT-C-208-261KWH",
   "first_seen": "2026-10-31",
   "source": "goodwe-pages"
+ },
+ "BB7BE58": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "bb7be58",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
  },
  "BD3AC4C": {
   "baseline": true,
@@ -1140,6 +1448,13 @@
   "brand": "Anker SOLIX",
   "code": "c591a67",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "C68B1DA": {
+  "baseline": false,
+  "brand": "",
+  "code": "c68b1da",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "C727EE7": {
@@ -1268,6 +1583,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "D19524B": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "d19524b",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "D1DC3A7": {
   "baseline": true,
   "brand": "Chint",
@@ -1294,6 +1616,13 @@
   "brand": "Chint",
   "code": "d4f03e2",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "D75E4BC": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "d75e4bc",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "D77D924": {
@@ -1366,6 +1695,20 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "E1A5891": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "e1a5891",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
+ "E2656E3": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "e2656e3",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "E271AB0": {
   "baseline": true,
   "brand": "ABL",
@@ -1401,6 +1744,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "E56C5DC": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "e56c5dc",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "E6E333A": {
   "baseline": true,
   "brand": "ABL",
@@ -1413,6 +1763,13 @@
   "brand": "ABL",
   "code": "e74f306",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "E780FE7": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "e780fe7",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "E7A8E4D": {
@@ -1520,6 +1877,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "EM2GO": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "EM2Go",
+  "first_seen": "2026-11-09",
+  "source": "evcc-releases"
+ },
  "EMS1000": {
   "baseline": true,
   "brand": "SolaX",
@@ -1532,6 +1896,13 @@
   "brand": "SolaX",
   "code": "EMS1000PRO",
   "first_seen": "2026-10-31",
+  "source": "solax-products"
+ },
+ "EMS2000": {
+  "baseline": false,
+  "brand": "SolaX",
+  "code": "EMS2000",
+  "first_seen": "2026-11-09",
   "source": "solax-products"
  },
  "ENECTORG1": {
@@ -1672,6 +2043,13 @@
   "brand": "Chint",
   "code": "f15588c",
   "first_seen": "2026-10-31",
+  "source": "evcc-releases"
+ },
+ "F22B054": {
+  "baseline": false,
+  "brand": "ABL",
+  "code": "f22b054",
+  "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
  "F44E6A1": {
@@ -1834,6 +2212,13 @@
   "code": "G-MAX",
   "first_seen": "2026-10-31",
   "source": "foxess-products"
+ },
+ "H1114US": {
+  "baseline": false,
+  "brand": "Anker SOLIX",
+  "code": "H1-11.4-US",
+  "first_seen": "2026-11-02",
+  "source": "pv-magazine"
  },
  "H1AC1": {
   "baseline": true,

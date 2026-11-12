@@ -19,8 +19,8 @@ const empty = Object.fromEntries(IDS.map((id) => [id, ""]));
 // the states a reader reaches: no country, one list country, one no-list country, several, the kinds, a brand, a search
 const STATES = [
   { name: "no country", cs: [], g: "" }, { name: "EE", cs: ["EE"], g: "inv" }, { name: "ES", cs: ["ES"], g: "inv" }, { name: "AT", cs: ["AT"], g: "inv" },
-  { name: "DE (list, not read)", cs: ["DE"], g: "inv" }, { name: "FI wallboxes", cs: ["FI"], g: "ev" }, { name: "AT+EE", cs: ["AT", "EE"], g: "inv" },
-  { name: "AT+EE every", cs: ["AT", "EE"], g: "inv", every: true }, { name: "ES+FR+IT every", cs: ["ES", "FR", "IT"], g: "inv", every: true },
+  { name: "DE (list, not read)", cs: ["DE"], g: "inv" }, { name: "DE wallboxes", cs: ["DE"], g: "ev" }, { name: "AT+EE", cs: ["AT", "EE"], g: "inv" },
+  { name: "AT+EE every", cs: ["AT", "EE"], g: "inv", every: true }, { name: "ES+DE+IT every", cs: ["ES", "DE", "IT"], g: "inv", every: true },
   { name: "SE wallboxes", cs: ["SE"], g: "ev" }, { name: "EE, Deye", cs: ["EE"], g: "inv", cur: { brand: "Deye" } },
   { name: "ES, status D", cs: ["ES"], g: "inv", cur: { st: "D" } }, { name: "ES, 3-phase 6-12 kVA, search sun", cs: ["ES"], g: "inv", cur: { ph: "3", kva: "6-12", q: "sun" } },
   { name: "no country, status X, HA local control", cs: [], g: "", cur: { st: "X", ha: "W" } }, { name: "EE wallboxes (nothing to check)", cs: ["EE"], g: "ev" },
@@ -29,7 +29,7 @@ const STATES = [
 let fails = 0, checks = 0;
 const fail = (m) => { fails++; console.log("FAIL", m); };
 for (const s of STATES) {
-  const ccs = s.cs.length ? s.cs : data.read, readSel = s.cs.filter((c) => data.read.includes(c)), every = !!s.every && s.cs.length >= 2;
+  const ccs = s.cs.length ? s.cs : data.countries, readSel = s.cs.filter((c) => data.read.includes(c)), every = !!s.every && s.cs.length >= 2;
   const cur = { ...empty, ...(s.cur ?? {}) }, ctx = { ccs, every, readSel, q: cur.q }, T = predicates(data, ctx);
   const hits = select(data, cur, s.g, T);
   for (const id of IDS) {

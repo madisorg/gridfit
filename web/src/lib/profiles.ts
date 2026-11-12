@@ -3,6 +3,7 @@
 import { readdirSync, readFileSync } from "node:fs";
 import { parse } from "yaml";
 import { DATA } from "./data";
+import { inScope } from "./countries";
 
 export type Profile = {
   cc: string; country: string; decided_by: string; type_a_max_kw?: number; not_listed_short?: string;
@@ -23,7 +24,7 @@ try {
   for (const f of readdirSync(DATA + "profiles")) {
     if (!f.endsWith(".yaml")) continue;
     const p: Profile = parse(readFileSync(DATA + "profiles/" + f, "utf-8"));
-    PROFILES[p.cc] = p;
+    if (inScope(p.cc)) PROFILES[p.cc] = p;
   }
 } catch { /* no profiles yet */ }
 // the type-A ceiling per country where a profile states one: above it the model is type B, another procedure

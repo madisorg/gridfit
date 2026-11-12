@@ -4,18 +4,15 @@
 // the list's word, in a country without one the maker's document, the type-A limit or what other EU lists say
 // (web/src/lib/grid-filter.js; one status per model × country, so the status group is a partition and its counts
 // add up — web/test/facets.mjs proves it). Status filters by the best answer among the chosen countries, or the
-// worst with "every" ticked (the installer's question). Nothing chosen: the 7 lists read.
+// worst with "every" ticked (the installer's question). Nothing chosen: every country the site covers (10).
 // Used by /grid/ (no preset) and /grid/{cc}/ (that country preselected).
 import CellLegend from "./CellLegend.astro";
-import { COUNTRIES } from "../lib/registers";
 import { BRANDS, KVA_BUCKETS, MPPT_OPTS, SPEC_BRANDS } from "../lib/devices";
-import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
+import { IN_SCOPE } from "../lib/countries";
 import { EVIDENCE_BRANDS } from "../lib/evidence";
 import { LEGACY_COUNTS } from "../lib/legacy";
 const { preset = "", id = "gv", kind = "", kindAt = "here" } = Astro.props as { preset?: string; id?: string; kind?: string; kindAt?: "here" | "top" };
 const gridBrands = BRANDS.filter((b) => b.models.length);
-const groups: [string, string][] = [["read", "Lists read in full"], ["yes", "Public list, not read yet"], ["partial", "Partial list"], ["no", "No public list"]];
-const inGroup = (g: string) => COUNTRIES_ALL.filter((c) => (g === "read" ? COUNTRIES.includes(c.cc) : !COUNTRIES.includes(c.cc) && c.list === g));
 // the status groups, best to worst (grid-filter.js ORDER); the glyph is the cell's, the word the legend's
 // highest confidence first, always all shown (Madis 31.10): fit · likely · possibly · other procedure · unknown · not fit
 const ST: [string, string, string, string][] = [
@@ -28,26 +25,10 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
 <div class="layout gv" id={id} data-preset={preset} data-kind={kind}>
   <fieldset class="filters" id="xf">
     <legend>Narrow down</legend>
-    <div class="cc" id="ccpick">
-      <span class="cc-h">Countries</span>
-      <div class="cc-chips" id="ccchips" aria-live="polite"></div>
-      <div class="cc-add">
-        <label class="vh" for="ccq">Add a country</label>
-        <input id="ccq" type="search" autocomplete="off" spellcheck="false" placeholder="Add a country…" role="combobox" aria-expanded="false" aria-controls="cclist" aria-autocomplete="list">
-        <ul id="cclist" class="cc-list" role="listbox" aria-label="Countries" hidden></ul>
-      </div>
-      <div class="cc-quick" role="group" aria-label="Lists read in full">{COUNTRIES.map((c) => <button type="button" data-cc={c} aria-pressed={c === preset ? "true" : "false"} title={COUNTRIES_ALL.find((x) => x.cc === c)?.country}>{c}</button>)}</div>
-      <button type="button" id="ccall" class="small cc-all">All {COUNTRIES_ALL.length} countries…</button>
-      <dialog id="ccdlg" class="cc-dlg" aria-labelledby="ccdlg-h">
-        <div class="cc-dlg-head"><h3 id="ccdlg-h">Countries</h3><button type="button" id="ccdone" class="small">Done</button></div>
-        {groups.map(([g, label]) => (
-          <div class="cc-group">
-            <h4>{label}</h4>
-            {inGroup(g).map((c) => <label><input type="checkbox" name="c" value={c.cc} data-name={c.country} data-g={LIST_WORD[c.list]} checked={c.cc === preset}> <b>{c.cc}</b> {c.country}</label>)}
-          </div>
-        ))}
-        <button type="button" id="ccclear" class="small">Clear countries</button>
-      </dialog>
+    <div class="cc" id="ccpick" role="group" aria-labelledby="ccpick-h">
+      <span class="cc-h" id="ccpick-h">Countries</span>
+      <div class="cc-t">{IN_SCOPE.map((c) => <label title={c.country}><input type="checkbox" name="c" value={c.cc} checked={c.cc === preset}><b>{c.cc}</b><span class="vh"> {c.country}</span></label>)}</div>
+      <p class="small muted cc-none">None ticked: all {IN_SCOPE.length} as columns.</p>
     </div>
     {kindAt === "here" && <div class="kind" role="group" aria-label="Device kind">
       <button type="button" data-g="inv" aria-pressed="false">
@@ -110,7 +91,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   const best = (a: string, b: string) => "WLCB-".indexOf(a) <= "WLCB-".indexOf(b) ? a : b;
   const KIND: Record<string, string> = { inverter: "PV inverter", hybrid: "hybrid", battery: "battery", "plug-in": "plug-in", wallbox: "wallbox" };
   type Row = [number, string, string, string, string, string, string, string, number | null, number | null, string, string];
-  type Idx = { read: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; limits: Record<string, { max_kw: number }>; how: string[]; notListed: Record<string, string>; brands: string[]; rows: Row[] };
+  type Idx = { read: string[]; countries: string[]; names: Record<string, string>; scope: Record<string, Record<string, string>>; limits: Record<string, { max_kw: number }>; how: string[]; notListed: Record<string, string>; brands: string[]; rows: Row[] };
   let data: Idx, hits: Row[] = [], shown = 0, g = root.dataset.kind || "", qt = 0;
   const PAGE = 100;
   const esc = (s: string) => s.replace(/[&<>"]/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[ch]!);
@@ -119,55 +100,6 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   const val = (id: string) => id === "st" ? stBoxes.filter((b) => b.checked).map((b) => b.value).join("") : id === "legacy" ? ($<HTMLInputElement>(id).checked ? "1" : "") : ($<HTMLInputElement>(id).value || "").trim();
   const boxes = [...root.querySelectorAll<HTMLInputElement>('input[name="c"]')];
   const sel = () => boxes.filter((b) => b.checked).map((b) => b.value);
-  // ---- the country picker: chips for the chosen, a typeahead to add, the 7 read lists as quick toggles, the full list in a dialog
-  const byCc = new Map(boxes.map((b) => [b.value, b]));
-  const chips = $("ccchips"), ccq = $<HTMLInputElement>("ccq"), cclist = $<HTMLUListElement>("cclist"), quick = [...root.querySelectorAll<HTMLButtonElement>(".cc-quick button")];
-  const dlg = $<HTMLDialogElement>("ccdlg");
-  const setCc = (cc: string, on: boolean) => { const b = byCc.get(cc); if (b && b.checked !== on) { b.checked = on; apply(); } };
-  function paintCc() {
-    const cs = sel();
-    chips.replaceChildren(...cs.map((cc) => {
-      const b = byCc.get(cc)!, chip = document.createElement("span"), x = document.createElement("button");
-      chip.className = "chip"; chip.append(`${cc} `);
-      x.type = "button"; x.textContent = "×"; x.setAttribute("aria-label", `Remove ${b.dataset.name}`); x.addEventListener("click", () => setCc(cc, false));
-      chip.append(x); return chip;
-    }));
-    quick.forEach((q) => q.setAttribute("aria-pressed", String(cs.includes(q.dataset.cc!))));
-  }
-  let active = -1;
-  function suggest() {
-    const q = ccq.value.trim().toLowerCase();
-    const hits = q ? boxes.filter((b) => !b.checked && (b.value.toLowerCase().startsWith(q) || b.dataset.name!.toLowerCase().includes(q))).slice(0, 8) : [];
-    cclist.replaceChildren(...hits.map((b) => {
-      const li = document.createElement("li");
-      li.setAttribute("role", "option"); li.id = `ccopt-${b.value}`; li.dataset.cc = b.value;
-      li.innerHTML = `<b>${b.value}</b> ${b.dataset.name} <span class="muted">${b.dataset.g}</span>`;
-      li.addEventListener("mousedown", (e) => { e.preventDefault(); pick(b.value); });
-      return li;
-    }));
-    active = hits.length ? 0 : -1;
-    paintActive();
-    cclist.hidden = !hits.length;
-    ccq.setAttribute("aria-expanded", String(!!hits.length));
-  }
-  function paintActive() {
-    [...cclist.children].forEach((li, i) => li.setAttribute("aria-selected", String(i === active)));
-    ccq.setAttribute("aria-activedescendant", active >= 0 ? (cclist.children[active] as HTMLElement).id : "");
-  }
-  function pick(cc: string) { setCc(cc, true); ccq.value = ""; suggest(); ccq.focus(); }
-  ccq.addEventListener("input", suggest);
-  ccq.addEventListener("keydown", (e) => {
-    const n = cclist.children.length;
-    if (e.key === "ArrowDown" && n) { e.preventDefault(); active = (active + 1) % n; paintActive(); }
-    else if (e.key === "ArrowUp" && n) { e.preventDefault(); active = (active - 1 + n) % n; paintActive(); }
-    else if (e.key === "Enter" && active >= 0) { e.preventDefault(); pick((cclist.children[active] as HTMLElement).dataset.cc!); }
-    else if (e.key === "Escape") { ccq.value = ""; suggest(); }
-  });
-  ccq.addEventListener("blur", () => { cclist.hidden = true; ccq.setAttribute("aria-expanded", "false"); });
-  ccq.addEventListener("focus", suggest);
-  quick.forEach((q) => q.addEventListener("click", () => setCc(q.dataset.cc!, q.getAttribute("aria-pressed") !== "true")));
-  $("ccall").addEventListener("click", () => dlg.showModal());
-  $("ccdone").addEventListener("click", () => dlg.close());
   // the kind buttons sit in the table's own column, or in the page header (data-for names this view)
   const kinds = [...document.querySelectorAll<HTMLButtonElement>(`#${root.id} .kind button, .kind[data-for="${root.id}"] button`)];
 
@@ -190,7 +122,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   }
 
   function apply() {
-    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c)), ccs = cs.length ? cs : data.read;
+    const cs = sel(), readSel = cs.filter((c) => data.read.includes(c)), ccs = cs.length ? cs : data.countries;
     ($("every").closest("label") as HTMLElement).hidden = cs.length < 2;
     const every = cs.length >= 2 && $<HTMLInputElement>("every").checked;
     ($("mppt").closest("label") as HTMLElement).hidden = g === "ev";
@@ -253,7 +185,6 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     });
     $("ccnote").innerHTML = notes.join(" ");
     $("ccnote").hidden = !notes.length;
-    paintCc();
     shown = 0;
     $("xv").innerHTML = '<table class="xv"><thead><tr><th scope="col">Model</th>' +
       ccs.map((k) => `<th scope="col"><a href="/grid/${k.toLowerCase()}/" title="${esc(data.names[k] ?? k)}">${k}</a><span class="rule">${RULE[data.scope[k]?.[rcls] ?? "unknown"]}</span></th>`).join("") +
@@ -274,7 +205,7 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
   }
 
   function more() {
-    const cs = sel(), ccs = cs.length ? cs : data.read;
+    const cs = sel(), ccs = cs.length ? cs : data.countries;
     const html = hits.slice(shown, shown + PAGE).map((r) => {
       const cells = ccs.map((c) => {
         const code = cellCode(r, c, data), [cls, glyph] = CL[code], t = tip(r, c, code);
@@ -310,7 +241,6 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
     boxes.forEach((b) => b.addEventListener("change", apply));
     // with a default kind the choice is one or the other, never "both"; without one a second click shows every kind
     kinds.forEach((k) => k.addEventListener("click", () => { g = g === k.dataset.g && !root.dataset.kind ? "" : k.dataset.g!; apply(); }));
-    $("ccclear").addEventListener("click", () => { boxes.forEach((b) => (b.checked = false)); apply(); dlg.close(); });
     $("reset").addEventListener("click", () => { IDS.forEach((id) => id !== "st" && id !== "legacy" && ($<HTMLInputElement>(id).value = "")); $<HTMLInputElement>("legacy").checked = false; stBoxes.forEach((b) => (b.checked = false)); g = root.dataset.kind || ""; boxes.forEach((b) => (b.checked = b.value === root.dataset.preset)); $<HTMLInputElement>("every").checked = false; apply(); });
     $("more").addEventListener("click", more);
     apply();

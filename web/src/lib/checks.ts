@@ -4,6 +4,7 @@
 // and "no check" rows are rebuilt here from the item and from whether a sheet or a document exists.
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
+import { inScope } from "./countries";
 
 export type State = "S" | "P" | "D" | "O" | "N" | "L" | "X" | "I";
 export const STATE_WORD: Record<State, string> = {
@@ -27,7 +28,7 @@ type Raw = { built: string; profiles: Record<string, { country: string; norm: st
 const C: Raw = JSON.parse(readFileSync(resolve(process.cwd(), ".data/checks.json"), "utf-8"));
 export const CHECK_BUILT: string = C.built;
 export const CHECK_STATS = C.stats;
-export const CHECK_COUNTRIES: string[] = Object.keys(C.profiles);
+export const CHECK_COUNTRIES: string[] = Object.keys(C.profiles).filter(inScope);
 // the kinds of maker's document a country's operator takes, in words
 export const ACCEPT_WORD: Record<string, string> = {
   "generic-en50549-1": "an EN 50549-1 certificate", "national-declaration": "a declaration against the national rule", "country-release": "the maker's released-countries table",
@@ -41,7 +42,7 @@ export function checksOf(d: { brand: string; model: string }): CountryCheck[] {
   const out: CountryCheck[] = [];
   for (const [cc, p] of Object.entries(C.profiles)) {
     const r = m.cc[cc];
-    if (!r) continue;
+    if (!r || !inScope(cc)) continue;
     const na = new Set(r.na ?? []);
     const rows: Row[] = [];
     p.items.forEach((item, i) => {

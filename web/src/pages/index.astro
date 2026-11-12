@@ -1,11 +1,11 @@
 ---
 // Home, grid first: pick your country (or let the page guess it), search a model code, choose a kind.
-// The smart-home view is the second door. One small script: the country guess and the select.
+// The smart-home view is the second door. One small script: the country guess and remembering the pick.
 import Base from "../layouts/Base.astro";
 import { data, TAGLINE, DATA } from "../lib/data";
 import { COUNTRIES, LOG, META } from "../lib/registers";
 import { COUNTS, nf, BRANDS } from "../lib/devices";
-import { COUNTRIES_ALL, LIST_WORD } from "../lib/countries";
+import { IN_SCOPE } from "../lib/countries";
 import { readFileSync } from "node:fs";
 const INV = ["inverter", "hybrid", "battery", "plug-in"];
 const nInv = data.families.filter((f) => INV.includes(f.class)).length, nEv = data.families.filter((f) => f.class === "wallbox").length;
@@ -13,22 +13,17 @@ const dlog: any[] = JSON.parse(readFileSync(DATA + "dataset/changelog.json", "ut
 const d0 = dlog[0], r0 = LOG[0];
 const latestList = Object.values(META).map((m) => m.source_date || "").sort().pop();
 const nWall = BRANDS.reduce((n, b) => n + b.models.filter((d) => d.cls === "wallbox").length, 0), nInvReg = COUNTS.regModels - nWall;
-const order = (c: { cc: string; list: string }) => (COUNTRIES.includes(c.cc) ? 0 : c.list === "yes" ? 1 : c.list === "partial" ? 2 : 3);
-const sorted = [...COUNTRIES_ALL].sort((a, b) => order(a) - order(b) || a.country.localeCompare(b.country));
-const GROUP = ["Lists read in full", "Public list, not read yet", "Partial list", "No public list"];
+const sorted = [...IN_SCOPE].sort((a, b) => a.country.localeCompare(b.country));
+const unread = sorted.filter((c) => !COUNTRIES.includes(c.cc)).map((c) => c.country);
 ---
 <Base>
   <section class="ask" aria-labelledby="q-h">
     <h1 id="q-h" class="vh">{TAGLINE}</h1>
     <div class="pick" id="pick">
-      <label for="cc"><b>Is it fit for the grid in</b></label>
-      <select id="cc" autocomplete="off">
-        <option value="">choose a country…</option>
-        {GROUP.map((g, i) => <optgroup label={g}>{sorted.filter((c) => order(c) === i).map((c) => <option value={c.cc.toLowerCase()}>{c.country} ({c.cc}) — {LIST_WORD[c.list]}</option>)}</optgroup>)}
-      </select>
+      <p class="pick-q" id="pick-h"><b>Is it fit for the grid in</b></p>
+      <nav class="chips" id="cc" aria-labelledby="pick-h">{sorted.map((c) => <a href={`/grid/${c.cc.toLowerCase()}/`} data-cc={c.cc.toLowerCase()}>{c.country}</a>)}</nav>
       <p class="small muted" id="guess" hidden></p>
     </div>
-    <noscript><p class="small">Country pages: {sorted.map((c, i) => <>{i > 0 && " · "}<a href={`/grid/${c.cc.toLowerCase()}/`}>{c.cc}</a></>)}</p></noscript>
     <form class="search" role="search" action="/grid/" method="get">
       <label class="vh" for="q">Model code or brand</label>
       <input id="q" name="q" type="search" autocomplete="off" spellcheck="false" placeholder="Model code or brand — e.g. SUN-12K-SG04LP3, SH10RT, Wattpilot">
@@ -41,7 +36,7 @@ const GROUP = ["Lists read in full", "Public list, not read yet", "Partial list"
         <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="11" height="16" rx="1"/><path d="M8.5 7h4M8.5 10h4M16 11h2.5v5a2 2 0 0 1-2 2H14"/><path d="M10.5 19v2"/></svg>
         Wallboxes <b>{nf(nWall)}</b></a>
     </div>
-    <p class="lede">{nf(COUNTS.regModels)} inverters, batteries and wallboxes across {COUNTRIES.length} national grid-connection lists read in full and {COUNTRIES_ALL.length} EU+ countries described;
+    <p class="lede">{nf(COUNTS.regModels)} inverters, batteries and wallboxes in {IN_SCOPE.length} countries — {COUNTRIES.length} national grid-connection lists read in full, {unread.join(", ").replace(/, ([^,]*)$/, " and $1")} by their own rules;
       each country is a column with one answer per model — the list's own word, or, where there is no list, the maker's document and what other EU lists say. Each device page also says whether Home Assistant or evcc talks to it on your network ({nf(COUNTS.families)} families). Every row links to its source.</p>
     <p class="facts"><span><b>{nf(COUNTS.brands)}</b> brands</span><span>sources read <b>{data.seen}</b></span><span>lists dated up to <b>{latestList}</b></span>
       <span><a href="/changes/">latest changes</a>: lists {r0.date}{r0.baseline ? " (baseline)" : ""} · rows {d0.date} ({d0.added.length} added, {d0.changed.length} changed)</span></p>
@@ -49,17 +44,15 @@ const GROUP = ["Lists read in full", "Public list, not read yet", "Partial list"
 </Base>
 
 <script>
-  // The country select navigates; the guess comes from /api/cc (Cloudflare's CF-IPCountry, not stored) or, when
+  // The country links navigate; the guess comes from /api/cc (Cloudflare's CF-IPCountry, not stored) or, when
   // that is absent, from the browser's language. The user's own choice wins and is remembered in localStorage.
-  const sel = document.getElementById("cc") as HTMLSelectElement, guess = document.getElementById("guess")!;
-  const known = new Set([...sel.options].map((o) => o.value));
-  const name = (cc: string) => [...sel.options].find((o) => o.value === cc)?.textContent?.replace(/ \(.*$/, "") ?? cc.toUpperCase();
+  const links = [...document.querySelectorAll<HTMLAnchorElement>("#cc a")], guess = document.getElementById("guess")!;
+  const known = new Set(links.map((a) => a.dataset.cc!));
+  const name = (cc: string) => links.find((a) => a.dataset.cc === cc)?.textContent ?? cc.toUpperCase();
   let saved = ""; try { saved = localStorage.getItem("gf-cc") ?? ""; } catch {}
-  sel.addEventListener("change", () => {
-    if (!sel.value) return;
-    try { localStorage.setItem("gf-cc", sel.value); document.cookie = `gf-cc=${sel.value}; path=/; max-age=31536000; samesite=lax`; } catch {}
-    location.href = `/grid/${sel.value}/`;
-  });
+  links.forEach((a) => a.addEventListener("click", () => {
+    try { localStorage.setItem("gf-cc", a.dataset.cc!); document.cookie = `gf-cc=${a.dataset.cc}; path=/; max-age=31536000; samesite=lax`; } catch {}
+  }));
   const offer = (cc: string, how: string) => {
     if (!known.has(cc)) return;
     guess.innerHTML = `${how}: <a href="/grid/${cc}/">open the ${name(cc)} view</a>`;

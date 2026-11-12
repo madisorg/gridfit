@@ -112,6 +112,12 @@ sources:
   title: IDC80E
   sha256: 49154f364d904642df570e046e6b7bc8333a294fec278453af1cc56a55a62326
   seen: '2026-11-01'
+- id: 22cb25ff-7872-4442-8446-60b3c4d03952
+  url: https://info-support.sungrowpower.com/datasheet-material/22cb25ff-7872-4442-8446-60b3c4d03952.pdf
+  file: 22cb25ff-7872-4442-8446-60b3c4d03952.pdf
+  title: SG125CX-P3
+  sha256: 97ef9bd7880504136c240f4c1eb67ce8f80a142e56eee87458773700caf14565
+  seen: '2026-11-09'
 models:
 - code: SG320HX
   mppt: null
@@ -417,5 +423,15 @@ models:
   phases: null
   pv_kw: null
   source: cd0d7912-cdfd-420e-abb1-a0a4d010a12a
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG125CX-P3
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 22cb25ff-7872-4442-8446-60b3c4d03952
   raw: {}
   note: 'single-model sheet: the code is from the title, the values are to be read by hand'

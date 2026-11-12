@@ -1,17 +1,18 @@
 ---
 // /grid/{cc}/ — the country view: the grid table preselected to this country, what applies per device class,
-// and — for the 7 parsed lists — the list's facts, rows by class, status words and changes.
+// and — for the 7 parsed lists — the list's facts, rows by class, status words and changes. Only the countries the
+// site covers get a page; the others answer 301 to /grid/ (web/public/_redirects).
 import Base from "../../../layouts/Base.astro";
 import Ext from "../../../components/Ext.astro";
 import GridView from "../../../components/GridView.astro";
 import { devices, COUNTRIES, REGS, RC, META, LOG, STATS, SNAP_DATE, regsOf } from "../../../lib/registers";
-import { COUNTRIES_ALL, LIST_WORD, LIST_LONG, CLASS_WORD, CLASS_LONG, CONF_WORD, COUNTRIES_SOURCE, type Country } from "../../../lib/countries";
+import { IN_SCOPE, LIST_WORD, LIST_LONG, CLASS_WORD, CLASS_LONG, CONF_WORD, COUNTRIES_SOURCE, type Country } from "../../../lib/countries";
 import { BRANDS, brandSlugOf, nf } from "../../../lib/devices";
 import { PROFILES } from "../../../lib/profiles";
 import { docsFor } from "../../../lib/evidence";
 
 export function getStaticPaths() {
-  return COUNTRIES_ALL.map((c) => ({ params: { cc: c.cc.toLowerCase() }, props: { c } }));
+  return IN_SCOPE.map((c) => ({ params: { cc: c.cc.toLowerCase() }, props: { c } }));
 }
 const { c } = Astro.props as { c: Country };
 const prof = PROFILES[c.cc];
@@ -158,6 +159,6 @@ const desc = parsed
   )}
   <section class="sec">
     <header><h2>Other countries</h2></header>
-    <p class="brand-list">{COUNTRIES_ALL.filter((o) => o.cc !== cc).map((o) => <a href={`/grid/${o.cc.toLowerCase()}/`}>{o.cc} <span class="muted">{o.country}</span></a>)}</p>
+    <p class="brand-list">{IN_SCOPE.filter((o) => o.cc !== cc).map((o) => <a href={`/grid/${o.cc.toLowerCase()}/`}>{o.cc} <span class="muted">{o.country}</span></a>)}</p>
   </section>
 </Base>
