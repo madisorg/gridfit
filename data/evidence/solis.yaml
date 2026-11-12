@@ -308,3 +308,318 @@ documents:
     note: Report 64.290.22.30504.01. NA-protection settings table with numbers p. 16 (U>> 1.25 Un 287.8 V 129 ms, U> 1.10 Un 10-min
       mean, U< 0.8 Un 183.4 V 3019 ms, U<< 0.45 Un 104.1 V 329 ms, f< 47.5 Hz 133 ms, f> 51.5 Hz 121 ms); above 4.6 kVA single-phase
       only with unbalance ≤ 4.6 kVA. The edition is printed without month (2018).
+- id: it-cei021-s6-eh3p-29-9-60-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50702345 0001 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — S6-EH3P(29.9-60)K-H(-H-ND)(21A)
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-EH3P(29,9-60)K-H(-H-ND)(21A)_5K3XP_DC-(57-100)kWh_Italy_V03.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd.
+  cert_no: A3 50702345 0001
+  issued: '2025-11-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A2
+  families:
+  - name: S6-EH3P-H / -H-ND three-phase HV hybrid 29.9–60 kW (incl. 21A)
+    match: ^S6-EH3P((29\.9|30|37\.5|40|50)K-H|(30|40|50)K-H-ND|(29\.9|30|40|50|60)K-H(-ND)?\(21A\))$
+    countries: [IT]
+    note: Report CN241FZ7 003; with WECO 5K3-XP-EU and SolisStorage DC-57/71/86/100kWh-EC00 batteries (25 pp. of combination tables).
+      Supersedes the site's V01 (A3 50640975 0001, 2024, WECO only, 29.9–50 kW). Not named — S6-EH3P29.9K-H-ND (no 21A), S6-EH3P49K-H-ND(21A),
+      S6-EH3P30K-H-LV(-ND), and the S6-EH3P30/40/50K-ND-H rows (suffix order differs).
+- id: it-cei021-s6-gc3p-25-36-k03-2025
+  title: TÜV SÜD Compliance Document D 086470 0221 Rev. 01 — CEI 0-21:2022/V2:2024 — S6-GC3P(25-36)K03-NV-ND
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-GC3P(25-36)K03-NV-ND_Italy_V02.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich)
+  cert_no: D 086470 0221 Rev. 01
+  issued: '2025-09-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: A2
+  families:
+  - name: S6-GC3P K03 three-phase string 25–36 kW
+    match: ^S6-GC3P(25|30|33|36)K03-NV-ND$
+    countries: [IT]
+    note: Test report 704092403753-01. "Suitable for installation in systems with an output power of more than 11.08 kW". TÜV SÜD calls
+      it voluntary compliance. Supersedes the site's V01 (Rev. 00, 2024). The K03-LV-ND (delta 3×230 V) rows are other models.
+- id: it-cei021-s6-gc3p-k04-k05-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50690120 0001 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — S6-GC3P(20-40)K04-NV-ND-R,
+    S6-GC3P(40-60)KXX-NV-ND
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-GC3P(40-60)KXX-NV-ND_S6-GC3P(20-40)K04-NV-ND-R_Italy_V02.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50690120 0001
+  issued: '2025-08-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A2
+  families:
+  - name: S6-GC3P K04/K05 three-phase string 20–60 kW
+    match: ^S6-GC3P((20|25|27\.6|30|33|36|40)K04-NV-ND-R|(40|50)K04-NV-ND|60K05-NV-ND)$
+    countries: [IT]
+    note: Report CN2464ET 002. Ginlong's own wrapper declaration of 2026-10-17 (same editions) is a separate file. The K04-LV-ND (delta
+      3×230 V) rows are other models.
+- id: it-cei021-s6-eh3p-k02-8-15-2025
+  title: TÜV SÜD Compliance Document D 086470 0248 Rev. 00 — CEI 0-21:2022/V2:2024 — S6-EH3P(8-15)K02-NV-YD-L
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-EH3P(8-15)K02-NV-YD-L_Italy_V01(WESTWOODS_VE51280W).pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich)
+  cert_no: D 086470 0248 Rev. 00
+  issued: '2025-05-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: A2
+  families:
+  - name: S6-EH3P K02-NV-YD-L three-phase LV hybrid 8–15 kW
+    match: ^S6-EH3P(8|10|12|15)K02-NV-YD-L$
+    countries: [IT]
+    note: Test report 7040924037148-00; with Vestwoods VE51280W (1–2). Ginlong's Bbis-2.2 declaration (file dated 2026-04-28) extends
+      it to other battery makes and says "idoneo per impianti con potenza superiore a 11,08 kW". 5, 6 and 18 kW K02 models not named.
+- id: it-cei021-s6-ea1p-us5000-2025
+  title: TÜV SÜD Compliance Document D 086470 0161 Rev. 01 — CEI 0-21:2022/V2:2024 — S6-EA1P(3-6)K-L with US5000
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI%200-21_S6-EA1P(3-6)K-L_Italy_V02(US_5000).pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich)
+  cert_no: D 086470 0161 Rev. 01
+  issued: '2025-07-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: A2
+  families:
+  - name: S6-EA1P-L single-phase AC-coupled 3–6 kW
+    match: ^S6-EA1P(3|3\.6|4\.6|5|6)K-L$
+    countries: [IT]
+    note: Supersedes cei021-s6-ea1p-2023 (Rev. 00, CEI 0-21:2022/V1:2022). Test report 704092304882-01; with Pylontech US5000 / US5000-B.
+      Page 2 header says "V1:2024", page 1 "V2:2024".
+- id: it-cei021-s6-eh1p-l-plus-2024
+  title: TÜV SÜD Compliance Document D 086470 0236 Rev. 00 — CEI 0-21:2022/V2:2024 — S6-EH1P(3-8)K-L-PLUS with BYD LVL 15.4
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-EH1P(3-8)K-L-PLUS_BYD_Italy_V01.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich)
+  cert_no: D 086470 0236 Rev. 00
+  issued: '2024-12-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: A2
+  families:
+  - name: S6-EH1P-L-PLUS single-phase LV hybrid 3–8 kW
+    match: ^S6-EH1P(3|3\.6|4\.6|5|6|8)K-L-PLUS$
+    countries: [IT]
+    note: Test report 7040924037147-00; BYD LVL 15.4 (1–2). Ginlong's Bbis-2.2 declaration DQ-B2407 (dated 2024-12-18; file revised
+      2026-04-28) extends it to Vestwoods, WECO, Pylontech, BYD LVS, Dyness … and says "idoneo per impianti > 11,08 kW". The S6-EH1P…K-L-EU
+      rows are another series and stay unjoined.
+- id: it-cei021-s5-gc-50-60-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50626989 0001 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — S5-GC50K, S5-GC60K
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S5-GC(50-60)K_Ita_V02.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50626989 0001
+  issued: '2024-11-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A2
+  families:
+  - name: S5-GC three-phase string 50–60 kW
+    match: ^(SOLIS)?S5-GC(50|60)K$
+    countries: [IT]
+    note: Report CN212YB7 003 (page 1 image-only). The register's "SOLIS S5-GC…" rows carry the brand in front. The -LV rows are other
+      models.
+- id: it-cei021-s6-eh3p-12-20-2024
+  title: TÜV SÜD Compliance Document D 086470 0223 Rev. 00 — CEI 0-21:2022/V2:2024 — S6-EH3P12K/15K/20K-H with Force-H1 / BYD HVS
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-EH3P(12-20)K-H_Italy_V02(Force_H1_BYD).pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich)
+  cert_no: D 086470 0223 Rev. 00
+  issued: '2024-09-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: A2
+  families:
+  - name: S6-EH3P-H three-phase HV hybrid 12–20 kW
+    match: ^S6-EH3P(12|15|20)K-H$
+    countries: [IT]
+    note: Test report 704092304890-00; Pylontech Force-H1-48/…-V2 and BYD HVS 5.1–12.8 (1–4 groups). The register rows without "-H"
+      (S6-EH3P12K/15K/20K) and the -ND-H rows are not joined.
+- id: it-cei021-s6-eh3p-5-10-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50629867 0001–0002 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — S6-EH3P(5-10)K-H-EU(-OD)(-PRO),
+    S6-EH3P(5-10)K2-H(-OD)
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-EH3P(5-10)K-H-EU(-PRO)(-OD)_S6-EH3P(5-10)K2-H(-OD)_Italy_V01(LG).pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50629867 0001-0002
+  issued: '2024-09-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: Inverter A2; battery system minimum V2.3.0.4
+  families:
+  - name: S6-EH3P-H three-phase HV hybrid 5–10 kW
+    match: ^(S6-EH3P(5|6|8|10)K(-H-EU(-OD)?|2-H(-OD)?)|S6-EH3P10K-H-EU-PRO)$
+    countries: [IT]
+    note: Supersedes cei021-s6-eh3p-2023 (A3 50601309 0001, to V1:2022-11). Report CN22DTPT 012; remark names storage battery "10H Prime"
+      (LG), the combination tables list Force-H1-48 stacks. 3/4 kW H-EU and the -BE rows are not named.
+- id: it-cei021-s5-gr3p-3p-4g-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50631176 0001 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — Solis-3P(3-20)K-4G, S5-GR3P(3-20)K
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_3P%283-20%29K-4G_S5-GR3P%283-20%29K_Italy_V03.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests by TÜV Rheinland (Shanghai) Co., Ltd. (CNAS L3038)
+  cert_no: A3 50631176 0001
+  issued: '2024-08-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A2
+  families:
+  - name: S5-GR3P three-phase string 3–20 kW
+    match: ^(SOLIS)?S5-GR3P(3|4|5|6|8|9|10|12|13|15|17|20)K$
+    countries: [IT]
+    note: Report 50297673 003 (page 1 image-only). Supersedes the site's V01 (2021). The -LV and -BE rows are other models.
+  - name: Solis-3P-4G three-phase string 3–20 kW
+    match: ^SOLIS-3P(3|4|5|6|8|9|10|12|15|17|20)K-4G$
+    countries: [IT]
+    note: The -4G-LV and -4G-BE rows are other models.
+- id: it-cei021-s6-gc-50-125-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50632086 0001 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — S6-GC(80-125)K, S6-GC(50-75)K-LV,
+    S6-GC125K-HV
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-GC%2880-125%29K_S6-GC%2850-75%29K-LV_S6-GC125K-HV_Italy_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50632086 0001
+  issued: '2024-07-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A1
+  families:
+  - name: S6-GC three-phase string 50–125 kW (incl. -LV, -HV)
+    match: ^S6-GC((50|60|75)K-LV|(80|100|110|125)K|125K-HV)$
+    countries: [IT]
+    note: Report CN24PN7H 001 (page 1 image-only). Ginlong's wrapper declaration of 2025-08 is a separate file. The register row S6-GC75K
+      (no -LV) is not named.
+- id: it-cei021-s5-gc-25-40-2024
+  title: TÜV SÜD Compliance Document D 086470 0090 Rev. 01 — CEI 0-21:2022/V2:2024 — S5-GC25K…40K
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_V2_S5-GC%2825-40%29K_Italy_V02.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich)
+  cert_no: D 086470 0090 Rev. 01
+  issued: '2024-05-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: A2
+  families:
+  - name: S5-GC three-phase string 25–40 kW
+    match: ^(SOLIS)?S5-GC(25|30|33|36|40)K$
+    countries: [IT]
+    note: Test report 704092103633-01; page 3 reads "CEI 0-21:2022/V1:2022/V2:2024". The -LV and -BE rows, and the SOLIS-25K…40K-5G
+      rows, are not named.
+- id: it-cei021-s6-gc3p-k07-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50663821 0001 — CEI 0-21:2022-03, V1:2022-11, V2:2024-01 — S6-GC3P(80-100)K07-LV-ND,
+    S6-GC3P150K07-NV-ND, S6-GC3P200K07-HV-ND
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_S6-GC3P150K07-NV-ND_GC3P200K07-HV-ND_GC3P(80-100)K07-LV-ND_Italy_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50663821 0001
+  issued: '2025-02-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A2
+  families:
+  - name: S6-GC3P K07 three-phase string 80–200 kW
+    match: ^S6-GC3P((80|100)K07-LV-ND|150K07-NV-ND|200K07-HV-ND)$
+    countries: [IT]
+    note: Report CN24748D 001. Ginlong's wrapper declaration (2026-05-02, same editions) says "idoneo per impianti con potenza superiore
+      a 11,08 kW".
+- id: it-cei021-s6-eh3p-k10-80-125-2026
+  title: Ginlong Dichiarazione di conformità alle prescrizioni della Norma CEI 0-21 (DQ-A2423) — CEI 0-21:2022-03, V1:2022-11, V2:2024-01
+    — S6-EH3P(80-125)K10-NV-YD/ND-H
+  url: https://cmsdata.solisinverters.com/uploads/file/DQ-A2423-Declaration_of_Conformity_CEI0-21_SOLIS_S6-EH3P(80-125)K10-NV-YD(ND)-H.pdf
+  issuer: Ginlong Technologies Co., Ltd. (maker's declaration under DPR 445/2000 art. 76; tests TÜV SÜD New Energy Vehicle Testing (Jiangsu),
+    report 704092514274-00)
+  issued: '2026-05-19'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: A2 o superior
+  families:
+  - name: S6-EH3P K10 three-phase C&I hybrid 80–125 kW (YD and ND)
+    match: ^S6-EH3P(80|99\.9|100|125)K10-NV-(YD|ND)-H$
+    countries: [IT]
+    note: Interface device + protection + conversion declared; "idoneo per impianti con potenza superiore a 11,08 kW"; with SolisStorage
+      EverCore-261kWh(-PRO). No body certificate published. S6-EH3P75K10-NV-YD-H not named.
+- id: it-cei021-gr1p-1p-4g-declaration-2023
+  title: Ginlong Dichiarazione di conformità alle prescrizioni della Norma CEI 0-21;V1:2022-11 — Solis-1P(2.5-6)K-4G, S5-GR1P(2.5-6)K,
+    S6-GR1P(2.5-6)K
+  url: https://cmsdata.solisinverters.com/uploads/file/Dichiarazioni_di_conformit_Declaration_of_Comformity_CEI_0-21_V1_2022-11_Solis-1P%282%2C5-6%29K-4G_S5-GR1P%282%2C5-6%29K_S6-GR1P%282%2C5-6%29K_REV%2C00.pdf
+  issuer: Ginlong Technologies Co., Ltd. (maker's declaration; test report 70.409.19.076.29-02, TÜV SÜD Guangzhou, DAkkS D-PL-19065-01-00)
+  issued: '2023-12-13'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21;V1:2022-11
+  firmware: 2E e superiore
+  families:
+  - name: Solis-1P-4G / S5-GR1P / S6-GR1P single-phase string 2.5–6 kW
+    match: ^(SOLIS-1P(2\.5|3|3\.6|4|4\.6|5|6)K-4G|S[56]-GR1P(2\.5|3|3\.6|4|4\.6|5|6)K)$
+    countries: [IT]
+    note: Image-only PDF. SPI integrated as declared. The body document behind it on the same page, TÜV SÜD D 086470 0054 Rev. 02 (2021-09-02),
+      is to CEI 0-21:2019/V1:2020. The -M, -S(21A), -UM and K01-NV-YD rows are other models.
+- id: it-cei021-mini-gr1p-m-declaration-2023
+  title: Ginlong Dichiarazione di conformità alle prescrizioni della Norma CEI 0-21;V1:2022-11 — Solis-mini-(700-3600)-4G, S5-GR1P(0.7-3.6)K-M,
+    S6-GR1P(0.7-3.6)K-M
+  url: https://cmsdata.solisinverters.com/uploads/file/Dichiarazioni_di_conformit_Declaration_of_Comformity_CEI_0-21_V1_2022-11_mini-%28700-3600%29-4G_S5-GR1P%280%2C7-3%2C6%29K-M_S6-GR1P%280%2C7-3%2C6%29K-M_REV.00.pdf
+  issuer: Ginlong Technologies Co., Ltd. (maker's declaration; test report 50297665 003, TÜV Rheinland Shanghai, DAkkS D-ZE-14169-01-02)
+  issued: '2023-12-13'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21;V1:2022-11
+  firmware: 81 e superiore
+  families:
+  - name: Solis-mini-4G / S5-GR1P-M / S6-GR1P-M single-phase string 0.7–3.6 kW
+    match: ^(SOLIS-MINI-(700|1000|1500|2000|2500|3000|3600)-4G|S[56]-GR1P(0\.7|1|1\.5|2|2\.5|3|3\.6)K-M)$
+    countries: [IT]
+    note: Image-only PDF. SPI integrated as declared. The 0.7 kW models are plug-in class in the register. S6-GR1P0.6K/0.8K-UM and the
+      K01-NV-YD rows are other models.
+- id: it-cei021-5g-pro-2023
+  title: TÜV Rheinland Certificate of Conformity A3 50583899 0001 — CEI 0-21:2022-03 — Solis-80K/100K/110K-5G-PRO
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_CEI_0-21_(80-125)K-5G-PRO_Italy_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50583899 0001
+  issued: '2023-05-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  firmware: A1
+  families:
+  - name: 5G-PRO three-phase string 80–110 kW
+    match: ^SOLIS-(80|100|110)K-5G-PRO$
+    countries: [IT]
+    note: Report CN23H6RO 001. File name says 80-125 but only 80/100/110 kW are named. Ginlong's declaration of 2023-12-13 (same models,
+      same report) declares conformity to CEI 0-21;V1:2022-11.

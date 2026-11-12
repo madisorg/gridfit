@@ -111,3 +111,160 @@ documents:
     note: Generic EN 50549-1 certificate (names no country); accepted in NL/SE/EE through data/evidence/rules/accepts.yaml. Test report
       200427169GZU-001; type B approval; ratings only. The XA/XH/HU variants are not joined.
     accepted_in: [EE, NL, SE]
+- id: it-cei021-wit-50-125k-xhu-2026
+  title: Intertek Certificate of Conformity CN-PVES-260408 — CEI 0-21:2022-03 + V1 + V2 + EC + EC2 + V3:2025-10 — WIT 50K…125K-XHU
+  url: https://nl.growatt.com/upload/file/WIT_63-125-XHU_CEI021.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-260408
+  issued: '2026-10-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;EC:2024-03
+  - CEI 0-21;EC2:2025-02
+  - CEI 0-21;V3:2025-10
+  firmware: TU 1.0
+  families:
+  - name: WIT 50K-XHU three-phase hybrid 50 kW
+    match: ^WIT50K-XHU$
+    countries: [IT]
+    note: 'Test report 260331153GZC-001 (2026-10-08). Names WIT 50K-XHU (T)/(W)/(WH) and WIT 63K/75K/85K/99.9K/100K/125K-XHU (+ (W)/(WH));
+      only WIT 50K-XHU is in the register (the register''s WIT 63K/75K/100K rows are -HU / -AU / -H / -A, other models). Device for
+      static conversion only: interface protection (SPI) external. Battery ACE 261H-2H EU (pack PL1P52S052B2, HV control ACE 1000180-C1),
+      not integrated. Served from nl.growatt.com; not in the en.growatt.com listing.'
+- id: it-cei021-neo-600-1000m-x-2024
+  title: Intertek Certificate of Conformity CN-PVES-240486 — CEI 0-21:2022-03 + V1:2022-11 + V2:2024-01 — NEO 600M-X, 800M-X, 1000M-X
+  url: https://es.growatt.com/upload/file/NEO_600-1000M-X_CEI_0_21.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-240486
+  issued: '2024-10-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: GJ1.0
+  families:
+  - name: NEO M-X micro inverter 0.6–1 kW
+    match: ^NEO(600|800|1000)M-X$
+    countries: [IT]
+    note: Test report 231218024GZU-001 (2024-10-18). Allegato page ticks device for conversion only (SPI external) and reads "static
+      converters in systems with capacity more than 11.08 kW"; it also prints "three-phase" for this single-phase micro inverter.
+- id: it-cei021-min-xh-xa-xh2-2023
+  title: Intertek Certificate of Conformity CN-PV-230694 — CEI 0-21:2022-03 + V1:2022-11 — MIN 2500…6000TL-XH / -XA / -XH2 energy storage
+    system
+  url: https://es.growatt.com/upload/file/MIN_2500-6000_TL-XH2_CEI_0-21.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-230694
+  issued: '2023-12-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: AL1.0
+  families:
+  - name: MIN TL-XH / TL-XA / TL-XH2 single-phase hybrid 2.5–6 kW
+    match: ^(MIN(2500|3000|3600|4200|4600|5000|6000)TL-(XH|XA|XH2)|(2500|3000|3600|4200|4600|5000|6000)TL-(XH|XA))$
+    countries: [IT]
+    note: 'Test reports 221220011GZU-001 (2023-12-12) and 230403058GZU-013 (2023-08-08). Batteries named: APX 5.0P-S0…30.0P-S0 (pack
+      APX 5.0P-B1, HV control APX 55027-P0), not integrated; smart AC interface SYN 50-XH-10…13. Allegato page ticks disconnection device,
+      interface protection and conversion: SPI integrated, systems up to 11.08 kW. Supersedes for XH/XA the older CN-PV-220055 (CEI
+      0-21:2019+V1:2020, ARK batteries, 2022-03-14). Register codes without the MIN prefix are joined only for XH/XA, which exist only
+      in the MIN series.'
+- id: it-cei021-min-x-xe-2022
+  title: Intertek Certificate of Conformity CN-PV-220078 — CEI 0-21:2019 + V1:2020 — MIN 2500…6000TL-X / -XE
+  url: https://es.growatt.com/upload/file/20220815/88802c00c7a2f7060b4e5cf957b35923.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-220078
+  issued: '2022-05-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019
+  - CEI 0-21;V1:2020
+  firmware: AL1.0
+  families:
+  - name: MIN TL-X / TL-XE single-phase string 2.5–6 kW
+    match: ^(MIN(2500|3000|3600|4200|4600|5000|6000)TL-(X|XE)|(2500|3000|3600|4200|4600|5000|6000)TL-XE|(3600|4200|4600|5000|6000)TL-X)$
+    countries: [IT]
+    note: 'Test report 181016140GZU-001 Rev. 2 (2022-03-10). Allegato: "Interface protection System (SPI) can be integrated to inverter
+      with output power up to 11.08KW". Older edition (no 2022 rule). Prefix-less 2500TL-X / 3000TL-X stay out: MIC 2500TL-X / 3000TL-X
+      carry the same numbers.'
+- id: it-cei021-max-80-133ktl3-x-lv-2022
+  title: Intertek Certificate of Conformity CN-PV-220012 — CEI 0-21:2019 + V1:2020 — MAX 80…133KTL3-X LV
+  url: https://es.growatt.com/upload/file/20220816/8adb5b45387f4e1968e0ee97f1802cf8.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-220012
+  issued: '2022-01-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019
+  - CEI 0-21;V1:2020
+  firmware: TN1.0
+  families:
+  - name: MAX KTL3-X LV three-phase string 100–125 kW
+    match: ^MAX(100|110|120|125)KTL3-XLV$
+    countries: [IT]
+    note: Test report 210223048GZU-001. Allegato reads "static converters in systems with capacity more than 11.08 kW" (SPI external).
+      Also names MAX 80KTL3-X LV and MAX 133KTL3-X LV, which are not in the register; the register's MAX 50…80KTL3 LV (no -X) are the
+      older series, not joined.
+- id: it-cei021-sph-bl-up-2021
+  title: Intertek Certificate of Conformity CN-PV-210198 — CEI 0-21:2019-04 — SPH 3000…6000TL BL-UP accumulation system
+  url: https://es.growatt.com/upload/file/20220829/4d06531535d7479870caad5ffdece561.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by CNAS C058-P, ISO/IEC 17065:2012)
+  cert_no: CN-PV-210198
+  issued: '2021-09-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: RA1.0
+  families:
+  - name: SPH TL BL-UP single-phase hybrid 3–6 kW
+    match: ^SPH(3000|3600|4000|4600|5000|6000)(TLBL-UP)?$
+    countries: [IT]
+    note: 'Names both "Growatt SPH3000…6000" and "SPH 3000…6000TL BL-UP". Test report 190612125GZU-001 Rev. 2 (2021-08-24). Batteries:
+      Pylontech US2000 / US2000 Plus, Growatt GBLI6531/GBLI6532, ARK 2.5L-A1 / -G1, not integrated. Allegato reads "systems with capacity
+      up to 11.08 kW". Old edition (2019-04) and accredited by CNAS, not ACCREDIA. SPH 5000/6000TL BH-UP (single-phase BH) is another
+      model, not joined.'
+- id: it-cei021-sph-spa-tl3-bh-up-2021
+  title: Intertek Certificate of Conformity CN-PV-210174 — CEI 0-21:2019-04 — SPH / SPA 4000…10000TL3 BH-UP accumulation system
+  url: https://es.growatt.com/upload/file/20220829/cac48f5bfcd4702279f7f138ca0c6e73.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by CNAS, ISO/IEC 17065:2012)
+  cert_no: CN-PV-210174
+  issued: '2021-07-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: YA1.0
+  families:
+  - name: SPH / SPA TL3 BH-UP three-phase hybrid 4–10 kW
+    match: ^SP[HA](4000|5000|6000|7000|8000|10000)TL3BH-UP$
+    countries: [IT]
+    note: Test report 210625019GZU-001; supersedes CN-PV-210155. Batteries ARK 7.6H-A1…25.6H-A1 (pack ARK 2.5H-A1, control HVC 60050-A1),
+      not integrated. Allegato reads "systems with capacity up to 11.08 kW". Old edition (2019-04), CNAS-accredited. The listing's two
+      links (SPA and SPH) serve the same file. TL3 BH without -UP is another model, not joined.
+- id: it-cei021-mic-tl-x-2020
+  title: Intertek Certificate of Conformity CN-PV-200152 — CEI 0-21:2019-04 — MIC 750…3300TL-X
+  url: https://es.growatt.com/upload/file/20220815/03b5df9dad526d602198755563c9e04e.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by CNAS C058-P, ISO/IEC 17065:2012)
+  cert_no: CN-PV-200152
+  issued: '2020-11-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: GH1.0
+  families:
+  - name: MIC TL-X single-phase string 0.75–3.3 kW
+    match: ^MIC(750|1000|1500|2000|2500|3000|3300)TL-X$
+    countries: [IT]
+    note: Test report 200228037GZU-001. Allegato reads "systems with capacity up to 11.08 kW". Old edition (2019-04), CNAS-accredited.
+      MIC TL-X2, MIC …-X (no TL) and MIC 600/800TL-X are not named, not joined.

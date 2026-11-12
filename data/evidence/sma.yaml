@@ -180,3 +180,155 @@ documents:
     match: ^(SUNNYTRIPOWER)?(STP)?(3\.0|4\.0|5\.0|6\.0|8\.0|10\.0)-3AV-40$
     countries: [DE]
     note: Unit certificate only (report 18TH0325-VDE-0124-100_0, programme NSOP-0032-DEU-ZE-V01); no NA-protection table in this file.
+- id: it-cei021-sb-1av-41-2023
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U23-1112 — CEI 0-21:2022-03 + V1:2022-11
+    — Sunny Boy SB3.0-SB6.0-1AV-41
+  url: https://files.sma.de/assets/271655.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U23-1112
+  issued: '2023-12-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V04.00.75.R (declaration says 4.00 e superiore)
+  families:
+  - name: Sunny Boy 3.0-6.0 kW 1-phase (SB x.x-1AV-41)
+    match: ^(SUNNYBOY)?(SB)?(3\.0|3\.6|4\.0|5\.0|6\.0)-1AV-41$
+    countries: [IT]
+    note: SPI integrated; Allegato A + B; "per gli impianti di ogni potenza", but not for multi-inverter use above 6 kW per phase
+- id: it-cei021-sb-1vl-40-2023
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U23-1049 — CEI 0-21:2022-03 + V1:2022-11
+    — Sunny Boy SB1.5/2.0/2.5-1VL-40
+  url: https://files.sma.de/assets/279331.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U23-1049
+  issued: '2023-11-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V.3.11.05.R e superiore
+  families:
+  - name: Sunny Boy 1.5-2.5 kW 1-phase (SB x.x-1VL-40)
+    match: ^(SUNNYBOY)?(SB)?(1\.5|2\.0|2\.5)-1VL-40$
+    countries: [IT]
+    note: SPI integrated; "per impianti fino a 11,08 kW"
+- id: it-cei021-sbs-10-2023
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U23-1098 — CEI 0-21:2022-03 + V1:2022-11
+    — Sunny Boy Storage SBS3.7/5.0/6.0-10
+  url: https://files.sma.de/assets/274951.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U23-1098
+  issued: '2023-11-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 3.10.15.R (certificate); declaration says 4.04.03.R e superiore
+  families:
+  - name: Sunny Boy Storage 3.7-6.0 kW 1-phase battery inverter (SBS x.x-10)
+    match: ^((SUNNYBOYSTORAGE)?SBS|SUNNYBOYSTORAGE)(3\.7|5\.0|6\.0)-10$
+    countries: [IT]
+    note: SPI integrated; Allegato A + Bbis; "per gli impianti di ogni potenza"; batteries named — LG RESU (10M, 7H/10H/16H, Flex),
+      BYD Battery-Box (H, HVS, HVM), BMZ Hyperion, AXITEC AXIstorage, Pylontech Force-H1/H2, IBC era:powerbase
+- id: it-cei021-stp-50-4x-2023
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U23-1045 — CEI 0-21:2022-03 + V1:2022-11
+    — Sunny Tripower CORE1 STP 50-40 / STP 50-41
+  url: https://files.sma.de/assets/274746.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U23-1045
+  issued: '2023-11-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V03.10.03.R e superiore
+  families:
+  - name: Sunny Tripower CORE1 50 kW 3-phase (STP 50-40 / 50-41)
+    match: ^(SUNNYTRIPOWER|CORE1/)?(STP)?50-4[01]$
+    countries: [IT]
+    note: Allegato B only — no integrated SPI, an external interface protection is needed; "per gli impianti di ogni potenza"
+- id: it-cei021-si-13-2023
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U23-1123 — CEI 0-21:2022-03 + V1:2022-11
+    — Sunny Island SI4.4M-13 / SI6.0H-13 / SI8.0H-13
+  url: https://d3yvy865gav9f.cloudfront.net/asset/851725204959/document_e3ih2mj3fp0pvf4v2u7i87hd2k/ZE_CEI021-SI-13-it-15.pdf
+  issuer: SMA declaration (Niestetal, 14.02.2024) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U23-1123
+  issued: '2023-12-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 3.30.12.R e superiore
+  families:
+  - name: Sunny Island 4.4M/6.0H/8.0H 1-phase battery inverter (SI x.x-13)
+    match: ^(SUNNYISLAND)?(SI)?(4\.4M|6\.0H|8\.0H)-13$
+    countries: [IT]
+    note: Allegato Bbis only — no integrated SPI; line-frequency transformer; "per gli impianti di ogni potenza"; batteries named —
+      LG RESU, BYD, BMZ, AXITEC, GS HUB, IBC, Pylontech, Tesvolt
+- id: it-cei021-stps-si-20-2026
+  title: Certificato di conformità alle prescrizioni alla Norma CEI 0-21 n. U26-0165 — CEI 0-21:2022-03 + V1 + V2 + V2/EC + V2/EC2 +
+    V3:2025-10 — Sunny Tripower Storage STPS30-20/STPS50-20, Sunny Island SI30-20/SI50-20
+  url: https://d3yvy865gav9f.cloudfront.net/asset/851725204959/document_p73u93nmrd0f1f9sm8kjq5ni1d/ZE_CE1021_STPx0-20_SI-20-it-12.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH, DAkkS D-ZE-12024-01-00
+  cert_no: U26-0165
+  issued: '2026-02-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-04
+  - CEI 0-21;V3:2025-10
+  firmware: 03.00.76.R
+  families:
+  - name: Sunny Tripower Storage / Sunny Island 30-50 kW 3-phase battery inverter (STPS / SI xx-20)
+    match: ^(SUNNYTRIPOWER|SUNNYISLAND)?(STPS|SI)(30|50)-20$
+    countries: [IT]
+    note: Allegato Bbis only — no integrated SPI; "idoneo per installazione in impianti con potenza superiore a 11,08 kW"; batteries
+      named — BYD, Pylon Technologies, SMA Commercial / Storage XL, Sunwoda (some only for the 30-20 models)
+- id: it-cei021-stp-110-60-2023
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U23-0997 — CEI 0-21:2022-03 + V1:2022-11
+    — Sunny Tripower CORE2 STP 110-60
+  url: https://d3yvy865gav9f.cloudfront.net/asset/851725204959/document_ss2l6r0qtp3hj77pif63sbck1s/ZE_CEI021_STPxxx-60_it_12.pdf
+  issuer: SMA declaration (Niestetal, 12.12.2023) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U23-0997
+  issued: '2023-11-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 1.00.05.R e superiore
+  families:
+  - name: Sunny Tripower CORE2 110 kW 3-phase (STP 110-60)
+    match: ^(SUNNYTRIPOWER|CORE2/|SUNNYTRIPOWERCORE2)?(STP)?110-60$
+    countries: [IT]
+    note: Allegato B only — no integrated SPI; "idoneo per installazione in impianti con potenza superiore a 11,08 kW"
+- id: it-cei021-stp-125-70-2024
+  title: Dichiarazione di conformità del generatore + Certificato di conformità CEI 0-21 n. U24-0657 — CEI 0-21:2022-03 + V1:2022-11
+    + V2:2024-01 — Sunny Tripower STP 125-70
+  url: https://d3yvy865gav9f.cloudfront.net/asset/851725204959/document_tnsc7u1ad53bj40mpa69ef3910/ZE_CEI021_STP125-70_it_10.pdf
+  issuer: SMA declaration (Niestetal, 7.10.2024) + Bureau Veritas Consumer Products Services Germany GmbH certificate, DAkkS D-ZE-12024-01-00
+  cert_no: U24-0657
+  issued: '2024-07-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 4.0.0.R (tested; declaration says 4.00.00.R e superiore)
+  families:
+  - name: Sunny Tripower 125 kW 3-phase (STP 125-70)
+    match: ^(SUNNYTRIPOWER)?(STP)?125-70$
+    countries: [IT]
+    note: Allegato B only — no integrated SPI; "idoneo per installazione in impianti con potenza superiore a 11,08 kW"

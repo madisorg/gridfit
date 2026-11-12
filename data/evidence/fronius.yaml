@@ -193,3 +193,143 @@ documents:
     countries: [DE]
     note: Unit certificate (evaluation 317036-RE-1, 31 pp.); the NA-protection certificate is a separate file in the same folder (not
       read).
+- id: it-cei021-primo-gen24-2025
+  title: Certificate of Conformity AK 60181726 0001 — CEI 0-21:2022-03 + V1 + V2 + V2/EC + V2/EC2:2025-02 — Primo GEN24 3.0-6.0 (Plus,
+    Lite)
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_TUEV_Conformity_CEI0-21_Fronius_Primo_GEN24_3.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT25ME2E 001)
+  cert_no: AK 60181726 0001
+  issued: '2025-04-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  families:
+  - name: Fronius Primo GEN24 3.0-6.0 kW 1-phase hybrid (Plus / Lite)
+    match: ^(FRONIUS)?PRIMOGEN24(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)(PLUS|LITE)?$
+    countries: [IT]
+    note: SC variants not named
+- id: it-cei021-symo-gen24-3-5-2023
+  title: Certificate of Conformity AK 60170254 0001 — CEI 0-21;V1:2022-11 — Symo GEN24 3.0-5.0 (Plus, Lite)
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_CEI0-21_2022_Fronius_Symo_GEN24_5_0_IT_EN.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT23O03N 001)
+  cert_no: AK 60170254 0001
+  issued: '2023-05-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21;V1:2022-11
+  families:
+  - name: Fronius Symo GEN24 3.0-5.0 kW 3-phase hybrid (Plus / Lite)
+    match: ^(FRONIUS)?SYMOGEN24(PLUS)?(3\.0|4\.0|5\.0)(PLUS|LITE)?$
+    countries: [IT]
+    note: may be installed with BYD Battery-Box Premium HVS and HVM; SC variants not named
+- id: it-cei021-symo-gen24-6-10-2025
+  title: Certificate of Conformity AK 60181724 0001 — CEI 0-21:2022-03 + V1 + V2 + V2/EC + V2/EC2:2025-02 — Symo GEN24 6.0-10.0 (Plus,
+    Lite)
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_TUEV_Conformity_CEI0-21_Fronius_Symo_GEN24_6_0-10_0_EN.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT25QMMA 001)
+  cert_no: AK 60181724 0001
+  issued: '2025-04-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  families:
+  - name: Fronius Symo GEN24 6.0-10.0 kW 3-phase hybrid (Plus / Lite)
+    match: ^(FRONIUS)?SYMOGEN24(PLUS)?(6\.0|7\.0|8\.0|9\.0|10\.0)(PLUS|LITE)?$
+    countries: [IT]
+- id: it-cei021-symo-gen24-sc-2025
+  title: Certificate of Conformity AK 60181725 0001 — CEI 0-21:2022-03 + V1 + V2 + V2/EC + V2/EC2:2025-02 — Symo GEN24 (Plus) 6.0-12.0
+    SC
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_TUEV_Conformity_CEI0-21_Fronius_Symo_GEN24_6.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT25CLWV 001)
+  cert_no: AK 60181725 0001
+  issued: '2025-04-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  families:
+  - name: Fronius Symo GEN24 6.0-12.0 kW SC 3-phase hybrid (Plus)
+    match: ^(FRONIUS)?(SYMO)?GEN24(6|7|8|9|10|11|12)\.0(PLUS)?SC$
+    countries: [IT]
+    note: model "Symo GEN24 X.X A SC B" — A blank or Plus, B an optional country code (technically identical)
+- id: it-cei021-verto-15-25-400-2025
+  title: Certificate of Conformity AK 60183397 0001 — CEI 0-21:2022-03 + V1 + V2 + V2/EC + V2/EC2:2025-02 — Verto 15.0-25.0 400
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_TUEV_CEI0-21_Fronius_Verto_15_0-25_0_400_EN.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT25T557 001)
+  cert_no: AK 60183397 0001
+  issued: '2025-08-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  families:
+  - name: Fronius Verto 15.0-25.0 400 kW 3-phase
+    match: ^VERTO(15\.0|17\.5|20\.0|24\.0|25\.0400)$
+    countries: [IT]
+    note: models Verto 15.0, 17.5, 20.0, 24.0 and 25.0 400; Verto Plus not named
+- id: it-cei021-verto-25-33-2024
+  title: Certificate of Conformity AK 60179305 0001 — CEI 0-21;V2:2024-01 (Annex B) — Verto 25.0-33.3
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_TUEV_Conformity_CEI_0-21_Fronius_Verto_25.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT2459PF 002)
+  cert_no: AK 60179305 0001
+  issued: '2024-11-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21;V2:2024-01
+  families:
+  - name: Fronius Verto 25.0-33.3 kW 3-phase
+    match: ^VERTO(25\.0|27\.0|30\.0|33\.3)$
+    countries: [IT]
+    note: converter tested to Annex B only — no integrated SPI stated; Verto Plus not named
+- id: it-cei021-symo-advanced-2023
+  title: Dichiarazione di conformità alla norma CEI 021 — CEI 0-21 ed. 2022-11 V1 — Fronius Symo Advanced 10.0-20.0-3 M
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Declaration%20of%20Conformity%20myFronius/SE_EC_Declaration_Conformity_CEI021_FroniusSymoAdvanced10-20_CI_IT.pdf
+  issuer: Fronius International GmbH declaration (Thalheim, 04.07.2023); tests TÜV Rheinland Italia S.r.l., ACCREDIA 1356 (RdP IT23D868
+    001)
+  issued: '2023-07-04'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21;V1:2022-11
+  firmware: SYMOPS V1.9.3.1, SYMOFIL V1.0.0.1, RECERBO V0.3.27.2 e successive
+  families:
+  - name: Fronius Symo Advanced 10.0-20.0 kW 3-phase
+    match: ^(FRONIUS|SYMO)?(SYMO)?ADVANCED(10\.0|12\.5|15\.0|17\.5|20\.0)-3-M$
+    countries: [IT]
+    note: SPI integrated only in the 10.0-3 M; 12.5-20.0 need an external SPI; suitable for plants > 11.08 kW
+- id: it-cei021-tauro-2021
+  title: Dichiarazione di Conformità alla normativa CEI 0-21:2019-04 — Fronius Tauro 50-3-P / 50-3-D
+  url: https://www.fronius.com/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_CEI_0-21_2019_Fronius_Tauro_EN_IT.pdf
+  issuer: TÜV Rheinland Italia S.r.l., ACCREDIA 1356 L (test files IT213FDX 001)
+  issued: '2021-09-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: Bundle 1.13.9-1
+  families:
+  - name: Fronius Tauro 50 kW 3-phase
+    match: ^TAURO50-3-(D|P)$
+    countries: [IT]
+    note: older edition (CEI 0-21:2019-04); Fronius' own Allegato-style declaration of the same models is SE_CER_Declaration_of_conformity_CEI_0-21_Fronius_Tauro%20_IT.pdf
+      (Wels, 04/10/2021); a CEI 0-16 V1:2022-11 certificate also exists

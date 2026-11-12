@@ -27,3 +27,81 @@ documents:
     countries: [IT]
     note: Test report 22TH0188-CEI0-21_0. "Il dispositivo è per gli impianti di ogni potenza". The SPI is integrated (SolarEdge Technologies
       Ltd.). The annex carries measured SPI trip values at ambient, -10 °C and +55 °C.
+- id: it-cei021-hd-wave-storedge-1ph-2023
+  title: Dichiarazione di conformità alle prescrizioni alla Norma CEI 0-21 — CEI 0-21:2022-03 + V1:2022-11 — single-phase HD-Wave SE2200H-SE6000H
+    with StorEdge connection unit
+  url: https://knowledge-center.solaredge.com/sites/kc/files/se-single-phase-and-storedge-inverters-cei-0-21-certificate-it.pdf
+  issuer: Kiwa Primara GmbH, DAkkS D-ZE-12089-01-00 (programme SOP-9-1_15 GCC, 09/21)
+  cert_no: 23-287-01
+  issued: '2023-09-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: 'DSP1: 1.0.xxxx / DSP2: 2.0.xxxx; DSP1: 1.100.xxxx / DSP2: 2.100.xxxx'
+  families:
+  - name: SolarEdge HD-Wave 2.2-6 kW 1-phase (SExxxxH, also with StorEdge SESTI)
+    match: ^(HDWAVE)?SE(2200|2500|3000|3500|3680|4000|5000|6000)H(SESTI)?$
+    countries: [IT]
+    note: SPI integrated; solar + storage ticked; "idoneo per impianti > 11,08 kW"; storage with StorEdge connection unit SESTI-S1/S2/S4
+      and LG Chem RESU7H, RESU10H, RESU10H Prime, RESU16H Prime or SolarEdge BAT-10K1P
+- id: it-cei021-3ph-se3k-se17k-2023
+  title: Certificato di conformità alle prescrizioni alla Norma CEI 0-21 — CEI 0-21:2022-03 + V1:2022-11 — three-phase SE3K-SE17K
+  url: https://knowledge-center.solaredge.com/sites/kc/files/se-three-phase-inverter-certificate-cei-italy.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH, DAkkS D-ZE-12024-01-00
+  cert_no: U23-0140_1
+  issued: '2023-08-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: DSP1 1.13, DSP2 2.19 e superiore; DSP1 1.20, DSP2 2.20 e superiore
+  families:
+  - name: SolarEdge three-phase 3-10 kW (SE3K-SE10K, SE3K/4K/5K-RWB)
+    match: ^SE((3|4|5)K(-RWB)?|(6|7|8|9|10)K)$
+    countries: [IT]
+    note: SPI integrated for SE3K-SE10K (incl. -RWB); "per gli impianti di ogni potenza"; supersedes U21-0334 (CEI 0-21:2019-04, 2021-04-15)
+  - name: SolarEdge three-phase 12.5-17 kW (SE12.5K-SE17K)
+    match: ^SE(12\.5|15|16|17)K$
+    countries: [IT]
+    note: no integrated SPI tested for these sizes — external interface protection; "per gli impianti di ogni potenza"
+- id: it-cei021-storedge-3ph-rws-2022
+  title: Dichiarazione di conformità alle prescrizioni alla Norma CEI 0-21 — CEI 0-21:2022-03 — StorEdge three-phase SE5K-RWS / SE7K-RWS
+    / SE8K-RWS / SE10K-RWS
+  url: https://knowledge-center.solaredge.com/sites/kc/files/se-solaredge-storedge-three-phase-inverter-grid-certificate-for-italy.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH, DAkkS D-ZE-12024-01-00
+  cert_no: U22-0356
+  issued: '2022-06-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  firmware: 'DSP1: 1.13 e superiori, 1.20 e superiori'
+  families:
+  - name: SolarEdge StorEdge three-phase 5-10 kW (SExK-RWS)
+    match: ^SE(5|7|8|10)K-RWS$
+    countries: [IT]
+    note: Allegato B bis (storage); SPI integrated; "per gli impianti di ogni potenza"; batteries named — SolarEdge BAT-05K48 and LG;
+      CEI 0-21:2022-03 only (no V1)
+- id: it-cei021-pcs050-css-ou-20-2024
+  title: Compliance Document No. D 082496 0047 Rev. 00 — CEI 0-21:2022 + V1:2022 + V2:2024 — PCS050 energy storage inverter with CSS-OU-20
+    battery
+  url: https://knowledge-center.solaredge.com/sites/kc/files/se-solaredge-css-od-battery-inverter-grid-certificate-for-italy.pdf
+  issuer: TÜV SÜD Product Service GmbH, Certification Body (Munich)
+  cert_no: D 082496 0047 Rev. 00
+  issued: '2024-07-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  - CEI 0-21:2022/V1:2022
+  - CEI 0-21:2022/V2:2024
+  firmware: V000B000D001
+  families:
+  - name: SolarEdge PCS050 50 kW 3-phase storage inverter (CSS-OU-20)
+    match: ^PCS050$
+    countries: [IT]
+    note: suitable for plants > 11.08 kW; battery CSS-OU-20 (LiFePO4, 2 × 102.4 kWh); voluntary compliance document on the tested sample;
+      PCS050B is not named

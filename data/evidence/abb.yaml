@@ -26,3 +26,96 @@ documents:
     countries:
     - IT
     note: "Three-phase, 230/400 V, 50 Hz; rated 5.8 / 7.5 / 8.5 kW (5.22 / 6.75 / 7.65 kW at cos φ ±0.9). Sez. A: fit for plants above 11.08 kW; limits Idc to 0.5 % of rated current by a DC-sensitive protection. Sez. B: interface protection integrated. Test report IT2458MT 001 (Allegato B). It replaces the declaration of 10 June 2024 for the same models. The 2026-07 edition of CEI 0-21 is not cited."
+- id: it-cei021-abb-uno-dm-plus-1-5-2024
+  title: Dichiarazione di Conformità del generatore — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — UNO-DM-1.2…5.0-TL-PLUS(-XYK-JVN-DIP),
+    attached to TÜV Rheinland certificate AK 60176934 0001
+  url: https://fimer.com/sites/default/files/UNO-DM-5.0%284.6%29%284.0%29%283.6%29%283.3%29%283.0%29%282.0%29%281.2%29-TL-PLUS-XYK-JVN-DIP%20%28TUV_CEI%200-21_DichConfGen_Ref.%20AK%2060176934%200001%29%20Rev.%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH certificate; tests TÜV Rheinland Italia S.r.l., ACCREDIA 1356 L (RdP IT24FEID 001)
+  cert_no: AK 60176934 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2201A or later
+  families:
+  - name: UNO-DM-1.2 … 5.0-TL-PLUS (single-phase string, 1.2-5 kW)
+    match: ^UNO-DM-(1\.2|2\.0|3\.0|3\.3|3\.6|4\.0|4\.6|5\.0)-TL-PLUS(-Q)?$
+    countries: [IT]
+    note: SPI integrated; fit for plants > 11.08 kW; the type code UNO-DM-X.X-TL-PLUS-XYK-JVN-DIP covers the -S/-B/-E/-X/-G options
+      and -Q (no display); holder FIMER S.p.A., ABB's solar business since 2020
+- id: it-cei021-abb-uno-dm-6-0-plus-2024
+  title: Dichiarazione di Conformità del generatore — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — UNO-DM-6.0-TL-PLUS(-XYK-JVN-DIP), attached
+    to TÜV Rheinland certificate AK 60176844 0001
+  url: https://fimer.com/sites/default/files/UNO-DM-6.0-TL-PLUS-XYK-JVN-DIP%20%28TUV_CEI%200-21_DichConfGen_Ref.%20AK%2060176844%200001%29%20Rev-%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH certificate; tests TÜV Rheinland Italia S.r.l., ACCREDIA 1356 L (RdP IT24IR0B 001)
+  cert_no: AK 60176844 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2200C or later
+  families:
+  - name: UNO-DM-6.0-TL-PLUS (single-phase string, 6 kW)
+    match: ^UNO-DM-6\.0-TL-PLUS(-Q)?$
+    countries: [IT]
+    note: SPI integrated; -Q (no display) is in the type code
+- id: it-cei021-abb-trio-20-27-6-2024
+  title: Certificate of Conformity AK 60176847 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — TRIO-20.0/27.6-TL-OUTD(-S2/-S2X/-SF2/-S1J/-S2J)-400
+  url: https://www.fimer.com/sites/default/files/TRIO-27.6%2820.0%29-TL-OUTD-400%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176847%200001%29%20Rev-%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176847 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2030D or later (FIMER declaration of 22/07/2024)
+  families:
+  - name: TRIO-20.0 / 27.6-TL-OUTD-400 (three-phase string, 20-27.6 kW)
+    match: ^TRIO-(20\.0|27\.6)-TL-OUTD(-(S2|S2X|SF2|S1J|S2J))?(-400)?$
+    countries: [IT]
+    note: SPI not integrated (external interface protection); fit for plants > 11.08 kW
+- id: it-cei021-abb-pvs-50-2024
+  title: Certificate of Conformity AK 60176851 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — PVS-50-TL (-S, -SX, -SX2)
+  url: https://www.fimer.com/sites/default/files/PVS-50-TL%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176851%200001%29%20Rev-%202024-07-01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176851 0001
+  issued: '2024-07-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2024B or later (FIMER declaration of 22/07/2024)
+  families:
+  - name: PVS-50-TL (three-phase string, 50 kW)
+    match: ^PVS-50-TL(-S|-SX|-SX2)?$
+    countries: [IT]
+    note: SPI not integrated (external interface protection); fit for plants > 11.08 kW
+- id: it-cei021-abb-pvs-100-2024
+  title: Certificate of Conformity AK 60176854 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — PVS-100-TL
+  url: https://www.fimer.com/sites/default/files/PVS-100-TL%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176854%200001%29%20Rev-%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176854 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2201B or later (maker declaration of 16-02-2026)
+  families:
+  - name: PVS-100-TL (three-phase string, 100 kW)
+    match: ^PVS-100-TL$
+    countries: [IT]
+    note: SPI not integrated (external interface protection); fit for plants > 11.08 kW

@@ -603,3 +603,109 @@ documents:
     note: Foreign accredited certificate citing PPDS (DAkkS, not ČIA) — background only; Czech operators take an SZÚ/ČIA certificate
       or a ČEZd/EG.D lab protocol. Report ASUE-ESH-P22030586-R1. No settings table.
     accepted_in: [EE, NL, SE]
+- id: it-cei021-sg01hp3-am2-2025
+  title: Kiwa Primara Certificato di conformità 25-232-00 — CEI 0-21 2022-03; V1:2022-11; V2:2024-01 — SUN-5K…25K-SG01HP3-EU-AM2
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_italy+cei0-21-1.pdf
+  issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, ISO/IEC 17065)
+  cert_no: 25-232-00
+  issued: '2025-07-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: '1014'
+  families:
+  - name: SG01HP3-AM2 three-phase HV hybrid 5–25 kW
+    match: ^SUN-(5|6|8|10|12|15|20|25)K-SG01HP3-EU-AM2$
+    countries: [IT]
+    note: SPI integrated; idoneo per impianti > 11,08 kW. Batteries named — Deye BOS-G-Pack5.1 in BOS-G25-Pro…BOS-G60-Pro packs (BMS
+      fw HVCUE1625423N01_5003). The 30/40/50K-AM2, the no-suffix SG01HP3-EU and the -DM2 register rows are not named.
+- id: it-cei021-sg01hp3-bm-2025
+  title: Kiwa Primara Certificato di conformità 25-233-00 — CEI 0-21 2022-03; V1:2022-11; V2:2024-01 — SUN-29.9K…50K-SG01HP3-EU-BM3/BM4
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_italy+cei_021.pdf
+  issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, ISO/IEC 17065)
+  cert_no: 25-233-00
+  issued: '2025-07-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: '1020'
+  families:
+  - name: SG01HP3-BM3/BM4 three-phase HV hybrid 29.9–50 kW
+    match: ^SUN-((29\.9|30|35)K-SG01HP3-EU-BM3|(40|50)K-SG01HP3-EU-BM4)$
+    countries: [IT]
+    note: Certificate covers static converter and storage only — no integrated SPI (interface protection section blank), an external
+      SPI is needed; idoneo per impianti > 11,08 kW. Batteries BOS-G-Pack5.1 / BOS-G25…G60-Pro.
+- id: it-cei021-g04-18-36k-2024
+  title: Kiwa Primara Certificato di conformità 22-386-01 — CEI 0-21 2022-03; V1:2022-11; V2:2024-01 — SUN-18K…36K-G04
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/09/Certificate_Italy+CEI0-21.pdf
+  issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, ISO/IEC 17065)
+  cert_no: 22-386-01
+  issued: '2024-12-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: Ver 3174
+  families:
+  - name: G04 three-phase string 18–36 kW
+    match: ^SUN-(18|20|25|30|33|35|36)K-G04$
+    countries: [IT]
+    note: Static converter only — no integrated SPI (external SPI needed); idoneo per impianti > 11,08 kW.
+- id: it-cei021-g03-30-60k-2022
+  title: Kiwa Primara Dichiarazione di conformità 22-387-00 — CEI 0-21 2022-03 — SUN-30K…60K-G03
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/11/certificate_italy+cei0-21.pdf
+  issuer: Kiwa Primara GmbH (DAkkS D-ZE-12089-01-00, ISO/IEC 17065)
+  cert_no: 22-387-00
+  issued: '2022-12-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  firmware: Ver3117
+  families:
+  - name: G03 three-phase string 30–60 kW
+    match: ^SUN-(30|33|35|40|50|60)K-G03$
+    countries: [IT]
+    note: Older edition (2022-03 only, no V1/V2). Static converter only — no integrated SPI; idoneo per impianti > 11,08 kW. The download
+      centre lists it as SUN-(20-60)K-G03 but the certificate names 30–60 kW only.
+- id: it-cei021-g04p1-2023
+  title: Bureau Veritas Certificato di conformità U23-0684 — CEI 0-21:2022-03 / V1:2022-11, Allegato A e B — SUN-1K…4K-G04P1-EU-AM1
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/08/Certificate_Italy+CEI0-21.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00, ISO/IEC 17065)
+  cert_no: U23-0684
+  issued: '2023-08-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: '6153'
+  families:
+  - name: G04P1 single-phase string 1–4 kW
+    match: ^SUN-(1|1\.5|2|2\.5|3|3\.6|4)K-G04P1-EU-AM1$
+    countries: [IT]
+    note: SPI integrated (Allegato A extract with test values); "per impianti fino a 11,08 kW". Test report ASUE-ESH-P23041363.
+- id: it-cei021-sg03lp1-2021
+  title: Intertek Test Verification of Conformity 210800564TPE-001-VOC1 — CEI 0-21:2019-04 — SUN-3K…6K-SG03LP1-EU
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/01/certificate_italy+cei0-21.pdf
+  issuer: Intertek Testing Services Taiwan Ltd. (test lab verification; not a certification body's certificate)
+  cert_no: 210800564TPE-001-VOC1
+  issued: '2021-12-17'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2019-04
+  families:
+  - name: SG03LP1 single-phase LV hybrid 3–6 kW
+    match: ^SUN-(3|3\.6|5|6)K-SG03LP1-EU$
+    countries: [IT]
+    note: Old edition (2019-04) and a lab verification only, not a CEI 0-21 Allegato certificate. Third-party LV batteries listed (Pylontech
+      US2000/US3000, WeCo 4K4 pro/5K3, Dowell iPack, UZ, GSL, BST …). Firmware not stated. The -BE register rows are not named.

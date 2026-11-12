@@ -64,3 +64,148 @@ documents:
     match: ^(ASW05KH\-T2|ASW05KH\-T3|ASW06KH\-T2|ASW06KH\-T3|ASW08KH\-T2|ASW08KH\-T3|ASW10KH\-T2|ASW10KH\-T3|ASW12KH\-T2|ASW12KH\-T3)(-O|-DG)?$
     countries: []
     accepted_in: [EE, NL, SE]
+- id: it-cei021-asw-th-2025
+  title: Bureau Veritas Certificato di conformità CEI 0-21 U25-0794 — CEI 0-21:2022-03 / V1 / V2:2024-01 / V2/EC:2024 / V2/EC2:2025
+    (Allegato Bbis) — ASW015K…030K-TH(-N) with Ai-HB G2 Pro
+  url: https://solplanet.net/wp-content/uploads/2026/02/Certificato-di-Conformita%CC%80-CEI-0-21-ASW-15-30K-TH-Ai-HB-G2-Pro-V01.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00); test report PVIT2407WDG0207-1
+  cert_no: U25-0794
+  issued: '2025-09-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024
+  - CEI 0-21;V2/EC2:2025
+  firmware: Safety V610-11027-06, DSP V610-05003-03
+  families:
+  - name: ASW 15–30K-TH three-phase hybrid
+    match: ^ASW(015K|020K|025K|29\.9K|030K)-TH(-N)?$
+    countries: [IT]
+    note: Allegato Bbis (storage); battery Ai-HB G2 Pro (file name); "idoneo per installazione in impianti con potenza superiore a 11,08
+      kW". The register's ASW15/20/25/30KH-TH spelling is not named.
+- id: it-cei021-asw-kh-t2-t3-2023
+  title: TÜV Rheinland Certificate of Conformity A3 50600038 0001 — CEI 0-21:2022-03; V1:2022-11 — ASW05…12kH-T2(-O) / -T3(-O) with
+    Force-L2 / Ai-HB G2
+  url: https://solplanet.net/wp-content/uploads/2023/12/Certificato-di-Conformita%CC%80-CEI-0-21-ASW-5-12k-H-T2T3-Ai-HB-G2-V02.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); report CN23H0QS 001
+  cert_no: A3 50600038 0001
+  issued: '2023-10-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Master 610-05001-00, Slave 610-60015-00, Safety 610-11022-00
+  families:
+  - name: ASW05–12kH-T2/T3 three-phase hybrid
+    match: ^ASW(05|06|0?8|10|12)KH-T[23](-O)?$
+    countries: [IT]
+    note: May be installed with Force-L2 or Ai-HB G2 batteries. -DG and -T1 variants not named; ASW8KH-T3 is the register's spelling
+      of ASW08kH-T3.
+- id: it-cei021-asw-lt-g2-2022
+  title: TÜV SÜD Attestato di conformità D 099567 0084 Rev. 00 — CEI 0-21:2022 — ASW3K…20K-LT-G2 Pro, ASW8K…20K-LT-G2
+  url: https://solplanet.net/wp-content/uploads/2023/05/Cer_CEI-0-21_ASW3-20K-LT-G2-Pro_it_V01.pdf
+  issuer: TÜV SÜD Product Service GmbH (DAkkS D-ZE-11321-01-00); report 704092228602-00
+  cert_no: D 099567 0084 Rev. 00
+  issued: '2022-11-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  firmware: Master DSP V610-03043-05, Slave DSP V610-60015-00, grid-code package V610-11009-02
+  families:
+  - name: ASW LT-G2 / LT-G2 Pro three-phase string 3–20 kW
+    match: ^ASW((3|4|5|6)K-LT-G2PRO|(8|10|12|13|15|17|20)K-LT-G2(PRO)?)$
+    countries: [IT]
+    note: Italian translation of the TÜV SÜD certificate. SPI integrated for 3–10K Pro and 10K-LT-G2; NOT integrated for 12–20K (G2
+      and G2 Pro), which are suitable above 11.08 kW with an external SPI. Edition 2022 without V1. -BE variant not named.
+- id: it-cei021-asw-lt-g3-25-40-2023
+  title: Bureau Veritas Dichiarazione di conformità CEI 0-21 U23-0259 — CEI 0-21:2022-03 / V1:2022-11 — ASW25K…40K-LT-G3
+  url: https://solplanet.net/wp-content/uploads/2023/05/Certificato-di-Conformita-CEI-0-21-ASW-25-40K-LT-G3-V01.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00); test report PVIT2204WDG0409-1
+  cert_no: U23-0259
+  issued: '2023-04-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Main DSP V610-03041-05, Slave DSP V610-60009-00, Safety V610-11007-02
+  families:
+  - name: ASW LT-G3 three-phase string 25–40 kW
+    match: ^ASW(25|27|30|33|36|40)K-LT-G3$
+    countries: [IT]
+    note: Allegato B; "idoneo per installazione in impianti con potenza superiore a 11,08 kW".
+- id: it-cei021-asw-lt-g3-45-60-2023
+  title: TÜV Rheinland Certificate of Conformity A3 50594966 0001 — CEI 0-21:2022-03; V1:2022-11 — ASW45K / 50K / 60K-LT-G3
+  url: https://solplanet.net/wp-content/uploads/2023/05/Certificato-di-Conformita%CC%80-CEI-0-21-ASW-45-60K-LT-G3-V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH; tests TÜV Rheinland (Shanghai) Co., Ltd., CNAS L3038, report CN23JUXD 001
+  cert_no: A3 50594966 0001
+  issued: '2023-09-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V610-03030-01 / V610-60015-00 / V610-11021-01
+  families:
+  - name: ASW LT-G3 three-phase string 45–60 kW
+    match: ^ASW(45|50|60)K-LT-G3$
+    countries: [IT]
+    note: The declaration's footnote speaks of a battery input and Annex A, B and Bbis (template text).
+- id: it-cei021-asw-lt-75-110-2023
+  title: Bureau Veritas Dichiarazione di conformità CEI 0-21 U23-0370 — CEI 0-21:2022-03 / V1:2022-11 — ASW75K / 80K / 100K / 110K-LT
+  url: https://solplanet.net/wp-content/uploads/2023/05/Certificato-di-Conformita%CC%80-CEI-0-21-ASW-75-110K-LT-V01.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00); test report PVIT2303WDG0040-1
+  cert_no: U23-0370
+  issued: '2023-05-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Main DSP V610-04001-00, Slave DSP V610-04002-00, Safety V610-12001-00
+  families:
+  - name: ASW LT three-phase string 75–110 kW
+    match: ^ASW(75|80|100|110)K-LT$
+    countries: [IT]
+    note: Allegato B; "per gli impianti di ogni potenza". ASW125K-LT not named.
+- id: it-cei021-asw-s-g2-2024
+  title: Bureau Veritas Dichiarazione di conformità CEI 0-21 U24-0388 — CEI 0-21:2022-03 / V1:2022-11 (Allegato A + B) — ASW1000…6000-S-G2
+  url: https://solplanet.net/wp-content/uploads/2024/07/Certificato-di-Conformita-CEI-0-21-ASW-1-6k-S-G2-V02.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00); test report PVIT2210WDG0136-1-R1
+  cert_no: U24-0388
+  issued: '2024-05-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Main DSP V610-01055-06, Slave DSP V610-01056-06, Safety V610-10010-06
+  families:
+  - name: ASW S-G2 single-phase string 1–6 kW
+    match: ^ASW(1000|1500|2000|2500|3000|3680|4000|5000|6000)-S-G2$
+    countries: [IT]
+    note: SPI tested (Allegato A); "per impianti fino a 11,08kW". Same file also at /2024/07/Cer_CEI-0-21_ASW1000-6000-S-G2_it_V02.pdf.
+      -BE variant not named.
+- id: it-cei021-asw-h-s2-2023
+  title: TÜV Rheinland Certificate of Conformity AK 50591309 0001 — CEI 0-21:2022-03 — ASW3000…6000H-S2 with Ai-LB 10K Pro
+  url: https://solplanet.net/wp-content/uploads/2023/05/Cer_CEI-0-21_Ai-LB-10KPro_ASW3000-6000H-S2_it_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH; report CN22UGCW 003
+  cert_no: AK 50591309 0001
+  issued: '2023-07-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  firmware: Master V610-02003-04, Slave V610-60015-00, Safety V610-10008-05 (battery LN-M01A-YZ201-230602)
+  families:
+  - name: ASW H-S2 single-phase hybrid 3–6 kW
+    match: ^ASW(3000|3680|4000|5000|6000)H-S2$
+    countries: [IT]
+    note: One certificate per battery, all CEI 0-21:2022-03 only — Ai-LB 10K Pro (this one), Force-L2 AK 50576495 0001 (2023-03-06),
+      Force-L1 AK 50576493 0001 (2023-03-06), Ai-LB 5K AK 50580959 0001 (2023-04-13), plus Ai-LB 10K and Ai-LB 5K Pro files on the same
+      site.

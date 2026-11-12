@@ -1,0 +1,125 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Kaco
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: it-cei021-bp-100-125-nx3-2025
+  title: TÜV SÜD Certificate of Conformity ESY 064946 0030 Rev. 00 — CEI 0-21:2022/V2:2024 — blueplanet 100 NX3 M8 / 125 NX3 M10 WM
+    OD IIGX/IIGM/IIGL/FRGM
+  url: https://kaco-newenergy.com/index.php?eID=dumpFile&t=f&f=19826&token=930697843e795d05aedc478d7ed72406ca184fb8
+  issuer: TÜV SÜD Product Service GmbH (DAkkS D-ZE-11321-01-00); tests TÜV SÜD Product Service GmbH, D-PL-11321-15-00
+  cert_no: ESY 064946 0030 Rev. 00
+  issued: '2025-10-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V2:2024
+  firmware: 'AC-DSP1: V1.17 (4FD4) and higher'
+  families:
+  - name: blueplanet 100 / 125 NX3 three-phase string 100–125 kW
+    match: ^(KACO)?BLUEPLANET(100NX3M8|125NX3M10)WMOD(IIGX|IIGM|IIGL|FRGM)$
+    countries: [IT]
+    note: SPI integrated; suitable above 11.08 kW; Annex B tests. The download centre titles it "CEI 0-21 2022/V3:2024", the PDF says
+      V2:2024.
+- id: it-cei021-bp-50-60-nx3-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50645221 0001 + Dichiarazione di conformità — CEI 0-21:2022-03; V1:2022-11; V2:2024-01
+    — blueplanet 50.0 / 60.0 NX3 M5 WM OD IIG0
+  url: https://kaco-newenergy.com/index.php?eID=dumpFile&t=f&f=13788&token=4bccb2ff29e53f769fde17b2ea11410bf5039149
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02); tests TÜV Rheinland (Shanghai) Co., Ltd., CNAS L3038, report CN24LMFY
+    001
+  cert_no: A3 50645221 0001
+  issued: '2024-09-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: Master V610-03030-04.004, Slave V610-60015-00, Safety V610-11021-14
+  families:
+  - name: blueplanet 50.0 / 60.0 NX3 M5 three-phase hybrid-ready 50–60 kW
+    match: ^(KACO)?BLUEPLANET(50\.0|60\.0)NX3M5WMODIIG0$
+    countries: [IT]
+    note: Cover page lists 2022-03 + V1:2022-11; the attached declaration adds V2:2024-01 and says the inverter (PV input + battery)
+      complies with Annex A, B and Bbis. Bare NL rows "50.0" / "60.0" are not joined (could be the 50.0/60.0 TL3).
+- id: it-cei021-bp-nx3-m2-2023
+  title: TÜV SÜD Attestato di conformità D 064946 0011 Rev. 01 — CEI 0-21:2022 — KACO blueplanet 3.0/5.0/8.0/10.0/15.0/20.0 NX3 M2 WM
+    OD IIG0
+  url: https://kaco-newenergy.com/index.php?eID=dumpFile&t=f&f=10158&token=f0c18e1091b0a115ced7849bb0ccfa7c82a0c372
+  issuer: TÜV SÜD Product Service GmbH (Munich), report 704092228637-01
+  cert_no: D 064946 0011 Rev. 01
+  issued: '2023-03-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  firmware: Master DSP V610-03043-05, Slave DSP V610-60015-00, grid-code package V610-11009-02
+  families:
+  - name: blueplanet NX3 M2 three-phase string 3–20 kW
+    match: ^(KACO)?BLUEPLANET(3\.0|5\.0|8\.0|10\.0|15\.0|20\.0)NX3M2(WMODIIG0)?$
+    countries: [IT]
+    note: Italian translation of the TÜV SÜD certificate (listed on kaco-newenergy.com as "Attestato di conformità_CEI-021"). SPI integrated
+      for 3.0–10.0; NOT integrated for 15.0 and 20.0 (dedicated protection relay needed above 11.08 kW); 15.0/20.0 suitable above 11.08
+      kW. Edition 2022 without V1.
+- id: it-cei021-bp-nx1-m2-2021
+  title: Bureau Veritas Dichiarazione di conformità CEI 0-21 U21-0774 — CEI 0-21:2019-04; V1:2020-12 — KACO blueplanet 3.0/3.7/4.0/5.0
+    NX1 M2 WM OD II90
+  url: https://kaco-newenergy.com/index.php?eID=dumpFile&t=f&f=8338&token=2fbd7391eef3244008724aa6dfe2c23c9ac77bad
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00); lab D-PL-12024-03-03
+  cert_no: U21-0774
+  issued: '2021-12-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  firmware: V1.0 e superiore
+  families:
+  - name: blueplanet NX1 M2 single-phase 3–5 kW
+    match: ^(KACO)?BLUEPLANET(3\.0|3\.7|4\.0|5\.0)NX1M2(WMODII90)?$
+    countries: [IT]
+    note: Interface device + interface protection + static conversion; LF isolation transformer; "per gli impianti di ogni potenza".
+      Older edition (pre-2022). Rows without M2 (BLUEPLANET3.0NX1 …) not joined.
+- id: it-cei021-bp-tl3-50-60-m1-2022
+  title: Bureau Veritas Dichiarazione di conformità CEI 0-21 U22-0181 — CEI 0-21:2019-04; V1:2020-12 — KACO blueplanet 50.0 / 60.0 TL3
+    M1 WM OD (IIGM, IIGB, IIGX, FRGX, IIGS, TWGB)
+  url: https://kaco-newenergy.com/index.php?eID=dumpFile&t=f&f=8741&token=0a9e08d5399600e18cd9a52875880194591d3e56
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U22-0181
+  issued: '2022-03-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  - CEI 0-21;V1:2020-12
+  firmware: 'PKT: V5.74'
+  families:
+  - name: blueplanet 50.0 / 60.0 TL3 M1 three-phase string 50–60 kW
+    match: ^(KACO)?BLUEPLANET(50\.0TL3M1WMOD(IIGM|IIGB|IIGX|FRGX|IIGS)|60\.0TL3M1WMOD(IIGB|IIGM|IIGX|FRGX|TWGB))$
+    countries: [IT]
+    note: '"per gli impianti di ogni potenza". Older edition (pre-2022). 60.0 …KRGB and the short names (50.0 TL3, -B/-M/-S/-XL) not
+      named.'
+- id: it-cei021-bp-gs50-2020
+  title: Bureau Veritas Dichiarazione di conformità CEI 0-21 U20-0651 — CEI 0-21:2019-04 (and earlier editions) — KACO blueplanet gs
+    50.0 TL3-S B1 WM OD IIGL/IIGX/IIGB/IIGM
+  url: https://kaco-newenergy.com/index.php?eID=dumpFile&t=f&f=4163&token=73c2896fb43aa064c0b240c38a7a60bd2fe1e76b
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U20-0651
+  issued: '2020-08-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2019-04
+  firmware: 'PKT: V5.56'
+  families:
+  - name: blueplanet gridsave 50.0 TL3-S battery inverter 50 kW
+    match: ^BLUEPLANET(GS|GRIDSAVE)50\.0TL3-SB1WMODIIG(L|X|B|M)$
+    countries: [IT]
+    note: '"Solo applicazione inverter testata secondo CEI 0-21 senza allegato B bis" — the storage annex Bbis is NOT covered; "per
+      gli impianti di ogni potenza". Older edition (2019-04).'

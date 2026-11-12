@@ -1,0 +1,176 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Fimer
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: it-cei021-uno-dm-plus-1-5-2024
+  title: Dichiarazione di Conformità del generatore — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — UNO-DM-1.2…5.0-TL-PLUS(-XYK-JVN-DIP),
+    attached to TÜV Rheinland certificate AK 60176934 0001
+  url: https://fimer.com/sites/default/files/UNO-DM-5.0%284.6%29%284.0%29%283.6%29%283.3%29%283.0%29%282.0%29%281.2%29-TL-PLUS-XYK-JVN-DIP%20%28TUV_CEI%200-21_DichConfGen_Ref.%20AK%2060176934%200001%29%20Rev.%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH certificate; tests TÜV Rheinland Italia S.r.l., ACCREDIA 1356 L (RdP IT24FEID 001)
+  cert_no: AK 60176934 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2201A or later
+  families:
+  - name: UNO-DM-1.2 … 5.0-TL-PLUS (single-phase string, 1.2-5 kW)
+    match: ^UNO-DM-(1\.2|2\.0|3\.0|3\.3|3\.6|4\.0|4\.6|5\.0)-TL-PLUS(-Q)?$
+    countries: [IT]
+    note: SPI integrated; fit for plants > 11.08 kW; same document as the ABB-brand entry (FIMER took over ABB's solar business in 2020)
+- id: it-cei021-react2-2024
+  title: Certificate of Conformity AK 60176935 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — REACT2-UNO-3.6/5.0-TL with REACT2-BATT
+    / REACT2-BATT-5.0
+  url: https://www.fimer.com/sites/default/files/REACT2-UNO-5.0%283.6%29-TL%20%26%20REACT2-BATT%28-5.0%29%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176935%200001%29%20Rev.%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176935 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2222E or later (FIMER declaration of 23/07/2024)
+  families:
+  - name: REACT2-UNO-3.6 / 5.0-TL (single-phase hybrid, 3.6-5 kW)
+    match: ^REACT2-UNO-(3\.6|5\.0)-TL$
+    countries: [IT]
+    note: SPI integrated; fit for plants > 11.08 kW; up to three REACT2-BATT or REACT2-BATT-5.0 (same type)
+- id: it-cei021-poweruno-2026
+  title: Dichiarazione di Conformità del Generatore — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — FIM-HY-X.X-SE-A-1PH (PowerUNO) with
+    FIM-BATT
+  url: https://fimer.com/sites/default/files/FIM-HY-X.X-SE-A-1PH%20_DichConfCEI0-21%3B%20Rev%2013-01-2025.pdf
+  issuer: MA SOLAR ITALY S.R.L. (FIMER) declaration, Terranuova B.ni 07/09/2026; RdP TÜV Rheinland Italia IT24WXMZ 001, IT24427N 001
+  issued: '2026-09-07'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2439A (2439B for the 2.0)
+  families:
+  - name: FIMER PowerUNO FIM-HY 2.0-6.0 kW single-phase hybrid
+    match: ^FIM-HY-(2\.0|3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)-SE-A-1PH$
+    countries: [IT]
+    note: PV (All. B) + storage (All. Bbis); SPI integrated; fit for plants > 11.08 kW; batteries FIM-BATT-5.0/10.0/15.0 (1-6 modules);
+      3.3 is not in the declaration's model list (see the 2026 TÜV certificate)
+- id: it-cei021-poweruno-ess-annex-l-2026
+  title: Certificate of Conformity AK 60186613 0001 — CEI 0-21:2022-03 + V1 + V2:2024-01 + V3:2025-10, Annex L — FIM-HY-2.0…6.0-SE-A-1PH
+    energy storage system
+  url: https://www.fimer.com/sites/default/files/PowerUNO%20%28TUV_CEI%200-21_Annex%20L_Cert_Ref.%20AK%2060186613%200001%29%20Ref.%202026-02-13.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT26Z2ZR 001)
+  cert_no: AK 60186613 0001
+  issued: '2026-02-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V3:2025-10
+  families:
+  - name: FIMER PowerUNO FIM-HY 2.0-6.0 kW single-phase hybrid (ESS, Annex L)
+    match: ^FIM-HY-(2\.0|3\.0|3\.3|3\.6|4\.0|4\.6|5\.0|6\.0)-SE-A-1PH$
+    countries: [IT]
+    note: certificate scope is the energy storage system, "compliant to Annex L of CEI 0-21;V2/EC2 2025-02"; holder MA SOLAR ITALY S.R.L.
+- id: it-cei021-powertrio-pv-2025
+  title: Certificate of Conformity AK 60182662 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — FIM-HY-4.0…10.0-SE-A-3PH (PowerTRIO)
+    PV inverter
+  url: https://www.fimer.com/sites/default/files/PowerTRIO%20%28TUV%2C%20CEI%200-21%20Certificate%2C%20Ref.%20AK%2060182662%200001%29%20Ref.%202025-06-12.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body (report IT25KSUU 001)
+  cert_no: AK 60182662 0001
+  issued: '2025-06-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  families:
+  - name: FIMER PowerTRIO FIM-HY 4.0-10.0 kW three-phase hybrid
+    match: ^FIM-HY-(4\.0|5\.0|6\.0|7\.5|8\.0|8\.5|10\.0)-SE-A-3PH$
+    countries: [IT]
+    note: PV-inverter scope; the storage side has its own certificate AK 60182663 0001 (2025-06-10, CEI 0-21 V1 + V2, same models)
+- id: it-cei021-pvs-10-15-2024
+  title: Certificate of Conformity AK 60176845 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — PVS-10/12.5/15-TL-SX/SY
+  url: https://www.fimer.com/sites/default/files/PVS-15%2812.5%29%2810%29-TL%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176845%200001%29%20Rev-%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176845 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  families:
+  - name: PVS-10 / 12.5 / 15-TL (three-phase string, 10-15 kW)
+    match: ^PVS-(10|12\.5|15)-TL-S[XY]$
+    countries: [IT]
+    note: supersedes the CEI 0-21:2019-04 declaration 28120692 007 (rev. 2022-07-12), where the internal SPI applied to plants < 11.08
+      kW
+- id: it-cei021-pvs-20-33-2024
+  title: Certificate of Conformity AK 60176846 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — PVS-20/30/33-TL (SX, SY, SXD, SI)
+  url: https://www.fimer.com/sites/default/files/PVS-33%2830%29%2820%29-TL%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176846%200001%29%20Rev-%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176846 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  families:
+  - name: PVS-20 / 30 / 33-TL (three-phase string, 20-33 kW)
+    match: ^PVS-(20-TL-(SX|SY|SXD)|30-TL-(SX|SY)|33-TL-(SX|SY|SI))$
+    countries: [IT]
+    note: models PVS-20-TL-SX/SY/SXD, PVS-30-TL-SX/SY, PVS-33-TL-SX/SY/SI
+- id: it-cei021-pvs-50-2024
+  title: Certificate of Conformity AK 60176851 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — PVS-50-TL (-S, -SX, -SX2)
+  url: https://www.fimer.com/sites/default/files/PVS-50-TL%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176851%200001%29%20Rev-%202024-07-01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176851 0001
+  issued: '2024-07-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2024B or later (FIMER declaration of 22/07/2024)
+  families:
+  - name: PVS-50-TL (three-phase string, 50 kW)
+    match: ^(PVS-50-TL(-S|-SX|-SX2)?|PVS-50-TL-/S/SX/SX250KW|PVS-50-TLPVS-50-TL-SPVS-50-TL-SXPVS-50-TL-SX2)$
+    countries: [IT]
+    note: SPI not integrated; fit for plants > 11.08 kW; two register codes run the variants -, -S, -SX, -SX2 together (all named)
+- id: it-cei021-pvs-100-2024
+  title: Certificate of Conformity AK 60176854 0001 — CEI 0-21:2022-03; V1:2022-11; V2:2024-01 — PVS-100-TL
+  url: https://www.fimer.com/sites/default/files/PVS-100-TL%20%28TUV_CEI%200-21_Cert_Ref.%20AK%2060176854%200001%29%20Rev-%202024-06-10.pdf
+  issuer: TÜV Rheinland LGA Products GmbH, Certification Body
+  cert_no: AK 60176854 0001
+  issued: '2024-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 2201B or later (maker declaration of 16-02-2026)
+  families:
+  - name: PVS-100-TL (three-phase string, 100 kW)
+    match: ^PVS-100-TL$
+    countries: [IT]
+    note: SPI not integrated; fit for plants > 11.08 kW; the WB-…-PVS-100-TL wiring-box codes are not named

@@ -1,0 +1,65 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: INVT
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: it-cei021-xg100-136ktr-2022
+  title: Intertek Certificate of Conformity CN-PV-220254 — CEI 0-21:2022 — iMars XG100KTR / XG110KTR / XG136KTR (-F, -L, -LF, -X, -XF)
+  url: https://www.invt-solar.com/userfiles/files/download/Certificates/INVT%20Solar%20XG100-136KTR_CEI%200-21.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065); tests Intertek Testing Services Shenzhen Ltd. Guangzhou
+    Branch (IAS TL-395)
+  cert_no: CN-PV-220254
+  issued: '2022-11-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  firmware: V1.1
+  families:
+  - name: iMars XG100–136KTR three-phase string 100–136 kW
+    match: ^(IMARS)?(XG)?(100KTR(-F)?|110KTR(-F)?|136KTR-(L|LF|X|XF))$
+    countries: [IT]
+    note: Certificate section "Static converters in systems with capacity more than 11.08 kW"; Idc limited to 0.5 %. Edition 2022 only
+      (no V1). Bare register codes (100KTR …) read as iMars XG….
+- id: it-cei021-xg25-40ktr-2023
+  title: Intertek Certificate of Conformity CN-PV-230009 — CEI 0-21:2022 — iMars XG25KTR-3M/-3S, XG30/33/36/40KTR(-S)
+  url: https://www.invt-solar.com/userfiles/files/download/Certificates/INVT%20Solar%20XG25-40KTR_CEI%200-21%202022.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065); tests Intertek Testing Services Shenzhen Ltd. Guangzhou
+    Branch (IAS TL-395)
+  cert_no: CN-PV-230009
+  issued: '2023-01-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  firmware: V1.0
+  families:
+  - name: iMars XG25–40KTR three-phase string 25–40 kW
+    match: ^(IMARS)?(XG)?(25KTR-3[MS]|(30|33|36|40)KTR(-S)?)$
+    countries: [IT]
+    note: '"Static converters in systems with capacity more than 11.08 kW". Edition 2022 only.'
+- id: it-cei021-xg50-70ktr-2022
+  title: Intertek Certificate of Conformity CN-PV-220141 — CEI 0-21:2022 (Type B) — iMars XG50KTR(L)(-S), XG60KTR(L)(-S), XG66KTRL(-S),
+    XG70KTRL(-S)
+  url: https://www.invt-solar.com/userfiles/files/download/Certificates/INVT%20Solar%20XG50-70KTR_CEI%200-21%202022.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065); tests Intertek Testing Services Shenzhen Ltd. Guangzhou
+    Branch (IAS TL-395), report 220602097GZU-001
+  cert_no: CN-PV-220141
+  issued: '2022-07-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022
+  firmware: V1.0
+  families:
+  - name: iMars XG50–70KTR(L) three-phase string 50–70 kW
+    match: ^(IMARS)?(XG)?((50|60)KTRL?(-S)?|(66|70)KTRL(-S)?)$
+    countries: [IT]
+    note: '"Type approval for Type B"; "Static converters in systems with capacity more than 11.08 kW". Edition 2022 only. The register''s
+      66KTR-S (no L) is not named.'

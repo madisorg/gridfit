@@ -1,0 +1,109 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Enphase
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: it-cei021-iq9n-2025
+  title: TÜV Rheinland Certificate of Conformity AK 60185374 0001 + Certificato del generatore — CEI 0-21:2022-03 … V2/EC2:2025-02 —
+    IQ9N-A-INT microinverter with IQ-RELAY-2-3P-ITA and IQ Gateway ENV-S-WM-230 / ENV-S-EM-230
+  url: https://enphase.com/it-it/download/iq9n-microinverter-certificato-di-conformita-cei-0-212022-03-v12022-11-v22024-01-v2ec2024
+  issuer: TÜV Rheinland LGA Products GmbH (certificate); tests TÜV Rheinland Italia S.r.l., LAB N° 00321, ACCREDIA
+  cert_no: AK 60185374 0001
+  issued: '2025-11-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  firmware: 521-00013-r01-v10.24.02 or later (Certificato del generatore)
+  families:
+  - name: IQ9N microinverter 427 W, single- and three-phase systems
+    match: ^IQ9N-A-INT(WRAZZENVOYENV-S-WM-230/ENV-S-EM-230)?$
+    countries: [IT]
+    note: SPI = IQ-RELAY-2-3P-ITA (integrated system protection), gateway ENV-S-WM-230 / ENV-S-EM-230; "idoneo per installazione in
+      impianti con potenza superiore a 11,08 kW". The companion Certificato del generatore (same date, RdP IT25KY1P 001) is at https://enphase.com/it-it/download/iq9n-microinverter-certificato-del-generatore-cei-0-212022-3-v12022-11-v22024-01
+      and lists only up to V2:2024-01. Rows that pair IQ9N with Q-RELAY-1P/3P-INT or the System Controller are not named here.
+- id: it-cei021-iq8mc-ac-hc-2023
+  title: Dichiarazione di conformità CEI 0-21:2022-03 — IQ8MC / IQ8AC / IQ8HC-72-M-(ACM)-INT-(RMA|NM) microinverters
+  url: https://enphase.com/it-it/download/iq8-series-microinverters-dichiarazione-di-conformita-cei-0-21-2022-03
+  issuer: Enphase Energy Inc. (Fremont) self-declaration, signed Karen Maxwell; RdP Allegato A IT23I9D0 001, Allegato B IT23LLIV 001
+    by TÜV Rheinland Italia S.r.l., ACCREDIA nr. 1356 L
+  issued: '2023-11-30'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2022-03
+  firmware: 08.05.02 e successive
+  families:
+  - name: IQ8MC / IQ8AC / IQ8HC microinverter 325–380 W, single-phase
+    match: ^IQ8(MC|AC|HC)-72-M-(ACM-)?INT(-RMA|-NM)?"?$
+    countries: [IT]
+    note: SPI integrated, conformity only together with IQ Relay (IQ-RELAY-2-3P-ITA or Q-RELAY-2-3P-ITA) and IQ Gateway (ENV-S-230-EM,
+      -WM, -WB); "idoneo per impianti con potenza superiore a 11,08 kW". Older edition (2022-03 only, no V1/V2). IQ8X is listed beside
+      this file on the site but not named in it. One register row carries a stray quote (IQ8MC-72-M-INT").
+- id: it-cei021-iq7-2023
+  title: Dichiarazione di conformità CEI 0-21:2022-03 — IQ7-60 / IQ7PLUS-72 / IQ7X-96 / IQ7A-72-(2|M)-(ACM)-INT-(RMA|NM) microinverters
+  url: https://enphase.com/it-it/download/iq7-series-microinverters-dichiarazione-di-conformita-cei-0-21-2022-03
+  issuer: Enphase Energy Inc. (Fremont) self-declaration, signed Karen Maxwell; RdP Allegato A IT23I9D0 001 + IT21WBK9 001, Allegato
+    B IT21J01L 001 + IT23TTL0 002 by TÜV Rheinland Italia S.r.l., ACCREDIA nr. 1356 L
+  issued: '2023-11-30'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2022-03
+  firmware: 04.28.07 o 04.30.23
+  families:
+  - name: IQ7 / IQ7+ / IQ7X / IQ7A microinverter 240–349 W, single-phase
+    match: ^IQ7(-60|PLUS-72|X-96|A-72)-(2-|M-|X-Y-)?(ACM-)?INT(-RMA|-NM)?$
+    countries: [IT]
+    note: SPI integrated, conformity only with IQ Relay (IQ-RELAY-2-3P-ITA or Q-RELAY-2-3P-ITA) and IQ Gateway; "Non è idoneo per installazione
+      in impianti con potenza superiore a 11,08 kW". Older edition (2022-03 only). Joins the register's placeholder rows IQ7…-X-Y-INT
+      (= the document's -V-W-INT pattern).
+- id: it-cei021-iq-battery-5p-flexphase-2025
+  title: TÜV Rheinland Certificate of Conformity AK 60185878 0001 — CEI 0-21:2022-03 … V2/EC2:2025-02 — IQ Battery 5P with FlexPhase
+    (IQBATTERY-5P-3P-INT and its 1P / 3P power SKUs)
+  url: https://enphase.com/it-it/download/iq-battery-5p-flexphase-certificate-conformity
+  issuer: TÜV Rheinland LGA Products GmbH; report IT25MD62 001
+  cert_no: AK 60185878 0001
+  issued: '2025-12-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  - CEI 0-21;V2/EC:2024-03
+  - CEI 0-21;V2/EC2:2025-02
+  families:
+  - name: IQ Battery 5P FlexPhase AC battery, single- and three-phase SKUs 1.65–3.84 kW
+    match: ^IQBATTERY-5P-3P-INT(-(1\.65|2\.50|3\.00|3\.68|3\.84)-1P|-(1\.84|2\.50|3\.00|3\.68|3\.84)-3P)?$
+    countries: [IT]
+    note: With network protection relay IQ-RELAY-2-3P-ITA and gateway ENV-S-EM-230 / ENV-S-WM-230. Combination rows with the System
+      Controller, IQ Combiner or Q-RELAY-1P/3P-INT are not named.
+- id: it-cei021-iq-battery-5p-2024
+  title: Dichiarazione di conformità CEI 0-21:2022-03 — IQ Battery 5P (AC-coupled, 6 × IQ8D-BAT, limited to 2560 W for Italy)
+  url: https://enphase.com/it-it/download/iq-battery-5p-dichiarazione-di-conformita-cei-0-21-2022-03
+  issuer: Enphase Energy Inc. (Fremont) self-declaration, signed Karen Maxwell; RdP Allegato A IT21WBK9 001 + IT23ZEOG 001, Allegato
+    B IT23GUMN 001 by TÜV Rheinland Italia S.r.l., ACCREDIA nr. 1356 L
+  issued: '2024-01-31'
+  seen: '2026-11-12'
+  kind: declaration
+  standards:
+  - CEI 0-21:2022-03
+  firmware: converter 04.35.1 o successive; BMS 3.8.63 o successive
+  families:
+  - name: IQ Battery 5P single-phase AC battery 2.56 kW
+    match: ^IQBATTERY-5P-1P-INT$
+    countries: [IT]
+    note: SPI integrated, conformity only with IQ Relay (IQ-RELAY-2-3P-ITA or Q-RELAY-2-3P-ITA) and IQ Gateway ENV-S-EM-230 / -WM-230;
+      "idoneo per impianti con potenza superiore a 11,08 kW"; Italy software limit 2560 W (2 of 6 IQ8D-BAT disabled); up to 12 in parallel.
+      Older edition (2022-03 only). Document names "IQ Battery 5P"; the single-phase SKU is the 1P-INT one.
