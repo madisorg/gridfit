@@ -4,11 +4,11 @@
 "2026-11-12"
 ],
 "/4en-s-a/": [
-"3a5a3584f5cd443f",
+"a57d9bceff8a9aed",
 "2026-11-12"
 ],
 "/a-tronix/": [
-"f1b526e605aa35ca",
+"9fc215706589154a",
 "2026-11-12"
 ],
 "/a-tronix/ax-plus-hybrid-inverter/": [
@@ -28,7 +28,7 @@
 "2026-11-12"
 ],
 "/abb-fimer/": [
-"1389003192f728c6",
+"1e652cffba9d1612",
 "2026-11-12"
 ],
 "/abb-fimer/a43/": [
@@ -52,23 +52,23 @@
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-10-tl-sx/": [
-"ecfd1a02e463d9e0",
+"895c2f5b2fb52afc",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-10-tl-sy/": [
-"80ed5fca8c047c33",
+"0e2fdf6ee95c806e",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-100-tl/": [
-"b33a230287c82381",
+"a7c00288c1cee79a",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-12-5-tl-sx/": [
-"7e7bdd42b47faeef",
+"4400376d2237ec32",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-12-5-tl-sy/": [
-"d23eb66c75fdc940",
+"ccef17f61a224b64",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-120-tl/": [
@@ -76,51 +76,51 @@
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-15-tl-sx/": [
-"9d2f1a40faa2357d",
+"9795471e6888ba66",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-15-tl-sy/": [
-"396df41674861796",
+"5a3dee8cd17f6f13",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-20-tl-sx/": [
-"164c98ddd2bafdf7",
+"6fa4e5d4de4fc6de",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-20-tl-sxd/": [
-"7285d47c15baff50",
+"6f63be289442bb75",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-20-tl-sy/": [
-"2ec5b91a52b8c0ef",
+"b2c02851b1ac8cb5",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-30-tl-sx/": [
-"25632122854f1982",
+"db5c20dcfc575f93",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-30-tl-sy/": [
-"3ce069e5139b507d",
+"bbd74416e5569653",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-33-tl-si/": [
-"8f952155225ea3a9",
+"80abd6da58d615ff",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-33-tl-sx/": [
-"e0e9bfad5b03b7b2",
+"d9d44a563a2543d5",
 "2026-11-12"
 ],
 "/abb-fimer/model/pvs-33-tl-sy/": [
-"51b7d9874bcb857f",
+"32d9799ccd5acf23",
 "2026-11-12"
 ],
 "/abb-fimer/model/react2-uno-3-6-tl/": [
-"e4dbfbc5786933ea",
+"53276f9d02b66bdb",
 "2026-11-12"
 ],
 "/abb-fimer/model/react2-uno-5-0-tl/": [
-"b85fbebb723699f8",
+"6420414fc864d2d4",
 "2026-11-12"
 ],
 "/abb-fimer/pvi-inverters-via-vsn300-vsn700/": [
@@ -184,7 +184,7 @@
 "2026-11-12"
 ],
 "/ace-battery/": [
-"c9efddacfcae65fe",
+"1b4cf7de2ee4462d",
 "2026-11-12"
 ],
 "/ace-battery/model/ress-3a-11-4-h2-10k/": [
@@ -272,11 +272,11 @@
 "2026-11-12"
 ],
 "/ae-conversion/": [
-"8849e462e5c8fa16",
+"1b05233bbf04c8f7",
 "2026-11-12"
 ],
 "/aeg/": [
-"d8f09a5e6cf8bb8f",
+"50c8e148d5e97639",
 "2026-11-12"
 ],
 "/aeg/model/as-bsl1-12000/": [
@@ -312,47 +312,47 @@
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-10000-2/": [
-"d6da45995971ed97",
+"73c341b65cc65f5d",
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-12000-2/": [
-"485918cc3858e7c9",
+"ff0a19ce8b18c98e",
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-15000-2/": [
-"614419a98c961717",
+"31b84d6d8e9f4874",
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-4000-2/": [
-"3d4369b716b732cf",
+"be6934cac80fa549",
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-5000-2/": [
-"9e3a606ccfaea31e",
+"e86653e1c9b5efb2",
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-6000-2/": [
-"f224cb054b0a94a9",
+"31f88def57ae20b6",
 "2026-11-12"
 ],
 "/aeg/model/as-ic02-8000-2/": [
-"a686fe8602377039",
+"b280c0aa4a6aff02",
 "2026-11-12"
 ],
 "/aeg/model/as-ich02-10000-2-hv/": [
-"893c8bd026ebfa35",
+"212ab788e6b7600d",
 "2026-11-12"
 ],
 "/aeg/model/as-ich02-5000-2-hv/": [
-"2a2f8840c0803e96",
+"05ba9a81615f8489",
 "2026-11-12"
 ],
 "/aeg/model/as-ich02-6500-2-hv/": [
-"62239ffe78069b02",
+"c7d9c00127ee4ce8",
 "2026-11-12"
 ],
 "/aeg/model/as-ich02-8000-2-hv/": [
-"6c9402292beac031",
+"d5f917b211240b07",
 "2026-11-12"
 ],
 "/aeg/model/as-ir01-1000/": [
@@ -392,39 +392,39 @@
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-1000/": [
-"c08783fe7726528a",
+"5bed6aa7063c29b3",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-1500/": [
-"fda7bd8c45a36cfd",
+"657a25ed28f4058b",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-2000/": [
-"0608ebe6eca0081b",
+"2ff5693e53f231bb",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-2500/": [
-"54b76925aa58ea90",
+"ac417dfd2d1acc05",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-3000-2/": [
-"9824c1da8f721e63",
+"c2d5d268c27c4f2c",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-3000/": [
-"ebb6ad3664a6055b",
+"c470cdf32635f825",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-3600-2/": [
-"a4c0209bfcc75587",
+"12d198023dbd382e",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-4200-2/": [
-"81d1f059d666d5ee",
+"7a8b2dce48f7839b",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-5000-2/": [
-"74b927bafef7bf21",
+"5b7b4b9b96bb6894",
 "2026-11-12"
 ],
 "/aeg/model/as-ir02-700/": [
@@ -440,7 +440,7 @@
 "2026-11-12"
 ],
 "/afore/": [
-"ad95cc18c569b0e8",
+"4145e51999718c92",
 "2026-11-12"
 ],
 "/afore/hybrid-inverter/": [
@@ -452,55 +452,55 @@
 "2026-11-12"
 ],
 "/afore/model/af1-5k-asl-1/": [
-"9adc9c1b63051521",
+"caa3058224e953d6",
 "2026-11-12"
 ],
 "/afore/model/af1-5k-sl-0/": [
-"d278af3b6c5d4d3e",
+"928320acb8f4a704",
 "2026-11-12"
 ],
 "/afore/model/af1-5k-sl-1/": [
-"aaa423012f2d1d63",
+"65bc2f1252b909c8",
 "2026-11-12"
 ],
 "/afore/model/af10k-th-0/": [
-"2c69ef10a28bf6bc",
+"6cbbc68972418bfd",
 "2026-11-12"
 ],
 "/afore/model/af10k-th/": [
-"fe02fc834c625564",
+"8c28961564b6280e",
 "2026-11-12"
 ],
 "/afore/model/af10k-tha/": [
-"669c93a3e7ef8687",
+"0ffef5e16a52b30b",
 "2026-11-12"
 ],
 "/afore/model/af10k-thp-0/": [
-"42fecda4fabadf8b",
+"2cdb1bf7f35c312b",
 "2026-11-12"
 ],
 "/afore/model/af10k-thp/": [
-"67e55d7f4cef74cb",
+"e6781be45a763b42",
 "2026-11-12"
 ],
 "/afore/model/af12k-th-0/": [
-"c62727d11500f07a",
+"b2f3b877ef67ba54",
 "2026-11-12"
 ],
 "/afore/model/af12k-th/": [
-"df26b868dfe3516f",
+"5100b7182c09feee",
 "2026-11-12"
 ],
 "/afore/model/af12k-tha/": [
-"4a143f0d21abd33f",
+"9e611b9d80998f66",
 "2026-11-12"
 ],
 "/afore/model/af12k-thp-0/": [
-"f248820200633324",
+"2cdcfd8baef81fe7",
 "2026-11-12"
 ],
 "/afore/model/af12k-thp/": [
-"e501bcbd1dd1c6e8",
+"4fe94e9d638970d5",
 "2026-11-12"
 ],
 "/afore/model/af14-99k-th/": [
@@ -512,59 +512,59 @@
 "2026-11-12"
 ],
 "/afore/model/af15k-th-0/": [
-"a8738a543f16063c",
+"dcf71b2a6d7ca9d7",
 "2026-11-12"
 ],
 "/afore/model/af15k-th/": [
-"27d7808bcdeb0041",
+"0a46a63093189a1a",
 "2026-11-12"
 ],
 "/afore/model/af15k-tha/": [
-"84a270dfc5d5bede",
+"d2770ebd9bd34b9f",
 "2026-11-12"
 ],
 "/afore/model/af17k-th-0/": [
-"bb45d269e65205c7",
+"161fcb2b1eaca2e5",
 "2026-11-12"
 ],
 "/afore/model/af17k-th/": [
-"28cf08c330950478",
+"522a9603b78a7753",
 "2026-11-12"
 ],
 "/afore/model/af17k-tha/": [
-"0cc515d10a5bc5b1",
+"5835e88f0d7a52dd",
 "2026-11-12"
 ],
 "/afore/model/af1k-asl-1/": [
-"181691f0c0985afb",
+"7d528ee3339da7ca",
 "2026-11-12"
 ],
 "/afore/model/af1k-sl-0/": [
-"16eb930f78be5402",
+"75b6edd95d372c02",
 "2026-11-12"
 ],
 "/afore/model/af1k-sl-1/": [
-"3d6263e51e585187",
+"6018508ce4caab19",
 "2026-11-12"
 ],
 "/afore/model/af2-5k-asl-1/": [
-"6b805c6a6378b3b3",
+"1ed7449a98643621",
 "2026-11-12"
 ],
 "/afore/model/af2-5k-sl-0/": [
-"ef083c2858ccdf8e",
+"97880ceba8e7f244",
 "2026-11-12"
 ],
 "/afore/model/af2-5k-sl-1/": [
-"12a26742de774feb",
+"40d1a5a694af9d42",
 "2026-11-12"
 ],
 "/afore/model/af20k-th-0/": [
-"ef16674db415bafb",
+"d1de160577624cb1",
 "2026-11-12"
 ],
 "/afore/model/af20k-th/": [
-"f6089953b46c9ba6",
+"a7d1c27704796634",
 "2026-11-12"
 ],
 "/afore/model/af24-99k-th/": [
@@ -572,11 +572,11 @@
 "2026-11-12"
 ],
 "/afore/model/af25k-th-0/": [
-"2d68d7263fa0dff9",
+"0a47af0d1ca694ae",
 "2026-11-12"
 ],
 "/afore/model/af25k-th/": [
-"4ff0ba35436b1c3c",
+"75164dfb2c45fc8e",
 "2026-11-12"
 ],
 "/afore/model/af29-99k-th/": [
@@ -584,75 +584,75 @@
 "2026-11-12"
 ],
 "/afore/model/af2k-asl-1/": [
-"6e40999006d519a5",
+"c6ef09b2b0823ac2",
 "2026-11-12"
 ],
 "/afore/model/af2k-sl-0/": [
-"d0f8ac436593133a",
+"9d0176677a7e8d7a",
 "2026-11-12"
 ],
 "/afore/model/af2k-sl-1/": [
-"f859cf5d443c2b5f",
+"983d52ae6eec3dbd",
 "2026-11-12"
 ],
 "/afore/model/af3-6k-asl-1/": [
-"3eb3ee30078ad68e",
+"939c958a0d7f318c",
 "2026-11-12"
 ],
 "/afore/model/af3-6k-asl/": [
-"14a965a8f131f25d",
+"5411c19fa6b48d00",
 "2026-11-12"
 ],
 "/afore/model/af3-6k-sl-0/": [
-"61a61aa12a9bbe37",
+"58610cccdcf31ed1",
 "2026-11-12"
 ],
 "/afore/model/af3-6k-sl-1/": [
-"783da5b85c896783",
+"d0fe5c478860bfee",
 "2026-11-12"
 ],
 "/afore/model/af3-6k-sl/": [
-"aeec36ef87fde4fc",
+"9179094608ce114e",
 "2026-11-12"
 ],
 "/afore/model/af30k-th-0/": [
-"aea4f68fe7738a91",
+"0f1b2805aff23595",
 "2026-11-12"
 ],
 "/afore/model/af30k-th/": [
-"f9e2ce665ee8898c",
+"2f3973d503e5de39",
 "2026-11-12"
 ],
 "/afore/model/af3k-asl-1/": [
-"e2458aa9512f9be5",
+"c26ea79e1a141fd5",
 "2026-11-12"
 ],
 "/afore/model/af3k-asl/": [
-"5ade47a7249e3d26",
+"ad40e9bf8ef88481",
 "2026-11-12"
 ],
 "/afore/model/af3k-sl-0/": [
-"875cf8b588ab2d74",
+"19afc1538675104b",
 "2026-11-12"
 ],
 "/afore/model/af3k-sl-1/": [
-"c26f7d7a85bf3fe3",
+"2c5106b79bb2bb69",
 "2026-11-12"
 ],
 "/afore/model/af3k-sl/": [
-"3004f24a871d2d3a",
+"343bec18eeff77ae",
 "2026-11-12"
 ],
 "/afore/model/af3k-th-0/": [
-"dc063d4b9be00215",
+"5f127e84537de4c9",
 "2026-11-12"
 ],
 "/afore/model/af3k-th/": [
-"02ec2405c4977c7b",
+"6ceee5c9012c9b60",
 "2026-11-12"
 ],
 "/afore/model/af3k-tha/": [
-"cb33d27cc2c964c3",
+"a4611b07f4ba7e5d",
 "2026-11-12"
 ],
 "/afore/model/af3k-thc/": [
@@ -660,27 +660,27 @@
 "2026-11-12"
 ],
 "/afore/model/af3k-thp-0/": [
-"ae1e242e6b69eade",
+"3ef1af10446a1847",
 "2026-11-12"
 ],
 "/afore/model/af3k-thp/": [
-"f1910e55e2df5b9b",
+"ef9e62095b3dfa76",
 "2026-11-12"
 ],
 "/afore/model/af4-6k-asl/": [
-"92a3f7ceefa3f7d8",
+"3137b0adb19587e2",
 "2026-11-12"
 ],
 "/afore/model/af4-6k-sl-0/": [
-"9f4cd02f22262ab9",
+"922cdcca1c8ef9ea",
 "2026-11-12"
 ],
 "/afore/model/af4-6k-sl/": [
-"29bd82cfe8a583f3",
+"ad79c2180450f008",
 "2026-11-12"
 ],
 "/afore/model/af4-6k-slp/": [
-"5b5ef84ae9452f62",
+"d4c36a5a005491c6",
 "2026-11-12"
 ],
 "/afore/model/af4-99k-tha/": [
@@ -692,31 +692,31 @@
 "2026-11-12"
 ],
 "/afore/model/af4k-asl/": [
-"ec24d53a88720f35",
+"3d995d4586ac3857",
 "2026-11-12"
 ],
 "/afore/model/af4k-sl-0/": [
-"9c1765e8abd6881c",
+"113fb150e52d48ae",
 "2026-11-12"
 ],
 "/afore/model/af4k-sl/": [
-"43fb5d29d603b644",
+"5714b495e6e18cde",
 "2026-11-12"
 ],
 "/afore/model/af4k-slp/": [
-"84d046c1d6553648",
+"f5342ce723586fa2",
 "2026-11-12"
 ],
 "/afore/model/af4k-th-0/": [
-"3368842444d3cfd9",
+"0a50af7057ab9386",
 "2026-11-12"
 ],
 "/afore/model/af4k-th/": [
-"66adcbc069b8f81e",
+"a35e94e61124786f",
 "2026-11-12"
 ],
 "/afore/model/af4k-tha/": [
-"d1e63d8a82cd3d5c",
+"4860eb113288177e",
 "2026-11-12"
 ],
 "/afore/model/af4k-thc/": [
@@ -724,55 +724,55 @@
 "2026-11-12"
 ],
 "/afore/model/af4k-thp-0/": [
-"8a8049e5ad8c8705",
+"61b9762f171e78f1",
 "2026-11-12"
 ],
 "/afore/model/af4k-thp/": [
-"90cd17db1efd0b73",
+"5c7fc1eeeeae4139",
 "2026-11-12"
 ],
 "/afore/model/af5-5k-asl/": [
-"b3443b6b171b247b",
+"600e3b6dd1622191",
 "2026-11-12"
 ],
 "/afore/model/af5-5k-sl-0/": [
-"0728f2ec069a4c7c",
+"5e5404b819d9a108",
 "2026-11-12"
 ],
 "/afore/model/af5-5k-sl/": [
-"a00cf8d390a4077f",
+"e3679800c998ae25",
 "2026-11-12"
 ],
 "/afore/model/af5-5k-slp/": [
-"4c322bfe6c807f17",
+"f2243972d8449ad7",
 "2026-11-12"
 ],
 "/afore/model/af5k-asl/": [
-"6f6a3caa2fad637f",
+"30bd2f434f711394",
 "2026-11-12"
 ],
 "/afore/model/af5k-sl-0/": [
-"2d5d15d9054bd82f",
+"043125751b917d48",
 "2026-11-12"
 ],
 "/afore/model/af5k-sl/": [
-"c826301002aab63a",
+"9315d5db5e851ba4",
 "2026-11-12"
 ],
 "/afore/model/af5k-slp/": [
-"e17d3eeea64912e0",
+"7260d7a4e2ed2439",
 "2026-11-12"
 ],
 "/afore/model/af5k-th-0/": [
-"a38a2f12a94348a4",
+"9aa0ebde0b77c2d0",
 "2026-11-12"
 ],
 "/afore/model/af5k-th/": [
-"9682bc1bbe850f7e",
+"8703bdd89f897024",
 "2026-11-12"
 ],
 "/afore/model/af5k-tha/": [
-"c075c9e69040d9aa",
+"a517dbe7e3a7bfd8",
 "2026-11-12"
 ],
 "/afore/model/af5k-thc/": [
@@ -780,39 +780,39 @@
 "2026-11-12"
 ],
 "/afore/model/af5k-thp-0/": [
-"8f13e58f8565bef0",
+"41bc3b73c6f31f26",
 "2026-11-12"
 ],
 "/afore/model/af5k-thp/": [
-"16950d171c0b93b6",
+"0db05442d2d932fd",
 "2026-11-12"
 ],
 "/afore/model/af6k-asl/": [
-"b2a4f157880b479a",
+"5c1aa771043e7792",
 "2026-11-12"
 ],
 "/afore/model/af6k-sl-0/": [
-"fef7387eb0cfd050",
+"c61b89df8251c31d",
 "2026-11-12"
 ],
 "/afore/model/af6k-sl/": [
-"41e1af3900386fce",
+"76150d754486f7ae",
 "2026-11-12"
 ],
 "/afore/model/af6k-slp/": [
-"f3eb25179ca67ac4",
+"898eee49187a3843",
 "2026-11-12"
 ],
 "/afore/model/af6k-th-0/": [
-"fc3c1a09be9f64cf",
+"7bea0e817365483b",
 "2026-11-12"
 ],
 "/afore/model/af6k-th/": [
-"2f5da2f3ee5b2332",
+"20b7f71777582840",
 "2026-11-12"
 ],
 "/afore/model/af6k-tha/": [
-"4838fd8685d4d991",
+"347befaf8d0895e1",
 "2026-11-12"
 ],
 "/afore/model/af6k-thc/": [
@@ -820,31 +820,31 @@
 "2026-11-12"
 ],
 "/afore/model/af6k-thp-0/": [
-"662002edb003b55e",
+"d5bee4fe9eb8e0ea",
 "2026-11-12"
 ],
 "/afore/model/af6k-thp/": [
-"3b1dcc23bb179986",
+"961f510aad12d582",
 "2026-11-12"
 ],
 "/afore/model/af8k-th-0/": [
-"f251ed33e59d9ded",
+"53b9feb52a3b95b3",
 "2026-11-12"
 ],
 "/afore/model/af8k-th/": [
-"74e0c050bfd3e8c7",
+"2620402b1dfd03b5",
 "2026-11-12"
 ],
 "/afore/model/af8k-tha/": [
-"b81ef0dcae61fc30",
+"ef264395bacbe859",
 "2026-11-12"
 ],
 "/afore/model/af8k-thp-0/": [
-"ecf0ff7d1a4ae457",
+"28e84174654b1f71",
 "2026-11-12"
 ],
 "/afore/model/af8k-thp/": [
-"61b8ca230dc8f6ca",
+"c6396ca37da8d63a",
 "2026-11-12"
 ],
 "/afore/model/af9-99k-th/": [
@@ -860,99 +860,99 @@
 "2026-11-12"
 ],
 "/afore/model/bnt003ktl/": [
-"ff2c072a1043dd7f",
+"a74723905b7aff59",
 "2026-11-12"
 ],
 "/afore/model/bnt004ktl/": [
-"3b7f408a78708f40",
+"59286adfcb3f1e2d",
 "2026-11-12"
 ],
 "/afore/model/bnt005ktl/": [
-"301c700f8b1b38b4",
+"218e4d00266c3dbf",
 "2026-11-12"
 ],
 "/afore/model/bnt006ktl/": [
-"841fd863decc0375",
+"d79a17a4ce1b974c",
 "2026-11-12"
 ],
 "/afore/model/bnt008ktl/": [
-"6c6bae3c44014b34",
+"4315265667795ad7",
 "2026-11-12"
 ],
 "/afore/model/bnt010ktl/": [
-"572813d027c33799",
+"8f3bc82353faa1dc",
 "2026-11-12"
 ],
 "/afore/model/bnt012ktl/": [
-"8efc11835741168e",
+"8b3bc67798ec9a6e",
 "2026-11-12"
 ],
 "/afore/model/bnt013ktl/": [
-"4cc3fbd4aea1eca6",
+"191239fe7b51f8ad",
 "2026-11-12"
 ],
 "/afore/model/bnt015ktl/": [
-"4306641a294df3ea",
+"f1f6665a2ba47754",
 "2026-11-12"
 ],
 "/afore/model/bnt017ktl/": [
-"e552a18f76f2823f",
+"f6afa9541713d6e9",
 "2026-11-12"
 ],
 "/afore/model/bnt020ktl/": [
-"92449cd8775dee4e",
+"e2c35dcfe9d28d66",
 "2026-11-12"
 ],
 "/afore/model/bnt025ktl/": [
-"382c5ef728a7dfcf",
+"ad228f6659c99ce7",
 "2026-11-12"
 ],
 "/afore/model/bnt030ktl/": [
-"4a44f746236b410c",
+"52426969a8832192",
 "2026-11-12"
 ],
 "/afore/model/bnt036ktl/": [
-"0b7f251de648c7b5",
+"1d3366b42befdafb",
 "2026-11-12"
 ],
 "/afore/model/bnt040ktl/": [
-"d64ef764f7a5c0d0",
+"16b1bf50a8c7827d",
 "2026-11-12"
 ],
 "/afore/model/bnt050ktl/": [
-"eae48c36231654b7",
+"74bd5de1bca45330",
 "2026-11-12"
 ],
 "/afore/model/bnt060ktl/": [
-"66971147256eec16",
+"2a89d18e274b251a",
 "2026-11-12"
 ],
 "/afore/model/bnt070ktl/": [
-"da535d789e25d9b0",
+"938bf305b28d0909",
 "2026-11-12"
 ],
 "/afore/model/bnt075ktl/": [
-"4f6b14bfda839988",
+"2226d28bfad642b8",
 "2026-11-12"
 ],
 "/afore/model/bnt080ktl/": [
-"2b52029eb6aa192d",
+"7a72ca243c37b6ac",
 "2026-11-12"
 ],
 "/afore/model/bnt090ktl/": [
-"2f9b5c9e36e1e03a",
+"4e861dd03acc2e0b",
 "2026-11-12"
 ],
 "/afore/model/bnt100ktl/": [
-"6e15b648a099ef27",
+"fe469a1a5a1e2500",
 "2026-11-12"
 ],
 "/afore/model/bnt110ktl/": [
-"4343827299e22401",
+"3f9a0fc4d91fd653",
 "2026-11-12"
 ],
 "/afore/model/hns10000tl/": [
-"dedf080191b347ce",
+"af12950cdfd92620",
 "2026-11-12"
 ],
 "/afore/model/hns1000tl-1/": [
@@ -976,51 +976,51 @@
 "2026-11-12"
 ],
 "/afore/model/hns3000tl/": [
-"2c219df9f3cac836",
+"b086e364e0b00246",
 "2026-11-12"
 ],
 "/afore/model/hns3600tl-1/": [
-"c1ffee0a9b8a7724",
+"898eb8979bfdfc74",
 "2026-11-12"
 ],
 "/afore/model/hns3600tl/": [
-"c2e2fefd0628457e",
+"4580113786049b51",
 "2026-11-12"
 ],
 "/afore/model/hns4000tl/": [
-"4377c4099928db42",
+"c9b908107861e373",
 "2026-11-12"
 ],
 "/afore/model/hns4950tl/": [
-"f088b31e1a6c5d96",
+"017583e2c45914b4",
 "2026-11-12"
 ],
 "/afore/model/hns5000tl/": [
-"8506473a40ca65c1",
+"b4f3657e1b7fb05c",
 "2026-11-12"
 ],
 "/afore/model/hns6000tl/": [
-"c5aad6a18a9062ff",
+"08b89d7af339b1e5",
 "2026-11-12"
 ],
 "/afore/model/hns7000tl/": [
-"dbe2eb5ab229a1ad",
+"df5a3159923be9bf",
 "2026-11-12"
 ],
 "/afore/model/hns8000tl/": [
-"e6189d70469dd204",
+"b776784d27f4e57f",
 "2026-11-12"
 ],
 "/afore/model/hns9000tl/": [
-"924c7afdccc72675",
+"85544f2420f3acce",
 "2026-11-12"
 ],
 "/ai-power/": [
-"4e0314880087308e",
+"ddf7db938ca22695",
 "2026-11-12"
 ],
 "/aiko/": [
-"39db8188e54a1a48",
+"b6e0ee9c8d6eecd3",
 "2026-11-12"
 ],
 "/aiko/model/ae-hbd-10ktl-s1/": [
@@ -1036,11 +1036,11 @@
 "2026-11-12"
 ],
 "/aiswel-technology-co-ltd/": [
-"a08d27efa0e970a4",
+"2b6fff74891bbf73",
 "2026-11-12"
 ],
 "/alfen/": [
-"084e86c40db516ad",
+"43694833f8b03344",
 "2026-11-12"
 ],
 "/alfen/eve-single-double/": [
@@ -1048,7 +1048,7 @@
 "2026-11-12"
 ],
 "/alpha-ess/": [
-"2483561a1a6403e5",
+"785831448b2ce18d",
 "2026-11-12"
 ],
 "/alpha-ess/model/alp150-0-4/": [
@@ -1076,7 +1076,7 @@
 "2026-11-12"
 ],
 "/alpitronic/": [
-"f01a7a7e9c65fe36",
+"f10e36c3cb297b90",
 "2026-11-12"
 ],
 "/alpitronic/hypercharger/": [
@@ -1084,15 +1084,15 @@
 "2026-11-12"
 ],
 "/alpsolarr/": [
-"c06259dc408ed517",
+"5587fcf9b7811e26",
 "2026-11-12"
 ],
 "/amberock-voltdeer/": [
-"bdcdbd7da43a6605",
+"1778d76cb4ed7924",
 "2026-11-12"
 ],
 "/ambibox/": [
-"d7665b190c920492",
+"cc26545007ff0f68",
 "2026-11-12"
 ],
 "/ambibox/ambicharge-home/": [
@@ -1100,7 +1100,7 @@
 "2026-11-12"
 ],
 "/ampere-energy/": [
-"e170909b485277f3",
+"93583102bd6e9398",
 "2026-11-12"
 ],
 "/ampere/": [
@@ -1140,7 +1140,7 @@
 "2026-11-12"
 ],
 "/anker-solix/": [
-"c10bf8fd2987f7ee",
+"8aadc3c0f8d308da",
 "2026-11-12"
 ],
 "/anker-solix/micro-inverter/": [
@@ -1148,51 +1148,51 @@
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-35-1/": [
-"9847895b4302638a",
+"406e153a16d4b832",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-35-2/": [
-"eb376e4302a16a96",
+"a8f55b96cf04be26",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-35-3/": [
-"8b15b657f9485831",
+"fcbc14710aa7325b",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-35-4/": [
-"6af001c35fb95a0f",
+"75871f18d53be4ef",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-35-5/": [
-"9737e41dcd40c683",
+"59c72ed88ba8f40d",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-35/": [
-"2848f1c9d74f29dc",
+"1339aa9d48b5b1d0",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-46-1/": [
-"f49059b162b3740d",
+"7f815fd06443b096",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-46-2/": [
-"fe3c3d2f9471ddf9",
+"456ee667a29a9f9d",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-46-3/": [
-"4c5ca2365bce8a40",
+"1c12d4162d4385d6",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-46-4/": [
-"c35a4ce8c1e62429",
+"0e3f94cc44edad4d",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-46-5/": [
-"4f7ca2cf155200ef",
+"db07d79e811c6b54",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-46/": [
-"ddfb983289c70e63",
+"d6c4706febc6a922",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-50-1/": [
@@ -1220,27 +1220,27 @@
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-8-1/": [
-"c87c8f5c1b48a00a",
+"e6a6e4dcfc68b599",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-8-2/": [
-"0376e683841e0fa1",
+"97fe2bf7a39cf68e",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-8-3/": [
-"d3c70606a4f642a8",
+"3eca2cffcfe945e8",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-8-4/": [
-"10856588befed24e",
+"c1e730e4661d9220",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-8-5/": [
-"75d09cf6c7c19db6",
+"dd93eccda6db4aa3",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e23z1-8/": [
-"09752826b833bfd8",
+"706c39f541ef7e1f",
 "2026-11-12"
 ],
 "/anker-solix/model/a17e2gz1-1/": [
@@ -1268,15 +1268,15 @@
 "2026-11-12"
 ],
 "/anker-solix/solix-solarbank-plug-in/": [
-"d09cc3b7bc0ddd68",
+"d79f3c9ede3fe5fb",
 "2026-11-12"
 ],
 "/anker-solix/solix-x1-hybrid/": [
-"cf4ec7284f5f56ae",
+"930e1bf3d52a0871",
 "2026-11-12"
 ],
 "/aohai/": [
-"a868798f14bcfa9b",
+"d4b2c414e9d6f322",
 "2026-11-12"
 ],
 "/aohai/model/ah-10kth-g1/": [
@@ -1312,15 +1312,15 @@
 "2026-11-12"
 ],
 "/apex-solar/": [
-"de3a2aba71e807da",
+"b63992849317d67a",
 "2026-11-12"
 ],
 "/aps-energia/": [
-"f975088cf27d80bf",
+"545965d881946347",
 "2026-11-12"
 ],
 "/apstorage/": [
-"3458b66b1f7cff03",
+"d52a9e9b4fd5b27b",
 "2026-11-12"
 ],
 "/apstorage/model/els-3k/": [
@@ -1388,15 +1388,15 @@
 "2026-11-12"
 ],
 "/apsystems/": [
-"bf712bba6a63ee69",
+"febb8a5e294cfef6",
 "2026-11-12"
 ],
 "/apsystems/ds3-qs1-qt2-yc-microinverters/": [
-"c7cf46b4f83e7cc7",
+"f59a639ca271a0ce",
 "2026-11-12"
 ],
 "/apsystems/ez1-plug-in-microinverter/": [
-"8b51d55ea726d7f5",
+"67b97884fb6a8b6b",
 "2026-11-12"
 ],
 "/apsystems/model/els-3k/": [
@@ -1428,11 +1428,11 @@
 "2026-11-12"
 ],
 "/arkchu/": [
-"01108987a3c07c6f",
+"69dd97f6c57873a7",
 "2026-11-12"
 ],
 "/aster/": [
-"1a2473aac850a5fb",
+"36430988e6db11ec",
 "2026-11-12"
 ],
 "/aster/model/x1-boost-2-5k-g4/": [
@@ -1464,7 +1464,7 @@
 "2026-11-12"
 ],
 "/astro-energy-technology/": [
-"8ba138639e349cba",
+"4f0265e74570ccdc",
 "2026-11-12"
 ],
 "/astro-energy-technology/model/tm-l800m/": [
@@ -1476,7 +1476,7 @@
 "2026-11-12"
 ],
 "/atess/": [
-"16230b95e5912c44",
+"140d6fb7771cec53",
 "2026-11-12"
 ],
 "/atess/model/hps100/": [
@@ -1516,7 +1516,7 @@
 "2026-11-12"
 ],
 "/atmoce/": [
-"1768a01def1da98a",
+"720d2873d5d907bf",
 "2026-11-12"
 ],
 "/atmoce/atmoce-battery/": [
@@ -1604,7 +1604,7 @@
 "2026-11-12"
 ],
 "/aunilec-solar/": [
-"e858489f88a6ae71",
+"6a41fd08d1addd3b",
 "2026-11-12"
 ],
 "/aunilec-solar/model/auni-10kt/": [
@@ -1700,11 +1700,11 @@
 "2026-11-12"
 ],
 "/austa/": [
-"4521a89eae6d3f4d",
+"88ce429c74a0a99c",
 "2026-11-12"
 ],
 "/autarco/": [
-"d5cd65751b6d956f",
+"36f6ea1ced57495d",
 "2026-11-12"
 ],
 "/autarco/model/ld10000-s-mii/": [
@@ -2044,7 +2044,7 @@
 "2026-11-12"
 ],
 "/autel/": [
-"3ed0c206ef728510",
+"2e41ad670c4bc29b",
 "2026-11-12"
 ],
 "/autel/ac-compact/": [
@@ -2072,11 +2072,11 @@
 "2026-11-12"
 ],
 "/avidsen/": [
-"94181d859f5b882e",
+"4ba1b669804c9cbe",
 "2026-11-12"
 ],
 "/axitec/": [
-"31b566692b92c5e6",
+"2615e80da16103f3",
 "2026-11-12"
 ],
 "/axitec/axihycon-12-15h/": [
@@ -2132,11 +2132,11 @@
 "2026-11-12"
 ],
 "/bateria-energy-technology-xi-an-co-ltd/": [
-"dc8f2fe5562d1057",
+"583a2eab2d10d1f5",
 "2026-11-12"
 ],
 "/batterx/": [
-"a4459f0c91b520f2",
+"ab483908f2dcebe1",
 "2026-11-12"
 ],
 "/batterx/home/": [
@@ -2176,11 +2176,11 @@
 "2026-11-12"
 ],
 "/benekov-esco/": [
-"081b68bb56bc541c",
+"a40ad7e491502952",
 "2026-11-12"
 ],
 "/beny/": [
-"9b8879fc5c1d1321",
+"5b37daa9f394baff",
 "2026-11-12"
 ],
 "/beny/bcp-ev-charger/": [
@@ -2200,7 +2200,7 @@
 "2026-11-12"
 ],
 "/bienesol/": [
-"bc90665566febbd6",
+"c316aa1c4f7698dc",
 "2026-11-12"
 ],
 "/blue-current/": [
@@ -2212,7 +2212,7 @@
 "2026-11-12"
 ],
 "/bluesun/": [
-"b2f6c6f75cca2556",
+"b79dc40bd0bcd7e5",
 "2026-11-12"
 ],
 "/bluesun/model/bse10kh3/": [
@@ -2260,7 +2260,7 @@
 "2026-11-12"
 ],
 "/bluetti/": [
-"857b70722cde8b46",
+"a3522d305febd736",
 "2026-11-12"
 ],
 "/bluetti/bluetti-modbus/": [
@@ -2280,7 +2280,7 @@
 "2026-11-12"
 ],
 "/bmw/": [
-"af63caa9af8b4a5a",
+"33623f8c2b46533d",
 "2026-11-12"
 ],
 "/bmw/bmw-wallbox-ocpp-2-0-1/": [
@@ -2292,11 +2292,11 @@
 "2026-11-12"
 ],
 "/bmz-germany-gmbh/": [
-"9e1ebd7c22a4d190",
+"10ad0028cb30fa1f",
 "2026-11-12"
 ],
 "/boltainer/": [
-"75a18b320593a966",
+"5b6afb51cb53dff7",
 "2026-11-12"
 ],
 "/boltainer/model/bolt-150-100/": [
@@ -2352,7 +2352,7 @@
 "2026-11-12"
 ],
 "/bosch/": [
-"cfcb3cfc5eaa539c",
+"7ce6b69527090ab1",
 "2026-11-12"
 ],
 "/bosch/bpt-s-5-hybrid/": [
@@ -2360,7 +2360,7 @@
 "2026-11-12"
 ],
 "/bosswerk/": [
-"55e809c4a4a01bab",
+"35117a727d6a33af",
 "2026-11-12"
 ],
 "/bosswerk/micro-inverter/": [
@@ -2372,7 +2372,7 @@
 "2026-11-12"
 ],
 "/byd/": [
-"92fe769d72a0e577",
+"67ef3b2b2f8c68de",
 "2026-11-12"
 ],
 "/byd/battery-box-power-box/": [
@@ -2380,7 +2380,7 @@
 "2026-11-12"
 ],
 "/bytewatt-technology-co-ltd/": [
-"5b4b4afb2e051715",
+"a809bc7df3c3ab6a",
 "2026-11-12"
 ],
 "/bytewatt-technology-co-ltd/model/bw-inv-tph10k/": [
@@ -2440,7 +2440,7 @@
 "2026-11-12"
 ],
 "/ce-plus-t-energrid/": [
-"631ffc3c4f4c5a5d",
+"c91ee5adea5ce863",
 "2026-11-12"
 ],
 "/ce-plus-t-energrid/model/hercules-100/": [
@@ -2488,11 +2488,11 @@
 "2026-11-12"
 ],
 "/ce-plus-t-power/": [
-"982c26f728cffd42",
+"6bd9e368e360de6a",
 "2026-11-12"
 ],
 "/celerity/": [
-"2d9cf89b510a626e",
+"7dbb70ca77f83b58",
 "2026-11-12"
 ],
 "/celerity/model/celeritygen-10-m3/": [
@@ -2508,11 +2508,11 @@
 "2026-11-12"
 ],
 "/cell-power/": [
-"b4967ee8c56dd26c",
+"368549c4b97e83c0",
 "2026-11-12"
 ],
 "/cesc/": [
-"2d864b2bafb21153",
+"6375bdf763c51576",
 "2026-11-12"
 ],
 "/cfos/": [
@@ -2548,11 +2548,11 @@
 "2026-11-12"
 ],
 "/chargedot/": [
-"15ca181b94ee06bb",
+"0e25a8d1b3d9cc91",
 "2026-11-12"
 ],
 "/chargeline/": [
-"59ae4fb54301e16f",
+"6fbd0b599b682a52",
 "2026-11-12"
 ],
 "/chargeline/business-wallbox/": [
@@ -2564,7 +2564,7 @@
 "2026-11-12"
 ],
 "/chargepoint/": [
-"ee91f183ce3a0615",
+"22443c7d7727dace",
 "2026-11-12"
 ],
 "/chargepoint/chargepoint-home/": [
@@ -2584,7 +2584,7 @@
 "2026-11-12"
 ],
 "/chint/": [
-"0c912d8550309e05",
+"b9b069dd4b65062a",
 "2026-11-12"
 ],
 "/chint/dtsu666-huawei-firmware/": [
@@ -2764,7 +2764,7 @@
 "2026-11-12"
 ],
 "/chisage/": [
-"a90b851da64dc820",
+"530172ee7d561c20",
 "2026-11-12"
 ],
 "/chisage/model/mars-10g2-le/": [
@@ -2792,19 +2792,19 @@
 "2026-11-12"
 ],
 "/chjpsolar/": [
-"dd9aeede9c6c0739",
+"e83861f1f7f65ed9",
 "2026-11-12"
 ],
 "/cleanpower-s-r-l/": [
-"a7b8fa4e2498882d",
+"178ae583f35954a7",
 "2026-11-12"
 ],
 "/clou/": [
-"7a5c85257d2271f1",
+"13366738b4aa3643",
 "2026-11-12"
 ],
 "/compleo/": [
-"b17ada2fe380b17f",
+"d662f9379bff99a4",
 "2026-11-12"
 ],
 "/compleo/duo/": [
@@ -2824,7 +2824,7 @@
 "2026-11-12"
 ],
 "/conow/": [
-"1e8c092709283e7a",
+"8b86b723d6909d7c",
 "2026-11-12"
 ],
 "/conow/model/cme03-2bs204-08-1/": [
@@ -2900,11 +2900,11 @@
 "2026-11-12"
 ],
 "/contemporary-nebula-technology-co-ltd/": [
-"8550a71b84cae111",
+"5622d4abf4adf405",
 "2026-11-12"
 ],
 "/contemporary-terapower-shenzhen-technolo/": [
-"9f84eb56ab37b325",
+"2e425bb9b982c783",
 "2026-11-12"
 ],
 "/cozify-han/": [
@@ -2916,11 +2916,11 @@
 "2026-11-12"
 ],
 "/craftstrom/": [
-"dad156ea8d85b78c",
+"50fdfcd574bd5d86",
 "2026-11-12"
 ],
 "/csi-solar/": [
-"3b14d985c3df3f9a",
+"3920a300ef4e12b7",
 "2026-11-12"
 ],
 "/csi-solar/model/csi-100k-t400gl02-e/": [
@@ -2968,7 +2968,7 @@
 "2026-11-12"
 ],
 "/cubenergy/": [
-"7ed41d7ea565bf6f",
+"2caeaf314d58a184",
 "2026-11-12"
 ],
 "/cubenergy/model/cbac-125-ha-m/": [
@@ -3044,7 +3044,7 @@
 "2026-11-12"
 ],
 "/dah-solar/": [
-"053eca4b167a508a",
+"111be406218df60d",
 "2026-11-12"
 ],
 "/dah-solar/model/dhn-su800d-g0/": [
@@ -3052,7 +3052,7 @@
 "2026-11-12"
 ],
 "/daheimladen-de/": [
-"8c0a764799697a58",
+"815d4543678c142f",
 "2026-11-12"
 ],
 "/daheimladen/": [
@@ -3072,7 +3072,7 @@
 "2026-11-12"
 ],
 "/danfoss/": [
-"aa4a03862e1b439e",
+"5a680e995ba434aa",
 "2026-11-12"
 ],
 "/danfoss/model/2xnxa-0261-6/": [
@@ -3244,7 +3244,7 @@
 "2026-11-12"
 ],
 "/delios/": [
-"8c58fca6ae923657",
+"2cd33a4e93a7a7b1",
 "2026-11-12"
 ],
 "/delios/model/dls-230ac/": [
@@ -3348,7 +3348,7 @@
 "2026-11-12"
 ],
 "/delta/": [
-"1dc6aed4e95edb99",
+"a60f179c8d054f31",
 "2026-11-12"
 ],
 "/delta/ac-max-basic/": [
@@ -3448,55 +3448,55 @@
 "2026-11-12"
 ],
 "/deye/": [
-"e013347de28b531e",
+"d7cba6d167ef1d7e",
 "2026-11-12"
 ],
 "/deye/model/ai-w5-1-3-6p1-eu-b/": [
-"3c5ac71c91e38d62",
+"e041b2e01ae1a6e0",
 "2026-11-12"
 ],
 "/deye/model/ai-w5-1-6p1-eu-b/": [
-"f64a53ac65699b31",
+"36c14c7073acf991",
 "2026-11-12"
 ],
 "/deye/model/ai-w5-1-7p1-eu-b/": [
-"60804e388b9606b2",
+"0d46eb139a9129b7",
 "2026-11-12"
 ],
 "/deye/model/gb-s10k-eu/": [
-"952cc160ed25b95d",
+"47c2f4ffc252d6bf",
 "2026-11-12"
 ],
 "/deye/model/gb-s12k-eu/": [
-"dc03fd2839422001",
+"9fc5e8dff0a89a3c",
 "2026-11-12"
 ],
 "/deye/model/gb-s15k-eu/": [
-"01e234a27b3261c0",
+"26c2ba7767e5a280",
 "2026-11-12"
 ],
 "/deye/model/gb-s20k-eu/": [
-"935b733026dd55c9",
+"eb50478c71b58b8d",
 "2026-11-12"
 ],
 "/deye/model/gb-s25k-eu/": [
-"203e25f3d2823498",
+"5a1a20b1224ca436",
 "2026-11-12"
 ],
 "/deye/model/gb-s5k-eu/": [
-"63a1c2a24a5a2bd6",
+"7ee07774504552f7",
 "2026-11-12"
 ],
 "/deye/model/gb-s6k-eu/": [
-"e22245e624bc6717",
+"cb5fb060585af0d9",
 "2026-11-12"
 ],
 "/deye/model/gb-s8k-eu/": [
-"bfa32a039002435d",
+"31776d16050050e1",
 "2026-11-12"
 ],
 "/deye/model/sun-m100g4-eu-q0/": [
-"5a58783bb50ab195",
+"90b112512e1bf1cb",
 "2026-11-12"
 ],
 "/deye/sun-evse-wallboxes/": [
@@ -3504,23 +3504,23 @@
 "2026-11-12"
 ],
 "/deye/sun-g-string-inverters/": [
-"c63bce1d0ca224ce",
+"2f303f5c68bec86e",
 "2026-11-12"
 ],
 "/deye/sun-m-sun-g3-microinverters/": [
-"a7c43a9e0b0a1ab4",
+"286af6d821b5db0a",
 "2026-11-12"
 ],
 "/deye/sun-sg-hp3-three-phase-hv-hybrid/": [
-"06873959433de828",
+"aebca6d64ddbfd75",
 "2026-11-12"
 ],
 "/deye/sun-sg-lp1-single-phase-lv-hybrid/": [
-"7955f6342a978fab",
+"7eb55ad6b242b9ba",
 "2026-11-12"
 ],
 "/deye/sun-sg-lp3-three-phase-lv-hybrid/": [
-"2b57fc6f736d6eac",
+"05d60c148f354ece",
 "2026-11-12"
 ],
 "/dji/": [
@@ -3532,27 +3532,27 @@
 "2026-11-12"
 ],
 "/dmegc/": [
-"fe994dbbd93cc2a4",
+"6409e54df680ad37",
 "2026-11-12"
 ],
 "/dongguan-kaideng-energy-technology-co-lt/": [
-"9fd55a27dfc34ee9",
+"64bc0264a77f8ae6",
 "2026-11-12"
 ],
 "/dongguan-lithium-valley-energy-co-ltd/": [
-"0251b16388eee918",
+"f4f489badc569862",
 "2026-11-12"
 ],
 "/dr-ing-h-c-f-porsche-ag/": [
-"df0a3eb0f93ce73a",
+"7cf7914546f8dd2f",
 "2026-11-12"
 ],
 "/dra-ice/": [
-"e53457239a39eedc",
+"bd468b9849291be7",
 "2026-11-12"
 ],
 "/dream-maker/": [
-"1a80c417fc45b34b",
+"e3ae63b41d8eb289",
 "2026-11-12"
 ],
 "/dream-maker/model/pcs-3-10kw-25a-1/": [
@@ -3604,7 +3604,7 @@
 "2026-11-12"
 ],
 "/dunext/": [
-"1d399bf169a4fb3f",
+"1bb11e9489d005cd",
 "2026-11-12"
 ],
 "/dunext/model/dn3h-25k-h3/": [
@@ -3636,7 +3636,7 @@
 "2026-11-12"
 ],
 "/duracell-energy/": [
-"3cc6144be51d5451",
+"c3e1434dd5a0a888",
 "2026-11-12"
 ],
 "/duracell-energy/model/pd-dh3p-10k-g1/": [
@@ -3656,7 +3656,7 @@
 "2026-11-12"
 ],
 "/dyness/": [
-"a8eff5400363192a",
+"6d5271a8bb103e16",
 "2026-11-12"
 ],
 "/dyness/model/d10k-ht-a/": [
@@ -3680,7 +3680,7 @@
 "2026-11-12"
 ],
 "/dysun-energy/": [
-"96791e4f39c938ba",
+"7a324053a8b3f897",
 "2026-11-12"
 ],
 "/dzg/": [
@@ -3704,7 +3704,7 @@
 "2026-11-12"
 ],
 "/e-star/": [
-"c61c22ce10a9c032",
+"9267598830deca81",
 "2026-11-12"
 ],
 "/e-star/model/herf-300/": [
@@ -3728,7 +3728,7 @@
 "2026-11-12"
 ],
 "/e3-dc/": [
-"39e3850b4b277da2",
+"92c60d2815b37372",
 "2026-11-12"
 ],
 "/e3-dc/easy-connect/": [
@@ -3740,15 +3740,15 @@
 "2026-11-12"
 ],
 "/e4mobility/": [
-"508edef053252931",
+"f34fea8639bce01b",
 "2026-11-12"
 ],
 "/each/": [
-"9d6bfd0bd4f9e60e",
+"81b3b27d6f70da12",
 "2026-11-12"
 ],
 "/easee/": [
-"4179237105bab9ab",
+"1a56f80486cf701b",
 "2026-11-12"
 ],
 "/easee/home-charge-charge-lite-core-max-pro/": [
@@ -3788,7 +3788,7 @@
 "2026-11-12"
 ],
 "/eaton/": [
-"f2d8a1a68a0153d3",
+"73e3e078de9bc214",
 "2026-11-12"
 ],
 "/eaton/model/xsths3p-10k/": [
@@ -3820,7 +3820,7 @@
 "2026-11-12"
 ],
 "/ecactus/": [
-"dee2e5e35324afb1",
+"4e93138f0513dcc0",
 "2026-11-12"
 ],
 "/ecactus/model/wh-shc362/": [
@@ -3920,7 +3920,7 @@
 "2026-11-12"
 ],
 "/echarge-hardy-barth/": [
-"ea6fe1dd896dd4f1",
+"ec3518d82e5215c8",
 "2026-11-12"
 ],
 "/echarge/": [
@@ -3940,11 +3940,11 @@
 "2026-11-12"
 ],
 "/ecocoach-ag/": [
-"e7be6742676f36c9",
+"5f368de328378d7b",
 "2026-11-12"
 ],
 "/ecoflow/": [
-"f09fbbc17b91674f",
+"307cffc5864dc8fc",
 "2026-11-12"
 ],
 "/ecoflow/ecoflow-cloud-us-accounts/": [
@@ -3960,15 +3960,15 @@
 "2026-11-12"
 ],
 "/ecoflow/model/efwn511/": [
-"950e3ccd48a1518c",
+"232b3b129c86a101",
 "2026-11-12"
 ],
 "/ecoflow/model/efwn511b/": [
-"5cfd90c926781ee3",
+"169286214514ecc9",
 "2026-11-12"
 ],
 "/ecoflow/powerocean-hybrid/": [
-"4470d73e3d466159",
+"68d95c0f7ecf5514",
 "2026-11-12"
 ],
 "/ecoflow/river-3-plus-over-usb/": [
@@ -4004,11 +4004,11 @@
 "2026-11-12"
 ],
 "/eet/": [
-"464e52c852130bdf",
+"56c870f72ec353d9",
 "2026-11-12"
 ],
 "/efore/": [
-"c3fdda446f6fc5ba",
+"5ac1e7e406699682",
 "2026-11-12"
 ],
 "/eg4/": [
@@ -4028,19 +4028,19 @@
 "2026-11-12"
 ],
 "/eiko/": [
-"9c89ebd5f8f7fb61",
+"a587ac575b454934",
 "2026-11-12"
 ],
 "/ejoin/": [
-"54839c0358e0dee6",
+"41574ee8abaf1057",
 "2026-11-12"
 ],
 "/ekoenergetyka-polska-s-a/": [
-"3026fba7e89292fb",
+"41e422908e2fc145",
 "2026-11-12"
 ],
 "/elecnova/": [
-"5f705db8fcbbcedf",
+"b5c784f01581197e",
 "2026-11-12"
 ],
 "/elecnova/model/eco-e215ws/": [
@@ -4056,7 +4056,7 @@
 "2026-11-12"
 ],
 "/elecod/": [
-"5ca51b9b96804de9",
+"55ed50f9fe7b74f2",
 "2026-11-12"
 ],
 "/elecod/model/monet-1000/": [
@@ -4128,7 +4128,7 @@
 "2026-11-12"
 ],
 "/elecq/": [
-"cc74344f31127ca2",
+"d9b3c42886f7757e",
 "2026-11-12"
 ],
 "/elecq/biz/": [
@@ -4160,7 +4160,7 @@
 "2026-11-12"
 ],
 "/elinta-charge/": [
-"bcf002f6825b4c01",
+"a2d6e65293e03400",
 "2026-11-12"
 ],
 "/elli/": [
@@ -4192,11 +4192,11 @@
 "2026-11-12"
 ],
 "/elpower-s-r-l/": [
-"ee764ce664c58416",
+"b732a0cde9573ae8",
 "2026-11-12"
 ],
 "/elsta-sp-z-o-o/": [
-"e71075454355be8c",
+"f047dcc94d07d990",
 "2026-11-12"
 ],
 "/eltako/": [
@@ -4212,7 +4212,7 @@
 "2026-11-12"
 ],
 "/em2go/": [
-"8578493a59488850",
+"9c6c1d2c9e21c536",
 "2026-11-12"
 ],
 "/em2go/duo-power/": [
@@ -4228,7 +4228,7 @@
 "2026-11-12"
 ],
 "/emaldo/": [
-"a723d86bb5d230c4",
+"007102e38a4610e6",
 "2026-11-12"
 ],
 "/emporia/": [
@@ -4248,7 +4248,7 @@
 "2026-11-12"
 ],
 "/enbrilion/": [
-"97f72ef83ccd70b0",
+"2e5aa6c7f86abe68",
 "2026-11-12"
 ],
 "/enecess/": [
@@ -4260,7 +4260,7 @@
 "2026-11-12"
 ],
 "/enel-pc-sp-ka-z-o-o-wos-2025/": [
-"d83613c14723c729",
+"1a6a82b85f8ab264",
 "2026-11-12"
 ],
 "/enercab/": [
@@ -4272,15 +4272,15 @@
 "2026-11-12"
 ],
 "/enercap-power-industries-llc/": [
-"f2fcab25048eb60e",
+"6c0c14505275a685",
 "2026-11-12"
 ],
 "/energycloud/": [
-"b8b8981a14606662",
+"9c162b0b27f2679d",
 "2026-11-12"
 ],
 "/enerlution/": [
-"6edbec959cd08a4f",
+"e3ab9ec5572f58bc",
 "2026-11-12"
 ],
 "/enerlution/model/hyth-10000/": [
@@ -4308,7 +4308,7 @@
 "2026-11-12"
 ],
 "/enjoy/": [
-"2e3dbddadd060bd2",
+"38748a691444253c",
 "2026-11-12"
 ],
 "/enjoy/model/epcs100-am-f/": [
@@ -4416,11 +4416,11 @@
 "2026-11-12"
 ],
 "/enphase/": [
-"1d68add01345e47d",
+"0b2eb508dba1f8b2",
 "2026-11-12"
 ],
 "/enphase/iq-battery-encharge/": [
-"1fdad8fea256ac4c",
+"860c15b7bb85e9d8",
 "2026-11-12"
 ],
 "/enphase/iq-ev-charger-2-cloud/": [
@@ -4428,7 +4428,7 @@
 "2026-11-12"
 ],
 "/enphase/iq-microinverters-with-iq-gateway/": [
-"38ba093839025a5c",
+"0e9a056cc30347e6",
 "2026-11-12"
 ],
 "/ensto/": [
@@ -4452,7 +4452,7 @@
 "2026-11-12"
 ],
 "/envertech/": [
-"b5eb0f83e952b4be",
+"d2bf1520fd8b09bb",
 "2026-11-12"
 ],
 "/envertech/envertech-evt800/": [
@@ -4512,11 +4512,11 @@
 "2026-11-12"
 ],
 "/envision-energy-co-ltd/": [
-"8c60a5c486ede052",
+"c8c8f97b1975c8a4",
 "2026-11-12"
 ],
 "/eorta/": [
-"cf090f7e24638542",
+"0a0d91cbf0ea8e9a",
 "2026-11-12"
 ],
 "/eorta/model/avalan-core/": [
@@ -4524,7 +4524,7 @@
 "2026-11-12"
 ],
 "/epc-power-corp/": [
-"e2db1200eb6c92c5",
+"9bcc02af4077d080",
 "2026-11-12"
 ],
 "/epc-power-corp/model/cab1000-ac-2l-1-50-100100-208v/": [
@@ -4536,7 +4536,7 @@
 "2026-11-12"
 ],
 "/epoch/": [
-"fc57137b6d5e09d6",
+"100ecb03c88a9b0c",
 "2026-11-12"
 ],
 "/esl/": [
@@ -4560,11 +4560,11 @@
 "2026-11-12"
 ],
 "/estar-energy/": [
-"d603020418207fb8",
+"2bf2af15d3e9e7a8",
 "2026-11-12"
 ],
 "/esy-sunhome/": [
-"69a73931e5cb0844",
+"e0a393510179a95f",
 "2026-11-12"
 ],
 "/esystems/": [
@@ -4576,7 +4576,7 @@
 "2026-11-12"
 ],
 "/esysunhome-co-ltd/": [
-"fffda0d45f89d43d",
+"68729d9fad5ce7da",
 "2026-11-12"
 ],
 "/etek/": [
@@ -4588,7 +4588,7 @@
 "2026-11-12"
 ],
 "/eternalplanet-energy-co-ltd/": [
-"4fd938574fdb3c4e",
+"ac0848fd1b4fd3a2",
 "2026-11-12"
 ],
 "/etrel/": [
@@ -4680,11 +4680,11 @@
 "2026-11-12"
 ],
 "/faam/": [
-"d9e10589b70bed53",
+"e0f57baac2492f92",
 "2026-11-12"
 ],
 "/fairland/": [
-"1930b43c4bc0504f",
+"c7e38fd19feab715",
 "2026-11-12"
 ],
 "/fairland/model/xlit10/": [
@@ -4704,7 +4704,7 @@
 "2026-11-12"
 ],
 "/felicity-solar/": [
-"59207ff0a522e52f",
+"025b72de8632538d",
 "2026-11-12"
 ],
 "/felicity-solar/felicity-batteries-local/": [
@@ -4824,11 +4824,11 @@
 "2026-11-12"
 ],
 "/felicityess/": [
-"b5e7ab6c0ac1f6f9",
+"d5f033be22d01a76",
 "2026-11-12"
 ],
 "/fenecon/": [
-"ed82a21105e0fb86",
+"e139244c142133c8",
 "2026-11-12"
 ],
 "/fenecon/fems-diagnostics/": [
@@ -4868,11 +4868,11 @@
 "2026-11-12"
 ],
 "/fenix-s-r-o/": [
-"5162565151dffa9e",
+"9e7b66a39e7f812d",
 "2026-11-12"
 ],
 "/ferroamp/": [
-"7677e298ecb5dd2a",
+"26678cd68b4f131a",
 "2026-11-12"
 ],
 "/ferroamp/energyhub/": [
@@ -4916,7 +4916,7 @@
 "2026-11-12"
 ],
 "/flownergy/": [
-"9641a4e69827449e",
+"21a52202c7b19771",
 "2026-11-12"
 ],
 "/flownergy/model/hnesps115-34m0/": [
@@ -4952,11 +4952,11 @@
 "2026-11-12"
 ],
 "/fluence-energy-llc/": [
-"b32aad7053280db5",
+"d3d9fb308c2605b3",
 "2026-11-12"
 ],
 "/fox-ess/": [
-"32b6c8722f685cc4",
+"f480609caf9a987e",
 "2026-11-12"
 ],
 "/fox-ess/ac-ev-chargers/": [
@@ -4968,11 +4968,11 @@
 "2026-11-12"
 ],
 "/fox-ess/h1-ac1-aio-h1-single-phase/": [
-"c664603e6bcf6ddc",
+"0a86a3fa2d44b78f",
 "2026-11-12"
 ],
 "/fox-ess/h3-h3-pro-ac3-aio-h3-three-phase/": [
-"ba4184b5d6e23cce",
+"eb70a77135636f85",
 "2026-11-12"
 ],
 "/fox-ess/model/avo-22-m-ac/": [
@@ -5000,15 +5000,15 @@
 "2026-11-12"
 ],
 "/fox-ess/model/r100/": [
-"2db897ea3126f392",
+"f66d6e492c45127d",
 "2026-11-12"
 ],
 "/fox-ess/model/r110/": [
-"38fd526631bdfa2d",
+"6820d8af8a1ef0f0",
 "2026-11-12"
 ],
 "/fox-ess/model/r75/": [
-"2af2dd7daf97b185",
+"137fe947b77e812e",
 "2026-11-12"
 ],
 "/fox-ess/model/tm215kwh-100kw-2hf/": [
@@ -5080,7 +5080,7 @@
 "2026-11-12"
 ],
 "/fox-ess/t-s-f-string-inverters/": [
-"4b11ccf212ff5501",
+"6831fc51b4f7969f",
 "2026-11-12"
 ],
 "/franklinwh/": [
@@ -5092,7 +5092,7 @@
 "2026-11-12"
 ],
 "/free2move-esolutions/": [
-"c03a85da43e0a266",
+"48c8a63eb13d2254",
 "2026-11-12"
 ],
 "/free2move-esolutions/eprowallbox/": [
@@ -5120,7 +5120,7 @@
 "2026-11-12"
 ],
 "/fronius/": [
-"38b1f42050c8bcc8",
+"e56ef1614365d941",
 "2026-11-12"
 ],
 "/fronius/ohmpilot/": [
@@ -5140,15 +5140,15 @@
 "2026-11-12"
 ],
 "/fronius/symo-primo-gen24-hybrid/": [
-"8d3c532b22af64f2",
+"f79ee136720ca924",
 "2026-11-12"
 ],
 "/fronius/verto-plus-hybrid/": [
-"77e192c20046364c",
+"1038ffd7b68703b4",
 "2026-11-12"
 ],
 "/fronius/verto-tauro-symo-primo-string/": [
-"75885bc09581ec4f",
+"12d1f52cb06af18d",
 "2026-11-12"
 ],
 "/fronius/wattpilot/": [
@@ -5156,7 +5156,7 @@
 "2026-11-12"
 ],
 "/fsp-solar-power/": [
-"a519cc867df09af8",
+"033c66f2f226c40a",
 "2026-11-12"
 ],
 "/garo/": [
@@ -5184,11 +5184,11 @@
 "2026-11-12"
 ],
 "/gaz-energy/": [
-"4a09906cfa816f7a",
+"f09a64fbd46f60d4",
 "2026-11-12"
 ],
 "/ge/": [
-"a95a877f313af344",
+"198a77d3e28b4bb0",
 "2026-11-12"
 ],
 "/ge/model/geh15-3u-10/": [
@@ -5236,11 +5236,11 @@
 "2026-11-12"
 ],
 "/gewiss/": [
-"c3d9f61e40333200",
+"5a035fe582ab5d96",
 "2026-11-12"
 ],
 "/givenergy/": [
-"140d86327aab604e",
+"0f550487bd6512cd",
 "2026-11-12"
 ],
 "/givenergy/givenergy-inverters-and-batteries/": [
@@ -5256,11 +5256,11 @@
 "2026-11-12"
 ],
 "/global-mainstream-dynamic-energy/": [
-"78af0d16a04afa25",
+"6fc24e693837aa73",
 "2026-11-12"
 ],
 "/glock-ecotech-gmbh/": [
-"c2f85e788796870e",
+"8022628070f81f98",
 "2026-11-12"
 ],
 "/gne/": [
@@ -5272,7 +5272,7 @@
 "2026-11-12"
 ],
 "/go-e/": [
-"a930b5e5575ac8b1",
+"0c8aee80bce362aa",
 "2026-11-12"
 ],
 "/go-e/controller/": [
@@ -5284,7 +5284,7 @@
 "2026-11-12"
 ],
 "/golen/": [
-"03edcfd44a603b76",
+"caf71b2d37403266",
 "2026-11-12"
 ],
 "/golen/model/leg-100k-tl-p/": [
@@ -5348,7 +5348,7 @@
 "2026-11-12"
 ],
 "/goneo/": [
-"f2fbb824c6bc9d11",
+"63e9d4abd769d99a",
 "2026-11-12"
 ],
 "/goneo/model/eue2-pdt100/": [
@@ -5368,19 +5368,19 @@
 "2026-11-12"
 ],
 "/goodwe/": [
-"35389f116f4e4d37",
+"6fb52771fa48dafa",
 "2026-11-12"
 ],
 "/goodwe/dt-sdt-ms-xs-dns-string-inverters/": [
-"91b8a2bfd9a6f23a",
+"8d0943cdffaf901f",
 "2026-11-12"
 ],
 "/goodwe/es-em-ems-hybrids/": [
-"2e4e440124ded107",
+"2a08089792f47261",
 "2026-11-12"
 ],
 "/goodwe/et-eh-bt-bh-etc-hybrids/": [
-"e4cfc6c4b9482dd6",
+"da72100f76d27702",
 "2026-11-12"
 ],
 "/goodwe/hca-wallboxes/": [
@@ -5388,7 +5388,7 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw100k-gt/": [
-"3b987979e71b7509",
+"23db47894b06685c",
 "2026-11-12"
 ],
 "/goodwe/model/gw100k-pcs-n-g10/": [
@@ -5400,11 +5400,11 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw110k-gt/": [
-"6fb5eb95e8f6dc8d",
+"3831f3a80c8bc146",
 "2026-11-12"
 ],
 "/goodwe/model/gw125k-gt/": [
-"4108ff8a944efbaa",
+"1f7b735a6ca9490b",
 "2026-11-12"
 ],
 "/goodwe/model/gw125k-pcs-n-g10/": [
@@ -5416,7 +5416,7 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw150k-gt-g10/": [
-"155fc88292170868",
+"d09808297f6ce2f2",
 "2026-11-12"
 ],
 "/goodwe/model/gw3000t-ds/": [
@@ -5424,15 +5424,15 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw3600-sbp-20/": [
-"70b6fc0f32c0f5ab",
+"693cb81ea6dc4ba3",
 "2026-11-12"
 ],
 "/goodwe/model/gw3600m-es-20/": [
-"6788400f77916057",
+"69c527c3de8d6f7a",
 "2026-11-12"
 ],
 "/goodwe/model/gw3600n-eh/": [
-"90f8af62efa522d2",
+"64c466204d4fb1a2",
 "2026-11-12"
 ],
 "/goodwe/model/gw3600s-bp/": [
@@ -5452,11 +5452,11 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw5000-sbp-20/": [
-"74592c24fb1adf87",
+"0fe9236ae15bd737",
 "2026-11-12"
 ],
 "/goodwe/model/gw5000m-es-20/": [
-"3430f73ba33b1fcd",
+"0ad30d4713f7637c",
 "2026-11-12"
 ],
 "/goodwe/model/gw5000n-eh-be/": [
@@ -5464,7 +5464,7 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw5000n-eh/": [
-"6fbf6160bc532a17",
+"385a88ab04666818",
 "2026-11-12"
 ],
 "/goodwe/model/gw5000s-bp/": [
@@ -5480,19 +5480,19 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw50kbf-mt/": [
-"b5f32cb64f2d962c",
+"297f109f8b5fed74",
 "2026-11-12"
 ],
 "/goodwe/model/gw6000-sbp-20/": [
-"d52b440d858e4e71",
+"2e9d385e15ff19fc",
 "2026-11-12"
 ],
 "/goodwe/model/gw6000m-es-20/": [
-"bda15716fbea35f8",
+"c1c8f6a6dda8a81e",
 "2026-11-12"
 ],
 "/goodwe/model/gw6000n-eh/": [
-"e36546f444e5d69f",
+"e1fff446b494b024",
 "2026-11-12"
 ],
 "/goodwe/model/gw6000t-ds/": [
@@ -5500,23 +5500,23 @@
 "2026-11-12"
 ],
 "/goodwe/model/gw60kbf-mt/": [
-"93c5c725d049d64a",
+"c8baeb4f5340fb86",
 "2026-11-12"
 ],
 "/goodwe/model/gw70khv-mt/": [
-"246b5ab3a9233795",
+"8b172eedf6165dc4",
 "2026-11-12"
 ],
 "/goodwe/model/gw75kbf-mt/": [
-"60037a7c9faf53a9",
+"ae32bfae1d41d881",
 "2026-11-12"
 ],
 "/goodwe/model/gw80kbf-mt/": [
-"08d489b56b4e7b31",
+"2646c5de80b2032b",
 "2026-11-12"
 ],
 "/goodwe/model/gw80khv-mt/": [
-"b8e0850aa6226231",
+"a1c1c6829a5b761c",
 "2026-11-12"
 ],
 "/goodwe/sec1000-s-smart-energy-controller/": [
@@ -5524,7 +5524,7 @@
 "2026-11-12"
 ],
 "/gospower/": [
-"3ef62d09af472666",
+"f403df176db1bfc5",
 "2026-11-12"
 ],
 "/gossen-metrawatt/": [
@@ -5548,47 +5548,47 @@
 "2026-11-12"
 ],
 "/grid/": [
-"f27d80b7f61ac280",
+"55ceaaa6ad6c9216",
 "2026-11-12"
 ],
 "/grid/at/": [
-"f29bde5847d62287",
+"2c764114001a1f9b",
 "2026-11-12"
 ],
 "/grid/be/": [
-"69964cd5c11abf56",
+"7d4d1816880d7396",
 "2026-11-12"
 ],
 "/grid/cz/": [
-"1af575ce7bf1a90e",
+"088efbc1dc2f81ca",
 "2026-11-12"
 ],
 "/grid/de/": [
-"4650b9447326beef",
+"c5ff2b28b5bfbfa4",
 "2026-11-12"
 ],
 "/grid/ee/": [
-"e6d825f1d26afb01",
+"1e046e1d69529449",
 "2026-11-12"
 ],
 "/grid/es/": [
-"bfe18c90449999e2",
+"a2787d825abb8a83",
 "2026-11-12"
 ],
 "/grid/it/": [
-"07d033642953078f",
+"5c82a8247dab0932",
 "2026-11-12"
 ],
 "/grid/nl/": [
-"c4a391d23f940e7c",
+"678324f2386f3376",
 "2026-11-12"
 ],
 "/grid/pl/": [
-"11052d8ce9598874",
+"e0667caee22782ec",
 "2026-11-12"
 ],
 "/grid/se/": [
-"89ffce329a664abf",
+"3e8920c1be185112",
 "2026-11-12"
 ],
 "/grizzl-e/": [
@@ -5604,11 +5604,11 @@
 "2026-11-12"
 ],
 "/growatt/": [
-"37c76e55fc685dbc",
+"e3be61249bca3360",
 "2026-11-12"
 ],
 "/growatt/min-mod-mid-mic-string-inverters/": [
-"c068a9ebae606905",
+"3c06b73d1758792d",
 "2026-11-12"
 ],
 "/growatt/model/1000-s/": [
@@ -5636,7 +5636,7 @@
 "2026-11-12"
 ],
 "/growatt/model/2500tl-xa/": [
-"9174d1a1b6747017",
+"bdd22635b18beb14",
 "2026-11-12"
 ],
 "/growatt/model/3000-s/": [
@@ -5644,7 +5644,7 @@
 "2026-11-12"
 ],
 "/growatt/model/3000tl-xa/": [
-"2f076b6c2673f084",
+"680f193fc01c8f0a",
 "2026-11-12"
 ],
 "/growatt/model/3000tl3-s/": [
@@ -5652,7 +5652,7 @@
 "2026-11-12"
 ],
 "/growatt/model/3600tl-xa/": [
-"b052178b28800a96",
+"cd32a1c50dfb656a",
 "2026-11-12"
 ],
 "/growatt/model/4000tl3-s/": [
@@ -5660,15 +5660,15 @@
 "2026-11-12"
 ],
 "/growatt/model/4200tl-xa/": [
-"ba44c077615025bb",
+"267126a6a6fa937f",
 "2026-11-12"
 ],
 "/growatt/model/4600tl-xa/": [
-"5a10adb4ebce9eb7",
+"588a4b6f7c366084",
 "2026-11-12"
 ],
 "/growatt/model/5000tl-xa/": [
-"d9558eee571dd891",
+"8664a405a810a4c0",
 "2026-11-12"
 ],
 "/growatt/model/5000tl3-s/": [
@@ -5676,7 +5676,7 @@
 "2026-11-12"
 ],
 "/growatt/model/6000tl-xe/": [
-"6573a4a691d77c25",
+"7edd26261646d5b2",
 "2026-11-12"
 ],
 "/growatt/model/6000tl3-s/": [
@@ -5760,11 +5760,11 @@
 "2026-11-12"
 ],
 "/growatt/model/neo-600m-x/": [
-"9a65e10c1ffdf450",
+"4ad1121e9c63acad",
 "2026-11-12"
 ],
 "/growatt/model/neo-800m-x/": [
-"a89f2f08b31f8887",
+"09d52b49598f9089",
 "2026-11-12"
 ],
 "/growatt/model/nexa-2000/": [
@@ -5772,7 +5772,7 @@
 "2026-11-12"
 ],
 "/growatt/sph-spa-mod-xh-min-xh-hybrids/": [
-"64078b85d1f0daae",
+"ac8fa8d8a7f5ea1d",
 "2026-11-12"
 ],
 "/growatt/thor-ev-charger/": [
@@ -5780,7 +5780,7 @@
 "2026-11-12"
 ],
 "/gsstes/": [
-"3f8c79bcaee2237d",
+"894527ba51436ebd",
 "2026-11-12"
 ],
 "/gsstes/model/ma1000k030/": [
@@ -5792,11 +5792,11 @@
 "2026-11-12"
 ],
 "/guangdong-felicity-new-energy-co-ltd-fel/": [
-"4877c08fba58df9a",
+"b98ef52bb748e5eb",
 "2026-11-12"
 ],
 "/guangdong-lorentz-technology-co-ltd/": [
-"a35a551ecd5a4cc9",
+"db3e894bcf6d78ed",
 "2026-11-12"
 ],
 "/hager/": [
@@ -5828,15 +5828,15 @@
 "2026-11-12"
 ],
 "/hagerenergy/": [
-"f8e8ab24f252e64d",
+"174e53b4af0521af",
 "2026-11-12"
 ],
 "/haier/": [
-"548e89513354c614",
+"8524c7eb7df740d3",
 "2026-11-12"
 ],
 "/hanchu/": [
-"2e9fb737d7a5ef29",
+"81acfabfe1e4d065",
 "2026-11-12"
 ],
 "/hanchu/hanchu-ess/": [
@@ -5952,7 +5952,7 @@
 "2026-11-12"
 ],
 "/hanersun-technology-co-ltd/": [
-"bd279edcac7c4839",
+"8a212cfa2adc0837",
 "2026-11-12"
 ],
 "/hardy-barth/": [
@@ -6000,7 +6000,7 @@
 "2026-11-12"
 ],
 "/herf/": [
-"1882dd0b472d33c5",
+"a210e9ed45f17cfa",
 "2026-11-12"
 ],
 "/herf/model/herf-1000/": [
@@ -6052,11 +6052,11 @@
 "2026-11-12"
 ],
 "/hfie/": [
-"b903c7e7168c1c34",
+"a81e5bbdb2ffba55",
 "2026-11-12"
 ],
 "/hiconics/": [
-"a309d44b2e78f892",
+"6061bcc674c994ac",
 "2026-11-12"
 ],
 "/hiconics/model/hec2-t10-0hr2-eu/": [
@@ -6216,7 +6216,7 @@
 "2026-11-12"
 ],
 "/hinen/": [
-"5c3e1d96e1e0535d",
+"3b105f0f0f23abe8",
 "2026-11-12"
 ],
 "/hinen/hinen-inverters-and-batteries/": [
@@ -6316,11 +6316,11 @@
 "2026-11-12"
 ],
 "/hitachi/": [
-"a3d134a11140c504",
+"1be282e0244ffa9a",
 "2026-11-12"
 ],
 "/hite/": [
-"9a01af74fb51eb1e",
+"3d063aa8281b5fff",
 "2026-11-12"
 ],
 "/hite/model/hd03pcs0100/": [
@@ -6328,7 +6328,7 @@
 "2026-11-12"
 ],
 "/hizenergy/": [
-"6f0f1e942fadf226",
+"fb745153c25e2c24",
 "2026-11-12"
 ],
 "/homecharge/": [
@@ -6352,7 +6352,7 @@
 "2026-11-12"
 ],
 "/homewizard/": [
-"c990160d36801b3d",
+"2920d642c1922266",
 "2026-11-12"
 ],
 "/homewizard/homewizard/": [
@@ -6376,11 +6376,11 @@
 "2026-11-12"
 ],
 "/hopetrek-innovations-co-ltd/": [
-"e0b4661d503f8558",
+"791f56bef39556a6",
 "2026-11-12"
 ],
 "/hopewind/": [
-"8e3bc13ab22f0f30",
+"7e75c2197360acc0",
 "2026-11-12"
 ],
 "/hopewind/model/eshv250k-a-g01/": [
@@ -6388,7 +6388,7 @@
 "2026-11-12"
 ],
 "/hoymiles/": [
-"dbf5742b3a305f84",
+"f3e009bb132b075d",
 "2026-11-12"
 ],
 "/hoymiles/hm-hms-hmt-microinverters/": [
@@ -6400,7 +6400,7 @@
 "2026-11-12"
 ],
 "/hoymiles/mit-three-phase-string-inverters/": [
-"54ad4ae851987514",
+"c53827b2ea92d29e",
 "2026-11-12"
 ],
 "/hoymiles/model/has-3-0lv-eug1/": [
@@ -6460,15 +6460,15 @@
 "2026-11-12"
 ],
 "/hpsolartech/": [
-"65791f816a3dfdce",
+"b07a9fcd6853f5ec",
 "2026-11-12"
 ],
 "/hswind-aps/": [
-"601be9ff425110c7",
+"200db8141ae287cd",
 "2026-11-12"
 ],
 "/huafon-ess/": [
-"80f26d803ddf20ad",
+"bf157a5a1185ca69",
 "2026-11-12"
 ],
 "/huafon-ess/model/hf01lp1-3-6k-eu/": [
@@ -6480,7 +6480,7 @@
 "2026-11-12"
 ],
 "/huawei/": [
-"5e95c1b8751492e3",
+"7400c52b0c1d96ce",
 "2026-11-12"
 ],
 "/huawei/dtsu666-h/": [
@@ -6532,15 +6532,15 @@
 "2026-11-12"
 ],
 "/huayu/": [
-"d6aef8ae3690afbd",
+"38760ba1952e2726",
 "2026-11-12"
 ],
 "/huazhi/": [
-"b0ba1a7d3cb46291",
+"658e8413addf2d04",
 "2026-11-12"
 ],
 "/huizhou-epever-technology/": [
-"3ff720316e33c941",
+"91490efe5d24b0e7",
 "2026-11-12"
 ],
 "/hypervolt/": [
@@ -6552,15 +6552,15 @@
 "2026-11-12"
 ],
 "/hypontech/": [
-"dc06f77edd3c48da",
+"30aaf06ae3844804",
 "2026-11-12"
 ],
 "/hypontech/model/hbs-3000/": [
-"2eff17efb59f9c98",
+"2c479fa0684f750b",
 "2026-11-12"
 ],
 "/hypontech/model/hbs-3680/": [
-"dbc98dffa1b9e0b3",
+"1254ed18e3493b60",
 "2026-11-12"
 ],
 "/hypontech/model/hbs-5000-be/": [
@@ -6568,19 +6568,19 @@
 "2026-11-12"
 ],
 "/hypontech/model/hbs-5000/": [
-"6a6b1b054b6231a3",
+"447b1bfe7c94a6e2",
 "2026-11-12"
 ],
 "/hypontech/model/hbs-6000/": [
-"d9ccb8612550ec89",
+"15210f1bfbe79962",
 "2026-11-12"
 ],
 "/hypontech/model/hhs-3000/": [
-"f4e1f6d02dcb2265",
+"023d951dd1d328c0",
 "2026-11-12"
 ],
 "/hypontech/model/hhs-3680/": [
-"c5dba60d50edc492",
+"7b3dd240185eba1f",
 "2026-11-12"
 ],
 "/hypontech/model/hhs-5000-be/": [
@@ -6588,11 +6588,11 @@
 "2026-11-12"
 ],
 "/hypontech/model/hhs-5000/": [
-"58ca7a4db712c8c9",
+"8ad45a2f3474a821",
 "2026-11-12"
 ],
 "/hypontech/model/hhs-6000/": [
-"8d8d8bd5dd83d4aa",
+"edb0c74f377d1911",
 "2026-11-12"
 ],
 "/hypontech/model/hht-10000-be/": [
@@ -6600,7 +6600,7 @@
 "2026-11-12"
 ],
 "/hypontech/model/hht-10000/": [
-"52e9a8c46936bde3",
+"7ce966eb0bd05784",
 "2026-11-12"
 ],
 "/hypontech/model/hht-12000/": [
@@ -6612,35 +6612,35 @@
 "2026-11-12"
 ],
 "/hypontech/model/hht-5000/": [
-"9ddaad9252adc392",
+"5bcda53da53c2a82",
 "2026-11-12"
 ],
 "/hypontech/model/hht-6000/": [
-"6a0b0b05e6959e30",
+"00f3052fe2ae7b00",
 "2026-11-12"
 ],
 "/hypontech/model/hht-8000/": [
-"c26e99dfe6d63baf",
+"e5374b3fc865683c",
 "2026-11-12"
 ],
 "/hypontech/model/hpk-1000/": [
-"4f56dee52c251e60",
+"5605a8d25adbfac2",
 "2026-11-12"
 ],
 "/hypontech/model/hpk-1500/": [
-"04de2016e0cd243b",
+"3db410e780e1fab9",
 "2026-11-12"
 ],
 "/hypontech/model/hpk-2000/": [
-"7e762ea6cc20124f",
+"ac3501c57b6f03f7",
 "2026-11-12"
 ],
 "/hypontech/model/hpk-2500/": [
-"5a531939ac993a2a",
+"d1018ac034061386",
 "2026-11-12"
 ],
 "/hypontech/model/hpk-3000/": [
-"ffcc93e15e7663b6",
+"b87ca0cf87576475",
 "2026-11-12"
 ],
 "/hypontech/model/hps-3000dl/": [
@@ -6676,27 +6676,27 @@
 "2026-11-12"
 ],
 "/hypontech/model/hpt-10000/": [
-"a8f860d93290cb17",
+"bbceb3a2f4cef578",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-15k/": [
-"9ad2ad6cd8a0811e",
+"552bcdfd7f9f1848",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-17k/": [
-"e891ad0f56b68e9b",
+"bbb3572da0d6dfd4",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-20k/": [
-"9253f6e09da09b1c",
+"c1ec8049d2292241",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-25k/": [
-"cd754e1f18d9f080",
+"2474d8ea36036436",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-3000/": [
-"42e1be87a024b406",
+"30b514ac0833cd43",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-30k-be/": [
@@ -6704,47 +6704,47 @@
 "2026-11-12"
 ],
 "/hypontech/model/hpt-30k/": [
-"b0b36ebf1065735f",
+"ea25b3076586c6c4",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-33k/": [
-"ce5257d31ddfe8c2",
+"3fc7cebaaf69f6f0",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-36k/": [
-"6389a964d5476ebc",
+"8a6519b057214c0e",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-4000/": [
-"63c53de2350a29f4",
+"2418d092f076fb04",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-40k/": [
-"8188f602af9eac59",
+"972cea750dfd93eb",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-5000/": [
-"6cb170d2391e8190",
+"07a805a53f799536",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-50k/": [
-"3fbd52450ba8e3eb",
+"09306e5b7d4ecd88",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-6000/": [
-"5d0fc487f7f95046",
+"c673c1a45bac44a7",
 "2026-11-12"
 ],
 "/hypontech/model/hpt-8000/": [
-"c25b832a85585c07",
+"4d5e1b724ded977d",
 "2026-11-12"
 ],
 "/hyundai/": [
-"6327c9ceec98327a",
+"de95816d17c711c0",
 "2026-11-12"
 ],
 "/hyxi-power/": [
-"4480ec5056d9c195",
+"08d5bf04f7581ae3",
 "2026-11-12"
 ],
 "/hyxi-power/model/hyx-h3k-hs/": [
@@ -6864,7 +6864,7 @@
 "2026-11-12"
 ],
 "/hyxipower/": [
-"05c686cb2c18c195",
+"4f07bd92416c9628",
 "2026-11-12"
 ],
 "/hyxipower/hyxi-cloud/": [
@@ -6916,7 +6916,7 @@
 "2026-11-12"
 ],
 "/igarden/": [
-"5ae3b57dbe667676",
+"34659f6c1a98b671",
 "2026-11-12"
 ],
 "/igen-tech/": [
@@ -6928,7 +6928,7 @@
 "2026-11-12"
 ],
 "/ilumen-sma/": [
-"d396b7019b900eca",
+"2c81ca6745b407ef",
 "2026-11-12"
 ],
 "/ilumen-sma/model/2-5-sb1-5-1vl-40/": [
@@ -7044,7 +7044,7 @@
 "2026-11-12"
 ],
 "/imeon/": [
-"14b0e7afa159f6e1",
+"66222936bf34d69f",
 "2026-11-12"
 ],
 "/imeon/imeon-inverter/": [
@@ -7064,7 +7064,7 @@
 "2026-11-12"
 ],
 "/in-power/": [
-"c0c70270b7a7cd4c",
+"c2094c64e17c8d79",
 "2026-11-12"
 ],
 "/in-power/model/inppcs-100-0-4-w-14-a2-os/": [
@@ -7084,7 +7084,7 @@
 "2026-11-12"
 ],
 "/indevolt/": [
-"1b49e26ddf2f6cff",
+"e1201ba8b53941d3",
 "2026-11-12"
 ],
 "/indevolt/indevolt/": [
@@ -7308,7 +7308,7 @@
 "2026-11-12"
 ],
 "/indrivetec/": [
-"daa6ea298e4cdb0b",
+"5cc3188d10a52145",
 "2026-11-12"
 ],
 "/indrivetec/model/fc250/": [
@@ -7340,11 +7340,11 @@
 "2026-11-12"
 ],
 "/infinisolar/": [
-"2f0eb8265eaf5dd0",
+"da4cc13d58c66eb6",
 "2026-11-12"
 ],
 "/infypower/": [
-"aa56890732500a56",
+"e251e95c92cc3169",
 "2026-11-12"
 ],
 "/infypower/model/icb120kw-60kw/": [
@@ -7368,11 +7368,11 @@
 "2026-11-12"
 ],
 "/ingeteam/": [
-"40a5662b4af5e526",
+"7ddf7ae079cb2b89",
 "2026-11-12"
 ],
 "/innocharge/": [
-"bf702662f6562964",
+"175270cc59bbedf2",
 "2026-11-12"
 ],
 "/innogy/": [
@@ -7384,11 +7384,11 @@
 "2026-11-12"
 ],
 "/innotinum/": [
-"5ceb9fcf9921de0f",
+"74f3017a1b66c3e2",
 "2026-11-12"
 ],
 "/inovance/": [
-"878f56e28dc04063",
+"c0901a4388046baf",
 "2026-11-12"
 ],
 "/inro/": [
@@ -7400,7 +7400,7 @@
 "2026-11-12"
 ],
 "/intilion/": [
-"de2f7bd9e330352f",
+"a24cf078b3fb85ab",
 "2026-11-12"
 ],
 "/intilion/scalebloc-energy/": [
@@ -7408,11 +7408,11 @@
 "2026-11-12"
 ],
 "/invertechs/": [
-"5476652a32e17342",
+"7d345f0fa1a54097",
 "2026-11-12"
 ],
 "/inverx/": [
-"0860426689800953",
+"d1b032fa8fb7566d",
 "2026-11-12"
 ],
 "/inverx/model/xlit10/": [
@@ -7432,7 +7432,7 @@
 "2026-11-12"
 ],
 "/invt/": [
-"a391d5f6fb0fc44f",
+"26ccc1ec89182d25",
 "2026-11-12"
 ],
 "/invt/model/bd10ktr-rh3/": [
@@ -7472,7 +7472,7 @@
 "2026-11-12"
 ],
 "/invt/model/imars-xg30ktr/": [
-"7ace433e68de068f",
+"fe62f56730ce1745",
 "2026-11-12"
 ],
 "/invt/model/xg10ktr-au/": [
@@ -7480,7 +7480,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg10ktr/": [
-"b519651fcfbd5b85",
+"e0037c2639ccfc20",
 "2026-11-12"
 ],
 "/invt/model/xg11ktr-au/": [
@@ -7488,7 +7488,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg11ktr/": [
-"3886053b39b00413",
+"87a31716b05597c0",
 "2026-11-12"
 ],
 "/invt/model/xg12ktr-au/": [
@@ -7496,7 +7496,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg12ktr/": [
-"8d1d0669658a6b71",
+"de151f452c363cb7",
 "2026-11-12"
 ],
 "/invt/model/xg15ktr1-au/": [
@@ -7504,7 +7504,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg15ktr1/": [
-"a525d043581f4480",
+"7301e9fa92a78441",
 "2026-11-12"
 ],
 "/invt/model/xg3ktr-au/": [
@@ -7512,7 +7512,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg3ktr/": [
-"431000b8a3dd372d",
+"70ed09a67b2b16cd",
 "2026-11-12"
 ],
 "/invt/model/xg4ktr-au/": [
@@ -7520,7 +7520,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg4ktr/": [
-"7c3cd2d2ed1955ed",
+"7327b0d4d48ae135",
 "2026-11-12"
 ],
 "/invt/model/xg5ktr-au/": [
@@ -7528,7 +7528,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg5ktr/": [
-"654f02b7b4c37eed",
+"d812b6eba4d4336f",
 "2026-11-12"
 ],
 "/invt/model/xg6ktr-au/": [
@@ -7536,7 +7536,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg6ktr/": [
-"899b3e3657a14b72",
+"c405e7ec394ad1da",
 "2026-11-12"
 ],
 "/invt/model/xg8ktr-au/": [
@@ -7544,7 +7544,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg8ktr/": [
-"b37c59a61051a1dd",
+"f65f5b79e2efc529",
 "2026-11-12"
 ],
 "/invt/model/xg9ktr-au/": [
@@ -7552,7 +7552,7 @@
 "2026-11-12"
 ],
 "/invt/model/xg9ktr/": [
-"1615b66d8b00039f",
+"cf9c0f788a168391",
 "2026-11-12"
 ],
 "/iometer/": [
@@ -7580,7 +7580,7 @@
 "2026-11-12"
 ],
 "/ipotisedge/": [
-"ca7201399a9a418e",
+"c57bb249de00aeeb",
 "2026-11-12"
 ],
 "/isigma/": [
@@ -7592,15 +7592,15 @@
 "2026-11-12"
 ],
 "/isuna/": [
-"3881ee3ca818b825",
+"3fc420c1c30e060d",
 "2026-11-12"
 ],
 "/ixuus-megarevo/": [
-"8ea6826d258b4561",
+"203333a9ccc5648a",
 "2026-11-12"
 ],
 "/jackery/": [
-"6d282ae14f595132",
+"bf43320210b4d1e5",
 "2026-11-12"
 ],
 "/jackery/model/js3-2500pa-gy-20/": [
@@ -7648,7 +7648,7 @@
 "2026-11-12"
 ],
 "/jiayu/": [
-"665dc812575cec9b",
+"d35249a62a99cb05",
 "2026-11-12"
 ],
 "/jiayu/model/jmi-800/": [
@@ -7656,11 +7656,11 @@
 "2026-11-12"
 ],
 "/jinan-deming-power-equipment-co-ltd/": [
-"85f779b076b499aa",
+"9cecfa2ef06b3857",
 "2026-11-12"
 ],
 "/jingtsing/": [
-"393fed0e9251f40f",
+"15712cda1b2df366",
 "2026-11-12"
 ],
 "/jingtsing/model/jtes-pcs100k-1000-400-l05c1/": [
@@ -7672,7 +7672,7 @@
 "2026-11-12"
 ],
 "/jinko/": [
-"4c638717f54001a0",
+"55f14f87e83be2e3",
 "2026-11-12"
 ],
 "/jinko/model/jkp-100ln-ba/": [
@@ -7720,7 +7720,7 @@
 "2026-11-12"
 ],
 "/just-solar/": [
-"d926b770ab0f3a94",
+"ce9f41815c917434",
 "2026-11-12"
 ],
 "/just-solar/model/jn3-hv-10-0-a/": [
@@ -7744,11 +7744,11 @@
 "2026-11-12"
 ],
 "/k-rnten-solar/": [
-"7d2e3791940229e8",
+"4bde572ee3ecd32c",
 "2026-11-12"
 ],
 "/kaco/": [
-"ea992014a7fc423c",
+"29f1326f42bd5b32",
 "2026-11-12"
 ],
 "/kaco/kaco-inverters-web-interface/": [
@@ -7764,7 +7764,7 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-10-0-nx3-m2/": [
-"3c01346807c8c925",
+"166f8f37459b0c0c",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-10-0-tl3/": [
@@ -7772,19 +7772,19 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-100-nx3-m8-wm-od-frgm/": [
-"75286cb29a78772f",
+"31ad4f09d6431ec3",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-100-nx3-m8-wm-od-iigl/": [
-"9a008df488495a76",
+"09977020ef743ec0",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-100-nx3-m8-wm-od-iigm/": [
-"5cddf1b0dfdd5348",
+"82c43c4e07716956",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-100-nx3-m8-wm-od-iigx/": [
-"cdfe4cc93f89530f",
+"3ea8a6f237538173",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-105-tl3/": [
@@ -7792,19 +7792,19 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-125-nx3-m10-wm-od-frgm/": [
-"e9e9df335a877047",
+"c2605a802b5a65d3",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-125-nx3-m10-wm-od-iigl/": [
-"10a761881e363037",
+"c1d0fc7796a71cb0",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-125-nx3-m10-wm-od-iigm/": [
-"3ce83a8d96632926",
+"bcc54681a4d365c2",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-125-nx3-m10-wm-od-iigx/": [
-"c8eab12749525e79",
+"7d2dc02a57f7ea30",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-125-tl3-m1-wm-od-iik0/": [
@@ -7828,7 +7828,7 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-15-0-nx3-m2/": [
-"15b6bbe00016f48c",
+"bfe4cbfc21efd096",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-15-0-tl3/": [
@@ -7844,7 +7844,7 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-20-0-nx3-m2/": [
-"5609cfd32aa200da",
+"ef72eb39e766ba6a",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-20-0-tl3/": [
@@ -7872,19 +7872,19 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-60-0-tl3-m1-wm-od-frgx/": [
-"50b6e5c016dd3dff",
+"8b840fa6736c9b6f",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-60-0-tl3-m1-wm-od-iigb/": [
-"c81b362bf9982e2c",
+"5240c9634cdc46e6",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-60-0-tl3-m1-wm-od-iigm/": [
-"b8edfeadc4037c7b",
+"ae83caeacc2ad29b",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-60-0-tl3-m1-wm-od-iigx/": [
-"e5f94319978b52a1",
+"e00621fabda593cd",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-7-5-tl3/": [
@@ -7892,7 +7892,7 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-8-0-nx3-m2/": [
-"0b62d7713a1a5cfa",
+"5b0612ba9e73d6b8",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-8-6-tl3/": [
@@ -7916,15 +7916,15 @@
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-gs-50-0-tl3-s-b1-wm-od-iigl/": [
-"a6383aa5a2448219",
+"54974ca21602c31a",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-gs-50-0-tl3-s-b1-wm-od-iigm/": [
-"86a109cbf920f347",
+"03ebb6546b86e1cd",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-gs-50-0-tl3-s-b1-wm-od-iigx/": [
-"99783351cd3711a7",
+"bc0f76a795f86d8b",
 "2026-11-12"
 ],
 "/kaco/model/blueplanet-gs-92-0-tl3-s-b1-wm-od-iigl/": [
@@ -7940,15 +7940,15 @@
 "2026-11-12"
 ],
 "/karstsolar/": [
-"eb407b6bf33677d7",
+"8c20610daf1d9294",
 "2026-11-12"
 ],
 "/katek-steca/": [
-"e318a9ec5a011ddc",
+"92c65065748e5712",
 "2026-11-12"
 ],
 "/kathrein/": [
-"beedfe096968a35d",
+"cf80ffe53b1f094f",
 "2026-11-12"
 ],
 "/kathrein/kwb-ac20-ocpp/": [
@@ -8000,7 +8000,7 @@
 "2026-11-12"
 ],
 "/keba/": [
-"45e4d0eb2025b157",
+"74008a6ba3cb3474",
 "2026-11-12"
 ],
 "/keba/kecontact-p30-p40/": [
@@ -8008,7 +8008,7 @@
 "2026-11-12"
 ],
 "/kehua/": [
-"6730f66aaddb0f25",
+"f216ccb651d41913",
 "2026-11-12"
 ],
 "/kehua/model/bcs1000k-c-hud/": [
@@ -8076,15 +8076,15 @@
 "2026-11-12"
 ],
 "/kempower-oyj/": [
-"53c3100559636064",
+"366b0407bff72dfb",
 "2026-11-12"
 ],
 "/kia/": [
-"09425e44cca2081d",
+"ffd66268ffc28e1f",
 "2026-11-12"
 ],
 "/kofen-electric-gmbh/": [
-"698ad7465b3978ad",
+"8e0c863fd768e9b4",
 "2026-11-12"
 ],
 "/kolanky/": [
@@ -8096,11 +8096,11 @@
 "2026-11-12"
 ],
 "/kontron-esystems-gmbh/": [
-"b937b1c516138da9",
+"75cd3daa53df4e54",
 "2026-11-12"
 ],
 "/kontron-solar/": [
-"e251e45d2c4fc7ba",
+"2cde56286e659f56",
 "2026-11-12"
 ],
 "/kontron-solar/charger/": [
@@ -8108,15 +8108,15 @@
 "2026-11-12"
 ],
 "/kopp-germany/": [
-"50a217b123b1ce81",
+"b88c46c3d288af7b",
 "2026-11-12"
 ],
 "/kortrong/": [
-"f005215b4b14bac5",
+"0541de54cd0f0fbf",
 "2026-11-12"
 ],
 "/kostal/": [
-"d0e4bb65537efcd1",
+"b2653663fc160b6f",
 "2026-11-12"
 ],
 "/kostal/enector-wallboxes/": [
@@ -8136,11 +8136,11 @@
 "2026-11-12"
 ],
 "/kostal/piko-string/": [
-"c39d43567e53857c",
+"102f07d57a595e24",
 "2026-11-12"
 ],
 "/kostal/plenticore-hybrid/": [
-"e5bbc865899f6321",
+"1ed89f398871ea83",
 "2026-11-12"
 ],
 "/kostal/smart-energy-meter/": [
@@ -8148,11 +8148,11 @@
 "2026-11-12"
 ],
 "/kowint/": [
-"f6954e0a199abcb0",
+"f7fd61a5a0e2fe7c",
 "2026-11-12"
 ],
 "/koyoe/": [
-"0865d04a1590a3b6",
+"fee0d3ced2dab43c",
 "2026-11-12"
 ],
 "/koyoe/model/ky-est08kh-s/": [
@@ -8172,7 +8172,7 @@
 "2026-11-12"
 ],
 "/kreisel-electric-gmbh/": [
-"672ea40a127ee9de",
+"35cdd09913a6eded",
 "2026-11-12"
 ],
 "/kse/": [
@@ -8184,7 +8184,7 @@
 "2026-11-12"
 ],
 "/kstar/": [
-"9dbb478cda77445b",
+"796fefaf076805e2",
 "2026-11-12"
 ],
 "/kstar/inverters-with-a-solarman-wi-fi-lan-logger-stick/": [
@@ -8192,7 +8192,7 @@
 "2026-11-12"
 ],
 "/kstar/model/10kt-m1/": [
-"b0ad94e81c649b6d",
+"dbbfb9bb4dd18905",
 "2026-11-12"
 ],
 "/kstar/model/10kt/": [
@@ -8200,7 +8200,7 @@
 "2026-11-12"
 ],
 "/kstar/model/12kt-m1/": [
-"67ee20c0d26f146f",
+"48eaefa6cb251b3d",
 "2026-11-12"
 ],
 "/kstar/model/12kt/": [
@@ -8208,23 +8208,23 @@
 "2026-11-12"
 ],
 "/kstar/model/15kt-m1/": [
-"3e15d89c57db0339",
+"1fa9a0966fd5a0dd",
 "2026-11-12"
 ],
 "/kstar/model/17kt-m1/": [
-"9083a679704f4e76",
+"911e648a0e702553",
 "2026-11-12"
 ],
 "/kstar/model/20kt-m1/": [
-"69a66c73d18dc96c",
+"21e6944aa2b049b2",
 "2026-11-12"
 ],
 "/kstar/model/25kt-m1/": [
-"fc3d6c6f2ee1ef22",
+"7feb7f41526ac311",
 "2026-11-12"
 ],
 "/kstar/model/3-6kt-m1/": [
-"f512c28d95abaeac",
+"97768c292eecd413",
 "2026-11-12"
 ],
 "/kstar/model/30kt-m1/": [
@@ -8232,7 +8232,7 @@
 "2026-11-12"
 ],
 "/kstar/model/3kt-m1/": [
-"687830755b4916d3",
+"9211d4e1fd73c39c",
 "2026-11-12"
 ],
 "/kstar/model/40kt-m1/": [
@@ -8240,23 +8240,23 @@
 "2026-11-12"
 ],
 "/kstar/model/4kt-m1/": [
-"25850860b0f0e01b",
+"f91be08613bed810",
 "2026-11-12"
 ],
 "/kstar/model/50dp/": [
-"56c78e5f68c7848c",
+"f693bf235defddd6",
 "2026-11-12"
 ],
 "/kstar/model/5kt-m1/": [
-"e2e753000bbd9e8a",
+"5cb0ad3a0293db64",
 "2026-11-12"
 ],
 "/kstar/model/6kt-m1/": [
-"03480c05bbde8a6c",
+"a121252c83ef664b",
 "2026-11-12"
 ],
 "/kstar/model/8kt-m1/": [
-"2a02bb1ec6fbe905",
+"40302fa829a55531",
 "2026-11-12"
 ],
 "/kstar/model/8kt/": [
@@ -8288,7 +8288,7 @@
 "2026-11-12"
 ],
 "/kstar/model/kac100d2/": [
-"eddbcc9a64441d22",
+"898f2819056fd9bc",
 "2026-11-12"
 ],
 "/kstar/model/kac100dh/": [
@@ -8296,19 +8296,19 @@
 "2026-11-12"
 ],
 "/kstar/model/kac100dp2/": [
-"48a122537b2311f8",
+"d1271639a18c7594",
 "2026-11-12"
 ],
 "/kstar/model/kac110d2/": [
-"852b85411bcfc1ca",
+"72fb334eaeac362b",
 "2026-11-12"
 ],
 "/kstar/model/kac110dp2/": [
-"44e45427889d0e67",
+"2d433411855ef073",
 "2026-11-12"
 ],
 "/kstar/model/kac125d2/": [
-"c114ea1fdf1cd3aa",
+"6cdf8494579cec41",
 "2026-11-12"
 ],
 "/kstar/model/kac125dh/": [
@@ -8316,47 +8316,47 @@
 "2026-11-12"
 ],
 "/kstar/model/kac125dp2/": [
-"b04e262588a71483",
+"3b20b831fd01cc89",
 "2026-11-12"
 ],
 "/kstar/model/kac20dp2/": [
-"676651c82b964c67",
+"c02dacfeba73b4f1",
 "2026-11-12"
 ],
 "/kstar/model/kac25dp2/": [
-"83c6aa5942ed0155",
+"c2080c57df6f6fc2",
 "2026-11-12"
 ],
 "/kstar/model/kac29-9dp2/": [
-"0fc6258c30b71c01",
+"9b287136f1174ad3",
 "2026-11-12"
 ],
 "/kstar/model/kac30dp2/": [
-"de6001006fae3fa9",
+"e1155d7449e22edf",
 "2026-11-12"
 ],
 "/kstar/model/kac40dp2/": [
-"91432946ac73da07",
+"c778322055332916",
 "2026-11-12"
 ],
 "/kstar/model/kac49-9dp2/": [
-"37e245bf5aea904a",
+"7de8c60db075e557",
 "2026-11-12"
 ],
 "/kstar/model/kac50dp/": [
-"4cca19e814a50969",
+"f4ab2be8dfbe54b0",
 "2026-11-12"
 ],
 "/kstar/model/kac50dp2/": [
-"363adf0b7ad510d0",
+"240edf7cbb05e44d",
 "2026-11-12"
 ],
 "/kstar/model/kac80d2/": [
-"d67e761372e5a83b",
+"d038e815d19bc05a",
 "2026-11-12"
 ],
 "/kstar/model/kac80dp2/": [
-"da723aded5e270b3",
+"ab0234fab6953859",
 "2026-11-12"
 ],
 "/kstar/model/kse-3-6k-048s/": [
@@ -8380,7 +8380,7 @@
 "2026-11-12"
 ],
 "/ledvance/": [
-"fc433012e7e38aaf",
+"ee911b9a65974953",
 "2026-11-12"
 ],
 "/ledvance/model/lht-hv-10k-f1/": [
@@ -8560,7 +8560,7 @@
 "2026-11-12"
 ],
 "/lenercom/": [
-"14a5c1225002f891",
+"9d06e3f64a5bc454",
 "2026-11-12"
 ],
 "/lenercom/model/lc-e2-1010t-g/": [
@@ -8720,11 +8720,11 @@
 "2026-11-12"
 ],
 "/lg-electronics/": [
-"91e94d20788dbd92",
+"527f1c3a9156d4b9",
 "2026-11-12"
 ],
 "/lg-ess/": [
-"0f9d3283836b7818",
+"194c78d2ee2cc925",
 "2026-11-12"
 ],
 "/lg/": [
@@ -8740,7 +8740,7 @@
 "2026-11-12"
 ],
 "/livoltek/": [
-"d12c2821b3b66f9c",
+"b2cbe2a02947a852",
 "2026-11-12"
 ],
 "/livoltek/model/gt1-1k6s1/": [
@@ -8876,7 +8876,7 @@
 "2026-11-12"
 ],
 "/longi-energy-storage-technology-co-ltd/": [
-"ec42dcfe35fa7eb6",
+"41aae23166c394f8",
 "2026-11-12"
 ],
 "/lovato/": [
@@ -8888,7 +8888,7 @@
 "2026-11-12"
 ],
 "/loxone/": [
-"41d089fd5e7d86e9",
+"52ec012c5237d015",
 "2026-11-12"
 ],
 "/loxone/miniserver/": [
@@ -8904,11 +8904,11 @@
 "2026-11-12"
 ],
 "/lunergy/": [
-"ba9e5ec774a7eda8",
+"b1257341a4f1c310",
 "2026-11-12"
 ],
 "/luxpower/": [
-"8aec4b722342f658",
+"18bca9f612ea1fc8",
 "2026-11-12"
 ],
 "/luxpower/eg4-and-luxpower-inverters-local-rs485-or-cloud/": [
@@ -8976,11 +8976,11 @@
 "2026-11-12"
 ],
 "/luxra/": [
-"8b5f7058c096fef8",
+"d65390cf4f657d76",
 "2026-11-12"
 ],
 "/m-tec-energy-systems-gmbh/": [
-"8307866c2e3ae17d",
+"a35119e132b023bc",
 "2026-11-12"
 ],
 "/m-tec-energy-systems-gmbh/model/energy-butler-10kw-3p-3g25/": [
@@ -9036,7 +9036,7 @@
 "2026-11-12"
 ],
 "/marstek/": [
-"4989f62c52985c52",
+"168762ee0e02f773",
 "2026-11-12"
 ],
 "/marstek/jupiter-micro-inverters/": [
@@ -9048,7 +9048,7 @@
 "2026-11-12"
 ],
 "/maschinenfabrik-reinhausen-gmbh/": [
-"ae3b3c0281564b21",
+"aeae0d960e46c686",
 "2026-11-12"
 ],
 "/maschinenfabrik-reinhausen-gmbh/model/gridcon-pcs-120-4w-400v-1x42kva-pq4/": [
@@ -9080,11 +9080,11 @@
 "2026-11-12"
 ],
 "/masterpower/": [
-"669360b8c198d4f5",
+"0e823bb8a3a61bf2",
 "2026-11-12"
 ],
 "/maxhub/": [
-"ba6995bed543416e",
+"ce12b233361cccca",
 "2026-11-12"
 ],
 "/maxhub/model/hn3k6s-ah2/": [
@@ -9116,7 +9116,7 @@
 "2026-11-12"
 ],
 "/megarevo/": [
-"8a95e066eb4b7d7f",
+"df468b8b09fb898e",
 "2026-11-12"
 ],
 "/megarevo/model/mega0250t/": [
@@ -9304,7 +9304,7 @@
 "2026-11-12"
 ],
 "/mennekes/": [
-"2ff73b0deaa440fb",
+"3c0ebfcdbf8f1ff2",
 "2026-11-12"
 ],
 "/mennekes/amedio-professional-pnc/": [
@@ -9416,15 +9416,15 @@
 "2026-11-12"
 ],
 "/metstech-abb/": [
-"f5b720ad56126183",
+"2d1b154b1b7a91c9",
 "2026-11-12"
 ],
 "/midcosta-gmbh-midcosta-midteq/": [
-"c9878b18f4e941a0",
+"78c89d2bd00c72e0",
 "2026-11-12"
 ],
 "/midcosta/": [
-"b00f846f64aa31f4",
+"11689d872cd95d04",
 "2026-11-12"
 ],
 "/midcosta/model/mid-h10k-t/": [
@@ -9452,7 +9452,7 @@
 "2026-11-12"
 ],
 "/midea/": [
-"cc44e37a6e3b6b38",
+"84d88fff45ae335b",
 "2026-11-12"
 ],
 "/midea/model/m1-s3-68k/": [
@@ -9604,11 +9604,11 @@
 "2026-11-12"
 ],
 "/midteq/": [
-"a6b54d8951ad5e07",
+"b0fcdc1ec267d5b6",
 "2026-11-12"
 ],
 "/mitson/": [
-"183bd6a4c53ba45b",
+"13f9b26a070b288c",
 "2026-11-12"
 ],
 "/monta/": [
@@ -9620,19 +9620,19 @@
 "2026-11-12"
 ],
 "/motoma/": [
-"c573fcc4b255e93c",
+"ed7b34d79beaab98",
 "2026-11-12"
 ],
 "/mov/": [
-"f3ec6a7dcd78ab23",
+"c4c449fe5438a160",
 "2026-11-12"
 ],
 "/mpp-solar-inc/": [
-"97f9cdd234458654",
+"28fa5f7d38840aaf",
 "2026-11-12"
 ],
 "/must/": [
-"e1a8e321daefa454",
+"deb360523da0b52d",
 "2026-11-12"
 ],
 "/must/ep30-pro-ep3000-plus/": [
@@ -9756,7 +9756,7 @@
 "2026-11-12"
 ],
 "/myenergi/": [
-"92923db852ea53c7",
+"696fa1eb9d965b69",
 "2026-11-12"
 ],
 "/myenergi/zappi-eddi-harvi-libbi/": [
@@ -9764,11 +9764,11 @@
 "2026-11-12"
 ],
 "/mygrid/": [
-"00bb376305ac86d0",
+"4bf2a6aaf8ef9d27",
 "2026-11-12"
 ],
 "/necharge/": [
-"2cd99e90ba76ce8f",
+"5e4dc796523a608d",
 "2026-11-12"
 ],
 "/necharge/pro/": [
@@ -9776,15 +9776,15 @@
 "2026-11-12"
 ],
 "/nelinor/": [
-"c65695a873242107",
+"e21b375fd86a9295",
 "2026-11-12"
 ],
 "/nelumbo/": [
-"169bc4833f218125",
+"893f9c67ecebf576",
 "2026-11-12"
 ],
 "/neoom/": [
-"626d94906b62fb0f",
+"73477c3812e79bcc",
 "2026-11-12"
 ],
 "/neoom/n-plus/": [
@@ -9796,7 +9796,7 @@
 "2026-11-12"
 ],
 "/neovolt/": [
-"6d7b3b0c2c111e82",
+"ec5295f015a1da61",
 "2026-11-12"
 ],
 "/neovolt/model/bw-inv-spb5k/": [
@@ -9832,7 +9832,7 @@
 "2026-11-12"
 ],
 "/nep/": [
-"c5d72cdfb1d9ca13",
+"8dfb92575bf2327b",
 "2026-11-12"
 ],
 "/nep/model/bdm-300/": [
@@ -9864,7 +9864,7 @@
 "2026-11-12"
 ],
 "/ngen/": [
-"35ac7558dd0a1d96",
+"f2ddefb2acbb05e4",
 "2026-11-12"
 ],
 "/ngen/model/star-h3-12-0-e/": [
@@ -9872,27 +9872,27 @@
 "2026-11-12"
 ],
 "/ningbo-aux-solar-technology-co-ltd/": [
-"bcfb07a9d6bbb9a6",
+"9fe8377aab7d6604",
 "2026-11-12"
 ],
 "/nord-ht-as/": [
-"c6b0bce9f85dc65f",
+"88deb72b2a8be405",
 "2026-11-12"
 ],
 "/nord/": [
-"c6dd4baeae656ec8",
+"9a4d1ef67c72281d",
 "2026-11-12"
 ],
 "/northern-power-systems/": [
-"4655009d5aaad2df",
+"37245023d22c70bc",
 "2026-11-12"
 ],
 "/nr-electric/": [
-"a0b6769e7b23cb82",
+"91f0037f4219a443",
 "2026-11-12"
 ],
 "/nrgkick/": [
-"66db992e9a8befd5",
+"5fda12bc8110c2a9",
 "2026-11-12"
 ],
 "/nrgkick/connect/": [
@@ -9924,11 +9924,11 @@
 "2026-11-12"
 ],
 "/oig-power/": [
-"b5dd2c2cc8528c00",
+"ad90bab749a9296f",
 "2026-11-12"
 ],
 "/omnik/": [
-"1a540b35a5a5acfc",
+"9568d3733c94be9c",
 "2026-11-12"
 ],
 "/omnik/model/omniksol-2-5k-tl3-s-ns/": [
@@ -9992,7 +9992,7 @@
 "2026-11-12"
 ],
 "/omnis-power/": [
-"c452e3e38e0469ea",
+"5eec9473e79c5336",
 "2026-11-12"
 ],
 "/oncharger/": [
@@ -10004,11 +10004,11 @@
 "2026-11-12"
 ],
 "/onehope-energy-technology-co-ltd/": [
-"5b0af786479d2a62",
+"72b48daebcac706e",
 "2026-11-12"
 ],
 "/onergy-power-s-r-o/": [
-"df6bc2b39b1369f3",
+"9bc726453cfd2313",
 "2026-11-12"
 ],
 "/openems/": [
@@ -10036,7 +10036,7 @@
 "2026-11-12"
 ],
 "/openwb/": [
-"841f02c81025e4ab",
+"579d63526fae0140",
 "2026-11-12"
 ],
 "/openwb/embedded-software-replacement/": [
@@ -10064,7 +10064,7 @@
 "2026-11-12"
 ],
 "/opteco/": [
-"8ec29631b5279305",
+"58e9284726790589",
 "2026-11-12"
 ],
 "/opteco/model/seg1000-s-g2/": [
@@ -10160,7 +10160,7 @@
 "2026-11-12"
 ],
 "/orbital-a-s/": [
-"087ec686c9498270",
+"8937e17646ab792b",
 "2026-11-12"
 ],
 "/orno/": [
@@ -10220,11 +10220,11 @@
 "2026-11-12"
 ],
 "/pce/": [
-"01126b699af81377",
+"c327035c12ca4073",
 "2026-11-12"
 ],
 "/peblar/": [
-"d34c3731a25c8b0c",
+"e94073696b93e929",
 "2026-11-12"
 ],
 "/peblar/business/": [
@@ -10244,7 +10244,7 @@
 "2026-11-12"
 ],
 "/perceval/": [
-"4a8bff5c8ed05c5f",
+"05dde861bb6a34c8",
 "2026-11-12"
 ],
 "/perceval/model/28455/": [
@@ -10264,7 +10264,7 @@
 "2026-11-12"
 ],
 "/phoenix-contact/": [
-"03fd3e29c79ea72c",
+"413bb1c5005d39e1",
 "2026-11-12"
 ],
 "/phoenix-contact/charx/": [
@@ -10304,11 +10304,11 @@
 "2026-11-12"
 ],
 "/phoneix-contact/": [
-"9da812db8f0ac1a5",
+"2464f6b48e277d51",
 "2026-11-12"
 ],
 "/pixii/": [
-"3723643dd40dd9ca",
+"f54715e52dfaa2a8",
 "2026-11-12"
 ],
 "/pixii/model/pixiibox-48-3300/": [
@@ -10404,7 +10404,7 @@
 "2026-11-12"
 ],
 "/polarium/": [
-"f0c7a9ba737165c7",
+"31214cce2ee5f6a5",
 "2026-11-12"
 ],
 "/polarium/model/pcs-18-12-30/": [
@@ -10412,7 +10412,7 @@
 "2026-11-12"
 ],
 "/popper-power/": [
-"b59d1715241a16e1",
+"0c5e9ef6e35d9fc8",
 "2026-11-12"
 ],
 "/porsche/": [
@@ -10432,15 +10432,15 @@
 "2026-11-12"
 ],
 "/potis-edge/": [
-"22a8f5efaf1c9c43",
+"f5092d98b7a6b182",
 "2026-11-12"
 ],
 "/power-electronics-espa-a-s-l/": [
-"14849950fef0ada6",
+"97254d086d0da675",
 "2026-11-12"
 ],
 "/power-electronics-s-l/": [
-"a812560087c7b01b",
+"9742c679c92ee91f",
 "2026-11-12"
 ],
 "/powerfox/": [
@@ -10460,7 +10460,7 @@
 "2026-11-12"
 ],
 "/poweroad/": [
-"b365a9453ab826d1",
+"4ce471f4b1d37cc2",
 "2026-11-12"
 ],
 "/poweroad/model/prh25k-th-10/": [
@@ -10604,7 +10604,7 @@
 "2026-11-12"
 ],
 "/powerwalker/": [
-"b1500b298e1756bc",
+"ea181160b08b7755",
 "2026-11-12"
 ],
 "/pracht/": [
@@ -10632,7 +10632,7 @@
 "2026-11-12"
 ],
 "/pramac-storage-systems-gmbh/": [
-"8641cdd794c2106d",
+"f0ddd445ca17df74",
 "2026-11-12"
 ],
 "/pramac-storage-systems-gmbh/model/422p050/": [
@@ -10688,7 +10688,7 @@
 "2026-11-12"
 ],
 "/pylontech/": [
-"bc23471f2f3ff274",
+"2758d494353e88fa",
 "2026-11-12"
 ],
 "/pylontech/model/fh3x-10k-hy-3p-10/": [
@@ -10964,7 +10964,7 @@
 "2026-11-12"
 ],
 "/pytes/": [
-"4bed8ec5724893a6",
+"301319a0082837f8",
 "2026-11-12"
 ],
 "/pytes/model/js3pl10k/": [
@@ -10984,7 +10984,7 @@
 "2026-11-12"
 ],
 "/q-cells/": [
-"021cfca5a6b4fda3",
+"0b9cccad95563eba",
 "2026-11-12"
 ],
 "/q-cells/model/q-volt-hyb-g3-10-0kw-3p-be/": [
@@ -11108,7 +11108,7 @@
 "2026-11-12"
 ],
 "/raedian/": [
-"138894fde74ce4d5",
+"39da20fcc752af2b",
 "2026-11-12"
 ],
 "/raedian/neo-ac-wallbox/": [
@@ -11120,7 +11120,7 @@
 "2026-11-12"
 ],
 "/rahvolt/": [
-"70dcb6799a2c239c",
+"a4e95f63d187ac23",
 "2026-11-12"
 ],
 "/rahvolt/model/rv3000h-s2/": [
@@ -11152,15 +11152,15 @@
 "2026-11-12"
 ],
 "/rct-power/": [
-"792ecb04f30dac39",
+"eb8da30f2bc779ad",
 "2026-11-12"
 ],
 "/rct-power/power-inverter-power-storage/": [
-"5767925a809e0d71",
+"02f7e5e666d70bd2",
 "2026-11-12"
 ],
 "/reco/": [
-"31f75e9687b8f81b",
+"a12fc032eaf5eb3c",
 "2026-11-12"
 ],
 "/reco/model/rht-10k-25/": [
@@ -11204,7 +11204,7 @@
 "2026-11-12"
 ],
 "/reconvert/": [
-"ea4c10d00774697d",
+"4a368ffbde3454e5",
 "2026-11-12"
 ],
 "/redback/": [
@@ -11220,19 +11220,19 @@
 "2026-11-12"
 ],
 "/refu-elektronik-gmbh/": [
-"cc19fdb6ed384d44",
+"ae64473c077e5f75",
 "2026-11-12"
 ],
 "/refusol/": [
-"8906fa814373b683",
+"ab61131939092042",
 "2026-11-12"
 ],
 "/refustore/": [
-"49dc417388b3967c",
+"8aacd2f66773fb99",
 "2026-11-12"
 ],
 "/regitec/": [
-"f8be99184336468c",
+"b6c40f2b3d93f799",
 "2026-11-12"
 ],
 "/regitec/model/rhs-3-6ktl-s/": [
@@ -11288,7 +11288,7 @@
 "2026-11-12"
 ],
 "/renac/": [
-"7341e67f34d31a4a",
+"c3f36ab4bff27331",
 "2026-11-12"
 ],
 "/renac/model/esc3000-ds/": [
@@ -11436,15 +11436,15 @@
 "2026-11-12"
 ],
 "/renon-power/": [
-"2a352aa1c5adf8ea",
+"f813760519a0e982",
 "2026-11-12"
 ],
 "/reval-energy-o/": [
-"1e21e29931321f0a",
+"1f983c77a0130c9a",
 "2026-11-12"
 ],
 "/rheidon-tech/": [
-"4ad2d7a81a296df3",
+"da87077f8b8bf62a",
 "2026-11-12"
 ],
 "/rheidon/": [
@@ -11456,7 +11456,7 @@
 "2026-11-12"
 ],
 "/risen/": [
-"b99d930a03211978",
+"50d6de2705ee4d65",
 "2026-11-12"
 ],
 "/roche-energy/": [
@@ -11468,19 +11468,19 @@
 "2026-11-12"
 ],
 "/roypow/": [
-"525fe5aeb03f16c8",
+"d75e4a0f7e93c60c",
 "2026-11-12"
 ],
 "/rps-spa-aros-solar-technology/": [
-"97e4cc597e8f3b1a",
+"c1647a0ebce313e0",
 "2026-11-12"
 ],
 "/runhood/": [
-"4a1f662112f85232",
+"4b502662bbad22c1",
 "2026-11-12"
 ],
 "/rzb-energy/": [
-"c83726f9aaec55f7",
+"303c7061e2eabc16",
 "2026-11-12"
 ],
 "/saia-burgess-controls-sbc/": [
@@ -11496,11 +11496,11 @@
 "2026-11-12"
 ],
 "/saj/": [
-"e18c2033b5d2824b",
+"b1efa1accbafcd14",
 "2026-11-12"
 ],
 "/saj/h1-h2-hs2-hs3-hs5-as-hybrids/": [
-"bb78c7f517035b47",
+"bf976b2efd1997c7",
 "2026-11-12"
 ],
 "/saj/h1-series-hybrid-solar-inverter/": [
@@ -11540,27 +11540,27 @@
 "2026-11-12"
 ],
 "/saj/model/chs2-29-9k-t4-x/": [
-"f04f2546388ad845",
+"cd27f1a75a6f6482",
 "2026-11-12"
 ],
 "/saj/model/chs2-30k-t4-x/": [
-"fc31b4cb47ce5751",
+"3e91d42a3d150d4f",
 "2026-11-12"
 ],
 "/saj/model/chs2-40k-t5-x/": [
-"e2c6ab9e89502148",
+"e8ccedae25e831d7",
 "2026-11-12"
 ],
 "/saj/model/chs2-50k-t6-x/": [
-"df549f0c1e4d7456",
+"145e14d1ad367583",
 "2026-11-12"
 ],
 "/saj/model/chs2-63k-t6-x/": [
-"24bfc93e3acfe6ac",
+"c8f48af928d12e21",
 "2026-11-12"
 ],
 "/saj/r5-r6-suntrio-sununo-string-inverters/": [
-"544493b0322e85b2",
+"0ffe864ff3c0e472",
 "2026-11-12"
 ],
 "/saj/r5-series-solar-inverter/": [
@@ -11568,15 +11568,15 @@
 "2026-11-12"
 ],
 "/sako/": [
-"7f60f5f0e8e62f8e",
+"125991adc55c6947",
 "2026-11-12"
 ],
 "/samduo/": [
-"4f06a25da4a3476c",
+"726afad201e425ea",
 "2026-11-12"
 ],
 "/sax-power/": [
-"fc6b2d72e2eec63f",
+"6d37a16ce3762e0f",
 "2026-11-12"
 ],
 "/sax-power/model/home-1-6-5-230/": [
@@ -11608,11 +11608,11 @@
 "2026-11-12"
 ],
 "/schachner/": [
-"112ec365b212320a",
+"ab641a306333e0c3",
 "2026-11-12"
 ],
 "/schneider-electric/": [
-"f3881cc6fe8e8b48",
+"7e9771614c3ca10f",
 "2026-11-12"
 ],
 "/schneider-electric/compact-ns-micrologic-p-h/": [
@@ -11680,7 +11680,7 @@
 "2026-11-12"
 ],
 "/schrack-technik/": [
-"a707d69936c3b073",
+"108aca19fc9698ef",
 "2026-11-12"
 ],
 "/schrack/": [
@@ -11692,11 +11692,11 @@
 "2026-11-12"
 ],
 "/schwaiger-nep/": [
-"da4b3113bf843c59",
+"77738a135c2d4639",
 "2026-11-12"
 ],
 "/scu/": [
-"2e2fdb277f3361c7",
+"88ec8b9d9738e313",
 "2026-11-12"
 ],
 "/scu/model/epcs-100/": [
@@ -11756,7 +11756,7 @@
 "2026-11-12"
 ],
 "/senec/": [
-"f217a4dcbd7edda4",
+"c64fc4429ba2d6a8",
 "2026-11-12"
 ],
 "/senec/plus/": [
@@ -11780,11 +11780,11 @@
 "2026-11-12"
 ],
 "/senergie-technologies-gmbh/": [
-"4eff6c300010bf25",
+"cc8f5d251855c2c1",
 "2026-11-12"
 ],
 "/senergy/": [
-"70bd5f1b6fb93821",
+"5d17fe1c477f1cf7",
 "2026-11-12"
 ],
 "/senergy/hybrid-inverter/": [
@@ -11796,11 +11796,11 @@
 "2026-11-12"
 ],
 "/senmarck-energy/": [
-"d14601ed92437a48",
+"a26a28d57a832b04",
 "2026-11-12"
 ],
 "/sermatec/": [
-"c0004fa7fc3203c3",
+"eb156bb67ea31076",
 "2026-11-12"
 ],
 "/sermatec/model/smt-5k-tl-lv/": [
@@ -11816,7 +11816,7 @@
 "2026-11-12"
 ],
 "/sessy/": [
-"9b315cd900c98eac",
+"95cc0510747f8bf9",
 "2026-11-12"
 ],
 "/sessy/sessy-home-battery/": [
@@ -11832,15 +11832,15 @@
 "2026-11-12"
 ],
 "/shandong-lingao-electronic-technology/": [
-"0907dce3d7199d4b",
+"2f4c53b4ca53d88c",
 "2026-11-12"
 ],
 "/shanghai-zoe-energy-storage-technology-c/": [
-"4ca663a3313cbb21",
+"bac3ce8c8165bd12",
 "2026-11-12"
 ],
 "/sheenplus/": [
-"c71324829c46d9fd",
+"88b333560e2f4a6d",
 "2026-11-12"
 ],
 "/shell-recharge/": [
@@ -11876,31 +11876,31 @@
 "2026-11-12"
 ],
 "/shen-zhen-clou-electronics-co-ltd/": [
-"81c365bfa9f31dfc",
+"8213b9d27a87b703",
 "2026-11-12"
 ],
 "/shenshen-enjoy-technology/": [
-"d9ece9c6b63de154",
+"a8018667d660ebfd",
 "2026-11-12"
 ],
 "/shenzhen-ancheng-new-energy/": [
-"b7cda3162a384ab2",
+"ef46dbc9de89841b",
 "2026-11-12"
 ],
 "/shenzhen-gooree-energy-storage-technolog/": [
-"4a58266d25b4661e",
+"74bd551b37dec9a7",
 "2026-11-12"
 ],
 "/shenzhen-hnergy/": [
-"440c1b58fdd1a27c",
+"5edbe4e8a2878fb5",
 "2026-11-12"
 ],
 "/shenzhen-kstar-new-energy-2025-company-l/": [
-"423946c8daa426e2",
+"cd3cfae186344d8f",
 "2026-11-12"
 ],
 "/shineyoung/": [
-"12f6c710ef7124e0",
+"daf746d432895f11",
 "2026-11-12"
 ],
 "/shineyoung/model/pc100ktl-ag/": [
@@ -11928,11 +11928,11 @@
 "2026-11-12"
 ],
 "/sicon-s-r-l-trademark-socomec/": [
-"e67046185ff82bab",
+"1d6502c10163a836",
 "2026-11-12"
 ],
 "/siemens/": [
-"c7875d09ac608346",
+"674f761de6c104a0",
 "2026-11-12"
 ],
 "/siemens/7kt1665/": [
@@ -11956,55 +11956,55 @@
 "2026-11-12"
 ],
 "/sigenergy/": [
-"80012c9560bf240f",
+"c245902dd954d672",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-100m1-a/": [
-"61da0260fa37be89",
+"c586f17010c8686f",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-100m2-a/": [
-"71e7b408fd985503",
+"61fa5b03789181fb",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-110m1-a/": [
-"ba04a52c50d2088f",
+"56748f2b33f8ed54",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-110m2-a/": [
-"5db19cc739a61034",
+"dad253916db03eb6",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-125m1-a/": [
-"f12c2b718da56e5d",
+"bc2babc5cbd6ff7a",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-125m2-a/": [
-"146c42f3ec0dfee0",
+"3e0a63f85dffbd18",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-50m1-a/": [
-"623e0687202498f4",
+"272eabed1f3c489e",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-50m2-a/": [
-"811bb3d07dcc42e9",
+"3ead9dd49f230467",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-60m1-a/": [
-"466eac5ac01cb489",
+"3d00c0b82a161783",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-60m2-a/": [
-"80ac8622bf69f216",
+"6f79ea5f55e58d15",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-80m1-a/": [
-"c924106769a79c9d",
+"825730ad573d7e2d",
 "2026-11-12"
 ],
 "/sigenergy/model/sigen-pcs-80m2-a/": [
-"1c470b5eee559ffa",
+"a17af4fd390612af",
 "2026-11-12"
 ],
 "/sigenergy/model/sigenmate-2700-ultra-plus-ac/": [
@@ -12032,7 +12032,7 @@
 "2026-11-12"
 ],
 "/sigenergy/sigen-pv-pv-max/": [
-"9ff870bb41ccb113",
+"3b9606f622795838",
 "2026-11-12"
 ],
 "/sigenergy/sigenstor-ec/": [
@@ -12040,7 +12040,7 @@
 "2026-11-12"
 ],
 "/sigenergy/sigenstor-sigen-hybrid/": [
-"4f4e3c5b97f06e1f",
+"380bc8f0c2f8a5f3",
 "2026-11-12"
 ],
 "/silla/": [
@@ -12052,7 +12052,7 @@
 "2026-11-12"
 ],
 "/sineng-electric/": [
-"bc8ec3e50366d544",
+"17cb9e2c18951880",
 "2026-11-12"
 ],
 "/sineng-electric/model/eh-1250-hc-ud/": [
@@ -12308,7 +12308,7 @@
 "2026-11-12"
 ],
 "/sinexcel/": [
-"1693c807b4bb9790",
+"c98d8689879bf5fe",
 "2026-11-12"
 ],
 "/sinexcel/model/isuna-10000t/": [
@@ -12584,7 +12584,7 @@
 "2026-11-12"
 ],
 "/sinexcel/model/pws2-29p-ex/": [
-"cc26fc9ae14fe096",
+"0210e61171ddd307",
 "2026-11-12"
 ],
 "/sinexcel/model/pws2-30m-ex/": [
@@ -12592,7 +12592,7 @@
 "2026-11-12"
 ],
 "/sinexcel/model/pws2-30p-ex/": [
-"72980b3da4475181",
+"9bf9a9645b9f43e7",
 "2026-11-12"
 ],
 "/sinexcel/model/pwx1-1250ktl-h-ex/": [
@@ -12604,11 +12604,11 @@
 "2026-11-12"
 ],
 "/sino-soar/": [
-"6574ef277ffe6903",
+"3689becd41b5235f",
 "2026-11-12"
 ],
 "/sinosoar/": [
-"364a4271963c2314",
+"9667db7a6f837026",
 "2026-11-12"
 ],
 "/skoda/": [
@@ -12636,7 +12636,7 @@
 "2026-11-12"
 ],
 "/slenergy/": [
-"aecde5bb95910324",
+"dbd41237ef3d948d",
 "2026-11-12"
 ],
 "/slenergy/model/sl-d10ktr-h25/": [
@@ -12680,7 +12680,7 @@
 "2026-11-12"
 ],
 "/sma/": [
-"3bfd988fb977d96c",
+"f9825b9a6bea2e82",
 "2026-11-12"
 ],
 "/sma/data-manager/": [
@@ -12712,11 +12712,11 @@
 "2026-11-12"
 ],
 "/sma/sunny-boy-storage/": [
-"d41f641eea365c36",
+"dd7b3f7c837cd1e0",
 "2026-11-12"
 ],
 "/sma/sunny-boy/": [
-"8f67a7bcb3e737f9",
+"a997a6431a23e777",
 "2026-11-12"
 ],
 "/sma/sunny-home-manager-2-0/": [
@@ -12724,11 +12724,11 @@
 "2026-11-12"
 ],
 "/sma/sunny-island/": [
-"4d25eca1e6cfd567",
+"2857675f2a87650c",
 "2026-11-12"
 ],
 "/sma/sunny-tripower-incl-smart-energy-x/": [
-"182f90313feb30fa",
+"63460a0acf78c534",
 "2026-11-12"
 ],
 "/sma/webbox/": [
@@ -12736,7 +12736,7 @@
 "2026-11-12"
 ],
 "/smappee/": [
-"b45c433e312d5d82",
+"20ed067f0105cfa0",
 "2026-11-12"
 ],
 "/smappee/smappee-ev-chargers/": [
@@ -12752,7 +12752,7 @@
 "2026-11-12"
 ],
 "/smartfox/": [
-"6449dd2317772e1a",
+"aedcf29a7f27299f",
 "2026-11-12"
 ],
 "/smartfox/box/": [
@@ -12804,7 +12804,7 @@
 "2026-11-12"
 ],
 "/socomec/": [
-"9f5d9780192dd16c",
+"c328b1c3937d8635",
 "2026-11-12"
 ],
 "/socomec/countis-e3x-e4x/": [
@@ -12900,47 +12900,47 @@
 "2026-11-12"
 ],
 "/sofar/": [
-"7a8b781bdd14e4d8",
+"f8c2921cc499aee0",
 "2026-11-12"
 ],
 "/sofar/hyd-hybrids/": [
-"580991b1e1bb203f",
+"64f00a0815858fbd",
 "2026-11-12"
 ],
 "/sofar/ktlx-tl-string-inverters/": [
-"c19a0247f6187273",
+"17b13ba7a5a10a21",
 "2026-11-12"
 ],
 "/sofar/model/me-10ktl-3ph/": [
-"a144d04ceeaed273",
+"2570e36329ef5c1f",
 "2026-11-12"
 ],
 "/sofar/model/me-15ktl-3ph/": [
-"4fc6b8d577e279cc",
+"ae6717d08e0ae10c",
 "2026-11-12"
 ],
 "/sofar/model/me-20ktl-3ph/": [
-"895125c30e6913d3",
+"b70cd3e56e986674",
 "2026-11-12"
 ],
 "/sofar/model/me-3000sp/": [
-"5cd18e3813bb5342",
+"c74196c01e7dd3a0",
 "2026-11-12"
 ],
 "/sofar/model/me-5ktl-3ph/": [
-"3af215bc72a62fd7",
+"6043ba7c54bd64a5",
 "2026-11-12"
 ],
 "/sofar/model/me-6ktl-3ph/": [
-"767162fd952e2015",
+"77016612788fd9c5",
 "2026-11-12"
 ],
 "/sofar/model/me-8ktl-3ph/": [
-"7a2a9ba18b0f3884",
+"785d735812abc119",
 "2026-11-12"
 ],
 "/sofar/powerall-esi-ebi-all-in-one/": [
-"3e33fda51c66eb54",
+"0efaa2324c18d33d",
 "2026-11-12"
 ],
 "/solakon/": [
@@ -12960,7 +12960,7 @@
 "2026-11-12"
 ],
 "/solar-in/": [
-"a44120a595d767e8",
+"606789eb79a166f2",
 "2026-11-12"
 ],
 "/solar-in/model/brux-3k-h1/": [
@@ -12996,11 +12996,11 @@
 "2026-11-12"
 ],
 "/solareast/": [
-"19142ffbe2bf6af5",
+"fbd94c607eee85ca",
 "2026-11-12"
 ],
 "/solaredge/": [
-"00603c07f1e8e26c",
+"29cd0b3cfe50b14b",
 "2026-11-12"
 ],
 "/solaredge/ev-chargers/": [
@@ -13008,15 +13008,15 @@
 "2026-11-12"
 ],
 "/solaredge/hd-wave-se-nx-string-inverters/": [
-"17b55e6e0d3c372d",
+"da6850a68a6aee92",
 "2026-11-12"
 ],
 "/solaredge/home-hub-storedge-hybrids/": [
-"f55844e523d0e0cc",
+"c6742f83ba48f6d9",
 "2026-11-12"
 ],
 "/solaredge/model/pcs050/": [
-"219dd5d1a61537d7",
+"eb2084cc32963dd5",
 "2026-11-12"
 ],
 "/solaredge/se-mtr-3y/": [
@@ -13024,11 +13024,11 @@
 "2026-11-12"
 ],
 "/solarinvert/": [
-"cf089f840fed7f95",
+"327d45bdc6c27942",
 "2026-11-12"
 ],
 "/solarmax/": [
-"5767df18a51aab1e",
+"8a1843323f31b101",
 "2026-11-12"
 ],
 "/solarmax/max-storage-max-storage-ultimate/": [
@@ -13068,27 +13068,27 @@
 "2026-11-12"
 ],
 "/solarnative/": [
-"2d1181330078443e",
+"0495a132b38dd732",
 "2026-11-12"
 ],
 "/solarwatt-fronius/": [
-"8393f790f10ad99e",
+"fe144d0bb65e84e8",
 "2026-11-12"
 ],
 "/solarwatt-kostal/": [
-"ff22d987ebb643e7",
+"152874b5be47becc",
 "2026-11-12"
 ],
 "/solarwatt-sma/": [
-"29d778ddbb39e253",
+"01357590765bf205",
 "2026-11-12"
 ],
 "/solarwatt-steka-a-katek-brand/": [
-"5c070720aeb5bcbb",
+"2d1a2c3671dac933",
 "2026-11-12"
 ],
 "/solarwatt/": [
-"d69012110f402f0a",
+"04d1773a8ddb878c",
 "2026-11-12"
 ],
 "/solarwatt/energymanager-pro/": [
@@ -13160,7 +13160,7 @@
 "2026-11-12"
 ],
 "/solax/": [
-"ed63115e7c68977b",
+"3ec8dae3f3ec5637",
 "2026-11-12"
 ],
 "/solax/model/aelio-p50b100/": [
@@ -13172,307 +13172,307 @@
 "2026-11-12"
 ],
 "/solax/model/x1-0-6-s-d-l/": [
-"14cf0c88bf57c886",
+"026e5a54616feb54",
 "2026-11-12"
 ],
 "/solax/model/x1-0-6-s-n-l/": [
-"b5a45bd09fe5d7f3",
+"221e880c7f11e905",
 "2026-11-12"
 ],
 "/solax/model/x1-0-7-s-d-l/": [
-"f2321631e505528d",
+"ee74709b12fda78e",
 "2026-11-12"
 ],
 "/solax/model/x1-0-7-s-n-l/": [
-"6a92e9e262af600b",
+"17e8396ac89a2264",
 "2026-11-12"
 ],
 "/solax/model/x1-1-1-s-d-l/": [
-"649f96a2c0f9aa06",
+"89bf81946faa8b98",
 "2026-11-12"
 ],
 "/solax/model/x1-1-1-s-n-l/": [
-"4006c81409ea8ea0",
+"891fda432e501249",
 "2026-11-12"
 ],
 "/solax/model/x1-1-5-s-d-l/": [
-"7fef316048d1998b",
+"47d1b24f831207b2",
 "2026-11-12"
 ],
 "/solax/model/x1-1-5-s-n-l/": [
-"d43e6bdd55fae2ea",
+"3ea82a1da1674776",
 "2026-11-12"
 ],
 "/solax/model/x1-2-0-s-d-l/": [
-"4f9ae1d8973d1a61",
+"2c5ca3aa6ceb8e65",
 "2026-11-12"
 ],
 "/solax/model/x1-2-0-s-n-l/": [
-"fc0e4e28ad283765",
+"a2de1588f9c649f8",
 "2026-11-12"
 ],
 "/solax/model/x1-2-5k-s-d-l/": [
-"35b75237af95ec1f",
+"d68ee20fdf436f44",
 "2026-11-12"
 ],
 "/solax/model/x1-2-5k-s-n-l/": [
-"53789cd9bb5ec82b",
+"e11d79276eaf89a6",
 "2026-11-12"
 ],
 "/solax/model/x1-3-3k-s-d-l/": [
-"cce8cede287eefa7",
+"713e6c9e66eb232d",
 "2026-11-12"
 ],
 "/solax/model/x1-3-3k-s-n-l/": [
-"cadf1c71bc0151d5",
+"25f4211e2f6ab2db",
 "2026-11-12"
 ],
 "/solax/model/x1-3-6k-s-d-l/": [
-"c67e8d6314a184b9",
+"103c3e1328206153",
 "2026-11-12"
 ],
 "/solax/model/x1-3-6k-s-n-l/": [
-"1e0b44fe1570231e",
+"b54cc2c3aa6df6c2",
 "2026-11-12"
 ],
 "/solax/model/x1-3k-s-d-l/": [
-"50c6af293819ba2a",
+"c8896652b7d475af",
 "2026-11-12"
 ],
 "/solax/model/x1-3k-s-n-l/": [
-"6f6862a609cc7283",
+"526fb9e72af60715",
 "2026-11-12"
 ],
 "/solax/model/x1-4-6k-t-d-l/": [
-"ca5fc181eb1d0eb8",
+"c0cda61743da73f5",
 "2026-11-12"
 ],
 "/solax/model/x1-4-6k-t-n-l/": [
-"7a2de26c44e1ff15",
+"20fdd53893e4fea2",
 "2026-11-12"
 ],
 "/solax/model/x1-5-0k-t-d-l/": [
-"d3ef8c109cedc54f",
+"94ac68909d38aa79",
 "2026-11-12"
 ],
 "/solax/model/x1-5-0k-t-n-l/": [
-"f604f2fed7272ab9",
+"ac051035dcfd88d0",
 "2026-11-12"
 ],
 "/solax/model/x1-5-5k-t-d-l/": [
-"9b47592206b79624",
+"1523d4a38ec3ba63",
 "2026-11-12"
 ],
 "/solax/model/x1-5-5k-t-n-l/": [
-"694ecdf990ab9477",
+"ca44a5849f2907f1",
 "2026-11-12"
 ],
 "/solax/model/x1-6k-t-d-l/": [
-"ba351e0b90551e4c",
+"e33e250d11a51bd0",
 "2026-11-12"
 ],
 "/solax/model/x1-6k-t-n-l/": [
-"83a049d07df619e1",
+"171b2bdd3491e2c4",
 "2026-11-12"
 ],
 "/solax/model/x3-10-0-t-d/": [
-"6cc9a966364c804f",
+"6ee7cb2a26006073",
 "2026-11-12"
 ],
 "/solax/model/x3-10-0p-t-d/": [
-"843b839e17b2c854",
+"10e248c9eba0a045",
 "2026-11-12"
 ],
 "/solax/model/x3-12-0p-t-d/": [
-"07fcc7157c233787",
+"5302fdef146d4165",
 "2026-11-12"
 ],
 "/solax/model/x3-15-0p-t-d/": [
-"09fe493dda7b4a59",
+"ff25fdbaaf9da023",
 "2026-11-12"
 ],
 "/solax/model/x3-15-0p-t-n/": [
-"f858df931bc09152",
+"aa839829d086a84e",
 "2026-11-12"
 ],
 "/solax/model/x3-4-0-t-d/": [
-"9bfb8f6f2e186434",
+"03112d1e642c4919",
 "2026-11-12"
 ],
 "/solax/model/x3-5-0-t-d/": [
-"d24c4acc2df26bf0",
+"2cf3a5a9a2f2ab82",
 "2026-11-12"
 ],
 "/solax/model/x3-6-0-t-d/": [
-"f970fcc8ed4935ae",
+"f77f2b29dc147e5a",
 "2026-11-12"
 ],
 "/solax/model/x3-7-0-t-d/": [
-"d27ddd6dccd6ab7d",
+"6e47792aa0e344d7",
 "2026-11-12"
 ],
 "/solax/model/x3-8-0-t-d/": [
-"3f0523288d7bb279",
+"76744756085dbb18",
 "2026-11-12"
 ],
 "/solax/model/x3-8-0p-t-d/": [
-"6cd473ba13c73fc7",
+"84aca04e1c820c7a",
 "2026-11-12"
 ],
 "/solax/model/x3-9-0-t-d/": [
-"47594689982e6ad3",
+"0720f6b48776d3bf",
 "2026-11-12"
 ],
 "/solax/model/x3-aelio-49-9k-p/": [
-"96fc9911ce91489d",
+"0a9838a6ba38bd3c",
 "2026-11-12"
 ],
 "/solax/model/x3-aelio-49-9k/": [
-"42152b83de174b9b",
+"332dfaa4f576a2b4",
 "2026-11-12"
 ],
 "/solax/model/x3-aelio-50k/": [
-"b247a3c27a085f2d",
+"5a86e1648b2c8690",
 "2026-11-12"
 ],
 "/solax/model/x3-aelio-60k/": [
-"79ed2bca058bab30",
+"27a19d681ed9ae66",
 "2026-11-12"
 ],
 "/solax/model/x3-aelio-61k/": [
-"6eeeae3b856a4c1f",
+"2b539553f8ff6c33",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-100k/": [
-"cc1dcf569d02cb69",
+"2a65b4acb88a5f0a",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-110k/": [
-"4ecdef23a23267e7",
+"8a8fecae394cb3f2",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-120k/": [
-"4df640bfcb1cc9fc",
+"5934df695c8062b3",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-125k/": [
-"1d331e48ea1efd2e",
+"d4ad72d7fa15607c",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-136k-mv/": [
-"f5155d69900bce74",
+"8df21ad9cf01a041",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-150k-mv/": [
-"e66226f7ebc6e177",
+"ee26bc7386a3705e",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-150k-p/": [
-"dea3561b5bb149a6",
+"73561ccaa35198d6",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-75k/": [
-"f141f3d650f5b854",
+"b3b49135379eb49b",
 "2026-11-12"
 ],
 "/solax/model/x3-fth-80k/": [
-"427f81a558d8fff8",
+"a13707733ee6e267",
 "2026-11-12"
 ],
 "/solax/model/x3-grd-300k-hv/": [
-"026e1f4a6150c6a5",
+"2f9ae343330b1b1a",
 "2026-11-12"
 ],
 "/solax/model/x3-grd-320k-hv/": [
-"b67fa3f007d7ad8f",
+"9fa9247e31167e9c",
 "2026-11-12"
 ],
 "/solax/model/x3-grd-333k-hv/": [
-"6ce1bf3c000ea379",
+"36e5add5d9a787f1",
 "2026-11-12"
 ],
 "/solax/model/x3-grd-350k-hv/": [
-"91382a0ad0d760fa",
+"d0b1c31c10b141e1",
 "2026-11-12"
 ],
 "/solax/model/x3-max-20k-tl/": [
-"4ce210611112b697",
+"0b3a0ccb4afbaa6d",
 "2026-11-12"
 ],
 "/solax/model/x3-max-25k-tl/": [
-"2f08ccde05f4f8bf",
+"9e39ca507b2e7459",
 "2026-11-12"
 ],
 "/solax/model/x3-max-30k-tl/": [
-"0480cd5c86dddf51",
+"63a5530f5b336449",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-20k-g2-lv/": [
-"ce69467d8121b7ea",
+"28f9094062375f04",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-25k-g2-lv/": [
-"db2b1bcf80be1f3b",
+"55421542419eeea4",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-30k-g2-lv/": [
-"d32e1d43247b31b0",
+"808114c465928d01",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-35k-g2-lv/": [
-"2427978b5231828d",
+"d6a834ac51f9de51",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-40k-g2/": [
-"b4f777e6450c4ae1",
+"d40d2979d78213b7",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-50k-g2/": [
-"e16a4114f259be61",
+"9781139b6f4655dd",
 "2026-11-12"
 ],
 "/solax/model/x3-mga-60k-g2/": [
-"73eccf5012247b86",
+"1113d0f0d3a36148",
 "2026-11-12"
 ],
 "/solax/model/x3-neo-10k-lv/": [
-"50b1902a69231ed4",
+"5aaa11548fe3510d",
 "2026-11-12"
 ],
 "/solax/model/x3-neo-12k-lv/": [
-"a1301e0a78d5bf17",
+"6bcd0d2a58535a85",
 "2026-11-12"
 ],
 "/solax/model/x3-neo-15k-lv/": [
-"797daefc524c766f",
+"1260d24060e8aea9",
 "2026-11-12"
 ],
 "/solax/model/x3-neo-5k-lv/": [
-"267add242e67768a",
+"6d53a3858c3e073c",
 "2026-11-12"
 ],
 "/solax/model/x3-neo-8k-lv/": [
-"d92e08f7d6045920",
+"6328653c0af61225",
 "2026-11-12"
 ],
 "/solax/model/x3-trene-100k/": [
-"f3e2326a9a6b08de",
+"9c166e5586b44bd7",
 "2026-11-12"
 ],
 "/solax/model/x3-trene-124-9k/": [
-"be0479d2cc83871e",
+"224e9a0a31a97250",
 "2026-11-12"
 ],
 "/solax/model/x3-trene-125k/": [
-"873c794d180ba81f",
+"4530be75aadd39f9",
 "2026-11-12"
 ],
 "/solax/model/x3-trene-79-9k/": [
-"8607b2ddfe12d76d",
+"8f94201b0036b1fe",
 "2026-11-12"
 ],
 "/solax/model/x3-trene-99-9k/": [
-"6cead806d786d07a",
+"6f36c9a3d5504ee5",
 "2026-11-12"
 ],
 "/solax/q-volt-hyb-q-cells-edition/": [
@@ -13484,31 +13484,31 @@
 "2026-11-12"
 ],
 "/solax/x1-x3-fit-and-ac-retrofit/": [
-"f45cac1237652fb7",
+"c2d515981f7b8fa5",
 "2026-11-12"
 ],
 "/solax/x1-x3-hac-and-x3-evc-wallboxes/": [
-"9c5805884db6dfbf",
+"25d8b3ef510962d0",
 "2026-11-12"
 ],
 "/solax/x1-x3-hybrid-g3-g4/": [
-"b613f3d3d69a601d",
+"f2ab47f6416000bd",
 "2026-11-12"
 ],
 "/solax/x1-x3-ies/": [
-"28c8c56c292c2e90",
+"80ddd185498ec743",
 "2026-11-12"
 ],
 "/solax/x1-x3-string-inverters-boost-mini-smart-pro-mic/": [
-"41fa96dc19f769ea",
+"496309030117b0fb",
 "2026-11-12"
 ],
 "/solax/x3-ultra/": [
-"483935876bbabc4d",
+"15075a6a34936ab7",
 "2026-11-12"
 ],
 "/solenso/": [
-"e06425d046c7fc90",
+"c90821ef1ce8e66a",
 "2026-11-12"
 ],
 "/solenso/model/ds3000/": [
@@ -13588,7 +13588,7 @@
 "2026-11-12"
 ],
 "/solinteg/": [
-"a24dcd0bd8e80a5d",
+"2dba458504312234",
 "2026-11-12"
 ],
 "/solinteg/integ-one-gen2/": [
@@ -13864,19 +13864,19 @@
 "2026-11-12"
 ],
 "/solis/": [
-"6618d0f4ccbda42c",
+"d552628e94895dc8",
 "2026-11-12"
 ],
 "/solis/model/rai-3k-48es-5g/": [
-"30aa254cb2a1d72f",
+"293f2dfec106eb14",
 "2026-11-12"
 ],
 "/solis/rhi-s5-eh-s6-eh-hybrids/": [
-"e402efafebcec37b",
+"891b5123305d455f",
 "2026-11-12"
 ],
 "/solis/s5-s6-gr-and-solis-string-inverters/": [
-"8b20ec6f3c2b34c8",
+"1f6d19171f0b91d1",
 "2026-11-12"
 ],
 "/solis/solis-hybrid-inverter-rhi-series/": [
@@ -13896,7 +13896,7 @@
 "2026-11-12"
 ],
 "/solplanet/": [
-"e6855c3edcb2b806",
+"0423d2fbba1c6237",
 "2026-11-12"
 ],
 "/solplanet/ai-dongle-lan-local-http-api/": [
@@ -13908,19 +13908,19 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw05kh-t2-o/": [
-"140b8a573d79da12",
+"0b4f8248ff276aed",
 "2026-11-12"
 ],
 "/solplanet/model/asw05kh-t2/": [
-"f01f4001ab87fe93",
+"f4fa11c57cca02d7",
 "2026-11-12"
 ],
 "/solplanet/model/asw06kh-t2-o/": [
-"4ae33693a5896a9d",
+"b9e5df5df97d32ee",
 "2026-11-12"
 ],
 "/solplanet/model/asw06kh-t2/": [
-"8f901f5374e1033d",
+"d90562399a1cc41d",
 "2026-11-12"
 ],
 "/solplanet/model/asw08kh-t1/": [
@@ -13928,23 +13928,23 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw08kh-t2-o/": [
-"2b57bee2e0e56bd7",
+"f5db0f06ee5483d6",
 "2026-11-12"
 ],
 "/solplanet/model/asw08kh-t2/": [
-"0a8001c38ac54e0b",
+"e8f4de83d4fc5669",
 "2026-11-12"
 ],
 "/solplanet/model/asw08kh-t3-o/": [
-"ffab3213bcc56f4f",
+"087f0065d7b2bc36",
 "2026-11-12"
 ],
 "/solplanet/model/asw08kh-t3/": [
-"d0cf298bcfc6a9d2",
+"4e1dc9a1011f47f8",
 "2026-11-12"
 ],
 "/solplanet/model/asw1000-s-g2/": [
-"e438b78244895cc6",
+"e744895874782eaa",
 "2026-11-12"
 ],
 "/solplanet/model/asw10000t/": [
@@ -13956,7 +13956,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw100k-lt/": [
-"994499c5fb09ae77",
+"fb700670060e530c",
 "2026-11-12"
 ],
 "/solplanet/model/asw10k-lt-g2-pro-be/": [
@@ -13964,11 +13964,11 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw10k-lt-g2-pro/": [
-"39f2df958bffdf42",
+"58416caaf1e94e5e",
 "2026-11-12"
 ],
 "/solplanet/model/asw10k-lt-g2/": [
-"bf5fda4f4270a640",
+"99318f077d3fbe05",
 "2026-11-12"
 ],
 "/solplanet/model/asw10kh-t1/": [
@@ -13976,31 +13976,31 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw10kh-t2-o/": [
-"a528df5494780a98",
+"b78ee59b240e9e90",
 "2026-11-12"
 ],
 "/solplanet/model/asw10kh-t2/": [
-"dde2ebd998c85806",
+"9e0dc62baf8dd53d",
 "2026-11-12"
 ],
 "/solplanet/model/asw10kh-t3-o/": [
-"3b3844c76df3f28a",
+"2c57bfdce320bb9b",
 "2026-11-12"
 ],
 "/solplanet/model/asw10kh-t3/": [
-"af0ae8883a0772d0",
+"a208de357762a138",
 "2026-11-12"
 ],
 "/solplanet/model/asw110k-lt/": [
-"ec1b6e26433c3f8a",
+"4d1009c8dbe030a1",
 "2026-11-12"
 ],
 "/solplanet/model/asw12k-lt-g2-pro/": [
-"22c9914729105152",
+"f7ded53d97b4d4af",
 "2026-11-12"
 ],
 "/solplanet/model/asw12k-lt-g2/": [
-"e0b36a2068e39e77",
+"3920697e1de6023c",
 "2026-11-12"
 ],
 "/solplanet/model/asw12kh-t1/": [
@@ -14008,27 +14008,27 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw12kh-t2-o/": [
-"81626bca511ee679",
+"89231613e6aff476",
 "2026-11-12"
 ],
 "/solplanet/model/asw12kh-t2/": [
-"5af0a07d54f4c19a",
+"dee57e8e82b13bb6",
 "2026-11-12"
 ],
 "/solplanet/model/asw12kh-t3-o/": [
-"863ee9e523f4d4b2",
+"baf8a45372e7b998",
 "2026-11-12"
 ],
 "/solplanet/model/asw12kh-t3/": [
-"10ac3ddc898140fe",
+"7c3dec62274db4fa",
 "2026-11-12"
 ],
 "/solplanet/model/asw13k-lt-g2/": [
-"1d55842c6ee5587c",
+"490e9aa20c1f0d78",
 "2026-11-12"
 ],
 "/solplanet/model/asw1500-s-g2/": [
-"dd486aaf0fb9b0e5",
+"ed45373bf13ab046",
 "2026-11-12"
 ],
 "/solplanet/model/asw1500s-s/": [
@@ -14036,11 +14036,11 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw15k-lt-g2-pro/": [
-"ed36c25864f93324",
+"289a564e1a1aa7f4",
 "2026-11-12"
 ],
 "/solplanet/model/asw15k-lt-g2/": [
-"12f26e4cea269a21",
+"2e604d568374d389",
 "2026-11-12"
 ],
 "/solplanet/model/asw15k-lt/": [
@@ -14048,15 +14048,15 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw17k-lt-g2-pro/": [
-"48f39ab200296b7f",
+"024b14a9c79adc42",
 "2026-11-12"
 ],
 "/solplanet/model/asw17k-lt-g2/": [
-"864a1b6867291e40",
+"17391b786f71b403",
 "2026-11-12"
 ],
 "/solplanet/model/asw2000-s-g2/": [
-"6c98601d5c03fc18",
+"29e35b88cb88b242",
 "2026-11-12"
 ],
 "/solplanet/model/asw2000s-s/": [
@@ -14064,11 +14064,11 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw20k-lt-g2-pro/": [
-"d82bdf3e253263ee",
+"f83f177c8a879c0b",
 "2026-11-12"
 ],
 "/solplanet/model/asw20k-lt-g2/": [
-"16d75f636bdecb50",
+"39b49ea7896f77d4",
 "2026-11-12"
 ],
 "/solplanet/model/asw20k-lt/": [
@@ -14076,23 +14076,23 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw2500-s-g2/": [
-"f10fb86f5cb18e64",
+"6627d022348bfaa4",
 "2026-11-12"
 ],
 "/solplanet/model/asw25k-lt-g3/": [
-"a0d38fc469d5164e",
+"85f35b394d76893e",
 "2026-11-12"
 ],
 "/solplanet/model/asw27k-lt-g3/": [
-"f715e6a1594a9e93",
+"b6539fa1b84a1938",
 "2026-11-12"
 ],
 "/solplanet/model/asw29-9k-th/": [
-"2d6c0615064576ed",
+"365b979c269b5be3",
 "2026-11-12"
 ],
 "/solplanet/model/asw3000-s-g2/": [
-"7212d55382d2c0ad",
+"ff5a9c5eaddd4da1",
 "2026-11-12"
 ],
 "/solplanet/model/asw3000-s/": [
@@ -14104,7 +14104,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw3000h-s2/": [
-"fd6f967cd342e8fe",
+"bde9d5b5bc229367",
 "2026-11-12"
 ],
 "/solplanet/model/asw3000s-s/": [
@@ -14116,7 +14116,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw30k-lt-g3/": [
-"d9f14e931359f75f",
+"2df01278efcd7649",
 "2026-11-12"
 ],
 "/solplanet/model/asw33k-lt-g2/": [
@@ -14124,11 +14124,11 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw33k-lt-g3/": [
-"4b3adfce6abdb011",
+"145a98c7db6d7b95",
 "2026-11-12"
 ],
 "/solplanet/model/asw3680-s-g2/": [
-"3283fa3576d48302",
+"37f4b2c55e67a4e5",
 "2026-11-12"
 ],
 "/solplanet/model/asw3680-s/": [
@@ -14136,7 +14136,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw3680h-s2/": [
-"c11374daccc558f1",
+"2a17847189b3764f",
 "2026-11-12"
 ],
 "/solplanet/model/asw36k-lt-g2/": [
@@ -14144,15 +14144,15 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw36k-lt-g3/": [
-"b77f22b9b1463e46",
+"75a13af00da991f7",
 "2026-11-12"
 ],
 "/solplanet/model/asw3k-lt-g2-pro/": [
-"925690c3ee643e23",
+"d4db0dfdde621070",
 "2026-11-12"
 ],
 "/solplanet/model/asw4000-s-g2/": [
-"e684463aaca7bce7",
+"91c06c2bd2b41c04",
 "2026-11-12"
 ],
 "/solplanet/model/asw4000-s/": [
@@ -14164,7 +14164,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw4000h-s2/": [
-"2c5c3cc8822bb490",
+"d930e07b7692e0fa",
 "2026-11-12"
 ],
 "/solplanet/model/asw40k-lt-g2-pro/": [
@@ -14176,7 +14176,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw40k-lt-g3/": [
-"a21f9222796418b0",
+"4c1730ac41642dea",
 "2026-11-12"
 ],
 "/solplanet/model/asw45k-lt-g2-pro/": [
@@ -14188,11 +14188,11 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw45k-lt-g3/": [
-"8fa0785d05b54626",
+"bce16aaf63e219d2",
 "2026-11-12"
 ],
 "/solplanet/model/asw4k-lt-g2-pro/": [
-"562caf6dc89f2527",
+"0512158ad83ce5c3",
 "2026-11-12"
 ],
 "/solplanet/model/asw5000-s-g2-be/": [
@@ -14200,7 +14200,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw5000-s-g2/": [
-"4c35771ba78be2d5",
+"d3e325cb2a14838a",
 "2026-11-12"
 ],
 "/solplanet/model/asw5000-s/": [
@@ -14212,7 +14212,7 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw5000h-s2/": [
-"dcd3a146dd3953aa",
+"46e69f5297af3ec2",
 "2026-11-12"
 ],
 "/solplanet/model/asw50k-lt-g2-pro/": [
@@ -14224,15 +14224,15 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw50k-lt-g3/": [
-"53b4f4ea6982a91c",
+"027ee731574cbaec",
 "2026-11-12"
 ],
 "/solplanet/model/asw5k-lt-g2-pro/": [
-"dca0e503decbd9ee",
+"1da89e7edb41ee4b",
 "2026-11-12"
 ],
 "/solplanet/model/asw6000-s-g2/": [
-"264d13cd6dacd4ce",
+"d6572abd13d5a36c",
 "2026-11-12"
 ],
 "/solplanet/model/asw6000-t/": [
@@ -14240,19 +14240,19 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw6000h-s2/": [
-"dc43853fe386b623",
+"5e721aa4d391915c",
 "2026-11-12"
 ],
 "/solplanet/model/asw60k-lt-g3/": [
-"1d62a887d579f15b",
+"cb85e97aa3edad2f",
 "2026-11-12"
 ],
 "/solplanet/model/asw6k-lt-g2-pro/": [
-"e086e31c5a54c786",
+"34f9bb25f1d4d3cd",
 "2026-11-12"
 ],
 "/solplanet/model/asw75k-lt/": [
-"ef0f20f4c05a9179",
+"fbd3021beb116ac5",
 "2026-11-12"
 ],
 "/solplanet/model/asw8000-t/": [
@@ -14260,15 +14260,15 @@
 "2026-11-12"
 ],
 "/solplanet/model/asw80k-lt/": [
-"943a0f7b155f1de3",
+"46f56d75952fa258",
 "2026-11-12"
 ],
 "/solplanet/model/asw8k-lt-g2-pro/": [
-"608e96b442048306",
+"ec31c5e2df7a65bb",
 "2026-11-12"
 ],
 "/solplanet/model/asw8k-lt-g2/": [
-"e40b476c7384cd57",
+"d0fe105b3dd60dc7",
 "2026-11-12"
 ],
 "/solplanet/solplanet-inverters/": [
@@ -14276,11 +14276,11 @@
 "2026-11-12"
 ],
 "/solpulsen/": [
-"b5ede7dc2462a0ab",
+"e996fba97e68efd8",
 "2026-11-12"
 ],
 "/sonnen/": [
-"0bc7f373f5b461d5",
+"98f9300a61b6f5fa",
 "2026-11-12"
 ],
 "/sonnen/comfort/": [
@@ -14308,7 +14308,7 @@
 "2026-11-12"
 ],
 "/sonnenkraft/": [
-"74a1c38f6c593444",
+"816fe45d71544de8",
 "2026-11-12"
 ],
 "/sonnenkraft/model/sk-hwr-10/": [
@@ -14360,11 +14360,11 @@
 "2026-11-12"
 ],
 "/sosen/": [
-"dcff233425b2807c",
+"9eaa012065fe9b53",
 "2026-11-12"
 ],
 "/sossen/": [
-"fd2b61d8c224962f",
+"c63c443bcc0d50b0",
 "2026-11-12"
 ],
 "/sossen/model/sossen-600/": [
@@ -14380,7 +14380,7 @@
 "2026-11-12"
 ],
 "/spanner-re2-gmbh/": [
-"33406665e8848cbb",
+"88a339521defae71",
 "2026-11-12"
 ],
 "/spelsberg/": [
@@ -14392,19 +14392,19 @@
 "2026-11-12"
 ],
 "/srne/": [
-"da47b38cc260ec4e",
+"9a508c00a19fc3e1",
 "2026-11-12"
 ],
 "/stabl/": [
-"4930d66dc4878cdd",
+"e788bc758490b7b0",
 "2026-11-12"
 ],
 "/star-charge/": [
-"587a259dbceb0718",
+"b92cc008d7289acf",
 "2026-11-12"
 ],
 "/starcharge/": [
-"1e04e1ab2bd79cd8",
+"dbd3b4d3ca6303d4",
 "2026-11-12"
 ],
 "/stark-in-strom/": [
@@ -14416,7 +14416,7 @@
 "2026-11-12"
 ],
 "/steca/": [
-"d904ca0b6eea3f7c",
+"b212f349118d6b84",
 "2026-11-12"
 ],
 "/steca/coolcept-flex/": [
@@ -14524,11 +14524,11 @@
 "2026-11-12"
 ],
 "/strongenergy/": [
-"7f7c1d7ddc8ba440",
+"ae574a97404aecc2",
 "2026-11-12"
 ],
 "/studer-innotec/": [
-"e1d68427453d89a7",
+"7c0f3791f1cab5fa",
 "2026-11-12"
 ],
 "/studer-innotec/model/nx3-16000-48-st/": [
@@ -14552,7 +14552,7 @@
 "2026-11-12"
 ],
 "/sunenergyxt/": [
-"53ee5584a265ce1d",
+"cee817b7d59739d4",
 "2026-11-12"
 ],
 "/sunenergyxt/model/sunenergyxt-500/": [
@@ -14568,11 +14568,11 @@
 "2026-11-12"
 ],
 "/sunflower-solar/": [
-"1c4efcb654d587ce",
+"95c887ee64aac96b",
 "2026-11-12"
 ],
 "/sungrow/": [
-"e6d9ba76625b2517",
+"a741e51c9a186318",
 "2026-11-12"
 ],
 "/sungrow/ac-wallboxes/": [
@@ -14644,15 +14644,15 @@
 "2026-11-12"
 ],
 "/sungrow/sg-string-inverters/": [
-"13a0b056c5010132",
+"7dc77f497579add4",
 "2026-11-12"
 ],
 "/sungrow/sh-hybrid-inverters/": [
-"9273da3d1f34c8e9",
+"bb38dd302cb48b28",
 "2026-11-12"
 ],
 "/sunmaster/": [
-"7c8ecc16a7384c3c",
+"ebb2ea7c4e438732",
 "2026-11-12"
 ],
 "/sunology/": [
@@ -14664,15 +14664,15 @@
 "2026-11-12"
 ],
 "/sunova-solar/": [
-"653e78c0d0fe2a22",
+"8ceefc6c0b53ceaa",
 "2026-11-12"
 ],
 "/sunplus/": [
-"f543317bfb224134",
+"9dae198049ffa088",
 "2026-11-12"
 ],
 "/sunpower/": [
-"7b1e014233df73cb",
+"ef5241f7825a4515",
 "2026-11-12"
 ],
 "/sunpower/model/reserve-inv-1-p5-l1-int/": [
@@ -14684,15 +14684,15 @@
 "2026-11-12"
 ],
 "/sunpura/": [
-"e170b05bba0defaa",
+"8bf30821e2a6f1d3",
 "2026-11-12"
 ],
 "/sunshare/": [
-"c8591e2553288292",
+"96df1b4196a6b073",
 "2026-11-12"
 ],
 "/sunsynk/": [
-"1a7e205a8ae3ef2d",
+"cac2f71a80fb3656",
 "2026-11-12"
 ],
 "/sunsynk/3p-hybrid-inverter/": [
@@ -14828,11 +14828,11 @@
 "2026-11-12"
 ],
 "/suntrust/": [
-"b85489897a0aa885",
+"9e7cff8cdfdc13bd",
 "2026-11-12"
 ],
 "/sunways/": [
-"1a4415d208aa57de",
+"8589d7a078a78b32",
 "2026-11-12"
 ],
 "/sunways/model/sth-10ktl-ht-p/": [
@@ -15096,7 +15096,7 @@
 "2026-11-12"
 ],
 "/sunwoda-energy/": [
-"0ac775edf8357450",
+"7d42a965401d912e",
 "2026-11-12"
 ],
 "/sunwoda-energy/model/osp-200k-a/": [
@@ -15136,15 +15136,15 @@
 "2026-11-12"
 ],
 "/supersola/": [
-"c9f6074e2037d9ea",
+"24d4503e9660782c",
 "2026-11-12"
 ],
 "/svea-solar/": [
-"140f12b4b0d79fc5",
+"28ccc3bc9eac4a79",
 "2026-11-12"
 ],
 "/swatten/": [
-"0dc4a2d4369fccca",
+"a3ed809807bb4691",
 "2026-11-12"
 ],
 "/swatten/model/sih-10kw-th-pro/": [
@@ -15192,7 +15192,7 @@
 "2026-11-12"
 ],
 "/syl/": [
-"5331f7ab9f5717cf",
+"679ace8ad6225a6e",
 "2026-11-12"
 ],
 "/syl/model/sp100ell/": [
@@ -15208,19 +15208,19 @@
 "2026-11-12"
 ],
 "/taylor/": [
-"430edade929b89c9",
+"84e6f28d7bbe1647",
 "2026-11-12"
 ],
 "/tbb-power/": [
-"d3b23f461755cb0e",
+"011e9f5c12027236",
 "2026-11-12"
 ],
 "/tbea-xi-an-electric-technology-co-ltd/": [
-"ca281a7916f28ba0",
+"0333460a520ec2a5",
 "2026-11-12"
 ],
 "/tcl/": [
-"9b115840de96417e",
+"5a95b8de151f75fe",
 "2026-11-12"
 ],
 "/tcl/model/blueark-x1-3-6k-sp/": [
@@ -15292,7 +15292,7 @@
 "2026-11-12"
 ],
 "/technagon/": [
-"a9c7fc93873344a2",
+"3678115343425eee",
 "2026-11-12"
 ],
 "/technisat/": [
@@ -15304,7 +15304,7 @@
 "2026-11-12"
 ],
 "/tecloman/": [
-"bf8df7b891983884",
+"452729d10bf9175b",
 "2026-11-12"
 ],
 "/tecloman/model/firefly-3-6k/": [
@@ -15428,7 +15428,7 @@
 "2026-11-12"
 ],
 "/tesla/": [
-"373de83b5b129207",
+"bd649fd9ee42a61d",
 "2026-11-12"
 ],
 "/tesla/powerwall-fleet-api/": [
@@ -15456,7 +15456,7 @@
 "2026-11-12"
 ],
 "/thinkpower/": [
-"c11f4738d68d77f2",
+"253e94d565ce83e0",
 "2026-11-12"
 ],
 "/tibber/": [
@@ -15472,7 +15472,7 @@
 "2026-11-12"
 ],
 "/tigo/": [
-"cc153bcf6b3057b5",
+"91dd2d28e279af21",
 "2026-11-12"
 ],
 "/tigo/go-ev-charger/": [
@@ -15492,7 +15492,7 @@
 "2026-11-12"
 ],
 "/tinkerforge/": [
-"f1606bcd2a0bf5bb",
+"bd289f5545a2ac8b",
 "2026-11-12"
 ],
 "/tinkerforge/warp-charger/": [
@@ -15540,7 +15540,7 @@
 "2026-11-12"
 ],
 "/tommatech/": [
-"b86f8c17a44ff077",
+"876bf85140e22412",
 "2026-11-12"
 ],
 "/tommatech/model/trio-hybrid-10-0k/": [
@@ -15568,7 +15568,7 @@
 "2026-11-12"
 ],
 "/topband/": [
-"7f4dfe63ad5c52a5",
+"d2fce0588617932a",
 "2026-11-12"
 ],
 "/tq/": [
@@ -15584,7 +15584,7 @@
 "2026-11-12"
 ],
 "/trumpf/": [
-"ee53b1e1f09ba726",
+"46aefb5e8c7cf147",
 "2026-11-12"
 ],
 "/trumpf/model/truconvert-ac3025/": [
@@ -15592,7 +15592,7 @@
 "2026-11-12"
 ],
 "/tsun/": [
-"f5f09cef17f0dee3",
+"0fcd64b368ce555b",
 "2026-11-12"
 ],
 "/tsun/model/tsol-acu3-0k/": [
@@ -15712,11 +15712,11 @@
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms1600/": [
-"fdef3d97b3778025",
+"dfd4a525b5ac1999",
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms1800/": [
-"7ce24f918b2709a1",
+"b16b844f31012822",
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms2000-600/": [
@@ -15752,7 +15752,7 @@
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms600-balcony/": [
-"62d14a43458e3193",
+"81716562d651424d",
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms600/": [
@@ -15760,7 +15760,7 @@
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms700-balcony/": [
-"67cb454aea7f4240",
+"f4a6e8610149c96e",
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms700/": [
@@ -15768,7 +15768,7 @@
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms800-balcony/": [
-"a30b11996287aef6",
+"e0fd1931e9630b7b",
 "2026-11-12"
 ],
 "/tsun/model/tsol-ms800/": [
@@ -15800,11 +15800,11 @@
 "2026-11-12"
 ],
 "/turbo-energy/": [
-"85fda7699dd6ad27",
+"87119d335a9c474b",
 "2026-11-12"
 ],
 "/twerd/": [
-"de0a747691a1b957",
+"25473971ebf27825",
 "2026-11-12"
 ],
 "/ubitricity/": [
@@ -15816,11 +15816,11 @@
 "2026-11-12"
 ],
 "/uhome/": [
-"17cd99a23015f415",
+"c125825a4251fc97",
 "2026-11-12"
 ],
 "/ultimati-energie/": [
-"64663d6bf3de072d",
+"5fbeb1e98674e0dd",
 "2026-11-12"
 ],
 "/ultimati-energie/model/ue-10k-11-4-t2-ha1/": [
@@ -15872,15 +15872,15 @@
 "2026-11-12"
 ],
 "/une-srl-fortona/": [
-"86d7f35a7873c846",
+"d222b6c31d383a74",
 "2026-11-12"
 ],
 "/uz-energy/": [
-"e82a1c1b7a604e53",
+"c967eb8016ef3469",
 "2026-11-12"
 ],
 "/v-tac-exports-limited/": [
-"2bce922b76851229",
+"94af4fc62977cb59",
 "2026-11-12"
 ],
 "/v2c/": [
@@ -15900,7 +15900,7 @@
 "2026-11-12"
 ],
 "/vacon/": [
-"c2ee34a53b7372bc",
+"eb18b7c4a3848920",
 "2026-11-12"
 ],
 "/vacon/model/nxa01706/": [
@@ -16012,7 +16012,7 @@
 "2026-11-12"
 ],
 "/vaillant/": [
-"2346df6d475c4e8b",
+"ff44f581d0a8ea5b",
 "2026-11-12"
 ],
 "/vaillant/model/vpv-i-1500-2-230v/": [
@@ -16052,7 +16052,7 @@
 "2026-11-12"
 ],
 "/varta/": [
-"873eb3a5f1b443f0",
+"55fa17702e1f53a5",
 "2026-11-12"
 ],
 "/varta/element-backup/": [
@@ -16080,15 +16080,15 @@
 "2026-11-12"
 ],
 "/vaysunic/": [
-"57345bf549ba9098",
+"0abd2fe69847d94c",
 "2026-11-12"
 ],
 "/venema-e-mobility/": [
-"a0e02a258483e99b",
+"f19d4c71f41a9ac2",
 "2026-11-12"
 ],
 "/verheust/": [
-"bc87eaa833c041c7",
+"a85d25f54d41b4c1",
 "2026-11-12"
 ],
 "/vestel/": [
@@ -16120,7 +16120,7 @@
 "2026-11-12"
 ],
 "/victron-energy/": [
-"b877dcb3693ffbc8",
+"15b930fcf3a457c1",
 "2026-11-12"
 ],
 "/victron-energy/em24-e1/": [
@@ -16144,7 +16144,7 @@
 "2026-11-12"
 ],
 "/victron-energy/multiplus-multiplus-ii-quattro-easysolar-ess/": [
-"76c605ed083c8fde",
+"d381601cb7649323",
 "2026-11-12"
 ],
 "/victron-energy/victron-ble/": [
@@ -16152,7 +16152,7 @@
 "2026-11-12"
 ],
 "/viessmann/": [
-"2b5f2920f522488a",
+"945e15b0c36175df",
 "2026-11-12"
 ],
 "/viessmann/heatpump-consumption-api/": [
@@ -16172,7 +16172,7 @@
 "2026-11-12"
 ],
 "/vilion/": [
-"3a0f21bbaff770fa",
+"94c15abe1c89e321",
 "2026-11-12"
 ],
 "/vilion/model/ma1000k30/": [
@@ -16192,19 +16192,19 @@
 "2026-11-12"
 ],
 "/virtus/": [
-"e7453b9d9c58622d",
+"25cf3938a09de637",
 "2026-11-12"
 ],
 "/vision-ups-systems-batterx/": [
-"7a46d38b08d054b4",
+"0e3b55f8dca78a2b",
 "2026-11-12"
 ],
 "/vitron-energy/": [
-"4959331d4872d339",
+"743a725d52934460",
 "2026-11-12"
 ],
 "/volkswagen/": [
-"006a4cbd30bbf6e0",
+"55ce01a971a719fb",
 "2026-11-12"
 ],
 "/volkswagen/charger-connect-2/": [
@@ -16248,7 +16248,7 @@
 "2026-11-12"
 ],
 "/voltdeer/": [
-"7789514377b33752",
+"ac41e4a380740727",
 "2026-11-12"
 ],
 "/voltdeer/model/sr2000-ac/": [
@@ -16268,7 +16268,7 @@
 "2026-11-12"
 ],
 "/voltie/": [
-"d7a519a11b4db9cb",
+"a3d6323158a78c20",
 "2026-11-12"
 ],
 "/voltie/voltie/": [
@@ -16276,7 +16276,7 @@
 "2026-11-12"
 ],
 "/voltronic-power/": [
-"1e6a03d0ba9eae59",
+"334df1f481d13249",
 "2026-11-12"
 ],
 "/voltronic-power/axpert-inverters/": [
@@ -16292,7 +16292,7 @@
 "2026-11-12"
 ],
 "/voltronic-vision/": [
-"b142ecdb1710ea29",
+"46472951a99a8c9a",
 "2026-11-12"
 ],
 "/voltronic-vision/model/infinisolar10k/": [
@@ -16300,7 +16300,7 @@
 "2026-11-12"
 ],
 "/volvo/": [
-"20810661c702167b",
+"5534fd136c923041",
 "2026-11-12"
 ],
 "/volvo/model/vol22e202/": [
@@ -16316,7 +16316,7 @@
 "2026-11-12"
 ],
 "/vonsch/": [
-"606ea7196b0967f2",
+"c9a7cbbad07eefb5",
 "2026-11-12"
 ],
 "/wago/": [
@@ -16344,7 +16344,7 @@
 "2026-11-12"
 ],
 "/wallbox/": [
-"352556d91800547f",
+"c59249b14f2ff173",
 "2026-11-12"
 ],
 "/wallbox/commander-2-fw-5-x/": [
@@ -16420,7 +16420,7 @@
 "2026-11-12"
 ],
 "/wanbang/": [
-"ad79b62c2a080093",
+"59f50298e6956f14",
 "2026-11-12"
 ],
 "/wanbang/model/ad20074eu1996/": [
@@ -16436,7 +16436,7 @@
 "2026-11-12"
 ],
 "/wattsonic/": [
-"8306a6d3c8358c07",
+"9ece8a6b5d4c6af4",
 "2026-11-12"
 ],
 "/wattsonic/3p-aio-series-gen2/": [
@@ -16556,7 +16556,7 @@
 "2026-11-12"
 ],
 "/we-drive-solar/": [
-"b3abe911a029d5fe",
+"0bd8aa05bcec7966",
 "2026-11-12"
 ],
 "/webasto/": [
@@ -16576,7 +16576,7 @@
 "2026-11-12"
 ],
 "/weco/": [
-"55f8054ed4266579",
+"a2c29ae8069a1770",
 "2026-11-12"
 ],
 "/weco/model/smart-3ph-10k/": [
@@ -16620,7 +16620,7 @@
 "2026-11-12"
 ],
 "/weiheng/": [
-"e5a4e231bbb388ef",
+"945eab8d063f0d03",
 "2026-11-12"
 ],
 "/weiheng/model/wh-bec-100ac/": [
@@ -16636,11 +16636,11 @@
 "2026-11-12"
 ],
 "/western-co-s-r-l/": [
-"35c98fb357946572",
+"2de6b18b28ff54d2",
 "2026-11-12"
 ],
 "/whes/": [
-"e8e6a7148f4579da",
+"318facdf8fce1041",
 "2026-11-12"
 ],
 "/whes/model/ac-125kw-1b10/": [
@@ -16784,15 +16784,15 @@
 "2026-11-12"
 ],
 "/wind-energy-solutions-bv-nidec/": [
-"03451457f88889d0",
+"1053ab6c7b6970be",
 "2026-11-12"
 ],
 "/windon/": [
-"e3568a07d2b7a2b9",
+"173dca4471af4f7b",
 "2026-11-12"
 ],
 "/wstech/": [
-"acce92f0a8956205",
+"af5c34ecc368650a",
 "2026-11-12"
 ],
 "/wstech/model/aps650-es-1-360-5/": [
@@ -16816,19 +16816,19 @@
 "2026-11-12"
 ],
 "/xcharge/": [
-"6fa49d8ef28fc56f",
+"889ae9bcd86b9ce5",
 "2026-11-12"
 ],
 "/xelectrix-power-gmbh/": [
-"4875feb1b1913cda",
+"3cb7e0984131e45c",
 "2026-11-12"
 ],
 "/xi-an-flying-sails/": [
-"d80e68563bd1e31d",
+"00360c98a2338772",
 "2026-11-12"
 ],
 "/xi-an-topology/": [
-"1ef3582968ccc26a",
+"8b6be5ff6597ac18",
 "2026-11-12"
 ],
 "/xi-an-topology/model/tpcs950-105kcbmg/": [
@@ -16848,15 +16848,15 @@
 "2026-11-12"
 ],
 "/xolta/": [
-"ee3bd1f34d747337",
+"b9dd1d2e7b3c51b9",
 "2026-11-12"
 ],
 "/yi-energy-technology-zhejiang-co-ltd/": [
-"84667eb6013a477f",
+"3116b82491397eda",
 "2026-11-12"
 ],
 "/yoshopo/": [
-"ff1ac2c87a5bbeed",
+"b9ae1fa79fba688f",
 "2026-11-12"
 ],
 "/youless/": [
@@ -16876,7 +16876,7 @@
 "2026-11-12"
 ],
 "/yunt/": [
-"337595798b42fbd7",
+"318d1a6cb01b2f40",
 "2026-11-12"
 ],
 "/yunt/model/mars-100kt-f/": [
@@ -16916,7 +16916,7 @@
 "2026-11-12"
 ],
 "/yuso/": [
-"c3f04c8d650676b2",
+"914624f9992dd4e4",
 "2026-11-12"
 ],
 "/yuso/model/victron-multiplus-ii-48-5000-70-50-gx/": [
@@ -16928,7 +16928,7 @@
 "2026-11-12"
 ],
 "/zaptec/": [
-"33c630ae19fce55c",
+"924458992f39e07f",
 "2026-11-12"
 ],
 "/zaptec/go-go-2-pro/": [
@@ -16936,7 +16936,7 @@
 "2026-11-12"
 ],
 "/zcs-azzurro/": [
-"c20baf98010567a2",
+"3b9081b20c9cf07f",
 "2026-11-12"
 ],
 "/zcs-azzurro/hybrid-inverter/": [
@@ -16948,111 +16948,111 @@
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-1100tl-v3/": [
-"f7143833c7bb6d5e",
+"b79047b2d424f99e",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-1600tl-v3/": [
-"5ae7032bb1bb7b11",
+"53ce4a1b84503551",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-2200tl-v3/": [
-"fd2f76ccb8573ef3",
+"342d65d342afece1",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-2700tl-v3/": [
-"2d5f63f647a0b868",
+"42d494ea10bd77df",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-3000-tlm-v3/": [
-"847792779bdefeec",
+"c8e97e52e3638601",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-3000tl-v3/": [
-"836efda06a6e1e9c",
+"5fc58bbe180843f5",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-3000tlm-v2/": [
-"9bac2815de4fb4cf",
+"c34422e957845dba",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-3300tl-v3/": [
-"5e933cda5d13c48f",
+"72bf6274e941dfd8",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-3680-tlm-v3/": [
-"77325d2d1e820188",
+"4c2e5f01127ec004",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-3680tlm-v2/": [
-"8cc83204f36a21c1",
+"a2faaf81f21c626c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-4000-tlm-v3/": [
-"1fdeaaed754e91d1",
+"21c740e3ace9c17f",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-4000tlm-v2/": [
-"d0d340a34f05f237",
+"4094c0dcf36a067c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-4600-tlm-v3/": [
-"66f4ff7f533f76cb",
+"bc7c8550c1e475c9",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-4600tlm-v2/": [
-"234d6d8c4b485830",
+"8ee132eabcd3951a",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-5000-tlm-v3/": [
-"00499f9e5f72a190",
+"e748a68c72c99d6f",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-5000tlm-v2/": [
-"b7a80c06ede876cd",
+"e2a73c9f2a0968c5",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-5000tlm-v3-a/": [
-"1083026c4f2866e5",
+"9e56a50a15052860",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-6000-tlm-v3/": [
-"9beb9422d71986f8",
+"b8e380488a02986b",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-6000tlm-v2/": [
-"3dfe694fcf962632",
+"bc9f4871c57f833c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd3000-zss-hp/": [
-"3a3be8bcd2e5850d",
+"dc5b6f4b748d1079",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd3000-zss/": [
-"d13d13a6ab052d2c",
+"c43c6cbf7efc8ce1",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd3600-zss-hp/": [
-"ed46d926a3ae6181",
+"9eeb554c99fa6ad4",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd3600-zss/": [
-"d4efe503e1d3035b",
+"c02a6e33ecda4bf8",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd4000-zss/": [
-"0206b6473b4be26e",
+"70dd61aa600e3bc9",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd4600-zss/": [
-"a5f4a528415e060f",
+"e03e800a54943a9c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd5000-zss/": [
-"eb62494a521a9152",
+"e674007aefa3f3a2",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/1ph-hyd6000-zss/": [
-"b138f60de14c2152",
+"48f16b62cc1b9b65",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3000sp/": [
@@ -17060,211 +17060,211 @@
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-10000tl-v2/": [
-"ed0b39644598e07e",
+"e6ed24638cba389b",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-100ktl-hv/": [
-"c61b198130d0c113",
+"a51cf6b6675b9870",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-100ktl-lv/": [
-"6d5faca261bad719",
+"c4b624783f5a9780",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-100ktl-v4/": [
-"caa5b6c1c6c5981c",
+"9ace71cfd689b244",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-110ktl-lv/": [
-"e4c71a1a59049812",
+"0933e9ec7d70723e",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-110ktl-v4/": [
-"5fae60e183b827b7",
+"c0cfeb91826ab781",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-11ktl-v1/": [
-"04503f907b423064",
+"3a8b7566f1412c7c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-11ktl-v3/": [
-"80c41b70e8393ee3",
+"0a9c9dbe9971da23",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-12000tl-v2/": [
-"a5fd33722d2035ae",
+"f77084cb65d7572e",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-125ktl-hv/": [
-"31c041d175bfc79a",
+"c4e9c112e59871b7",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-12ktl-v1/": [
-"6983bdfdd7c267f8",
+"87932cc79f5c8780",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-12ktl-v3/": [
-"2d30ad9c01c4a5e3",
+"9056538090d0dfc3",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-136ktl-hv/": [
-"1bdd9da25658bbef",
+"0dc30c042774c8f6",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-15000tl-v2/": [
-"c19bb49aa6af316f",
+"cd260c95f9c6623a",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-15000tl-v3/": [
-"9274d1f4e2078b5b",
+"a4ef31da7ede01bc",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-17000tl-v3/": [
-"d8106c25ecca45b2",
+"03cb8a6315c7f420",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-20000tl-v2/": [
-"01844bc9bb0787f4",
+"4b31d030bb8341b9",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-20000tl-v3/": [
-"5da6797ade680a9d",
+"10053990fea6f6a7",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-22000tl-v3/": [
-"6aa0ee0ef16627f9",
+"df3230edfda0f13c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-24000tl-v3/": [
-"c3284d208c458aa2",
+"2a7483f9257c4b8a",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-25000tl-v2/": [
-"51ee2be90277a85d",
+"b1fa050c6b2a0495",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-25ktl-v3/": [
-"25f16b2a07262585",
+"c03bc9c0fc7d988a",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-3-3ktl-v1/": [
-"fbed91a6149092a8",
+"fa5f8452021769e1",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-3-3ktl-v3/": [
-"73c2fb2df76de47e",
+"fd714ace07f35049",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-30000tl-v2/": [
-"d7cde674fc5610f6",
+"4f7d696d13f31e02",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-30ktl-v3/": [
-"5bba39390d6265d1",
+"0e00060b63a378af",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-33000tl-v2/": [
-"cca634ac8884ca7c",
+"b4b160eb8b67a2bc",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-33ktl-v3/": [
-"07c95f4af50088da",
+"f7f9680f68411054",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-36ktl-v3/": [
-"d10ff3ce68518e7c",
+"1dba6d177664e7ea",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-4-4ktl-v1/": [
-"2480144eea1818d4",
+"5329f63dbd953bfe",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-4-4ktl-v3/": [
-"f1771bab8ecbdcda",
+"4dba9cbe15cab029",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-40ktl-v3/": [
-"64c6b4f5229d03c7",
+"729644ef6baf960c",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-45ktl-v3/": [
-"33625104fe65365e",
+"9b70e20028551249",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-5-5ktl-v1/": [
-"8134692c3cd7d9ae",
+"720ccb48a87512ba",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-5-5ktl-v3/": [
-"8b8860e31618b244",
+"8b9b6f4e5a5e5285",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-50000tl-v1/": [
-"ffe99c4c70ddd9fa",
+"899774f57afd40cf",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-50ktl-v3/": [
-"c7a9db65bc5e0942",
+"2a981f55cd1e4bd2",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-6-6ktl-v1/": [
-"14440e720328db2d",
+"6bbae147bdcfa2f9",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-6-6ktl-v3/": [
-"fa7c75570212303d",
+"1250f47122e90099",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-60000tl-v1/": [
-"bd882b6537a451ef",
+"50b60aea8b642c65",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-60ktl-v3/": [
-"f3b63a8e211f1b12",
+"dcdebb772c66562f",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-8-8ktl-v1/": [
-"259b328d55400e77",
+"420968ae9e601217",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-8-8ktl-v3/": [
-"8a8d2b9e2d4f769f",
+"c8889d63bf228dc8",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-80ktl-lv/": [
-"35fec59f6462fd56",
+"111f368b98887c85",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-80ktl-v3/": [
-"38cae3b92e3ad080",
+"992502f69b7eb628",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-hyd10000-zss/": [
-"9c395f077921c58e",
+"bde1b09e2a10fb02",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-hyd15000-zss/": [
-"5da10a9cbbc97d3b",
+"113bee122fc07042",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-hyd20000-zss/": [
-"89a6163b62573bfb",
+"993a281755402711",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-hyd5000-zss/": [
-"ba171139827159bd",
+"b230050e0dd15d6f",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-hyd6000-zss/": [
-"992ba3a3533e4816",
+"9cf7ebc603edf17d",
 "2026-11-12"
 ],
 "/zcs-azzurro/model/3ph-hyd8000-zss/": [
-"8e4f7ab5f5b297f9",
+"a37696376fd7d141",
 "2026-11-12"
 ],
 "/zendure/": [
-"9783c4e4ca7e7158",
+"6693200e8a819d05",
 "2026-11-12"
 ],
 "/zendure/3ct/": [
@@ -17272,15 +17272,15 @@
 "2026-11-12"
 ],
 "/zendure/solarflow-hyper-aio/": [
-"3cad9f07feab7550",
+"539f781773647005",
 "2026-11-12"
 ],
 "/zerova-technologies/": [
-"c1f373ef8eec561f",
+"e0dffb57a7df134a",
 "2026-11-12"
 ],
 "/zetara/": [
-"37cd311ad46e8dc3",
+"a74c746749956c5d",
 "2026-11-12"
 ],
 "/zeversolar/": [
@@ -17292,19 +17292,19 @@
 "2026-11-12"
 ],
 "/zhuzhou-crrc-times-electric-co-ltd/": [
-"0f2fe3a408d7a8ac",
+"fef0e4bf9bc0f2f7",
 "2026-11-12"
 ],
 "/zinvolt/": [
-"508af270075f6de5",
+"524e9076aaaa121c",
 "2026-11-12"
 ],
 "/zoe/": [
-"21988137032efeb3",
+"901071e5b39e747c",
 "2026-11-12"
 ],
 "/zonneplan/": [
-"a646bc7f08b52bf4",
+"0c561d19691b5a32",
 "2026-11-12"
 ],
 "/zuidwijk/": [
