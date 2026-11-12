@@ -139,6 +139,18 @@ if (trio) {
 const one = Object.entries(C.models).find(([, m]) => m.cc.IT.rows && Object.values(m.cc.IT.rows).some((r) => r[0] === "X" && /1-phase/.test(r[1])));
 ok(one, "an 8 kW single-phase unit is outside the Italian phase rule by its datasheet");
 
+// a brand file joins only where its `brand` is the register's own brand name ("Victron", not the display "Victron Energy");
+// one that names no register brand drops every document and datasheet row in it without a word (found 2026-11-12, Germany)
+import { readdirSync } from "node:fs";
+const REG = new Set(JSON.parse(readFileSync(resolve(here, "../.data/registers.json"), "utf-8")).devices.map((d) => d.brand.toLowerCase()));
+for (const dir of ["evidence", "specs"]) {
+  const root = resolve(here, `../../data/${dir}`);
+  for (const f of readdirSync(root).filter((x) => x.endsWith(".yaml"))) {
+    const b = yaml.parse(readFileSync(resolve(root, f), "utf-8"))?.brand;
+    if (b) ok(REG.has(b.toLowerCase()), `data/${dir}/${f}: brand "${b}" is no register brand, so nothing in it joins`);
+  }
+}
+
 console.log(`${checks} checks, ${fails} failures · ${models} models × ${ccs.length} countries`);
 for (const cc of ccs) console.log(`${cc}: datasheet row ${C.stats[cc].sheet_any} · every item covered ${C.stats[cc].covered} · document ${C.stats[cc].doc} (older edition ${C.stats[cc].older}) · outside ${C.stats[cc].outside}`);
 process.exit(fails ? 1 : 0);
