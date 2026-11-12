@@ -38,6 +38,20 @@ edition:
   label: "C10/11 ed. 2.4 (15.10.2025)"
 document_must_cite: ["C10/11", "C10/26"]
 accepts: [national-declaration]   # Synergrid: "the declaration of conformity needed to start the connection procedure with the grid operator can be downloaded via the link at the unit in this list (column 4)" — the GLV is a C10/11 document; a bare EN 50549-1 certificate is input to the homologation, not something a grid operator takes
+# A model on the C10/26 list (re-read 2026-11-12: the same file as 2026-11-01, last update 2026-10-30). Synergrid lists a
+# type only after reading the maker's Annex D checklist line by line against accredited test reports (C10/11 Annex B;
+# C10/26 template ed. 2.4.1). Left out on purpose: separation-settings and loss-of-mains are read only where the
+# separation system is built in (29 of the 5 519 listed PV / storage units up to 30 kVA use an external relay instead,
+# and GridFit does not carry that column — Synergrid's terms), and the size lines read Smax, which GridFit does not
+# carry either. In the 2026-10-30 file every storage-only row ticks LFSM-U (1 249 of 1 249) and names its power control
+# system (1 248 of 1 249; the other is a "bigger storage" row): what lfsm-u and storage-power-control rest on.
+list_checks:
+  word: "checked by Synergrid's list"
+  what: "Synergrid puts a type on the C10/26 list only after reading the maker's Annex D checklist of C10/11 line by line against accredited test reports (preferably to EN 50549-1/-2/-10): frequency and voltage ranges, power at under-frequency, RoCoF, LFSM-O, LFSM-U on storage, reconnection, reactive power, the logic interface and, on storage, the homologated power control system (C10/11 ed. 2.4 Annex B and D; C10/26 template ed. 2.4.1, 04/2026). A listing holds while the unit and its firmware do not change."
+  items: [freq-range, voltage-range, under-frequency, rocof, lfsm-o, lfsm-u, reconnection, reactive, cease-active-power, storage-power-control]
+  not_carried: "GridFit shows only that the type is listed: its Smax, phases and whether the separation system is built in are on Synergrid's list (its terms allow personal use only) — open the list for them; the grid operator applies this line to the installation"
+# A model off the list, for a row neither a datasheet nor a document GridFit holds shows (C10/11 §5.2 step 0, §5.3 step 1; Synergrid FAQ)
+on_application: "neither a datasheet nor a document GridFit holds shows it; off the C10/26 list there is no application to check it on — only the maker or importer can file the homologation (the Annex D checklist with accredited test reports), and the grid operator takes listed types only"
 must_meet:
   - id: power-class
     rule: "Plant size class (C10/11 §1.2; regional regulators' RfG decisions)"
