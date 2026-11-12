@@ -1,0 +1,42 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Anker
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: at-tor-r25-solarbank3-e2700pro-2025
+  title: Bureau Veritas U25-0315 — TOR-Stromerzeugungsanlagen Typ A:2024-07, OVE-Richtlinie R25 — Solarbank 3 E2700 Pro (A17C53Z1)
+  url: https://cdn.shopify.com/s/files/1/0627/2486/6118/files/Solarbank_3_E2700_Pro_AT_on-grid_Certificate_BV.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U25-0315
+  issued: '2025-04-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR-Stromerzeugungsanlagen Typ A:2024-07', 'OVE-Richtlinie R25:2020-03']
+  firmware: V1.0
+  families:
+  - name: Solarbank 3 E2700 Pro with 0–5 expansion batteries
+    match: ^A17C53Z1(-20)?(-[1-5])?$
+    countries: [AT]
+    note: Report HC2411280272GC01. Linked from ankersolix.com /de/products/a17c5 (Anker's store files sit on Shopify's CDN). No settings table.
+- id: at-tor-r25-solarbank4-pro-2026
+  title: DEKRA 4950666.01COC — TOR Erzeuger Typ A V1.3, OVE-Richtlinie R 25 — Solarbank 4 Pro (AE103x)
+  url: https://cdn.shopify.com/s/files/1/0901/2612/3357/files/AT-CERTIFICATE_OF_CONFORMITY.pdf
+  issuer: DEKRA Testing and Certification (Shanghai) Ltd.
+  cert_no: 4950666.01COC
+  issued: '2026-03-31'
+  valid_until: '2031-03-31'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A V1.3:2024', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: Solarbank 4 Pro AE103SZ1 / AE1038Z1 / AE1033Z1(-20)
+    match: ^(AE103SZ1|AE1038Z1|AE1033Z1|AE1033Z1-20)$
+    countries: [AT]
+    note: Confidential file 4950666.50. Linked from ankersolix.com /de/products/ae103. The register rows that carry '(HB:SOLARBANK4)' in the code
+      are not joined. No settings table.

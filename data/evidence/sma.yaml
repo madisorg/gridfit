@@ -180,3 +180,35 @@ documents:
     match: ^(SUNNYTRIPOWER)?(STP)?(3\.0|4\.0|5\.0|6\.0|8\.0|10\.0)-3AV-40$
     countries: [DE]
     note: Unit certificate only (report 18TH0325-VDE-0124-100_0, programme NSOP-0032-DEU-ZE-V01); no NA-protection table in this file.
+- id: at-tor-r25-stp-x-2023
+  title: TÜV SÜD ESY 070122 0047 Rev. 00 — OVE-Richtlinie R 25, TOR Erzeuger Typ A/B V1.2 — Sunny Tripower X (STP 12-50 … 25-50)
+  url: https://files.sma.de/downloads/ZE_STPxx-50_TORErzeuger_de_10.pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 070122 0047 Rev. 00
+  issued: '2023-04-05'
+  valid_until: '2028-04-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['OVE-Richtlinie R 25:2020', 'TOR Erzeuger Typ A Version 1.2:2022', 'TOR Erzeuger Typ B Version 1.2:2022']
+  firmware: B 1.16.03.R (main processor)
+  families:
+  - name: Sunny Tripower X 12–25
+    match: ^(SUNNYTRIPOWER)?STP(12|15|20|25)-50$
+    countries: [AT]
+    note: Report 713254379-007. No settings table.
+- id: at-tor-r25-stps-si-20-2023
+  title: Bureau Veritas U23-0510 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — STPS / SI 30-20, 50-20
+  url: https://www.memodo.de/mwdownloads/619bcd20f7c3513c9c5774ab7e283954
+  copy_of: memodo.de (German wholesaler); not found on files.sma.de
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-0510
+  issued: '2023-06-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: 03.00.43.R
+  families:
+  - name: Sunny Tripower Storage / Sunny Island 30-20, 50-20
+    match: ^(SUNNYTRIPOWER)?STPS(30|50)-20$|^SI(30|50)-20$
+    countries: [AT]
+    note: Report 22TH0488-OVE-directive R25_0. No settings table.

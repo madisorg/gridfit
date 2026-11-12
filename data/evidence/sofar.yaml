@@ -21,3 +21,197 @@ documents:
   - name: HYD 5–20KTL-3PH
     match: ^(SOFAR)?HYD-?(5|6|8|10|15|20)KTL-3PH
     countries: [AT, BE, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, IE, IT, LT, LV, NL, 'NO', PL, RO, SE, SI, SK, TR, UA]
+- id: at-tor-r25-hyd-3ph-2023
+  title: Intertek CN-PV-210152R1 — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R 25 — HYD 5…20KTL-3PH
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129546825059984.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-210152R1
+  issued: '2023-11-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.2:18.04.2022', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: HYD 5–20KTL-3PH
+    match: ^(SOFAR)?HYD(5|6|8|10|15|20)KTL-3PH$|^(SOFAR)?HYD10KTL-3PH-A$
+    countries: [AT]
+    note: Report 231013140GZU-002 (2023-10-24). Replaces CN-PV-210152 (2021-06-11, TOR V1.1). No firmware, no settings table.
+- id: at-tor-r25-me-3ph-2021
+  title: Bureau Veritas 2188AP020105020 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — ME 5…20KTL-3PH
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129650203029093.pdf
+  issuer: Bureau Veritas Shenzhen Co., Ltd. Dongguan Branch
+  cert_no: 2188AP020105020
+  issued: '2021-03-31'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:2019', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: ME 5–20KTL-3PH (AC battery inverter)
+    match: ^(SOFAR)?ME(5|6|8|10|15|20)KTL-3PH$
+    countries: [AT]
+    note: Report PVAT2102WDG0105. No settings table.
+- id: at-tor-r25-esi-s1-2022
+  title: Intertek CN-PV-220202 — TOR Erzeuger Type A:2019, OVE-Richtlinie R 25 — ESI 3…6K-S1
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129483702095363.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-220202
+  issued: '2022-09-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Type A:2019', 'OVE-Richtlinie R 25:2020']
+  firmware: V000001
+  families:
+  - name: ESI 3–6K-S1 (PowerAll)
+    match: ^(SOFAR)?(POWERALL)?ESI(3|3\.68|4|4\.6|5|6)K-S1$|^(SOFAR)?(POWERALL)?ESI5K-S1-A$
+    countries: [AT]
+    note: Report 220511060GZU-001. No settings table.
+- id: at-tor-r25-ktlx-g3-3-12k-2023
+  title: Intertek CN-PV-230071 — TOR Erzeuger Type A V1.2, OVE-Richtlinie R 25 — SOFAR 3.3…12KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126823050014637.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-230071
+  issued: '2023-02-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Type A version 1.2, 18 April 2022', 'OVE-Richtlinie R 25:2020']
+  firmware: V000001
+  families:
+  - name: 3.3–12KTLX-G3
+    match: ^(SOFAR)?(3\.3|4\.4|5\.5|6\.6|8\.8|11|12)KTLX-G3$|^(SOFAR)?(5|8\.8|10|11)KTLX-G3-A$
+    countries: [AT]
+    note: Report 230116067GZU-001. No settings table.
+- id: at-tor-r25-ktlm-g3-2021
+  title: Intertek CN-PV-210134 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — SOFAR 3/3.6KTLM-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126800839071427.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210134
+  issued: '2021-06-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V000001
+  families:
+  - name: 3–3.6KTLM-G3
+    match: ^(SOFAR)?(3|3\.6)KTLM-G3$
+    countries: [AT]
+    note: Report 210120056GZU-001. The 4–6KTLM-G3 models are not named. No settings table.
+- id: at-tor-r25-ktlx-g3-15-24k-2021
+  title: Intertek CN-PV-210151 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — SOFAR 15…24KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126929320023167.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210151
+  issued: '2021-06-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V010000
+  families:
+  - name: 15–24KTLX-G3
+    match: ^(SOFAR)?(15|17|20|22|24)KTLX-G3$
+    countries: [AT]
+    note: Report 210526211GZU-002. No settings table.
+- id: at-tor-ktlx-g3-pro-2023
+  title: SGS Tecnos 2622/0414-2-CER — TOR Erzeuger Type A V1.1 — SOFAR 17…25KTLX-G3-PRO
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126961383000705.pdf
+  issuer: SGS Tecnos, S.A.U. (UNE-EN ISO/IEC 17065)
+  cert_no: 2622/0414-2-CER
+  issued: '2023-02-27'
+  valid_until: '2028-02-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: [TOR Erzeuger. Connection and parallel operation of Type A Power Generation Systems Version 1.1 (12/12/2019)]
+  firmware: V010000
+  families:
+  - name: 17–25KTLX-G3-PRO
+    match: ^(SOFAR)?(17|20|23|25)KTLX-G3-PRO(-A)?$
+    countries: [AT]
+    note: Cites no OVE R 25. The registers spell a 'G3P' series (15/17/20/23/25/30KTLX-G3P) that may be this one; not joined, the suffix differs.
+- id: at-tor-r25-20-33ktl-g2-2021
+  title: Intertek CN-PV-210153 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — SOFAR 20000…33000TL-G2
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126974253049130.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210153
+  issued: '2021-06-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V2.30
+  families:
+  - name: 20000–33000TL-G2
+    match: ^(SOFAR)?(20000|25000|30000|33000)TL-G2$
+    countries: [AT]
+    note: Report 210305088GZU-001. No settings table.
+- id: at-tor-r25-ktlx-g3-25-50k-2021
+  title: Intertek CN-PV-210252 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — SOFAR 25…50KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127018109024874.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (CNAS C058-P, ISO/IEC 17065:2012)
+  cert_no: CN-PV-210252
+  issued: '2021-11-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V000001
+  families:
+  - name: 25–50KTLX-G3
+    match: ^(SOFAR)?(25|30|33|36|40|45|50)KTLX-G3$|^(SOFAR)?30KTLX-G3-A$|^(SOFAR)?(40|50)KTLX-G3-HV$
+    countries: [AT]
+    note: Report 210819144GZU-001. No settings table.
+- id: at-tor-r25-50-70ktl-2021
+  title: Intertek CN-PV-210123 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — SOFAR 50000…70000TL
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127075822084805.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210123
+  issued: '2021-05-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V2.00
+  families:
+  - name: 50000–70000TL
+    match: ^(SOFAR)?(50000TL|60000TL|70000TL-HV)$
+    countries: [AT]
+    note: Report 210526211GZU-001. No settings table.
+- id: at-tor-r25-ktlx-g3-60-80k-2022
+  title: Intertek CN-PV-220162 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — SOFAR 60…80KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127119172047176.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-220162
+  issued: '2022-08-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1: 12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V000001
+  families:
+  - name: 60–80KTLX-G3
+    match: ^(SOFAR)?(60|70|75|80)KTLX-G3$
+    countries: [AT]
+    note: Report 220606147GZU-013. No settings table.
+- id: at-tor-r25-75-136ktl-2021
+  title: Intertek CN-PV-210159 — TOR Erzeuger Typ A/B V1.1, OVE-Richtlinie R 25 — SOFAR 75…136KTL(-HV)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127152084053380.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210159
+  issued: '2021-06-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'TOR Erzeuger Typ B Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V020010
+  families:
+  - name: 75–136KTL(-HV)
+    match: ^(SOFAR)?(75|80|100|110)KTL$|^(SOFAR)?(100|125|136)KTL-HV$
+    countries: [AT]
+    note: Reports 210526211GZU-004 and -005. No settings table.
+- id: at-tor-r25-ktlx-g4-100-125k-2023
+  title: Intertek CN-PV-230228 — TOR Erzeuger Typ A/B V1.2, OVE-Richtlinie R 25 — SOFAR 100…125KTLX-G4
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127195834001997.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PV-230228
+  issued: '2023-05-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.2: 18 April 2022', 'TOR Erzeuger Typ B Version 1. 2: 18 April 2022', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V000001
+  families:
+  - name: 100–125KTLX-G4
+    match: ^(SOFAR)?(100|110|125)KTLX-G4$|^(SOFAR)?125KTLX-G4-A$
+    countries: [AT]
+    note: Report 221215056GZU-007. The -ESS hybrids and 99KTLX-G4 are not named. No settings table.

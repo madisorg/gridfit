@@ -27,3 +27,34 @@ documents:
     countries: [IT]
     note: Test report 22TH0188-CEI0-21_0. "Il dispositivo è per gli impianti di ogni potenza". The SPI is integrated (SolarEdge Technologies
       Ltd.). The annex carries measured SPI trip values at ambient, -10 °C and +55 °C.
+- id: at-tor-r25-se-3ph-rwb-rws-2021
+  title: Bureau Veritas U21-0182 — TOR Erzeuger Typ A:2019-12, OVE-Richtlinie R25 — SE3K … SE17K, -RWB, -RWS
+  url: https://www.memodo.de/mwdownloads/06953c6f11565b60af52b4b6a44f471f
+  copy_of: memodo.de (German wholesaler); SolarEdge's knowledge centre refuses scripts (Cloudflare)
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0182
+  issued: '2021-02-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2019-12', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: SE3K–SE17K three-phase, SE3K–5K-RWB, SE5K–10K-RWS
+    match: ^SE(3|4|5|6|7|8|9|10|12\.5|15|16|17)K$|^SE(3|4|5)K-RWB$|^SE(5|7|8|10)K-RWS$
+    countries: [AT]
+    note: Report 10TH0222-OVE-directive R25_0. A one-page copy without the annex. No settings table.
+- id: at-tor-r25-se-rwb48-2022
+  title: Bureau Veritas U22-0727 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — SE5K … SE10K-RWB48
+  url: https://www.memodo.de/mwdownloads/4ac2d6091a2055fb94569135f1596cb4
+  copy_of: memodo.de (German wholesaler); SolarEdge's knowledge centre refuses scripts (Cloudflare)
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U22-0727
+  issued: '2022-12-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: DSP 1 1.20, DSP 2 2.20
+  families:
+  - name: SE5K–SE10K-RWB48 (Home Hub, 48 V battery)
+    match: ^SE(5|7|8|10)K-RWB48$
+    countries: [AT]
+    note: Report 22TH0188-OVE-directive R25_0. No settings table.

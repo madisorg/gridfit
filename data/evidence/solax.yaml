@@ -334,3 +334,33 @@ documents:
       National settings table with numbers (pp. 1–4) for the 2021 edition of Příloha 4 (older than the 2025 table). Firmware not stated.
       The register writes X3-FTH-80K…125K without the -O suffix; those rows are not joined (the -O variant is not confirmed to be the
       same).
+- id: at-tor-r25-x3-mic-g2-2022
+  title: TÜV Rheinland AK 50551712 0001 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R25 — X3-MIC-3…15K-G2
+  url: https://www.solaxpower.com/uploads/file/solax-x3-mic-g2-tor-ove-r25-ak-50551712-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50551712 0001
+  issued: '2022-08-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: [TOR Erzeuger Typ A Version 1.1/12.19, OVE-Richtlinie R25/03.20]
+  firmware: 'Master: 1.00 Manager: 1.00'
+  families:
+  - name: X3-MIC G2 3–15 kW
+    match: ^X3-MIC-(3|4|5|6|8|10|12|15)K-G2$
+    countries: [AT]
+    note: Report CN225LEG 001. The -LV and -T-DG2 variants are not named. No settings table.
+- id: at-tor-r25-x3-pro-g2-2022
+  title: TÜV Rheinland AK 50568065 0001 — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R25 — X3-PRO-8…30K-G2
+  url: https://www.solaxpower.com/uploads/file/solax-x3-pro-g2-tor-ove-r25-ak-50568065-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50568065 0001
+  issued: '2022-12-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: [TOR Erzeuger Typ A Version 1.2, OVE-Richtlinie R25/03.20]
+  firmware: Master:1.00 Manger:1.00
+  families:
+  - name: X3-PRO G2 8–30 kW
+    match: ^X3-PRO-(8|10|12|15|17|20|25|30)K-G2$
+    countries: [AT]
+    note: Report CN22J5CM 001. The -LV variants are not named. No settings table.

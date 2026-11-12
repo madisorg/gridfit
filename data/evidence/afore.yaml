@@ -350,3 +350,20 @@ documents:
     match: ^(AF10K\-TH|AF10K\-TH\-0|AF10K\-THA|AF10K\-THA\-0|AF10K\-THP|AF10K\-THP\-0|AF12K\-TH|AF12K\-TH\-0|AF12K\-THA|AF12K\-THA\-0|AF12K\-THP|AF12K\-THP\-0|AF15K\-TH|AF15K\-TH\-0|AF15K\-THA|AF15K\-THA\-0|AF17K\-TH|AF17K\-TH\-0|AF17K\-THA|AF17K\-THA\-0|AF20K\-TH|AF20K\-TH\-0|AF25K\-TH|AF25K\-TH\-0|AF30K\-TH|AF30K\-TH\-0|AF3K\-TH|AF3K\-TH\-0|AF3K\-THA|AF3K\-THA\-0|AF3K\-THP|AF3K\-THP\-0|AF4K\-TH|AF4K\-TH\-0|AF4K\-THA|AF4K\-THA\-0|AF4K\-THP|AF4K\-THP\-0|AF5K\-TH|AF5K\-TH\-0|AF5K\-THA|AF5K\-THA\-0|AF5K\-THP|AF5K\-THP\-0|AF6K\-TH|AF6K\-TH\-0|AF6K\-THA|AF6K\-THA\-0|AF6K\-THP|AF6K\-THP\-0|AF8K\-TH|AF8K\-TH\-0|AF8K\-THA|AF8K\-THA\-0|AF8K\-THP|AF8K\-THP\-0)$
     countries: []
     accepted_in: [EE, NL, SE]
+- id: at-tor-r25-th-thp-2023
+  title: DEKRA 6162741.01COC — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R 25 — AF*-TH / AF*-THP 3–30 kW
+  url: https://www.aforenergy.com/wp-content/uploads/2025/04/%E3%80%90Austria%E3%80%91TOR-Erzeuger-Type-A-Three-Phase-Hybrid-Inverter3-30kW.pdf
+  issuer: DEKRA Testing and Certification (Shanghai) Ltd. (IAS, ISO/IEC 17065, PCA-141)
+  cert_no: 6162741.01COC
+  issued: '2023-08-01'
+  valid_until: '2028-08-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - TOR Erzeuger Type A Version 1.2:2022-04-11
+  - OVE-Richtlinie R 25:2020-03-01
+  families:
+  - name: Three-phase hybrid TH / THP 3–30 kW
+    match: ^(AF(3|4|5|6|8|10|12|15|17|20|25|30)K-TH|AF(3|4|5|6|8|10|12)K-THP)$
+    countries: [AT]
+    note: Confidential file 6162741.50. The battery-less -0 variants and the THA models are not named. No firmware, no settings table.
