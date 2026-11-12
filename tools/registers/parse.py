@@ -208,7 +208,27 @@ def read_be():
             if not s(r[1]) and not s(r[4]):
                 continue
             # power is read only to tell plug-in units from the rest; it is not stored
-            add("BE", r[2], r[4], cls_of(r), status, word, kva=(num(r[9]) or num(r[8]) or 0) / 1000 or None)
+            add("BE", r[2], be_model(r[2], r[3], r[4]), cls_of(r), status, word,
+                kva=(num(r[9]) or num(r[8]) or 0) / 1000 or None)
+
+
+def be_model(maker, series, model):
+    """A bare number in the model cell ("10", "8.5", "5.5/26", "3.0-1") names a unit only with its series (column D):
+    KOSTAL "10" was PLENTICORE plus 10, PLENTICORE plus G2 10, PIKO IQ 10, PIKO 10 and PLENTICORE M G3 10 in one device.
+    Written as the other lists write them: the maker's own name leaves the series ("Fronius Primo" -> "Primo 3.0-1"), and
+    a G2 / Plus / SC tail goes after the number ("PLENTICORE plus 10 G2", "SYMO GEN24 10.0 Plus SC"). A five-digit
+    article number (Perceval, as the Dutch list has it too) and a series that is no name ("(40-60)K") are left alone."""
+    model, series = s(model), s(series)
+    if not re.fullmatch(r"[\d.,/\s-]+K?", model, re.I) or re.fullmatch(r"\d{5,}", model) or not series \
+            or "(" in series or series.upper().endswith(model.upper()):
+        return model
+    words = series.split()
+    if len(words) > 1 and norm_maker(words[0])[0] == norm_maker(s(maker))[0]:
+        words = words[1:]
+    tail = []
+    while len(words) > 2 and re.fullmatch(r"G\d|PLUS|SC", words[-1], re.I):
+        tail.insert(0, words.pop())
+    return " ".join(words + [model] + tail)
 
 
 # ---------------------------------------------------------------- NL
