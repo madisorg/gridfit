@@ -334,3 +334,62 @@ documents:
       National settings table with numbers (pp. 1–4) for the 2021 edition of Příloha 4 (older than the 2025 table). Firmware not stated.
       The register writes X3-FTH-80K…125K without the -O suffix; those rows are not joined (the -O variant is not confirmed to be the
       same).
+- id: de-vde4105-x1-mini-g3-2022
+  title: TÜV Rheinland A3 50563237 0001 — VDE-AR-N 4105/11.18 — X1-Mini G3 X1-0.6…3.6K-S-D/N(L)
+  url: https://www.solaxpower.com/uploads/file/solax-x1-mini-g3-vde4105-2018-a3-50563237-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50563237 0001
+  issued: '2022-11-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 'DSP: 1.08, ARM: 1.07'
+  families:
+  - name: X1-Mini G3 single-phase 0.6–3.6 kW (X1-…-S-D(L) / -S-N(L))
+    match: ^X1-(MINIX1-)?((0\.6|0\.7|1\.1|1\.5|2\.0)|(2\.5|3(\.0)?|3\.3|3\.6)K)-S-[DN]\(L\)$
+    countries:
+    - DE
+    note: Certificate + Konformitätsnachweis (report CN21R4VE 003, engineering samples). The type designations carry no generation,
+      so register rows written "X1-Mini X1-0.7-S-D(L)" and "X1-3.0K-S-…" (= 3K) are joined; rows without the K from 2.5 kW up (X1-2.5-S-…,
+      X1-3.0-S-…, X1-3.3-S-…, X1-Air) are not named and not joined. Also on at.solaxpower.com under the same path.
+- id: de-vde4105-x1-boost-g4-2022
+  title: TÜV Rheinland A3 50558197 0001 — VDE-AR-N 4105/11.18 — X1-Boost-2.5K…6K-G4
+  url: https://www.solaxpower.com/uploads/file/solax-x1-boost-g4-vde4105-2018-a3-50558197-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50558197 0001
+  issued: '2022-09-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 'Master: 1.00, Manager: 1.00'
+  families:
+  - name: X1-Boost G4 single-phase 2.5–6 kW
+    match: ^X1-BOOST-(2\.5|3|3\.3|3\.6|4\.2|5|6)K-G4$
+    countries:
+    - DE
+    note: Certificate + Konformitätsnachweis (report CN22WQ5V 001, engineering samples). All seven named sizes are in the register.
+      The older X1-Boost …-T-D/N(L) generation is not named. Above 4.6 kVA single-phase the operator's unbalance limit applies.
+- id: de-vde4105-x3-mic-g2-2022
+  title: TÜV Rheinland A3 50550855 0001 — VDE-AR-N 4105/11.18 — X3-MIC-3K…15K-G2
+  url: https://www.solaxpower.com/uploads/file/solax-x3-mic-g2-vde4105-2018-a3-50550855-0001-en.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50550855 0001
+  issued: '2022-07-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 'Master: 1.00, Manager: 1.00'
+  families:
+  - name: X3-MIC G2 three-phase 3–15 kW
+    match: ^X3-MIC-(3|4|5|6|8|10|12|15)K-G2$
+    countries:
+    - DE
+    note: Certificate + Konformitätsnachweis (report CN22QIL1 001, engineering samples). Not joined — the -LV variants (X3-MIC-5K/6K/8K-G2-LV,
+      not named), "X3-MIC-10KW-G2" and the rows written "X3-MIC10.0-T-DG2" (another spelling the certificate does not use; the main
+      session may decide they are the same units).

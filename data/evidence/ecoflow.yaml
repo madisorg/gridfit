@@ -1,0 +1,159 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: EcoFlow
+maker_site: https://www.ecoflow.com/de
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: de-vde4105-eze-powerstream-2023
+  title: SGS Tecnos 230123RECO02-A-CER — Einheitenzertifikat VDE-AR-N 4105:2018-11 + Correction 1:2020-10 — PowerStream microinverter
+    EFWN511 / EFWN511B
+  url: https://websiteoss.ecoflow.com/cms/upload/2023/6/5/EFWN511_EFWN511B%20Grid%20Unit%20Certificate---GE_1685945957226.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid; UNE-EN ISO/IEC 17065)
+  cert_no: 230123RECO02-A-CER
+  issued: '2023-06-02'
+  valid_until: '2028-06-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11 + Correction 1:2020-10
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1.0
+  families:
+  - name: PowerStream microinverter EFWN511 (800 W) / EFWN511B (600 W)
+    match: ^EFWN511B?$
+    countries:
+    - DE
+    note: Unit certificate issued to EcoFlow Inc.; manufacturer printed as Dongguan Streamax Electronics Co., Ltd. Report 230123RECO02
+      of 2023-06-02. Single phase, with isolation transformer. No separate NA-protection certificate for PowerStream was found on EcoFlow's
+      sites.
+- id: de-vde4105-eze-powerocean-p1-2024
+  title: DEKRA 6177287.01COC — Unit certificate VDE-AR-N 4105:2018-11 — PowerOcean single-phase hybrid EF HD-P1-3K / 3.68K / 4.6K-S1
+  url: https://enterprise-service-eu-cdn.ecoflow.com/enterprise/documentation/1747017033726/EcoFlow%20PowerOcean%20Einphasig_VDE%204105_Certificate%206177287.01-COC.pdf
+  issuer: DEKRA Testing and Certification (Shanghai) Ltd.
+  cert_no: 6177287.01COC
+  issued: '2024-07-26'
+  valid_until: '2029-07-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100:2020-06
+  families:
+  - name: PowerOcean single-phase EF HD-P1-3K-S1 / -3.68K-S1 / -4.6K-S1
+    match: ^EFHD-P1-(3K|3\.68K|4\.6K)-S1$
+    countries:
+    - DE
+    note: Test file 6177287.50. The certificate states compliance "with the exception of clause 5.5.2" of VDE-AR-N 4105 and "clause
+      5.7" of DIN VDE V 0124-100 — the grid operator may ask about these. Used with NA-protection certificate 6177287.02COC. The register's
+      EFHD-P1-5K-S1 / -6K-S1 and the S2 generation are not in this certificate.
+- id: de-vde4105-nas-powerocean-p1-2024
+  title: DEKRA 6177287.02COC — Certificate for network and system protection VDE-AR-N 4105:2018-11 — PowerOcean single-phase EF HD-P1-3K
+    / 3.68K / 4.6K-S1
+  url: https://enterprise-service-eu-cdn.ecoflow.com/enterprise/documentation/1747017002224/EcoFlow%20PowerOcean%20Einphasig_VDE%204105_Certificate%206177287.02-COC-NS.pdf
+  issuer: DEKRA Testing and Certification (Shanghai) Ltd.
+  cert_no: 6177287.02COC
+  issued: '2024-07-26'
+  valid_until: '2029-07-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100:2020-06
+  firmware: V4.35.67.1
+  families:
+  - name: PowerOcean single-phase EF HD-P1-3K-S1 / -3.68K-S1 / -4.6K-S1 (integrated NA protection)
+    match: ^EFHD-P1-(3K|3\.68K|4\.6K)-S1$
+    countries:
+    - DE
+    note: Integrated NA protection (coupling relay Hongfa HF161F-W/12-HT(A27)); same clause 5.5.2 / 5.7 exceptions as the unit certificate.
+      The same file is also served at …/documentation/1747016891433/….
+- id: de-vde4105-eze-powerocean-p3-2024
+  title: SGS Tecnos 230123RECO08-E1-A-CER — Einheitenzertifikat VDE-AR-N 4105:2018-11 + Correction 1:2020-10 — PowerOcean three-phase
+    EF HD-P3-6K0 / 8K0 / 10K / 12K-S1
+  url: https://enterprise-service-eu-cdn.ecoflow.com/enterprise/documentation/1733213494079/EcoFlow%20PowerOcean%20Dreiphasig_Einheitenzertifikat.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid; UNE-EN ISO/IEC 17065)
+  cert_no: 230123RECO08-E1-A-CER
+  issued: '2024-04-26'
+  valid_until: '2028-06-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11 + Correction 1:2020-10
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1.0
+  families:
+  - name: PowerOcean three-phase EF HD-P3-6K0-S1 / -8K0-S1 / -10K-S1 / -12K-S1
+    match: ^EFHD-P3-(6K0|8K0|10K|12K)-S1$
+    countries:
+    - DE
+    note: Reports 230123RECO08 (2023-06-16) and 230123RECO08-1 (2024-04-25). Cancels and replaces 230123RECO08-A-CER (2023-06-20, 6/8/10
+      kW only, also on EcoFlow's CDN at …/enterprise/content/2024-03-07-67993d24-….pdf). Used with NA-protection certificate 230123RECO08-E1-B-CER.
+      The register's S2 and G2 generations (EFHD-P3-…-S2/-G2) are not in this certificate.
+- id: de-vde4105-nas-powerocean-p3-2024
+  title: SGS Tecnos 230123RECO08-E1-B-CER — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 + Correction 1:2020-10
+    — PowerOcean three-phase 6–12 kW
+  url: https://enterprise-service-eu-cdn.ecoflow.com/enterprise/documentation/1733213494080/EcoFlow%20PowerOcean%20Dreiphasig_Zertifikat%20f%C3%BCr%20den%20Netz-%20und%20Anlagenschutz.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid; UNE-EN ISO/IEC 17065)
+  cert_no: 230123RECO08-E1-B-CER
+  issued: '2024-04-26'
+  valid_until: '2028-06-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11 + Correction 1:2020-10
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: Master Software V1.0.0.0; Safety Firmware V1.0.0
+  families:
+  - name: PowerOcean three-phase EF HD-P3-6K0-S1 / -8K0-S1 / -10K-S1 / -12K-S1 (integrated NA protection)
+    match: ^EFHD-P3-(6K0|8K0|10K|12K)-S1$
+    countries:
+    - DE
+    note: Integrated NA protection; valid only together with 230123RECO08-E1-A-CER. Cancels and replaces 230123RECO08-B-CER. The identical
+      file is also listed at …/documentation/1733213766093/….
+- id: de-vde4105-eze-powerocean-plus-2025
+  title: SGS Tecnos 240168RECO12-A-CER — Einheitenzertifikat VDE-AR-N 4105:2018-11 + Correction 1:2020-10 — PowerOcean Plus EF HD-P3-15K0
+    / 20K0 / 25K0 / 29K9-S1
+  url: https://enterprise-service-eu-cdn.ecoflow.com/enterprise/documentation/1737016128538/EcoFlow%20PowerOcean%20Plus%20_Einheitenzertifikat_SGS%20Spain.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid; UNE-EN ISO/IEC 17065)
+  cert_no: 240168RECO12-A-CER
+  issued: '2025-01-09'
+  valid_until: '2030-01-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11 + Correction 1:2020-10
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 3.0.4.5
+  families:
+  - name: PowerOcean Plus three-phase EF HD-P3-15K0-S1 / -20K0-S1 / -25K0-S1 / -29K9-S1
+    match: ^EFHD-P3-(15K0|20K0|25K0|29K9)-S1$
+    countries:
+    - DE
+    note: Test report SUEE241000011051 (SGS-CSTC Suzhou, 2024-11-06); manufacturer printed EcoFlow Innovation ltd. The same models also
+      have SGS Singapore certificates PCS-24-1166/M1 (unit, rev. 2024-12-05, expires 2027-11-14) and PCS-24-1165/M1 (NA protection)
+      on the same CDN (…/documentation/1733451801587/… and …/1733451814536/…); this SGS Tecnos pair is newer and valid longer.
+- id: de-vde4105-nas-powerocean-plus-2025
+  title: SGS Tecnos 240168RECO12-B-CER — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 + Correction 1:2020-10 — PowerOcean
+    Plus 15–29.9 kW
+  url: https://enterprise-service-eu-cdn.ecoflow.com/enterprise/documentation/1737016128540/EcoFlow%20PowerOcean%20Plus%20_Zertifikat%20f%C3%BCr%20den%20Netz-%20und%20Anlagenschutz_SGS%20Spain.pdf
+  issuer: SGS Tecnos, S.A.U. (Madrid; UNE-EN ISO/IEC 17065)
+  cert_no: 240168RECO12-B-CER
+  issued: '2025-01-09'
+  valid_until: '2030-01-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11 + Correction 1:2020-10
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 3.0.4.5
+  families:
+  - name: PowerOcean Plus three-phase EF HD-P3-15K0-S1 … -29K9-S1 (integrated NA protection)
+    match: ^EFHD-P3-(15K0|20K0|25K0|29K9)-S1$
+    countries:
+    - DE
+    note: Integrated NA protection; valid only together with 240168RECO12-A-CER.

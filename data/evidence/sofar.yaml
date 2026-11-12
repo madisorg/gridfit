@@ -21,3 +21,410 @@ documents:
   - name: HYD 5–20KTL-3PH
     match: ^(SOFAR)?HYD-?(5|6|8|10|15|20)KTL-3PH
     countries: [AT, BE, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, IE, IT, LT, LV, NL, 'NO', PL, RO, SE, SI, SK, TR, UA]
+- id: de-vde4105-eze-ktlm-g3-2025
+  title: Intertek CN-PVES-210086R1 — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 3KTLM-G3, 3.6KTLM-G3, 4KTLM-G3, 4.6KTLM-G3
+  url: https://www.sofarsolar.com/upload/file/20251229/1766996337801073491.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PVES-210086R1
+  issued: '2025-01-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SOFAR 3–4.6KTLM-G3 single-phase string inverters
+    match: ^(SOFAR)?(3|3\.6|4|4\.6)KTLM-G3(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - DE
+    note: Report 210120038GZU-001 (26 April 2021); revision of the 2021 unit certificate. PEmax 3.013 / 3.693 / 4.017 / 4.595 kW, SEmax
+      up to 4.597 kVA. The register's 5KTLM-G3 / 6KTLM-G3 (and -A) and the KTLM-G2 generation are not named and not joined; register
+      rows carrying the description "Grid connected photovoltaic inverter" are joined.
+- id: de-vde4105-eze-ktlx-g3-3-12k-2022
+  title: Intertek CN-PV-210109R1 — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 3.3–12KTLX-G3 (and -A)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126836667016558.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210109R1
+  issued: '2022-07-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SOFAR 3.3–12KTLX-G3 three-phase string inverters (incl. 5/8.8/10/11KTLX-G3-A)
+    match: ^(SOFAR)?((3\.3|4\.4|5\.5|6\.6|8\.8|11|12)KTLX-G3|(5|8\.8|10|11)KTLX-G3-A)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - DE
+    note: Report 210416108GZU-014; replaces CN-PV-210109 of 14 May 2021. Misspelt register rows (e.g. "SOFAR3.3LKTLX-G3.") are not joined.
+- id: de-vde4105-eze-ktlx-g3-15-24k-2021
+  title: Bureau Veritas U21-0313 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SOFAR 15/17/20/22/24KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126937032051553.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0313
+  issued: '2021-05-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V010000
+  families:
+  - name: SOFAR 15–24KTLX-G3 three-phase string inverters
+    match: ^(SOFAR)?(15|17|20|22|24)KTLX-G3(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - DE
+    note: Certification programme NSOP-0032-DEU-ZE-V01. The -A variants (15/20/24KTLX-G3-A) and the misspelt "KLTX" rows are not named
+      / not joined. The 20KTLX-G3 also has the 2025 NA-protection certificate CN-PVES-230178R1.
+- id: de-vde4105-eze-ktlx-g3-25-50k-2023
+  title: Intertek Deutschland 23GZD0335-01 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SOFAR 25–50KTLX-G3 (-A, -HV)
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127032585025616.pdf
+  issuer: Intertek Deutschland GmbH (ISO/IEC 17065)
+  cert_no: 23GZD0335-01
+  issued: '2023-04-18'
+  valid_until: '2028-04-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V000001
+  families:
+  - name: SOFAR 25–50KTLX-G3, 30KTLX-G3-A, 40/50KTLX-G3-HV
+    match: ^(SOFAR)?((25|30|33|36|40|45|50)KTLX-G3|30KTLX-G3-A|(40|50)KTLX-G3-HV)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - DE
+    note: Certification scheme GMS-OP-19; PEmax 25.007–50.039 kW, SEmax 27.654–55.595 kVA; the remarks in Annex 2 A.6 apply. Rests on
+      the Intertek Shanghai unit certificate CN-PV-230103 (16 March 2023, report 230302181GZU-001).
+- id: de-vde4105-nas-ktlx-g3-20-50k-2025
+  title: Intertek CN-PVES-230178R1 — NA-protection certificate VDE-AR-N 4105:2018-11 — SOFAR 20–50KTLX-G3 (-A, -HV)
+  url: https://www.sofarsolar.com/upload/file/20260104/1767515574863006556.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PVES-230178R1
+  issued: '2025-08-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V000001
+  families:
+  - name: SOFAR 20–50KTLX-G3, 30KTLX-G3-A, 40/50KTLX-G3-HV (integrated NA protection)
+    match: ^(SOFAR)?((20|25|30|33|36|40|45|50)KTLX-G3|30KTLX-G3-A|(40|50)KTLX-G3-HV)(-GRIDCONNECTEDPHOTOVOLTAICINVERTER|-SOLARGRID-TIEDINVERTER)?$
+    countries:
+    - DE
+    note: Certificate of the network and system protection (integrated NS protection); report 230302181GZU-001 rev. 2 (6 Aug 2025);
+      replaces CN-PV-230178 of 18 April 2023.
+- id: de-vde4105-nas-ktlx-g3p-2025
+  title: Kiwa Primara 25-331-00 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — SOFAR 15–30KTLX-G3P
+  url: https://www.sofarsolar.com/upload/file/20251229/1766996524960041201.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 25-331-00
+  issued: '2025-12-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V010000
+  families:
+  - name: SOFAR 15–30KTLX-G3P (and 20KTLX2-G3P)
+    match: ^(SOFAR)?((15|17|20|23|25|30)KTLX|20KTLX2)-G3P$
+    countries:
+    - DE
+    note: 'NA-protection certificate only (report LS2A25020832EGDE01, programme SOP-9-1_15 GCC): integrated NA protection with integrated
+      decoupling switch, usable with a central NA relay (§6.4.1). No unit certificate (EZE) for the G3P is in the download centre.'
+- id: de-vde4105-eze-ktlx-g3-60-80k-2023
+  title: Intertek CN-PV-220128R2 — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 60–80KTLX-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127130252027530.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220128R2
+  issued: '2023-05-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SOFAR 60KTLX-G3, 60KTLX2-G3, 70/75/80KTLX-G3
+    match: ^(SOFAR)?(60KTLX2?|70KTLX|75KTLX|80KTLX)-G3$
+    countries:
+    - DE
+    note: Report 230508033GZU-001; replaces CN-PV-220128R1 of 10 Feb 2023. PEmax 60.05 / 70.02 / 75.03 / 80.05 kW.
+- id: de-vde4105-eze-ktlx-g4-2023
+  title: Kiwa Primara 23-197-00 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SOFAR 100/110/125KTLX-G4, 125KTLX-G4-A
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127202943077915.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 23-197-00
+  issued: '2023-05-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V000001
+  families:
+  - name: SOFAR 100–125KTLX-G4
+    match: ^(SOFAR)?((100|110|125)KTLX-G4|125KTLX-G4-A)$
+    countries:
+    - DE
+    note: Family tested on the 125KTLX-G4-A. The register's 99KTLX-G4 and the -ESS variants are not named and not joined. The NA-protection
+      certificate of 2023-05-17 sits beside it.
+- id: de-vde4105-eze-tl-g2-10-15k-2022
+  title: SGS Tecnos 2621/0439-A-CER — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 10000/12000/15000TL-G2
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127316296026960.pdf
+  issuer: SGS Tecnos, S.A. (UNE-EN ISO/IEC 17065)
+  cert_no: 2621/0439-A-CER
+  issued: '2022-01-05'
+  valid_until: '2027-01-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  firmware: V 1.80
+  families:
+  - name: SOFAR 10000–15000TL-G2
+    match: ^(SOFAR)?(10000|12000|15000)TL-G2$
+    countries:
+    - DE
+    note: Report 190411085GZU-001 (24 June 2020). The register's 10000TL-G2-A is not named.
+- id: de-vde4105-eze-tl-g2-20-33k-2022
+  title: SGS Tecnos 2621/0437-A-CER — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 20000/25000/30000/33000TL-G2
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126981685056227.pdf
+  issuer: SGS Tecnos, S.A. (UNE-EN ISO/IEC 17065)
+  cert_no: 2621/0437-A-CER
+  issued: '2022-01-05'
+  valid_until: '2027-01-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  families:
+  - name: SOFAR 20000–33000TL-G2
+    match: ^(SOFAR)?(20000|25000|30000|33000)TL-G2$
+    countries:
+    - DE
+    note: First issued 5 Jan 2022. Register rows written "SOFAR20KTL-G2" etc. are not joined (not the certificate's designation).
+- id: de-vde4105-eze-tl-50-70k-2022
+  title: SGS Tecnos 2621/0438-A-CER — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 50000TL, 60000TL, 70000TL-HV
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127092046037584.pdf
+  issuer: SGS Tecnos, S.A. (UNE-EN ISO/IEC 17065)
+  cert_no: 2621/0438-A-CER
+  issued: '2022-01-07'
+  valid_until: '2027-01-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  firmware: V 2.40
+  families:
+  - name: SOFAR 50000TL / 60000TL / 70000TL-HV
+    match: ^(SOFAR)?(50000TL|60000TL|70000TL-HV)$
+    countries:
+    - DE
+    note: Report 190325020GZU-001 (28 June 2021).
+- id: de-vde4105-eze-ktl-x-2021
+  title: Intertek CN-PV-210292 — Unit certificate VDE-AR-N 4105:2018-11 — SOFAR 3.3–12KTL-X
+  url: https://www.sofarsolar.com/upload/file/20240205/1707126768711001796.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-210292
+  issued: '2021-12-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SOFAR 3.3–12KTL-X
+    match: ^(SOFAR)?(3\.3|4\.4|5|5\.5|6\.6|8\.8|11|12)KTL-X$
+    countries:
+    - DE
+    note: Report 190325017GZU-001; replaces CN-PV-200058 of 29 June 2020. An SGS unit certificate for the same family (2621/0436-A-CER,
+      valid until 2026-12-27) sits beside it in the download centre.
+- id: de-vde4105-eze-tlm-2019
+  title: Intertek CN-PV-190013 — Bescheinigung VDE-AR-N 4105:2018 — SOFAR 3000TLM, 3680TLM, 4000TLM, 4600TLM
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127302285090035.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-190013
+  issued: '2019-09-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SOFAR 3000–4600TLM
+    match: ^(SOFAR)?(3000|3680|4000|4600)TLM$
+    countries:
+    - DE
+    note: Report 190325015GZU-001. PEmax = SEmax 3.0 / 3.68 / 4.0 / 4.6 kW/kVA. Old (2019) but no newer certificate for this family.
+- id: de-vde4105-eze-tl-g3-1-3k-2022
+  title: Bureau Veritas U22-0773 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SOFAR 1100–3300TL-G3
+  url: https://www.sofarsolar.com/upload/file/20240205/1707127614272020519.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0773
+  issued: '2022-12-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V2.60
+  families:
+  - name: SOFAR 1100/1600/2200/2700/3000/3300TL-G3
+    match: ^(SOFAR)?(1100|1600|2200|2700|3000|3300)TL-G3$
+    countries:
+    - DE
+    note: Report PVDE200320N031-2-R2. Page 1 prints the names with typos (1100TL-G3 and 1600TL-G3 twice); the rated powers (1100…3300
+      VA) and the annex name all six. The register's "SOFAR1.1KTL3-G3"-style rows are not joined.
+- id: de-vde4105-eze-hyd-ep-3-4k6-2023
+  title: Intertek Deutschland 23GZD0768-02 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — HYD 3000/3680/4000/4600-EP
+  url: https://www.sofarsolar.com/upload/file/20240206/1707190272102096784.pdf
+  issuer: Intertek Deutschland GmbH (ISO/IEC 17065)
+  cert_no: 23GZD0768-02
+  issued: '2023-12-22'
+  valid_until: '2028-12-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V000001
+  families:
+  - name: HYD 3000–4600-EP single-phase hybrid (C version, 16 A)
+    match: ^(SOFAR)?HYD-?(3000|3680|4000|4600)-EP$
+    countries:
+    - DE
+    note: PEmax 3.004–4.594 kW, SEmax 3.333–4.600 kVA. "C version, 16 A" hardware; supersedes 23GZD0768-01 (2023-08-17) and, for these
+      sizes, Bureau Veritas U21-0303 of 2021.
+- id: de-vde4105-eze-hyd-ep-2021
+  title: Bureau Veritas U21-0303 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — HYD 3000…6000-EP
+  url: https://www.sofarsolar.com/upload/file/20240206/1707190269358071348.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0303
+  issued: '2021-05-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V02000
+  families:
+  - name: HYD 5000/5500/6000-EP (limited to 4.6 kW in DE)
+    match: ^(SOFAR)?HYD-?(5000|5500|6000)-EP$
+    countries:
+    - DE
+    note: The certificate lists HYD 3000–6000-EP; joined here only for 5000/5500/6000-EP, whose active power it states as 4.6 kW. The
+      3000–4600-EP sizes have the newer Intertek certificate.
+- id: de-vde4105-eze-hyd-es-2020
+  title: Bureau Veritas U20-1007 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — HYD 3000/3600/4000/4600-ES
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129636675072674.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U20-1007
+  issued: '2020-12-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V2.00
+  families:
+  - name: HYD 3000–4600-ES single-phase hybrid
+    match: ^(SOFAR|ENERGYSTORAGEINVERTER)?HYD-?(3000|3600|4000|4600)-ES$
+    countries:
+    - DE
+    note: Report PVDE200320N032; supersedes the 2018-12-12 certificate. The register's HYD5000-ES / HYD6000-ES are not named and not
+      joined.
+- id: de-vde4105-eze-hyd-ktl-3ph-2023
+  title: Kiwa Primara 23-236-01 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — HYD-5…20KTL-3PH
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129495737017371.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 23-236-01
+  issued: '2023-10-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V2.00
+  families:
+  - name: HYD 5–20KTL-3PH three-phase hybrid (and 10KTL-3PH-A)
+    match: ^(SOFAR)?HYD-?((5|6|8|10|15|20)KTL-3PH|10KTL-3PH-A)$
+    countries:
+    - DE
+    note: Family tested on HYD-15KTL-3PH; supersedes 23-236-00 (2023-06-12). The newer HYD-…-T1 series is not named.
+- id: de-vde4105-eze-me-ktl-3ph-2021
+  title: Bureau Veritas Shenzhen 2188AP020105016 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — ME 5…20KTL-3PH
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129655135028088.pdf
+  issuer: Bureau Veritas Shenzhen Co., Ltd. (test laboratory)
+  cert_no: 2188AP020105016
+  issued: '2021-03-31'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V000001
+  families:
+  - name: ME 5–20KTL-3PH AC-coupled storage inverter
+    match: ^(SOFAR)?ME-?(5|6|8|10|15|20)KTL-3PH$
+    countries:
+    - DE
+    note: Report PVDE2102WDG0105; integrated NA protection. Issued by the test laboratory; the document names no ISO/IEC 17065 certification
+      body, so it is weaker than the others.
+- id: de-vde4105-eze-me3000sp-2020
+  title: Intertek CN-PV-200114 — Bescheinigung VDE-AR-N 4105:2018-11 — ME 3000SP
+  url: https://www.sofarsolar.com/upload/file/20231223/1703317156528048316.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-200114
+  issued: '2020-08-31'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: ME 3000SP AC-coupled storage converter
+    match: ^(SOFAR)?ME-?3000SP$
+    countries:
+    - DE
+    note: Report 200320118GZU-001. PEmax 3.013 kW, SEmax 3.117 kVA.
+- id: de-vde4105-eze-esi-s1-2022
+  title: Intertek CN-PV-220156 — Unit certificate VDE-AR-N 4105:2018-11 — ESI 3K/3.68K/4K/4.6K-S1
+  url: https://www.sofarsolar.com/upload/file/20240205/1707129475697076774.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220156
+  issued: '2022-08-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: PowerAll ESI 3–4.6K-S1 single-phase hybrid
+    match: ^(SOFAR(POWERALL)?)?ESI-?(3|3\.68|4|4\.6)K-S1$
+    countries:
+    - DE
+    note: Report 220321040GZU-001; PEmax 3.005 / 3.679 / 4.005 / 4.604 kW. The register's ESI 5K/6K-S1 are not named and not joined.
+- id: de-vde4105-eze-esi-t1-2025
+  title: Kiwa Primara 25-187-00 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — ESI-5…12K-T1
+  url: https://www.sofarsolar.com/upload/file/20250616/1750067543697005602.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 25-187-00
+  issued: '2025-05-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V000001
+  families:
+  - name: PowerAll ESI-5–12K-T1 three-phase hybrid (and ESI-9.9K-T1-A)
+    match: ^(SOFAR)?ESI-((5|6|6\.5|8|10|12)K-T1|9\.9K-T1-A)$
+    countries:
+    - DE
+    note: Family tested on ESI-12K-T1 (programme SOP-9-1_15 GCC). NA-protection certificate 25-188-00 (report LS2A25030601EGDE01) of
+      the same date sits beside it. "SOFARESI-9.99K-T1-A" is not joined.

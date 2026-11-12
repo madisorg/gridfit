@@ -308,3 +308,356 @@ documents:
     note: Report 64.290.22.30504.01. NA-protection settings table with numbers p. 16 (U>> 1.25 Un 287.8 V 129 ms, U> 1.10 Un 10-min
       mean, U< 0.8 Un 183.4 V 3019 ms, U<< 0.45 Un 104.1 V 329 ms, f< 47.5 Hz 133 ms, f> 51.5 Hz 121 ms); above 4.6 kVA single-phase
       only with unbalance ≤ 4.6 kVA. The edition is printed without month (2018).
+- id: de-vde4105-s6-gr1p-um-2024
+  title: TÜV Rheinland A3 50616988 0001 — VDE-AR-N 4105:2018-11 — S6-GR1P0.6K-UM, S6-GR1P0.8K-UM
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE4105_VDE_0124_S6-GR1P0%2C8K-UM_GER_V01%28bilingual%29.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50616988 0001
+  issued: '2024-01-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: V1.5
+  families:
+  - name: S6-GR1P micro string inverter 0.6 / 0.8 kW (-UM)
+    match: ^S6-GR1P0\.[68]K-UM$
+    countries:
+    - DE
+    note: Certificate of conformity + Konformitätsnachweis / E.4 (report CN24U7UT 001). Small single-phase units for balcony-size systems.
+- id: de-vde4105-s5-s6-gr1p-4g-2022
+  title: TÜV SÜD ESY 086470 0115 Rev. 00 — VDE-AR-N 4105:2018 — Solis-1P2.5–4.6K-4G, S5-GR1P2.5–4.6K, S6-GR1P2.5–4.6K
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_1P(2,5-4,6)K-4G_S5-GR1P(2,5-4,6)K_S6-GR1P(2,5-4,6)K_GER_V02(GER).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0115 Rev. 00
+  issued: '2022-06-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  firmware: A1
+  families:
+  - name: Solis-1P-4G, S5-GR1P, S6-GR1P single-phase 2.5–4.6 kW
+    match: ^(SOLIS-1P(2\.5|3|3\.6|4|4\.6)K-4G|S[56]-GR1P(2\.5|3|3\.6|4|4\.6)K)$
+    countries:
+    - DE
+    note: Report 64290223050301; integrated NA protection. The 5 kW sizes in the register (SOLIS-1P5K-4G, S5-GR1P5K, S6-GR1P5K) are
+      not named and not joined; the S6-GR1P…-S(21A) and …01-NV-YD rows are other hardware and are not joined.
+- id: de-vde4105-mini-4g-s5-s6-gr1p-m-2022
+  title: TÜV Rheinland A3 50560741 0001 — VDE-AR-N 4105/11.18 — Solis-mini-700…3600-4G, S5-GR1P0.7–3.6K-M, S6-GR1P0.6–3.6K-M
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_mini-(700-3600)-4G_S5-GR1P(0,7-3,6)K-M_S6-GR1P(0,6-3,6)K-M_GER_V01(bilingual).pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50560741 0001
+  issued: '2022-09-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: A1
+  families:
+  - name: Solis-mini-4G, S5-GR1P-M, S6-GR1P-M single-phase 0.6–3.6 kW
+    match: ^(SOLIS-MINI-(700|1000|1500|2000|2500|3000|3600)-4G|S5-GR1P(0\.7|1|1\.5|2|2\.5|3|3\.6)K-M|S6-GR1P(0\.6|0\.7|1|1\.5|2|2\.5|3|3\.6)K-M)$
+    countries:
+    - DE
+    note: Report CN21E0CS 004 (engineering sample); bilingual certificate + Konformitätsnachweis / E.4. S6-GR1P0.6K-M is named but not
+      in the register.
+- id: de-vde4105-s5-gr3p-3p-4g-2022
+  title: TÜV Rheinland A3 50548333 0001 — VDE-AR-N 4105/11.18 — Solis-3P5–20K-4G(-LV), S5-GR3P3–20K, S5-GR3P5–10K-LV
+  url: https://cmsdata.solisinverters.com/uploads/file/Sollis_certificate_VDE_4105_VDE_0124_3P(5-20)K-4G_3P(5-10)K-4G-LV_S5-GR3P(3-20)K_GR3P(5-10)K-LV_GER_V01(bilingual).pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50548333 0001
+  issued: '2022-06-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: V30
+  families:
+  - name: Solis-3P-4G and S5-GR3P three-phase 3–20 kW (and -LV 5/6/10 kW)
+    match: ^(SOLIS-3P(5|6|8|9|10|12|15|17|20)K-4G|(SOLIS)?S5-GR3P(3|4|5|6|8|9|10|12|13|15|17|20)K|SOLIS-3P(5|6|10)K-4G-LV|S5-GR3P(5|6|10)K-LV)$
+    countries:
+    - DE
+    note: Report CN210NX5 004 (engineering sample). The certificate's Solis-3P…-4G list starts at 5 kW, so SOLIS-3P3K-4G and SOLIS-3P4K-4G
+      are not joined; the Belgian -BE variants and the newer S6-GR3P…02-NV-ND series are not named.
+- id: de-vde4105-s5-gc-25-40k-5g-2022
+  title: TÜV Rheinland A3 50540378 0001 — VDE-AR-N 4105/11.18 — Solis-25–40K-5G, -HV-5G, -LV-5G, S5-GC25–40K, -HV, -LV
+  url: https://cmsdata.solisinverters.com/uploads/file/Sollis_certificate_VDE_4105_VDE_0124_%2825-50%29K-5G_%2815-23%29K-LV-5G_S5-GC%2825-50%29K_S5-GC%2815-23%29K-LV_GER%28bilingual%29_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50540378 0001
+  issued: '2022-04-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: V2F
+  families:
+  - name: Solis-5G / S5-GC three-phase 25–40 kW, HV 40/50 kW, LV 15–23 kW
+    match: ^(SOLIS-(25|30|33|36|40)K-5G|SOLIS-(40|50)K-HV-5G|SOLIS-(15|20|23)K-LV-5G|(SOLIS)?S5-GC(25|30|33|36|40)K|S5-GC(40|50)K-HV|S5-GC(15|20|23)K-LV)$
+    countries:
+    - DE
+    note: Report 50290632 006 (engineering samples). The register's SOLIS-3P25K-5G … 3P40K-5G and bare 25K/30K/40K rows are not joined
+      (not the certificate's designation).
+- id: de-vde4105-s5-gc-50-60k-2021
+  title: TÜV Rheinland AK 50522667 0001 — VDE-AR-N 4105/11.18 — S5-GC50K, S5-GC60K, S5-GC25K-LV, S5-GC30K-LV, S5-GC36K-LV
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE4105_VDE0124_S5-GC(50-60)K_S5-GC(25-36)K-LV_GER_V01(bilingual).pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50522667 0001
+  issued: '2021-10-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: VDD
+  families:
+  - name: S5-GC 50/60 kW and S5-GC-LV 25/30/36 kW
+    match: ^((SOLIS)?S5-GC(50|60)K|S5-GC(25|30|36)K-LV)$
+    countries:
+    - DE
+    note: Report CN21PP9V 001 (engineering samples). Scanned PDF (no text layer) — read from the page image.
+- id: de-vde4105-s5-gc-75-110k-5g-2021
+  title: TÜV Rheinland AK 50522841 0001 — VDE-AR-N 4105/11.18 — Solis-75–110K-5G, S5-GC75–110K, -HV, -BHV, S5-GC50/60K-LV
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_(50-60)K-LV-5G_(75-125)K-5G_S5-GC(75-125)K-S5-GC(50-60)K-LV_GER_V01(Bilingual).pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50522841 0001
+  issued: '2021-10-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: V32
+  families:
+  - name: Solis-5G / S5-GC three-phase 75–125 kW and LV 50/60 kW
+    match: ^(SOLIS-(75|80|90|100|110)K-5G|SOLIS-(100|125)K-HV-5G|S5-GC(75|80|100|110)K|S5-GC125K?-HV|SOLIS-110K-BHV-5G|S5-GC100K-HV|S5-GC110K-BHV|S5-GC(50|60)K-LV|SOLIS-(50|60)K-LV-5G)$
+    countries:
+    - DE
+    note: Report 50378457 003 (engineering sample). Scanned PDF — read from the page image. The -PRO variants (SOLIS-80K-5G-PRO …) are
+      not named and not joined.
+- id: de-vde4105-s6-gc-50-125k-2024
+  title: TÜV Rheinland A3 50630167 0001 — Konformitätsnachweis / E.4 VDE-AR-N 4105:2018-11 — S6-GC50–75K-LV, S6-GC80–125K(-HV)
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-%2880-110%29K_%2850-75%29K-LV_GER_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50630167 0001
+  issued: '2024-05-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: A2
+  families:
+  - name: S6-GC three-phase 80–125 kW, -HV 125 kW, -LV 50/60/75 kW
+    match: ^S6-GC((50|60|75)K-LV|(80|100|110|125)K|125K-HV)$
+    countries:
+    - DE
+    note: Report CN24BN20 001; Konformitätsnachweis with E.4 unit certificate. The register row S6-GC75K (without -LV) is not named
+      and not joined.
+- id: de-vde4105-s6-gc3p-03-2024
+  title: TÜV SÜD ESY 086470 0230 Rev. 00 — VDE-AR-N 4105:2018 — S6-GC3P25–36K03-NV-ND, S6-GC3P15/20K03-LV-ND
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-GC3P(25-36)K03-NV-ND_GC3P(15-20)K03-LV-ND_GER_V01(German).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0230 Rev. 00
+  issued: '2024-11-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  families:
+  - name: S6-GC3P…K03 three-phase 25–36 kW (NV) and 15/20 kW (LV)
+    match: ^S6-GC3P((15|20)K03-LV-ND|(25|30|33|36)K03-NV-ND)(\(CONNECTEDINDELTA3X230V\))?$
+    countries:
+    - DE
+    note: Report 704092403746-00; integrated NS protection. The register's "(connected in delta 3x230V)" comment on the LV rows is kept
+      in the match. An English copy of the same certificate sits beside it (…_GER_V01(English).pdf).
+- id: de-vde4105-s6-gc3p-04-2025
+  title: TÜV Rheinland A3 50690122 0001 — VDE-AR-N 4105/11.18 — S6-GC3P…K04-NV-ND(-R), …K04-LV-ND, 23K03-LV-ND, 60K05-NV-ND
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-GC3P(40-60)KXX-NV-ND_S6-GC3P(20-40)K04-NV-ND-R_GER_V02.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50690122 0001
+  issued: '2025-08-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-GC3P three-phase 20–60 kW (K04 NV-ND-R, K04 NV-ND, K04 LV-ND, 23K03-LV-ND, 60K05-NV-ND)
+    match: ^S6-GC3P((20|25|27\.6|30|33|36|40)K04-NV-ND-R|23K03-LV-ND|(25|30|36)K04-LV-ND|(40|50)K04-NV-ND|60K05-NV-ND)(\(CONNECTEDINDELTA3X230V\))?$
+    countries:
+    - DE
+    note: Report CN24RRW6 002. All 14 named types are in the register and joined.
+- id: de-vde4105-s6-gc3p-07-2025
+  title: TÜV Rheinland A3 50668891 0001 — VDE-AR-N 4105/11.18 — S6-GC3P80/100K07-LV-ND, 150K07-NV-ND, 200K07-HV-ND
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-GC3P150K07-NV-ND_GC3P200K07-HV-ND_GC3P(80-100)K07-LV-ND_GER_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50668891 0001
+  issued: '2025-03-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-GC3P…K07 commercial 80–200 kW
+    match: ^S6-GC3P((80|100)K07-LV-ND|150K07-NV-ND|200K07-HV-ND)$
+    countries:
+    - DE
+    note: Report CN25DHS2 001. Units above 135 kW sit at the edge of the low-voltage rule's scope — the plant size decides whether 4105
+      or 4110 applies.
+- id: de-vde4105-s6-ea1p-l-2023
+  title: TÜV Rheinland A3 50613913 0001 — VDE-AR-N 4105/11.18 — S6-EA1P3K/3.6K/4.6K-L (AC-coupled)
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EA1P(3-4,6)K-L_GER_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50613913 0001
+  issued: '2023-12-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-EA1P AC-coupled single-phase 3 / 3.6 / 4.6 kW
+    match: ^S6-EA1P(3|3\.6|4\.6)K-L$
+    countries:
+    - DE
+    note: Report CN23KV65 001. The register's S6-EA1P5K-L and 6K-L are not named and not joined.
+- id: de-vde4105-s6-eh1p-l-plus-2026
+  title: TÜV SÜD ESY 086470 0232 Rev. 02 — Einheitenzertifikat VDE-AR-N 4105:2018 — S6-EH1P3–8K-L-PLUS, S6-EH1P3–10K-L-PLUS(21A)
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EH1P(3-10)K-L-PLUS(-PLUS(21A)_GER_V03(GE).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0232 Rev. 02
+  issued: '2026-07-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  families:
+  - name: S6-EH1P-L-PLUS single-phase LV hybrid 3–8 kW (and (21A) 3–10 kW)
+    match: ^S6-EH1P((3|3\.6|4\.6|5|6|8)K-L-PLUS|(3|3\.6|4\.6|5|6|8|9|10)K-L-PLUS\(21A\))$
+    countries:
+    - DE
+    note: Unit certificate, report 7040924037118-02. The (21A) variants are named but not in the register. An English copy is at …_GER_V03(EN).pdf.
+      Above 4.6 kVA single-phase the operator's unbalance limit applies.
+- id: de-vde4105-s6-eh3p-3-10k-h-2024
+  title: TÜV Rheinland A3 50617842 0001 — VDE-AR-N 4105/11.18 — S6-EH3P3–10K-H-EU(-OD), S6-EH3P5–10K2-H(-OD), -EU-PRO, 7K-H-LV
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EH3P%283-10%29K-H-EU%28-PRO%29%28-OD%29_S6-EH3P%285-10%29K2-H%28-OD%29_6-EH3P7K-H-LV_GER_V03%28Dakks%29.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50617842 0001
+  issued: '2024-01-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-EH3P three-phase HV hybrid 3–10 kW (-H-EU, -H-EU-OD, K2-H, K2-H-OD, -H-EU-PRO, 7K-H-LV)
+    match: ^S6-EH3P((3|4|5|6|8|10)K-H-EU(-OD)?|(5|6|8|10)K2-H(-OD)?|(8|10)K-H-EU-PRO|7K-H-LV)$
+    countries:
+    - DE
+    note: Report CN22CS4X 008; supersedes A3 50586425 0001 of 2023-05-29 (report CN22CS4X 002, same models without 7K-H-LV). The Belgian
+      -H-BE variants are not named and not joined.
+- id: de-vde4105-s6-eh3p-8-20k-h-2024
+  title: TÜV SÜD ESY 086470 0177 Rev. 01 — VDE-AR-N 4105:2018 — S6-EH3P12–20K(-ND)-H, S6-EH3P8–12K-LV(-ND)-H
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EH3P(12-20)K-H(-ND-H)_S6-EH3P(8-12)K-LV-H(-ND-H)_GER_V02(GE).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0177 Rev. 01
+  issued: '2024-09-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-EH3P three-phase HV hybrid 12/15/20 kW (-H, -ND-H) and LV 8/10/12 kW (-LV-H, -LV-ND-H)
+    match: ^S6-EH3P((8|10|12)K-LV(-ND)?-H|(12|15|20)K(-ND)?-H)(\(CONNECTEDINDELTA3X230V\))?$
+    countries:
+    - DE
+    note: Report 50409230013225-01; integrated NS protection. Bare register rows S6-EH3P12K / 15K / 20K are ambiguous and not joined.
+- id: de-vde4105-s6-eh3p-30-60k-h-2025
+  title: TÜV Rheinland A3 50695244 0001 — VDE-AR-N 4105/11.18 — S6-EH3P29.9–50K-H(-ND), (21A) up to 60 kW, -H-LV(-ND) 20–35 kW
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EH3P(29,9-60)K-H(-H-ND)(21A)_S6-EH3P(30-35)K-H-LV(21A)_S6-EH3P(20-35)K-H-LV-ND(21A)_GER_V03.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50695244 0001
+  issued: '2025-09-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-EH3P three-phase hybrid 29.9–60 kW (-H, -H-ND, (21A)) and LV 20–35 kW (-H-LV, -H-LV-ND)
+    match: ^S6-EH3P((29\.9|30|37\.5|40|50)K-H|(29\.9|30|40|50)K-H-ND|(29\.9|30|40|49|50|60)K-H(-ND)?\(21A\)|(20|25|30)K-H-LV-ND|(20|25|30|35)K-H-LV-ND\(21A\)|30K-H-LV|(30|35)K-H-LV\(21A\))$
+    countries:
+    - DE
+    note: Report CN24LANN 011; supersedes A3 50661243 0001 of 01.2025 (report CN24LANN 003, the non-(21A) types). Remark — the 37.5–60
+      kW types integrate no interface switch — a central interface switch is needed; the others have integrated NA protection and switch
+      (E.6–E.7). The register rows S6-EH3P30K/40K/50K-ND-H (suffix order reversed) are not joined.
+- id: de-vde4105-s6-eh3p-k02-l-2025
+  title: TÜV SÜD ESY 086470 0229 Rev. 01 — VDE-AR-N 4105:2018 — S6-EH3P8–18K02-NV-YD-L
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EH3P(8-18)K02-NV-YD-L_GER_V02(German).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0229 Rev. 01
+  issued: '2025-10-31'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  firmware: A1
+  families:
+  - name: S6-EH3P…K02-NV-YD-L three-phase LV-battery hybrid 8–18 kW
+    match: ^S6-EH3P(8|10|12|15|18)K02-NV-YD-L$
+    countries:
+    - DE
+    note: Report 7040924037119-01; integrated NS protection. The register's 5K02 and 6K02 are not named and not joined. English copy
+      …_GER_V02.pdf.
+- id: de-vde4105-s6-eh3p-k10-h-2025
+  title: TÜV SÜD ESY 086470 0264 Rev. 00 — Einheitenzertifikat VDE-AR-N 4105:2018 — S6-EH3P80–125K10-NV-ND/YD-H
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE_4105_VDE_0124_S6-EH3P(80-125)K-NV-YD-H(-ND-H)_GER_V01(GE).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 086470 0264 Rev. 00
+  issued: '2025-09-26'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  families:
+  - name: S6-EH3P…K10 commercial hybrid 80 / 99.9 / 100 / 125 kW
+    match: ^S6-EH3P(80|99\.9|100|125)K10-NV-[NY]D-H$
+    countries:
+    - DE
+    note: Report 704092514271-00. The register's S6-EH3P75K10-NV-YD-H is not named and not joined.
+- id: de-vde4105-rhi-48es-2021
+  title: TÜV SÜD D 086470 0062 Rev. 01 — VDE-AR-N 4105:2018 — RHI-3–5K-48ES, RHI-3–6K-48ES-5G, S5-EH1P3–6K-L
+  url: https://cmsdata.solisinverters.com/uploads/file/Solis_certificate_VDE4105_VDE0124_RHI-(3-5)K-48ES_RHI-(3-6)K-48ES-5G_S5-EH1P(3-6)K-L_GER_V01(German).pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: D 086470 0062 Rev. 01
+  issued: '2021-06-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018 / Berichtigung 1: 2020 (2018-11; Berichtigung 1 2020-10)'
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  firmware: 'DSP: 25, LCD display: 02'
+  families:
+  - name: RHI-48ES (pre-5G) single-phase LV hybrid 3 / 3.6 / 4.6 / 5 kW
+    match: ^RHI-(3|3\.6|4\.6|5)K-48ES$
+    countries:
+    - DE
+    note: E.4 Einheitenzertifikat 70.409.19.076.11-01 (Bestätigung, report 704091907611-01). Joined only for the four pre-5G RHI types;
+      the 5G and S5-EH1P types it also lists are covered by the newer de-vde4105-rhi-48es-5g-s5-eh1p-2022 (ESY 086470 0118).

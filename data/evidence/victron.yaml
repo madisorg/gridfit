@@ -201,3 +201,82 @@ documents:
     countries: [DE]
     note: Report 22PP580-05_1 of 2025-06-03; programme SOP-9-1_15 GCC. E.5 values; Q(U) not implemented, limited dynamic grid support.
       The "Multi RS19 Solar" (RS19) is not named.
+- id: de-vde4105-eze-multi-rs19-solar-2025
+  title: Kiwa Primara 25-360-00 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Multi RS19 Solar 48/6000/100-450/100
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-VDE-AR-N-4105-2018-11-EZE-Multi-RS19-Solar.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 25-360-00
+  issued: '2025-10-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: v1.26
+  families:
+  - name: Multi RS19 Solar 48/6000/100-450/100
+    match: ^MULTIRS19SOLAR48/6000/100-450/100$
+    countries:
+    - DE
+    note: Unit certificate, report 25PP291-12_0 of 2025-09-30; programme SOP-9-1_15 GCC. The RS19 is the newer hardware of the Multi
+      RS Solar (whose own certificate is de-vde4105-eze-multi-rs-solar-2025). The matching NA-protection certificate is …-NAS-Multi-RS19-Solar.pdf
+      on the same server.
+- id: de-vde4105-eze-easysolar-ii-2024
+  title: Kiwa Primara 21-163-02 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — EasySolar-II 24/3000, 48/3000, 48/5000 MPPT GX
+  url: https://www.victronenergy.com/upload/documents/Certificate-VDE-AR-N-4105-2018-11-EZE-EasySolar-II-3k-%26-5k-MPPT-GX.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 21-163-02
+  issued: '2024-04-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: EasySolar-II 48/3000/35-32 MPPT 250/70 GX, 24/3000/70-32 MPPT 250/70 GX, 48/5000/70-50 MPPT 250/100 GX
+    match: ^EASYSOLAR-II(48/3000/35-32MPPT250/70|24/3000/70-32MPPT250/70|48/5000/70-50MPPT250/100)GX$
+    countries:
+    - DE
+    note: Unit certificate (battery storage system with PV input), report 20PP183-05_1 of 2023-10-26; programme SOP-9-1_15 GCC. The
+      older EasySolar (without -II) rows are not named.
+- id: de-vde4105-nas-quattro-ii-5k-2024
+  title: Kiwa Primara 24-006-00 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Quattro-II 48/5000/70-50/50 230V
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-VDE-AR-N-4105-2018-11-NAS-Quattro-II-48V-5kVA-230V.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 24-006-00
+  issued: '2024-01-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '2651508'
+  families:
+  - name: Quattro-II 48/5000/70-50/50 230V (integrated NA protection)
+    match: ^QUATTRO-?II48/5000/70-50/50230V(\+DCSOLARCHARGER(BLUE|SMART)SOLARMPPT)?$
+    countries:
+    - DE
+    note: NA-protection certificate only (report 22PP102-05_0 of 2023-12-20); no unit certificate (EZE) for the Quattro-II was found
+      on the server. Register rows with an added MPPT are joined. The older Quattro (without -II) rows are not named.
+- id: de-vde4105-eze-multiplus-ii-3ph-8-15k-2025
+  title: SGS Tecnos 250041RECO01-A-CER — Unit certificate VDE-AR-N 4105:2018-11 + Correction 1 — MultiPlus-II 48/8000, 48/10000, 48/15000
+    in three-phase configuration
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-VDE-AR-N-4105-2018-11-EZE-MultiPlus-II-3-phase-configuration-48V-8kVA%2C-10kVA%2C-15kVA-%28Germany%29.pdf
+  issuer: SGS Tecnos, S.A.U. (UNE-EN ISO/IEC 17065)
+  cert_no: 250041RECO01-A-CER
+  issued: '2025-02-19'
+  valid_until: '2030-02-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11 + Correction 1: 2020-10'
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  firmware: 2621552 / 2627552 / 2619552
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V — three units as one three-phase system
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - DE
+    note: Covers the three-phase configuration (three identical units in parallel, 3L/N/PE); 8 kVA / 6.4 kW, 10 kVA / 8 kW, 15 kVA /
+      12 kW per unit. Reports 2222/0478-A, -AM1 and 250045RECO01. Same register rows as the single-phase certificate de-vde4105-eze-multiplus-ii-8-15k-2026
+      — adds no new models, only the three-phase case.

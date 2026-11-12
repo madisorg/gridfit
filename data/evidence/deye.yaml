@@ -603,3 +603,419 @@ documents:
     note: Foreign accredited certificate citing PPDS (DAkkS, not ČIA) — background only; Czech operators take an SZÚ/ČIA certificate
       or a ČEZd/EG.D lab protocol. Report ASUE-ESH-P22030586-R1. No settings table.
     accepted_in: [EE, NL, SE]
+- id: de-vde4105-g06p3-2025
+  title: TÜV Rheinland A3 50700502 0001-0003 — VDE-AR-N 4105/11.18 — SUN-3…15K-G06P3-EU (AM2, AM2-P1, BM2, BM2-P1, CM2-P1)
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/09/Certificate_Germany+VDE-AR-N4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50700502 0001-0003
+  issued: '2025-10-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 5612-0326
+  families:
+  - name: G06P3 three-phase string 3–15 kW
+    match: ^SUN-(3|4|5|6|7|8|9|10|12|15)K-G06P3-EU-(AM2|AM2-P1|BM2|BM2-P1|CM2-P1)$
+    countries:
+    - DE
+    note: Report CN246JD6 003; x = 3, 4, 5, 6, 7, 8, 9, 10, 12, 15. The CM2-P1 variants are not in the register.
+- id: de-vde4105-g04-18-36k-2025
+  title: TÜV Rheinland A3 50700672 0001-0002 — VDE-AR-N 4105/11.18 — SUN-18…36K-G04, SUN-xxK-G04P3-EU-CM2
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/09/Certificate_Germany+VDE-AR-N4105-1.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50700672 0001-0002
+  issued: '2025-11-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 5412-0324
+  families:
+  - name: G04 three-phase string 18–36 kW
+    match: ^SUN-(18|20|25|30|33|35|36)K-G04(P3-EU-CM2)?$
+    countries:
+    - DE
+    note: Report CN22OZ4T 003; xx = 18, 20, 25, 30, 33, 35, 36. The smaller SUN-3…5K-G04 and the 40–50K-G04 in the register are other
+      families and are not joined; no G04P3-EU-CM2 code is in the register yet.
+- id: de-vde4105-g03-70-110k-2022
+  title: TÜV Rheinland A3 50557108 0001 — VDE-AR-N 4105/11.18 — SUN-70…110K-G03
+  url: https://www.deyeinverter.com/deyeinverter/2026/05/15/CertificateGermanyVDE-AR-N4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50557108 0001
+  issued: '2022-09-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '3252'
+  families:
+  - name: G03 three-phase string 70–110 kW
+    match: ^SUN-(70|75|80|90|100|110)K-G03$
+    countries:
+    - DE
+    note: Report CN22U1ZE 001. Re-uploaded by Deye 2026-05-15 next to a VDE-AR-N 4110 certificate for the same models. The 3–60 kW G03
+      models have only French VDE 0126 documents.
+- id: de-vde4105-g05-2022
+  title: TÜV Rheinland A3 50549202 0001 — VDE-AR-N 4105/11.18 — SUN-3…15K-G05, SUN-3…15K-G05-P
+  url: https://www.deyeinverter.com/deyeinverter/2023/12/05/certificate_germany+vde-ar-n4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50549202 0001
+  issued: '2022-06-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '5172'
+  families:
+  - name: G05 three-phase string 3–15 kW
+    match: ^SUN-((3|4|5|6|7|8|9|10|12|15)K-G05(-P)?|3K-G05(-P)?-1)$
+    countries:
+    - DE
+    note: Report CN2283DK 001; also SUN-3K-G05-1 and SUN-3K-G05-P-1. The register's combined codes "SUN-xK-G03/G05" and the 18–25K-G05
+      rows are not joined (the certificate names neither).
+- id: de-vde4105-g04p1-2024
+  title: Intertek 24SHD0036-01 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN-1…4K-G04P1-EU-AM1
+  url: https://www.deyeinverter.com/deyeinverter/2025/12/08/Certificate_Germany+VDE4105.pdf
+  issuer: Intertek Deutschland GmbH (DIN EN ISO/IEC 17065)
+  cert_no: 24SHD0036-01
+  issued: '2024-01-12'
+  valid_until: '2029-01-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V8431-0105
+  families:
+  - name: G04P1 single-phase string 1–4 kW
+    match: ^SUN-(1|1\.5|2|2\.2|2\.5|2\.7|3|3\.3|3\.6|4)K-G04P1-EU-AM1$
+    countries:
+    - DE
+    note: Test reports 2309A0185SHA-001/-002 (2023-12-25); PEmax 1.1–4.4 kW. Companion NA-protection certificate 24SHD0038-01 (integrated,
+      same dates) at https://www.deyeinverter.com/deyeinverter/2025/12/08/Certificate_Germany+VDE4105+NSProtection.pdf. 2.2, 2.7, 3.3,
+      3.6 and 4K are not in the register.
+- id: de-vde4105-sg03lp1-2024
+  title: Intertek 23SHD0077-03 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN-3.6/5/6K-SG03LP1-EU
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/01/certificate_germany+vde4105.pdf
+  issuer: Intertek Deutschland GmbH (DIN EN ISO/IEC 17065)
+  cert_no: 23SHD0077-03
+  issued: '2024-07-15'
+  valid_until: '2028-02-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: Ver2155
+  families:
+  - name: SG03LP1 single-phase LV hybrid 3.6–6 kW
+    match: ^SUN-(3\.6|5|6)K-SG03LP1-EU$
+    countries:
+    - DE
+    note: PEmax printed as 3.617–4.504 kW across the three sizes. The same file is also published as certificate_germany+vde4105-1.pdf
+      (2025/08/01). NA-protection certificate at https://www.deyeinverter.com/deyeinverter/2025/08/01/certificate_germany+vde4105+nsprotection.pdf.
+      The -BE variants are not joined.
+- id: de-vde4105-sg01hp3-am2-2023
+  title: TÜV Rheinland A3 50609330 0001 — VDE-AR-N 4105/11.18 — SUN-5…25K-SG01HP3-EU-AM2, GB-S5…25K-EU(-B, -V1)
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_germany+vde-ar-n4105-1.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50609330 0001
+  issued: '2023-12-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '1030'
+  families:
+  - name: SG01HP3 three-phase HV hybrid 5–25 kW (AM2) and GB-S all-in-one
+    match: ^(SUN-(5|6|8|10|12|15|20|25)K-SG01HP3-EU-AM2|GB-S(5|6|8|10|12|15|20|25)K-EU(-B|-V1)?)$
+    countries:
+    - DE
+    note: Report CN22LAN7 012; x = 5, 6, 8, 10, 12, 15, 20, 25. Not joined — the 30–50K-SG01HP3-EU-AM2 rows (not on this certificate),
+      the bare SUN-xK-SG01HP3-EU rows without the AM2 suffix, and the placeholder codes SUN-XK-…/GB-SXK-….
+- id: de-vde4105-sg01hp3-bm-2022
+  title: TÜV Rheinland A3 50568669 0001 — VDE-AR-N 4105/11.18 — SUN-29.9…35K-SG01HP3-EU-BM3, SUN-40/50K-SG01HP3-EU-BM4
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_germany+vde-ar-n4105-2.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50568669 0001
+  issued: '2022-12-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '1025'
+  families:
+  - name: SG01HP3 three-phase HV hybrid 29.9–50 kW (BM3/BM4)
+    match: ^SUN-((29\.9|30|35)K-SG01HP3-EU-BM3|(40|50)K-SG01HP3-EU-BM4)$
+    countries:
+    - DE
+    note: Report CN2288JW 001.
+- id: de-vde4105-sg01hp3-dm2-2024
+  title: TÜV Rheinland A3 50645446 0001 — VDE-AR-N 4105/11.18 — SUN-5…12K-SG01HP3-EU-DM2
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_germany+vde-ar-n4105-1.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50645446 0001
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: '1082'
+  families:
+  - name: SG01HP3 three-phase HV hybrid 5–12 kW (DM2)
+    match: ^SUN-(5|6|8|10|12)K-SG01HP3-EU-DM2$
+    countries:
+    - DE
+    note: Report CN244105 001; x = 5, 6, 8, 10, 12. The issue date is only partly legible in the text layer (".09.2024").
+- id: de-vde4105-sg02hp3-am3-2025
+  title: TÜV Rheinland A3 50681651 0001-0002 — VDE-AR-N 4105/11.18 — SUN-25/29.9/30K-SG02HP3-EU-AM3
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_germany+vde-ar-n4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50681651 0001-0002
+  issued: '2025-06-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '1092'
+  families:
+  - name: SG02HP3 three-phase HV hybrid 25–30 kW (AM3)
+    match: ^SUN-(25|29\.9|30)K-SG02HP3-EU-AM3$
+    countries:
+    - DE
+    note: Report CN25PSP0 001. The register's bare SUN-25/29.9/30K-SG02HP3 rows (no -EU-AM3) are not joined.
+- id: de-vde4105-sg02hp3-em6-2025
+  title: TÜV Rheinland A3 50667733 0001 — VDE-AR-N 4105:2018-11 — SUN-60/70/75/80K-SG02HP3-EU-EM6
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/04/certificate_germany+vde-ar-n4105-2.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50667733 0001
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '1091'
+  families:
+  - name: SG02HP3 three-phase HV hybrid 60–80 kW (EM6)
+    match: ^SUN-(60|70|75|80)K-SG02HP3-EU-EM6$
+    countries:
+    - DE
+    note: Report CN25S7J4 001; issue date only partly legible in the text layer ("1 .03.2025"). Deye also lists a VDE-AR-N 4110 certificate
+      for this family. SUN-60K-SG02HP3-EU-EM4 (register) is not on the certificate.
+- id: de-vde4105-sg02hp3-gm-2026
+  title: TÜV Rheinland A3 50723150 0001-0002 — VDE-AR-N 4105/11.18 — SUN-100K-SG02HP3-EU-GM8/GM10, SUN-125K-SG02HP3-EU-GM10
+  url: https://www.deyeinverter.com/deyeinverter/2026/04/13/CertificateGermanyVDE-AR-N4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50723150 0001-0002
+  issued: '2026-04-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 3501-1010-0810
+  families:
+  - name: SG02HP3 three-phase HV hybrid 100–125 kW (GM8/GM10)
+    match: ^SUN-(100K-SG02HP3-EU-GM(8|10)|125K-SG02HP3-EU-GM10)$
+    countries:
+    - DE
+    note: Report CN26WSTK 001.
+- id: de-vde4105-pcs01hp3-2025
+  title: TÜV Rheinland A3 50702884 0001/0002 — VDE-AR-N 4105/11.18 — SUN-100/125K-PCS01HP3 (+ MPPT-L01, STS500L combinations)
+  url: https://www.deyeinverter.com/deyeinverter/2026/08/03/CertificateGermanyVDE4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50702884 0001/0002
+  issued: '2025-11-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 6011-1108-MS
+  families:
+  - name: PCS01HP3 C&I battery PCS 100–125 kW
+    match: ^SUN-(100|125)K-PCS01HP3$
+    countries:
+    - DE
+    note: Report CN25O3FB 002. Also certifies the combinations with SUN-MPPT-L01-EU-AM8 and SUN-STS500L (not separate register rows).
+- id: de-vde4105-sg05lp3-4-12k-2025
+  title: TÜV Rheinland A3 50675713 0001 — VDE-AR-N 4105/11.18 — SUN-4…12K-SG05LP3-EU-SM2
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_germany+vde-ar-n4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50675713 0001
+  issued: '2025-07-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '1144'
+  families:
+  - name: SG05LP3 three-phase LV hybrid 4–12 kW (SM2)
+    match: ^SUN-(4|5|6|8|10|12)K-SG05LP3-EU-SM2$
+    countries:
+    - DE
+    note: Report CN2306VA 002. SUN-3K-SG05LP3-EU-SM2 and the -BE-SM2 rows (register) are not on the certificate.
+- id: de-vde4105-sg05lp3-14-20k
+  title: TÜV Rheinland A3 50651320 0001 — VDE-AR-N 4105/11.18 — SUN-14…20K-SG05LP3-EU-SM2
+  url: https://www.deyeinverter.com/deyeinverter/2025/08/02/certificate_germany+vde4105-1.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50651320 0001
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: '1076'
+  families:
+  - name: SG05LP3 three-phase LV hybrid 14–20 kW (SM2)
+    match: ^SUN-(14|15|16|18|20)K-SG05LP3-EU-SM2$
+    countries:
+    - DE
+    note: xx = 14, 15, 16, 18, 20; tests on SUN-20K-SG05LP3-EU-SM2. The issue date is not legible in the text layer.
+- id: de-vde4105-bk-am2-am4-2026
+  title: TÜV Rheinland A3 50731866 0001 — VDE-AR-N 4105/11.18 — SUN-BK80…250-2.56KWH-EU-AM4-18/18L/32/32L and AM2-32/32L
+  url: https://www.deyeinverter.com/deyeinverter/2026/07/30/CertificateGermanyVDE4105.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50731866 0001
+  issued: '2026-07-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: '0132'
+  families:
+  - name: SUN-BK balcony storage (single-phase), AM4 and AM2
+    match: ^SUN-BK(80|160|200|250)-2\.56KWH-EU-AM(4-(18|32)|2-32)L?$
+    countries:
+    - DE
+    note: Report CN26S5PB 002. Supersedes A3 50717903 0001-0002 (vde4105-sun-bk-2026, 2026-03-17) and adds the AM2-32/32L variants;
+      the identical file is also published as CertificateGermanyVDE4105-xDl6.pdf (2026/07/30). No SUN-BK model is in the register yet
+      — the match joins nothing.
+- id: de-vde4105-micro-m60-100g4-2025
+  title: Intertek 23SHD0963-03 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN-M60/80/100G4-EU-Q0(-P), SUN-E60/80/100G4-EU-Q0
+  url: https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-2.pdf
+  issuer: Intertek Deutschland GmbH (DIN EN ISO/IEC 17065)
+  cert_no: 23SHD0963-03
+  issued: '2025-07-03'
+  valid_until: '2029-12-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 0308-1426
+  families:
+  - name: SUN-M G4 microinverters 600–1000 W
+    match: ^SUN-[ME](60|80|100)G4-EU-Q0(-P)?$
+    countries:
+    - DE
+    note: PEmax 0.6–1.0 kW, integrated NA protection — companion NA-protection certificate 23SHD0964-03 (same dates) at https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-nsprotection-2.pdf.
+- id: de-vde4105-micro-m130-220g4-2025
+  title: Intertek 24SHD0026-02 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN-M130…220G4-EU-Q0(-I)
+  url: https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-3.pdf
+  issuer: Intertek Deutschland GmbH (DIN EN ISO/IEC 17065)
+  cert_no: 24SHD0026-02
+  issued: '2025-01-08'
+  valid_until: '2030-01-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 0303-1324
+  families:
+  - name: SUN-M G4 microinverters 1300–2250 W (four-panel)
+    match: ^SUN-M(130|160|180|200|220)G4-EU-Q0(-I)?$
+    countries:
+    - DE
+    note: Test reports 2311A1655SHA-001/-002 (2023-12-29, amended 2024-12-19); integrated NA protection — companion certificate 24SHD0027-02
+      at https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-nsprotection-3.pdf.
+- id: de-vde4105-micro-m30-50g4-2025
+  title: TÜV Rheinland A3 50680846 0001 — VDE-AR-N 4105/11.18 — SUN-M30…50G4-EU-Q0 (-P, -I)
+  url: https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde-ar-n4105-2.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50680846 0001
+  issued: '2025-06-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 0312-1326
+  families:
+  - name: SUN-M G4 microinverters 300–500 W
+    match: ^SUN-M(30|35|40|45|50)G4-EU-Q0(-P|-I)?$
+    countries:
+    - DE
+    note: Report CN23I15T 003; x = 30, 35, 40, 45, 50. No SUN-M30…50G4 model is in the register yet — the match joins nothing.
+- id: de-vde4105-micro-600-1000g3-2023
+  title: Intertek 23SHD0685-01 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN600/800/1000G3-EU-230 with SUN-MI-RELAY-01
+  url: https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde-ar-n4105.pdf
+  issuer: Intertek Deutschland GmbH (DIN EN ISO/IEC 17065)
+  cert_no: 23SHD0685-01
+  issued: '2023-07-31'
+  valid_until: '2028-07-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'DC: Ver 0118, AC: Ver 1218; relay 0x0201'
+  families:
+  - name: SUN G3 microinverters 600–1000 W (with relay box)
+    match: ^SUN(600|800|1000)G3-EU-230(MITSUN-MI-RELAY-01)?$
+    countries:
+    - DE
+    note: Valid only "used with SUN-MI-RELAY-01" (external NA-protection relay box); NA-protection certificate 23SHD0687-01 at https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde-ar-n4105+nsprotection.pdf.
+      The register has both the bare codes and "…mit SUN-MI-RELAY-01"; both joined — the bare unit is the same inverter, the relay is
+      a condition.
+- id: de-vde4105-micro-1300-2000g3-2023
+  title: Intertek 23SHD0804-01 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN1300…2000G3-EU-230 plus SUN-MI-RELAY-02
+  url: https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-1.pdf
+  issuer: Intertek Deutschland GmbH (DIN EN ISO/IEC 17065)
+  cert_no: 23SHD0804-01
+  issued: '2023-08-16'
+  valid_until: '2028-08-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'DC: Ver0129, AC: Ver1216; external relay kit C021'
+  families:
+  - name: SUN G3 microinverters 1300–2000 W (with relay kit)
+    match: ^SUN(1300|1600|1800|2000)G3-EU-230$
+    countries:
+    - DE
+    note: Valid "plus SUN-MI-RELAY-02" (external relay kit); NA-protection certificate 23SHD0806-01 at https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-nsprotection-1.pdf.
+      The register's -Q1 variants are a different suffix and are not joined.
+- id: de-vde4105-micro-300-500g3-2023
+  title: Bureau Veritas U23-0682 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — SUN300/400/500G3-EU-230 with SUN-MI-RELAY-01
+  url: https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0682
+  issued: '2023-08-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: DC Master V0.2.3.6, AC Version V1.3.2.2; relay 0x0201
+  families:
+  - name: SUN G3 microinverters 300–500 W (with relay box)
+    match: ^SUN(300|400|500)G3-EU-230(MITSUN-MI-RELAY-01)?$
+    countries:
+    - DE
+    note: Report ASUE-ESH-P23080069; "Photovoltaikwechselrichter mit externem NA-Schutz (Relaisbox) SUN-MI-RELAY-01". NA-protection
+      certificate U23-0683 at https://www.deyeinverter.com/deyeinverter/2025/10/10/certificate_germany+vde4105-nsprotection.pdf. Bare
+      codes and "…mit SUN-MI-RELAY-01" codes both joined.
