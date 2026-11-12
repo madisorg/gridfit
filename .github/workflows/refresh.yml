@@ -4,7 +4,9 @@
 # freshness watch (tools/watch/run.py) looks for new models at makers, in the lists, the integrations
 # and the press, and writes docs/watch-report.md; the datasheet harvester (tools/specs/harvest.py --http)
 # fetches new maker datasheets and writes review drafts to data/specs/_drafts/ plus docs/harvest-report.md.
-# Each push triggers the Cloudflare Pages build.
+# Then the site is built once here, only to update the sitemap's true lastmod (tools/sitemap/lastmod.py →
+# data/sitemap/lastmod.json; lastmod.yml does the same after every other push to main). Each push triggers the
+# Cloudflare Pages build.
 #
 # Two things keep a passive site alive:
 # - data/dataset/REFRESHED is rewritten on every run, so there is a commit every week even when no
@@ -62,6 +64,16 @@ jobs:
         # tools/specs/harvest.yaml; docs/freshness.md "Datasheets". A failing route must not stop the dataset refresh.
         continue-on-error: true
         run: python tools/specs/harvest.py --http
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: build the site and update the sitemap's lastmod (a page's date moves only when its content changed)
+        continue-on-error: true
+        env:
+          GRIDFIT_BASE_URL: https://gridfit.eu
+        run: |
+          cd web && npm ci && npm run build && cd ..
+          python tools/sitemap/lastmod.py web/dist
       - name: keep the watch and harvest reports as a run artifact
         if: ${{ always() }}
         uses: actions/upload-artifact@v4
@@ -80,6 +92,7 @@ jobs:
           git config user.email "gridfit-bot@users.noreply.github.com"
           printf 'last refresh: %s\nregisters: %s\n' "$(date -u +%FT%TZ)" "${{ steps.mode.outputs.registers }}" > data/dataset/REFRESHED
           git add data/dataset data/registers
+          [ -e data/sitemap/lastmod.json ] && git add data/sitemap/lastmod.json
           git add data/watch docs/watch-report.md 2>/dev/null || true
           for p in data/specs/harvest.json data/specs/_drafts docs/harvest-report.md; do [ -e "$p" ] && git add "$p"; done
           if [ "${{ steps.mode.outputs.registers }}" = "true" ]; then

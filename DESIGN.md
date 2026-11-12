@@ -730,3 +730,31 @@ plug-in unit on the list (the nano-producer row), `/grid/ee/` at "What changes" 
 2023 listing guide and now cites the one served in 2026. `npm test`: 52 + 936 + 822 298 checks, 0 failures (the checks suite
 now also proves every listed Estonian model is checked by the list on its list items, and that no Estonian "not shown" row
 is without a reason). Coverage before/after: [`docs/coverage.md`](docs/coverage.md).
+
+## 32. Measured, 2026-11-12 — every page reachable by a plain link
+
+The grid and country tables are built by JavaScript, so a crawler reading HTML reached 3 826 of the sitemap's 4 334 pages:
+178 brand pages and 331 family pages had no static link (the count after the genset brands left in § 31). A new page,
+**`/brands/` — Brands A–Z**, lists every brand in plain links under letter headings with a letter row on top, each with its
+count of families and models; the home page's brand count links to it ("638 brands A–Z") and the footer carries "all brands
+A–Z". Brand pages already link every family and model, so every page is now reached: brands at 2 clicks, families and model
+pages at 3 (`web/test/links.mjs`, part of `npm test`; with the A–Z page removed it fails with the 178 + 331 orphans). Four
+routes ([`routes-sitemap.json`](docs/moodud/routes-sitemap.json): `/brands/` at the top and at "S", the home page, the
+footer) × 3440/390 × light/dark: [`sitemap.json`](docs/moodud/sitemap.json), 16 pictures, 0 console errors, 0 overflow, 0
+under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 6.13). One finding, fixed: the home page's new "brands A–Z" link was
+18 px tall on a phone; it joined the kit's "not inside a sentence" rule (44 px), re-measured 0 of 19 under 44 px.
+
+
+## 33. Measured, 2026-11-12 — the model-code level ("≈")
+
+Where neither a list nor a datasheet gives a model's rated power or phases, the maker's own naming usually does
+("SigenStor Neo EC 10.0 SP" is 10 kW single-phase). The grid's Ph and kVA cells now show such a reading muted, with
+**"≈"** in front and the reason in the title ("≈ from the model code: the maker's naming, checked against the models a list
+or datasheet states"). The model page gets a "From the model code" block above the datasheet with the rule in words and its
+agreement ("phases on 7 of 7"), and says it is a level below the datasheet. The grid status, the filters and the requirement
+check never read it, so the counts and every status stay as they were (re-read model by model: 0 changed). Three routes
+([`routes-koodikiht.json`](docs/moodud/routes-koodikiht.json): `/grid/ee/?brand=Sigenergy`, `/grid/ee/?brand=Livoltek`, an
+Autarco model page at the block) × 3440/390 × light/dark: [`koodikiht.json`](docs/moodud/koodikiht.json), 12 pictures, 0
+console errors, 0 overflow, 0 under 12 px (smallest 13 px), 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. By eye:
+a missing space before the block's last sentence, fixed.
+

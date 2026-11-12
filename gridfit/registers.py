@@ -134,19 +134,21 @@ REGISTERS = {
                     "device type, model, PPM type and firmware.",
         "terms": "No reuse terms are stated (© footer).",
         "use": "document number, date and firmware per row, with a link to the list",
-        "date_label": "date in the column 'Document acceptance date' (mostly in the future — read it as the "
-                      "certificate's end date and check the certificate)",
+        "date_label": "accepted until: the last day the certificate counts in a connection, PTPiREE's notice of "
+                      "2026-10-05",
         "fw_label": "firmware",
         "files": [("pl", "page", "https://ptpiree.pl/kodeksy-sieci/wykaz-certyfikatow/",
                    r'href="([^"]*Wykaz-urzadzen_1\.3\.pdf)"')],
     },
     "SE": {
         "country": "Sweden", "short": "Swedish Rikta Rätt inverter list",
-        "name": "Rikta Rätt — växelriktare för solceller",
+        "name": "Rikta Rätt — omriktare för det svenska lågspänningsnätet",
         "operator": "Energiföretagen Sverige",
         "url": "https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller",
         "basis": "Ellagen; RfG / EN 50549-1; EIFS 2018:2. A 2.0 XML database is announced.",
-        "gate": "No (\"not binding\"); listing in Rikta Rätt 2.0 is expected from Q2 2027.",
+        "gate": "No (\"not binding\"); Rikta Rätt 2.0 listing opens at the turn of 2026/2027 and is required beside a 1.0 "
+                "listing from Q2 2027; no new 1.0 listings from September 2027, and the 1.0 CSV is unpublished at the "
+                "turn of 2027/2028.",
         "contains": "PV, battery and hybrid inverters with the list's running number, firmware, power, phases, "
                     "energy source and review date.",
         "terms": "No reuse terms are stated.",

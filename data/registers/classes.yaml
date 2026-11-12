@@ -71,7 +71,15 @@ makers:
 also:
   - maker: "2G Energy"
     why: "2G Energy AG of Heek, the maker the Belgian list spells '2G Heek GmbH' (CHP 95 rows); its Dutch rows are agenitor gas engines"
+  - maker: "TWE-Tandem Wind Energy GmbH"
+    why: "WindStream5 is a 5 kW small wind turbine with an induction generator (wind-turbine-models.com); the maker's only row, on the Dutch generation list (read 2026-11-12)"
 models:
   - maker: Viessmann
     match: "^VITOBLOC"
     why: "Vitobloc is Viessmann's CHP range (Belgian rows flagged CHP); the maker's PV and storage units keep their class"
+  - maker: Viessmann
+    match: "^NG(15|20)$"
+    why: "NG-15 / NG-20 are the Vitobloc 300 NG 15 / NG 20 gas CHP units (15 / 20 kW electrical, viessmann.de); the Dutch generation list writes them without the range name (read 2026-11-12)"
+  - maker: Viessmann
+    match: "^VITOVALOR"
+    why: "Vitovalor PA2 / PT2 are Viessmann's fuel-cell micro-CHP heating units, on the Dutch generation list (read 2026-11-12)"

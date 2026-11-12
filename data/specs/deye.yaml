@@ -1113,7 +1113,7 @@ models:
   ac_kw: 3.0
   ac_kva: 3.3
   ac_a: 4.8
-  phases: 1
+  phases: 3
   pv_kw: 4.8
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-3K\-SG05LP3-(EU|BE)\-SM2$
@@ -1122,7 +1122,7 @@ models:
   ac_kw: 4.0
   ac_kva: 4.4
   ac_a: 6.4
-  phases: 1
+  phases: 3
   pv_kw: 6.4
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-4K\-SG05LP3-(EU|BE)\-SM2$
@@ -1131,7 +1131,7 @@ models:
   ac_kw: 5.0
   ac_kva: 5.5
   ac_a: 8.0
-  phases: 1
+  phases: 3
   pv_kw: 8.0
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-5K\-SG05LP3-(EU|BE)\-SM2$
@@ -1140,7 +1140,7 @@ models:
   ac_kw: 6.0
   ac_kva: 6.6
   ac_a: 9.6
-  phases: 1
+  phases: 3
   pv_kw: 9.6
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-6K\-SG05LP3-(EU|BE)\-SM2$
@@ -1149,7 +1149,7 @@ models:
   ac_kw: 8.0
   ac_kva: 8.8
   ac_a: 12.8
-  phases: 1
+  phases: 3
   pv_kw: 12.8
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-8K\-SG05LP3-(EU|BE)\-SM2$
@@ -1158,7 +1158,7 @@ models:
   ac_kw: 10.0
   ac_kva: 11.0
   ac_a: 16.0
-  phases: 1
+  phases: 3
   pv_kw: 16.0
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-10K\-SG05LP3-(EU|BE)\-SM2$
@@ -1167,7 +1167,7 @@ models:
   ac_kw: 12.0
   ac_kva: 13.2
   ac_a: 19.2
-  phases: 1
+  phases: 3
   pv_kw: 19.2
   source: sun-3-12k-sg05lp3-eu-sm2
   match: ^SUN\-12K\-SG05LP3-(EU|BE)\-SM2$
@@ -1745,7 +1745,7 @@ models:
   ac_kw: 60.0
   ac_kva: 66.0
   ac_a: 95.7
-  phases: 1
+  phases: 3
   pv_kw: 90.0
   source: sun-60-80k-g04p3-eu-am4
   match: ^SUN\-60K\-G04P3-(EU|BE)\-AM4$
@@ -1754,7 +1754,7 @@ models:
   ac_kw: 70.0
   ac_kva: 77.0
   ac_a: 111.6
-  phases: 1
+  phases: 3
   pv_kw: 105.0
   source: sun-60-80k-g04p3-eu-am4
   match: ^SUN\-70K\-G04P3-(EU|BE)\-AM4$
@@ -1763,7 +1763,7 @@ models:
   ac_kw: 75.0
   ac_kva: 82.5
   ac_a: 119.6
-  phases: 1
+  phases: 3
   pv_kw: 112.5
   source: sun-60-80k-g04p3-eu-am4
   match: ^SUN\-75K\-G04P3-(EU|BE)\-AM4$
@@ -1772,7 +1772,7 @@ models:
   ac_kw: 80.0
   ac_kva: 88.0
   ac_a: 127.5
-  phases: 1
+  phases: 3
   pv_kw: 120.0
   source: sun-60-80k-g04p3-eu-am4
   match: ^SUN\-80K\-G04P3-(EU|BE)\-AM4$

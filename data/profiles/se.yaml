@@ -4,7 +4,10 @@
 # settings come from Energiföretagen's handbook ALP (2025), as printed on the Rikta Rätt form and the operators' own forms.
 # Facts only, with the source of each; the grid operator decides. Written 2026-11-01 from Ei's regulation and its 2026
 # consultation draft, the Electricity Act, the Rikta Rätt page and forms, and Ellevio's, Vattenfall Eldistribution's and
-# Nätkraft Borås's own connection documents.
+# Nätkraft Borås's own connection documents. Re-read 2026-11-12: Ei's 2026 regulations page lists amending regulations
+# only (no replacement of EIFS 2018:2); Rikta Rätt page and list of 2026-11-09; the application form (version 2025 EN,
+# Last-Modified 2025-02-25), Ellevio's form (2025-09-15), Vattenfall's conditions (2026-09-02) and Nätkraft Borås's
+# instructions (2026-02-05) are the files the profile cites.
 cc: SE
 country: Sweden
 norm: EIFS 2018:2
@@ -16,7 +19,7 @@ decided_by: "The local distribution grid operator (elnätsföretag) of the area 
 list:
   name: "Rikta Rätt 1.0 (Energiföretagen Sverige)"
   url: https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller
-  meaning: "A pre-review list: Energiföretagen checked the submitted application form and certificates (RfG / EN 50549-1, EMC, LVD) and that the unit can be set to the Swedish settings — not that it is set right, and without checking test reports or testing anything. Columns: running number, make, type, firmware, kW, phases, energy source, date reviewed, comment. Page dated 2026-10-29, list 2026-10-23."
+  meaning: "A pre-review list: Energiföretagen checked the submitted application form and certificates (RfG / EN 50549-1, EMC, LVD) and that the unit can be set to the Swedish settings — not that it is set right, and without checking test reports or testing anything. Columns: running number, make, type, firmware, kW, phases, energy source, date reviewed, comment. Page and list dated 2026-11-09."
   gate: "No. In Energiföretagen's words the list 'has no legal status and is not mandatory for DSOs, manufacturers or installers' and listing 'does not constitute formal approval'. In practice the operators' forms ask whether the inverter is on Rikta Rätt and ask extra tables if it is not (Ellevio)."
 basis:
   - "Commission Regulation (EU) 2016/631 (RfG), article 13 — type A requirements"
@@ -27,7 +30,7 @@ basis:
   - "Directives 2014/30/EU (EMC) and 2014/35/EU (LVD); CE marking"
 # The edition every requirement below is written against, and what a maker's document must cite to count as evidence
 # for it (tools/check/run.py; docs/checks.md). EIFS 2018:2 has not been amended; Ei's replacement (consultation draft of
-# 2026-02-19) was not found adopted on 2026-11-01 — see changes.
+# 2026-02-19) was not found adopted on 2026-11-01 nor on 2026-11-12 — see changes.
 edition:
   norm: "EIFS 2018:2"
   id: "2018-11"
@@ -42,6 +45,20 @@ accepts: [generic-en50549-1, national-declaration]
 #   50.5 Hz / 8 % / 3-minute values, which is why the forms also ask the settings.
 # why national-declaration: Fronius, SMA, Sungrow and SolarEdge publish documents that cite EIFS 2018:2 with the Swedish settings
 #   (evidence.md); the operators' forms ask the same settings to be confirmed.
+# A model on Rikta Rätt: Energiföretagen has read its signed application form against these items before listing it. The
+# form (version 2025 EN) has the applicant tick, item by item, the EIFS 2018:2 3 kap. 1–9 §§ requirements, the ALP protection
+# settings the unit can be configured with and the RfG 13.6 logic interface; the page says the stated settings and measured
+# values must match the certificates (RfG / EN 50549-1, EMC, LVD). The page also says what the review is not: no test report
+# is verified, nothing is tested, and it shows the unit can be set right, not that it is. Lines that need the unit's rated
+# power or current stay with the datasheet; storage is left out (Rikta Rätt 1.0 "is not fully adapted" to it).
+list_checks:
+  word: "checked by Rikta Rätt"
+  what: "Energiföretagen lists a model on Rikta Rätt after reading its signed application form — the EIFS 2018:2 frequency, RoCoF, LFSM-O, under-frequency and reconnection requirements, the ALP protection settings the unit can be set to and the logic interface, ticked item by item — against its RfG / EN 50549-1, EMC and LVD certificates (the Rikta Rätt page and form, version 2025). Energiföretagen checks papers only: no test report is verified and nothing is tested, and the list is not binding — the local grid operator decides."
+  items: [freq-range, voltage-range, rocof, lfsm-o, under-frequency, reconnection, lom-protection, anti-islanding, logic-interface]
+  not_carried: "Rikta Rätt states the applicant's kW and phases but no rated current and no datasheet, and its 1.0 review is not adapted to storage; the local grid operator applies this line to the plant on the installer's pre-notification (föranmälan)"
+# A model off Rikta Rätt, for a row neither a datasheet nor a document GridFit holds shows (Ellevio type-A form 2025-09;
+# Vattenfall 2026 point 5; Rikta Rätt page: listing is not a prerequisite)
+on_application: "neither a datasheet nor a document GridFit holds shows it; off Rikta Rätt, the local grid operator checks it on the installer's pre-notification (föranmälan) — the protection-settings and power-quality tables of its type-A form, filled from the type-test protocol, with RfG / EN 50549-1, EMC and LVD certificates"
 must_meet:
   - id: power-class
     rule: "Plant size class (EIFS 2018:2 3 kap. 17 §; RfG art. 5.2, Nordic synchronous area)"
@@ -134,6 +151,7 @@ thresholds:
   - "storage: treated as production pending updated rules (Ellevio); Rikta Rätt 1.0 not fully adapted to storage and V2G"
 commissioning: "The unit may not run before the operator's approval (Nätkraft Borås). The installer confirms with the färdiganmälan that the installation is done to the conditions; the operator fits an import/export meter and at some operators books a commissioning check. The owner keeps the relay protection and other protective equipment maintained and tested to the maker's instructions (Vattenfall point 13), and the operator may require compliance tests and simulations after any change or fault (Ellevio)."
 changes:
+  - "12 November 2026 (re-read): EIFS 2018:2 still in force — Ei's 2026 regulations page lists amending regulations only; the Rikta Rätt 2.0 application format and XML data format are still announced for 'November 2026', not yet published"
   - "November 2026: Energiföretagen presents the Rikta Rätt 2.0 application format, the XML data format and a test data set, plus an industry guideline on which data operators should treat as necessary"
   - "turn of 2026/2027: listing in Rikta Rätt 2.0 opens — a database of all identifiable equipment with its certificates and declarations, no longer a pass list; each operator judges"
   - "Q2 2027: a Rikta Rätt 1.0 listing also requires a 2.0 listing; September 2027: no new 1.0 listings; turn of 2027/2028: the 1.0 CSV is unpublished"
@@ -144,13 +162,16 @@ evidence_for_documented: "A certificate or test report against EN 50549-1 (RfG) 
 sources:
   - title: "Rikta Rätt – information om omriktare för anslutning till det svenska lågspänningsnätet (Energiföretagen Sverige)"
     url: https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller
-    date: "2026-10-29"
-  - title: "Rikta Rätt 1.0 list, semicolon-separated CSV"
-    url: https://www.energiforetagen.se/4aa4f3/globalassets/medlemsportalen-oppet/rikta-ratt/rikta-ratt-26-10-23.csv
-    date: "2026-10-23"
+    date: "2026-11-09"
+    seen: "2026-11-12"
+  - title: "Rikta Rätt 1.0 list, semicolon-separated CSV (3,512 rows; encoded cp850, the 2026-10-23 file was cp1252)"
+    url: https://www.energiforetagen.se/4ab558/globalassets/medlemsportalen-oppet/rikta-ratt/rikta-ratt-26-11-09.csv
+    date: "2026-11-09"
+    seen: "2026-11-12"
   - title: "Registration for approval of an inverter for a type A power-generating facility – registration for Rikta Rätt (version 2025 EN)"
     url: https://www.energiforetagen.se/492bc8/globalassets/energiforetagen/energifakta/el/riktaratt_en.pdf
     date: "2025-02-20"
+    seen: "2026-11-12"
   - title: "Registration for Rikta Rätt – Appendix 1, specification of harmonic currents (version 2025 EN)"
     url: https://www.energiforetagen.se/492bc8/globalassets/energiforetagen/energifakta/el/riktaratt_bilaga1_en.pdf
     date: "2025-02-24"

@@ -1,0 +1,64 @@
+brand: TSUN
+maker_site: https://www.tsun-ess.com/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+# Written by hand 2026-11-12 (Belgium's coverage pass, docs/coverage/be.md) from the sheets on www.tsun-ess.com/downloads.html,
+# each table read off the rendered page (the text layer shifts the labels by a row). The sheets carry no version; `version`
+# is the server's Last-Modified date. "Balcony" in a list's code is the same unit with the trunk / balcony cable (the sheet
+# gives a weight for it); "-B1" … "-B4" on an MSU2000 is the unit with one to four B2000 stackable batteries (the sheet's
+# "1 MSU + 4 stackable battery"). Not covered: MX800Lite, MS3000, MSU1000, MAU1000 / MAU2000, ACU / HSU, MP2250 / MP3000
+# and the ESK kits — no sheet for them on the download page on 2026-11-12.
+sources:
+- id: tsun-gen3-micro-1in1-be
+  url: https://www.tsun-ess.com/files/datasheetgen3-microinverter-1-in-1.pdf
+  file: datasheetgen3-microinverter-1-in-1.pdf
+  version: '2026-08-18'
+  note: Gen3 microinverter 1-in-1, MS300–MX500; one MPPT; L/N/PE; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: tsun-gen3-micro-2in1-be
+  url: https://www.tsun-ess.com/files/datasheetgen3-microinverter-2-in-1.pdf
+  file: datasheetgen3-microinverter-2-in-1.pdf
+  version: '2026-08-18'
+  note: Gen3 microinverter 2-in-1, MS600–MX1000; two MPPT; L/N/PE; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: tsun-gen3-micro-4in1-be
+  url: https://www.tsun-ess.com/files/datasheetgen3-microinverter-4-in-1-en.pdf
+  file: datasheetgen3-microinverter-4-in-1-en.pdf
+  version: '2026-08-18'
+  note: Gen3 microinverter 4-in-1, MS1600–MX2250; four MPPT; L/N/PE; power factor 0.8 leading … 0.8 lagging
+  seen: '2026-11-12'
+- id: tsun-msu2000-be
+  url: https://www.tsun-ess.com/files/datasheetsolartrunk-msu2000en.pdf
+  file: datasheetsolartrunk-msu2000en.pdf
+  version: '2026-08-17'
+  note: SolarTrunk MSU2000 / MSU2000DE, PV + battery unit; on-grid AC port 2000 W / 800 W; L/N/PE; max PV input 2800+ W
+  seen: '2026-11-12'
+- id: tsun-mau5000-be
+  url: https://www.tsun-ess.com/files/datasheetpowertrunkmau5000en.pdf
+  file: datasheetpowertrunkmau5000en.pdf
+  version: '2026-08-15'
+  note: PowerTrunk MAU5000, AC-coupled battery; on-grid 2500 W, L/N/PE (several units in parallel on three phases); no current row
+  seen: '2026-11-12'
+models:
+- {code: TSOL-MS300, mppt: 1, ac_kw: 0.3, ac_kva: null, ac_a: 1.45, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-1in1-be, match: '^TSOL-MS300(BALCONY)?$'}
+- {code: TSOL-MS350, mppt: 1, ac_kw: 0.35, ac_kva: null, ac_a: 1.59, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-1in1-be, match: '^TSOL-MS350(BALCONY)?$'}
+- {code: TSOL-MS400, mppt: 1, ac_kw: 0.4, ac_kva: null, ac_a: 2.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-1in1-be, match: '^TSOL-MS400(BALCONY)?$'}
+- {code: TSOL-MX400, mppt: 1, ac_kw: 0.4, ac_kva: null, ac_a: 2.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-1in1-be, match: '^TSOL-MX400(BALCONY)?$'}
+- {code: TSOL-MX450, mppt: 1, ac_kw: 0.45, ac_kva: null, ac_a: 2.25, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-1in1-be, match: '^TSOL-MX450(BALCONY)?$'}
+- {code: TSOL-MX500, mppt: 1, ac_kw: 0.5, ac_kva: null, ac_a: 2.5, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-1in1-be, match: '^TSOL-MX500(BALCONY)?$'}
+- {code: TSOL-MS600, mppt: 2, ac_kw: 0.6, ac_kva: null, ac_a: 3.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-2in1-be, match: '^TSOL-MS600(BALCONY)?$'}
+- {code: TSOL-MS700, mppt: 2, ac_kw: 0.7, ac_kva: null, ac_a: 3.19, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-2in1-be, match: '^TSOL-MS700(BALCONY)?$'}
+- {code: TSOL-MS800, mppt: 2, ac_kw: 0.8, ac_kva: null, ac_a: 4.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-2in1-be, match: '^TSOL-MS800(BALCONY)?$'}
+- {code: TSOL-MX800, mppt: 2, ac_kw: 0.8, ac_kva: null, ac_a: 4.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-2in1-be, match: '^TSOL-MX800(BALCONY)?$'}
+- {code: TSOL-MX900, mppt: 2, ac_kw: 0.9, ac_kva: null, ac_a: 4.5, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-2in1-be, match: '^TSOL-MX900(BALCONY)?$'}
+- {code: TSOL-MX1000, mppt: 2, ac_kw: 1.0, ac_kva: null, ac_a: 5.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-2in1-be, match: '^TSOL-MX1000(BALCONY)?$'}
+- {code: TSOL-MS1600, mppt: 4, ac_kw: 1.6, ac_kva: null, ac_a: 8.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-4in1-be}
+- {code: TSOL-MS1800, mppt: 4, ac_kw: 1.8, ac_kva: null, ac_a: 9.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-4in1-be}
+- {code: TSOL-MS2000, mppt: 4, ac_kw: 2.0, ac_kva: null, ac_a: 10.0, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-4in1-be}
+- {code: TSOL-MX2250, mppt: 4, ac_kw: 2.25, ac_kva: null, ac_a: 11.25, phases: 1, pv_kw: null, cosphi: 0.8, source: tsun-gen3-micro-4in1-be}
+- {code: TSOL-MSU2000, mppt: 4, ac_kw: 2.0, ac_kva: null, ac_a: 10.0, phases: 1, pv_kw: 2.8, cosphi: 0.8, source: tsun-msu2000-be, match: '^TSOL-MSU2000(-B[1-4])?$'}
+- {code: TSOL-MSU2000DE, mppt: 4, ac_kw: 0.8, ac_kva: null, ac_a: 4.0, phases: 1, pv_kw: 2.8, cosphi: 0.8, source: tsun-msu2000-be, match: '^TSOL-MSU2000DE(-B[1-4])?$'}
+- {code: TSOL-MAU5000, mppt: null, ac_kw: 2.5, ac_kva: null, ac_a: null, phases: 1, pv_kw: null, source: tsun-mau5000-be}

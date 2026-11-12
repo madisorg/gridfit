@@ -1,7 +1,7 @@
 # Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
 # are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
 # generated ones here: change the mapping in sources.yaml and rebuild.
-brand: Victron Energy
+brand: Victron
 maker_site: ''
 rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
   the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
@@ -201,3 +201,248 @@ documents:
     countries: [DE]
     note: Report 22PP580-05_1 of 2025-06-03; programme SOP-9-1_15 GCC. E.5 values; Q(U) not implemented, limited dynamic grid support.
       The "Multi RS19 Solar" (RS19) is not named.
+- id: es-rd647-multiplus-ii-8-15k-1ph-2026
+  title: Certificado de Conformidad 2622/0478-J-2-E2-CER — RD 647/2020, RD 413/2014, RD 1699/2011 — MultiPlus-II 48/8000, 48/10000,
+    48/15000 230V (single-phase)
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-RD-647-2020-413-2014-1699-2011-MultiPlus-II-Single-Phase-48V-8kVA,-10kVA--15kVA-(Spain).pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0478-J-2-E2-CER
+  issued: '2026-06-05'
+  valid_until: '2028-07-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  - RD 413/2014
+  - RD 1699/2011
+  firmware: 2682558 / 2683558 / 2684558
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V (6.4–12 kW, single-phase)
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - ES
+    note: Certifies ONLY the protection functions for abnormal voltage/frequency, auto-reconnection and power factor as RD 647/2020
+      defines them (printed remark). Register spellings "-100/100", "-100-230V", a trailing Estonian UFR1001E remark and "+DC solar
+      charger" bundles are the same inverter model. First issued 2024-02-02; replaces E1.
+- id: es-une217002-multiplus-ii-8-15k-1ph-2026
+  title: Certificado de Conformidad 2622/0478-J-1-E2-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I apdo. 2.3.6 y
+    5.3 — MultiPlus-II 48/8000, 48/10000, 48/15000 230V (single-phase)
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-UNE-217002-2020-IEC-62116-2014-MultiPlus-II-single-phase-48V-8kVA,-10kVA-15kVA-Spain.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0478-J-1-E2-CER
+  issued: '2026-06-05'
+  valid_until: '2028-07-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 2682558 / 2683558 / 2684558
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V (6.4–12 kW, single-phase)
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - ES
+    note: Register spellings "-100/100", "-100-230V", a trailing Estonian UFR1001E remark and "+DC solar charger" bundles are the same
+      inverter model. First issued 2024-02-02; replaces E1.
+- id: es-nts-multiplus-ii-8-15k-1ph-2026
+  title: Certificado de Conformidad 2622/0478-I-1-E2-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — MultiPlus-II 48/8000, 48/10000,
+    48/15000 230V (single-phase)
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-UE-2016-631-MultiPlus-II-single-phase-48V-8kVA,-48V-10kVA--48V-15kVA-(Spain)-2026.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 2622/0478-I-1-E2-CER
+  issued: '2026-06-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la conformidad de los Módulos de Generación de Electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 2682558 / 2683558 (as printed)
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V (6.4–12 kW, single-phase, Type A)
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - ES
+    note: Register spellings "-100/100", "-100-230V", a trailing Estonian UFR1001E remark and "+DC solar charger" bundles are the same
+      inverter model. First issued 2024-02-02; replaces E1.
+- id: es-rd647-multiplus-ii-8-15k-3ph-2025
+  title: Certificado de Conformidad 250041RECO01-J-2-CER — RD 647/2020, RD 413/2014, RD 1699/2011 — MultiPlus-II 48/8000, 48/10000,
+    48/15000 230V (three-phase configuration)
+  url: https://www.victronenergy.com/upload/documents/Certificate-RD-647,-RD413,-RD1699-MultiPlus-II-3-phase-configuration-48V-8kVA,-10kVA,-15kVA-(Spain).pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250041RECO01-J-2-CER
+  issued: '2025-02-19'
+  valid_until: '2030-02-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647/2020
+  - RD 413/2014
+  - RD 1699/2011
+  firmware: 2621552 / 2627552 / 2619552
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V, three units of the same model in parallel (three-phase)
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - ES
+    note: Three-phase system = three single-phase units of the same model in parallel (printed). Certifies ONLY the RD 647/2020 protection
+      functions (printed remark). Based on test report 2222/0478-J (2023-07-27).
+- id: es-une217002-multiplus-ii-8-15k-3ph-2025
+  title: Certificado de Conformidad 250041RECO01-J-1-CER — UNE 217002:2020, IEC 62116:2014, Orden TED/749/2020 Anexo I apdo. 2.3.6 y
+    5.3 — MultiPlus-II 48/8000, 48/10000, 48/15000 230V (three-phase configuration)
+  url: https://www.victronenergy.com/upload/documents/Certificate-UNE-217002-MultiPlus-II-3-phase-configuration-48V-8kVA,-10kVA,-15kVA.pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250041RECO01-J-1-CER
+  issued: '2025-02-19'
+  valid_until: '2030-02-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217002:2020
+  - IEC 62116:2014
+  - Orden TED/749/2020 Anexo I apdo. 2.3.6 y 5.3
+  firmware: 2621552 / 2627552 / 2619552
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V, three units of the same model in parallel (three-phase)
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - ES
+    note: Three-phase system = three single-phase units of the same model in parallel (printed). Based on test report 2222/0478-J (2023-07-27).
+- id: es-nts-multiplus-ii-8-15k-3ph-2025
+  title: Certificado de Conformidad 250041RECO01-I-1-CER — NTS (Reglamento UE 2016/631) rev. 2.1, Tipo A — MultiPlus-II 48/8000, 48/10000,
+    48/15000 230V (three-phase configuration)
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-UE-2016-631-MultiPlus-II-3-phase-configuration-48V-8kVA,-10kVA,-15kVA-(Spain).pdf
+  issuer: SGS Tecnos, S.A.U.
+  cert_no: 250041RECO01-I-1-CER
+  issued: '2025-02-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - Norma Técnica de Supervisión de la Conformidad de los Módulos de Generación de electricidad según el Reglamento UE 2016/631, revisión
+    2.1 (2021-07-09)
+  - Corrección de errores de la versión 2.1, revisión 1.0 (2021-10-08)
+  firmware: 2621552 / 2627552 / 2619552
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V, three units in parallel (three-phase, Type A)
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - ES
+- id: es-nts-multi-rs-solar-2025
+  title: Certificado 25-009-00 — NTS-631 (Reglamento UE 2016/631) versión 2.1, Tipo A — Multi RS Solar 48/6000/100-450/100
+  url: https://www.victronenergy.com/upload/documents/Certificate-NTS-631-SEPE-V2.1-Grid-Multi-RS-Solar-(Spain).pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 25-009-00
+  issued: '2025-01-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS-631 versión 2.1 (Norma técnica de supervisión de la conformidad de los módulos de generación de electricidad según el Reglamento
+    UE 2016/631)
+  firmware: v1.21
+  families:
+  - name: Multi RS Solar 48/6000/100-450/100 (5 kW, single-phase)
+    match: ^MULTIRSSOLAR48/6000/100-450/100$
+    countries:
+    - ES
+    note: Report 22PP580-09_0. The register's separate "Multi RS19 Solar" and "RS SmartSolar 48/6000" codes are not the model this certificate
+      lists, so they are not taken.
+- id: de-vde4105-eze-multi-rs19-solar-2025
+  title: Kiwa Primara 25-360-00 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Multi RS19 Solar 48/6000/100-450/100
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-VDE-AR-N-4105-2018-11-EZE-Multi-RS19-Solar.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 25-360-00
+  issued: '2025-10-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: v1.26
+  families:
+  - name: Multi RS19 Solar 48/6000/100-450/100
+    match: ^MULTIRS19SOLAR48/6000/100-450/100$
+    countries:
+    - DE
+    note: Unit certificate, report 25PP291-12_0 of 2025-09-30; programme SOP-9-1_15 GCC. The RS19 is the newer hardware of the Multi
+      RS Solar (whose own certificate is de-vde4105-eze-multi-rs-solar-2025). The matching NA-protection certificate is …-NAS-Multi-RS19-Solar.pdf
+      on the same server.
+- id: de-vde4105-eze-easysolar-ii-2024
+  title: Kiwa Primara 21-163-02 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — EasySolar-II 24/3000, 48/3000, 48/5000 MPPT GX
+  url: https://www.victronenergy.com/upload/documents/Certificate-VDE-AR-N-4105-2018-11-EZE-EasySolar-II-3k-%26-5k-MPPT-GX.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 21-163-02
+  issued: '2024-04-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: EasySolar-II 48/3000/35-32 MPPT 250/70 GX, 24/3000/70-32 MPPT 250/70 GX, 48/5000/70-50 MPPT 250/100 GX
+    match: ^EASYSOLAR-II(48/3000/35-32MPPT250/70|24/3000/70-32MPPT250/70|48/5000/70-50MPPT250/100)GX$
+    countries:
+    - DE
+    note: Unit certificate (battery storage system with PV input), report 20PP183-05_1 of 2023-10-26; programme SOP-9-1_15 GCC. The
+      older EasySolar (without -II) rows are not named.
+- id: de-vde4105-nas-quattro-ii-5k-2024
+  title: Kiwa Primara 24-006-00 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Quattro-II 48/5000/70-50/50 230V
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-VDE-AR-N-4105-2018-11-NAS-Quattro-II-48V-5kVA-230V.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 24-006-00
+  issued: '2024-01-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '2651508'
+  families:
+  - name: Quattro-II 48/5000/70-50/50 230V (integrated NA protection)
+    match: ^QUATTRO-?II48/5000/70-50/50230V(\+DCSOLARCHARGER(BLUE|SMART)SOLARMPPT)?$
+    countries:
+    - DE
+    note: NA-protection certificate only (report 22PP102-05_0 of 2023-12-20); no unit certificate (EZE) for the Quattro-II was found
+      on the server. Register rows with an added MPPT are joined. The older Quattro (without -II) rows are not named.
+- id: de-vde4105-eze-multiplus-ii-3ph-8-15k-2025
+  title: SGS Tecnos 250041RECO01-A-CER — Unit certificate VDE-AR-N 4105:2018-11 + Correction 1 — MultiPlus-II 48/8000, 48/10000, 48/15000
+    in three-phase configuration
+  url: https://www.victronenergy.com/upload/documents/Certificate-ESS-VDE-AR-N-4105-2018-11-EZE-MultiPlus-II-3-phase-configuration-48V-8kVA%2C-10kVA%2C-15kVA-%28Germany%29.pdf
+  issuer: SGS Tecnos, S.A.U. (UNE-EN ISO/IEC 17065)
+  cert_no: 250041RECO01-A-CER
+  issued: '2025-02-19'
+  valid_until: '2030-02-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11 + Correction 1: 2020-10'
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  firmware: 2621552 / 2627552 / 2619552
+  families:
+  - name: MultiPlus-II 48/8000/110-100, 48/10000/140-100, 48/15000/200-100 230V — three units as one three-phase system
+    match: ^MULTIPLUS-?II(230V)?48/(8000/110|10000/140|15000/200)-100(/100)?(-?230V)?(\([^)]*\)|\+DCSOLARCHARGER(SMART|BLUE)SOLARMPPT)?$
+    countries:
+    - DE
+    note: Covers the three-phase configuration (three identical units in parallel, 3L/N/PE); 8 kVA / 6.4 kW, 10 kVA / 8 kW, 15 kVA /
+      12 kW per unit. Reports 2222/0478-A, -AM1 and 250045RECO01. Same register rows as the single-phase certificate de-vde4105-eze-multiplus-ii-8-15k-2026
+      — adds no new models, only the three-phase case.
+- id: it-cei021-multiplus-3kva-2015
+  title: Dichiarazione di conformità alle prescrizioni alla Norma CEI 0-21 — CEI 0-21:2014-09 + V1:2014-12 — MultiPlus 12/3000/120,
+    24/3000/70, 48/3000/35 (-16 / -50)
+  url: https://www.victronenergy.com/upload/documents/Certificate-CEI-0-21-all-MultiPlus-3kVA.pdf
+  issuer: Primara Test- und Zertifizier-GmbH, DAkkS D-ZE-12089-01-00 (test files 15PP007-04)
+  cert_no: 15-241-00
+  issued: '2015-12-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2014-09
+  - CEI 0-21;V1:2014-12
+  firmware: 26xx404 (xx = 12, 24 or 48 V version)
+  families:
+  - name: Victron MultiPlus 3 kVA 1-phase inverter/charger (12/3000/120, 24/3000/70, 48/3000/35)
+    match: ^MULTIPLUS(12/3000/120|24/3000/70|48/3000/35)(-16|-50)?$
+    countries: [IT]
+    note: old edition (CEI 0-21:2014); static converter only, external SPI; low-frequency isolation transformer; "limitato a impianti
+      fino a 3 kW"; names both -16 and -50 variants, the register codes carry neither

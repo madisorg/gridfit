@@ -212,10 +212,12 @@ const LO: Record<string, string> = { W: "Local control", L: "Local, read only", 
         return `<td class="c"><span class="cl ${cls}" role="img" aria-label="${esc(t)}" title="${esc(t)}">${glyph}</span></td>`;
       }).join("");
       const nl = r[4].replace(/-/g, "").length;
+      // ≈ = read from the model code by the maker's naming (data/specs/naming/codes.yaml); shown, never filtered on
+      const CODE_T = "≈ from the model code: the maker's naming, checked against the models a list or datasheet states; no list or datasheet gives this model's figure";
       const mp = r[9] !== null ? (r[9] === 0 ? '<span class="muted">none</span>' : String(r[9])) : r[2] === "battery" || r[2] === "wallbox" ? '<span class="muted" title="no MPPT: battery, AC inverter or wallbox">none</span>' : '<span class="muted" title="not collected">–</span>';
       const leg = r[11] ? `<span class="tag tag-legacy" title="${r[11] === "C" ? "probably legacy: an older generation" : r[11] === "B" ? "legacy: discontinued by the maker" : "legacy: expired or refused on every list"}">${r[11] === "C" ? "legacy?" : "legacy"}</span>` : "";
       return `<tr${r[11] ? ' class="legacy"' : ""}><td><a href="${r[3]}"><span class="b">${esc(data.brands[r[0]])}</span>&nbsp;${esc(r[1])}</a><span class="cls">${KIND[r[2]]}</span>${leg}</td>${cells}` +
-        `<td class="num">${nl}</td><td class="sp">${r[7] || '<span class="muted">–</span>'}</td><td class="sp num">${r[8] === null ? '<span class="muted">–</span>' : r[8]}</td><td class="sp num mp">${mp}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
+        `<td class="num">${nl}</td><td class="sp">${r[7] || (r[12] && r[12][1] ? `<span class="muted" title="${CODE_T}">≈${r[12][1]}</span>` : '<span class="muted">–</span>')}</td><td class="sp num">${r[8] === null ? (r[12] && r[12][0] !== null ? `<span class="muted" title="${CODE_T}">≈${r[12][0]}</span>` : '<span class="muted">–</span>') : r[8]}</td><td class="sp num mp">${mp}</td><td class="lo"><span class="st ${LEVEL[best(r[5][0], r[5][1])][0]}">${LEVEL[best(r[5][0], r[5][1])][1]}</span></td><td class="lo shc">${mark("Home Assistant", HA, r[5][0])}${mark("evcc", EV, r[5][1])}</td></tr>`;
     }).join("");
     $("xb").insertAdjacentHTML("beforeend", html);
     shown = Math.min(shown + PAGE, hits.length);

@@ -100,3 +100,224 @@ documents:
   - name: ZCS Azzurro inverters (the code table, not per model)
     match: ^(1PH|3PH)
     countries: [AT, BE, CH, CY, CZ, DE, DK, EE, ES, FI, FR, GB, GR, HR, HU, IE, IT, LT, LV, NL, 'NO', PL, RO, SE, SI, SK, TR, UA]
+- id: at-tor-r25-3-12ktl-v3-2023
+  title: Intertek CN-PV-230073 — TOR Erzeuger Type A V1.2, OVE-Richtlinie R 25 — 3PH 3.3–12KTL-V3
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-3.3-12KTL-V3.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PV-230073
+  issued: '2023-03-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Type A version 1.2, 18 April 2022', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: 3PH 3.3–12KTL-V3
+    match: ^(AZZURRO)?3PH(3\.3|4\.4|5\.5|6\.6|8\.8|11|12)KTL-V3$
+    countries: [AT]
+    note: Report 230116067GZU-002. No settings table.
+- id: at-tor-r25-60-80ktl-v3-2022
+  title: Intertek CN-PV-220247 — TOR Erzeuger Type A V1.2, OVE-Richtlinie R 25 — 3PH 60–80KTL-V3
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-60-80KTL-V3.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PV-220247
+  issued: '2022-11-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Type A version 1.2, 18 April 2022', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: 3PH 60–80KTL-V3
+    match: ^(AZZURRO)?3PH(60|70|75|80)KTL-V3$
+    countries: [AT]
+    note: Report 221024109GZU-010. No settings table.
+- id: at-tor-r25-hyd-hp-2023
+  title: Intertek CN-PV-230415 — TOR Erzeuger Type A V1.2, OVE-Richtlinie R 25 — 1PH HYD 3000–6000 ZSS HP
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-HYD3000-6000-HP.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PV-230415
+  issued: '2023-07-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Type A version 1.2, 18 April 2022', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: 1PH HYD 3000–6000 ZSS HP
+    match: ^(AZZURRO)?1PHHYD(3000|3600|4000|4600|5000|5500|6000)ZSSHP$
+    countries: [AT]
+    note: Report 230418068GZU-001. No settings table.
+- id: at-tor-r25-hyd-zp1-2023
+  title: Intertek CN-PV-230102 — TOR Erzeuger Type A V1.2, OVE-Richtlinie R 25 — 1PH HYD 3000–6000 ZP1
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-HYD3000-6000-ZP1.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PV-230102
+  issued: '2023-03-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Type A version 1.2, 18 April 2022', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: 1PH HYD 3000–6000 ZP1
+    match: ^(AZZURRO)?1PHHYD(3000|3680|4000|4600|5000|6000)ZP1$
+    countries: [AT]
+    note: Report 221116037GZU-015. No settings table.
+- id: at-tor-r25-25-50ktl-v3-2022
+  title: Intertek CN-PV-220161 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — 3PH 25–50KTL-V3
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-25-50KTL-V3.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PV-220161
+  issued: '2022-08-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V000001
+  families:
+  - name: 3PH 25–50KTL-V3
+    match: ^(AZZURRO)?3PH(25|30|33|36|40|45|50)KTL-V3$|^(AZZURRO)?3PH30KTL-V3-A$|^(AZZURRO)?3PH(40|50)KTL-V3-HV$
+    countries: [AT]
+    note: Report 220610122GZU-005. No settings table.
+- id: at-tor-r25-15-24tl-v3-2021
+  title: Intertek CN-PV-210281 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — 3PH 15000–24000TL-V3
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-15000-24000TL-V3.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (CNAS)
+  cert_no: CN-PV-210281
+  issued: '2021-11-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V010000
+  families:
+  - name: 3PH 15000–24000TL-V3
+    match: ^(AZZURRO)?3PH(15000|17000|20000|22000|24000)TL-V3$
+    countries: [AT]
+    note: Report 210727051GZU-001. Register rows spelled '…KTL-V3' are not joined. No settings table.
+- id: at-tor-r25-tlm-v3-2021
+  title: Intertek CN-PV-210215 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — 1PH 3000–6000TLM-V3
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-3000-6000TLM-V3.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (CNAS)
+  cert_no: CN-PV-210215
+  issued: '2021-09-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V000001
+  families:
+  - name: 1PH 3000–6000TLM-V3
+    match: ^(AZZURRO)?1PH(3000|3680|4000|4600|5000|6000)-?TLM-V3$|^(AZZURRO)?1PH5000-?TLM-V3-A$
+    countries: [AT]
+    note: Report 210727046GZU-006. The registers write the code with or without a hyphen before TLM. No settings table.
+- id: at-tor-r25-hyd-zss-2021
+  title: Intertek CN-PV-210226 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — 3PH HYD 5000–20000 ZSS
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-HYD5000-20000-ZSS.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (CNAS)
+  cert_no: CN-PV-210226
+  issued: '2021-09-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  families:
+  - name: 3PH HYD 5000–20000 ZSS
+    match: ^(AZZURRO)?3PHHYD(5000|6000|8000|10000|15000|20000)ZSS$
+    countries: [AT]
+    note: Report 210727058GZU-001. No settings table.
+- id: at-tor-r25-100-110ktl-v4-2023
+  title: Intertek CN-PV-230543 — TOR Erzeuger Typ A/B V1.2, OVE-Richtlinie R 25 — 3PH 100–125KTL-V4
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-AB-100-110KTL-V4.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065)
+  cert_no: CN-PV-230543
+  issued: '2023-09-21'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.2: 18 April 2022', 'TOR Erzeuger Typ B Version 1. 2: 18 April 2022', 'OVE-Richtlinie R 25:2020-03-01']
+  families:
+  - name: 3PH 100 / 110KTL-V4, 125KTL-V4-A
+    match: ^(AZZURRO)?3PH(100|110)KTL-V4$|^(AZZURRO)?3PH125KTL-V4-A$
+    countries: [AT]
+    note: Report 230802119GZU-001. The register's 3PH125KTL-V4 (no -A) is not joined. No settings table.
+- id: at-tor-r25-75-136ktl-2021
+  title: Intertek CN-PV-210282 — TOR Erzeuger Typ A/B V1.1, OVE-Richtlinie R 25 — 3PH 75–136KTL-LV / -HV
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-80-136K-TL.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (CNAS)
+  cert_no: CN-PV-210282
+  issued: '2021-11-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:12.12.2019', 'TOR Erzeuger Typ B Version 1.1:12.12.2019', 'OVE-Richtlinie R 25:2020-03-01']
+  firmware: V020010
+  families:
+  - name: 3PH 75–110KTL-LV, 100–136KTL-HV
+    match: ^(AZZURRO)?3PH(75|80|100|110)KTL-LV$|^(AZZURRO)?3PH(100|125|136)KTL-HV$
+    countries: [AT]
+    note: Reports 210723189GZU-001 and -002. No settings table.
+- id: at-tor-r25-hyd-zp3-2025
+  title: Bureau Veritas U25-0895 — TOR-Stromerzeugungsanlagen Typ A:2024-07, OVE R25 — 3PH HYD 5000–12000 ZP3
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-HYD5000-12000-ZP3.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U25-0895
+  issued: '2025-09-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR-Stromerzeugungsanlagen Typ A:2024-07', 'ÖVE-Richtlinie R25:2020-03']
+  firmware: V000001_V000001 or later
+  families:
+  - name: 3PH HYD 5000–12000 ZP3
+    match: ^(AZZURRO)?3PHHYD(5000|6000|6500|8000|9900|10000|12000)ZP3$
+    countries: [AT]
+    note: Report LS2A25073001EGAT01. No settings table.
+- id: at-tor-r25-hyd-zsr-2026
+  title: Bureau Veritas U26-0023 — TOR-Stromerzeugungsanlagen Typ A:2024-07, OVE R25 — 3PH HYD 30000–60000 ZSR
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-HYD-40000-60000-ZSR.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U26-0023
+  issued: '2026-01-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR-Stromerzeugungsanlagen Typ A:2024-07', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: 3PH HYD 30000–60000 ZSR
+    match: ^(AZZURRO)?3PHHYD(30000|50000)ZSR(-A)?$|^(AZZURRO)?3PHHYD(40000|60000)ZSR$
+    countries: [AT]
+    note: Report LS2A25091101EGAT01. No firmware, no settings table.
+- id: at-tor-r25-hyd-zsr-l-2026
+  title: Bureau Veritas U26-0924 — TOR-Stromerzeugungsanlagen Typ A:2024-07, OVE R25 — 3PH HYD 15000–30000 ZSR-L
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-HYD-30000-60000-ZSR-L.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U26-0924
+  issued: '2026-10-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR-Stromerzeugungsanlagen Typ A:2024-07', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: 3PH HYD 15000–30000 ZSR-L
+    match: ^(AZZURRO)?3PHHYD(15000|30000)ZSR-A-L$|^(AZZURRO)?3PHHYD(15000|20000|25000|30000)ZSR-L$
+    countries: [AT]
+    note: Report LS2A25101302EGAT01. The file name says 30000–60000; the models are 15–30 kW. No settings table.
+- id: at-tor-power-magic-2024
+  title: Bureau Veritas U24-1238 — TOR-Stromerzeugungsanlagen Typ A:2024-07 — Power Magic PCS 125 / 215 kW
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-TOR-Erzeuger-Typ-A-Power-Magic.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U24-1238
+  issued: '2024-12-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR-Stromerzeugungsanlagen Typ A:2024-07']
+  firmware: V000001
+  families:
+  - name: Power Magic ZPM-PCS125K-R / 215K-R
+    match: ^ZPM-PCS(125|215)K-R$
+    countries: [AT]
+    note: Report HC2406170059GC03. The intended-use text names OVE R25; the list of test bases does not. No settings table.
+- id: es-rd647-hyd-zp1-2023
+  title: Certificate of Conformity CN-PV-230095 — RD 647:2020, UNE 217002:2020 — AZZURRO 1PH HYD3000–HYD6000 ZP1
+  url: https://www.zcsazzurro.com/uploads/documetazione/certificazioni/Certification-of-Conformity-with-UNE-217-002-HYD3000-6000-ZP1.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-230095
+  issued: '2023-03-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 647:2020
+  - UNE 206006 IN:2011
+  - UNE 206007-1 IN:2013
+  - UNE 217002:2020
+  firmware: V000001
+  families:
+  - name: 1PH HYD ZP1 single-phase hybrid 3–6 kW
+    match: ^(AZZURRO)?1PHHYD(3000|3680|4000|4600|5000|6000)ZP1$
+    countries:
+    - ES

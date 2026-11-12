@@ -1,0 +1,98 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Sigenergy
+maker_site: ''
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: at-tor-r25-sigenstor-tp-2025
+  title: Intertek CN-PVES-230566R1 — TOR Erzeuger Typ A V1.3, OVE-Richtlinie R 25 — SigenStor EC / Sigen Hybrid / SigenStor AC / Sigen PV Max
+    5…30 TP
+  url: https://www.maxsel.de/wp-content/uploads/2025/09/Sigenergy_Declaration-of-Conformity_TOR-A_ENU.pdf
+  copy_of: maxsel.de (distributor); sigenergy.com's download centre refuses scripts (403)
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-230566R1
+  issued: '2025-03-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.3: 01.07.2024', 'OVE-Richtlinie R 25:2020']
+  firmware: V100R001C21
+  families:
+  - name: SigenStor EC, Sigen Hybrid, SigenStor AC, Sigen PV Max 5–30 TP
+    match: ^SIGEN(STOREC|HYBRID|STORAC|PVMAX)(5|6|8|10|12|15|17|20|25|30)\.0TP$
+    countries: [AT]
+    note: Report 241223124GZU-001 (2025-03-17). Replaces CN-PV-230566 (2023-10-11). The TP2, LV and BE variants are not named. No settings table.
+- id: at-tor-r25-sigen-pv-m-2025
+  title: Lyns-tci VHC2407160090GC01-R1 — TOR Stromerzeugungsanlagen Typ A/B/C V1.3, OVE-Richtlinie R25 — Sigen PV / PCS 50…150 M1/M2
+  url: https://www.maxsel.de/wp-content/uploads/2025/09/Sigenergy_CI-Inverters_Certificate-TOR-type-A-B-C_ENU.pdf
+  copy_of: maxsel.de (distributor); sigenergy.com's download centre refuses scripts (403)
+  issuer: Lyns-tci Technology Guangdong Co., Ltd. (ISO/IEC 17025, A2LA 5200.02)
+  cert_no: VHC2407160090GC01-R1
+  issued: '2025-04-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Stromerzeugungsanlagen Typ A: 2024-07 (Version 1.3)', 'TOR Stromerzeugungsanlagen Typ B: 2024-07 (Version 1.3)', 'TOR Stromerzeugungsanlagen
+      Typ C: 2024-07 (Version 1.3)', 'OVE-Richtlinie R25:2020-03', 'FGW Technical Guidelines TG3, Revision 26']
+  firmware: V100R001
+  families:
+  - name: Sigen PV 50–150 M1/M2 (and -HYA/-HYB), Sigen PCS 50–150 M1/M2-A
+    match: ^SIGEN(PV(50|60|80|100|110|125|150)M[12](-HY[AB])?|PCS(50|60|80|100|110|125|150)M[12]-A)$
+    countries: [AT]
+    note: A verification of compliance by an ISO/IEC 17025 laboratory (R25 report HC2407160090GC01, 2025-04-11). Carries an Austria parameter
+      list (A.4, as images).
+- id: it-cei021-sigen-tp-2024
+  title: Intertek Certificate of Conformity CN-PVES-240079 — CEI 0-21:2022-03 + V1:2022-11 — SigenStor EC / SigenStor AC / Sigen Hybrid
+    / Sigen PV Max x TP (5.0–30.0) with SigenStor BAT 5.0 / 8.0
+  url: https://wwwstatic.sigenergy.com/content/assets/uploads/en_download/1711705966851684.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065); tests Intertek Testing Services Shenzhen Ltd. Guangzhou
+    Branch (IAS TL-395), report 230705121GZU-001
+  cert_no: CN-PVES-240079
+  issued: '2024-03-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: V100R001C21
+  families:
+  - name: SigenStor EC/AC, Sigen Hybrid, Sigen PV Max three-phase 5–30 kW
+    match: ^(SIGEN)?(STOR(EC|AC)|HYBRID(INVERTER)?|PVMAX|(EC)?ENERGYCONTROLLER)(5\.0|6\.0|8\.0|10\.0|12\.0|15\.0|17\.0|20\.0|25\.0|30\.0)TP$
+    countries: [IT]
+    note: Batteries SigenStor BAT 5.0 / 8.0 (1–6 modules), control model SES1PWR3 VB. Register aliases "Sigen Energy Controller" (=
+      the SigenStor EC unit) and "Sigen Hybrid Inverter" joined; -LV, -BE and TP2 variants are not named.
+- id: it-cei021-sigen-sp-2023
+  title: TÜV SÜD Compliance Document D 121007 0005 Rev. 00 — CEI 0-21:2022/V1:2022 — SigenStor EC / SigenStor AC / Sigen Hybrid 3.0–6.0
+    SP with SigenStor BAT 5.0 / 8.0
+  url: https://wwwstatic.sigenergy.com/content/assets/uploads/en_download/1709100813462307.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich), report 5040923022421-00
+  cert_no: D 121007 0005 Rev. 00
+  issued: '2023-08-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V1:2022
+  families:
+  - name: SigenStor EC/AC and Sigen Hybrid single-phase 3–6 kW
+    match: ^SIGEN(STOR(EC|AC)|HYBRID(INVERTER)?|ENERGYCONTROLLER)(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)SP$
+    countries: [IT]
+    note: Product named "Sigen Energy controller" on the certificate (= SigenStor EC). Batteries SigenStor BAT 5.0 / 8.0 (1–6 pieces).
+      The PDF on the site is the 2-page excerpt (pages 1–2 of 6); an Italian copy is at …/1709100854453665.pdf. SP2 and Neo not named.
+- id: it-cei021-sigen-pv-max-sp-2023
+  title: TÜV SÜD Compliance Document D 121007 0009 Rev. 00 — CEI 0-21:2022/V1:2022 — Sigen PV Max 3.0–6.0 SP
+  url: https://wwwstatic.sigenergy.com/content/assets/uploads/en_download/1709100685556803.pdf
+  issuer: TÜV SÜD Product Service GmbH (Munich), report 5040923022424-00
+  cert_no: D 121007 0009 Rev. 00
+  issued: '2023-09-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022/V1:2022
+  families:
+  - name: Sigen PV Max single-phase string 3–6 kW
+    match: ^SIGENPVMAX(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)SP$
+    countries: [IT]
+    note: 2-page excerpt of a 4-page document on the site; Italian copy at …/1709100728571692.pdf.

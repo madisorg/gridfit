@@ -1,0 +1,136 @@
+# The model-code level of rated power and phases: what a maker's own naming says, for models no list and no collected
+# datasheet gives a figure for. A level below the datasheet, shown as "≈ 10 kW, from the model code", never used by the
+# requirement check, the type-A status or the filters (web/src/lib/devices.ts codeOf).
+#
+# A rule is a regex over the normalised register code (upper case, whitespace removed, "," -> ".") with a named group
+# `kw` (kilowatts) or `w` (watts), and `phases` (1 or 3) or a group `ph` read through `ph_map`. tools/specs/codes.py
+# tries every rule on every register model of the brand and compares it with the models whose rated power or phases a
+# list (AT, BE, SE) or a datasheet in data/specs/ states: kW agrees when the stated figure is within 15 % (lists give
+# kVA, sheets kW), phases must be equal. A rule's kW and its phases are used only when each agrees on at least 3 such
+# models and on at least 90 % of them; otherwise that part is reported and left out. The proof is the agreement itself,
+# printed per rule by codes.py and kept in web/.data/codes.json; `note` says what the rule reads.
+brands:
+  - brand: Sigenergy
+    rules:
+      - { match: '(?:EC|CONTROLLER|INVERTER|PVMAX)(?P<kw>\d+(?:\.\d+)?)(?P<ph>SP|TP)', ph_map: { SP: 1, TP: 3 }, note: "SigenStor EC / Energy Controller / Hybrid / PV Max <kW> SP|TP: SP single-phase, TP three-phase" }
+  - brand: Deye
+    rules:
+      - { match: '^SUN-(?P<kw>\d+(?:\.\d+)?)K-SG0\dLP1', phases: 1, note: "SUN-<kW>K-SG0xLP1: low-voltage battery, single-phase" }
+      - { match: '^SUN-(?P<kw>\d+(?:\.\d+)?)K-SG0\d[LH]P3', phases: 3, note: "SUN-<kW>K-SG0x[LH]P3: three-phase hybrid" }
+      - { match: '^SUN-(?P<kw>\d+(?:\.\d+)?)K-G0\dP3', phases: 3, note: "SUN-<kW>K-G0xP3: three-phase string inverter" }
+      - { match: '^SUN-(?P<kw>\d+(?:\.\d+)?)K-G0\d(?:-|$)', note: "SUN-<kW>K-G0x: string inverter, phases not in the code" }
+      - { match: '^AI-W5\.1-(?P<kw>\d+(?:\.\d+)?)P3', phases: 3, note: "AI-W5.1-<kW>P3: all-in-one, three-phase" }
+  - brand: Autarco
+    rules:
+      - { match: '^S2\.(?:L|XL|U|O)[A-Z]*?(?P<w>\d{4,6})', phases: 3, note: "S2.L* / XL* / U* / O* <W>: three-phase lines" }
+      - { match: '^S2\.(?:M|S)[A-Z]*?(?P<w>\d{4,5})', phases: 1, note: "S2.M* / S* <W>: single-phase lines" }
+  - brand: SolaX
+    rules:
+      - { match: '^(?:SOLAX)?X1-?(?:HYBRID|MINI|BOOST|AIR|SMART|FIT|IES|LITE|SPLIT|SMT)?(?:G4|HV)?-?(?P<kw>\d+(?:\.\d+)?)', phases: 1, note: "X1 …<kW>: single-phase" }
+      - { match: '^(?:SOLAX)?X3-?(?:HYBRID|MIC|MAX|PRO|MEGA|FIT|IES|ULTRA|RETROFIT|FORTH|SMT|H-ULTRA|H)?-?(?:G4)?-?(?P<kw>\d+(?:\.\d+)?)', phases: 3, note: "X3 …<kW>: three-phase" }
+  - brand: Growatt
+    rules:
+      - { match: '^(?:GROWATT)?(?P<w>\d{4,5})TL3-N?S$', phases: 3, note: "<W>TL3-S / -NS: three-phase" }
+      - { match: '^(?:GROWATT)?(?P<w>\d{4})M?TL?-?S$', phases: 1, note: "<W>S / <W>MTL-S: single-phase" }
+      - { match: '^MIN(?P<w>\d{4,5})TL-X', phases: 1, note: "MIN <W>TL-X…: single-phase" }
+      - { match: '^WIT(?P<kw>\d+(?:\.\d+)?)K-', phases: 3, note: "WIT <kW>K-…: three-phase" }
+  - brand: Livoltek
+    rules:
+      - { match: '^GT1-(?P<kw>\d+)K(?P<frac>\d)?[SD]1', phases: 1, note: "GT1-<k>K<tenths>[SD]1: single-phase string (1K6 = 1.6 kW)" }
+      - { match: '^(?:GT3|HP3)-(?P<kw>\d+)K', phases: 3, note: "GT3- / HP3-<kW>K: three-phase" }
+      - { match: '^HYPER-(?P<w>\d{4})$', phases: 1, note: "Hyper-<W>: single-phase hybrid" }
+  - brand: Sofar
+    rules:
+      - { match: '^(?:SOFAR)?(?P<kw>\d+(?:\.\d+)?)KTLM-G\d', phases: 1, note: "<kW>KTLM-Gx: single-phase" }
+      - { match: '^(?:SOFAR)?(?P<w>\d{4,5})TLM$', phases: 1, note: "<W>TLM: single-phase" }
+      - { match: '^(?:SOFAR)?(?P<w>\d{4})TL(?:-G\d)?$', phases: 1, note: "<W>TL (up to 9 999 W): single-phase" }
+      - { match: '^(?:SOFAR)?(?P<w>\d{5})TL(?:-G\d)?$', phases: 3, note: "<W>TL (10 000 W and more): three-phase" }
+      - { match: '^(?:SOFAR)?(?P<kw>\d+(?:\.\d+)?)KTLX?-', phases: 3, note: "<kW>KTLX-…: three-phase" }
+  - brand: Sineng Electric
+    rules:
+      - { match: '^SN(?P<kw>\d+)HTC-', phases: 3, note: "SN<kW>HTC-<kWh>: three-phase hybrid with battery" }
+      - { match: '^SN(?P<kw>\d+(?:\.\d+)?)PT', phases: 3, note: "SN<kW>PT: three-phase string inverter" }
+      - { match: '^SP-(?P<kw>\d+)K-', phases: 3, note: "SP-<kW>K-H1: three-phase string inverter" }
+  - brand: Sungrow
+    rules:
+      - { match: '^S[GH](?P<kw>\d+(?:\.\d+)?)RS', phases: 1, note: "SG/SH<kW>RS: single-phase" }
+      - { match: '^S[GH](?P<kw>\d+(?:\.\d+)?)RT', phases: 3, note: "SG/SH<kW>RT…: three-phase" }
+      - { match: '^S[GH](?P<kw>\d+(?:\.\d+)?)(?:CX|HX|T$|T-)', phases: 3, note: "SG/SH<kW>CX / HX / T: three-phase" }
+      - { match: '^SG(?P<kw>\d+)K(?P<frac>\d)?-D$', phases: 1, note: "SG<k>K<tenths>-D: single-phase (3K6 = 3.6 kW)" }
+  - brand: GoodWe
+    rules:
+      - { match: '^GW(?P<kw>\d+(?:\.\d+)?)KN?-(?:DT|MT|HT|ET|SDT|ETA|BT)', phases: 3, note: "GW<kW>K-DT / MT / HT / ET / SDT: three-phase" }
+      - { match: '^GW(?P<w>\d{4,5})-(?:DT|ET|SDT)', phases: 3, note: "GW<W>-DT / ET / SDT: three-phase" }
+      - { match: '^GW(?P<w>\d{3,4})-(?:NS|DNS|XS|SS|EH|ES|BP|STD)', phases: 1, note: "GW<W>-NS / DNS / XS / EH / ES / STD (under 10 000 W): single-phase" }
+  - brand: Huawei
+    rules:
+      - { match: '^SUN2000L-?(?P<kw>\d+(?:\.\d+)?)KTL', phases: 1, note: "SUN2000L-<kW>KTL: single-phase" }
+      - { match: '^SUN2000-(?P<kw>\d+(?:\.\d+)?)KTL-L\d', phases: 1, note: "SUN2000-<kW>KTL-L1: single-phase" }
+      - { match: '^SUN2000-(?P<kw>\d+(?:\.\d+)?)KTL(?:-M\d|-MAP\d|-HV|-H\d|$)', phases: 3, note: "SUN2000-<kW>KTL(-Mx / -HV / -Hx): three-phase" }
+  - brand: Kehua
+    rules:
+      - { match: '^SPI(?P<kw>\d+)K-B', phases: 3, note: "SPI<kW>K-B: three-phase string inverter" }
+      - { match: '^BCS(?P<kw>\d+)K-', phases: 3, note: "BCS<kW>K-…: three-phase storage converter" }
+  - brand: ABB / FIMER
+    rules:
+      - { match: '^UNO-DM-(?P<kw>\d+(?:\.\d+)?)-TL', phases: 1, note: "UNO-DM-<kW>-TL: single-phase" }
+      - { match: '^(?:PVI|TRIO|PVS)-(?:TM-)?(?P<kw>\d+(?:\.\d+)?)(?:-TL|$)', phases: 3, note: "TRIO / PVS / PVI-<kW>-TL: three-phase (PVI up to 6 kW is single-phase: next rule)" }
+      - { match: '^PVI-(?P<kw>[3-6]\.\d)-TL', phases: 1, note: "PVI-3.0…6.0-TL: single-phase" }
+  - brand: SMA
+    rules:
+      - { match: '^SB(?:STORAGE)?(?P<kw>\d+(?:\.\d+)?)-1', phases: 1, note: "SB<kW>-1…: Sunny Boy, single-phase" }
+      - { match: '^SUNNYTRIPOWER(?P<w>\d{4,5})TL', phases: 3, note: "Sunny Tripower <W>TL: three-phase" }
+      - { match: '^SUNNYTRIPOWER(?:X)?(?P<kw>\d{1,3}(?:\.\d+)?)(?!\d)', phases: 3, note: "Sunny Tripower (X) <kW>: three-phase" }
+      - { match: '^STP(?P<kw>\d+(?:\.\d+)?)-', phases: 3, note: "STP <kW>-…: three-phase" }
+  - brand: Elecod
+    rules:
+      - { match: '^HMIWAY-(?P<kw>\d+(?:\.\d+)?)S?$', phases: 3, note: "HMiWay-<kW>: three-phase" }
+  - brand: Fox ESS
+    rules:
+      - { match: '^T(?P<kw>\d+)(?:-G\d)?$', phases: 3, note: "T<kW>: three-phase string inverter" }
+      - { match: '^AC-(?P<kw>\d+(?:\.\d+)?)-E', phases: 3, note: "AC-<kW>-E: three-phase AC-coupled" }
+  - brand: INVT
+    rules:
+      - { match: '^BD(?P<kw>\d+)KTR', phases: 3, note: "BD<kW>KTR-RH3: three-phase hybrid" }
+      - { match: '^(?:IMARS)?XG(?P<kw>\d+)KTR', phases: 3, note: "XG<kW>KTR: three-phase" }
+  - brand: CSI Solar
+    rules:
+      - { match: '^CSI-(?P<kw>\d+(?:\.\d+)?)K-T', phases: 3, note: "CSI-<kW>K-T…: three-phase" }
+  - brand: Afore
+    rules:
+      - { match: '^AF(?P<kw>\d+(?:\.\d+)?)K-S', phases: 1, note: "AF<kW>K-SL / SH: single-phase hybrid" }
+      - { match: '^HNS(?P<w>\d{4})TL-1', phases: 1, note: "HNS<W>TL-1: single-phase" }
+  - brand: Kstar
+    rules:
+      - { match: '^KSG-(?P<kw>\d+(?:\.\d+)?)K-[SD]M', phases: 1, note: "KSG-<kW>K-SM / DM: single-phase" }
+  - brand: Hoymiles
+    rules:
+      - { match: '^(?:HOYMILES)?MI-(?P<w>\d{3,4})', phases: 1, note: "MI-<W>: single-phase microinverter" }
+      - { match: '^HYS-(?P<kw>\d+(?:\.\d+)?)LV-EUG1', phases: 1, note: "HYS-<kW>LV: single-phase hybrid" }
+  - brand: Solinteg
+    rules:
+      - { match: '^M2HS-(?P<kw>\d+(?:\.\d+)?)K', phases: 1, note: "M2HS-<kW>K: single-phase hybrid" }
+      - { match: '^M2HT-(?P<kw>\d+(?:\.\d+)?)K', phases: 3, note: "M2HT-<kW>K: three-phase hybrid" }
+      - { match: '^OGS-(?P<kw>\d+(?:\.\d+)?)K', phases: 1, note: "OGS-<kW>K: single-phase" }
+  - brand: Solplanet
+    rules:
+      - { match: '^ASW(?P<w>\d{4,5})H?-S', phases: 1, note: "ASW<W>-S…: single-phase" }
+      - { match: '^ASW(?P<w>\d{4,5})H?-T', phases: 3, note: "ASW<W>-T…: three-phase" }
+  - brand: SolarEdge
+    rules:
+      - { match: '^SE(?P<w>\d{4,5})M?$', phases: 1, note: "SE<W> / SE<W>M: single-phase" }
+      - { match: '^SE(?P<kw>\d+(?:\.\d+)?)K', phases: 3, note: "SE<kW>K: three-phase" }
+  - brand: Alpha ESS
+    rules:
+      - { match: '^SMILE-?(?:G3-)?T(?P<kw>\d+)', phases: 3, note: "SMILE(-G3)-T<kW>: three-phase" }
+  - brand: Atess
+    rules:
+      - { match: '^HPS(?P<kw>\d+)$', phases: 3, note: "HPS<kW>: three-phase" }
+  - brand: Renac
+    rules:
+      - { match: '^(?:N3|P3)-(?P<kw>\d+(?:\.\d+)?)K', phases: 3, note: "N3 / P3-<kW>K: three-phase" }
+      - { match: '^KR3-(?P<kw>\d+(?:\.\d+)?)K-DT', phases: 3, note: "KR3-<kW>K-DT: three-phase" }
+  - brand: Steca
+    rules:
+      - { match: '^STECAGRID(?P<kw>\d)(?P<frac>\d)11', phases: 1, note: "StecaGrid <k><tenths>11: 3011 = 3.0 kW, single-phase" }
+      - { match: '^STECAGRID(?P<kw>\d)(?P<frac>\d)13', phases: 3, note: "StecaGrid <k><tenths>13: 4213 = 4.2 kW, three-phase" }

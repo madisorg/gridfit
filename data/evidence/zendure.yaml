@@ -1,0 +1,226 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Zendure
+maker_site: https://zendure.de/
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: de-vde4105-eze-solarflow-800-2025
+  title: Intertek CN-PVES-250054 — Unit Certificate (Einheitenzertifikat) VDE-AR-N 4105:2018-11 — SolarFlow 800 (ZDSF800)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250054_Security.pdf?v=1749699199
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250054
+  issued: '2025-01-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SolarFlow 800 (ZDSF800)
+    match: ^ZDSF800$
+    countries:
+    - DE
+    note: Test report 250103063GZU-001 (2025-01-20). Used with NA-protection certificate CN-PVES-250055.
+- id: de-vde4105-nas-solarflow-800-2025
+  title: Intertek CN-PVES-250055 — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 — SolarFlow 800 (ZDSF800)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250055_Security.pdf?v=1749699199
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250055
+  issued: '2025-01-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SolarFlow 800 (ZDSF800), integrated NA protection
+    match: ^ZDSF800$
+    countries:
+    - DE
+    note: Integrated NA protection; test report 250103063GZU-001.
+- id: de-vde4105-eze-solarflow-800p-800ac-2025
+  title: Intertek CN-PVES-250221 — Unit Certificate (Einheitenzertifikat) VDE-AR-N 4105:2018-11 — SolarFlow 800 Pro / 800 AC (ZDSF800P,
+    ZDSF800AC)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250221_Security.pdf?v=1752736006
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250221
+  issued: '2025-05-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1
+  families:
+  - name: SolarFlow 800 Pro (ZDSF800P) / SolarFlow 800 AC (ZDSF800AC)
+    match: ^ZDSF800(P|AC)$
+    countries:
+    - DE
+    note: Test report 250103063GZU-002 (2025-05-20). Used with NA-protection certificate CN-PVES-250222.
+- id: de-vde4105-nas-solarflow-800p-800ac-2025
+  title: Intertek CN-PVES-250222 — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 — SolarFlow 800 Pro / 800 AC
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250222_Security.pdf?v=1752736010
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250222
+  issued: '2025-05-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SolarFlow 800 Pro / 800 AC (ZDSF800P, ZDSF800AC), integrated NA protection
+    match: ^ZDSF800(P|AC)$
+    countries:
+    - DE
+    note: Integrated NA protection; test report 250103063GZU-002.
+- id: de-vde4105-eze-solarflow-800-plus-2025
+  title: Intertek CN-PVES-250415 — Unit Certificate (Einheitenzertifikat) VDE-AR-N 4105:2018-11 — SolarFlow 800 Plus (ZDSF800PLS)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/250912132GZU_CN-PVES-250415_Security.pdf?v=1783479075
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250415
+  issued: '2025-10-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SolarFlow 800 Plus power station (ZDSF800PLS)
+    match: ^ZDSF800PLS$
+    countries:
+    - DE
+    note: Test report 250912132GZU-001 (2025-10-21). Image-only PDF (read from the rendered page). Rated 230 V, 3.5 A, Ik 10 A. Used
+      with NA-protection certificate CN-PVES-250416.
+- id: de-vde4105-nas-solarflow-800-plus-2025
+  title: Intertek CN-PVES-250416 — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 — SolarFlow 800 Plus (ZDSF800PLS)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/250912132GZU_CN-PVES-250416_Security.pdf?v=1783479072
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250416
+  issued: '2025-10-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1
+  families:
+  - name: SolarFlow 800 Plus (ZDSF800PLS), integrated NA protection
+    match: ^ZDSF800PLS$
+    countries:
+    - DE
+    note: Integrated NA protection; test report 250912132GZU-001. Image-only PDF.
+- id: de-vde4105-eze-solarflow-2400ac-2025
+  title: Intertek CN-PVES-250124 — Unit Certificate (Einheitenzertifikat) VDE-AR-N 4105:2018-11 — SolarFlow 2400 AC (ZDSF2400AC)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250124_Security_de.pdf?v=1743676209
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250124
+  issued: '2025-03-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1
+  families:
+  - name: SolarFlow 2400 AC (ZDSF2400AC)
+    match: ^ZDSF2400AC$
+    countries:
+    - DE
+    note: Test report 250114189GZU-001 (2025-03-14). Used with NA-protection certificate CN-PVES-250125. ZDSF2400AC+ is a separate certificate.
+- id: de-vde4105-nas-solarflow-2400ac-2025
+  title: Intertek CN-PVES-250125 — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 — SolarFlow 2400 AC (ZDSF2400AC)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250125_Security_de.pdf?v=1743676209
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250125
+  issued: '2025-03-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SolarFlow 2400 AC (ZDSF2400AC), integrated NA protection
+    match: ^ZDSF2400AC$
+    countries:
+    - DE
+    note: Integrated NA protection; test report 250114189GZU-001.
+- id: de-vde4105-eze-solarflow-2400pro-acplus-2025
+  title: Intertek CN-PVES-250487 — Unit Certificate (Einheitenzertifikat) VDE-AR-N 4105:2018-11 — SolarFlow 2400 Pro / 2400 AC+ (ZDSF2400P,
+    ZDSF2400AC+, -800 variants)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250487_Security.pdf?v=1788773274
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250487
+  issued: '2025-12-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: SolarFlow 2400 Pro (ZDSF2400P, ZDSF2400P-800) / SolarFlow 2400 AC+ (ZDSF2400AC+, ZDSF2400AC+-800)
+    match: ^ZDSF2400(P|AC\+)(-800)?$
+    countries:
+    - DE
+    note: Test report 250929006GZU-001 (2025-12-05). Image-only PDF (read from the rendered page). The -800 variants are the same hardware
+      limited to 800 W feed-in. Used with NA-protection certificate CN-PVES-250488.
+- id: de-vde4105-nas-solarflow-2400pro-acplus-2025
+  title: Intertek CN-PVES-250488 — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 — SolarFlow 2400 Pro / 2400 AC+
+    (incl. -800)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-250488_Security.pdf?v=1788773274
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-250488
+  issued: '2025-12-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1
+  families:
+  - name: ZDSF2400P / ZDSF2400AC+ / ZDSF2400P-800 / ZDSF2400AC+-800, integrated NA protection
+    match: ^ZDSF2400(P|AC\+)(-800)?$
+    countries:
+    - DE
+    note: Integrated NA protection; test report 250929006GZU-001. Image-only PDF.
+- id: de-vde4105-eze-hyper-2000-2024
+  title: Intertek CN-PVES-240244 — Unit Certificate (Einheitenzertifikat) VDE-AR-N 4105:2018-11 — Hyper 2000 hybrid inverter (ZDHYP2000)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-240244_Security_DE1.pdf?v=1750234468
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-240244
+  issued: '2024-06-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  families:
+  - name: Hyper 2000 hybrid inverter (ZDHYP2000)
+    match: ^ZDHYP2000$
+    countries:
+    - DE
+    note: Test report 240415256GZU-001 (2024-05-30). Image-only PDF. Rated 230 V, 5.2 A, Ik 17 A. Used with NA-protection certificate
+      CN-PVES-240245.
+- id: de-vde4105-nas-hyper-2000-2024
+  title: Intertek CN-PVES-240245 — Zertifikat für den Netz- und Anlagenschutz VDE-AR-N 4105:2018-11 — Hyper 2000 (ZDHYP2000)
+  url: https://cdn.shopify.com/s/files/1/0550/5312/3661/files/CN-PVES-240245_Security_DE2.pdf?v=1750234471
+  issuer: Intertek Testing Services Ltd. Shanghai (ACCREDIA, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-240245
+  issued: '2024-06-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V2
+  families:
+  - name: Hyper 2000 (ZDHYP2000), integrated NA protection
+    match: ^ZDHYP2000$
+    countries:
+    - DE
+    note: Integrated NA protection; test report 240415256GZU-001. Image-only PDF.

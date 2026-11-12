@@ -130,7 +130,9 @@ def deye():
             if code.endswith("-G04-LV") or code.endswith("-G05-LV"):
                 code = code  # the LV sheets write the full code already
             phs = str((r.get("phases") or {}).get(m, ""))
-            ph = 3 if "3L" in phs or re.search(r"(LP3|HP3|P3|G0[345]-LV|K-G0[345]$)", code) and not re.search(r"P1|M\d", code) else 1
+            # "SUN-M…" is a microinverter; the hardware suffixes -SM2 / -BM2 / -AM2 are not (until 2026-11-12 "M\d" matched them
+            # and wrote the three-phase SG05LP3 / G06P3 rows as single-phase; the model-code check in tools/specs/codes.py found it)
+            ph = 3 if "3L" in phs or re.search(r"(LP3|HP3|P3|G0[345]-LV|K-G0[345]$)", code) and not re.search(r"P1|SUN-M\d", code) else 1
             # Deye writes "max AC input/output current" as in/out; the output side is the grid-side figure
             out_a = str((r.get("ac_a") or {}).get(m, "")).split("/")
             aca = out_a[1] if len(out_a) > 1 else out_a[0]
@@ -203,6 +205,8 @@ GW = {  # file stem: (phases, [(code, mppt, ac_kw, ac_kva, ac_a)])
         ("GW5000-ES-20", 2, 5.0, 5.0, 22.7), ("GW5000M-ES-20", 2, 5.0, 5.0, 22.7), ("GW6000-ES-20", 2, 6.0, 6.0, 27.3), ("GW6000M-ES-20", 2, 6.0, 6.0, 27.3)]),
     "GW_ETx2015-30kW_Datasheet-EN": (3, [
         ("GW15K-ET", 2, 15.0, 15.0, 22.7), ("GW20K-ET", 2, 20.0, 20.0, 30.3), ("GW25K-ET", 3, 25.0, 25.0, 37.9), ("GW29.9K-ET", 3, 29.9, 29.9, 45.5), ("GW30K-ET", 3, 30.0, 30.0, 45.5)]),
+    "GW_ET_Datasheet-EN": (3, [  # CZ 2026-11-12: 'Nominal Apparent Power Output to Utility Grid (VA)' (ac_kva), 'Max. AC Current Output to Utility Grid (A)'
+        ("GW5K-ET", 2, None, 5.0, 8.5), ("GW6.5K-ET", 2, None, 6.5, 10.8), ("GW8K-ET", 2, None, 8.0, 13.5), ("GW10K-ET", 2, None, 10.0, 16.5)]),
     "GW_MS_Datasheet-EN": (1, [("GW5000-MS", 3, 5.0, None, 25.0), ("GW6000-MS", 3, 6.0, None, 30.0), ("GW7000-MS", 3, 7.0, None, 35.0), ("GW8500-MS", 3, 8.5, None, 42.5), ("GW10K-MS", 3, 10.0, None, 45.5)]),
     "GW_MT_Datasheet-EN": (3, [
         ("GW50KN-MT", 4, 50.0, 50.0, 80.0), ("GW60KN-MT", 4, 60.0, 60.0, 96.0), ("GW50KBF-MT", 4, 50.0, 50.0, 80.0), ("GW60KBF-MT", 4, 60.0, 60.0, 96.0),
@@ -213,6 +217,7 @@ GW = {  # file stem: (phases, [(code, mppt, ac_kw, ac_kva, ac_a)])
         ("GW700-XS", 1, 0.7, 0.7, 3.5), ("GW1000-XS", 1, 1.0, 1.0, 4.8), ("GW1500-XS", 1, 1.5, 1.5, 7.2), ("GW2000-XS", 1, 2.0, 2.0, 9.6), ("GW2500-XS", 1, 2.5, 2.5, 12.0),
         ("GW3000-XS", 1, 3.0, 3.0, 14.3)]),
 }
+GW_READ = {"GW_ET_Datasheet-EN": ("2026-11-12", "GoodWe-Single page-20220111-EN-V2.0")}  # (seen, version) of a sheet added later
 GW_MATCH = {"GW5000-DNS-30": "^GW5000-DNS-(EU)?30$", "GW5000-EH": "^GW5000-EH(-BE)?$"}  # the Belgian / EU spellings of the same sheet's model
 
 
@@ -222,7 +227,8 @@ def goodwe():
     for stem, (ph, rows) in GW.items():
         pdf = stem + ".pdf"
         sid = stem.replace("_Datasheet-EN", "").replace("GW_", "").replace("x20", "-").lower()
-        sources.append({"id": sid, "url": urls.get(pdf, ""), "file": pdf, "version": "", "note": "the sheet carries no version or date", "seen": SEEN})
+        seen, ver = GW_READ.get(stem, (SEEN, ""))
+        sources.append({"id": sid, "url": urls.get(pdf, ""), "file": pdf, "version": ver, "note": "" if ver else "the sheet carries no version or date", "seen": seen})
         for code, mp, ackw, kva, aca in rows:
             m = row(code, mp, ackw, kva, aca, ph, None, sid)
             if code in GW_MATCH:
@@ -1342,7 +1348,145 @@ def sofar():
     hand_brand("sofar", "Sofar", "https://www.sofarsolar.eu/", "sofar", SOFAR)
 
 
+# Dražice (Družstevní závody Dražice, CZ): product sheets ("PL-…pdf") on each inverter page of www.dzd.cz and the solar
+# catalogue (2025-10) for the two series that have no sheet of their own. Czech sheets, read 2026-11-12 from a rendering of
+# the page (CZ, coverage of ČEZ Distribuce's list). ac_kw = 'Jmenovitý výstupní výkon' (grid side, never EPS); ac_kva = 'Max.
+# zdánlivý (AC / výstupní) výkon'; ac_a = 'Max. výstupní proud' (at 230 V where the sheet gives 220/230 V); pv_kw = 'Max.
+# (doporučený) vstupní / DC výkon'. Phases from the voltage row (3/N/PE, 3P4W -> 3; 220/230/240 V -> 1). ČEZ Distribuce's list
+# writes 'IN.HYBDRID COMPACT S/M' (as printed), 'IN.HYBRID COMPACT 5K-D/M' for the sheet's 5.0K-D/M and 'IN.Hybrid-One 3.0' for
+# 'IN.HYBRID ONE 3.0K-D/M' (the D/M variants of one generation): handled by `match`. Not on any sheet: IN.COMPACT 9.0K.
+DZD = "https://www.dzd.cz/"
+DRAZICE = {  # source id: (url, version, note, phases, rows (code, mppt, ac_kw, ac_kva, ac_a, pv_kw[, match]))
+    "pl-incompact": (DZD + "images/sortiment/in-compact/PL-incompact.pdf", "PDF 2024-09-17", "", 3, [
+        ("IN.COMPACT 3.0K", 2, 3.0, 3.3, 4.8, 6.0), ("IN.COMPACT 4.0K", 2, 4.0, 4.4, 6.4, 8.0), ("IN.COMPACT 5.0K", 2, 5.0, 5.5, 8.0, 10.0),
+        ("IN.COMPACT 6.0K", 2, 6.0, 6.6, 9.6, 12.0), ("IN.COMPACT 8.0K", 2, 8.0, 8.8, 12.8, 16.0), ("IN.COMPACT 10.0K", 2, 10.0, 11.0, 16.0, 20.0),
+        ("IN.COMPACT 12.0K", 2, 12.0, 13.2, 19.1, 24.0), ("IN.COMPACT 15.0K", 2, 15.0, 15.0, 22.7, 30.0)]),
+    "pl-in-entity-s": (DZD + "images/sortiment/in-entity-s/PL-In-Entity-S.pdf", "PDF 2024-09-25",
+        "15–20 kW: '2/3*' MPPT, 'depends on the 2D/3D variant' (mppt null)", 3, [
+        ("IN.ENTITY S 8.0K", 2, 8.0, 8.8, 13.2, 12.0), ("IN.ENTITY S 10.0K", 2, 10.0, 11.0, 16.0, 15.0), ("IN.ENTITY S 12.0K", 2, 12.0, 13.2, 19.3, 18.0),
+        ("IN.ENTITY S 15.0K", None, 15.0, 16.5, 24.2, 22.5), ("IN.ENTITY S 17.0K", None, 17.0, 18.7, 27.5, 25.5),
+        ("IN.ENTITY S 20.0K", None, 20.0, 22.0, 33.6, 30.0), ("IN.ENTITY S 25.0K", 3, 25.0, 27.5, 41.8, 37.5), ("IN.ENTITY S 30.0K", 3, 30.0, 30.0, 45.5, 45.0)]),
+    "pl-in-entity-m": (DZD + "images/sortiment/in-entity-m/PL-In-Entity-M.pdf", "PDF 2024-09-25", "", 3, [
+        ("IN.ENTITY M 50.0K", 5, 50.0, 55.0, 79.7, 75.0), ("IN.ENTITY M 60.0K", 6, 60.0, 66.0, 95.7, 90.0)]),
+    "pl-in-entity-l": (DZD + "images/sortiment/in-entity-l/PL-In-Entity-L.pdf", "PDF 2024-09-25",
+        "MPPT count printed as spanned cells: 9 under 80–110 kW, 12 under 120–150 kW", 3, [
+        ("IN.ENTITY L 80.0K", 9, 80.0, 88.0, 127.6, 120.0), ("IN.ENTITY L 100.0K", 9, 100.0, 110.0, 159.5, 150.0),
+        ("IN.ENTITY L 110.0K", 9, 110.0, 121.0, 175.4, 165.0), ("IN.ENTITY L 120.0K", 12, 120.0, 132.0, 191.3, 180.0),
+        ("IN.ENTITY L 125.0K", 12, 125.0, 132.0, 191.3, 188.0)]),
+    "pl-inhybrid-compact-s": (DZD + "images/sortiment/in-hybrid-compact-s/PL-inhybrid-compact-s.pdf", "PDF 2024-10-29",
+        "rated output printed in VA, taken as kW", 3, [
+        ("IN.HYBRID COMPACT S 15.0K", 2, 15.0, 16.5, 24.0, 30.0, r"^IN\.HYBD?RIDCOMPACTS15\.0K$"),
+        ("IN.HYBRID COMPACT S 19.9K", 2, 19.999, 19.999, 29.0, 40.0, r"^IN\.HYBD?RIDCOMPACTS19\.9K$"),
+        ("IN.HYBRID COMPACT S 20.0K", 2, 20.0, 22.0, 31.9, 40.0, r"^IN\.HYBD?RIDCOMPACTS20\.0K$"),
+        ("IN.HYBRID COMPACT S 25.0K", 3, 25.0, 27.5, 39.9, 50.0, r"^IN\.HYBD?RIDCOMPACTS25\.0K$"),
+        ("IN.HYBRID COMPACT S 30.0K", 3, 30.0, 30.0, 43.5, 60.0, r"^IN\.HYBD?RIDCOMPACTS30\.0K$")]),
+    "pl-stridace-inhybrid-compact-m-cz": (DZD + "images/sortiment/in-hybrid-compact-m/PL-stridace-inhybrid-compact-m-cz.pdf", "PDF 2025-10-10", "", 3, [
+        ("IN.HYBRID COMPACT M 50K", 5, 50.0, 55.0, 83.3, 100.0, r"^IN\.HYBD?RIDCOMPACTM50K$"),
+        ("IN.HYBRID COMPACT M 60K", 6, 60.0, 66.0, 100.0, 120.0, r"^IN\.HYBD?RIDCOMPACTM60K$")]),
+    "pl-stridace-inhybrid-compact-pro-cz": (DZD + "images/sortiment/in-hybrid-compact-pro/PL-stridace-inhybrid-compact-pro-cz.pdf", "PDF 2025-05-23",
+        "the 'max. continuous output current' row (6.7–25.0 A) is below the sheet's own rated current for 5–10 kW; ac_a left null", 3, [
+        ("IN.HYBRID COMPACT PRO 5.0K", 2, 5.0, 5.5, None, 10.0), ("IN.HYBRID COMPACT PRO 6.0K", 2, 6.0, 6.6, None, 12.0),
+        ("IN.HYBRID COMPACT PRO 8.0K", 2, 8.0, 8.8, None, 16.0), ("IN.HYBRID COMPACT PRO 10.0K", 3, 10.0, 11.0, None, 20.0),
+        ("IN.HYBRID COMPACT PRO 12.0K", 3, 12.0, 13.2, None, 24.0), ("IN.HYBRID COMPACT PRO 15.0K", 3, 15.0, 16.5, None, 30.0)]),
+    "katalog-solar-drazice-p19": (DZD + "images/download/katalogy/katalog-solar-drazice.pdf", "catalogue PDF 2025-10-13, p. 19",
+        "IN.HYBRID COMPACT D/M: no sheet of its own; the catalogue's table", 3, [
+        ("IN.HYBRID COMPACT 5.0K-D/M", 2, 5.0, 5.5, 8.1, 10.0, r"^IN\.HYBRIDCOMPACT5(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 6.0K-D/M", 2, 6.0, 6.6, 9.7, 12.0, r"^IN\.HYBRIDCOMPACT6(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 8.0K-D/M", 2, 8.0, 8.8, 12.9, 16.0, r"^IN\.HYBRIDCOMPACT8(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 10.0K-D/M", 2, 10.0, 11.0, 16.1, 20.0, r"^IN\.HYBRIDCOMPACT10(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 12.0K-D/M", 2, 12.0, 13.2, 19.3, 24.0, r"^IN\.HYBRIDCOMPACT12(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 15.0K-D/M", 2, 15.0, 15.0, 24.1, 30.0, r"^IN\.HYBRIDCOMPACT15(\.0)?K-D/M$")]),
+    "katalog-solar-drazice-p17": (DZD + "images/download/katalogy/katalog-solar-drazice.pdf", "catalogue PDF 2025-10-13, p. 17",
+        "IN.HYBRID ONE: no sheet of its own; the catalogue's table; single-phase 220/230/240 V", 1, [
+        ("IN.HYBRID ONE 3.0K-D/M", 2, 3.0, 3.3, 14.4, 4.5, r"^IN\.HYBRID-?ONE3\.0(K(-D/M)?)?$"),
+        ("IN.HYBRID ONE 3.7K-D/M", 2, 3.68, 3.68, 16.0, 5.5, r"^IN\.HYBRID-?ONE3\.7(K(-D/M)?)?$"),
+        ("IN.HYBRID ONE 5.0K-D/M", 2, 5.0, 5.5, 23.9, 7.5), ("IN.HYBRID ONE 6.0K-D/M", 2, 6.0, 6.6, 28.6, 9.0),
+        ("IN.HYBRID ONE 7.5K-D/M", 2, 7.5, 7.5, 32.6, 10.0)]),
+}
+
+
+def drazice():
+    sources, models = [], []
+    for sid, (url, ver, note, ph, rows) in DRAZICE.items():
+        sources.append({"id": sid, "url": url, "file": url.rsplit("/", 1)[1], "version": ver, "note": note, "seen": "2026-11-12"})
+        for r in rows:
+            m = row(r[0], r[1], r[2], r[3], r[4], ph, r[5], sid)
+            if len(r) > 6:
+                m["match"] = r[6]
+            models.append(m)
+    dump("drazice", {"brand": "Dražice", "maker_site": DZD, "rule": RULE, "sources": sources, "models": models})
+
+
+# Sunways (sunways-tech.com/downloads/, WordPress, robots allow all; read 2026-11-12 for Sweden, where Rikta Rätt lists 56
+# Sunways models). Columns as the sheets print them: rated output power, max. apparent power, max. output current,
+# max. input power. The sheet's own suffix is kept: STH-…-HSS is not the list's STH-…-HS (another suffix is another model);
+# the STS-…-S-P and STT-…-SE sheets are not read, no list carries those codes (the lists have STS-…-S and STT-100KTL). The STH-HT figures come from the user manual V1.4's
+# technical data (no separate sheet is served).
+SUNWAYS = {
+    "03_SWS_STH-4-12KTL-HT_20240125_V1.4": (3, "V1.4 2024-01-25", "user manual, technical data", [
+        ("STH-4KTL-HT", 2, 4, 4.4, 6.7, 5.2), ("STH-5KTL-HT", 2, 5, 5.5, 8.3, 6.5), ("STH-6KTL-HT", 2, 6, 6.6, 10, 7.8),
+        ("STH-8KTL-HT", 2, 8, 8.8, 13.3, 10.4), ("STH-10KTL-HT", 2, 10, 11, 16.5, 13), ("STH-12KTL-HT", 2, 12, 13.2, 20, 15.6)]),
+    "04_SWS-Data-Sheet-STT-425K-P_EN-20240423": (3, "2024-04-23", "", [
+        ("STT-4KTL-P", 2, 4, 4.4, 6.7, 6.4), ("STT-5KTL-P", 2, 5, 5.5, 8.4, 8), ("STT-6KTL-P", 2, 6, 6.6, 10, 9.6),
+        ("STT-8KTL-P", 2, 8, 8.8, 13.3, 12.8), ("STT-10KTL-P", 2, 10, 11, 16.5, 16), ("STT-12KTL-P", 2, 12, 13.2, 20, 19.2),
+        ("STT-15KTL-P", 2, 15, 16.5, 25, 24), ("STT-17KTL-P", 2, 17, 18.7, 28.4, 27.2), ("STT-20KTL-P", 2, 20, 22, 31.9, 32),
+        ("STT-25KTL-P", 2, 25, 25, 39, 40)]),
+    "05_SWS-Data-Sheet-STT-30-60K_EN-20240423": (3, "2024-04-23", "", [
+        ("STT-29.9KTL", 4, 29.9, 29.9, 43.3, 47.84), ("STT-30KTL", 4, 30, 33, 47.8, 48), ("STT-33KTL", 4, 33, 36.3, 52.6, 52.8),
+        ("STT-36KTL", 4, 36, 39.6, 57.4, 57.6), ("STT-40KTL", 4, 40, 44, 63.8, 64), ("STT-45KTL", 4, 45, 49.5, 71.7, 72),
+        ("STT-50KTL-M", 4, 50, 55, 79.7, 80), ("STT-60KTL-M", 4, 60, 66, 95.7, 96)]),
+    "18_SWS_DataSheet_STH-38KTL-LS_EN_20251009": (1, "2025-10-09", "low-voltage battery hybrid; the sheet states no max. PV input power", [
+        ("STH-3KTL-LSS", 1, 3, 3.3, 15, None), ("STH-3.6KTL-LSS", 1, 3.68, 3.68, 16, None), ("STH-4KTL-LS", 2, 4, 4.4, 20, None),
+        ("STH-4.6KTL-LS", 2, 4.6, 5.06, 23, None), ("STH-5KTL-LS", 2, 5, 5.5, 25, None), ("STH-6KTL-LS", 2, 6, 6.6, 30, None),
+        ("STH-7.5KTL-LS", 2, 7.5, 8.25, 37.5, None), ("STH-8KTL-LS", 2, 8, 8.8, 40, None)]),
+    "19_SWS_DataSheet_STH-38KTL-HS_EN_20250526": (1, "2025-05-26", "high-voltage battery hybrid; 5 kW: max. output current 25 A (21.7 A at 4.6 kVA)", [
+        ("STH-3KTL-HSS", 1, 3, 3.3, 15, 4.8), ("STH-3.6KTL-HSS", 1, 3.6, 3.96, 18, 5.76), ("STH-4.2KTL-HS", 2, 4.2, 4.6, 21, 6.72),
+        ("STH-4.6KTL-HS", 2, 4.6, 4.6, 21, 7.36), ("STH-5KTL-HS", 2, 5, 5.5, 25, 8), ("STH-6KTL-HS", 2, 6, 6.6, 28.7, 9.6),
+        ("STH-7KTL-HS", 2, 7, 7.7, 35, 11.2), ("STH-8KTL-HS", 2, 8, 8, 36.3, 12.8)]),
+}
+
+
+def sunways():
+    hand_brand("sunways", "Sunways", "https://www.sunways-tech.com/", "sunways", SUNWAYS)
+
+
+# Luxpower (PL list, 2026-11-12): LuxpowerTek's EU catalogue, one page per series with the datasheet's own table. The
+# catalogue is the newest sheet that has the GEN3-LB-EU 3-5K columns; GEN3 6.5K and 7K, also on the PL list, are on no
+# sheet the maker serves. Spanned cells (max PV input, MPPT count) apply to every column of the series.
+LUXPOWER_CAT = "LuxpowerTek-EU-Series-Inverter-Catalogue-2026.04.10"
+LUXPOWER = [  # (catalogue page, phases, note, [(code, mppt, ac_kw, ac_kva, ac_a, pv_kw)])
+    (8, 1, "GEN3-LB-EU 3-8K page: 'Rated AC output power', 'Rated AC output current' at 230 V; the 4.6K column prints 25 A "
+           "against 4 600 W (20 A at 230 V), so its current is left null", [
+        ("GEN3-LB-EU 3K", 2, 3.0, None, 13.0, 12.0), ("GEN3-LB-EU 3.6K", 2, 3.6, None, 16.0, 12.0),
+        ("GEN3-LB-EU 4K", 2, 4.0, None, 20.0, 12.0), ("GEN3-LB-EU 4.6K", 2, 4.6, None, None, 12.0),
+        ("GEN3-LB-EU 5K", 2, 5.0, None, 21.7, 12.0), ("GEN3-LB-EU 6K", 2, 6.0, None, 26.0, 12.0),
+        ("GEN3-LB-EU 8K", 2, 8.0, None, 34.7, 12.0)]),
+    (9, 1, "GEN PRO-LB-EU 8-12K page: 'Rated AC output power', 'Rated AC output current' at 230 V; max PV input 16 000 W "
+           "(8K) and 20 000 W (10K, 12K)", [
+        ("GEN PRO-LB-EU 8K", 3, 8.0, None, 34.7, 16.0), ("GEN PRO-LB-EU 10K", 3, 10.0, None, 43.5, 20.0),
+        ("GEN PRO-LB-EU 12K", 3, 12.0, None, 52.0, 20.0)]),
+    (10, 3, "TriP2-LB-3P 5-20K page: 3L/N/PE 230/400 V; 'Rated AC output power', 'Rated AC output current'", [
+        ("TriP2-LB-3P 5K", 3, 5.0, None, 7.2, 7.5), ("TriP2-LB-3P 6K", 3, 6.0, None, 8.7, 9.0),
+        ("TriP2-LB-3P 8K", 3, 8.0, None, 11.6, 12.0), ("TriP2-LB-3P 10K", 3, 10.0, None, 14.5, 15.0),
+        ("TriP2-LB-3P 12K", 3, 12.0, None, 17.4, 18.0), ("TriP2-LB-3P 15K", 3, 15.0, None, 21.7, 22.5),
+        ("TriP2-LB-3P 20K", 3, 20.0, None, 29.0, 30.0)]),
+]
+
+
+def luxpower():
+    got = (CACHE / "luxpower" / "HARVEST.txt").read_text(encoding="utf-8").split()
+    sources, models = [], []
+    for page, ph, note, rows in LUXPOWER:
+        sid = f"luxpower-eu-catalogue-2026-04-10-p{page}"
+        sources.append({"id": sid, "url": got[1], "file": got[0], "version": f"catalogue 2026.04.10, page {page}",
+                        "note": note, "seen": got[2]})
+        models += [row(code, mp, ackw, kva, aca, ph, pv, sid) for code, mp, ackw, kva, aca, pv in rows]
+    dump("luxpower", {"brand": "Lux Power", "maker_site": "https://luxpowertek.com/", "rule": RULE,
+                      "sources": sources, "models": models})
+
+
 if __name__ == "__main__":
+    drazice()
     deye()
     fronius()
     goodwe()
@@ -1359,3 +1503,5 @@ if __name__ == "__main__":
     zcs()
     sungrow()
     sofar()
+    sunways()
+    luxpower()

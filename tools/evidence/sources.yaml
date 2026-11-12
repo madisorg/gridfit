@@ -348,7 +348,7 @@ tsun:
 
 victron:
   - id: en50549-multiplus-ii-2026
-    brand: Victron Energy
+    brand: Victron
     title: "SGS Tecnos 2622/0478-B/E2-CER — EN 50549-1 + A1, EN 50549-10 — MultiPlus-II 48/8000, 48/10000, 48/15000"
     url: https://www.victronenergy.com/upload/documents/Certificate-ESS-EN-50549-1-MultiPlus-II-48V-8kVA-48V-10kVA-48V-15kVA-2026.pdf
     issuer: SGS Tecnos

@@ -161,6 +161,20 @@ export function specOf(d: RegDevice): Spec {
   if (kva === null && sh) kva = sh.ac_kva ?? sh.ac_kw ?? null;
   return { phases, kva, mppt: sh?.mppt ?? null, kw: sh?.ac_kw ?? sh?.ac_kva ?? null, sheet: sh };
 }
+// The model-code level (data/specs/naming/codes.yaml, read and checked by tools/specs/codes.py into .data/codes.json): the
+// maker's naming says "SUN-10K-…P3" is 10 kW three-phase. Used only where neither a list nor a datasheet gives the figure,
+// shown with "≈" and its agreement, never by the type-A status, the filters or the requirement check.
+export type CodeRule = { brand: string; match: string; note: string; kw_agree: [number, number]; ph_agree: [number, number]; kw_used: boolean; ph_used: boolean; models: number };
+const CODES: { rules: CodeRule[]; models: Record<string, { kw?: number; ph?: number; rule: number }> } = (() => {
+  try { return JSON.parse(readFileSync(resolve(process.cwd(), ".data/codes.json"), "utf-8")); } catch { return { rules: [], models: {} }; }
+})();
+export type CodeReading = { kw: number | null; phases: number | null; rule: CodeRule };
+export function codeOf(d: RegDevice): CodeReading | null {
+  const s = specOf(d), c = CODES.models[d.brand + "|" + d.model];
+  if (!c) return null;
+  const kw = s.kva === null ? c.kw ?? null : null, phases = !s.phases ? c.ph ?? null : null;
+  return kw === null && phases === null ? null : { kw, phases, rule: CODES.rules[c.rule] };
+}
 export function specOfFamily(f: Family): { phases: string; kvaMin: number | null; kvaMax: number | null; mppt: string; sheets: number } {
   const ph = new Set<string>(), mp = new Set<number>(); let lo: number | null = null, hi: number | null = null, n = 0;
   for (const d of modelsOf(f)) {
@@ -241,7 +255,7 @@ export const BRANDS: Brand[] = [...names.entries()]
 export const brandOf = (s: string) => BRANDS.find((b) => b.slug === s);
 
 // reserved first path segments: a brand slug must never collide with a section
-export const RESERVED = new Set(["local", "grid", "changes", "about", "model", "search", "data", "devices", "sitemap", "404", "llms", "robots", "models"]);
+export const RESERVED = new Set(["local", "grid", "changes", "about", "model", "search", "data", "devices", "sitemap", "404", "llms", "robots", "models", "brands", "sitemaps"]);
 for (const b of BRANDS) if (RESERVED.has(b.slug)) throw new Error(`brand slug collides with a reserved path: ${b.slug}`);
 for (const f of data.families) if (f.slug === "model") throw new Error(`family slug "model" collides with the model pages: ${f.brand}`);
 

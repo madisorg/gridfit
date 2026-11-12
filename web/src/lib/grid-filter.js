@@ -4,7 +4,8 @@
 // category, never a silent gap. Plain JS so Node runs it without a build.
 //
 // Nothing chosen: every country the site covers (`data.countries`) is a column.
-// Row shape (web/src/pages/grid/index.json.ts): [brandIdx, model, cls, url, cells, marks, family, phases, kva, mppt, doc]
+// Row shape (web/src/pages/grid/index.json.ts): [brandIdx, model, cls, url, cells, marks, family, phases, kva, mppt, doc, legacy, code]
+//   code: [kW, phases] read from the model code where neither a list nor a datasheet gives the figure — display only, no filter reads it
 //   cells: one letter per read list — L listed, R restricted, T time-limited, O other, P end date passed,
 //          E expired, N refused, - not on the list;  marks: Home Assistant + evcc, W/L/C/B/-;
 //   phases: "1" | "2" | "3" | "";  kva: number | null;  mppt: number | null (0 = the sheet says none);

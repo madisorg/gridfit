@@ -1,0 +1,455 @@
+brand: Dražice
+maker_site: https://www.dzd.cz/
+rule: 'Every number is the maker''s own datasheet as read on the seen date: MPPT count, rated AC power (kW; kVA where the
+  sheet gives apparent power), max AC output current (A), phases (from the AC connection row), max PV input (kW). A model
+  code is matched to the lists exactly (upper case, spaces removed, comma as decimal point), or by `match` where the lists
+  spell the same hardware differently. A value the sheet does not state is null and shows as ''not collected''. Hardware revisions
+  with another suffix are other models.'
+sources:
+- id: pl-incompact
+  url: https://www.dzd.cz/images/sortiment/in-compact/PL-incompact.pdf
+  file: PL-incompact.pdf
+  version: PDF 2024-09-17
+  note: ''
+  seen: '2026-11-12'
+- id: pl-in-entity-s
+  url: https://www.dzd.cz/images/sortiment/in-entity-s/PL-In-Entity-S.pdf
+  file: PL-In-Entity-S.pdf
+  version: PDF 2024-09-25
+  note: '15–20 kW: ''2/3*'' MPPT, ''depends on the 2D/3D variant'' (mppt null)'
+  seen: '2026-11-12'
+- id: pl-in-entity-m
+  url: https://www.dzd.cz/images/sortiment/in-entity-m/PL-In-Entity-M.pdf
+  file: PL-In-Entity-M.pdf
+  version: PDF 2024-09-25
+  note: ''
+  seen: '2026-11-12'
+- id: pl-in-entity-l
+  url: https://www.dzd.cz/images/sortiment/in-entity-l/PL-In-Entity-L.pdf
+  file: PL-In-Entity-L.pdf
+  version: PDF 2024-09-25
+  note: 'MPPT count printed as spanned cells: 9 under 80–110 kW, 12 under 120–150 kW'
+  seen: '2026-11-12'
+- id: pl-inhybrid-compact-s
+  url: https://www.dzd.cz/images/sortiment/in-hybrid-compact-s/PL-inhybrid-compact-s.pdf
+  file: PL-inhybrid-compact-s.pdf
+  version: PDF 2024-10-29
+  note: rated output printed in VA, taken as kW
+  seen: '2026-11-12'
+- id: pl-stridace-inhybrid-compact-m-cz
+  url: https://www.dzd.cz/images/sortiment/in-hybrid-compact-m/PL-stridace-inhybrid-compact-m-cz.pdf
+  file: PL-stridace-inhybrid-compact-m-cz.pdf
+  version: PDF 2025-10-10
+  note: ''
+  seen: '2026-11-12'
+- id: pl-stridace-inhybrid-compact-pro-cz
+  url: https://www.dzd.cz/images/sortiment/in-hybrid-compact-pro/PL-stridace-inhybrid-compact-pro-cz.pdf
+  file: PL-stridace-inhybrid-compact-pro-cz.pdf
+  version: PDF 2025-05-23
+  note: the 'max. continuous output current' row (6.7–25.0 A) is below the sheet's own rated current for 5–10 kW; ac_a left
+    null
+  seen: '2026-11-12'
+- id: katalog-solar-drazice-p19
+  url: https://www.dzd.cz/images/download/katalogy/katalog-solar-drazice.pdf
+  file: katalog-solar-drazice.pdf
+  version: catalogue PDF 2025-10-13, p. 19
+  note: 'IN.HYBRID COMPACT D/M: no sheet of its own; the catalogue''s table'
+  seen: '2026-11-12'
+- id: katalog-solar-drazice-p17
+  url: https://www.dzd.cz/images/download/katalogy/katalog-solar-drazice.pdf
+  file: katalog-solar-drazice.pdf
+  version: catalogue PDF 2025-10-13, p. 17
+  note: 'IN.HYBRID ONE: no sheet of its own; the catalogue''s table; single-phase 220/230/240 V'
+  seen: '2026-11-12'
+models:
+- code: IN.COMPACT 3.0K
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 4.8
+  phases: 3
+  pv_kw: 6.0
+  source: pl-incompact
+- code: IN.COMPACT 4.0K
+  mppt: 2
+  ac_kw: 4.0
+  ac_kva: 4.4
+  ac_a: 6.4
+  phases: 3
+  pv_kw: 8.0
+  source: pl-incompact
+- code: IN.COMPACT 5.0K
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.0
+  phases: 3
+  pv_kw: 10.0
+  source: pl-incompact
+- code: IN.COMPACT 6.0K
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.6
+  phases: 3
+  pv_kw: 12.0
+  source: pl-incompact
+- code: IN.COMPACT 8.0K
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.8
+  phases: 3
+  pv_kw: 16.0
+  source: pl-incompact
+- code: IN.COMPACT 10.0K
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: 20.0
+  source: pl-incompact
+- code: IN.COMPACT 12.0K
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.1
+  phases: 3
+  pv_kw: 24.0
+  source: pl-incompact
+- code: IN.COMPACT 15.0K
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 15.0
+  ac_a: 22.7
+  phases: 3
+  pv_kw: 30.0
+  source: pl-incompact
+- code: IN.ENTITY S 8.0K
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 13.2
+  phases: 3
+  pv_kw: 12.0
+  source: pl-in-entity-s
+- code: IN.ENTITY S 10.0K
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.0
+  phases: 3
+  pv_kw: 15.0
+  source: pl-in-entity-s
+- code: IN.ENTITY S 12.0K
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.3
+  phases: 3
+  pv_kw: 18.0
+  source: pl-in-entity-s
+- code: IN.ENTITY S 15.0K
+  mppt: null
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.2
+  phases: 3
+  pv_kw: 22.5
+  source: pl-in-entity-s
+- code: IN.ENTITY S 17.0K
+  mppt: null
+  ac_kw: 17.0
+  ac_kva: 18.7
+  ac_a: 27.5
+  phases: 3
+  pv_kw: 25.5
+  source: pl-in-entity-s
+- code: IN.ENTITY S 20.0K
+  mppt: null
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 33.6
+  phases: 3
+  pv_kw: 30.0
+  source: pl-in-entity-s
+- code: IN.ENTITY S 25.0K
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 41.8
+  phases: 3
+  pv_kw: 37.5
+  source: pl-in-entity-s
+- code: IN.ENTITY S 30.0K
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 30.0
+  ac_a: 45.5
+  phases: 3
+  pv_kw: 45.0
+  source: pl-in-entity-s
+- code: IN.ENTITY M 50.0K
+  mppt: 5
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 79.7
+  phases: 3
+  pv_kw: 75.0
+  source: pl-in-entity-m
+- code: IN.ENTITY M 60.0K
+  mppt: 6
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 95.7
+  phases: 3
+  pv_kw: 90.0
+  source: pl-in-entity-m
+- code: IN.ENTITY L 80.0K
+  mppt: 9
+  ac_kw: 80.0
+  ac_kva: 88.0
+  ac_a: 127.6
+  phases: 3
+  pv_kw: 120.0
+  source: pl-in-entity-l
+- code: IN.ENTITY L 100.0K
+  mppt: 9
+  ac_kw: 100.0
+  ac_kva: 110.0
+  ac_a: 159.5
+  phases: 3
+  pv_kw: 150.0
+  source: pl-in-entity-l
+- code: IN.ENTITY L 110.0K
+  mppt: 9
+  ac_kw: 110.0
+  ac_kva: 121.0
+  ac_a: 175.4
+  phases: 3
+  pv_kw: 165.0
+  source: pl-in-entity-l
+- code: IN.ENTITY L 120.0K
+  mppt: 12
+  ac_kw: 120.0
+  ac_kva: 132.0
+  ac_a: 191.3
+  phases: 3
+  pv_kw: 180.0
+  source: pl-in-entity-l
+- code: IN.ENTITY L 125.0K
+  mppt: 12
+  ac_kw: 125.0
+  ac_kva: 132.0
+  ac_a: 191.3
+  phases: 3
+  pv_kw: 188.0
+  source: pl-in-entity-l
+- code: IN.HYBRID COMPACT S 15.0K
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: 24.0
+  phases: 3
+  pv_kw: 30.0
+  source: pl-inhybrid-compact-s
+  match: ^IN\.HYBD?RIDCOMPACTS15\.0K$
+- code: IN.HYBRID COMPACT S 19.9K
+  mppt: 2
+  ac_kw: 19.999
+  ac_kva: 19.999
+  ac_a: 29.0
+  phases: 3
+  pv_kw: 40.0
+  source: pl-inhybrid-compact-s
+  match: ^IN\.HYBD?RIDCOMPACTS19\.9K$
+- code: IN.HYBRID COMPACT S 20.0K
+  mppt: 2
+  ac_kw: 20.0
+  ac_kva: 22.0
+  ac_a: 31.9
+  phases: 3
+  pv_kw: 40.0
+  source: pl-inhybrid-compact-s
+  match: ^IN\.HYBD?RIDCOMPACTS20\.0K$
+- code: IN.HYBRID COMPACT S 25.0K
+  mppt: 3
+  ac_kw: 25.0
+  ac_kva: 27.5
+  ac_a: 39.9
+  phases: 3
+  pv_kw: 50.0
+  source: pl-inhybrid-compact-s
+  match: ^IN\.HYBD?RIDCOMPACTS25\.0K$
+- code: IN.HYBRID COMPACT S 30.0K
+  mppt: 3
+  ac_kw: 30.0
+  ac_kva: 30.0
+  ac_a: 43.5
+  phases: 3
+  pv_kw: 60.0
+  source: pl-inhybrid-compact-s
+  match: ^IN\.HYBD?RIDCOMPACTS30\.0K$
+- code: IN.HYBRID COMPACT M 50K
+  mppt: 5
+  ac_kw: 50.0
+  ac_kva: 55.0
+  ac_a: 83.3
+  phases: 3
+  pv_kw: 100.0
+  source: pl-stridace-inhybrid-compact-m-cz
+  match: ^IN\.HYBD?RIDCOMPACTM50K$
+- code: IN.HYBRID COMPACT M 60K
+  mppt: 6
+  ac_kw: 60.0
+  ac_kva: 66.0
+  ac_a: 100.0
+  phases: 3
+  pv_kw: 120.0
+  source: pl-stridace-inhybrid-compact-m-cz
+  match: ^IN\.HYBD?RIDCOMPACTM60K$
+- code: IN.HYBRID COMPACT PRO 5.0K
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: null
+  phases: 3
+  pv_kw: 10.0
+  source: pl-stridace-inhybrid-compact-pro-cz
+- code: IN.HYBRID COMPACT PRO 6.0K
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: null
+  phases: 3
+  pv_kw: 12.0
+  source: pl-stridace-inhybrid-compact-pro-cz
+- code: IN.HYBRID COMPACT PRO 8.0K
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: null
+  phases: 3
+  pv_kw: 16.0
+  source: pl-stridace-inhybrid-compact-pro-cz
+- code: IN.HYBRID COMPACT PRO 10.0K
+  mppt: 3
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: null
+  phases: 3
+  pv_kw: 20.0
+  source: pl-stridace-inhybrid-compact-pro-cz
+- code: IN.HYBRID COMPACT PRO 12.0K
+  mppt: 3
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: null
+  phases: 3
+  pv_kw: 24.0
+  source: pl-stridace-inhybrid-compact-pro-cz
+- code: IN.HYBRID COMPACT PRO 15.0K
+  mppt: 3
+  ac_kw: 15.0
+  ac_kva: 16.5
+  ac_a: null
+  phases: 3
+  pv_kw: 30.0
+  source: pl-stridace-inhybrid-compact-pro-cz
+- code: IN.HYBRID COMPACT 5.0K-D/M
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 8.1
+  phases: 3
+  pv_kw: 10.0
+  source: katalog-solar-drazice-p19
+  match: ^IN\.HYBRIDCOMPACT5(\.0)?K-D/M$
+- code: IN.HYBRID COMPACT 6.0K-D/M
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 9.7
+  phases: 3
+  pv_kw: 12.0
+  source: katalog-solar-drazice-p19
+  match: ^IN\.HYBRIDCOMPACT6(\.0)?K-D/M$
+- code: IN.HYBRID COMPACT 8.0K-D/M
+  mppt: 2
+  ac_kw: 8.0
+  ac_kva: 8.8
+  ac_a: 12.9
+  phases: 3
+  pv_kw: 16.0
+  source: katalog-solar-drazice-p19
+  match: ^IN\.HYBRIDCOMPACT8(\.0)?K-D/M$
+- code: IN.HYBRID COMPACT 10.0K-D/M
+  mppt: 2
+  ac_kw: 10.0
+  ac_kva: 11.0
+  ac_a: 16.1
+  phases: 3
+  pv_kw: 20.0
+  source: katalog-solar-drazice-p19
+  match: ^IN\.HYBRIDCOMPACT10(\.0)?K-D/M$
+- code: IN.HYBRID COMPACT 12.0K-D/M
+  mppt: 2
+  ac_kw: 12.0
+  ac_kva: 13.2
+  ac_a: 19.3
+  phases: 3
+  pv_kw: 24.0
+  source: katalog-solar-drazice-p19
+  match: ^IN\.HYBRIDCOMPACT12(\.0)?K-D/M$
+- code: IN.HYBRID COMPACT 15.0K-D/M
+  mppt: 2
+  ac_kw: 15.0
+  ac_kva: 15.0
+  ac_a: 24.1
+  phases: 3
+  pv_kw: 30.0
+  source: katalog-solar-drazice-p19
+  match: ^IN\.HYBRIDCOMPACT15(\.0)?K-D/M$
+- code: IN.HYBRID ONE 3.0K-D/M
+  mppt: 2
+  ac_kw: 3.0
+  ac_kva: 3.3
+  ac_a: 14.4
+  phases: 1
+  pv_kw: 4.5
+  source: katalog-solar-drazice-p17
+  match: ^IN\.HYBRID-?ONE3\.0(K(-D/M)?)?$
+- code: IN.HYBRID ONE 3.7K-D/M
+  mppt: 2
+  ac_kw: 3.68
+  ac_kva: 3.68
+  ac_a: 16.0
+  phases: 1
+  pv_kw: 5.5
+  source: katalog-solar-drazice-p17
+  match: ^IN\.HYBRID-?ONE3\.7(K(-D/M)?)?$
+- code: IN.HYBRID ONE 5.0K-D/M
+  mppt: 2
+  ac_kw: 5.0
+  ac_kva: 5.5
+  ac_a: 23.9
+  phases: 1
+  pv_kw: 7.5
+  source: katalog-solar-drazice-p17
+- code: IN.HYBRID ONE 6.0K-D/M
+  mppt: 2
+  ac_kw: 6.0
+  ac_kva: 6.6
+  ac_a: 28.6
+  phases: 1
+  pv_kw: 9.0
+  source: katalog-solar-drazice-p17
+- code: IN.HYBRID ONE 7.5K-D/M
+  mppt: 2
+  ac_kw: 7.5
+  ac_kva: 7.5
+  ac_a: 32.6
+  phases: 1
+  pv_kw: 10.0
+  source: katalog-solar-drazice-p17

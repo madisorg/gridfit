@@ -18,7 +18,7 @@ list:
   name: "Seznam schválených střídačů a otestovaných ochran (ČEZ Distribuce)"
   url: https://www.cezdistribuce.cz/cs/pro-vyrobce/overeni-souladu-s-rfg
   meaning: "Inverters and storage units whose type ČEZ Distribuce has approved for A1/A2 modules: per row the maker, model, approved firmware, the settings profile to select, the kind of proof (Certifikát (SZÚ), Protokol (ČEZd), Protokol (EGD)) with its issue date, the date of entry and the VM category (A1, A1/A2, B1/B2). An xlsx with four sheets: inverters (state 2026-08-21), storage units (ZUE, state 2026-08-06), tested network protection relays, and an empty sheet for expired entries."
-  gate: "Yes for A1/A2 at ČEZ Distribuce since 2025-01-01: 'only with an approved inverter type verified or certified in the relevant laboratory'; the proof itself is the certificate or protocol attached to the installation document, and the list is where ČEZd shows the approved types. Whether ČEZd also takes a valid SZÚ certificate for a model not yet on the list is not stated (the forms suggest it does). EG.D's own lab list is not reachable for automated access; PREdi publishes no list and refers to a future national list."
+  gate: "Yes for A1/A2 at ČEZ Distribuce since 2025-01-01: 'only with an approved inverter type verified or certified in the relevant laboratory'; the proof itself is the certificate or protocol attached to the installation document, and the list is where ČEZd shows the approved types. Whether ČEZd also takes a valid SZÚ certificate for a model not yet on the list is not stated (the forms suggest it does). From 2027-01-01 ČEZd takes no certificate or protocol whose validity ends on 2026-12-31 (notice on the RfG page, seen 2026-11-12). EG.D's own lab list is not reachable for automated access; PREdi publishes no list and refers to a future national list."
 basis:
   - "Commission Regulation (EU) 2016/631 (RfG) — implemented for distribution grids by PPDS Příloha 4"
   - "Zákon č. 458/2000 Sb. (Energetický zákon), § 28(5) — a customer may run one generating or storage unit up to 100 kW at a supply point under a connection contract; up to 10.8 kW by notification; § 3(4)(e) — no licence up to 100 kW for own use"
@@ -36,7 +36,7 @@ edition:
   id: "2025"
   date: "2025-07"          # ERÚ approval 2025-07-02 on the PREdi copy; the in-force date is not printed (ČEZd: "updated September 2025")
   label: "PPDS Příloha 4 (2025)"
-document_must_cite: ["PPDS"]
+document_must_cite: ["Metodika 0100 M 043", "MPO 2023", "Metodika ověřování a prokazování souladu"]
 accepts: [national-declaration]
 # why: the operators' installation document says a certificate "for the needs of the Czech Republic" can only be a
 # certificate of conformity with PPDS P4 requirements issued by a body accredited by the Czech Accreditation
@@ -45,6 +45,20 @@ accepts: [national-declaration]
 # akreditaci"). A generic EN 50549-1 certificate is therefore not taken. GridFit's "national-declaration" kind (a
 # document citing PPDS) is the closest kind, but it is wider than the operators' words: a maker's self-declaration
 # or a foreign lab's certificate that cites PPDS is not what the form asks for (see notes.md).
+# Resolved 2026-11-12 in data: the engine reads only a document's `standards`, not its issuer, so the key is the Czech
+# test methodology the form wants named ("the certificate states by which methodology it was made", A1 form): the
+# accredited SZÚ certificate cites SZÚ's procedure 0100 M 043, a DSO laboratory protocol the operators' MPO 2023. A
+# foreign laboratory's certificate (Bureau Veritas / DAkkS for Deye) or a maker's declaration (SolaX, Sungrow) that
+# cites "PPDS" only is shown by name as the kind it is, and proves no row. The issuer-based rule is an engine wish
+# (docs/coverage/cz.md).
+# A model on ČEZ Distribuce's list, and a row nothing shows (the RfG page and the installation documents A1 / A2,
+# whose table "on the basis of equipment certificates" names the items a certificate or protocol proves)
+list_checks:
+  word: "checked by ČEZ Distribuce's list"
+  what: "ČEZ Distribuce lists a type after an SZÚ certificate (a body accredited by ČIA) or a ČEZd / EG.D laboratory protocol from which it is 'clear that the module, including the firmware and settings used, meets every requirement of Příloha 4 PPDS' (RfG page, seen 2026-11-12). The installation document A1 names what such a certificate proves: frequency stability, RoCoF, power reduction at over- and under-frequency, constant power, the logic module, automatic reconnection, voltage stability, UVRT, OVRT, reactive power, Q(U), P(U) and the protection settings (A2 adds the power-reduction interface and power recovery). The list prints each proof's issue date but not the edition it was tested against — most were issued in 2024–2025, before the 2025 edition was approved — and holds only with the firmware and settings profile the row names."
+  items: [freq-range, rocof, lfsm-o, under-frequency, logic-interface, reconnection, voltage-range, frt, reactive, q-of-u, p-of-u, protection-settings]
+  not_carried: "the list names the type, firmware, settings profile, kind of proof and VM category only — no rated power or phases, so ČEZ Distribuce applies the kW, current and phase lines to the plant on the installation document; the A2 items (power-reduction interface, power recovery after a fault) are checked only on rows of category A1/A2, which GridFit does not read per row yet; the grid-monitoring switch and the storage response are not in the installation document's certificate table"
+on_application: "neither a datasheet nor a document GridFit holds shows it; off ČEZ Distribuce's list, the operator checks it on the A1 / A2 installation document against a PPDS Příloha 4 certificate from a body accredited by ČIA (in practice SZÚ Brno), a ČEZd / EG.D laboratory protocol issued by 2025-12-31 (taken until 2026-12-31) or an ERÚ exemption"
 must_meet:
   - id: power-class
     rule: "Plant size class (PPDS P4 2025 part 2, Tab. 1)"
@@ -152,7 +166,7 @@ apply:
   guide_url: https://www.cezdistribuce.cz/cs/pro-vyrobce/pripojeni-mikrozdroje-vyrobny-nebo-akumulace-spojene-s-vyrobnou-do-100-kw
   guide_date: "ČEZ Distribuce web page, seen 2026-11-01; connection conditions 'Připojovací podmínky nn' valid from 2025-09-01"
   processing_time: "the operator decides on permanent operation within 30 days of a complete UTP request (PPDS P4 12.3); under the notification route the connection stands if the operator does not refuse within 30 days (Energy Act § 28(5)). Testing at the EG.D laboratory: about two working days of tests plus two for the report (EG.D, via search)"
-not_listed: "There is no national list yet: PREdi's installation document (2026-02) refers to a future 'seznam osvědčených zařízení … pro Českou republiku' and says the operators will announce where it is published; GridFit has not found it. ČEZ Distribuce's list is the published one, built from SZÚ certificates and the ČEZd and EG.D laboratory protocols. A model that is not on it connects only with a valid accredited PPDS Příloha 4 certificate (or a protocol, or an ERÚ exemption) attached to the installation document. EG.D and PREdi accept laboratory protocols issued by 2025-12-31 only until 2026-12-31; from 2027-01-01 they take only an accredited certificate or an exemption. ČEZd's page says it accepts protocols 'during their validity' and states no end date, and its list carries 88 rows whose ČEZd or EG.D protocol was issued in 2026 — protocols that EG.D's and PREdi's notices do not take. Only the maker or importer can fix a missing certificate; an installer cannot."
+not_listed: "There is no national list yet: PREdi's installation document (2026-02) refers to a future 'seznam osvědčených zařízení … pro Českou republiku' and says the operators will announce where it is published; GridFit has not found it. ČEZ Distribuce's list is the published one, built from SZÚ certificates and the ČEZd and EG.D laboratory protocols. A model that is not on it connects only with a valid accredited PPDS Příloha 4 certificate (or a protocol, or an ERÚ exemption) attached to the installation document. EG.D and PREdi accept laboratory protocols issued by 2025-12-31 only until 2026-12-31; from 2027-01-01 they take only an accredited certificate or an exemption. ČEZd's page says it accepts protocols 'during their validity', and since 2026 adds that from 2027-01-01 it takes no certificate or protocol valid until 2026-12-31; its own A1 / A2 installation documents (revised 2026-03-19) name DSO laboratory protocols issued by 2025-12-31. The list states no validity per row, and carries 88 rows whose ČEZd or EG.D protocol was issued in 2026 — protocols that EG.D's and PREdi's notices do not take. Only the maker or importer can fix a missing certificate; an installer cannot."
 thresholds:
   - "below 800 W: outside RfG; ČSN EN 50549-1 and the protection table 7 apply, frequency ranges too; a plug-in 800 VA rule ('zásuvkový mikrozdroj') was passed by the Chamber but rejected by the Senate on 2026-08-20 — status not confirmed; each operator has its own notification rule"
   - "A1: 800 W to 11 kW; A2: above 11 kW to below 100 kW (PPDS P4 2025 Tab. 1; ČEZd's VP_05 prints A1 < 11 kW, A2 ≥ 11 kW)"
@@ -168,15 +182,16 @@ changes:
   - "2025-07-02: ERÚ approved the 2025 edition of PPDS Příloha 4 (ČEZd: 'updated September 2025'); new interface-protection tables (Tab. 7, Tab. 8) and LFSM-O return at 50.2 Hz (change-marked ERÚ version)"
   - "2025-12-31: last issue date of a DSO laboratory protocol that EG.D and PREdi still accept"
   - "2026-08-20: the Senate rejected the plug-in microsource amendment (800 VA inverter, 2 kWp, no battery); whether the Chamber overrode it is not confirmed"
-  - "2026-12-31: EG.D and PREdi stop accepting laboratory protocols; from 2027-01-01 only an accredited certificate or an ERÚ exemption for A1/A2. ČEZd states no end date — not confirmed whether it follows"
+  - "2026-03-19: ČEZd's A1 / A2 installation documents revised: as a proof besides the accredited certificate, DSO laboratory protocols issued by 2025-12-31"
+  - "2026-12-31: EG.D and PREdi stop accepting laboratory protocols; from 2027-01-01 only an accredited certificate or an ERÚ exemption for A1/A2. ČEZd: from 2027-01-01 no certificate or protocol 'valid until 2026-12-31' (RfG page notice, seen 2026-11-12); which list rows that is, the list does not say"
   - "pending: a national list of certified devices for Czechia, announced in the operators' installation document; not found published on 2026-11-01"
   - "the Energy Act versions published to 2028 (zakonyprolidi) keep the 10.8 kW notification and 100 kW lines of § 28(5)"
   - "the EU revision of the generator code (RfG 2.0) is not adopted (GridFit IT research, 2026-10-31)"
 evidence_for_documented: "An SZÚ certificate of conformity with PPDS Příloha 4 (certification body 3040, accredited by ČIA) for the exact model family and firmware, naming the settings profile and the VM category (A1 or A2) and its validity date; a ČEZd or EG.D laboratory protocol, as shown on ČEZ Distribuce's list. A maker's own declaration or a foreign laboratory's EN 50549-1 certificate that cites PPDS is shown, but it is not the kind of document the operators' forms ask for. GridFit shows the document, its date and the PPDS edition it cites; the grid operator decides."
 sources:
-  - title: "ČEZ Distribuce — Ověření souladu s RfG (list, documents per category, accepted proof)"
+  - title: "ČEZ Distribuce — Ověření souladu s RfG (list, documents per category, accepted proof; notice: from 2027-01-01 no certificates or protocols valid until 2026-12-31)"
     url: https://www.cezdistribuce.cz/cs/pro-vyrobce/overeni-souladu-s-rfg
-    seen: "2026-11-01"
+    seen: "2026-11-12"
   - title: "ČEZ Distribuce — Seznam schválených střídačů a otestovaných ochran (xlsx; inverters 'Stav k' 2026-08-21, ZUE 2026-08-06)"
     url: https://www.cezdistribuce.cz/file/edee/distribuce/legislativa/seznam_schvalenych_stridacu.xlsx
     date: "2026-08-21"
@@ -194,10 +209,10 @@ sources:
     seen: "2026-11-01"
   - title: "ČEZ Distribuce — Instalační dokument nesynchronního výrobního modulu typu A1 (published 2024-10-01, valid from 2025-01-01)"
     url: https://www.cezdistribuce.cz/file/edee/distribuce/formulare/instalace_vyrobniho_modulu_a1_nesynchro_form.pdf
-    date: "2024-10-01 (file modified 2026-03-19)"
+    date: "2024-10-01 (revised 2026-03-19: DSO protocols issued by 2025-12-31; re-read 2026-11-12)"
   - title: "ČEZ Distribuce — Instalační dokument nesynchronního výrobního modulu typu A2"
     url: https://www.cezdistribuce.cz/file/edee/distribuce/formulare/instalace_vyrobniho_modulu_a2_nesynchro_form.pdf
-    date: "2024-10-01"
+    date: "2024-10-01 (revised 2026-03-19; re-read 2026-11-12)"
   - title: "ČEZ Distribuce — Změny v procesu připojování výrobního modulu A1/A2 (from 2025-01-01)"
     url: https://www.cezdistribuce.cz/file/edee/distribuce/formulare/zmeny_vyrobni_modul_a1_a2.pdf
     date: "2025-01-13"

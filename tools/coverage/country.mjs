@@ -63,6 +63,10 @@ const recs = devs.map((d, i) => {
   // c: what the grid row carries (the lists' kVA and phases where a list states them, else the sheet)
   const kw = row[8] !== null, ph = !!row[7], pv = PV.has(d.cls), mppt = row[9] !== null;
   const c = kw && ph && (!pv || mppt) ? "kW, phases" + (pv ? ", MPPT" : "") : kw && ph ? "kW, phases; no MPPT" : kw ? "kW only" : ph ? "phases only" : "none";
+  // the model-code level (row[12]), only where the list / datasheet level has no figure
+  const ckw = !kw && row[12] && row[12][0] !== null, cph = !ph && row[12] && !!row[12][1];
+  const cAny = (kw || ckw) && (ph || cph) ? (ckw || cph ? "kW and phases, some from the model code" : "kW and phases from a list or datasheet")
+    : (kw || ckw) ? "kW only" + (ckw ? " (model code)" : "") : (ph || cph) ? "phases only" : "none";
   // d: the strongest source behind the model
   const own = (d.cells[CC] ?? []).length > 0;
   const doc = !!(r?.doc || r?.named?.length);
@@ -70,7 +74,7 @@ const recs = devs.map((d, i) => {
   const anyPos = Object.values(d.cells).flat().some((e) => POS.has(e.show));
   const dsrc = own ? "own list row" : doc ? "maker's document" : sheet ? "datasheet" : anyPos ? "other list (positive)" : "other list (expired / refused only)";
   const legacy = row[11] || "current";
-  return { brand: index.brands[row[0]], model: d.model, cls: d.cls, status, b, rows, nBare, nNote, c, kw, ph, pv, mppt, dsrc, sheet, doc, own, legacy };
+  return { brand: index.brands[row[0]], model: d.model, cls: d.cls, status, b, rows, nBare, nNote, c, cAny, kw, ph, ckw, cph, pv, mppt, dsrc, sheet, doc, own, legacy };
 });
 
 // ---- tables
@@ -99,6 +103,8 @@ table(["model", "models", "share"], [...by("b")].sort((a, b) => b[1] - a[1]).map
 
 h("c · specs");
 table(["what the row carries", "models", "share"], [...by("c")].sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v, pct(v, N)]));
+out.push("", "with the model-code level (≈, display only):", "");
+table(["kW and phases at some level", "models", "share"], [...by("cAny")].sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v, pct(v, N)]));
 h("d · source");
 table(["strongest source", "models", "share"], [...by("dsrc")].sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v, pct(v, N)]));
 h("e · legacy");
@@ -109,6 +115,7 @@ const atLevel = (x) => ({
   a: x.status !== "-" && x.status !== "?",
   b: x.b !== "rows not shown, no reason",
   c: x.kw && x.ph,
+  cc: (x.kw || x.ckw) && (x.ph || x.cph),
   d: true, // every model in the view comes from at least one list row with its link; the column above says which
   e: true, // the tier is computed for every model; "current" is the default without a dated entry
   all: x.status !== "-" && x.status !== "?" && x.b !== "rows not shown, no reason" && x.kw && x.ph,
@@ -121,9 +128,9 @@ const groupTable = (title, keyFn, limit) => {
     const n = xs.length, s = (f) => xs.filter((x) => atLevel(x)[f]).length;
     const st = by("status", xs);
     return [k, n, xs.filter((x) => x.own).length, ["Y", "C", "D", "K", "B", "-"].map((c) => st.get(c) ?? 0).join(" / "), pct(s("b"), n), pct(xs.filter((x) => x.b === "every row answered").length, n),
-      pct(s("c"), n), pct(xs.filter((x) => x.pv && x.mppt).length, xs.filter((x) => x.pv).length), pct(xs.filter((x) => x.sheet || x.doc).length, n), pct(s("all"), n)];
+      pct(s("c"), n), pct(s("cc"), n), pct(xs.filter((x) => x.pv && x.mppt).length, xs.filter((x) => x.pv).length), pct(xs.filter((x) => x.sheet || x.doc).length, n), pct(s("all"), n)];
   });
-  table(["group", "models", "on own list", "Y / C / D / K / B / –", "b: no bare row", "b: all answered", "c: kW + phases", "c: MPPT (PV)", "d: sheet or document", "a+b+c"], rows);
+  table(["group", "models", "on own list", "Y / C / D / K / B / –", "b: no bare row", "b: all answered", "c: kW + phases", "c: … with model code", "c: MPPT (PV)", "d: sheet or document", "a+b+c"], rows);
 };
 groupTable("by class", (x) => x.cls);
 groupTable(`by brand (largest ${NBR})`, (x) => x.brand, NBR);
@@ -133,6 +140,6 @@ console.log(out.join("\n"));
 const jsonOut = arg("--json");
 if (jsonOut) {
   const summary = { cc: CC, built: checks.built, models: N, status: Object.fromEntries(by("status")), rows: allRows, notShown: { reason: noted, bare },
-    b: Object.fromEntries(by("b")), c: Object.fromEntries(by("c")), d: Object.fromEntries(by("dsrc")), e: Object.fromEntries(by("legacy")) };
+    b: Object.fromEntries(by("b")), c: Object.fromEntries(by("c")), cAny: Object.fromEntries(by("cAny")), d: Object.fromEntries(by("dsrc")), e: Object.fromEntries(by("legacy")) };
   writeFileSync(jsonOut, JSON.stringify({ summary, models: recs }, null, 0));
 }

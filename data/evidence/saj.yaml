@@ -56,3 +56,378 @@ documents:
     match: ^CHS2-(29\.9|30|40|50)K-T[45]
     countries: []
     accepted_in: [EE, NL, SE]
+- id: es-nts-hs3-s2-2024
+  title: TÜV Rheinland A3 50655633 0001 — NTS 2.1 + Corrección 1.0, UNE 217001 — HS3-3…6K-S2 (W/G, BX/PX)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/HS3/HS3-(3-6K)-S2%20Series%20Single-phase%20NTS2.1%20and%20UNE217001%20Certificate-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50655633 0001
+  issued: '2024-12-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1-Correction 1.0
+  - UNE 217001:2020
+  firmware: 'DSP: V1.100, MCU: V1.010'
+  families:
+  - name: HS3-S2 single-phase all-in-one storage 3–6 kW
+    match: ^HS3-(3|3\.6|4|4\.6|5|6)K-S2-[WG]-[BP]X$|^HS3-5K-S2-[WG]-[BP]X-BE$|^HS3-6K-S2-[WG]-[BP]X-IE$
+    countries:
+    - ES
+    note: Report CN24LQEI 001. X = number of battery modules 1–8. A companion TÜV certificate AK 50655636 0001 (2024-12-04, RD 1699/661/647/244/413
+      + UNE 217002:2020, report CN24A77R 001) lists the same 32 models (it prints one as "HS3-5K-S2-PX-BE", a typo for W-PX-BE).
+- id: es-rd647-hs3-t2-2024
+  title: TÜV Rheinland AK 50654501 0001 — RD 647/2020, RD 413/2014, UNE 217002:2020 — HS3-3…12K-T2 (W/G, BX/PX)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/HS3/HS3-(3-12K)-T2%20Series%20Three-phase%20UNE%20and%20RD%20Certificate-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50654501 0001
+  issued: '2024-12-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD 1699:2011
+  - RD 661:2007
+  - RD 647:2020
+  - RD 413:2014
+  - RD 244:2019
+  - UNE 217002:2020
+  - UNE 206006 IN:2011
+  - UNE 206007-1 IN:2013
+  firmware: V1.011 (Main DSP V1.010 (U3), Slave MCU V2.010 (U4), BMS V1.407)
+  families:
+  - name: HS3-T2 three-phase all-in-one storage 3–12 kW
+    match: ^HS3-(3|4|5|6|8|10|12)K-T2-[WG]-[BP]X$|^HS3-10K-T2-[WG]-[BP]X-BE$|^HS3-12K-T2-[WG]-[BP]X-IE$|^HS3-(3|4|5|6|8|10|12)K-T2-W-[BP]X(-BE|-IE)?;HS3-(3|4|5|6|8|10|12)K-T2-G-[BP]X(-BE|-IE)?\(X=1\.2\.3\.4\.5\.6\.7\.8\)$
+    countries:
+    - ES
+    note: Report CN242KF1 001. X = number of battery modules 1–8. The register also carries each W/G pair as one combined battery-class
+      entry "HS3-…-W-BX;HS3-…-G-BX(X=1.2…8)"; both members are listed, so the regex takes those 18 too. The certificate prints "HS3-6KT2-W-BX"
+      and "HS3-4KT2-W-BX" without the hyphen. The NTS 2.1 + UNE 217001 certificate A3 50655356 0001 (2024-12-09, report CN240ZB7 001,
+      FW V1.011) covers only 5–12 kW of this list (no 3K/4K).
+- id: es-nts-hs2-as2-2025
+  title: TÜV Rheinland A3 50687772 0001 — NTS 2.1, UNE 217001, UNE 206007-1 — HS2-5…10K-T2(-B)-X (incl. WiFi), AS2-5…10K-T(-B)-X
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/HS2%20AS2/HS2%2cAS2-(3-12)K-T2%20(WIFI%20)%20NTS%20%26%20UNE217001%20Certificate-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50687772 0001
+  issued: '2025-07-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 206007-1 IN:2013
+  - UNE 217001:2020
+  - NTS Version 2.1
+  - NTS Version 2.1-Correction 1.0
+  firmware: V1.012
+  families:
+  - name: HS2-T2 / AS2-T three-phase all-in-one storage 5–10 kW
+    match: ^(HS2-(5|6|8|10)K-T2|HS2-10K-T2-B)(-[1-5X])?(WIFI)?(\(X=2\.3\.4\.5\))?$|^(AS2-(5|6|8|10)K-T|AS2-10K-T-B)(-[1-5X])?(\(X=2\.3\.4\.5\))?$
+    countries:
+    - ES
+    note: Report CN22F7HE 002. The certificate lists HS2-5/6/8/10K-T2-X, HS2-10K-T2-B-X, AS2-5/6/8/10K-T-X, AS2-10K-T-B-X and the HS2
+      "-X WiFi" variants, X = number of modules 1–5. The regex also takes the register's bare codes without the module count (HS2-5K-T2,
+      AS2-5K-T, AS2-10K-T-B …; AS2 bare codes are battery class in the register) as the same hardware — drop them if that is too generous.
+      Supersedes A3 50567654 0001 (2022-12-08, no WiFi variants). Companion RD certificate AK 50687778 0001 (2025-07-29, RD 1699/661/413/647/244
+      + UNE 217002:2020, report CN22GZ3B 002) lists the same models.
+- id: es-nts-h2-t-2024
+  title: TÜV Rheinland A3 50632035 0001 — NTS 2.1 + Corrección 1.0, UNE 217001 — H2-10…30K-T2/T3
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/H2/H2-(10-30K)-T2%2cT3%20Series%20Three-phase%20NTS2.1%20Attachment-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50632035 0001
+  issued: '2024-05-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1-Correction 1.0
+  - UNE 217001:2020
+  firmware: V3.003
+  families:
+  - name: H2-T2/T3 three-phase hybrid 10–30 kW
+    match: ^H2-(10K-T3|12K-T3|15K-T2|15K-T3|20K-T2|20K-T3|25K-T3|25K-T3-BE|30K-T3|30K-T3-DE)$
+    countries:
+    - ES
+    note: Report CN24M1NK 001. The same certificate is also posted as "…RD244 UNE217001 Certificate-ES.pdf". Companion AK 50632034 0001
+      (2024-05-23, RD 1699/661/413/647/244 + UNE 217002:2020, report CN24TD5W 001) lists the same 10 models.
+- id: es-rd647-h2-t2-2022
+  title: Intertek CN-PV-220256 — RD 647/2020, RD 413/2014, UNE 217002:2020 — H2-5…10K-T2
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/H2/H2-(5-10K)-T2%20Series%20Three-phase%20UNE217002%2cRD647%2c%20RD413%20Certificate-ES.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220256
+  issued: '2022-11-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - RD647:2020
+  - RD413:2014
+  - UNE 217002:2020
+  families:
+  - name: H2-T2 three-phase hybrid 5–10 kW
+    match: ^H2-(5|6|8|10)K-T2$
+    countries:
+    - ES
+    note: Test report 221031094GZU-001. H2-10K-T2-B in the register is a different suffix and is not taken.
+- id: es-nts-r5-s2-2022
+  title: Intertek CN-PV-220131 — NTS-631:2020 — R5-3…8K-S2(-15)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/R5/R5-(3-8K)-S2-15%20Series%20Single-phase%20NTS2.1%20Certificate-ES.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220131
+  issued: '2022-07-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS-631:2020
+  firmware: V1.188
+  families:
+  - name: R5-S2 single-phase string 3–8 kW
+    match: ^R5-(3|3\.6|4|5|6|7|8)K-S2(-15)?$
+    countries:
+    - ES
+    note: Test report 220614050GZU-001. R5-5K-S2-B / R5-5K-S2-15-B and the garbled "R5SERIES…" register codes are not taken.
+- id: es-nts-r5-s1-2022
+  title: Intertek CN-PV-220130 — NTS-631:2020 — R5-0.7…3K-S1(-15)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/R5/R5-(0.7-3K)-S1-15%20Series%20Single-phase%20%20CN-PV-220130_Security-ES.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220130
+  issued: '2022-07-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS-631:2020
+  firmware: V1.201
+  families:
+  - name: R5-S1 single-phase string 0.7–3 kW
+    match: ^R5-(0\.7|1|1\.5|2|2\.5|3)K-S1(-15)?$
+    countries:
+    - ES
+    note: Test report 220614049GZU-001. The maker's file name says "Security" but the document is the NTS certificate.
+- id: es-nts-r6-t2-32-2022
+  title: Intertek CN-PV-220133 — NTS-631:2020 — R6-15…25K-T2-32
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/R6/R6-(15-25K)-T2-32%20Series%20Three-phase%20NTS%20Version%202.1%20Certificate-ES.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220133
+  issued: '2022-07-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS-631:2020
+  firmware: V1.020
+  families:
+  - name: R6-T2-32 three-phase string 15–25 kW
+    match: ^R6-(15|17|20|22|25)K-T2-32$
+    countries:
+    - ES
+    note: Test report 220614052GZU-001. Companion Intertek CN-PV-220259 (2022-11-30, RD647:2020, RD413:2014, UNE 217002:2020) lists
+      the same five models. R6-25K-T2-32-B is not taken.
+- id: es-nts-r6-t3-t4-32-2022
+  title: Intertek CN-PV-220134 — NTS-631:2020 — R6-25…50K-T3/T4-32
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/R6/R6-(25-50K)-T2-32%20Series%20Three-phase%20%20NTS%20Version%202.1%20Certificate-ES.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai
+  cert_no: CN-PV-220134
+  issued: '2022-07-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS-631:2020
+  firmware: V1.020
+  families:
+  - name: R6-T3/T4-32 three-phase string 25–50 kW
+    match: ^R6-(25K-T3|30K-T3|33K-T3|36K-T3|36K-T4|40K-T4|50K-T4)-32$
+    countries:
+    - ES
+    note: Test report 220614056GZU-001. The maker's file name says "T2-32" but the certificate lists T3/T4. Companion Intertek CN-PV-220262
+      (2022-11-30, RD647/RD413/UNE 217002) lists the same models except R6-36K-T4-32. The -B variants in the register are not taken.
+- id: es-nts-r6-t2-2023
+  title: TÜV Rheinland A3 50575386 0001 — NTS 2.1 + Corrección 1.0, UNE 217001 — R6-3…15K-T2
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/R6/R6-(3-15K)-T2%20Series%20Three-phase%20NTS%20and%20UNE217001%20%20Certificate-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50575386 0001
+  issued: '2023-03-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1-Correction 1.0
+  - UNE 217001:2020
+  firmware: V2.200
+  families:
+  - name: R6-T2 three-phase string 3–15 kW
+    match: ^R6-(3|4|5|6|8|10|12|15)K-T2$
+    countries:
+    - ES
+    note: Report CN23QTBL 002; the certificate writes the models as "R6-xK-T2 (x=3, 4, 5, 6, 8, 10, 12, 15)". Companion AK 50575385
+      0001 (2023-03-01, RD 1699/661/647/413 + UNE 217002:2020, RD 244/2019 Annex I, report CN23QTBL 001) covers the same list. R6-10K-T2-B
+      is not taken.
+- id: es-nts-c6-2024
+  title: TÜV Rheinland A3 50625431 0001 — NTS 2.1 + Corrección 1.0, UNE 217001 — C6-75…125K-T6/T9/T12(-40)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/C6/C6-(75-125K)-(T6%2cT9%2cT12)-40%20Series%20NTS%20and%20UNE%20217001%20Certificate-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50625431 0001
+  issued: '2024-04-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - NTS Version 2.1
+  - NTS Version 2.1-Correction 1.0
+  - UNE 217001:2020
+  firmware: V0.082
+  families:
+  - name: C6 three-phase string 75–125 kW
+    match: ^C6-(75K-T6|100K-T9|110K-T12|125K-T12)(-40)?$
+    countries:
+    - ES
+    note: Report CN22LSO6 003. C6-120K-T12 in the register is not listed and is not taken.
+- id: es-nts-chs2-2025
+  title: TÜV Rheinland A3 50661585 0001 — NTS 2.1 + Corrección 1.0, UNE 217001 — CHS2-29.9…63K-T4/T5/T6-X
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Spain%20certification/CHS2/CHS2-(29.9-63K)-(T4%2cT5%2cT6)-X%20Series%20NTS%202.1%20and%20UNE217001%20Certificate-ES.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: A3 50661585 0001
+  issued: '2025-02-13'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - UNE 217001:2020
+  - NTS Version 2.1
+  - NTS Version 2.1-Correction 1.0
+  firmware: V1.012
+  families:
+  - name: CHS2 C&I storage system 29.9–63 kW
+    match: ^CHS2-(29\.9K-T4|30K-T4|40K-T5|50K-T6|63K-T6)-X$
+    countries:
+    - ES
+    note: Report CN244T79 002; X = battery configuration (51.5/64.4/77.3/90.2 kWh). Companion AK 50661587 0001 (2025-02-13, RD 1699/661/413/647/244
+      + UNE 217002:2020, report CN24KXPU 002) lists the same five.
+- id: de-vde4105-chs2-2025
+  title: TÜV Rheinland A3 50661614 0001 — VDE-AR-N 4105/11.18 — CHS2-29.9K…63K-T4/T5/T6-X C&I all-in-one storage
+  url: https://www.saj-electric.com/hubfs/crm-properties-file-values/CHS2_Series_VDE4105_Test_Certificate_de_DE.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50661614 0001
+  issued: '2025-01-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1.023
+  families:
+  - name: CHS2 C&I all-in-one energy storage 29.9–63 kW
+    match: ^CHS2-(29\.9K-T4|30K-T4|40K-T5|50K-T6|63K-T6)-X$
+    countries:
+    - DE
+    note: Report CN24GK2A 002; 8 pp. with E.4 unit certificate, E.5 extract, E.6 NA-protection certificate and E.7 (integrated NA protection,
+      interface switch Churod CHAR-112A150). X stands for the battery build (51.5/64.4/77.3/90.2 kWh); the register carries the code
+      with the literal X.
+- id: it-cei021-hs3-s2-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50668152 0001-0002 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1 + V2:2024-01
+    — HS3-3K…6K-S2 all-in-one energy storage system
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/HS3/HS3-(3-6K)-S2%20Series%20Single-phase%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50668152 0001-0002
+  issued: '2025-03-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 'DSP: V1.100, MCU: V1.010'
+  families:
+  - name: HS3 S2 single-phase all-in-one hybrid 3–6 kW
+    match: ^HS3-(3|3\.6|4|4\.6|5|6)K-S2-[WG]-[BP]X$|^HS3-5K-S2-[WG]-[BP]X-BE$|^HS3-6K-S2-[WG]-[BP]X-IE$
+    countries: [IT]
+    note: 'Test report CN24QPQM 002 (TÜV Rheinland Shanghai, CNAS L3038). W = Wi-Fi, G = 4G; B / P = battery variant; X = 1…8 battery
+      modules BU3-5.0-TV2 (-BASE, -RPO, -PRO-BASE). Allegato ticks interface device, interface protection and static conversion: SPI
+      integrated. Names the -BE (5K) and -IE (6K) variants. AS3 (AC-coupled) is not named.'
+- id: it-cei021-hs3-t2-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50668151 0001-0002 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1 + V2:2024-01
+    — HS3-3K…12K-T2 all-in-one energy storage system
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/HS3/HS3-(3-12K)-T2%20Series%20Three-phase%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50668151 0001-0002
+  issued: '2025-03-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: 'DSP: V1.010(U3), MCU: V2.010(U4)'
+  families:
+  - name: HS3 T2 three-phase all-in-one hybrid 3–12 kW
+    match: ^HS3-(3|4|5|6|8|10|12)K-T2-[WG]-[BP]X(;HS3-(3|4|5|6|8|10|12)K-T2-G-[BP]X\(X=1\.2\.3\.4\.5\.6\.7\.8\))?$|^HS3-10K-T2-[WG]-[BP]X-BE(;HS3-10K-T2-G-[BP]X-BE\(X=1\.2\.3\.4\.5\.6\.7\.8\))?$|^HS3-12K-T2-[WG]-[BP]X-IE(;HS3-12K-T2-G-[BP]X-IE\(X=1\.2\.3\.4\.5\.6\.7\.8\))?$
+    countries: [IT]
+    note: 'Test report CN24M47K 002 (TÜV Rheinland Shanghai, CNAS L3038). X = 1…8 battery modules BU3-5.0-TV2 (-BASE, -RPO, -PRO-BASE);
+      junction box BC3-TV above 3 modules. Allegato ticks interface device, interface protection and static conversion: SPI integrated.
+      Page 1 misprints two names (HS3-3K-2-G-BX, HS3-5K-T2-BX); the Allegato tables (image pages) name every W/G × BX/PX code, -BE for
+      10K and -IE for 12K. Combined register rows (W;G with X=1…8) are joined.'
+- id: it-cei021-h2-10-30k-t2-t3-2024
+  title: TÜV Rheinland Certificate of Conformity A3 50633136 0001 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1:2022-11 —
+    H2-10K…30K-T2/T3
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/H2/H2-(10-30K)-(T2%2cT3)%20Series%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50633136 0001
+  issued: '2024-06-24'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Hybrid solar inverter V3.003; battery system V1.06
+  families:
+  - name: H2 T2/T3 three-phase hybrid 10–30 kW
+    match: ^H2-(10K-T3|12K-T3|15K-T2|15K-T3|20K-T2|20K-T3|25K-T3|25K-T3-BE|30K-T3|30K-T3-DE)$
+    countries: [IT]
+    note: 'Test report CN23DTBX 001. Batteries B2-5.0-HV1 / -HV5 (and B2-10.0-HV1 / -HV5 in later tables). Allegato ticks interface
+      device and static conversion but not interface protection: SPI external. Idc limited to 0.5 %.'
+- id: it-cei021-h2-5-10k-t2-2022
+  title: TÜV Rheinland Certificate of Conformity AK 50559162 0001 — CEI 0-21:2022-03 — H2-5K…10K-T2
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/H2/H2-(5-10K)-T2%20Series%20Three-phase%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (AK certificate; cover letter TÜV Rheinland (China) Ltd.)
+  cert_no: AK 50559162 0001
+  issued: '2022-09-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  families:
+  - name: H2 T2 three-phase hybrid 5–10 kW
+    match: ^H2-(5|6|8|10)K-T2$
+    countries: [IT]
+    note: Test report CN22B2GO 001. Image-only scan, 2 pages (certificate + cover letter); no Allegato, firmware or SPI statement and
+      no accreditation mark printed. Base edition only (no V1/V2). H2-10K-T2-B is not named, not joined.
+- id: it-cei021-chs2-2025
+  title: TÜV Rheinland Certificate of Conformity A3 50661612 0001 with Dichiarazione di conformità — CEI 0-21:2022-03 + V1 + V2:2024-01
+    — CHS2-29.9K…63K-T4/T5/T6-X C&I energy storage system
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/CHS2/CHS2-(29.9-63K)-(T4%2cT5%2cT6)-X%20Series%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, ISO/IEC 17065)
+  cert_no: A3 50661612 0001
+  issued: '2025-01-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  - CEI 0-21;V2:2024-01
+  firmware: V1.00
+  families:
+  - name: CHS2 commercial hybrid 29.9–63 kW
+    match: ^CHS2-(29\.9K-T4|30K-T4|40K-T5|50K-T6|63K-T6)-X$
+    countries: [IT]
+    note: 'Test report CN240GCT 002. X = battery configuration CB2-57.3/71.6/85.9/100.3-HV5 ×1/2/3. Allegato ticks interface device,
+      interface protection and static conversion: SPI integrated. CH2 (no S) rows are another model, not joined.'
+- id: it-cei021-c6-75-125k-2024
+  title: Intertek Certificate of Conformity CN-PVES-230068R1 — CEI 0-21:2022-03 + V1:2022-11 — C6-75K…125K-T6/T9/T12(-40)
+  url: https://www.saj-electric.com/hubfs/South%20East%20Europe%20document/Certification/Italy%20certification/C6/C6-(75-125K)-(T6%2cT9%2cT12)Series%20CEI%200-21%20Certificate-ITA.pdf
+  issuer: Intertek Testing Services Ltd. Shanghai (accredited by ACCREDIA PRD N° 306B, ISO/IEC 17065:2012)
+  cert_no: CN-PVES-230068R1
+  issued: '2024-04-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - CEI 0-21:2022-03
+  - CEI 0-21;V1:2022-11
+  firmware: Master DSP V0.114, Slave DSP V0.083
+  families:
+  - name: C6 three-phase string 75–125 kW
+    match: ^C6-(75K-T6|100K-T9|110K-T12|125K-T12)(-40)?$
+    countries: [IT]
+    note: Test report 230221024GZU-001 Rev. 1 (2024-04-10); type approval for Type B; replaces CN-PV-230068 (2023-02-28). Image-only
+      scan. Allegato ticks device for conversion only (SPI external). C6-120K-T12 is not named, not joined.

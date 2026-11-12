@@ -5,7 +5,10 @@
 # WiPWC 1.3 (which takes in the "Bank Nastaw dla Polski" settings set) count for new type-A connections. Facts only,
 # with the source of each; the distribution grid operator (OSD) decides. Written 2026-11-01 from PSE's WOS 2025 and
 # the URE decision, PTPiREE's WiPWC 1.3, Bank Nastaw 1.1, the list page and notice of 2026-10-05, the Minister of
-# Climate's micro-installation regulation (Dz.U. 2023 poz. 1098) and ENEA Operator's notification form.
+# Climate's micro-installation regulation (Dz.U. 2023 poz. 1098) and ENEA Operator's notification form. Re-read
+# 2026-11-12: the list page now serves the 1.3 list of 2026-11-06 (1.2 still of 2026-10-26); WiPWC 1.3, Bank Nastaw 1.1,
+# the notice of 2026-10-05, PSE's WOS 2025 page and Dz.U. 2023 poz. 1098 (in force, no amending act in the ELI register)
+# are unchanged.
 cc: PL
 country: Poland
 norm: "NC RfG + WOS (PSE) + WiPWC / Bank Nastaw (PTPiREE)"
@@ -44,6 +47,19 @@ document_must_cite: ["WiPWC", "PTPiREE", "WOS", "PSE 20"]
 # "Certyfikaty, wydane na zgodność z dokumentami innymi niż obowiązującymi w Polsce … nie zostaną wprowadzone do
 # wykazu". So a bare EN 50549-1 certificate or a maker's released-countries table is not taken.
 accepts: [national-declaration]
+# A model on PTPiREE's WiPWC 1.3 list: the OSDs verified its equipment certificate, and a WiPWC 1.3 certificate for a
+# type-A PPM must confirm LFSM-O, the frequency range and RoCoF (WiPWC 1.3 §6, items 6.1, 6.14, 6.15) and the
+# "Bank Nastaw dla Polski" settings set — protection, under-frequency, Q(U), P(U), reconnection (§3; Bank Nastaw 1.1).
+# RoCoF is left out of `items`: a row certified to WOS 2018 (360 of 2 681 rows on 2026-11-06) confirms 2.0 Hz/s,
+# not WOS 2025's 2.5 Hz/s, and the engine does not read a row's WOS edition. The remote stop (6.16, optional) and the
+# voltage band and RS-485 / SunSpec (micro regulation, IRiESD) are checked by the OSD itself — the list page says so.
+list_checks:
+  word: "checked by PTPiREE's list"
+  what: "The five PTPiREE grid operators list a model after verifying its equipment certificate (an ISO/IEC 17065 body, issued under WiPWC 1.3), which for a type-A unit confirms LFSM-O, the frequency range, RoCoF and the 'Bank Nastaw dla Polski' settings set (protection, under-frequency, Q(U), P(U), reconnection) — WiPWC 1.3 §§3, 6; list page, file of 2026-11-06. Each row names the WOS edition and the date until which the certificate is accepted."
+  items: [certificate, freq-range, lfsm-o, under-frequency, protection-settings, reconnection, p-of-u, reactive, anti-islanding, storage]
+  not_carried: "PTPiREE's list carries no rated power or phases, and even for a listed model the OSD checks the micro-installation regulation and its IRiESD itself on the notification (voltage band, RS-485 with SunSpec); a row certified to WOS 2018 confirms RoCoF at 2.0 Hz/s, not WOS 2025's 2.5 Hz/s"
+# A model off the list, for a row neither a datasheet nor a document GridFit holds shows (PTPiREE list page and guide)
+on_application: "neither a datasheet nor a document GridFit holds shows it; off PTPiREE's list the OSD does not take the model on the notification — its maker must have a WiPWC certificate entered on the list first (PTPiREE's guide); a 1.2-list certificate counts only until 31 December 2026"
 must_meet:
   - id: power-class
     rule: "Plant size class (URE decision of July 2018 on NC RfG art. 5 thresholds)"
@@ -137,6 +153,7 @@ thresholds:
 commissioning: "For a micro-installation the notification serves as the NC RfG installation document (ENEA's form says so); the OSD installs the metering and connects it, and checks the certificate, the list and the IRiESD requirements (RS-485 / SunSpec) at that point. PTPiREE's list page: the final verification of NC RfG / WOS compliance and of the certificate's validity happens at the operational notification (NC RfG art. 30–36). Protection settings may be changed only by a person with UDT or SEP group E qualifications, in a way that identifies that person (code or seal). PTPiREE's testing procedure 3.0 (from 2026-01-01) covers PGMs whose readiness statement is filed after that date (type B–D field tests mostly)."
 changes:
   - "2026-04-07: PTPiREE struck WOS 2018 certificates whose acceptance had ended from the lists (reported by GLOBEnergia 2026-04-17/30; the list page confirms WOS 2018 certificates were struck); type B–D devices named in connection conditions issued before 2025-12-01 keep their certificate until the date in the column"
+  - "2026-11-06: the 1.3 list re-issued — 2 681 rows (2 491 on 2026-10-26); the 1.2 list is still the file of 2026-10-26"
   - "2026-10-05: PTPiREE's notice — the WiPWC 1.2 list ends on 31 December 2026, regardless of the certificates' own validity"
   - "2026-12-31: last day the WiPWC 1.2 list counts; 1.2 rows carry 31.12.2026 or an earlier date in the acceptance column"
   - "2027-01-01: WiPWC 1.3 certificates mandatory for type A whose connection conditions are issued, or notification filed, from that day; WOS 2025 applies to those type-A modules (RoCoF 2.5 Hz/s, RS-485 + SunSpec, Pref = actual output)"
@@ -146,19 +163,21 @@ evidence_for_documented: "A WiPWC certificate from an accredited certification b
 sources:
   - title: "PTPiREE — Wykaz certyfikowanych urządzeń (list page with the WiPWC 1.3 and 1.2 lists)"
     url: https://ptpiree.pl/kodeksy-sieci/wykaz-certyfikatow/
-    seen: "2026-11-01"
-  - title: "PTPiREE — Wykaz urządzeń WiPWC 1.3 (225 pp., Lp. 1–2491)"
-    url: https://ptpiree.pl/wp-content/uploads/2026/10/2026-10-26-Wykaz-urzadzen_1.3.pdf
-    date: "2026-10-26"
+    seen: "2026-11-12"
+  - title: "PTPiREE — Wykaz urządzeń WiPWC 1.3 (243 pp., Lp. 1–2681; 2 321 rows WOS 2025, 360 WOS 2018)"
+    url: https://ptpiree.pl/wp-content/uploads/2026/11/2026-11-06-Wykaz-urzadzen_1.3.pdf
+    date: "2026-11-06"
+    seen: "2026-11-12"
   - title: "PTPiREE — Wykaz urządzeń WiPWC 1.2 (851 pp., Lp. 1–8531), accepted until 2026-12-31"
     url: https://ptpiree.pl/wp-content/uploads/2026/10/2026-10-26-Wykaz-urzadzen_1.2.pdf
     date: "2026-10-26"
   - title: "PTPiREE — Komunikat dotyczący wykazu urządzeń zgodnych z wymaganiami NC RfG"
     url: https://ptpiree.pl/kodeksy-sieci/komunikat/
     date: "2026-10-05"
+    seen: "2026-11-12"
   - title: "PTPiREE — Warunki i procedury (page with WiPWC 1.3, Bank Nastaw, WiPWC 1.2 and the nonconformity coding)"
     url: https://ptpiree.pl/kodeksy-sieci/warunki-i-procedury/
-    seen: "2026-11-01"
+    seen: "2026-11-12"
   - title: "PTPiREE — WiPWC version 1.3"
     url: https://ptpiree.pl/wp-content/uploads/2024/12/wipwc_2024_10_01-1.pdf
     date: "2024-10-01, in force 2024-11-01"
@@ -177,6 +196,7 @@ sources:
   - title: "PSE — Zatwierdzenie wymogów ogólnego stosowania dla przyłączania jednostek wytwórczych (WOS 2025, application rules)"
     url: https://www.pse.pl/-/zatwierdzenie-wymogow-ogolnego-stosowania-dla-przylaczania-jednostek-wytworczych
     date: "2025-05-30"
+    seen: "2026-11-12"
   - title: "PSE — NCRfG_art_7_4_wymogi_ogolnego_stosowania.zip (WOS 2025 PL/EN, URE decision 2025-05-15, WOS 2019)"
     url: https://www.pse.pl/documents/20182/772549960/NCRfG_art_7_4_wymogi_ogolnego_stosowania.zip/b45f8987-c958-43de-a952-4b9100894d8b?safeargs=646f776e6c6f61643d74727565
     date: "2025-05-15 (decision); English text file 2025-09-15"
@@ -186,6 +206,7 @@ sources:
   - title: "Rozporządzenie MKiŚ z 31 maja 2023 r. — mikroinstalacje (Dz.U. 2023 poz. 1098)"
     url: https://api.sejm.gov.pl/eli/acts/DU/2023/1098/text.pdf
     date: "2023-05-31, in force 2023-06-14"
+    seen: "2026-11-12 (ELI: in force, no amending act)"
   - title: "ENEA Operator — WZ-MI wniosek / zgłoszenie mikroinstalacji (form 202309)"
     url: "https://www.operator.enea.pl/sites/operator/files/dokumenty/WZ-MI%20zg%C5%82oszenie-wniosek_edytowalny_0.pdf"
     date: "form 2023-09; file modified 2024-08-30, served 2025-07-02"

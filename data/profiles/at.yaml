@@ -36,6 +36,19 @@ edition:
 # and "OVE-Richtlinie R25 / R 25" (a bare "R 25" is too short to match on).
 # The OVE R 25 test is the national proof; a bare EN 50549-1 certificate is not named anywhere in TOR 8.1.
 document_must_cite: ["TOR Erzeuger", "TOR Stromerzeugungsanlagen", "TOR Generator", "OVE-Richtlinie R", "OVE R 25", "OVE R25"]
+# A model admitted by the Wechselrichterliste (Ja, Ja - mit Einschränkung, Ja, befristet, Ja - <= 800W / <= 16A Anlage …):
+# TOR Typ A V1.4 8.1 note 37 counts the proof of conformity as given; the list reads the R 25 test report with the
+# Austria setting (or VDE-AR-N 4105 / VDE V 0124-100 plus the R 25 Annex B delta test) and the default-settings
+# screenshots before listing (list admission page, seen 2026-11-01). Items: the TOR Typ A items a document can prove.
+# Storage stays out: its rules are the TOR Verteilernetzanschluss's, which the list's own words ("all TOR Typ A
+# requirements") do not name.
+list_checks:
+  word: "checked by the Wechselrichterliste"
+  what: "Oesterreichs Energie lists a type as admissible after reading the maker's OVE R 25 certificate and the R 25 test report of an ISO/IEC 17025 laboratory in which the Austria setting is confirmed (or a VDE-AR-N 4105 / VDE V 0124-100 report with the R 25 Annex B delta test and screenshots of the Austria defaults); the list says a listed type has shown it meets all TOR Typ A requirements, and TOR Typ A V1.4 8.1 note 37 counts the proof as given for a listed PV inverter (list admission page, seen 2026-11-01; list file 2026-10-30). A condition in the list's status word (firmware, ≤ 800 W, ≤ 16 A, own use only, time limit) still applies. The list does not say which TOR version each entry was read against."
+  items: [freq-range, voltage-range, rocof, lfsm-o, under-frequency, frt, lom-protection, anti-islanding, reconnection, reactive, p-of-u, remote-stop, settings-protection]
+  not_carried: "the list states the type's rated power, apparent power and phases (shown on the grid row) but is not the maker's datasheet, and its TOR Typ A check does not name the storage rules of the TOR Verteilernetzanschluss; the grid operator applies this line to the plant on the grid-access application"
+# A model not admitted by the list (off it, or a 'Nein' row), for a row neither a datasheet nor a document GridFit holds shows (TOR Typ A V1.4 8.1, notes 37–39)
+on_application: "neither a datasheet nor a document GridFit holds shows it, and the Wechselrichterliste does not admit the model; the grid operator checks it on the grid-access application against an OVE R 25 test report from an ISO/IEC 17025 laboratory with the Austria setting confirmed (or a VDE-AR-N 4105 / VDE V 0124-100 report plus the R 25 Annex B delta test) and a machine-readable parameter export (TOR Typ A V1.4 8.1)"
 accepts: [national-declaration]   # why: TOR Typ A V1.4 8.1 asks for "Prüfberichte … gemäß Prüfnorm OVE-Richtlinie R 25, worin auch eine Dokumentation … der Ländereinstellungen ‚Österreich‘ … bestätigt wurde"; note 38 also takes VDE-AR-N 4105 / VDE V 0124-100 reports only together with the R 25 tests (Q(U), P(U)) and the Austria setting. EN 50549-1 alone is not named.
 must_meet:
   - id: power-class

@@ -19,7 +19,7 @@ import re
 import sys
 
 import openpyxl
-import pypdf
+import pdfplumber
 
 RAW, OUT, ALIAS_PATH, SEEN = pathlib.Path(sys.argv[1]), pathlib.Path(sys.argv[2]), pathlib.Path(sys.argv[3]), sys.argv[4]
 ALIAS = json.loads(ALIAS_PATH.read_text(encoding="utf-8"))
@@ -171,7 +171,8 @@ def read_at():
             continue
         marke, typ, pw, ps, ph, art, zul, fw, bef, usv = (list(r) + [None] * 10)[:10]
         a = s(art).lower()
-        cls = ("hybrid" if "hybrid" in a else "battery" if "batterie" in a or "speicher" in a
+        # "Windenergie-Wechselrichter" is a wind turbine's inverter, not a PV one: class other (data/registers/classes.yaml)
+        cls = ("other" if "wind" in a else "hybrid" if "hybrid" in a else "battery" if "batterie" in a or "speicher" in a
                else "inverter" if "wechselrichter" in a else "other")
         add("AT", marke, typ, cls, at_status(zul), zul, fw=fw, valid=bef, kva=num(ps) or num(pw),
             extra={"phases": s(ph), "type": s(art)})
@@ -208,7 +209,27 @@ def read_be():
             if not s(r[1]) and not s(r[4]):
                 continue
             # power is read only to tell plug-in units from the rest; it is not stored
-            add("BE", r[2], r[4], cls_of(r), status, word, kva=(num(r[9]) or num(r[8]) or 0) / 1000 or None)
+            add("BE", r[2], be_model(r[2], r[3], r[4]), cls_of(r), status, word,
+                kva=(num(r[9]) or num(r[8]) or 0) / 1000 or None)
+
+
+def be_model(maker, series, model):
+    """A bare number in the model cell ("10", "8.5", "5.5/26", "3.0-1") names a unit only with its series (column D):
+    KOSTAL "10" was PLENTICORE plus 10, PLENTICORE plus G2 10, PIKO IQ 10, PIKO 10 and PLENTICORE M G3 10 in one device.
+    Written as the other lists write them: the maker's own name leaves the series ("Fronius Primo" -> "Primo 3.0-1"), and
+    a G2 / Plus / SC tail goes after the number ("PLENTICORE plus 10 G2", "SYMO GEN24 10.0 Plus SC"). A five-digit
+    article number (Perceval, as the Dutch list has it too) and a series that is no name ("(40-60)K") are left alone."""
+    model, series = s(model), s(series)
+    if not re.fullmatch(r"[\d.,/\s-]+K?", model, re.I) or re.fullmatch(r"\d{5,}", model) or not series \
+            or "(" in series or series.upper().endswith(model.upper()):
+        return model
+    words = series.split()
+    if len(words) > 1 and norm_maker(words[0])[0] == norm_maker(s(maker))[0]:
+        words = words[1:]
+    tail = []
+    while len(words) > 2 and re.fullmatch(r"G\d|PLUS|SC", words[-1], re.I):
+        tail.insert(0, words.pop())
+    return " ".join(words + [model] + tail)
 
 
 # ---------------------------------------------------------------- NL
@@ -243,17 +264,54 @@ def read_cz():
 
 
 # ---------------------------------------------------------------- SE
+# "får enbart/endast anslutas/monteras i trefaskoppling" (also misspelt "anlsutas"): a single-phase unit listed only
+# as part of a three-phase set — listed with a restriction, the comment is the restriction's wording
+SE_THREE_PHASE_ONLY = re.compile(r"\b(enbart|endast)\b.{0,30}\btrefas", re.I)
+
+
+def se_text(raw):
+    """The CSV's code page changes between issues (2026-10-23 cp1252, 2026-11-09 cp850): the header names
+    'Löp-nummer' and 'Energikälla', so the code page that spells them is the file's."""
+    if raw.startswith(b"\xef\xbb\xbf"):
+        return raw[3:].decode("utf-8")
+    for enc in ("utf-8", "cp1252", "cp850"):
+        try:
+            t = raw.decode(enc)
+        except UnicodeDecodeError:
+            continue
+        if "Löp" in t[:200] and "Energikälla" in t[:300]:
+            return t
+    errors.append("SE: header not recognised in utf-8 / cp1252 / cp850 — read as cp1252")
+    return raw.decode("cp1252", errors="replace")
+
+
+def se_date(v):
+    """ISO as written; four Growatt rows carry dd/mm/yyyy."""
+    m = re.fullmatch(r"(\d{1,2})/(\d{1,2})/(\d{4})", s(v))
+    return f"{m[3]}-{int(m[2]):02d}-{int(m[1]):02d}" if m else s(v)
+
+
 def read_se():
     f = one("se_*.csv")
     meta["SE"] = {"file": f.name, "source_date": date_in_name(f.name, "")}
-    for i, r in enumerate(csv.reader(f.read_text(encoding="cp1252").splitlines(), delimiter=";")):
+    for i, r in enumerate(csv.reader(se_text(f.read_bytes()).splitlines(), delimiter=";")):
         if i == 0 or len(r) < 8 or not s(r[1]):
             continue
+        comment = s(r[8])[:200] if len(r) > 8 else ""
         src = s(r[6]).lower()
+        if not re.search(r"sol|batteri|vind|nät", src):
+            # the energy-source cell holds something else (row 3377: the maker's company name): a PV inverter unless
+            # the comment says hybrid
+            errors.append(f"SE: energy source {s(r[6])!r} id={s(r[0])} — read as PV")
+            src = "sol batteri" if "hybrid" in comment.lower() else "sol"
         cls = ("hybrid" if "sol" in src and "batteri" in src else "battery" if "batteri" in src
                else "inverter" if "sol" in src else "other")
-        add("SE", r[1], r[2], cls, "listed", "listed", rid=r[0], fw=r[3], date=r[7], kva=num(r[4]),
-            extra={"phases": s(r[5]), "source": s(r[6]), "comment": s(r[8])[:200] if len(r) > 8 else ""})
+        status, word = ("restricted", comment) if SE_THREE_PHASE_ONLY.search(comment) else ("listed", "listed")
+        # 40 Pylontech rows (3313–3362) read "FH3X?8K?HY?3P?10D": a dash the export could not encode, as the family's
+        # other rows (2511 "FH3X-8K-HY-3P-10") show
+        model = re.sub(r"(?<=[0-9A-Za-z])\?(?=[0-9A-Za-z])", "-", s(r[2]))
+        add("SE", r[1], model, cls, status, word, rid=r[0], fw=r[3], date=se_date(r[7]), kva=num(r[4]),
+            extra={"phases": s(r[5]), "source": s(r[6]), "comment": comment})
 
 
 # ---------------------------------------------------------------- EE (HTML: one accordion per maker)
@@ -275,124 +333,88 @@ def read_ee():
                 extra={"battery": battery})
 
 
-# ---------------------------------------------------------------- PL (PDF, layout mode)
-PL_LABELS = ["Nr dokumentu", "Data akceptacji", "Wersja WOS", "Nazwa producenta", "Adres producenta",
-             "Rodzaj Urządzenia", "Typ model", "PPM:", "Wersja"]
-PL_COLS = ["nr", "date", "wos", "maker", "address", "kind", "model", "ppm", "fw"]
-LP = re.compile(r"^\s{0,4}\d{1,4}\s{2,}")
+# ---------------------------------------------------------------- PL (PDF, ruled table)
+# The list is an Excel sheet printed to PDF with every cell ruled, so the cells come from the ruling lines
+# (pdfplumber), not from character columns: a layout-mode reader cut words at uneven gutters and let the PPM
+# column ("A", "A, B") and the WOS version run into the model and maker cells on whole pages (2026-11-12).
+PL_COLS = ["lp", "nr", "date", "wos", "maker", "address", "kind", "model", "ppm", "fw"]
+PL_DATE = re.compile(r"\d{2}\.\d{2}\.\d{4}")
 
 
-def pl_boundaries(lines):
-    """Column boundaries from low-ink gutters; nine wide runs right of the Lp digits are the boundaries,
-    otherwise the run nearest to the midpoint of two adjacent header labels."""
-    h1 = next((l for l in lines[:30] if "Nr dokumentu" in l), None)
-    h2 = next((l for l in lines[:30] if "Wersja WOS" in l), None)
-    if not h1 or not h2:
-        return None, "header missing"
-    centres = [3]
-    for lab in PL_LABELS:
-        line = h2 if lab == "Wersja WOS" else h1
-        pos = line.rfind(lab) if lab == "Wersja" else line.find(lab)
-        if pos < 0:
-            return None, f"label {lab} missing"
-        centres.append(pos + len(lab) // 2)
-    data = [l for l in lines[30:] if l.strip()]
-    width = max(len(l) for l in lines) + 1
-    ink = [sum(1 for l in data if len(l) > c and l[c] != " ") for c in range(width)]
-    thr = max(1, len(data) // 20)
-    runs, x = [], 0
-    while x < width:
-        if ink[x] <= thr:
-            y = x
-            while y < width and ink[y] <= thr:
-                y += 1
-            if y - x >= 2:
-                runs.append((x + y) // 2)
-            x = y
-        else:
-            x += 1
-    runs9 = [r for r in runs if r > 4]
-    if len(runs9) == 9:
-        return [0] + runs9 + [width + 1], ""
-    bounds, used = [0], set()
-    for a, b in zip(centres, centres[1:]):
-        mid = (a + b) / 2
-        cand = sorted((abs(r - mid), r) for r in runs if r not in used and r > bounds[-1])
-        if not cand:
-            return None, "no gutter"
-        r = cand[0][1]
-        used.add(r)
-        bounds.append(r)
-    bounds.append(width + 1)
-    return bounds, ""
+def pl_cell(v):
+    """Lines of one cell; a line ending in '-' or '/' continues a code on the next line without a space."""
+    out = ""
+    for line in str(v or "").splitlines():
+        line = line.strip()
+        if line:
+            out += line if not out or out[-1] in "-/" else " " + line
+    return out
 
 
-def pl_split_block(b):
-    """Wrapped cell text sits above and below the Lp line: each line goes to the nearest Lp line."""
-    lp_idx = [i for i, l in enumerate(b) if LP.match(l)]
-    if len(lp_idx) <= 1:
-        return [b] if lp_idx else []
-    groups = [[] for _ in lp_idx]
-    for i, l in enumerate(b):
-        d = [(abs(i - j), -j) for j in lp_idx]
-        groups[lp_idx.index(-min(d)[1])].append(l)
-    return groups
+def pl_rows(f):
+    """-> (page, {col: text}) per Lp row; a row the page break cut goes on with the first unnumbered rows of the
+    next page, whose cells are appended to it."""
+    rows, cont = [], 0
+    with pdfplumber.open(str(f)) as pdf:
+        for pno, page in enumerate(pdf.pages, 1):
+            for table in page.extract_tables():
+                for r in table:
+                    if len(r) != len(PL_COLS):
+                        errors.append(f"PL p{pno}: a table row of {len(r)} cells, not {len(PL_COLS)}")
+                        continue
+                    c = dict(zip(PL_COLS, (pl_cell(x) for x in r)))
+                    if c["lp"].startswith("Lp") or "Nr dokumentu" in c["nr"] or not any(c.values()):
+                        continue
+                    m = re.match(r"(\d{1,5})(\S*)$", c["lp"])
+                    if m:
+                        # a long certificate number can run into the Lp cell ("1198T" + "C-GCC-…")
+                        c["lp"], c["nr"] = m[1], m[2] + c["nr"]
+                        rows.append((pno, c))
+                    elif rows:
+                        cont += 1
+                        prev = rows[-1][1]
+                        for k, v in c.items():
+                            if v and k != "lp":
+                                prev[k] = (prev[k] + ("" if prev[k][-1:] in "-/" else " ") + v).strip()
+                    else:
+                        errors.append(f"PL p{pno}: an unnumbered row before the first Lp: {c}")
+    return rows, cont
 
 
 def read_pl():
     f = one("pl_*.pdf")
     meta["PL"] = {"file": f.name, "source_date": date_in_name(f.name, "")}
-    seen_lp, n_bad = set(), 0
-    for pno, page in enumerate(pypdf.PdfReader(f).pages, 1):
-        lines = page.extract_text(extraction_mode="layout").splitlines()
-        bounds, why = pl_boundaries(lines)
-        if bounds is None:
-            errors.append(f"PL p{pno}: {why}, page skipped")
-            continue
-        hdr_end = max((i for i, l in enumerate(lines[:30]) if "Firmware version" in l or "Certyfikat / Certificate" in l),
-                      default=12)
-        blocks, cur = [], []
-        for l in lines[hdr_end + 1:]:
-            if l.strip():
-                cur.append(l)
-            elif cur:
-                blocks.append(cur)
-                cur = []
-        if cur:
-            blocks.append(cur)
-        for b0 in blocks:
-            if not any(LP.match(l) for l in b0):
-                n_bad += any(re.search(r"[A-Za-z0-9]", l) for l in b0) and not any("Data publikacji" in l for l in b0)
-                continue
-            for b in pl_split_block(b0):
-                lp = re.match(r"^\s*(\d+)", next(l for l in b if LP.match(l)))[1]
-                cells, shifted = collections.defaultdict(list), False
-                for l in b:
-                    for ci, col in enumerate(PL_COLS):
-                        a, z = bounds[ci + 1], bounds[ci + 2]
-                        if l[a:z].strip():
-                            cells[col].append(l[a:z].strip())
-                        if len(l) > z > 0 and l[z - 1] != " " and l[z] != " ":
-                            shifted = True
-                cell = {k: " ".join(v) for k, v in cells.items()}
-                k = cell.get("kind", "").lower()
-                cls = ("hybrid" if "hybryd" in k or "hybrid" in k
-                       else "inverter" if "mikro" in k
-                       else "battery" if any(w in k for w in ("bateryj", "magazyn", "konwersji", "przekszta", "akumulator"))
-                       else "inverter" if any(w in k for w in ("falownik", "inwerter", "inverter", "fotowolt", "pv"))
-                       else "other")
-                seen_lp.add(int(lp))
-                add("PL", cell.get("maker", ""), cell.get("model", ""), cls, "listed", "listed", rid=lp,
-                    fw=cell.get("fw", ""), cert=cell.get("nr", ""), date=cell.get("date", ""),
-                    extra={"wos": cell.get("wos", ""), "ppm": cell.get("ppm", ""), "kind": cell.get("kind", ""),
-                           "micro": "mikro" in k, "page": pno},
-                    unmatched="a word crosses a PDF column boundary" if shifted else "")
-    top = max(seen_lp) if seen_lp else 0
+    rows, cont = pl_rows(f)
+    for pno, cell in rows:
+        # the date cell can carry the end of a certificate number that overflowed ("-0 21.07.2031")
+        d = PL_DATE.search(cell["date"])
+        rest = (cell["date"][:d.start()] + cell["date"][d.end():]).strip() if d else cell["date"]
+        nr = (cell["nr"] + ("" if rest.startswith("-") or cell["nr"].endswith("-") else " ") + rest).strip()
+        k = cell["kind"].lower()
+        cls = ("hybrid" if "hybryd" in k or "hybrid" in k
+               else "inverter" if "mikro" in k
+               else "battery" if any(w in k for w in ("bateryj", "magazyn", "konwersji", "przekszta", "akumulator"))
+               else "inverter" if any(w in k for w in ("falownik", "inwerter", "inverter", "fotowolt", "pv"))
+               else "other")
+        add("PL", cell["maker"], cell["model"], cls, "listed", "listed", rid=cell["lp"],
+            fw=cell["fw"], cert=nr, date=d[0] if d else "",
+            extra={"wos": cell["wos"], "ppm": cell["ppm"], "kind": cell["kind"], "micro": "mikro" in k, "page": pno})
+    lps = [int(c["lp"]) for _, c in rows]
+    top = max(lps) if lps else 0
     got = {int(e["id"]) for e in entries if e["reg"] == "PL"}  # an Lp with an empty model cell was not read either
     missing = sorted(set(range(1, top + 1)) - got)
+    dup = sorted(k for k, v in collections.Counter(lps).items() if v > 1)
+    # what a column bleed looks like: a model that is only a PPM scope or ends in its row's PPM scope ("…-600 A"),
+    # a maker carrying the WOS version, a row without its date
+    pl = [e for e in entries if e["reg"] == "PL"]
+    scope = re.compile(r"\(?[A-D](\s*,\s*[A-D])*\)?")
+    bleed = [e["id"] for e in pl if scope.fullmatch(e["model_raw"]) or not e["date"]
+             or re.search(r"\bWOS\b", e["maker_raw"])
+             or (e["extra"]["ppm"] and e["model_raw"].endswith(" " + e["extra"]["ppm"]))]
     meta["PL"]["unread_lp"] = missing
-    errors.append(f"PL: Lp 1-{top}, read {len(got)}, unread {len(missing)}: {missing}; "
-                  f"{n_bad} text blocks without an Lp number")
+    meta["PL"]["column_bleed"] = bleed
+    errors.append(f"PL: Lp 1-{top}, read {len(got)}, unread {len(missing)}: {missing}; duplicate Lp {dup}; "
+                  f"{cont} rows continued over a page break; column bleed {len(bleed)}: {bleed[:20]}")
 
 
 for fn in (read_at, read_be, read_nl, read_cz, read_se, read_pl, read_ee):
