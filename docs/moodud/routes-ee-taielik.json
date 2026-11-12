@@ -1,0 +1,7 @@
+[
+ {"name": "mudel-deye-gb-s10k-ee-nimekiri", "url": "deye/model/gb-s10k-eu/", "js": "document.querySelectorAll('#checks details.ck').forEach((x) => { x.open = x.id === 'ck-ee'; }); document.getElementById('ck-ee').scrollIntoView()", "wait": 2.0},
+ {"name": "mudel-saj-chs2-40k-ee-taotlus", "url": "saj/model/chs2-40k-t5-x/", "js": "document.querySelectorAll('#checks details.ck').forEach((x) => { x.open = x.id === 'ck-ee'; }); document.getElementById('ck-ee').scrollIntoView()", "wait": 2.0},
+ {"name": "mudel-tsun-tsol-m800-ee-nano", "url": "tsun/model/tsol-m800/", "js": "document.querySelectorAll('#checks details.ck').forEach((x) => { x.open = x.id === 'ck-ee'; }); document.getElementById('ck-ee').scrollIntoView()", "wait": 2.0},
+ {"name": "grid-ee-muutused", "url": "grid/ee/", "js": "[...document.querySelectorAll('#how h3, #how h4, #how dt')].find((h) => /What changes/i.test(h.textContent))?.scrollIntoView()", "wait": 3.0},
+ {"name": "grid-ee", "url": "grid/ee/", "wait": 3.0}
+]

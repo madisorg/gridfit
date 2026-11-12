@@ -16,7 +16,8 @@ today), every requirement of that profile gets **one state**:
 | `X` | outside by datasheet | the sheet's number is present and breaks the rule (an 8 kW single-phase unit in Italy, a 16 kW single-phase unit in Spain) |
 | `D` | meets by maker's document | a declaration or certificate in `data/evidence/<brand>.yaml` releases the model for the country **and** is a kind of document that country's operator takes (`accepts`) |
 | `O` | documented for an older edition | as `D`, but this item changed in a later edition than the one the document cites (`changed_in`) |
-| `N` | not shown | neither the sheet nor a document says it — never "fails" |
+| `R` | checked by the operator's list (the profile's own words: "checked by Elektrilevi's list") | the model is on the country's own list (listed, restricted or time-limited) **and** the profile's `list_checks.items` names the item as one the operator reads before listing. Tried after the datasheet and before the maker's document: the operator having read the papers outranks the maker's paper (added 2026-11-12, Estonia first) |
+| `N` | not shown | neither the sheet nor a document (nor the list) says it — never "fails". Where the profile has the words, the row says why: `list_checks.not_carried` on a listed model, `on_application` on one off the list |
 | `I` | no check | the requirement is optional or sits at the installation's level (`kind: none`) |
 
 A requirement that does not apply to the model (storage rules on a PV inverter; a rule for plants above a kW line)
@@ -44,6 +45,23 @@ A document of a kind the country does not take proves none of the rows; the page
 operator takes.
 
 ## The profile schema (`data/profiles/{cc}.yaml`)
+
+Two optional keys (2026-11-12) make every row of a list country answer something:
+
+```yaml
+list_checks:                       # a model on the operator's own list
+  word: "checked by Elektrilevi's list"          # the state's word on the page
+  what: "Elektrilevi lists a model after reading …"   # printed once in the block, with the source
+  items: [freq-range, rocof, lfsm-o, …]          # must_meet ids a document can prove; the list stands in for those papers
+  not_carried: "the list names the model only …"  # why a listed model's other rows (rated-power lines) stay "not shown"
+on_application: "neither a datasheet nor a document GridFit holds shows it; off the list, Elektrilevi checks it on the application …"
+```
+
+The engine stores `listed: true` per model × country; the reader (`web/src/lib/checks.ts`) words a plain "not shown" row
+from `not_carried` or `on_application`, so the sentence is not repeated 150 000 times in `checks.json`. `--validate`
+refuses a `list_checks.items` entry that is not a document-provable item. The stats line counts `listed` (models with a
+row checked by the list) and `bare` ("not shown" rows with no reason at all; 0 for a profile with both keys, and the test
+holds it there).
 
 Two top-level keys next to the existing prose:
 
@@ -142,7 +160,8 @@ carries the "unverified" count honestly; 39 Estonian certificates predate the 20
 
 - It does not read the datasheet or the declaration itself; both layers are transcribed by hand or by the spec
   harvester, and the check only joins them to the rule.
-- The list's own kVA and phases (AT, BE, SE) are not used as "datasheet" evidence — the sheet is the maker's figure.
+- The list's own kVA and phases (AT, BE, SE) are not used as "datasheet" evidence — the sheet is the maker's figure. A
+  list counts only as the operator's own check, through `list_checks`, and only for the items named there.
 - A document covers an item only through the standard it cites; it does not read the declaration's tick boxes
   ("fit for plants above 11.08 kW", "SPI integrated") as separate facts yet. That is the next field to add to the
   evidence schema.

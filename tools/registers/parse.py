@@ -192,10 +192,11 @@ def read_be():
     meta["BE"] = {"file": f.name, "source_date": iso(rows[6][1]) if len(rows) > 6 else ""}
 
     def cls_of(r):
-        sol, wind, chp, sto, bak = (bool(s(r[i])) for i in (21, 22, 23, 24, 25))
+        sol, wind, chp, sto, _bak = (bool(s(r[i])) for i in (21, 22, 23, 24, 25))
         if sto and sol:
             return "hybrid"
-        if sto or bak:
+        # "Backup power system" alone is a generator set (CAT, MWM, Cummins, ...), not storage: data/registers/classes.yaml
+        if sto:
             return "battery"
         if sol:
             return "inverter"

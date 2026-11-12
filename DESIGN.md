@@ -363,6 +363,13 @@ colouring anything amber. The profiles' `must_meet` entries gained an `id` and a
 which kinds of maker's document its operator takes (`accepts`: a national declaration, a generic EN 50549-1 certificate,
 the maker's released-countries table); the sentences the country page prints stayed.
 
+**Checked by the operator's list** (2026-11-12): green, filled, **≡** — the operator's own yes, the traffic light's green
+for "on the list", with a list glyph so it reads apart from the datasheet's ✓ in greyscale. It appears where the model is on
+the country's list and the profile names the item as one the operator reads before listing (Estonia: ten items); the word
+is the country's own ("checked by Elektrilevi's list"), and the block says once, above the table, what the operator read
+and that the list is undated. Every "not shown" row of such a country now carries its reason in the datasheet column —
+the list does not carry the rated power, or the operator checks it on the application — so no row is left blank.
+
 ## 8g. Legacy models (2026-11-01)
 
 Madis: old models nobody searches for any more are noise in the table — hide them by default, with a way to include them.
@@ -710,3 +717,16 @@ the grid index, the built pages, the front door's set, `_redirects` and every bu
 × 3440/390 × light/dark: [`skoop10.json`](docs/moodud/skoop10.json), 24 pictures, 0 console errors, 0 overflow, 0 under 12 px,
 0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. The count test is unchanged at 936 checks, 0 failures (its states
 FI and FR became DE).
+
+## 31. Measured, 2026-11-12 — Estonia complete
+
+The checklist's new state (§8f, "checked by Elektrilevi's list") and the reasons on every "not shown" row, plus the EE
+profile's 2026 documents and the nano-producer line. Five routes ([`routes-ee-taielik.json`](docs/moodud/routes-ee-taielik.json):
+a Deye hybrid on Elektrilevi's list at its Estonia block, a SAJ hybrid off the list with an EN 50549-1 certificate, a TSUN
+plug-in unit on the list (the nano-producer row), `/grid/ee/` at "What changes" and at the top) × 3440/390 × light/dark:
+[`ee-taielik.json`](docs/moodud/ee-taielik.json), 20 pictures, 0 console errors, 0 overflow, 0 under 12 px (smallest 13 px),
+0 under 4.5:1 (lowest 5.29), 0 tap targets under 44 px. By eye: the listed model's summary reads "10 checked by the list ·
+0 by datasheet · 0 by the maker's document · 3 not shown" and each of the three says why; the list sentence first cited the
+2023 listing guide and now cites the one served in 2026. `npm test`: 52 + 936 + 822 298 checks, 0 failures (the checks suite
+now also proves every listed Estonian model is checked by the list on its list items, and that no Estonian "not shown" row
+is without a reason). Coverage before/after: [`docs/coverage.md`](docs/coverage.md).

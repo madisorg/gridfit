@@ -328,6 +328,20 @@ def _canon_names(alias_path: Path):
     return {k for k in json.loads(alias_path.read_text(encoding="utf-8")) if not k.startswith("_")}
 
 
+def _decimals(raw):
+    """Where the model code's digits carry a decimal point. norm drops the point, so "3,3KTLX-G3" (3.3 kW) and "33KTLX-G3"
+    (33 kW), "SN3.0PT" and "SN30PT" would be one device; this keeps them apart and nothing else ("10.0" is "10", as in norm;
+    "10 000TL" and "10000TL" stay one)."""
+    s = re.sub(r"(\d)[.,]0+(?!\d)", r"\1", str(raw or ""))
+    out, n = [], 0
+    for m in re.finditer(r"\d+|(?<=\d)[.,](?=\d)", s):
+        if m.group()[0].isdigit():
+            n += len(m.group())
+        else:
+            out.append(n)
+    return tuple(out)
+
+
 def _collapse(x):
     return re.sub(r"\s+", " ", x).strip().upper()
 
@@ -335,9 +349,10 @@ def _collapse(x):
 def devices(snap, alias_path: Path, today: str):
     """Group register rows into devices (maker + normalised model) and decide class, trust and pages."""
     canon = _canon_names(alias_path)
+    other = _other_rules(alias_path.parent / "classes.yaml")
     groups = collections.OrderedDict()
     for e in snap["entries"]:
-        k = ("~", e["reg"], e["maker_raw"], e["model_raw"], e["id"]) if e["unmatched"] else (e["maker"], e["norm"])
+        k = ("~", e["reg"], e["maker_raw"], e["model_raw"], e["id"]) if e["unmatched"] else (e["maker"], e["norm"], _decimals(e["model_raw"]))
         groups.setdefault(k, []).append(e)
     # one display name per normalised maker: the canonical name, else its most common spelling
     spell = collections.defaultdict(collections.Counter)
@@ -363,11 +378,22 @@ def devices(snap, alias_path: Path, today: str):
                 _collapse(e["model_raw"]) == _collapse(model)
             cells[COUNTRY_OF.get(e["reg"], e["reg"])].append(dict(
                 e, show=st, trust="unmatched" if e["unmatched"] else ("exact" if exact else "alias")))
-        out.append({"brand": brand, "model": model, "norm": es[0]["norm"], "cls": _class(es),
+        out.append({"brand": brand, "model": model, "norm": es[0]["norm"], "cls": "other" if other(brand, es[0]["norm"]) else _class(es),
                     "cells": dict(cells), "n": len(cells), "unmatched": bool(es[0]["unmatched"]),
                     "variants": sorted(models)})
     _slugs(out)
     return out
+
+
+def _other_rules(path: Path):
+    """data/registers/classes.yaml: makers and model patterns that are CHP, wind or generator units (class other)."""
+    if not path.exists():
+        return lambda brand, norm: False
+    import yaml
+    c = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    makers = {m.upper() for m in c.get("makers") or []} | {a["maker"].upper() for a in c.get("also") or []}
+    pats = [(m["maker"].upper(), re.compile(m["match"])) for m in c.get("models") or []]
+    return lambda brand, norm: brand.upper() in makers or any(b == brand.upper() and rx.search(norm) for b, rx in pats)
 
 
 def _class(es):

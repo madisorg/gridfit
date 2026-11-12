@@ -1,6 +1,8 @@
 # Estonia — requirement profile for a grid-connected inverter, battery or hybrid (type A, < 500 kW).
 # What the grid operator checks, what a model must meet, and how a model gets onto the list. Facts only,
-# with the source of each; the grid operator decides. Written 2026-10-31 from Elektrilevi's own documents.
+# with the source of each; the grid operator decides. Written 2026-10-31 from Elektrilevi's own documents; re-read
+# 2026-11-12 against the documents Elektrilevi serves that day (listing guide 2026-09, connection conditions 29.09.2026,
+# producer application form 2026-01, nano-producer conditions).
 cc: EE
 country: Estonia
 type_a_max_kw: 500   # RfG thresholds as Elering applies them: type A below 0.5 MW; above it type B, a procedure of its own
@@ -10,7 +12,7 @@ list:
   name: "Inverterite nimekiri (Elektrilevi)"
   url: https://elektrilevi.ee/et/inverterite-nimekiri
   meaning: "Inverters whose use Elektrilevi has approved: for each listed model Elektrilevi has checked the data form, the data sheet, the LVD and EMC certificates, the CE declaration and the RfG / EN 50549 certificate. The page is undated; the Aku column says whether a battery can be connected."
-  gate: "De facto. The small-producer application form says the inverter model is to be chosen from the list on Elektrilevi's site; an older micro-producer form adds that a model not on the list needs an EN 50438:2013 conformity certificate and a type-test protocol attached to the application."
+  gate: "De facto. The producer application form (2026-01) says the suitability of the devices to be connected can be checked on Elektrilevi's site; an older micro-producer form adds that a model not on the list needs an EN 50438:2013 conformity certificate and a type-test protocol attached to the application. Since the 2026 listing guide the list takes any generating unit, not only inverters."
 basis:
   - "Commission Regulation (EU) 2016/631 (RfG), article 13 — type A requirements"
   - "Vabariigi Valitsuse määrus „Elektrisüsteemi toimimise võrgueeskiri“ (the national grid code)"
@@ -27,6 +29,16 @@ edition:
   label: "A-type technical conditions of 1 June 2023 (EVS-EN 50549-1)"
 document_must_cite: ["2016/631", "RfG", "Elektrilevi"]
 accepts: [generic-en50549-1, national-declaration]   # which kind of maker's document the operator takes (docs/checks.md)
+# A model on Elektrilevi's list: the operator has read its papers against these items before listing it (the list page
+# names the documents; the listing guide (2023-12-06, re-issued 2026-09) the requirements). The list is undated, so the edition a listed
+# model was read against is not stated. Lines that need the model's rated power stay with the datasheet.
+list_checks:
+  word: "checked by Elektrilevi's list"
+  what: "Elektrilevi lists a model after reading its data form, datasheet, LVD and EMC certificates, CE declaration and RfG / EN 50549-1 certificate against these items (the list page; listing guide served 2026-09-14, the same items as the 2023-12-06 guide). The list is undated, so the edition it was read against is not stated."
+  items: [freq-range, rocof, lfsm-o, under-frequency, lom-protection, reconnection, p-of-u, reactive, storage-dynamics, anti-islanding]
+  not_carried: "the list names the model only — no rated power or phases — and no datasheet is collected; Elektrilevi applies this line to the plant on the application"
+# A model off the list, for a row neither a datasheet nor a document GridFit holds shows (listing guide; micro-producer form)
+on_application: "neither a datasheet nor a document GridFit holds shows it; off the list, Elektrilevi checks it on the connection application against an EN 50549-1 / EN 50438 certificate and a type-test protocol"
 must_meet:
   - id: power-class
     rule: "Plant size class (Võrgueeskiri § 16 lg 1; RfG as Elering applies it)"
@@ -74,12 +86,16 @@ must_meet:
     check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "Elektrilevi A-type conditions 2023-06-01, 2.9–2.11, 7.1–7.3" }
   - id: single-phase
     rule: "Single-phase connection point (Elektrilevi connection conditions 7.4)"
-    value: "a generating module of up to 5 kW may sit on a single-phase connection point; new single-phase connections are not given (only an existing one can be raised to 25 A); Elektrilevi states no unbalance limit for a single-phase unit on a three-phase supply"
-    check: { kind: max, meaning: procedure, field: ac_kw, limit: 5, applies: { phases: [1] }, over: "a single-phase unit over 5 kW cannot go on a single-phase connection point; on a three-phase supply Elektrilevi states no limit", provable_by: [datasheet, document], source: "Elektrilevi OÜ liitumistingimused 7.4 (2023-05-16; same in the 2025-05-01 edition)" }
+    value: "a generating module of up to 5 kW may sit on a single-phase connection point; new single-phase connections are not given (4.7.1); Elektrilevi states no unbalance limit for a single-phase unit on a three-phase supply"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 5, applies: { phases: [1] }, over: "a single-phase unit over 5 kW cannot go on a single-phase connection point; on a three-phase supply Elektrilevi states no limit", provable_by: [datasheet, document], source: "Elektrilevi OÜ liitumistingimused 7.4, 4.7.1 (valid from 29.09.2026; the same in the 2023-05-16 and 2025-05-01 editions)" }
   - id: micro-producer
-    rule: "Micro-producer line (connection conditions 2.22 / 2.30.1, 8.1; Võrgueeskiri § 21 lg 2)"
-    value: "up to 15 kW three-phase (5 kW single-phase) the producer is a micro-producer and the operator may not ask for the extra documents of § 21 lg 1¹; above 15 kW a security of €38 000 per MW is due with the application"
-    check: { kind: max, meaning: procedure, field: ac_kw, limit: 15, over: "over 15 kW: small producer — a security of €38 000/MW with the application", provable_by: [datasheet, document], source: "Elektrilevi OÜ liitumistingimused 2.22, 8.1; Võrgueeskiri § 21 lg 2" }
+    rule: "Micro-producer line (connection conditions 29.09.2026, 2.32.1; Võrgueeskiri § 21 lg 2)"
+    value: "up to 15 kW three-phase (5 kW single-phase) the producer is a micro-producer and the operator may not ask for the extra documents of § 21 lg 1¹; above 15 kW the producer is a small producer (the €38 000/MW security the 2023 conditions named is not in the 2026 edition)"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 15, over: "over 15 kW: small producer, the producer application", provable_by: [datasheet, document], source: "Elektrilevi OÜ liitumistingimused (valid from 29.09.2026) 2.32.1; Võrgueeskiri § 21 lg 2" }
+  - id: nano-producer
+    rule: "Nano-producer line (Elektrilevi nano-producer conditions)"
+    value: "a plug-in unit: the generating units at one connection point total under 0.8 kW (0.79 kW); used after an application in Elektrilevi's self-service, without a producer connection; 0.8 kW or more needs a micro-producer or producer connection"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 0.79, applies: { classes: [plug-in] }, over: "0.8 kW or more at one connection point: a micro-producer or producer connection", provable_by: [datasheet, document], source: "Elektrilevi, Nanotootmisseadme kasutamise tingimused 1.2, 2.2" }
   - id: anti-islanding
     rule: "Anti-islanding (A-type conditions 5.1)"
     value: "the loss-of-mains protection must stop any energy flowing from the installation into the grid during grid disturbances, including loss of grid voltage; no detection method is prescribed"
@@ -113,17 +129,19 @@ documents_for_listing:
 apply:
   who: "the manufacturer, importer or installer"
   how: "send the documents to Elektrilevi's electricity-producers mailbox named in the listing guide (PDF below)"
-  guide_url: https://www.elektrilevi.ee/-/doc/8644141/liitumised/vaiketootjale/failid/inverterite_lisamine_elektrilevi_nimekirja_est.pdf
-  guide_date: "2023-12-06 (an earlier version dated 2019-08-15 has the same requirements without the mailbox)"
+  guide_url: https://public-docs.elektrilevi.ee/2/11/tootmisseadme_lisamine_elektrilevi_nimekirja_e9927ae627.pdf
+  guide_date: "served 2026-09-14 (undated; the same requirements as the 2023-12-06 guide, now for any generating unit, each inverter model on its own row of the data form)"
   processing_time: "listing: not stated; the connection offer: within 30 days of a complete application (Võrgueeskiri § 22 lg 1)"
 not_listed: "The small-producer form points to the list; the micro-producer form says a model not on the list needs an EN 50438:2013 conformity certificate and a type-test protocol with the application. In practice the installer applies, and Elektrilevi checks the certificate against the requirements above. The list page says: if needed, contact customer service."
 thresholds:
-  - "≤ 800 W: the A-type technical conditions do not apply (plug-in units); registration still applies (not confirmed)"
+  - "under 0.8 kW per connection point (0.79 kW): a nano-producer — the plug-in unit is used after an application in Elektrilevi's self-service; RfG type A starts at 0.8 kW"
   - "micro-producer: ≤ 15 kW three-phase or ≤ 5 kW single-phase"
   - "small producer (type A): < 500 kW; type B–D from 500 kW have their own conditions"
   - "1 MW and above: not connected at low voltage (connection conditions 7.3)"
 commissioning: "Before parallel operation: the inverter settings protocol and, where required, the electrical-installation audit (checked in the TJA register) or the builder's confirmation; the grid contract for a producer must be signed by both sides first."
 changes:
+  - "29 September 2026: Elektrilevi's connection conditions re-issued — micro-producer now 2.32.1 (still 15 kW three-phase / 5 kW single-phase), single-phase unit 7.4 (5 kW), a storage unit added by an application (3.5) or, where neither the total power nor the capacity changes, by a registration on the website (3.6); the 2023 file the earlier profile cited is no longer served"
+  - "14 September 2026: the listing guide re-issued — the same type-A items, now for any generating unit (non-inverter units also under their own directives and standards)"
   - "30 January 2026: Võrgueeskiri amended (RT I, 27.01.2026, 3) — meters and data access; § 30 lg 14: metering points of storage and of generation of 15 kW or more must measure in 15-minute intervals by 5 July 2031. Nothing about the inverter itself"
   - "Elektrilevi's A-type conditions are still those of 1 June 2023 (the file served on 2026-11-01); the connection conditions of 1 May 2025 were labelled 'valid until 31.12.2025' — a 2026 edition was not found"
   - "the EU revision of the generator code (RfG 2.0) is not adopted"
@@ -131,8 +149,12 @@ evidence_for_documented: "A certificate or test report against EN 50549-1 (any n
 sources:
   - title: "Inverterite nimekiri (the list page, with the documents checked per listed model)"
     url: https://elektrilevi.ee/et/inverterite-nimekiri
-    seen: "2026-10-31"
-  - title: "Tootmisseadmete lisamine Elektrilevi nimekirja — tehnilised nõuded ja vastavus"
+    seen: "2026-11-12"
+  - title: "Tootmisseadme lisamine Elektrilevi nimekirja (listing guide, current)"
+    url: https://public-docs.elektrilevi.ee/2/11/tootmisseadme_lisamine_elektrilevi_nimekirja_e9927ae627.pdf
+    date: "served 2026-09-14"
+    seen: "2026-11-12"
+  - title: "Tootmisseadmete lisamine Elektrilevi nimekirja — tehnilised nõuded ja vastavus (2023 edition)"
     url: https://www.elektrilevi.ee/-/doc/8644141/liitumised/vaiketootjale/failid/inverterite_lisamine_elektrilevi_nimekirja_est.pdf
     date: "2023-12-06"
   - title: "A-tüüpi (alla 500 kW) tootmismoodulite tüüpsed tehnilised tingimused"
@@ -141,9 +163,18 @@ sources:
   - title: "Tehnilised tingimused alla 500 kW maksimumvõimsusega elektrienergia tootjale (2019; recommended protection settings)"
     url: https://www.elektrilevi.ee/-/doc/6305157/kliendile/tehnilised_tingimused_elektrienergia_vaiketootjale.pdf
     date: "2019-04-27"
-  - title: "Elektrilevi OÜ liitumistingimused"
-    url: https://www.elektrilevi.ee/-/doc/8644141/kliendile/liitumistingimused.pdf
-    date: "2023-05-16"
+  - title: "Elektrilevi OÜ liitumistingimused (valid from 29.09.2026)"
+    url: https://public-docs.elektrilevi.ee/2/10/liitumistingimused_est_477604bcef.pdf
+    date: "2026-09-29"
+    seen: "2026-11-12"
+  - title: "Nanotootmisseadme kasutamise tingimused (nano-producer conditions)"
+    url: https://public-docs.elektrilevi.ee/2/10/nanotootmisseade_kasutamise_tingimused_ba505ee544.pdf
+    date: "served 2024-05-23"
+    seen: "2026-11-12"
+  - title: "Elektrienergia tootja liitumistaotluse vorm (producer application form)"
+    url: https://public-docs.elektrilevi.ee/2/5/elektrienergia_tootja_liitumistaotluse_vorm_50b1fd8090.pdf
+    date: "served 2026-01-05"
+    seen: "2026-11-12"
   - title: "Liitumistaotlus elektrienergia tootjale (small producer form)"
     url: https://www.elektrilevi.ee/-/doc/8644141/kliendile/el_vorm_liitumistaotlus_vaiketootja.pdf
   - title: "Liitumistaotlus mikrotootjale (micro-producer form, older)"

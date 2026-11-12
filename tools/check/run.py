@@ -41,11 +41,13 @@ MEANINGS = {"rfg-type", "procedure", "phases", "emc-class", "protection"}
 # which kind of maker's document the country's operator takes as evidence
 ACCEPTS = {"generic-en50549-1", "national-declaration", "country-release"}
 GENERIC = ("EN 50549", "EN 50438")
+POSITIVE = ("listed", "restricted", "limited")   # a list entry that admits the model (registers.json `show`)
 # states: S meets by datasheet, P the sheet's range covers it and the operator sets the values at commissioning,
-# D meets by maker's document, O documented for an older edition (this item changed since), N not shown,
+# D meets by maker's document, O documented for an older edition (this item changed since), R checked by the operator's
+# own list (the model is on it and the profile's `list_checks` names the item as one the operator checks), N not shown,
 # L over a line by datasheet (another RfG type, procedure, EMC class or protection set-up applies — not a breach),
 # X outside by datasheet, I no check (optional / installation-level)
-STATES = ("S", "P", "D", "O", "N", "L", "X", "I")
+STATES = ("S", "P", "D", "O", "R", "N", "L", "X", "I")
 LINES = {"rfg-type", "procedure", "emc-class", "protection"}   # over these the rule changes; over "phases" it is broken
 UNIT = {"ac_kw": " kW", "ac_kva": " kVA", "ac_a": " A", "idc_pct": " %", "thdi_pct": " %", "fsw_khz": " kHz", "isc_a": " A", "cosphi": "",
         "freq_hz": " Hz", "vac_v": " V"}
@@ -72,6 +74,18 @@ def validate_profile(p: dict, name: str) -> list[str]:
     cite = p.get("document_must_cite")
     if not isinstance(cite, list) or not cite or not all(isinstance(c, str) and c for c in cite):
         errs.append(f"{name}: document_must_cite must be a non-empty list of strings")
+    ids = {m.get("id") for m in p.get("must_meet") or []}
+    lc = p.get("list_checks")
+    if lc is not None:
+        if not isinstance(lc, dict) or not all(isinstance(lc.get(k), str) and lc[k] for k in ("word", "what", "not_carried")):
+            errs.append(f"{name}: list_checks needs word, what and not_carried")
+        elif not isinstance(lc.get("items"), list) or not lc["items"] or not set(lc["items"]) <= ids:
+            errs.append(f"{name}: list_checks.items must be must_meet ids")
+        elif any(m["check"].get("kind") == "none" or "document" not in (m["check"].get("provable_by") or [])
+                 for m in p["must_meet"] if m.get("id") in lc["items"]):
+            errs.append(f"{name}: list_checks.items are items a document can prove (a list stands in for the papers the operator read)")
+    if p.get("on_application") is not None and not (isinstance(p["on_application"], str) and p["on_application"]):
+        errs.append(f"{name}: on_application must be a sentence")
     seen = set()
     for i, m in enumerate(p.get("must_meet") or []):
         where = f"{name}: must_meet[{i}]"
@@ -346,8 +360,10 @@ def by_sheet(c: dict, sheet: dict | None):
     return None
 
 
-def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[dict]) -> dict:
+def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[dict], listed: bool = False) -> dict:
     cc = prof["cc"]
+    lc = prof.get("list_checks") or {}
+    by_list = set(lc.get("items") or []) if listed else set()
     acc = set(prof["accepts"])
     covering = [d for d in docs if classes_of(d, prof) & acc]
     covering.sort(key=lambda d: edition_of(d) or "", reverse=True)
@@ -379,6 +395,11 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
             rows[i] = [st, text]
             counts[st] += 1
             continue
+        # the operator's own list before the maker's paper: listing is the operator having read those papers
+        if m["id"] in by_list:
+            rows[i] = ["R"]
+            counts["R"] += 1
+            continue
         if "document" in c["provable_by"] and best:
             old = bool(c.get("changed_in")) and best_ed is not None and best_ed < c["changed_in"]
             rows[i] = ["O", "", c["changed"]] if old else ["D"]
@@ -386,6 +407,8 @@ def check_model(prof: dict, items: list[dict], sheet: dict | None, docs: list[di
             continue
         counts["N"] += 1
     out = {"sum": {k: v for k, v in counts.items() if v}}
+    if listed and lc:
+        out["listed"] = True   # the reader words a plain "not shown" row from it (profile list.not_carried / on_application)
     if rows:
         out["rows"] = rows
     if na:
@@ -422,14 +445,19 @@ def main(validate_only: bool = False, fixture: str | None = None, out: str | Non
     for cc, p in profiles.items():
         out_prof[cc] = {"country": p["country"], "norm": p["edition"]["norm"], "edition": p["edition"], "decided_by": p["decided_by"], "accepts": p["accepts"],
                         "items": [{"id": m["id"], "rule": m["rule"], "value": m["value"], **{k: v for k, v in m["check"].items()}} for m in p["must_meet"]]}
+        if p.get("list_checks"):
+            out_prof[cc]["list"] = {k: p["list_checks"][k] for k in ("word", "what", "not_carried")}
+        if p.get("on_application"):
+            out_prof[cc]["on_application"] = p["on_application"]
     models = {}
-    stats = {cc: {"models": 0, "sheet_any": 0, "sheet_rows": 0, "covered": 0, "doc": 0, "outside": 0, "over_line": 0, "older": 0} for cc in profiles}
+    stats = {cc: {"models": 0, "sheet_any": 0, "sheet_rows": 0, "covered": 0, "doc": 0, "outside": 0, "over_line": 0, "older": 0, "listed": 0, "bare": 0} for cc in profiles}
     for d in devs:
         sheet = sheet_of(specs, d["brand"], d["model"])
         per = {}
         for cc, p in profiles.items():
             items = [{**m, "_cls": d["cls"]} for m in p["must_meet"]]
-            r = check_model(p, items, sheet, docs_of(evidence, d["brand"], d["model"], cc))
+            listed = any(e["show"] in POSITIVE for e in (d.get("cells") or {}).get(cc, []))
+            r = check_model(p, items, sheet, docs_of(evidence, d["brand"], d["model"], cc), listed)
             per[cc] = r
             s, st = r["sum"], stats[cc]
             st["models"] += 1
@@ -447,6 +475,12 @@ def main(validate_only: bool = False, fixture: str | None = None, out: str | Non
                 st["outside"] += 1
             if s.get("L"):
                 st["over_line"] += 1
+            if s.get("R"):
+                st["listed"] += 1
+            # "not shown" rows with no reason: stored ones carry a note; plain ones get the profile's words when it has them
+            plain = s.get("N", 0) - sum(1 for x in (r.get("rows") or {}).values() if x[0] == "N")
+            worded = (p.get("list_checks") or {}).get("not_carried") if r.get("listed") else p.get("on_application")
+            st["bare"] += 0 if worded else plain
         entry = {"cc": per}
         if sheet:
             entry["sheet"] = {"code": sheet["code"], **sheet["src"]}
@@ -457,7 +491,8 @@ def main(validate_only: bool = False, fixture: str | None = None, out: str | Non
     print(OUT, f"{len(models)} models × {len(profiles)} countries, {OUT.stat().st_size // 1024} kB")
     for cc, st in stats.items():
         print(f"{cc}: {st['models']} models · at least one datasheet row {st['sheet_any']} ({st['sheet_rows']} rows) · every item covered {st['covered']} · "
-              f"with a maker's document {st['doc']} (of which {st['older']} for an older edition) · over a line {st['over_line']} · outside by datasheet {st['outside']}")
+              f"with a maker's document {st['doc']} (of which {st['older']} for an older edition) · over a line {st['over_line']} · outside by datasheet {st['outside']}"
+              + (f" · checked by the list {st['listed']}" if st["listed"] else "") + f" · bare 'not shown' rows {st['bare']}")
 
 
 if __name__ == "__main__":
