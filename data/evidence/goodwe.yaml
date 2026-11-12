@@ -270,3 +270,18 @@ documents:
     match: ^GW((25|30)K-SDT-30|40K-SDT-P30)$
     countries: [PL]
     note: WiPWC 1.2 era (PTPiREE 2021-04); file 6199637.50. Capability table (p. 2).
+- id: at-tor-r25-mt-25-36k-2020
+  title: Bureau Veritas 2088AP0622N035003 — TOR Erzeuger Typ A V1.1, OVE-Richtlinie R 25 — GW25K/30K/36K-MT
+  url: https://memodo.de/mwdownloads/8038c065aab953beaa22a3bd78c14013
+  copy_of: memodo.de (wholesaler); en.goodwe.com's robots.txt disallows /download
+  issuer: Bureau Veritas Shenzhen Co., Ltd. Dongguan Branch
+  cert_no: 2088AP0622N035003
+  issued: '2020-12-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A Version 1.1:2019', 'OVE-Richtlinie R 25:2020']
+  families:
+  - name: MT 25–36 kW
+    match: ^GW(25|30|36)K-MT$
+    countries: [AT]
+    note: Report PVAT200622N035-R1; applicant Jiangsu GoodWe Power Supply Technology. No settings table.

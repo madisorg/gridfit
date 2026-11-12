@@ -191,3 +191,179 @@ documents:
     countries: [DE]
     note: Unit certificate (report 19TH0374-BI-G2-VDE0124-100:2020_0); E.5 values; lists the usable batteries (BYD Battery-Box, Nilar,
       BMZ Hyperion, AXIstorage, LG RESU FLEX). The first-generation BI 5.5/26 and 10/26 rows are not joined.
+- id: at-tor-r25-plenticore-g3-2026
+  title: Kiwa Primara 24-089-02 — TOR Stromerzeugungsanlagen Typ A V1.3, OVE-Richtlinie R 25 — PLENTICORE G3 and BI 25 G3
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2119_Z-TOR_Erzeuger_Typ_A-2022_PLENTICORE-G3_de.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 24-089-02
+  issued: '2026-07-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: [TOR Stromerzeugungsanlagen Typ A Version 1.3, OVE-Richtlinie R 25 Ausgabe 2020-03-01]
+  firmware: SW3.07.00 (parameter sets AT TOR Type A PV 2025 / AT TOR Type A BAT 2025)
+  families:
+  - name: PLENTICORE S / M / L G3, PLENTICORE BI 25 G3
+    match: ^PLENTICORE([SML]G3|G3[SML])(\d+(\.\d+)?(KW)?)?$|^PLENTICOREBI25G3$
+    countries: [AT]
+    note: Report 22PP512-04_2. The certificate names the sizes S, M, L; every rating of a size is joined. No settings table.
+- id: at-tor-r25-plenticore-mp-s-g3-2025
+  title: Bureau Veritas U25-0631 — TOR-Stromerzeugungsanlagen Typ A:2024-07, OVE-Richtlinie R25 — PLENTICORE MP S G3 3.0 / 3.6
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2272_Z-PLENTICORE-MP-S-G3-3-36_TOR-Erzeuger-Typ-A.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS D-ZE-12024-01-00)
+  cert_no: U25-0631
+  issued: '2025-07-04'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR-Stromerzeugungsanlagen Typ A:2024-07', 'OVE-Richtlinie R25:2020-03']
+  firmware: 3.05.00.19100
+  families:
+  - name: PLENTICORE MP S G3 3.0 / 3.6
+    match: ^PLENTICOREMPSG3(3\.0|3\.6)$
+    countries: [AT]
+    note: Report 25TH195-OVE-directive R25_0. No settings table.
+- id: at-tor-r25-piko-ci-g2-2024
+  title: TÜV Rheinland A3 50647729 0001 — TOR Erzeuger Typ A V1.2, OVE-Richtlinie R25 — PIKO CI 30 / 50 G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2241_Z-PIKO_CI_30_50_G2_TOR_Typ_A.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50647729 0001
+  issued: '2024-10-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: [TOR Erzeuger Typ A Version 1.2, OVE-Richtlinie R25/03.20]
+  firmware: '306011'
+  families:
+  - name: PIKO CI 30 / 50 G2
+    match: ^PIKOCI(30|50)G2$
+    countries: [AT]
+    note: Report CN248Z9I 001. No settings table.
+- id: at-tor-r25-piko-ci-100-2024
+  title: TÜV Rheinland AK 50611384 0001 — TOR Erzeuger Typ A V1.0, OVE-Richtlinie R25 — PIKO CI 100
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/2178_Z-PIKO-CI-100_TOR-Typ-A_de.pdf
+  issuer: TÜV Rheinland LGA Products GmbH
+  cert_no: AK 50611384 0001
+  issued: '2024-09-03'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: [TOR Erzeuger Typ A Version 1.0/08.19, OVE-Richtlinie R25/03.20]
+  firmware: C10001
+  families:
+  - name: PIKO CI 100
+    match: ^PIKOCI100$
+    countries: [AT]
+    note: Report CN23K7Y6 001. No settings table.
+- id: at-tor-r25-plenticore-plus-g2-2022
+  title: Bureau Veritas U22-0482 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — PLENTICORE plus G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1980_Z_TOR-Erzeuger-Typ_A_PLENTICORE-plus-G2_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U22-0482
+  issued: '2022-08-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: '02.04'
+  families:
+  - name: PLENTICORE plus 3.0–10 G2
+    match: ^PLENTICOREPLUS(3\.0|4\.2|5\.5|7\.0|8\.5|10)G2$|^PLENTICOREPLUSG2(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries: [AT]
+    note: Report 19TH0374-Hybrid-G2-OVE-directive R25_0. No settings table.
+- id: at-tor-r25-plenticore-bi-g2-2023
+  title: Bureau Veritas U23-0229 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — PLENTICORE BI G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2009_Z-TOR_Erzeuger_Typ_A-2022_PLENTICORE_BI-G2.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-0229
+  issued: '2023-03-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: '02.06'
+  families:
+  - name: PLENTICORE BI 5.5/26 and 10/26 G2
+    match: ^PLENTICOREBI(5\.5|10)/26G2$|^PLENTICOREBIG2(5\.5|10)/26$
+    countries: [AT]
+    note: Report 19TH0374_BI-G2-OVE-directive R25_0. No settings table.
+- id: at-tor-r25-piko-ci-30-2022
+  title: Bureau Veritas U22-0668_1 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — PIKO CI 30
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1859_Z-TOR-Erzeuger-Typ-A_PIKO-CI-30_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U22-0668_1
+  issued: '2022-11-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: '3001'
+  families:
+  - name: PIKO CI 30
+    match: ^PIKOCI30$
+    countries: [AT]
+    note: Report PV2105WDG0066-1-R2. No settings table.
+- id: at-tor-r25-piko-ci-50-60-2022
+  title: Bureau Veritas U22-0321 — TOR Erzeuger Typ A:2019-12, OVE-Richtlinie R25 — PIKO CI 50 / 60
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1860_Z-TOR-Erzeuger-Typ-A_PIKO-CI-50-60_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U22-0321
+  issued: '2022-05-25'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2019-12', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: PIKO CI 50 / 60
+    match: ^PIKOCI(50|60)$
+    countries: [AT]
+    note: Report PV2105WDG0065-R1. No settings table.
+- id: at-tor-r25-piko-10-20-2021
+  title: Bureau Veritas U21-0526 — TOR Erzeuger Typ A:2019-12, OVE-Richtlinie R25 — PIKO 10–20
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1656_Z-TOR-Erzeuger-Typ-A_PIKO-10-20_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0526
+  issued: '2021-06-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2019-12', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: PIKO 10–20
+    match: ^PIKO(10|12|15|17|20)$
+    countries: [AT]
+    note: Report 19TH0373-OVE-directive R25_0. No settings table.
+- id: at-tor-r25-plenticore-plus-g1-piko-iq-2021
+  title: Bureau Veritas U21-0246 — TOR Erzeuger Typ A:2019-12, OVE-Richtlinie R25 — PLENTICORE plus (G1) / PIKO IQ
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1655_Z-TOR-Erzeuger-Typ-A_Hybrid_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0246
+  issued: '2021-03-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2019-12', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: PLENTICORE plus 3.0–10 (first generation), PIKO IQ 3.0–10
+    match: ^PLENTICOREPLUS(3\.0|4\.2|5\.5|7\.0|8\.5|10)$|^PIKOIQ(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries: [AT]
+    note: Report 19TH0374-Hybrid-OVE-directive R25_0. No settings table.
+- id: at-tor-r25-piko-mp-plus-2021
+  title: Bureau Veritas U21-0538 — TOR Erzeuger Typ A:2019-12, OVE-Richtlinie R25 — PIKO MP plus (PV / battery)
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1835_Z_TOR-Erzeuger-TypA_PIKO-MP-plus_Hybrid.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U21-0538
+  issued: '2021-06-15'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2019-12', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: PIKO MP plus 1.5-1 … 5.0-2
+    match: ^PIKOMPPLUS(1\.5-1|2\.0-1|2\.5-1|3\.0-1|3\.0-2|3\.6-1|3\.6-2|4\.6-2|5\.0-2)$
+    countries: [AT]
+    note: Report 18TH0316-PIKO-Hybrid-OVE-directive R25_3. The certificate marks 4.6-2 and 5.0-2 with '*' (over 3.68 kVA single-phase; the unbalance
+      must be limited). A PV-only twin is U21-0339 (file 1836). No settings table.
+- id: at-tor-r25-plenticore-bi-g1-2020
+  title: Bureau Veritas U20-0741 — TOR Erzeuger Typ A:2019-12, OVE-Richtlinie R25 — PLENTICORE BI (first generation)
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1673_HE-PLENTICORE-BI_TOR-Erzeuger-Typ-A_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U20-0741
+  issued: '2020-09-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2019-12', 'OVE-Richtlinie R25:2020-03']
+  families:
+  - name: PLENTICORE BI 5.5/13, 5.5/26, 10/26
+    match: ^PLENTICOREBI(5\.5/13|5\.5/26|10/26)$
+    countries: [AT]
+    note: Report 19TH0374-OVE-directive R25_0. The certificate prints 'PENTICORE BI'. No settings table.

@@ -28,3 +28,35 @@ documents:
     countries: [DE]
     note: 'Certificate text: ''with restrictions'' — integrated tie breaker, no central NA protection; manufacturer declaration for
       MIT-XXXX-8T series dated 2025-03-12.'
+- id: at-tor-r25-hms-c-4t-2023
+  title: Bureau Veritas U22-0781 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — HMS-1400C … 2000C-4T
+  url: https://cdn.shopify.com/s/files/1/0682/5148/4439/files/HMS-2000C-Series_TOR-Erzeuger-2022_AT_Certificate_V20230111.pdf
+  copy_of: a retailer's Shopify file store (shop not identified); not on hoymiles.com, whose download list has no TOR certificate
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U22-0781
+  issued: '2023-01-11'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: V01.00.04
+  families:
+  - name: HMS-1400C … 2000C-4T
+    match: ^HMS-(1400|1600|1800|2000)C-4T$
+    countries: [AT]
+    note: Report BMH-ESH-P22110043. No settings table.
+- id: at-tor-r25-hmt-4t-2023
+  title: Bureau Veritas U23-0816 — TOR Erzeuger Typ A:2022-04, OVE-Richtlinie R25 — HMT-1600 … 2000-4T
+  url: https://assets.mikrowechselrichter.eu/hoymiles-hmt-2000-4t/de/tor-zertifkat-hoymiles-hmt-2000-4t.pdf
+  copy_of: mikrowechselrichter.eu (retailer); not on hoymiles.com
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH
+  cert_no: U23-0816
+  issued: '2023-10-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards: ['TOR Erzeuger Typ A:2022-04', 'OVE-Richtlinie R25:2020-03']
+  firmware: V01.00.02
+  families:
+  - name: HMT-1600 … 2000-4T
+    match: ^HMT-(1600|1800|2000)-4T$
+    countries: [AT]
+    note: Report BMH-ESH-P22120957. The -6T models are not named. No settings table.
