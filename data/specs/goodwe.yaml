@@ -54,6 +54,12 @@ sources:
   version: ''
   note: the sheet carries no version or date
   seen: '2026-10-31'
+- id: et
+  url: https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_ET_Datasheet-EN.pdf
+  file: GW_ET_Datasheet-EN.pdf
+  version: GoodWe-Single page-20220111-EN-V2.0
+  note: ''
+  seen: '2026-11-12'
 - id: ms
   url: https://en.goodwe.com/Ftp/EN/Downloads/Datasheet/GW_MS_Datasheet-EN.pdf
   file: GW_MS_Datasheet-EN.pdf
@@ -401,6 +407,38 @@ models:
   phases: 3
   pv_kw: null
   source: et-15-30kw
+- code: GW5K-ET
+  mppt: 2
+  ac_kw: null
+  ac_kva: 5.0
+  ac_a: 8.5
+  phases: 3
+  pv_kw: null
+  source: et
+- code: GW6.5K-ET
+  mppt: 2
+  ac_kw: null
+  ac_kva: 6.5
+  ac_a: 10.8
+  phases: 3
+  pv_kw: null
+  source: et
+- code: GW8K-ET
+  mppt: 2
+  ac_kw: null
+  ac_kva: 8.0
+  ac_a: 13.5
+  phases: 3
+  pv_kw: null
+  source: et
+- code: GW10K-ET
+  mppt: 2
+  ac_kw: null
+  ac_kva: 10.0
+  ac_a: 16.5
+  phases: 3
+  pv_kw: null
+  source: et
 - code: GW5000-MS
   mppt: 3
   ac_kw: 5.0
