@@ -207,3 +207,78 @@ documents:
     match: ^ASW(75|80|100|110)K-LT$
     countries:
     - ES
+- id: de-vde4105-asw-lt-g2-pro-2022
+  title: TÜV SÜD ESY 099567 0061 Rev. 00 — VDE-AR-N 4105:2018 (with E.4 Einheitenzertifikat) — ASW3K…20K-LT-G2 Pro
+  url: https://solplanet.net/wp-content/uploads/2024/07/Cer_VDE-4105_ASW3-20K-LT-G2-Pro_de_V01.pdf
+  issuer: TÜV SÜD Product Service GmbH
+  cert_no: ESY 099567 0061 Rev. 00
+  issued: '2022-07-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020 (2020-06)
+  firmware: 'Main DSP: V610-03043-02'
+  families:
+  - name: ASW-LT-G2 Pro three-phase string inverters 3–20 kW
+    match: ^ASW(3|4|5|6|8|10|12|15|17|20)K-LT-G2PRO$
+    countries:
+    - DE
+    note: Konformitätsbescheinigung with an E.4 unit certificate (report 64290223080501), holder AISWEI Technology (Shanghai). The register's
+      ASW13K-LT-G2PRO, 40/45/50K-LT-G2PRO and the Belgian -BE variant are not named and not joined.
+- id: de-vde4105-asw-h-s2-2022
+  title: TÜV Rheinland A3 50551111 0001 — VDE-AR-N 4105/11.18 — ASW3000…6000H-S2
+  url: https://solplanet.net/wp-content/uploads/2024/12/VDE-N-4105-ASW-3-6000H-S2.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50551111 0001
+  issued: '2022-07-14'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 'Main DSP: V610-02003-01, Slave DSP: V610-60009-00, Safety package: V610-10008-03'
+  families:
+  - name: ASW-H-S2 single-phase hybrid 3000/3680/4000/5000/6000
+    match: ^ASW(3000|3680|4000|5000|6000)H-S2$
+    countries:
+    - DE
+    note: Certificate + Konformitätsnachweis (report CN228L3H 001, engineering samples). Above 4.6 kVA single-phase the operator's unbalance
+      limit applies.
+- id: de-vde4105-asw-lt-g3-45-60k-2023
+  title: TÜV Rheinland A3 50581552 0001 — VDE-AR-N 4105/11.18 — ASW45K/50K/60K-LT-G3
+  url: https://solplanet.net/wp-content/uploads/2023/06/Zertifikat_VDE4105_ASW45-60K-LT-G3_DE_V01.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50581552 0001
+  issued: '2023-04-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 'Main DSP: V610-03030-01, Slave DSP: V610-60015-00, Safety package: V610-11021-01'
+  families:
+  - name: ASW-LT-G3 three-phase 45/50/60 kW
+    match: ^ASW(45|50|60)K-LT-G3$
+    countries:
+    - DE
+    note: Certificate + Konformitätsnachweis (report CN23GP17 001). The 25–40K-LT-G3 product page offers no VDE 4105 certificate, so
+      ASW25K…40K-LT-G3 stay unjoined.
+- id: de-vde4105-asw-lt-75-110k-2023
+  title: TÜV Rheinland A3 50571684 0001 — VDE-AR-N 4105/11.18 — ASW75K/80K/100K/110K-LT
+  url: https://solplanet.net/wp-content/uploads/2022/11/Zertifikat_VDE4105_ASW75-110K-LT_DE_V02.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02, DIN EN ISO/IEC 17065)
+  cert_no: A3 50571684 0001
+  issued: '2023-01-17'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105/11.18 (2018-11)
+  - DIN VDE V 0124-100/06.20 (2020-06)
+  firmware: 'Main DSP: V610-04001-00, Slave DSP: V610-04002-00, Safety package: V610-12001-00'
+  families:
+  - name: ASW-LT commercial 75–110 kW
+    match: ^ASW(75|80|100|110)K-LT$
+    countries:
+    - DE
+    note: Certificate + Konformitätsnachweis (report CN23UA1I 001). The register's ASW125K-LT is not named and not joined.

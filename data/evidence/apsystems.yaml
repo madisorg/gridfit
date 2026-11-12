@@ -1,0 +1,89 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: APsystems
+maker_site: https://emea.apsystems.com/
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: de-vde4105-eze-ds3-ez1-2024
+  title: Bureau Veritas U24-0963 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — DS3 / DS3-H / DS3-L / DS3-L-SPE / DS3-M / DS3-S, EZ1-H
+    / EZ1-M / EZ1-S / EZ1-SPE
+  url: https://global.apsystems.com/wp-content/uploads/2025/04/QW-ED-07-044-A2-Europe-VDE4105-microinverter-DS3DS3-HDS3-SDS3-LDS3-L-SPEDS3-MEZ1-HEZ1-MEZ1-SEZ1-SPE-for-Unit-in-German.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U24-0963
+  issued: '2024-10-07'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V5
+  families:
+  - name: DS3 / EZ1 single-phase microinverters (DS3, DS3-H, DS3-L, DS3-L-SPE, DS3-M, DS3-S, EZ1-H, EZ1-M, EZ1-S, EZ1-SPE)
+    match: ^(DS3|DS3-H|DS3-L|DS3-L-SPE|DS3-M|DS3-S|EZ1-H|EZ1-M|EZ1-S|EZ1-SPE)$
+    countries:
+    - DE
+    note: Unit certificate (report ZEK-ESH-P21011140-R4, programme NSOP-0032-DEU-ZE-V10); EZ1 types are certified as the DS3 hardware
+      of the same power (EZ1-H = DS3-H, EZ1-M = DS3-M, EZ1-S = DS3-S, EZ1-SPE = DS3-L-SPE). Output relay in series with the bridge,
+      single-fault-safe disconnection; HF transformer isolation. Used together with NA-protection certificate U24-0964. DS3D / EZ1D
+      / QT2 are not covered.
+- id: de-vde4105-nas-ds3-ez1-2024
+  title: Bureau Veritas U24-0964 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — DS3 / EZ1 series (integrated NA protection)
+  url: https://global.apsystems.com/wp-content/uploads/2025/04/QW-ED-07-045-A2-Europe-VDE4105-microinverter-DS3DS3-HDS3-SDS3-LDS3-L-SPEDS3-MEZ1-HEZ1-MEZ1-SEZ1-SPE-for-NS-in-German.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U24-0964
+  issued: '2024-09-27'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V5
+  families:
+  - name: DS3 / EZ1 single-phase microinverters (integrated NA protection)
+    match: ^(DS3|DS3-H|DS3-L|DS3-L-SPE|DS3-M|DS3-S|EZ1-H|EZ1-M|EZ1-S|EZ1-SPE)$
+    countries:
+    - DE
+    note: Integrated NA protection with integrated coupling switch (usable also with a central NA protection, §6.4.1), active island
+      detection, single-fault safety. Report ZEK-ESH-P21011140-R4; programme printed as NSOP-0032-DEU-ZE-V01.
+- id: de-vde4105-eze-ezhi-2024
+  title: Bureau Veritas U24-0913 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — EZHI-L / EZHI-M / EZHI hybrid (PV + battery) inverter
+  url: https://global.apsystems.com/wp-content/uploads/2025/04/QP-ED-07-162-A0-Europe-VDE4105-certificate-EZHIEZHI-MEZHI-L-for-Unit.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U24-0913
+  issued: '2024-09-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: REV 1.0
+  families:
+  - name: EZHI-L / EZHI-M / EZHI (single-phase hybrid inverter)
+    match: ^EZHI(-L|-M)?$
+    countries:
+    - DE
+    note: Unit certificate (report ZEK-ESH-P24070569, programme NSOP-0032-DEU-ZE-V10); used together with NA-protection certificate
+      U24-0914.
+- id: de-vde4105-nas-ezhi-2024
+  title: Bureau Veritas U24-0914 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — EZHI-L / EZHI-M / EZHI (integrated NA protection)
+  url: https://global.apsystems.com/wp-content/uploads/2025/04/QP-ED-07-161-A0-Europe-VDE4105-certificate-EZHIEZHI-MEZHI-L-for-NS-protection.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U24-0914
+  issued: '2024-09-12'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: REV 1.0
+  families:
+  - name: EZHI-L / EZHI-M / EZHI (integrated NA protection)
+    match: ^EZHI(-L|-M)?$
+    countries:
+    - DE
+    note: Integrated NA protection with integrated coupling switch, active island detection, single-fault safety (report ZEK-ESH-P24070569).

@@ -467,3 +467,24 @@ documents:
     countries:
     - ES
     note: The register's bare "SUNNYISLAND6.0H / 8.0H" (no -13 suffix) are not taken.
+- id: de-vde4105-eze-shp75-stp60-stps60-2021
+  title: Bureau Veritas U21-0548 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Sunny Highpower SHP 75-10, Sunny Tripower STP 60-10,
+    Sunny Tripower Storage STPS60-10
+  url: https://files.sma.de/downloads/SMA_SHP_STP_STPS_UNBED_VDE-AR-N-4105-2018-de-10.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0548
+  issued: '2021-06-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab 2.02.008
+  families:
+  - name: Sunny Highpower SHP 75-10, Sunny Tripower STP 60-10 (PV inverters), Sunny Tripower Storage STPS60-10 (battery inverter)
+    match: ^((SUNNYHIGHPOWER)?SHP75-10|(SUNNYTRIPOWER)?STP60-10|(SUNNYTRIPOWER)?STPS60-10)$
+    countries:
+    - DE
+    note: Unit certificate (report 14TH0075-VDE-0124-100:2020_0, programme NSOP-0032-DEU-ZE-V01, 16 pp. with E.4/E.5 extract). No galvanic
+      isolation, two relays in series. Commercial units (60–75 kW), connected under VDE-AR-N 4105 only where the plant stays in the
+      low-voltage rule. SHP 100-20 / 150-20 and STPS30-20 / 50-20 are not in this certificate and are not joined.

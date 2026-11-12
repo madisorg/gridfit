@@ -550,3 +550,102 @@ documents:
     countries:
     - ES
     note: Companion of une217002-h3-e-ac3-e-2022 (2622/0374-1-A-CER), same models.
+- id: de-vde4105-eze-h3-ac3-pro-2023
+  title: Kiwa Primara 23-500-00 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — H3-Pro / AC3-Pro 10.0…30.0
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/H3AC3-Pro-GCC-AR4105-2018-EZE-de-en-23-500-00.pdf
+  issuer: Kiwa Primara GmbH
+  cert_no: 23-500-00
+  issued: '2023-12-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):(2020-06)
+  firmware: MasterV1.05, SlaveV1.01 (hardware V1.2)
+  families:
+  - name: H3-Pro / AC3-Pro three-phase hybrid and AC-coupled 10–30 kW
+    match: ^(H3|AC3)-PRO-(10\.0|12\.0|15\.0|20\.0|22\.0|24\.9|25\.0|29\.9|30\.0)$
+    countries:
+    - DE
+    note: Test report 230612BWA117-EG-DE-001 (2023-12-12); certification programme SOP-9-1_15 GCC. Companion NA-protection certificate
+      23-501-00 (same date, integrated NA protection) at https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/H3AC3-Pro-GCC-AR4105-2018-NAS-de-en-23-501-00.pdf.
+      AC3-Pro is the variant without PV input. Annex 1 prints PEmax/SEmax per size.
+- id: de-vde4105-h3-ac3-e-2022
+  title: TÜV NORD (Hangzhou) COCPVP11004/21E-03 — VDE-AR-N 4105:2018 (E.4 unit certificate) — H3-5.0…12.0-E, AC3-5.0…12.0-E
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/COCPVP11004-21E-03.pdf
+  issuer: TÜV NORD (Hangzhou) Co., Ltd. (Member of TÜV NORD Group)
+  cert_no: COCPVP11004/21E-03
+  issued: '2022-04-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018 (2018-11)
+  - DIN VDE V 0124-100:2020-06
+  families:
+  - name: H3-E / AC3-E three-phase hybrid and AC-coupled 5–12 kW
+    match: ^(H3|AC3)-(5\.0|6\.0|8\.0|10\.0|12\.0)-E$
+    countries:
+    - DE
+    note: Test report TRPVP11004/21E/01; 33 pp. with E.4/E.5 per model. Companion NA-protection certificate COCPVP11004/21E-04 (E.6,
+      integrated NA protection, same date) at https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/COCPVP11004-21E-04.pdf.
+      Issued by TÜV NORD's Chinese entity under programme BOS-P-01, not by a DAkkS-accredited German body — the printed document does
+      not name an accreditation. H3-10.0-E1 / AC3-10.0-E1 (register) are not on the certificate and not joined.
+- id: de-vde4105-eze-f-g2-2022
+  title: Bureau Veritas U22-0479 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — F3000-G2, F3600-G2, F4600-G2
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/FOXE_F3000-G2%20-%20F4600-G2_UNBED_VDE%20AR-N%204105_EZE_U22-0479.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0479
+  issued: '2022-08-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'Master: V1.20; Slave: V1.04; ARM: V2.12'
+  families:
+  - name: F-G2 single-phase string 3.0–3.6 kW
+    match: ^F(3000|3600)-G2$
+    countries:
+    - DE
+    note: Report CGDY-ESH-P22070672; companion NA-protection certificate U22-0480 (integrated NA protection) at https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/FOXE_F3000-G2%20-%20F4600-G2_UNBED_VDE%20AR-N%204105_NA_U22-0480.pdf.
+      The certificate names F4600-G2; the register has only F4600-G2-B and F5000-G2-B, a different suffix — not joined.
+- id: de-vde4105-eze-f-2021
+  title: Bureau Veritas U21-0568 — Unit certificate VDE-AR-N 4105:2018-11 — F3000, F3600, F4600
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/FOXE_F3000%20-%20F4600_UNBED_VDE%20AR-N%204105_EZE_ENG_U21-0568.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0568
+  issued: '2021-07-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'Beginning with Master: V1.09; Slave: V1.01; ARM: V1.01'
+  families:
+  - name: F single-phase string 3.0–4.6 kW (first generation)
+    match: ^F(3000|3600|4600)$
+    countries:
+    - DE
+    note: English edition; report AVSV-ESH-P21010369; companion NS-protection certificate U21-0569 (integrated, usable with a central
+      relay) at https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/FOXE_F3000%20-%20F4600_UNBED_VDE%20AR-N%204105_NA_ENG_U21-0569.pdf.
+      F5000 (register) is not on the certificate.
+- id: de-vde4105-eze-r-2023
+  title: SGS Tecnos 2623/0104-A-CER — Einheitszertifikat VDE-AR-N 4105:2018-11 + Correction 1:2020-10 — R75, R100, R110
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2623-0104-A-CER_Conf.pdf
+  issuer: SGS Tecnos, S.A.U. (UNE-EN ISO/IEC 17065)
+  cert_no: 2623/0104-A-CER
+  issued: '2023-03-30'
+  valid_until: '2028-03-30'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11 + Correction 1: 2020-10'
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  firmware: Manager_V1.06, Master_V1.04, Slave_V1.00, CPLD_V1.01, AFCI_V1.03
+  families:
+  - name: R three-phase string 75–110 kW (first generation)
+    match: ^R(75|100|110)$
+    countries:
+    - DE
+    note: Test report 2223/0104 (2023-03-27). Companion NS-protection certificate 2623/0104-B-CER (integrated NS protection, same dates)
+      at https://www.fox-ess.com/Public/Uploads/uploadfile/files/Download/2623-0104-B-CER_NSP.pdf. The R-G2 models already have A3 50677624.

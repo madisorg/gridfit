@@ -6,7 +6,9 @@
 # (NELEV § 4(9)-(10)). Facts only, with the source of each; the grid operator decides. Written 2026-11-01 from the
 # NELEV text, VDE FNN's own pages and consultation summary for VDE-AR-N 4105:2026-03, a DSO workshop (badenova
 # Netze with the certification body FGH, 2026-06-30), ZEREZ's terms, FAQ, user manual and API documentation, and
-# makers' certificates. The norm text itself is paid; its 2026 values come from those public summaries.
+# makers' certificates. The norm text itself is paid; its 2026 values come from those public summaries. Re-read
+# 2026-11-12 against VDE FNN's page and FAQ for the 2026-03 edition (no correction or amendment published; the FAQ
+# now names 01.03.2027 as the end of the certificate transition, a year earlier than this file had assumed).
 cc: DE
 country: Germany
 norm: VDE-AR-N 4105
@@ -29,9 +31,9 @@ basis:
 # The edition every requirement below is written against, and what a maker's document must cite to count as
 # evidence for it (tools/check/run.py; the schema is docs/checks.md). Almost every certificate published so far
 # cites VDE-AR-N 4105:2018-11 (TÜV Rheinland writes it "VDE-AR-N 4105/11.18"), which stays sufficient for
-# registration and commissioning until the certificate transition ends (24 months after the rule took effect,
-# so about 1 March 2028 — not confirmed as a single date); items changed in 2026-03 show as "documented for an
-# older edition".
+# registration and commissioning until the certificate transition ends on 1 March 2027 (VDE FNN's FAQ to section
+# 9.2, seen 2026-11-12: "Übergangsfrist der VDE-AR-N 4105 (01.03.2027)"); items changed in 2026-03 show as
+# "documented for an older edition".
 edition:
   norm: "VDE-AR-N 4105"
   id: "2026-03"
@@ -45,6 +47,10 @@ document_must_cite: ["VDE-AR-N 4105"]
 # certificate is not that. In Germany the document must also be a certificate (not a maker's declaration) and
 # registered in ZEREZ — GridFit cannot check the registration yet (see register.md).
 accepts: [national-declaration]
+# No list_checks: Germany has no list of approved models. ZEREZ holds the certificates, but GridFit has no licence to
+# republish its rows and no API account yet (docs/zerez.md), so no row here is "checked by the operator's list".
+# A row neither a datasheet nor a document GridFit holds shows (NELEV § 2(1), § 4(9)-(10); VDE-AR-N 4105:2026-03 § 9):
+on_application: "neither a datasheet nor a certificate GridFit holds shows it; Germany has no list — the grid operator reads it from the model's VDE-AR-N 4105 unit and NA-protection certificates in ZEREZ, through the ZEREZ-ID the installer gives at registration, and GridFit does not read ZEREZ yet"
 must_meet:
   - id: power-class
     rule: "Plant size class (RfG; BNetzA BK6-16-166)"
@@ -52,8 +58,8 @@ must_meet:
     check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 135, over: "135 kW or more: type B; up to 500 kW / 270 kW feed-in still under VDE-AR-N 4105 with its own procedure, above it VDE-AR-N 4110", provable_by: [datasheet, document], source: "BNetzA BK6-16-166 (2018-04-24); VDE FNN Leistungsklassen; VDE-AR-N 4105:2026-03 section 1, 8.4" }
   - id: unit-certificate
     rule: "Unit and NA-protection certificate in ZEREZ (VDE-AR-N 4105 section 9; NELEV § 2, § 4)"
-    value: "each generating unit, storage unit and bidirectional charger needs an Einheitenzertifikat and an NA-protection certificate (and a PAV,E-protection certificate where one is used) from a certification body accredited to ISO/IEC 17065, on DIN VDE V 0124-100 tests by an ISO/IEC 17025 laboratory; the maker registers them in ZEREZ and the installer gives the operator the ZEREZ-ID. A certificate whose certified properties change (for example by a firmware update) loses validity unless a supplementary proof is registered (NELEV § 5); certificates to VDE-AR-N 4105:2018-11 remain sufficient for a limited time"
-    check: { kind: document, provable_by: [document], source: "VDE-AR-N 4105:2026-03 section 9.2 (FGH, badenova Netze workshop 2026-06-30); NELEV § 2, § 4(3), § 4(9)-(10), § 5" }
+    value: "each generating unit, storage unit and bidirectional charger needs an Einheitenzertifikat and an NA-protection certificate (and a PAV,E-protection certificate where one is used) from a certification body accredited to ISO/IEC 17065, on DIN VDE V 0124-100 tests by an ISO/IEC 17025 laboratory; the maker registers them in ZEREZ and the installer gives the operator the ZEREZ-ID. A certificate whose certified properties change (for example by a firmware update) loses validity unless a supplementary proof is registered (NELEV § 5); certificates to VDE-AR-N 4105:2018-11 remain sufficient until the transition ends on 1 March 2027 (VDE FNN FAQ to 9.2), after which the 2026-03 certificates are asked for"
+    check: { kind: document, provable_by: [document], source: "VDE-AR-N 4105:2026-03 section 9.2 (FGH, badenova Netze workshop 2026-06-30; VDE FNN FAQ to 9.2, seen 2026-11-12); NELEV § 2, § 4(3), § 4(9)-(10), § 5" }
   - id: freq-range
     rule: "Frequency range (section 5.7.1, table 2)"
     value: "stay connected from 47.5 to 51.5 Hz; the 2026-03 edition adds that units stay connected for at least 10 s between 51.5 and 52.5 Hz (as the draft's table was amended in consultation — the final table not seen); proof is a maker's declaration checked in the unit certification"
@@ -131,16 +137,16 @@ commissioning: "The installer orders commissioning from the grid operator, who s
 changes:
   - "27 February 2026: VDE-AR-N 4105:2026-03 published, applied from 1 March 2026 — 500 kW scope, simplified ≤ 800 VA rules, PAV,E protection and zero export, Q(U) default, new RoCoF table and NA-protection settings, bidirectional chargers as storage"
   - "1 April 2026: VDE-AR-N 4100:2026-04 (customer installations) applies, 12-month transition"
-  - "1 March 2027: end of the 12-month transition in which connections may still be handled under VDE-AR-N 4105:2018-11 (DSO slides; VDE FNN's own page does not state it)"
-  - "about 1 March 2028: certificates to VDE-AR-N 4105:2018-11 stop being sufficient — 24 months after the rule took effect, or 12 months after a new DIN VDE V 0124-100, whichever the final text makes decisive (not confirmed); 1 March 2028 is also the stated end for meeting the 60 % limit with a 2018-11 PAV,E monitoring"
+  - "1 March 2027: the transition of VDE-AR-N 4105:2026-03 ends (VDE FNN FAQ to 9.2, seen 2026-11-12). Until then unit certificates to VDE-AR-N 4105:2018-11 are accepted (the unit must then meet the 2018 properties), and for the PAV,E protection a maker's declaration uploaded to ZEREZ or a 2018-11 PAV,E-monitoring certificate is enough; after it the 2026-03 unit certificates are asked for. Section 9.2 itself reads '12 months after the revised DIN VDE V 0124-100 takes effect, at the latest 24 months after this rule'; the profile written 2026-11-01 had assumed about 1 March 2028"
+  - "1 March 2028: the stated end for meeting the § 9 EEG 60 % limit with a 2018-11 PAV,E monitoring or a permanent PEmax reduction (VDE FNN FAQ to 5.7.4.1)"
   - "E VDE-AR-N 4100/A1 (control and metering roll-out) consulted 15 May – 26 June 2026; publication planned early 2027, application from February 2027 (DSO slides)"
-  - "EEG 2027: a ministry draft of 22 July 2026 would end the fixed feed-in tariff for new plants up to 25 kW after a transition; not adopted as of 2026-11-01 (not confirmed)"
+  - "EEG 2027: a government draft (cabinet 29 July 2026, first Bundestag reading 24 September 2026, per press reports) would end the fixed feed-in tariff for new plants up to 25 kW after a transition; not adopted as law as of 2026-11-12 (not confirmed)"
   - "ZEREZ opened an API to registered users in 2026 (exact date not confirmed) and a 'Datenzugangsverwalter' role for makers to release non-public data"
 evidence_for_documented: "The maker's VDE-AR-N 4105 unit certificate and NA-protection certificate for the exact model family and firmware, from an accredited certification body, ideally with its ZEREZ-ID. GridFit shows the document, its date and the edition it cites (2018-11 or 2026-03); whether it is registered and valid in ZEREZ is the register's answer, not GridFit's. The grid operator decides."
 sources:
-  - title: "VDE FNN — Erzeugungsanlagen am Niederspannungsnetz (VDE-AR-N 4105:2026-03), page with FAQ and transition rule for the 60 % limit"
+  - title: "VDE FNN — Erzeugungsanlagen am Niederspannungsnetz (VDE-AR-N 4105:2026-03), page with FAQ: transition of 9.2 (01.03.2027), the 60 % limit (01.03.2028), 30 kVA, 800 VA"
     url: https://www.vde.com/de/fnn/themen/tar/tar-niederspannung/erzeugungsanlagen-am-niederspannungsnetz-vde-ar-n-4105-2026
-    seen: "2026-11-01 (rule dated 2026-02-27)"
+    seen: "2026-11-12 (rule dated 2026-02-27, still the edition in force; no correction or amendment listed)"
   - title: "VDE FNN — Erzeugungsanlagen am Niederspannungsnetz, zusammenfassende Bewertung aller Stellungnahmen zum Entwurf E VDE-AR-N 4105:2024-10"
     url: https://www.vde.com/resource/blob/2455950/4e30c849065bb8a374f552158026a668/vde-fnn-erzeugungsanlagen-am-niederspannungsnetz--bewertung-stellungnahmen-data.pdf
     seen: "2026-11-01"

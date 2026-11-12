@@ -253,7 +253,7 @@ CZ:
   - {id: anti-islanding, item: grid-monitoring, label: "Grid monitoring with an assigned switch, verified by an accredited lab", checks: [[islanding, method, present]]}
 DE:
   profile: data/profiles/de.yaml
-  label: "VDE-AR-N 4105:2026-03 (certificates to 2018-11 accepted during the transition)"
+  label: "VDE-AR-N 4105:2026-03 (certificates to 2018-11 accepted until the transition ends on 1 March 2027)"
   requirements:
   - {id: rocof, item: rocof, label: "RoCoF ride-through ±4 Hz/s for 0.25 s (±2 Hz/s 0.5 s, ±1.5 Hz/s 1 s, ±1.25 Hz/s 2.5 s)",
      checks: [[rocof, immunity_hz_s, 4]],

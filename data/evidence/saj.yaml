@@ -295,3 +295,23 @@ documents:
     - ES
     note: Report CN244T79 002; X = battery configuration (51.5/64.4/77.3/90.2 kWh). Companion AK 50661587 0001 (2025-02-13, RD 1699/661/413/647/244
       + UNE 217002:2020, report CN24KXPU 002) lists the same five.
+- id: de-vde4105-chs2-2025
+  title: TÜV Rheinland A3 50661614 0001 — VDE-AR-N 4105/11.18 — CHS2-29.9K…63K-T4/T5/T6-X C&I all-in-one storage
+  url: https://www.saj-electric.com/hubfs/crm-properties-file-values/CHS2_Series_VDE4105_Test_Certificate_de_DE.pdf
+  issuer: TÜV Rheinland LGA Products GmbH (DAkkS D-ZE-14169-01-02)
+  cert_no: A3 50661614 0001
+  issued: '2025-01-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: V1.023
+  families:
+  - name: CHS2 C&I all-in-one energy storage 29.9–63 kW
+    match: ^CHS2-(29\.9K-T4|30K-T4|40K-T5|50K-T6|63K-T6)-X$
+    countries:
+    - DE
+    note: Report CN24GK2A 002; 8 pp. with E.4 unit certificate, E.5 extract, E.6 NA-protection certificate and E.7 (integrated NA protection,
+      interface switch Churod CHAR-112A150). X stands for the battery build (51.5/64.4/77.3/90.2 kWh); the register carries the code
+      with the literal X.

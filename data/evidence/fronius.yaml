@@ -193,3 +193,394 @@ documents:
     countries: [DE]
     note: Unit certificate (evaluation 317036-RE-1, 31 pp.); the NA-protection certificate is a separate file in the same folder (not
       read).
+- id: de-vde4105-na-symo-gen24-6-12-sc-2024
+  title: VDE Zertifikat für den NA-Schutz 40058236 — VDE-AR-N 4105:2018-11 — Symo GEN24 6.0–12.0 SC / Plus SC
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA_protection_Fronius_Symo_GEN24_6_0-12_0_SC_DE_EN.pdf
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: '40058236'
+  issued: '2024-04-17'
+  valid_until: '2029-04-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - FGW TR 8 Rev.9 Anhang F
+  - 'DIN VDE V 0124-100: 2020-06'
+  firmware: 1.25.5-1 (bundle)
+  families:
+  - name: Symo GEN24 6.0–12.0 SC and Plus SC
+    match: ^(FRONIUS)?(SYMO)?GEN24(6|7|8|9|10|11|12)\.0(PLUS)?SC$
+    countries:
+    - DE
+    note: Integrated NA protection (evaluation 317036-RE-1); companion of the unit certificate 40058101 already in the repo (de-vde4105-symo-gen24-6-12-sc-2024).
+- id: de-vde4105-eze-symo-gen24-3-5-2023
+  title: Bureau Veritas U23-0167 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Symo GEN24 3.0–5.0 (Lite, Plus)
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Symo_GEN24_3.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0167
+  issued: '2023-03-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.11.6.0
+  families:
+  - name: Symo GEN24 3.0/4.0/5.0, Lite and Plus
+    match: ^SYMOGEN24(PLUS)?(3|4|5)\.0(PLUS)?$
+    countries:
+    - DE
+    note: Unit certificate (report 20TH0342-VDE-0124-100:2020_1, programme NSOP-0032-DEU-ZE-V01, 30 pp.; scanned PDF, read as page images).
+      Hybrid inverter / storage system with BYD Battery-Box Premium HVS/HVM, LG RESU FLEX and the Fronius Smart Meter. The register's
+      SYMOGEN24…SC rows of these sizes are not named here and are not joined; the "Solarwatt / Fronius" rows SYMOGEN243.0/4.0/5.0PLUS
+      would also match (3 rows).
+- id: de-vde4105-na-symo-gen24-3-5-2023
+  title: Bureau Veritas U23-0169 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Symo GEN24 3.0–5.0 (Lite, Plus)
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA_protection_Fronius_Symo_GEN24_3_0_-_5_0_DE_EN.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0169
+  issued: '2023-03-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.11.6.0
+  families:
+  - name: Symo GEN24 3.0/4.0/5.0, Lite and Plus
+    match: ^SYMOGEN24(PLUS)?(3|4|5)\.0(PLUS)?$
+    countries:
+    - DE
+    note: Integrated NA protection, integrated coupling switch usable with a central NA protection (§6.4.1); report 20TH0342-VDE-0124-100:2020_1.
+      Scanned PDF, read as page images.
+- id: de-vde4105-eze-symo-gen24-6-10-2023
+  title: Bureau Veritas U23-0172 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Symo GEN24 6.0–10.0 (Lite, Plus)
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Symo_GEN24_6.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0172
+  issued: '2023-03-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: beginning with V1.5.3-0
+  families:
+  - name: Symo GEN24 6.0/7.0/8.0/9.0/10.0, Lite and Plus
+    match: ^SYMOGEN24(PLUS)?(6|7|8|9|10)\.0(PLUS)?$
+    countries:
+    - DE
+    note: Unit certificate (report 19TH0445-VDE0124-100:2020_1, programme NSOP-0032-DEU-ZE-V01, 53 pp., German and English; scanned
+      PDF, read as page images). The SC generation of these sizes has its own certificate (40058101) and is not joined here. SYMOGEN2412.0PLUS
+      is not in this certificate. The "Solarwatt / Fronius" rows SYMOGEN246.0/8.0/10.0PLUS would also match (3 rows).
+- id: de-vde4105-na-symo-gen24-6-10-2023
+  title: Bureau Veritas U23-0171 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Symo GEN24 6.0–10.0 (Lite, Plus)
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA_protection_Fronius_Symo_GEN24_6_0_-_10_0_DE_EN.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0171
+  issued: '2023-03-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: Ab V1.5.3-0
+  families:
+  - name: Symo GEN24 6.0/7.0/8.0/9.0/10.0, Lite and Plus
+    match: ^SYMOGEN24(PLUS)?(6|7|8|9|10)\.0(PLUS)?$
+    countries:
+    - DE
+    note: Integrated NA protection (report 19TH0445-VDE0124-100:2020_1); optional Enwitec backup box 3PH_FRO_BBDXX listed. Scanned PDF,
+      read as page images.
+- id: de-vde4105-eze-primo-gen24-2023
+  title: Bureau Veritas U23-0176 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Primo GEN24 3.0–6.0 (Plus)
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Primo_GEN24_3_0_-_6_0_DE_EN.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0176
+  issued: '2023-03-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.11.6-0
+  families:
+  - name: Primo GEN24 3.0/3.6/4.0/4.6/5.0/6.0 and Plus
+    match: ^PRIMOGEN24(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)(PLUS)?$
+    countries:
+    - DE
+    note: Unit certificate (report 20TH0457-VDE-0124-100:2020_1, programme NSOP-0032-DEU-ZE-V01, 56 pp.; scanned PDF, read as page images).
+      Single-phase, 230 V; in Germany a single-phase unit above 4.6 kVA must be limited (VDE-AR-N 4100 unbalance rule) — the certificate
+      itself lists 5.0 and 6.0 kW. The register's PRIMOGEN24…SC rows are not named here and are not joined.
+- id: de-vde4105-na-primo-gen24-2023
+  title: Bureau Veritas U23-0178 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Primo GEN24 3.0–6.0 (Plus)
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA_protection_Fronius_Primo_GEN24_3_0_-_6_0_DE_EN.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0178
+  issued: '2023-03-06'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.11.6-0
+  families:
+  - name: Primo GEN24 3.0/3.6/4.0/4.6/5.0/6.0 and Plus
+    match: ^PRIMOGEN24(3\.0|3\.6|4\.0|4\.6|5\.0|6\.0)(PLUS)?$
+    countries:
+    - DE
+    note: Integrated NA protection (report 20TH0457-VDE-0124-100:2020_1). Scanned PDF, read as page images.
+- id: de-vde4105-eze-symo-3-8-2021
+  title: Bureau Veritas U21-0403 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Symo 3.0-3-M … 8.2-3-M
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Symo_3_0-3-M_-_8_2-3-M_DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0403
+  issued: '2021-05-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.1.4.0
+  families:
+  - name: Symo 3.0/3.7/4.5/5.0/5.5/6.0/6.7/7.0/8.0/8.2-3-M
+    match: ^(SYMO)?(3\.0|3\.7|4\.5|5\.0|5\.5|6\.0|6\.7|7\.0|8\.0|8\.2)-3-M$
+    countries:
+    - DE
+    note: Unit certificate (report 19TH0406-VDE-0124-100:2020_0, programme NSOP-0032-DEU-ZE-V01) with E.5 extract. Bare "3.0-3-M"… rows
+      under Fronius are joined (the -3-M suffix at these sizes is only the Symo). The -3-S units (3.0/3.7/4.5-3-S), SYMO10.0-3-M-OS
+      and the Symo 10–20 kW rows are not in this certificate and are not joined. The "Solarwatt / Fronius" rows SYMO…-3-M would also
+      match (7 rows).
+- id: de-vde4105-na-symo-3-8-2021
+  title: Bureau Veritas U21-0404 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Symo 3.0-3-M … 8.2-3-M
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA-protection_Fronius_Symo_3.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0404
+  issued: '2021-05-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.1.4.0
+  families:
+  - name: Symo 3.0/3.7/4.5/5.0/5.5/6.0/6.7/7.0/8.0/8.2-3-M
+    match: ^(SYMO)?(3\.0|3\.7|4\.5|5\.0|5\.5|6\.0|6\.7|7\.0|8\.0|8\.2)-3-M$
+    countries:
+    - DE
+    note: Integrated NA protection (report 19TH0406-VDE-0124-100:2020_0) with E.7 settings and trip values.
+- id: de-vde4105-eze-symo-advanced-2022
+  title: Bureau Veritas U22-0709 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Symo Advanced 10.0–20.0-3-M
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_SymoAdvanced_DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0709
+  issued: '2022-11-18'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: fro32500
+  families:
+  - name: Symo Advanced 10.0/12.5/15.0/17.5/20.0-3-M
+    match: ^(FRONIUS)?(SYMO)*ADVANCED(10\.0|12\.5|15\.0|17\.5|20\.0)-3-M$
+    countries:
+    - DE
+    note: Unit certificate (reports SGP-20484_01…08_R1 and 21TH0549, programme NSOP-0032-DEU-ZE-V01). Bare "10.0-3-M"… rows are not
+      joined (they may be the older Symo 10–20 kW).
+- id: de-vde4105-na-symo-advanced-2022
+  title: Bureau Veritas U22-0710_1 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Symo Advanced 10.0–20.0-3-M
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA-Protection_Fronius_SymoAdvanced_DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0710_1
+  issued: '2022-12-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: fro32500
+  families:
+  - name: Symo Advanced 10.0/12.5/15.0/17.5/20.0-3-M
+    match: ^(FRONIUS)?(SYMO)*ADVANCED(10\.0|12\.5|15\.0|17\.5|20\.0)-3-M$
+    countries:
+    - DE
+    note: Integrated NA protection (reports SGP-20484_01…08_R1).
+- id: de-vde4105-eze-eco-2021
+  title: Bureau Veritas U21-0401 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Eco 25.0-3-S, 27.0-3-S
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Eco_25.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0401
+  issued: '2021-05-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.1.4.0
+  families:
+  - name: Eco 25.0-3-S, 27.0-3-S
+    match: ^(ECO)?(25|27)\.0-3-S$
+    countries:
+    - DE
+    note: Unit certificate (report 15TH0304-VDE-0124-100:2020_0). The "Light" and "WLAN/LAN/Webserver" register rows are not named in
+      the certificate and are not joined.
+- id: de-vde4105-na-eco-2021
+  title: Bureau Veritas U21-0402 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Eco 25.0-3-S, 27.0-3-S
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA-protection_Fronius_Eco_25_0-3-S_-_27_0-3-S_DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0402
+  issued: '2021-05-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.1.4.0
+  families:
+  - name: Eco 25.0-3-S, 27.0-3-S
+    match: ^(ECO)?(25|27)\.0-3-S$
+    countries:
+    - DE
+    note: Integrated NA protection (report 15TH0304-VDE-0124-100:2020_0).
+- id: de-vde4105-na-primo-3-8-2021
+  title: Bureau Veritas U21-0495 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Primo 3.0-1 … 8.2-1
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018__Fronius_Primo_3_0-1_-_8_2-1_DE_EN.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U21-0495
+  issued: '2021-06-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: ab V1.1.4.0
+  families:
+  - name: Primo 3.0/3.5/3.6/4.0/4.6/5.0/6.0/8.2-1
+    match: ^(PRIMO)?(3\.0|3\.5|3\.6|4\.0|4\.6|5\.0|6\.0|8\.2)-1$
+    countries:
+    - DE
+    note: NA-protection certificate only (report 16TH0391-VDE-0124-100:2020_0) — despite its file name it is not the unit certificate,
+      which the German product page does not offer (see manual.md). Bare "3.0-1"… rows under Fronius are joined; PRIMO5.0-1AUS and PRIMO4.0-3-S
+      are not. The "Solarwatt / Fronius" PRIMO…-1 rows would also match (8 rows).
+- id: de-vde4105-eze-tauro-2026
+  title: VDE Einheitenzertifikat 40053531 Rev.3 — VDE-AR-N 4105:2018-11 — Tauro 50-3-D/P, Tauro Eco 50/99/100-3-D/P
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_Fronius_Tauro_and_Tauro_Eco_DE_EN.pdf
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: 40053531 Rev.3
+  issued: '2026-07-30'
+  valid_until: '2031-07-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - FGW TR 8 Rev.10:2025-03 (Anhang F)
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100:2020-06
+  firmware: 1.13.3.0
+  families:
+  - name: Tauro 50-3-D/P, Tauro Eco 50-3-D/P, 99-3-D/P, 100-3-D/P
+    match: ^(TAURO(ECO)?)?(50|99|100)-3(-[DP])?$
+    countries:
+    - DE
+    note: Unit certificate (test report 285851-RE-3 of 16.09.2021; annex in German pp. 2–18 and English pp. 19–35). Commercial units
+      (50–100 kW). Joined also the rows without the -D/-P suffix (both variants are certified) and the bare "50-3-D"… rows under Fronius.
+      TAURO5-3-D/-P (probably a typo for 50-3) are not joined.
+- id: de-vde4105-na-tauro-2026
+  title: VDE Zertifikat für den NA-Schutz 40053535 Rev.3 — VDE-AR-N 4105:2018-11 — Tauro 50-3-D/P, Tauro Eco 50/99/100-3-D/P
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_VDE_Conformity_VDE-AR-N_4105_NS_protection_Fronius_Tauro_and_Tauro_Eco_DE_EN.pdf
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: 40053535 Rev.3
+  issued: '2026-07-30'
+  valid_until: '2031-07-29'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - FGW TR 8 Rev.10:20205-03 (Anhang F)
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100:2020-06
+  firmware: 1.13.3.0
+  families:
+  - name: Tauro 50-3-D/P, Tauro Eco 50-3-D/P, 99-3-D/P, 100-3-D/P
+    match: ^(TAURO(ECO)?)?(50|99|100)-3(-[DP])?$
+    countries:
+    - DE
+    note: Integrated NA protection (test report 285851-RE-3). The FGW year is printed "20205-03" (a typo in the certificate).
+- id: de-vde4105-eze-verto-25-33-2026
+  title: VDE Einheitenzertifikat 40057390 Rev.2 — VDE-AR-N 4105:2018-11 — Verto 25.0–33.3
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_VDE_Conformity_VDE-AR-N_4105_Fronius_Verto_25.0-33.3_DE_EN.pdf
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: 40057390 Rev.2
+  issued: '2026-10-09'
+  valid_until: '2031-10-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - FGW TR 8 Rev.9 Anhang F
+  - 'DIN VDE V 0124-100: 2020-06'
+  firmware: 1.37.2-1 (bundle)
+  families:
+  - name: Verto 25.0/27.0/29.9/30.0/33.3
+    match: ^VERTO(25\.0|27\.0|29\.9|30\.0|33\.3)$
+    countries:
+    - DE
+    note: Unit certificate (evaluation 347898-TL3-1; first edition 10.11.2023, Rev.2 changes the firmware bundle from 1.25.4-1 to 1.37.2-1);
+      includes PAV,E monitoring. Verto 15.0/17.5/20.0/22.0/24.0 (non-Plus) and VERTO25.0400 are not in this certificate and are not
+      joined.
+- id: de-vde4105-na-verto-25-33-2026
+  title: VDE Zertifikat für den NA-Schutz 40057405 Rev.2 — VDE-AR-N 4105:2018-11 — Verto 25.0–33.3
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_Conformity_VDE-AR-N_4105_2018_NA_protection_Fronius_Verto_25.pdf
+  issuer: VDE Prüf- und Zertifizierungsinstitut GmbH
+  cert_no: 40057405 Rev.2
+  issued: '2026-10-09'
+  valid_until: '2031-10-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - 'VDE-AR-N 4105: 2018-11'
+  - FGW TR8 Rev.9 Anhang F
+  - 'DIN VDE V 0124-100: 2020-06'
+  firmware: 1.25.1.1 (internal NA protection)
+  families:
+  - name: Verto 25.0/27.0/29.9/30.0/33.3
+    match: ^VERTO(25\.0|27\.0|29\.9|30\.0|33\.3)$
+    countries:
+    - DE
+    note: Integrated NA protection (evaluation 347898-TL3-1).
+- id: de-vde4105-eze-verto-plus-2026
+  title: Bureau Veritas U26-0243 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Verto 15.0–33.3 Plus
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_BV_Conformity_VDE-AR-N_4105_Fronius_Verto_15_0-33_3_Plus_DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U26-0243
+  issued: '2026-03-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 1.34.2-1
+  families:
+  - name: Verto 15.0/17.5/20.0/25.0/30.0/33.3 Plus (hybrid)
+    match: ^VERTO((15\.0|17\.5|20\.0|25\.0|30\.0|33\.3)PLUS|PLUS(15\.0|17\.5|20\.0|25\.0|30\.0|33\.3))$
+    countries:
+    - DE
+    note: Unit certificate (report 24TH0440-VDE0124-100:2020_2, programme NSOP-0032-DEU-ZE-V10, 25 pp.). VERTO27.0PLUS is not in this
+      certificate and is not joined.
+- id: de-vde4105-na-verto-plus-2026
+  title: Bureau Veritas U26-0244 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — Verto 15.0–33.3 Plus
+  url: https://www.fronius.com/de-de/~/downloads/Solar%20Energy/Certificates/SE_CER_BV_Conformity_VDE-AR-N_4105_NA-Protection_Fronius_Verto_15.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U26-0244
+  issued: '2026-03-20'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 1.34.2-1
+  families:
+  - name: Verto 15.0/17.5/20.0/25.0/30.0/33.3 Plus (hybrid)
+    match: ^VERTO((15\.0|17\.5|20\.0|25\.0|30\.0|33\.3)PLUS|PLUS(15\.0|17\.5|20\.0|25\.0|30\.0|33\.3))$
+    countries:
+    - DE
+    note: Integrated NA protection (report 24TH0440-VDE0124-100:2020_2).

@@ -88,3 +88,185 @@ documents:
     note: The certificate lists one rating, 3.84 kVA 230/400 Vac three-phase; the register's other power/phase settings (-1.65-1P …
       -3.84-1P, -1.84-3P … -3.68-3P) are not taken. Companion RD 647/413/1699 certificate 250104RECO01-B-CER (same model, same dates)
       at https://enphase.com/es-es/download/iq-battery-5p-flexphase-certificado-de-conformidad-rd-647-rd-413-rd-1699
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: Enphase
+maker_site: https://enphase.com/de-de
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: de-vde4105-iq7-system-2022-06
+  title: TÜV Rheinland A3 60164292 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis (unit + NA protection) — IQ7 / IQ7+ / IQ7A / IQ7X
+    with IQ Gateway and Q-Relay
+  url: https://enphase.com/de-de/download/iq7-microinverter-iq-gateway-q-relay-na-schutz-vde-ar-n-4105-konformitatsnachweis
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg)
+  cert_no: A3 60164292 0001
+  issued: '2022-06-22'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 4.28.09
+  families:
+  - name: IQ7-60 / IQ7PLUS-72 / IQ7A-72 with Q-RELAY-1P-INT or Q-RELAY-3P-INT and ENV-S-WM-230 / ENV-S-EM-230
+    match: ^IQ7(-60|A-72|PLUS-72)-(2|M)-INT(MITQ-RELAY-1P-INT|MITQ-RELAY-3P-INTUNDENV-S-EM-230)?$
+    countries:
+    - DE
+    note: 'Report IT22TGIN 001. System certificate: microinverter + Q-Relay (NA protection) + Envoy-S Metered gateway. Model list (page
+      3) also names IQ7-60-5-INT, -ACM-INT, -E-ACM-INT(-NM/-RMA), IQ7PLUS-72-5/ACM/E-ACM variants, IQ7A-72-5/E-ACM/M-ACM variants and
+      IQ7X-96-E-INT, -M-INT, -E-ACM-INT(-NM/-RMA) — none of these spellings is in the register. IQ7X-96-2-INT is not listed here (see
+      the 2022-01 certificate).'
+- id: de-vde4105-iq7-system-2022-01
+  title: TÜV Rheinland A3 60161287 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis — IQ7-60 / IQ7PLUS-72 / IQ7A-72 / IQ7X-96 (-V-W-Y-Z)
+    with Q-Relay and ENV-S-WM-230
+  url: https://enphase.com/de-de/download/iq7-iq7-iq7x-iq7a-microinverter-und-iq-relay-vde-ar-n-41052018-11-einheitenzertifikat
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg)
+  cert_no: A3 60161287 0001
+  issued: '2022-01-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 4.28.07
+  families:
+  - name: IQ7 series in pattern notation IQ7-60 / IQ7PLUS-72 / IQ7A-72 / IQ7X-96 -V-W-Y-Z, with Q-RELAY-1P-INT or Q-RELAY-3P-INT and
+      ENV-S-WM-230
+    match: ^IQ7(-60|A-72|PLUS-72|X-96)-(2-INT|M-INT|V-W(-X)?-Y-Z|X-Y-INT|X-Y-Z)(MITQ-RELAY-1P-INT|MITQ-RELAY-3P-INTUNDENV-S-EM-230|Q-RELAY1PH-INT|Q-RELAY-1PH-INTORQ-RELAY-3PH-INT)?$
+    countries:
+    - DE
+    note: 'Report IT22VXEG 001; certificate holder Enphase Energy (Christchurch, NZ). The certificate names the units as pattern codes:
+      V = 2, 5, E or M; W = blank or ACM; Y = blank or country code; Z = RMA, NM or blank — so the register''s placeholder spellings
+      (-V-W-Y-Z, -X-Y-INT, -X-Y-Z) and IQ7X-96-2-INT join here. Older firmware than A3 60164292 0001 (2022-06), which lists explicit
+      codes for IQ7/IQ7+/IQ7A. Not joined: IQ7A-72-INT… (no V position in the register code), IQ7-B1200 (AC battery).'
+- id: de-vde4105-iq8mc-ac-hc-2023
+  title: TÜV Rheinland A3 60171787 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis (E.4 unit + NA protection) — IQ8MC / IQ8AC / IQ8HC
+    with IQ Relay and Envoy-S
+  url: https://enphase.com/de-de/download/iq8mc-iq8ac-iq8hc-microinverter-und-iq-relay-vde-ar-n-41052018-11-einheitenzertifikat
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg; issued Pogliano Milanese)
+  cert_no: A3 60171787 0001
+  issued: '2023-08-08'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 521-00005_r06_v06.17.01
+  families:
+  - name: IQ8MC-72-M-INT (+ -ACM-INT, -ACM-INT-RMA, -ACM-INT-NM), IQ8AC-72-M-INT, IQ8HC-72-M-INT with Q-RELAY-1P/3P-INT and ENV-S-WM/EM-230
+    match: ^(IQ8(MC|AC|HC)")?"?(IQ8MC-72-M-INT|IQ8MC-72-M-ACM-INT(-RMA|-NM)?|IQ8AC-72-M-INT|IQ8HC-72-M-INT)"?(MITQ-RELAY-1P-INT|MITQ-RELAY-3P-INTUNDENV-S-EM-230|WITHIQGATEWAYENV-S-EM-230\(ORENV-S?-WB-230\)?ANDQ-RELAY-1P-INT\(ORQ-RELAY-3P-INT\))?$
+    countries:
+    - DE
+    note: Report IT23NRGU 001. System of microinverters + Q-Relay (NA protection) + Envoy-S Metered gateway; symmetry device (5.3.3)
+      and 70 % dynamic active-power limitation verified; max. apparent connection power SAmax ≤ 41.4 kVA. IQ8AC/IQ8HC -ACM variants
+      are NOT in the model list and are not joined; IQ8 combinations with the IQ System Controller are a different configuration and
+      are not joined.
+- id: de-vde4105-iq8x-2024
+  title: TÜV Rheinland A3 60175073 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis (E.4 unit + NA protection) — IQ8X-80-M-INT with
+    IQ Relay and Envoy-S
+  url: https://enphase.com/de-de/download/iq8x-microinverter-und-iq-relay-vde-ar-n-41052018-11-einheitenzertifikat
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg)
+  cert_no: A3 60175073 0001
+  issued: '2024-02-05'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 521-00005-r06-v08.05.02
+  families:
+  - name: IQ8X-80-M-INT with Q-RELAY-1P/3P-INT and ENV-S-WM/EM-230
+    match: ^IQ8X-80-M-INT(MITQ-RELAY-1P-INT|MITQ-RELAY-3P-INTUNDENV-S-EM-230|WITHIQGATEWAYENV-S-EM-230\(ORENV-S-WB-230\)ANDQ-RELAY-1P-INT\(ORQ-RELAY-3P-INT\))?$
+    countries:
+    - DE
+    note: Report IT24SCFJ 001. IQ8X-72-M-INT (register) is a different hardware code and is not joined.
+- id: de-vde4105-iq8-balcony-2025
+  title: Bureau Veritas U25-0306 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — IQ8 series microinverters with IQ Balcony gateway (IQ-BALC-1P-CF
+    / -WF)
+  url: https://enphase.com/de-de/download/iq8-series-microinverters-und-iq-balacony-gateway-vde-ar-n-41052018-11-einheitenzertifikat
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (DAkkS, ISO/IEC 17065)
+  cert_no: U25-0306
+  issued: '2025-03-28'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'PCU: 521-00005-r06-v08.14.02; IQ Balcony: 463-00038-v1.12.12'
+  families:
+  - name: IQ8PLUS / IQ8M / IQ8AC / IQ8HC / IQ8MC -72-M-INT and IQ8X-80-M-INT with IQ Balcony gateway (plug-in system)
+    match: ^((IQ8PLUS|IQ8M|IQ8AC|IQ8HC|IQ8MC)-72-M-INT(MITIQ-BALC-1P-CFODERIQ-BALC-1P-WF|WITHIQ-BALC-1P-WEORIQ-BALC-1P-CE)|IQ8X-80-M-INTMITIQ-BALC-1P-CFODERIQ-BALC-1P-WF)$
+    countries:
+    - DE
+    note: 'Unit certificate for "Photovoltaikmikrowechselrichter und Gateway mit Microgrid Verbindungsgerät" (reports P2024091701, P2024111801,
+      IANZ-accredited lab); also proves participation in generation / grid-security management. The bare IQ8PLUS-72-M-INT and IQ8M-72-M-INT
+      register entries are not joined: this certificate covers them only with the IQ Balcony gateway. IQ9N with IQ Balcony is not in
+      this certificate.'
+- id: de-vde4105-iq9n-2025
+  title: TÜV Rheinland A3 60184949 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis (E.4 unit + NA protection) — IQ9N-A-INT with IQ
+    Relay / IQ Combiner 2 EU 3P / IQ System Controller 3 INT
+  url: https://enphase.com/de-de/download/iq9n-microinverter-und-iq-relay-vde-ar-n-41052018-11-einheitenzertifikat
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg)
+  cert_no: A3 60184949 0001
+  issued: '2025-10-23'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 521-00013-r01-v10.24.02 or later
+  families:
+  - name: IQ9N-A-INT with Q-RELAY-1P/3P-INT, IQ Combiner 2 EU 3P (X-IQ-EURO-230-3P-4-2) or IQ System Controller 3 INT (SC100G-M230ROW),
+      ENV-S-WM/EM-230
+    match: ^IQ9N-A-INT(MITQ-RELAY-1P-INT|MITQ-RELAY-3P-INT|MITQ-RELAY-3P-INTUNDENV-S-EM-230|MITIQSYSTEMCONTROLLER\(SC100G-M230ROW\)|WRAZZENVOYENV-S-WM-230/ENV-S-EM-230|WITHQ-RELAY-1P-INTORQ-RELAY-3P-INTORIQCOMBINER2EU3PORIQSYSTEMCONTROLLER3INTANDENV-S-EM-230ORENV-S-WM-230)?$
+    countries:
+    - DE
+    note: Report IT25P384 001. NA protection integrated in the Q-Relay; IQ Combiner 2 EU 3P / IQ System Controller 3 INT listed as grid
+      protection devices. IQ9N-A-ACM-INT(-NM) and IQ9N with IQ Balcony are not in the model list and are not joined.
+- id: de-vde4105-iq-battery-5p-sc3-2024
+  title: TÜV Rheinland A3 60179498 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis — IQ Battery 5P (IQBATTERY-5P-3P-INT) with IQ System
+    Controller 3 INT
+  url: https://enphase.com/de-de/download/iq-battery-5p-3p-int-iq-system-controller-3-int-vde-ar-n-4105-tuv-konformitatsnachweis
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg)
+  cert_no: A3 60179498 0001
+  issued: '2024-11-19'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'IQ8T: 10.05.12 or later; IQ System Controller: 2.7.6539_rel/31.34 or later'
+  families:
+  - name: IQBATTERY-5P-3P-INT (1- or 3-phase configuration) with IQ System Controller 3 INT (SC100G-M230ROW)
+    match: ^IQBATTERY-5P-3P-INT(-3\.84-[13]P)?(WITHIQSYSTEMCONTROLLERSC100G-M230ROWORIQCOMBINER2EU3PORQ-RELAY-1P-INTORQ-RELAY-3P-INTANDENV-S-EM-230ORENV-S-WM-230|ANDIQSYSTEMCONTROLLER3INT\(SC100G-M230ROW\)|MITIQSYSTEMCONTROLLER\(SC100G-M230ROW\)|ANDQ-RELAY-1P-INTORQ-RELAY-3P-INTORIQSYSTEMCONTROLLER3INT\(SC100G-M230ROW\))?$
+    countries:
+    - DE
+    note: Report IT24KI2Z 001. Battery storage system with microgrid interconnect device (the System Controller is the NA protection).
+      Certified at 3.84 kW / 3.84 kVA (1-phase) or 3 × 1.28 kW (3-phase). The register's power-limited settings (-1.65 … -3.68) and
+      the Q-Relay-only / IQ Combiner-only combinations are not joined; IQBATTERY-5P-1P-INT is a different unit.
+- id: de-vde4105-iq-battery-3t-10t-2022
+  title: TÜV Rheinland A3 60166895 0001 — VDE-AR-N 4105:2018-11 Konformitätsnachweis — IQ Battery 3T / 10T (B03-T01-INT00-1-2) with
+    Q-Relay and Envoy-S
+  url: https://enphase.com/de-de/download/iq-battery-3t-iq-battery-10t-i-iq-relay-1p3p-vde-ar-n-41052018-11-einheitenzertifikat
+  issuer: TÜV Rheinland LGA Products GmbH (Zertifizierungsstelle, Nürnberg)
+  cert_no: A3 60166895 0001
+  issued: '2022-11-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 2.1.26
+  families:
+  - name: IQ Battery 3T / 10T (formerly Encharge 3T / 10T; battery unit B03-T01-INT00-1-2) with Q-RELAY-1P/3P-INT and Envoy-S Metered
+    match: ^(B03-T01-INT00-1-2(MITQ-RELAY-1P-INT|MITQ-RELAY-3P-INTUNDENV-S-EM-230)|ENCHARGE-(3T|10T)-1P-INT)$
+    countries:
+    - DE
+    note: Report IT22OA34 001. Self-consumption single-phase storage system; SEmax 1.28 kVA per B03 unit. Supersedes for the same unit
+      the maker-hosted A3 60165459 0001 of 2022-08-23 ("Encharge", report IT21TRQE 001, https://enphase.com/de-de/download/b03-t01-int00-1-2-iq-battery-vde-arn-4105-konformitatsnachweis).
+      ENCHARGE-3T/10T-1P-INT are joined as the earlier product name of the IQ Battery 3T/10T built from B03 units.

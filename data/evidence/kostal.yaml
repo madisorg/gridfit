@@ -647,3 +647,111 @@ documents:
     countries:
     - ES
     note: Report CN234STH 005.
+- id: de-vde4105-eze-plenticore-g3-2026
+  title: Kiwa Primara 24-091-04 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — PLENTICORE S/M/L G3 4.0–20.0, PLENTICORE BI 25 G3
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2296_Z-VDE-AR-N-4105_2018_Einheitenzertifikat_PLENTICORE-G3_de.pdf
+  issuer: Kiwa Primara GmbH, Kaufbeuren
+  cert_no: 24-091-04
+  issued: '2026-06-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):(2020-06)
+  firmware: 3.06.00
+  families:
+  - name: PLENTICORE S G3 4.0/5.5/7.0, M G3 8.5/10.0/12.5, L G3 15.0/17.5/20.0
+    match: ^PLENTICORE(G3[LMS]|LG3((15|17\.5|20)(\.0|KW)?)?|MG3((8\.5|10|12\.5)(\.0|KW)?)?|SG3((4|5\.5|7)(\.0|KW)?)?)$
+    countries:
+    - DE
+    note: Unit certificate (test report 22PP512-01_5 of 2026-05-22, programme SOP-9-1_15 GCC, 11 pp. with E.5 extract), revision 04
+      of 24-091 (earlier revisions superseded). Transformerless hybrid inverters, two relays in series; PAV,E monitoring with KSEM G2,
+      KEM C or KEM P. Sizes S/M/L are one hardware each with a software power extension (two steps), so the bare "PLENTICORE S/M/L G3"
+      rows are joined too. The MP G3 family (PLENTICOREMP…) is a different unit and is not joined.
+  - name: PLENTICORE BI 25 G3 (battery inverter)
+    match: ^PLENTICOREBI25G3$
+    countries:
+    - DE
+    note: Same certificate; BI 25 G3 is listed as its own unit type.
+- id: de-vde4105-na-plenticore-g3-2026
+  title: Kiwa Primara 24-092-04 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — PLENTICORE S/M/L G3, PLENTICORE BI 25 G3
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2297_Z-VDE-AR-N-4105_2018_NA-Schutz_PLENTICORE-G3_de.pdf
+  issuer: Kiwa Primara GmbH, Kaufbeuren
+  cert_no: 24-092-04
+  issued: '2026-06-02'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):(2020-06)
+  firmware: 3.06.00
+  families:
+  - name: PLENTICORE S G3 4.0/5.5/7.0, M G3 8.5/10.0/12.5, L G3 15.0/17.5/20.0
+    match: ^PLENTICORE(G3[LMS]|LG3((15|17\.5|20)(\.0|KW)?)?|MG3((8\.5|10|12\.5)(\.0|KW)?)?|SG3((4|5\.5|7)(\.0|KW)?)?)$
+    countries:
+    - DE
+    note: Integrated NA protection (test report 22PP512-01_5); E.7 settings with trip values (U>> 287.5 V, U> 253.0 V 10-min mean, U<
+      184.0 V, U<< 103.5 V, f< 47.5 Hz, f> 51.5 Hz) — the 2018-11 settings. Revision 04 (earlier revisions superseded).
+  - name: PLENTICORE BI 25 G3 (battery inverter)
+    match: ^PLENTICOREBI25G3$
+    countries:
+    - DE
+    note: Same NA-protection certificate.
+- id: de-vde4105-eze-plenticore-plus-g2-2022
+  title: Bureau Veritas U22-0449 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — PLENTICORE plus 3.0–10 G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1978_Z-VDE-AR-N-4105-2018-Einheitenzertifikat_PLENTICORE-plus-G2_de.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U22-0449
+  issued: '2022-08-10'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '02.04'
+  families:
+  - name: PLENTICORE plus G2 3.0/4.2/5.5/7.0/8.5/10
+    match: ^PLENTICORE(PLUS(3\.0|4\.2|5\.5|7\.0|8\.5|10)G2|PLUSG2(3\.0|4\.2|5\.5|7\.0|8\.5|10))$
+    countries:
+    - DE
+    note: Unit certificate (report 19TH0374-G2-VDE0124-100:2020_0, programme NSOP-0032-DEU-ZE-V01, 10 pp. with E.4/E.5 extract). PV
+      inverter with battery input, two relays in series. The NA-protection certificate of this family was not found on the maker's server
+      (see manual.md). First-generation PLENTICORE plus rows are joined by de-vde4105-eze-piko-iq-plenticore-plus-2020.
+- id: de-vde4105-eze-piko-iq-plenticore-plus-2020
+  title: Kiwa Primara 19-089-04 — Unit certificate VDE-AR-N 4105:2018-11 — PIKO IQ and PLENTICORE plus 3.0–10 (first generation)
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/1602_Z-VDE-AR-N-4105-2018-Einheitenzertifikat_PIKO-IQ_PLENTI_en.pdf
+  issuer: Kiwa Primara GmbH, Kaufbeuren
+  cert_no: 19-089-04
+  issued: '2020-09-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - E DIN VDE V 0124-100 (VDE V 0124-100):((2019-04)) Arbeitsstand 27.03.2019
+  families:
+  - name: PIKO IQ 3.0–10 and PLENTICORE plus 3.0–10 (first generation)
+    match: ^(PLENTICOREPLUS|PIKOIQ)(3\.0|4\.2|5\.5|7\.0|8\.5|10)$
+    countries:
+    - DE
+    note: English version of the unit certificate (test report 17PP205-28_2 of 2020-09-04, programme SOP-9-1_13 GCC). Tested to the
+      2019-04 draft of VDE V 0124-100, not the 2020-06 edition; no firmware version printed on pages 1–2. The G2 rows are a different
+      unit and are not joined. The companion NA-protection certificate (1603_…) is no longer on the maker's server (see manual.md).
+- id: de-vde4105-na-plenticore-bi-g2-2023
+  title: Bureau Veritas U23-0231 — Zertifikat für den NA-Schutz VDE-AR-N 4105:2018-11 — PLENTICORE BI 5.5/26 G2, 10/26 G2
+  url: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/Zertifikate-Herstellererklaerungen/2007_Z-VDE-AR-N-4105-2018_NA-Schutz_PLENTICORE_BI-G2.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U23-0231
+  issued: '2023-03-16'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: '02.06'
+  families:
+  - name: PLENTICORE BI G2 5.5/26 and 10/26 (battery inverter)
+    match: ^PLENTICOREBI((5\.5|10)/26G2|G2(5\.5|10)/26)$
+    countries:
+    - DE
+    note: Integrated NA protection (report 19TH0374-BI-G2-VDE0124-100:2020_0); companion of the unit certificate U23-0230 already in
+      the repo (de-vde4105-plenticore-bi-g2-2023).

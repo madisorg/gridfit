@@ -1,0 +1,51 @@
+# Evidence layer — see the rule below. URLs are the makers' own. Documents with an id in tools/evidence/sources.yaml
+# are written by tools/evidence/build.py from the maker's file; the others were transcribed by hand. Do not edit the
+# generated ones here: change the mapping in sources.yaml and rebuild.
+brand: RCT Power
+maker_site: https://www.rct-power.com/
+rule: 'Facts transcribed from the maker''s own document on the seen date: a released-countries table (an X per family and country),
+  the list of country / grid-code settings in the firmware, or a certificate / test-lab declaration against the named standard, with
+  the models it lists. GridFit shows it as "fit by the maker''s document" in that country; the grid operator decides at the application,
+  and where a country has a public list the list is the answer. Model codes are joined by `match`, a regex over the register code (upper
+  case, spaces removed, comma read as a point).'
+documents:
+- id: de-vde4105-eze-power-inverter-storage-4-6-2020
+  title: Bureau Veritas U20-0978 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Power Inverter 4.0/5.0/6.0, Power Storage DC 4.0/5.0/6.0,
+    Power Storage AC 4.0/6.0
+  url: https://www.rct-power.com/files/Download-Bereich/Download%20Bereich%20DE/9_Zertifikate/Z34_Einheitenzertifikat_VDE-AR-N_4105-2018-11IN-STA_STD6Web20V2DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U20-0978
+  issued: '2020-12-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - 'DIN VDE V 0124-100 (VDE V 0124-100): 2020-06'
+  firmware: 'SW: V2.3 und höher'
+  families:
+  - name: RCT Power Inverter 4.0/5.0/6.0, Power Storage DC 4.0/5.0/6.0, Power Storage AC 4.0/6.0
+    match: ^POWER(INVERTER(4|5|6)\.0|STORAGEDC(4|5|6)\.0|STORAGEAC(4|6)\.0)$
+    countries:
+    - DE
+    note: Report 19TH0431-VDE-0124-100:2020_1, programme NSOP-0032-DEU-ZE-V01; includes P_AV,E monitoring. NA-protection certificate
+      U20-0980 (same date, integrated NA protection with integrated coupling switch) is Z36_… beside it. Not joined — the register's
+      "_BX" and "…LAN" rows, which the certificate does not name.
+- id: de-vde4105-eze-power-storage-dc-8-10-2020
+  title: Bureau Veritas U20-0672 — Einheitenzertifikat VDE-AR-N 4105:2018-11 — Power Storage DC 8.0 / 10.0
+  url: https://www.rct-power.com/files/Download-Bereich/Download%20Bereich%20DE/9_Zertifikate/Z37_Einheitenzertifikat_VDE-AR-N_4105-2018-11STD8.10Web20V1DE.pdf
+  issuer: Bureau Veritas Consumer Products Services Germany GmbH (ISO/IEC 17065)
+  cert_no: U20-0672
+  issued: '2020-12-09'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - VDE-AR-N 4105:2018-11
+  - DIN VDE V 0124-100 (VDE V 0124-100):2020-06
+  firmware: 'SW: V2.3 und höher'
+  families:
+  - name: RCT Power Storage DC 8.0 / 10.0
+    match: ^POWERSTORAGEDC(8|10)\.0$
+    countries:
+    - DE
+    note: Report 19TH0431-DC 10.0-VDE0124-100:2020_0. Rated active power 8.0 / 9.9 kW. NA-protection certificate U20-0676 is Z38_… beside
+      it. The register's "_BX" and "LAN" rows are not joined.
