@@ -203,6 +203,8 @@ GW = {  # file stem: (phases, [(code, mppt, ac_kw, ac_kva, ac_a)])
         ("GW5000-ES-20", 2, 5.0, 5.0, 22.7), ("GW5000M-ES-20", 2, 5.0, 5.0, 22.7), ("GW6000-ES-20", 2, 6.0, 6.0, 27.3), ("GW6000M-ES-20", 2, 6.0, 6.0, 27.3)]),
     "GW_ETx2015-30kW_Datasheet-EN": (3, [
         ("GW15K-ET", 2, 15.0, 15.0, 22.7), ("GW20K-ET", 2, 20.0, 20.0, 30.3), ("GW25K-ET", 3, 25.0, 25.0, 37.9), ("GW29.9K-ET", 3, 29.9, 29.9, 45.5), ("GW30K-ET", 3, 30.0, 30.0, 45.5)]),
+    "GW_ET_Datasheet-EN": (3, [  # CZ 2026-11-12: 'Nominal Apparent Power Output to Utility Grid (VA)' (ac_kva), 'Max. AC Current Output to Utility Grid (A)'
+        ("GW5K-ET", 2, None, 5.0, 8.5), ("GW6.5K-ET", 2, None, 6.5, 10.8), ("GW8K-ET", 2, None, 8.0, 13.5), ("GW10K-ET", 2, None, 10.0, 16.5)]),
     "GW_MS_Datasheet-EN": (1, [("GW5000-MS", 3, 5.0, None, 25.0), ("GW6000-MS", 3, 6.0, None, 30.0), ("GW7000-MS", 3, 7.0, None, 35.0), ("GW8500-MS", 3, 8.5, None, 42.5), ("GW10K-MS", 3, 10.0, None, 45.5)]),
     "GW_MT_Datasheet-EN": (3, [
         ("GW50KN-MT", 4, 50.0, 50.0, 80.0), ("GW60KN-MT", 4, 60.0, 60.0, 96.0), ("GW50KBF-MT", 4, 50.0, 50.0, 80.0), ("GW60KBF-MT", 4, 60.0, 60.0, 96.0),
@@ -213,6 +215,7 @@ GW = {  # file stem: (phases, [(code, mppt, ac_kw, ac_kva, ac_a)])
         ("GW700-XS", 1, 0.7, 0.7, 3.5), ("GW1000-XS", 1, 1.0, 1.0, 4.8), ("GW1500-XS", 1, 1.5, 1.5, 7.2), ("GW2000-XS", 1, 2.0, 2.0, 9.6), ("GW2500-XS", 1, 2.5, 2.5, 12.0),
         ("GW3000-XS", 1, 3.0, 3.0, 14.3)]),
 }
+GW_READ = {"GW_ET_Datasheet-EN": ("2026-11-12", "GoodWe-Single page-20220111-EN-V2.0")}  # (seen, version) of a sheet added later
 GW_MATCH = {"GW5000-DNS-30": "^GW5000-DNS-(EU)?30$", "GW5000-EH": "^GW5000-EH(-BE)?$"}  # the Belgian / EU spellings of the same sheet's model
 
 
@@ -222,7 +225,8 @@ def goodwe():
     for stem, (ph, rows) in GW.items():
         pdf = stem + ".pdf"
         sid = stem.replace("_Datasheet-EN", "").replace("GW_", "").replace("x20", "-").lower()
-        sources.append({"id": sid, "url": urls.get(pdf, ""), "file": pdf, "version": "", "note": "the sheet carries no version or date", "seen": SEEN})
+        seen, ver = GW_READ.get(stem, (SEEN, ""))
+        sources.append({"id": sid, "url": urls.get(pdf, ""), "file": pdf, "version": ver, "note": "" if ver else "the sheet carries no version or date", "seen": seen})
         for code, mp, ackw, kva, aca in rows:
             m = row(code, mp, ackw, kva, aca, ph, None, sid)
             if code in GW_MATCH:
@@ -1342,7 +1346,77 @@ def sofar():
     hand_brand("sofar", "Sofar", "https://www.sofarsolar.eu/", "sofar", SOFAR)
 
 
+# Dražice (Družstevní závody Dražice, CZ): product sheets ("PL-…pdf") on each inverter page of www.dzd.cz and the solar
+# catalogue (2025-10) for the two series that have no sheet of their own. Czech sheets, read 2026-11-12 from a rendering of
+# the page (CZ, coverage of ČEZ Distribuce's list). ac_kw = 'Jmenovitý výstupní výkon' (grid side, never EPS); ac_kva = 'Max.
+# zdánlivý (AC / výstupní) výkon'; ac_a = 'Max. výstupní proud' (at 230 V where the sheet gives 220/230 V); pv_kw = 'Max.
+# (doporučený) vstupní / DC výkon'. Phases from the voltage row (3/N/PE, 3P4W -> 3; 220/230/240 V -> 1). ČEZ Distribuce's list
+# writes 'IN.HYBDRID COMPACT S/M' (as printed), 'IN.HYBRID COMPACT 5K-D/M' for the sheet's 5.0K-D/M and 'IN.Hybrid-One 3.0' for
+# 'IN.HYBRID ONE 3.0K-D/M' (the D/M variants of one generation): handled by `match`. Not on any sheet: IN.COMPACT 9.0K.
+DZD = "https://www.dzd.cz/"
+DRAZICE = {  # source id: (url, version, note, phases, rows (code, mppt, ac_kw, ac_kva, ac_a, pv_kw[, match]))
+    "pl-incompact": (DZD + "images/sortiment/in-compact/PL-incompact.pdf", "PDF 2024-09-17", "", 3, [
+        ("IN.COMPACT 3.0K", 2, 3.0, 3.3, 4.8, 6.0), ("IN.COMPACT 4.0K", 2, 4.0, 4.4, 6.4, 8.0), ("IN.COMPACT 5.0K", 2, 5.0, 5.5, 8.0, 10.0),
+        ("IN.COMPACT 6.0K", 2, 6.0, 6.6, 9.6, 12.0), ("IN.COMPACT 8.0K", 2, 8.0, 8.8, 12.8, 16.0), ("IN.COMPACT 10.0K", 2, 10.0, 11.0, 16.0, 20.0),
+        ("IN.COMPACT 12.0K", 2, 12.0, 13.2, 19.1, 24.0), ("IN.COMPACT 15.0K", 2, 15.0, 15.0, 22.7, 30.0)]),
+    "pl-in-entity-s": (DZD + "images/sortiment/in-entity-s/PL-In-Entity-S.pdf", "PDF 2024-09-25",
+        "15–20 kW: '2/3*' MPPT, 'depends on the 2D/3D variant' (mppt null)", 3, [
+        ("IN.ENTITY S 8.0K", 2, 8.0, 8.8, 13.2, 12.0), ("IN.ENTITY S 10.0K", 2, 10.0, 11.0, 16.0, 15.0), ("IN.ENTITY S 12.0K", 2, 12.0, 13.2, 19.3, 18.0),
+        ("IN.ENTITY S 15.0K", None, 15.0, 16.5, 24.2, 22.5), ("IN.ENTITY S 17.0K", None, 17.0, 18.7, 27.5, 25.5),
+        ("IN.ENTITY S 20.0K", None, 20.0, 22.0, 33.6, 30.0), ("IN.ENTITY S 25.0K", 3, 25.0, 27.5, 41.8, 37.5), ("IN.ENTITY S 30.0K", 3, 30.0, 30.0, 45.5, 45.0)]),
+    "pl-in-entity-m": (DZD + "images/sortiment/in-entity-m/PL-In-Entity-M.pdf", "PDF 2024-09-25", "", 3, [
+        ("IN.ENTITY M 50.0K", 5, 50.0, 55.0, 79.7, 75.0), ("IN.ENTITY M 60.0K", 6, 60.0, 66.0, 95.7, 90.0)]),
+    "pl-in-entity-l": (DZD + "images/sortiment/in-entity-l/PL-In-Entity-L.pdf", "PDF 2024-09-25",
+        "MPPT count printed as spanned cells: 9 under 80–110 kW, 12 under 120–150 kW", 3, [
+        ("IN.ENTITY L 80.0K", 9, 80.0, 88.0, 127.6, 120.0), ("IN.ENTITY L 100.0K", 9, 100.0, 110.0, 159.5, 150.0),
+        ("IN.ENTITY L 110.0K", 9, 110.0, 121.0, 175.4, 165.0), ("IN.ENTITY L 120.0K", 12, 120.0, 132.0, 191.3, 180.0),
+        ("IN.ENTITY L 125.0K", 12, 125.0, 132.0, 191.3, 188.0)]),
+    "pl-inhybrid-compact-s": (DZD + "images/sortiment/in-hybrid-compact-s/PL-inhybrid-compact-s.pdf", "PDF 2024-10-29",
+        "rated output printed in VA, taken as kW", 3, [
+        ("IN.HYBRID COMPACT S 15.0K", 2, 15.0, 16.5, 24.0, 30.0, r"^IN\.HYBD?RIDCOMPACTS15\.0K$"),
+        ("IN.HYBRID COMPACT S 19.9K", 2, 19.999, 19.999, 29.0, 40.0, r"^IN\.HYBD?RIDCOMPACTS19\.9K$"),
+        ("IN.HYBRID COMPACT S 20.0K", 2, 20.0, 22.0, 31.9, 40.0, r"^IN\.HYBD?RIDCOMPACTS20\.0K$"),
+        ("IN.HYBRID COMPACT S 25.0K", 3, 25.0, 27.5, 39.9, 50.0, r"^IN\.HYBD?RIDCOMPACTS25\.0K$"),
+        ("IN.HYBRID COMPACT S 30.0K", 3, 30.0, 30.0, 43.5, 60.0, r"^IN\.HYBD?RIDCOMPACTS30\.0K$")]),
+    "pl-stridace-inhybrid-compact-m-cz": (DZD + "images/sortiment/in-hybrid-compact-m/PL-stridace-inhybrid-compact-m-cz.pdf", "PDF 2025-10-10", "", 3, [
+        ("IN.HYBRID COMPACT M 50K", 5, 50.0, 55.0, 83.3, 100.0, r"^IN\.HYBD?RIDCOMPACTM50K$"),
+        ("IN.HYBRID COMPACT M 60K", 6, 60.0, 66.0, 100.0, 120.0, r"^IN\.HYBD?RIDCOMPACTM60K$")]),
+    "pl-stridace-inhybrid-compact-pro-cz": (DZD + "images/sortiment/in-hybrid-compact-pro/PL-stridace-inhybrid-compact-pro-cz.pdf", "PDF 2025-05-23",
+        "the 'max. continuous output current' row (6.7–25.0 A) is below the sheet's own rated current for 5–10 kW; ac_a left null", 3, [
+        ("IN.HYBRID COMPACT PRO 5.0K", 2, 5.0, 5.5, None, 10.0), ("IN.HYBRID COMPACT PRO 6.0K", 2, 6.0, 6.6, None, 12.0),
+        ("IN.HYBRID COMPACT PRO 8.0K", 2, 8.0, 8.8, None, 16.0), ("IN.HYBRID COMPACT PRO 10.0K", 3, 10.0, 11.0, None, 20.0),
+        ("IN.HYBRID COMPACT PRO 12.0K", 3, 12.0, 13.2, None, 24.0), ("IN.HYBRID COMPACT PRO 15.0K", 3, 15.0, 16.5, None, 30.0)]),
+    "katalog-solar-drazice-p19": (DZD + "images/download/katalogy/katalog-solar-drazice.pdf", "catalogue PDF 2025-10-13, p. 19",
+        "IN.HYBRID COMPACT D/M: no sheet of its own; the catalogue's table", 3, [
+        ("IN.HYBRID COMPACT 5.0K-D/M", 2, 5.0, 5.5, 8.1, 10.0, r"^IN\.HYBRIDCOMPACT5(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 6.0K-D/M", 2, 6.0, 6.6, 9.7, 12.0, r"^IN\.HYBRIDCOMPACT6(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 8.0K-D/M", 2, 8.0, 8.8, 12.9, 16.0, r"^IN\.HYBRIDCOMPACT8(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 10.0K-D/M", 2, 10.0, 11.0, 16.1, 20.0, r"^IN\.HYBRIDCOMPACT10(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 12.0K-D/M", 2, 12.0, 13.2, 19.3, 24.0, r"^IN\.HYBRIDCOMPACT12(\.0)?K-D/M$"),
+        ("IN.HYBRID COMPACT 15.0K-D/M", 2, 15.0, 15.0, 24.1, 30.0, r"^IN\.HYBRIDCOMPACT15(\.0)?K-D/M$")]),
+    "katalog-solar-drazice-p17": (DZD + "images/download/katalogy/katalog-solar-drazice.pdf", "catalogue PDF 2025-10-13, p. 17",
+        "IN.HYBRID ONE: no sheet of its own; the catalogue's table; single-phase 220/230/240 V", 1, [
+        ("IN.HYBRID ONE 3.0K-D/M", 2, 3.0, 3.3, 14.4, 4.5, r"^IN\.HYBRID-?ONE3\.0(K(-D/M)?)?$"),
+        ("IN.HYBRID ONE 3.7K-D/M", 2, 3.68, 3.68, 16.0, 5.5, r"^IN\.HYBRID-?ONE3\.7(K(-D/M)?)?$"),
+        ("IN.HYBRID ONE 5.0K-D/M", 2, 5.0, 5.5, 23.9, 7.5), ("IN.HYBRID ONE 6.0K-D/M", 2, 6.0, 6.6, 28.6, 9.0),
+        ("IN.HYBRID ONE 7.5K-D/M", 2, 7.5, 7.5, 32.6, 10.0)]),
+}
+
+
+def drazice():
+    sources, models = [], []
+    for sid, (url, ver, note, ph, rows) in DRAZICE.items():
+        sources.append({"id": sid, "url": url, "file": url.rsplit("/", 1)[1], "version": ver, "note": note, "seen": "2026-11-12"})
+        for r in rows:
+            m = row(r[0], r[1], r[2], r[3], r[4], ph, r[5], sid)
+            if len(r) > 6:
+                m["match"] = r[6]
+            models.append(m)
+    dump("drazice", {"brand": "Dražice", "maker_site": DZD, "rule": RULE, "sources": sources, "models": models})
+
+
 if __name__ == "__main__":
+    drazice()
     deye()
     fronius()
     goodwe()
