@@ -96,7 +96,7 @@ const allRows = {}; let bare = 0, noted = 0;
 for (const x of recs) { for (const [k, v] of Object.entries(x.rows)) allRows[k] = (allRows[k] ?? 0) + v; bare += x.nBare; noted += x.nNote; }
 const tot = Object.values(allRows).reduce((a, b) => a + b, 0);
 const SW = { S: "meets by datasheet", P: "range covers; set at commissioning", D: "meets by maker's document", O: "documented for an older edition", R: "checked by the operator's list",
-  N: "not shown", L: "over a line: other procedure", X: "outside by datasheet", I: "no check" };
+  V: "within by the list's figure", W: "over a line by the list's figure", N: "not shown", L: "over a line: other procedure", X: "outside by datasheet", I: "no check" };
 table(["row state", "rows", "share"], Object.entries(allRows).sort((a, b) => b[1] - a[1]).map(([k, v]) => [`${SW[k] ?? k} (\`${k}\`)`, v, pct(v, tot)]));
 out.push("", `not shown: ${noted} with a reason, ${bare} without`, "");
 table(["model", "models", "share"], [...by("b")].sort((a, b) => b[1] - a[1]).map(([k, v]) => [k, v, pct(v, N)]));

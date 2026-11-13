@@ -40,6 +40,10 @@ edition:
   date: "2026-03"
   in_force: "2026-03-01"
   label: "VDE-AR-N 4105:2026-03"
+  # VDE FNN FAQ to 9.2 (seen 2026-11-12): unit certificates to VDE-AR-N 4105:2018-11 are accepted until 1 March 2027
+  # (the unit must then meet the 2018 properties); after it the 2026-03 certificates are asked for. The engine words an
+  # older-edition row "accepted until 1 March 2027" until then and "documented for a withdrawn edition" after.
+  transition_until: "2027-03-01"
 # a bare year in a citation is read as that norm's one edition of the year ("VDE-AR-N 4105:2018" = 2018-11); without it a
 # 2026 certificate to the 2018 edition fell back to its issue month and counted as the 2026-03 edition (tools/check/run.py)
 edition_years:

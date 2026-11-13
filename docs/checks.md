@@ -16,7 +16,9 @@ today), every requirement of that profile gets **one state**:
 | `X` | outside by datasheet | the sheet's number is present and breaks the rule (an 8 kW single-phase unit in Italy, a 16 kW single-phase unit in Spain) |
 | `D` | meets by maker's document | a declaration or certificate in `data/evidence/<brand>.yaml` releases the model for the country **and** is a kind of document that country's operator takes (`accepts`) |
 | `O` | documented for an older edition | as `D`, but this item changed in a later edition than the one the document cites (`changed_in`) |
-| `R` | checked by the operator's list (the profile's own words: "checked by Elektrilevi's list") | the model is on the country's own list (listed, restricted or time-limited) **and** the profile's `list_checks.items` names the item as one the operator reads before listing. Tried after the datasheet and before the maker's document: the operator having read the papers outranks the maker's paper (added 2026-11-12, Estonia first) |
+| `R` | checked by the operator's list (the profile's own words: "checked by Elektrilevi's list") | the model is on the country's own list (listed, restricted or time-limited) **and** the profile's `list_checks.items` names the item as one the operator reads before listing — and, where `list_checks.only_where` names the item, at least one of the model's list rows carries it (the Dutch storage file, a Polish WOS 2025 row, a Czech A2 category). Tried after the datasheet and before the maker's document: the operator having read the papers outranks the maker's paper (added 2026-11-12, Estonia first). A list item whose applicability the sheet cannot decide (a kW condition, no rated power) is `R` too: the list read it whatever the power |
+| `V` | within by the list's figure | a power line (`max` on `ac_kw` / `ac_kva` with a line `meaning`) on a listed model, where neither the sheet nor a document answers it: the country's own list states the type's power (and phases), and that figure is within the line — or, for a phase-bound line, the list's phases say it does not apply. Weaker than the sheet, never `S` (`list_checks.figures`, 2026-11-12: AT, SE) |
+| `W` | over a line by the list's figure | as `V`, but the list's figure is over the line: another procedure applies, as with `L` |
 | `N` | not shown | neither the sheet nor a document (nor the list) says it — never "fails". Where the profile has the words, the row says why: `list_checks.not_carried` on a listed model, `on_application` on one off the list |
 | `I` | no check | the requirement is optional or sits at the installation's level (`kind: none`) |
 
@@ -57,6 +59,29 @@ list_checks:                       # a model on the operator's own list
 on_application: "neither a datasheet nor a document GridFit holds shows it; off the list, Elektrilevi checks it on the application …"
 ```
 
+Two more `list_checks` keys (2026-11-12, engine round 2) read the list **row**, not only the fact of listing. The row's
+fields come from the parser's `extra` (`tools/registers/parse.py`) through `tools/site_data.py` (`EXTRA`, which now
+carries `wos`) into `web/.data/registers.json`, where the engine reads them:
+
+```yaml
+list_checks:
+  only_where:                      # an item the list checks only on some rows
+    storage: { field: list, match: "^storage$", else: "the type is on the file of generating units only …" }
+  figures: { power: kw, phases: true, phases_not_if: "trefas" }   # the list's own power (kw | kva) and phases column
+```
+
+- `only_where.<item>`: `R` only where one of the model's admitting rows has `extra.<field>` matching the regex; otherwise
+  the row is "not shown" with the `else` sentence (or the maker's document answers it). NL `storage` (the storage file),
+  PL `rocof` (a WOS 2025 row; WOS 2018 confirms 2.0 Hz/s, not 2.5), CZ `power-recovery` and `power-reduction-input`
+  (a "Kategorie VM" with A2).
+- `figures`: the row's `kva` (the parser's power column: AT the Nennscheinleistung in kVA, SE Effekt in kW) and
+  `extra.phases`, taken only where every admitting row of the model gives the same value. A kVA figure bounds the active
+  power from above and a kW figure bounds the apparent power from below, so a kVA figure within a kW line is `V`, a kW
+  figure over a kVA line is `W`, and the two undecidable cases stay "not shown" with that reason. The phases column is
+  skipped on a row whose comment matches `phases_not_if` (a Swedish single-phase unit listed for a three-phase set) and
+  where a model named "230 V" is listed with more than one phase (Victron's 2022 Swedish rows); the row then says so.
+  Belgium has the figures but Synergrid's terms allow personal use only, so `be.yaml` has no `figures` until it agrees.
+
 The engine stores `listed: true` per model × country; the reader (`web/src/lib/checks.ts`) words a plain "not shown" row
 from `not_carried` or `on_application`, so the sentence is not repeated 150 000 times in `checks.json`. `--validate`
 refuses a `list_checks.items` entry that is not a document-provable item. The stats line counts `listed` (models with a
@@ -72,6 +97,7 @@ edition:
   date: "2026-07"                  # YYYY-MM, compared with the document's edition
   in_force: "2026-08-01"           # optional
   label: "CEI 0-21:2026-07"
+  transition_until: "2027-03-01"   # optional (DE): until this day a document to an older edition is accepted
 document_must_cite: ["CEI 0-21"]   # what makes a document a declaration against this country's own rule
 accepts: [national-declaration]    # the kinds of maker's document the operator takes (table above)
 ```
@@ -95,7 +121,9 @@ Every `must_meet` entry keeps its `rule` and `value` sentences (the country page
 | `limit` + `over` / `under` | number + text | `max`: value ≤ limit, else outside with the `over` text; `min` likewise with `under`; `cosphi`: adjustable to ≤ limit |
 | `three_phase_above_kw` | number | `phases`: above it the sheet must say three-phase; up to it either is allowed |
 | `provable_by` | subset of `[datasheet, document, operator]` | the sheet is tried first where it is allowed; a `document` kind is `[document]` only; `operator` goes with `settable` and only with it |
-| `applies` | `classes: [...]`, `below_kw`, `above_kw`, `phases: [1, 3]` | when the item applies; outside it the item is "not applicable". A kW condition with no rated power on the sheet gives "not shown" with the reason |
+| `applies` | `classes: [...]`, `below_kw`, `above_kw`, `phases: [1, 3]` | when the item applies; outside it the item is "not applicable". A kW condition with no rated power on the sheet gives "not shown" with the reason. `classes: [wallbox]` makes the item a charging point's: a wallbox is checked against such items only (every other item is not applicable for it), and only in a country that has one — Italy's `charging-controller` |
+| `from` + `before` | YYYY-MM-DD + text | the day the item starts to apply; until then a row no document covers says "required from 1 January 2027; until then <before>" (`--today` sets the day for the fixture) |
+| `cite` | list of strings | a covering document must also cite one of these for this item (Italy: "Allegato X") |
 | `changed_in` + `changed` | YYYY-MM + text | the edition in which this item changed; a document citing an older edition gets `O` here, with the text |
 | `source` | text | the clause, printed under the requirement |
 
@@ -118,6 +146,11 @@ month it was issued, which is not an edition (a 2026 certificate to the 2018 edi
 with the profile's `edition.date`: older → the summary says "documented for <standards>; n items of <edition>
 unverified", and each item whose `changed_in` is later than the document's edition is `O`. Where several documents
 cover a model in a country, the newest edition is the one shown; the others are counted.
+
+Where the profile's `edition.transition_until` is set (Germany: 2027-03-01, the end of the VDE-AR-N 4105:2026-03
+transition), a document to an older edition carries `until` and the page says "accepted until 1 March 2027" on the
+edition line and on every `O` row. From that day (`withdrawn: true`) every row the document covers is `O` — not only
+the changed ones — and the state reads "documented for a withdrawn edition".
 
 A key of `document_must_cite` (and the generic EN 50549 / EN 50438) counts where a term starts in the standards text:
 Spain's "NTS" is not the end of "requirements", while a key may run on ("OVE-Richtlinie R" names "OVE-Richtlinie R25").
@@ -160,6 +193,13 @@ shown (DC injection, switching frequency, short-circuit current — not on the t
 unit is over two lines (5 kW notification, 16 A EMC), never "outside". Write `data/profiles/gr.yaml` from the sources
 before Greece goes on the site; the fixture's values are not re-read.
 
+Beside it, `profiles/qa.yaml` is an invented "Testland" for the rules no real profile can show on any given day, and the
+fixture runs with `--today 2027-06-01`: the list's figures (`V` within, `W` over, a kVA figure over a kW line left "not
+shown", a sheet that wins over the list, a three-phase-set row and a "230 V" name whose phases column is not used),
+`only_where` (storage from the storage file only), a list item whose kW condition the sheet cannot decide (`R`), the
+charging-point items (`from` before and after the day, `cite` deciding which certificate covers Allegato X, no block in a
+country without such an item) and an edition whose transition has ended (every document row `O`, `withdrawn`).
+
 ## Coverage on 2026-11-01 (origin/main after the evidence PR #4)
 
 13 892 models × 3 countries. Models with at least one datasheet row: 670 per country (the spec layer's reach; 9
@@ -173,7 +213,8 @@ carries the "unverified" count honestly; 39 Estonian certificates predate the 20
 
 - It does not read the datasheet or the declaration itself; both layers are transcribed by hand or by the spec
   harvester, and the check only joins them to the rule.
-- The list's own kVA and phases (AT, BE, SE) are not used as "datasheet" evidence — the sheet is the maker's figure. A
+- The list's own kVA and phases (AT, SE) are never "datasheet" evidence — the sheet is the maker's figure. They answer
+  a power line only as `V` / `W`, below the sheet and the document; Belgium's are not used at all (terms). Otherwise a
   list counts only as the operator's own check, through `list_checks`, and only for the items named there.
 - A document covers an item only through the standard it cites; it does not read the declaration's tick boxes
   ("fit for plants above 11.08 kW", "SPI integrated") as separate facts yet. That is the next field to add to the

@@ -1,0 +1,65 @@
+# TEST FIXTURE, invented: "Testland" proves the engine rules no real profile can show on any day — the list's own
+# figures (V / W, a kVA figure against a kW line, a phases column that does not count), a list item read only from some
+# rows (only_where), an item for a charging point with a start date and a citation of its own, and an edition whose
+# transition has ended. npm test runs the fixture with --today 2027-06-01. Not a country, not data.
+cc: QA
+country: Testland
+decided_by: "the test"
+edition:
+  norm: "QA rule"
+  id: "2025-01"
+  date: "2025-01"
+  label: "QA rule 2025-01"
+  transition_until: "2027-03-01"
+document_must_cite: ["QA rule"]
+accepts: [generic-en50549-1]
+list_checks:
+  word: "checked by Testland's list"
+  what: "the test list"
+  items: [rocof, storage, remote-stop]
+  not_carried: "the test list carries this line on no row"
+  only_where:
+    storage: { field: list, match: "^storage$", else: "on the generation file only" }
+  figures: { power: kva, phases: true, phases_not_if: "trefas" }
+on_application: "the test operator decides"
+must_meet:
+  - id: power-class
+    rule: "Type A (test)"
+    value: "below 250 kW"
+    check: { kind: max, meaning: rfg-type, field: ac_kw, limit: 250, over: "250 kW or more: type B", provable_by: [datasheet, document], source: "test" }
+  - id: single-phase
+    rule: "Single-phase line (test)"
+    value: "single-phase up to 3.68 kVA"
+    check: { kind: max, meaning: procedure, field: ac_kva, limit: 3.68, applies: { phases: [1] }, over: "single-phase over 3.68 kVA: another procedure", provable_by: [datasheet, document], source: "test" }
+  - id: protection
+    rule: "Integrated protection (test)"
+    value: "up to 30 kVA"
+    check: { kind: max, meaning: protection, field: ac_kva, limit: 30, over: "over 30 kVA: a separate relay", provable_by: [datasheet, document], source: "test" }
+  - id: simplified
+    rule: "Simplified procedure (test)"
+    value: "up to 20 kW"
+    check: { kind: max, meaning: procedure, field: ac_kw, limit: 20, over: "over 20 kW: the full procedure", provable_by: [datasheet], source: "test" }
+  - id: rocof
+    rule: "RoCoF (test)"
+    value: "2 Hz/s"
+    check: { kind: document, provable_by: [document], source: "test" }
+  - id: lfsm-o
+    rule: "LFSM-O (test)"
+    value: "from 50.2 Hz"
+    check: { kind: document, provable_by: [document], changed_in: "2025-01", changed: "changed in 2025-01", source: "test" }
+  - id: remote-stop
+    rule: "Remote stop above 0.8 kW (test)"
+    value: "an input that stops output"
+    check: { kind: document, provable_by: [document], applies: { above_kw: 0.8 }, source: "test" }
+  - id: storage
+    rule: "Storage (test)"
+    value: "LFSM-U"
+    check: { kind: document, provable_by: [document], applies: { classes: [battery, hybrid] }, source: "test" }
+  - id: charger
+    rule: "Charging controller (test, Allegato X)"
+    value: "from 2027-01-01"
+    check: { kind: document, provable_by: [document], applies: { classes: [wallbox] }, from: "2027-01-01", before: "none is asked for", cite: ["Allegato X"], source: "test" }
+  - id: charger-later
+    rule: "A later charger rule (test)"
+    value: "from 2028-01-01"
+    check: { kind: document, provable_by: [document], applies: { classes: [wallbox] }, from: "2028-01-01", before: "none is asked for", source: "test" }

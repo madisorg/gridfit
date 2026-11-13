@@ -36,9 +36,11 @@ const listItems = (cc) => (LISTS[cc] ??= new Set(yaml.parse(readFileSync(resolve
 let models = 0, sheetAny = {}, covered = {}, outside = {}, overLine = {}, listedN = {};
 for (const [key, m] of Object.entries(C.models)) {
   models++;
+  // a charging point has a block only in a country with an item written for one (Italy's Allegato X)
+  const charger = Object.keys(m.cc).every((cc) => C.profiles[cc].items.some((it) => it.applies?.classes?.includes("wallbox")));
   for (const cc of ccs) {
     const r = m.cc[cc];
-    ok(r, `${key} ${cc}: entry`);
+    ok(r || charger, `${key} ${cc}: entry`);
     if (!r) continue;
     const items = C.profiles[cc].items;
     const na = new Set(r.na ?? []);
@@ -53,7 +55,11 @@ for (const [key, m] of Object.entries(C.models)) {
       if (row[0] === "L") ok(LINES.has(items[i].meaning), `${key} ${cc}: ${items[i].id} over a line only where the line has that meaning`);
       if (row[0] === "X") ok(!LINES.has(items[i].meaning), `${key} ${cc}: ${items[i].id} a procedure line is never "outside"`);
       if (row[0] === "D" || row[0] === "O") ok(r.doc, `${key} ${cc}: ${items[i].id} ${row[0]} has a document`);
-      if (row[0] === "O") ok(items[i].changed_in && r.doc.edition < items[i].changed_in, `${key} ${cc}: ${items[i].id} is older than the change`);
+      if (row[0] === "O") ok(r.doc.withdrawn || (items[i].changed_in && r.doc.edition < items[i].changed_in), `${key} ${cc}: ${items[i].id} is older than the change`);
+      // the list's figure: a power line on a listed model, worded from the list, never where the sheet states the field
+      if (row[0] === "V" || row[0] === "W") ok(r.listed && LINES.has(items[i].meaning) && ["ac_kw", "ac_kva"].includes(items[i].field) && /^the list: /.test(row[1] ?? ""),
+        `${key} ${cc}: ${items[i].id} ${row[0]} is a listed model's power line, worded from the list`);
+      if (row[0] === "W") ok(!/ within /.test(row[1]), `${key} ${cc}: ${items[i].id} W says over`);
       // checked by the operator's list: only on a model the country's own list admits, only for an item the profile names
       if (row[0] === "R") ok(r.listed && (C.profiles[cc].list ? true : false) && listItems(cc).has(items[i].id), `${key} ${cc}: ${items[i].id} R only for a listed model and a list item`);
     }
@@ -108,7 +114,7 @@ if (trio) {
   eq(old.join(","), "p-of-u,spi-settings", "TRIO × IT: the two 2026-07 items are unverified");
   const sheet = Object.entries(it.rows).filter(([, r]) => r[0] === "S").map(([i]) => id(i)).sort();
   eq(sheet.join(","), "backup-ddi,freq-range,phases,power-class,reactive,spi-integrated,voltage-range", "TRIO × IT: the seven datasheet rows");
-  eq((it.na ?? []).map(id).join(","), "storage", "TRIO × IT: storage does not apply to a PV inverter");
+  eq((it.na ?? []).map(id).join(","), "storage,charging-controller", "TRIO × IT: storage and the charging-point item do not apply to a PV inverter");
   eq(trio.cc.ES.doc, undefined, "TRIO × ES: no Spanish document");
   ok((trio.cc.ES.sum.S ?? 0) >= 2, "TRIO × ES: the datasheet still answers the numeric rows");
 }
@@ -135,6 +141,91 @@ if (trio) {
     eq(one.doc, undefined, "single-phase 6 kW × GR: no document");
   }
 }
+// engine round 2 on the real data
+{
+  const reg = JSON.parse(readFileSync(resolve(here, "../.data/registers.json"), "utf-8"));
+  const POS = ["listed", "restricted", "limited"];
+  const idx = (cc, id) => C.profiles[cc].items.findIndex((x) => x.id === id);
+  const row = (key, cc, id) => { const r = C.models[key]?.cc?.[cc]; const i = idx(cc, id); return r ? ((r.na ?? []).includes(i) ? ["-"] : r.rows?.[String(i)] ?? ["N"]) : null; };
+  const listed = (cc, pred) => reg.devices.filter((d) => !d.unmatched && ["inverter", "hybrid", "battery", "plug-in"].includes(d.cls) && C.models[d.brand + "|" + d.model]
+    && pred((d.cells[cc] ?? []).filter((e) => POS.includes(e.show))));
+  // 1. the list's figure (AT, SE): weaker than the sheet, so a sheet still wins — Sunways STT-40KTL is 45 kW on Rikta Rätt, 40 kW on its sheet
+  eq(row("Sunways|STT-40KTL", "SE", "power-class")?.join("|"), "S|40 kW — within 1500 kW", "Sunways STT-40KTL × SE: the sheet's 40 kW, not the list's 45");
+  eq(row("Sunways|STT-40KTL", "SE", "micro-producer")?.[0], "S", "Sunways STT-40KTL × SE: micro-producer line by the sheet");
+  ok(C.stats.AT.list_figure > 2000 && C.stats.SE.list_figure > 2000, `AT ${C.stats.AT.list_figure} and SE ${C.stats.SE.list_figure} models answered by the list's figure`);
+  eq(C.stats.BE.list_figure ?? 0, 0, "BE: Synergrid's figures are not used (personal-use terms)");
+  // 2. list_checks by the list row: NL storage from the storage file only, PL RoCoF from a WOS 2025 row only, CZ A2 items by VM category
+  eq(row("Anker|X1-H5K-T", "NL", "storage")?.[0], "N", "Anker X1-H5K-T × NL (generation file only): storage not shown");
+  ok(/generating units only/.test(row("Anker|X1-H5K-T", "NL", "storage")?.[2] ?? ""), "Anker X1-H5K-T × NL: the reason names the generation file");
+  eq(row("Afore|AF3K-TH", "NL", "storage")?.[0], "R", "Afore AF3K-TH × NL (both files): storage checked by the list");
+  const wos = (es, y) => es.some((e) => (e.extra?.wos ?? "").includes("WOS " + y));
+  const pl25 = listed("PL", (es) => wos(es, 2025)), pl18 = listed("PL", (es) => es.length && !wos(es, 2025) && wos(es, 2018));
+  ok(pl25.length > 1000 && pl18.length > 100, `PL: ${pl25.length} models with a WOS 2025 row, ${pl18.length} with WOS 2018 rows only`);
+  ok(pl25.every((d) => row(d.brand + "|" + d.model, "PL", "rocof")?.[0] === "R"), "PL: every model with a WOS 2025 row has RoCoF checked by the list");
+  ok(pl18.every((d) => row(d.brand + "|" + d.model, "PL", "rocof")?.[0] !== "R"), "PL: no WOS 2018-only model has RoCoF checked by the list");
+  const a2 = listed("CZ", (es) => es.length && es.every((e) => /A2/.test(e.extra?.category ?? ""))), a1 = listed("CZ", (es) => es.length && !es.some((e) => /A2/.test(e.extra?.category ?? "")));
+  ok(a2.length > 500 && a1.length > 10, `CZ: ${a2.length} models of an A2 category, ${a1.length} without`);
+  for (const id of ["power-recovery", "power-reduction-input"]) {
+    ok(a2.every((d) => ["R", "-"].includes(row(d.brand + "|" + d.model, "CZ", id)?.[0])), `CZ: ${id} checked by the list on every A2-category model where it applies`);
+    ok(a1.every((d) => row(d.brand + "|" + d.model, "CZ", id)?.[0] !== "R"), `CZ: ${id} never checked by the list without category A2`);
+  }
+  // 3. Italian charging points: CEI 0-21 Allegato X from 1 January 2027, and no generator item
+  const wb = reg.devices.filter((d) => !d.unmatched && d.cls === "wallbox" && C.models[d.brand + "|" + d.model]);
+  ok(wb.length > 400, `IT: ${wb.length} charging points have a block`);
+  const before27 = C.built < "2027-01-01";
+  for (const d of wb) {
+    const r = C.models[d.brand + "|" + d.model].cc;
+    eq(Object.keys(r).join(","), "IT", `${d.brand} ${d.model}: a charging point is checked in Italy only`);
+    const x = row(d.brand + "|" + d.model, "IT", "charging-controller");
+    ok(x[0] === "D" || (before27 ? /^required from 1 January 2027/.test(x[2] ?? "") : x[0] === "N"), `${d.brand} ${d.model} × IT: Allegato X ${before27 ? "required from 1 January 2027" : "required"}`);
+    eq((r.IT.na ?? []).length, C.profiles.IT.items.length - 1, `${d.brand} ${d.model} × IT: every generator item is not applicable`);
+  }
+  // 4. Germany's transition: an older-edition row says until when it is accepted, and after that day it is withdrawn
+  const until = C.profiles.DE.edition.transition_until;
+  eq(until, "2027-03-01", "DE: the 2026-03 edition's transition ends on 1 March 2027");
+  let de = 0;
+  for (const [k, m] of Object.entries(C.models)) {
+    const r = m.cc.DE;
+    if (!r?.doc?.older) continue;
+    de++;
+    eq(r.doc.until, until, `${k} × DE: the document carries the transition's end`);
+    eq(r.doc.withdrawn, C.built >= until, `${k} × DE: withdrawn only after the transition`);
+    for (const x of Object.values(r.rows ?? {})) if (x[0] === "O") ok(C.built >= until ? /transition .* ended on 1 March 2027/.test(x[2]) : /accepted until 1 March 2027$/.test(x[2]), `${k} × DE: an older-edition row says until when`);
+  }
+  ok(de > 1000, `DE: ${de} models documented for an older edition`);
+}
+// the fixture's Testland (qa.yaml), run with --today 2027-06-01: what no real profile can show on any day
+{
+  const items = F.profiles.QA.items, at = (key) => {
+    const r = F.models[key]?.cc?.QA;
+    return r ? Object.fromEntries(items.map((it, i) => [it.id, (r.na ?? []).includes(i) ? "-" : (r.rows?.[String(i)] ?? ["N"])[0]])) : null;
+  };
+  const s = (key) => { const x = at(key); return x && Object.entries(x).map(([k, v]) => `${k}=${v}`).join(" "); };
+  const note = (key, id) => F.models[key].cc.QA.rows?.[String(items.findIndex((x) => x.id === id))]?.[2] ?? "";
+  eq(s("Synthetic|LISTED-40"), "power-class=V single-phase=V protection=W simplified=N rocof=R lfsm-o=N remote-stop=R storage=- charger=- charger-later=-",
+    "LISTED-40 (list: 40 kVA, 3-phase, no sheet): within type A, the single-phase line does not apply, over the 30 kVA line, power unknown for applicability resolved by the list");
+  ok(/40 kVA, over the 20 kW line, but not the active power/.test(note("Synthetic|LISTED-40", "simplified")), "LISTED-40: a kVA figure over a kW line is not shown, with the reason");
+  eq(s("Synthetic|ONE-PHASE-6K"), "power-class=S single-phase=L protection=S simplified=S rocof=R lfsm-o=N remote-stop=R storage=- charger=- charger-later=-",
+    "ONE-PHASE-6K (sheet 6 kW single-phase; list 9 kVA three-phase): the sheet wins on every power line");
+  eq(at("Synthetic|LISTED-1PH-HYB").storage, "N", "LISTED-1PH-HYB: storage only from the storage file");
+  eq(note("Synthetic|LISTED-1PH-HYB", "storage"), "on the generation file only", "LISTED-1PH-HYB: only_where's reason");
+  eq(at("Synthetic|MULTI 230 V 48/3000").storage, "R", "MULTI 230 V (storage file): storage checked by the list");
+  for (const k of ["Synthetic|TREFAS-1PH", "Synthetic|MULTI 230 V 48/3000"]) {
+    eq(at(k)["single-phase"], "N", `${k}: the list's phases column is not used`);
+    ok(/not the unit's own phase count/.test(note(k, "single-phase")), `${k}: and the row says why`);
+  }
+  eq(s("Synthetic|WALLBOX-NODOC").replace(/^.*charger=/, "charger="), "charger=N charger-later=N", "WALLBOX-NODOC: both charger rows not shown");
+  eq(note("Synthetic|WALLBOX-NODOC", "charger-later"), "required from 1 January 2028; until then none is asked for", "WALLBOX-NODOC: before `from`, the row says from when");
+  eq(note("Synthetic|WALLBOX-NODOC", "charger"), "", "WALLBOX-NODOC: after `from`, a plain not shown");
+  eq(at("Synthetic|WALLBOX-11").charger, "N", "WALLBOX-11: a certificate without Allegato X does not cover the charger item");
+  eq(at("Synthetic|WALLBOX-22").charger, "D", "WALLBOX-22: a certificate citing Allegato X does");
+  eq(Object.keys(F.models["Synthetic|WALLBOX-22"].cc).join(","), "QA", "a charging point has no block where no item names it (GR)");
+  const g = F.models["GoodWe|GW10K-ET-20"].cc.QA;
+  eq(g.doc?.withdrawn, true, "GW10K × QA: the transition ended on 2027-03-01, so the 2023 certificate is for a withdrawn edition");
+  eq(s("GoodWe|GW10K-ET-20"), "power-class=S single-phase=- protection=S simplified=S rocof=O lfsm-o=O remote-stop=O storage=O charger=- charger-later=-",
+    "GW10K × QA: after the transition every document row is O, not only the changed one");
+}
+
 // an honest "outside": a single-phase unit over 6 kW in Italy, judged on its sheet
 const one = Object.entries(C.models).find(([, m]) => m.cc.IT.rows && Object.values(m.cc.IT.rows).some((r) => r[0] === "X" && /1-phase/.test(r[1])));
 ok(one, "an 8 kW single-phase unit is outside the Italian phase rule by its datasheet");

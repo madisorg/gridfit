@@ -47,6 +47,10 @@ list_checks:
   what: "Netbeheer Nederland lists a type, for all Dutch grid operators, once its supplier has shown that it meets the RfG as the Netherlands applies it; a conformity certificate to EN 50549-1 / NEN-EN 50549-1 from an accredited body is in any case enough (the list's own heading, read in the version of 11 November 2026; certification note of 2020-10-21; energieleveren.nl's form for a new inverter asks brand, type, firmware, rated active power, maximum apparent power and the certificate). The rows carry brand and type only — no firmware, certificate or date — so the edition each type was read against is not stated."
   items: [freq-range, rocof, lfsm-o, under-frequency, protection-settings, reconnection, remote-stop, reactive, anti-islanding, storage]
   not_carried: "the list names brand and type only — no rated power or phases; the grid operator applies this line to the installation at registration, from the maximum capacity on the installation document"
+  # Netbeheer Nederland keeps two files: generating units and storage. The storage response is read only for a type on
+  # the storage file (the row's `list`, tools/registers/parse.py read_nl).
+  only_where:
+    storage: { field: list, match: "^storage$", else: "the type is on Netbeheer Nederland's file of generating units only; the storage file, whose listing covers the storage response, does not name it, so the grid operator applies this line at registration" }
 # A model off the list, for a row neither a datasheet nor a document GridFit holds shows (certification note 2020-10-21)
 on_application: "neither a datasheet nor a document GridFit holds shows it; off the list, the grid operator decides at registration on energieleveren.nl — an EN 50549-1 / NEN-EN 50549-1 certificate from an accredited body is in any case enough, and without one the operator says what it needs instead"
 must_meet:

@@ -1,0 +1,37 @@
+# TEST FIXTURE, invented: two charging-point certificates for the Testland profile (qa.yaml) — one cites Allegato X,
+# one does not, so the charger item's own `cite` decides. Not part of data/evidence.
+brand: Synthetic
+maker_site: ''
+rule: fixture
+documents:
+- id: charger-allegato-x
+  title: Invented charger certificate citing Allegato X
+  url: https://example.invalid/x.pdf
+  issuer: test
+  cert_no: X-1
+  issued: '2026-09-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  - CEI 0-21;V1:2026-08 Allegato X
+  families:
+  - name: WALLBOX-22
+    match: ^WALLBOX-22$
+    countries: []
+    accepted_in: [QA]
+- id: charger-plain
+  title: Invented charger certificate without Allegato X
+  url: https://example.invalid/plain.pdf
+  issuer: test
+  cert_no: X-2
+  issued: '2026-09-01'
+  seen: '2026-11-12'
+  kind: certificate
+  standards:
+  - EN 50549-1:2019
+  families:
+  - name: WALLBOX-11
+    match: ^WALLBOX-11$
+    countries: []
+    accepted_in: [QA]

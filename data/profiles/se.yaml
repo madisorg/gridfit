@@ -56,6 +56,10 @@ list_checks:
   what: "Energiföretagen lists a model on Rikta Rätt after reading its signed application form — the EIFS 2018:2 frequency, RoCoF, LFSM-O, under-frequency and reconnection requirements, the ALP protection settings the unit can be set to and the logic interface, ticked item by item — against its RfG / EN 50549-1, EMC and LVD certificates (the Rikta Rätt page and form, version 2025). Energiföretagen checks papers only: no test report is verified and nothing is tested, and the list is not binding — the local grid operator decides."
   items: [freq-range, voltage-range, rocof, lfsm-o, under-frequency, reconnection, lom-protection, anti-islanding, logic-interface]
   not_carried: "Rikta Rätt states the applicant's kW and phases but no rated current and no datasheet, and its 1.0 review is not adapted to storage; the local grid operator applies this line to the plant on the installer's pre-notification (föranmälan)"
+  # The list's Effekt (kW) and Antal faser for the power lines a sheet does not answer. The phases column is the
+  # applicant's, not the maker's phase count: a row listed "får enbart anslutas i trefaskoppling" is a single-phase unit
+  # in a three-phase set, so its phases are not used (docs/register-check.md, SE quirk 5).
+  figures: { power: kw, phases: true, phases_not_if: "trefas" }
 # A model off Rikta Rätt, for a row neither a datasheet nor a document GridFit holds shows (Ellevio type-A form 2025-09;
 # Vattenfall 2026 point 5; Rikta Rätt page: listing is not a prerequisite)
 on_application: "neither a datasheet nor a document GridFit holds shows it; off Rikta Rätt, the local grid operator checks it on the installer's pre-notification (föranmälan) — the protection-settings and power-quality tables of its type-A form, filled from the type-test protocol, with RfG / EN 50549-1, EMC and LVD certificates"
