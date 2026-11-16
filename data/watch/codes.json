@@ -308,6 +308,13 @@
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
  },
+ "2GIGAWATTSTUNDENBATTERIESPEICHER": {
+  "baseline": false,
+  "brand": "Chint",
+  "code": "2-Gigawattstunden-Batteriespeicher",
+  "first_seen": "2026-11-16",
+  "source": "pv-magazine-de"
+ },
  "30YEAR": {
   "baseline": false,
   "brand": "Solarwatt",
@@ -574,6 +581,13 @@
   "first_seen": "2026-11-02",
   "source": "pv-magazine-de"
  },
+ "4STUNDENSPEICHER": {
+  "baseline": false,
+  "brand": "Chint",
+  "code": "4-Stunden-Speicher",
+  "first_seen": "2026-11-16",
+  "source": "pv-magazine-de"
+ },
  "4YOU4BUSINESS": {
   "baseline": true,
   "brand": "Chint",
@@ -587,6 +601,13 @@
   "code": "50572d9",
   "first_seen": "2026-10-31",
   "source": "evcc-releases"
+ },
+ "512KWH": {
+  "baseline": false,
+  "brand": "Deye",
+  "code": "5-12KWH",
+  "first_seen": "2026-11-16",
+  "source": "deye-products"
  },
  "515CB14": {
   "baseline": true,
@@ -3243,6 +3264,13 @@
   "first_seen": "2026-10-31",
   "source": "deye-products"
  },
+ "SEF16LITE": {
+  "baseline": false,
+  "brand": "Deye",
+  "code": "SE-F16-LITE",
+  "first_seen": "2026-11-16",
+  "source": "deye-products"
+ },
  "SEF16MAX": {
   "baseline": true,
   "brand": "Deye",
@@ -3326,6 +3354,13 @@
   "code": "SMT",
   "first_seen": "2026-10-31",
   "source": "goodwe-pages"
+ },
+ "STORIONLCTB150": {
+  "baseline": false,
+  "brand": "Alpha ESS",
+  "code": "Storion-LC-TB150",
+  "first_seen": "2026-11-16",
+  "source": "solarserver"
  },
  "SUN": {
   "baseline": true,

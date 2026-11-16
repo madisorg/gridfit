@@ -1,5 +1,28 @@
 [
  {
+  "date": "2026-11-16",
+  "added": [
+   "evcc:kaco-nh3:blueplanet hybrid NH3:KACO | blueplanet hybrid NH3",
+   "evcc:sonoff-pro-3pct120:Pro-3PCT120:SONOFF | Pro-3PCT120",
+   "evcc:tesla-powerwall-pypowerwall-server:Powerwall (pypowerwall-server):Tesla | Powerwall (pypowerwall-server)"
+  ],
+  "removed": [],
+  "changed": [
+   {
+    "row": "evcc:anker-solix-x1:SOLIX X1 Hybrid Inverter:Anker SOLIX | SOLIX X1 hybrid",
+    "field": "control",
+    "old": "read",
+    "new": "write"
+   },
+   {
+    "row": "evcc:sungrow-ihm:iHomeManager (iHM):Sungrow | SH hybrid inverters",
+    "field": "control",
+    "old": "write",
+    "new": "read"
+   }
+  ]
+ },
+ {
   "date": "2026-11-09",
   "added": [
    "evcc:sigenergy:SigenStor EC:Sigenergy | SigenStor EC"

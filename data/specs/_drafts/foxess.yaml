@@ -178,6 +178,30 @@ sources:
   title: T Series datasheet
   sha256: bca7f5f5e2d99531f7d7bc6535087742cb6d53af5f3c38aaafbb5c27c913fc67
   seen: '2026-11-09'
+- id: enp3plusdatasheetv1.320261028
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENP3PlusDatasheetV1.320261028.pdf
+  file: ENP3PlusDatasheetV1.320261028.pdf
+  title: P3 Plus Datasheet
+  sha256: 29808484566e72ae13558c0d20c66bae828be5219edb2eb76e75949d1d141dab
+  seen: '2026-11-16'
+- id: enp3prodatasheetv1.320260605
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENP3PRODatasheetV1.320260605.pdf
+  file: ENP3PRODatasheetV1.320260605.pdf
+  title: P3 Pro Datasheet
+  sha256: 5f5f7aee19e5f2e74932db14890f023df44c35aa526e01606617f96962631026
+  seen: '2026-11-16'
+- id: enp3sdatasheetv1.320260605
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENP3SDatasheetV1.320260605.pdf
+  file: ENP3SDatasheetV1.320260605.pdf
+  title: P3-S Datasheet
+  sha256: 39ceef8e0029dba0d82c88423b617d342ffe3c13d3ff7075c267d5f0bdfa16b0
+  seen: '2026-11-16'
+- id: enh3plusdatasheetv2.920261022
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENH3PlusDatasheetV2.920261022.pdf
+  file: ENH3PlusDatasheetV2.920261022.pdf
+  title: H3 Plus Datasheet
+  sha256: dac36146bb4872840196fd94ff91e4fc69be7e3dc911dacdd69f752d8acbf68b
+  seen: '2026-11-16'
 models:
 - code: EQ5000-P-L2
   mppt: null
@@ -2144,3 +2168,229 @@ models:
     mppt: 2+2
     ac_va: '33000'
     phases: 4.5 6.1 7.6 9.1 12.1 15.2 18.2 22.7 25.8 30.3 34.8 37.9 45.5
+- code: P3-50-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enp3plusdatasheetv1.320261028
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-60-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enp3plusdatasheetv1.320261028
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-80-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enp3plusdatasheetv1.320261028
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-100-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enp3plusdatasheetv1.320261028
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-125-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enp3plusdatasheetv1.320261028
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-Pro-15.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: enp3prodatasheetv1.320260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: P3-Pro-20.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: enp3prodatasheetv1.320260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: P3-Pro-25.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: enp3prodatasheetv1.320260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: P3-Pro-30.0
+  mppt: 3
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: null
+  source: enp3prodatasheetv1.320260605
+  raw:
+    mppt: '3'
+    phases: 400 230 380 220 3L
+- code: P3-5.0-SH
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 11.0
+  source: enp3sdatasheetv1.320260605
+  raw:
+    mppt: 20/20
+    pv_w: '11000'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: P3-6.0-SH
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 13.2
+  source: enp3sdatasheetv1.320260605
+  raw:
+    mppt: 20/20
+    pv_w: '13200'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: P3-8.0-SH
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 17.6
+  source: enp3sdatasheetv1.320260605
+  raw:
+    mppt: 20/20/20
+    pv_w: '17600'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: P3-10.0-SH
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 18.0
+  source: enp3sdatasheetv1.320260605
+  raw:
+    mppt: 20/20/20
+    pv_w: '18000'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: P3-12.0-SH
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 22.5
+  source: enp3sdatasheetv1.320260605
+  raw:
+    mppt: 20/20/20
+    pv_w: '22500'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: P3-15.0-SH
+  mppt: 20
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: 3
+  pv_kw: 22.5
+  source: enp3sdatasheetv1.320260605
+  raw:
+    mppt: 20/20/20
+    pv_w: '22500'
+    phases: 400/230; 380/220, 3L/N/PE
+- code: H3-50-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enh3plusdatasheetv2.920261022
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-60-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enh3plusdatasheetv2.920261022
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-80-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enh3plusdatasheetv2.920261022
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-100-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enh3plusdatasheetv2.920261022
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-125-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enh3plusdatasheetv2.920261022
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190

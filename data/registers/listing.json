@@ -80,7 +80,7 @@
 }
 },
 "SE": {
-"name": "Sweden - Rikta Rätt — växelriktare för solceller",
+"name": "Sweden - Rikta Rätt — omriktare för det svenska lågspänningsnätet",
 "url": "https://www.energiforetagen.se/energifakta/elsystemet/produktion/solceller/rikta-ratt--vaxelriktare-for-solceller",
 "snapshot": "2026-10-23",
 "scope": {
@@ -8538,6 +8538,17 @@
 },
 "trust": "alias",
 "page": "registers/brand/deye/sun-36k-g04/"
+},
+{
+"brand": "Deye",
+"model": "SUN-3.6K-G04",
+"norm": "SUN36KG04",
+"class": "inverter",
+"registers": {
+"EE": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/deye/"
 },
 {
 "brand": "Deye",
@@ -55103,6 +55114,17 @@
 },
 {
 "brand": "Sofar",
+"model": "3,3KTLX-G3",
+"norm": "33KTLXG3",
+"class": "inverter",
+"registers": {
+"EE": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/sofar/"
+},
+{
+"brand": "Sofar",
 "model": "36KTLX-G3",
 "norm": "36KTLXG3",
 "class": "inverter",
@@ -56905,6 +56927,19 @@
 },
 "trust": "alias",
 "page": "registers/brand/sofar/"
+},
+{
+"brand": "Sofar",
+"model": "SOFAR 3.3KTLX-G3",
+"norm": "SOFAR33KTLXG3",
+"class": "inverter",
+"registers": {
+"AT": "listed, time-limited",
+"PL": "listed",
+"SE": "listed"
+},
+"trust": "alias",
+"page": "registers/brand/sofar/sofar-3-3ktlx-g3/"
 },
 {
 "brand": "Sofar",

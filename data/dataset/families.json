@@ -1033,7 +1033,7 @@
   "curated": true,
   "faq": {
    "q": "Does Anker SOLIX SOLIX X1 hybrid work locally with Home Assistant?",
-   "a": "Yes, according to the public sources: the HACS integration “Anker Solix Official” talks to it over the local network and exposes settable entities, not only sensors; evcc supports it locally for metering."
+   "a": "Yes, according to the public sources: the HACS integration “Anker Solix Official” talks to it over the local network and exposes settable entities, not only sensors; evcc supports it locally and lets evcc control it."
   },
   "registers": [
    "AT",
@@ -3047,6 +3047,13 @@
     "registers": {
      "EE": "listed",
      "SE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SUN-3.6K-G04",
+    "registers": {
+     "EE": "listed"
     },
     "trust": "alias"
    },
@@ -18251,6 +18258,18 @@
  },
  {
   "brand": "KACO",
+  "family": "blueplanet hybrid NH3",
+  "class": "hybrid",
+  "curated": false,
+  "faq": {
+   "q": "Does KACO blueplanet hybrid NH3 work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally and lets evcc control it."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
+  "brand": "KACO",
   "family": "KACO inverters (web interface)",
   "class": "inverter",
   "curated": false,
@@ -29386,6 +29405,13 @@
     "trust": "alias"
    },
    {
+    "model": "3,3KTLX-G3",
+    "registers": {
+     "EE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
     "model": "36KTLX-G3",
     "registers": {
      "CZ": "listed",
@@ -30062,6 +30088,15 @@
     "model": "Sofar3,3KTL-X",
     "registers": {
      "EE": "listed"
+    },
+    "trust": "alias"
+   },
+   {
+    "model": "SOFAR 3.3KTLX-G3",
+    "registers": {
+     "AT": "listed, time-limited",
+     "PL": "listed",
+     "SE": "listed"
     },
     "trust": "alias"
    },
@@ -36827,6 +36862,18 @@
   "models": []
  },
  {
+  "brand": "SONOFF",
+  "family": "Pro-3PCT120",
+  "class": "meter",
+  "curated": false,
+  "faq": {
+   "q": "Does SONOFF Pro-3PCT120 work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally for metering."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
   "brand": "SOSSEN",
   "family": "SOSSEN microinverters",
   "class": "plug-in",
@@ -38491,6 +38538,18 @@
   "faq": {
    "q": "Does Tesla Powerwall (gateway or cloud) work locally with Home Assistant?",
    "a": "Yes, according to the public sources: the HACS integration “Tesla Powerwall (pypowerwall)” talks to it over the local network and exposes settable entities, not only sensors."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
+  "brand": "Tesla",
+  "family": "Powerwall (pypowerwall-server)",
+  "class": "hybrid",
+  "curated": false,
+  "faq": {
+   "q": "Does Tesla Powerwall (pypowerwall-server) work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally and lets evcc control it."
   },
   "registers": [],
   "models": []
