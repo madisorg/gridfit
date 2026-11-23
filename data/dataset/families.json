@@ -7190,30 +7190,6 @@
   "models": []
  },
  {
-  "brand": "Envertech",
-  "family": "Envertech microinverters",
-  "class": "plug-in",
-  "curated": false,
-  "faq": {
-   "q": "Does Envertech Envertech microinverters work locally with Home Assistant?",
-   "a": "Only through a cloud service as far as we found (the HACS integration “Envertech Solar”)."
-  },
-  "registers": [],
-  "models": []
- },
- {
-  "brand": "Envertech",
-  "family": "Envertech microinverters (local)",
-  "class": "plug-in",
-  "curated": false,
-  "faq": {
-   "q": "Does Envertech Envertech microinverters (local) work locally with Home Assistant?",
-   "a": "Yes, according to the public sources: the HACS integration “Envertech API” talks to it over the local network, read-only as far as we can tell."
-  },
-  "registers": [],
-  "models": []
- },
- {
   "brand": "ESL",
   "family": "Walli LIGHT",
   "class": "wallbox",
@@ -20890,6 +20866,18 @@
   "faq": {
    "q": "Does Powerfox Powerfox Local work locally with Home Assistant?",
    "a": "Yes, according to the public sources: the HA core integration “Powerfox Local” talks to it over the local network, read-only as far as we can tell."
+  },
+  "registers": [],
+  "models": []
+ },
+ {
+  "brand": "Powerfox",
+  "family": "Powerfox poweropti local",
+  "class": "inverter",
+  "curated": false,
+  "faq": {
+   "q": "Does Powerfox Powerfox poweropti local work locally with Home Assistant?",
+   "a": "We found no Home Assistant integration for it; evcc supports it locally for metering."
   },
   "registers": [],
   "models": []

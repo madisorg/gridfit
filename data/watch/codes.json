@@ -118,6 +118,13 @@
   "first_seen": "2026-11-09",
   "source": "evcc-releases"
  },
+ "12YEAR": {
+  "baseline": false,
+  "brand": "EG4",
+  "code": "12-year",
+  "first_seen": "2026-11-23",
+  "source": "pv-magazine"
+ },
  "133KTLG3": {
   "baseline": true,
   "brand": "Sofar",
@@ -706,6 +713,20 @@
   "code": "5faf778",
   "first_seen": "2026-11-01",
   "source": "evcc-releases"
+ },
+ "5NACH12INSOLVENZREPORT": {
+  "baseline": false,
+  "brand": "sonnen",
+  "code": "5-nach-12-Insolvenzreport",
+  "first_seen": "2026-11-23",
+  "source": "pv-magazine-de"
+ },
+ "5NACH12INSOLVENZREPORTS": {
+  "baseline": false,
+  "brand": "sonnen",
+  "code": "5-nach-12-Insolvenzreports",
+  "first_seen": "2026-11-23",
+  "source": "pv-magazine-de"
  },
  "61FE041": {
   "baseline": true,
@@ -2339,6 +2360,13 @@
   "first_seen": "2026-10-31",
   "source": "solax-products"
  },
+ "IP65RATED": {
+  "baseline": false,
+  "brand": "EG4",
+  "code": "IP65-rated",
+  "first_seen": "2026-11-23",
+  "source": "pv-magazine"
+ },
  "J1": {
   "baseline": true,
   "brand": "SolaX",
@@ -2513,6 +2541,13 @@
   "code": "MC-LC480-2H2",
   "first_seen": "2026-10-31",
   "source": "deye-products"
+ },
+ "MEGALINK": {
+  "baseline": false,
+  "brand": "Fox ESS",
+  "code": "MEGA-LINK",
+  "first_seen": "2026-11-23",
+  "source": "foxess-products"
  },
  "MICG3": {
   "baseline": true,
@@ -3037,6 +3072,13 @@
   "code": "PRO-G3",
   "first_seen": "2026-10-31",
   "source": "solax-products"
+ },
+ "Q32026": {
+  "baseline": false,
+  "brand": "sonnen",
+  "code": "Q3/2026",
+  "first_seen": "2026-11-23",
+  "source": "pv-magazine-de"
  },
  "QUATTRO": {
   "baseline": true,

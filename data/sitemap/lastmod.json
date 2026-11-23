@@ -1,7 +1,7 @@
 {
 "/": [
-"5f2832b75318127c",
-"2026-11-16"
+"71c447ea493ef3a1",
+"2026-11-23"
 ],
 "/4en-s-a/": [
 "a57d9bceff8a9aed",
@@ -124,8 +124,8 @@
 "2026-11-13"
 ],
 "/abb-fimer/pvi-inverters-via-vsn300-vsn700/": [
-"f62ce24ce6944734",
-"2026-11-16"
+"fb5319202bbf7e9b",
+"2026-11-23"
 ],
 "/abb-fimer/terra-ac-ocpp/": [
 "949714cb77ddb9f7",
@@ -436,8 +436,8 @@
 "2026-11-12"
 ],
 "/aferiy/ps240/": [
-"39fa136af4f76141",
-"2026-11-12"
+"5f5ca47079eb0982",
+"2026-11-23"
 ],
 "/afore/": [
 "4145e51999718c92",
@@ -448,8 +448,8 @@
 "2026-11-12"
 ],
 "/afore/inverters-with-a-solarman-wi-fi-lan-logger-stick/": [
-"9a027eb5adf45d2b",
-"2026-11-16"
+"b273997be462e294",
+"2026-11-23"
 ],
 "/afore/model/af1-5k-asl-1/": [
 "00b305f2d9a7c71c",
@@ -1056,8 +1056,8 @@
 "2026-11-13"
 ],
 "/alpha-ess/smile-storion/": [
-"ef0459cc9b0c5843",
-"2026-11-16"
+"b33ffafe454de10c",
+"2026-11-23"
 ],
 "/alphatec/": [
 "b29c05c013175748",
@@ -1268,12 +1268,12 @@
 "2026-11-13"
 ],
 "/anker-solix/solix-solarbank-plug-in/": [
-"fd92c93cd119be54",
-"2026-11-16"
+"9155b0c20dbfc70b",
+"2026-11-23"
 ],
 "/anker-solix/solix-x1-hybrid/": [
-"3c35b98605a4e584",
-"2026-11-16"
+"60d5b7f6205cd7ec",
+"2026-11-23"
 ],
 "/aohai/": [
 "d4b2c414e9d6f322",
@@ -1392,12 +1392,12 @@
 "2026-11-12"
 ],
 "/apsystems/ds3-qs1-qt2-yc-microinverters/": [
-"55fbe846098f8d92",
-"2026-11-16"
+"62060b3dffa06d4c",
+"2026-11-23"
 ],
 "/apsystems/ez1-plug-in-microinverter/": [
-"56b866ee099db40b",
-"2026-11-16"
+"c220d4487c2406ff",
+"2026-11-23"
 ],
 "/apsystems/model/els-3k/": [
 "1dd7506035c08d7f",
@@ -2104,8 +2104,8 @@
 "2026-11-12"
 ],
 "/azimut-energy/azimut-batteries/": [
-"3631757ff12c1789",
-"2026-11-12"
+"a29d52950e74d3bd",
+"2026-11-23"
 ],
 "/azimut-energy/victron-vrm/": [
 "8bcfe5241b62a13a",
@@ -2128,8 +2128,8 @@
 "2026-11-12"
 ],
 "/base-power/base-power-home-battery/": [
-"717cc5406ac4c73d",
-"2026-11-16"
+"9766e760f5e66cfe",
+"2026-11-23"
 ],
 "/bateria-energy-technology-xi-an-co-ltd/": [
 "583a2eab2d10d1f5",
@@ -2268,8 +2268,8 @@
 "2026-11-12"
 ],
 "/bluetti/bluetti-power-stations-over-bluetooth/": [
-"25ab375375e1ef62",
-"2026-11-16"
+"a64f5266e0877916",
+"2026-11-23"
 ],
 "/bluetti/model/ep600/": [
 "41a8a5280c721a2c",
@@ -2284,8 +2284,8 @@
 "2026-11-12"
 ],
 "/bmw/bmw-wallbox-ocpp-2-0-1/": [
-"99b0e60efa39b3eb",
-"2026-11-16"
+"a33203a505bb165e",
+"2026-11-23"
 ],
 "/bmw/i-wallbox/": [
 "9c0e48912684f622",
@@ -2368,8 +2368,8 @@
 "2026-11-12"
 ],
 "/brands/": [
-"5952f804c0d27714",
-"2026-11-16"
+"855c9c76200f2682",
+"2026-11-23"
 ],
 "/byd/": [
 "67ef3b2b2f8c68de",
@@ -2404,8 +2404,8 @@
 "2026-11-12"
 ],
 "/canadian-solar/ep-cube/": [
-"853b249545ceafff",
-"2026-11-16"
+"b9dbcc033a4e62d7",
+"2026-11-23"
 ],
 "/carlo-gavazzi/": [
 "6dbbf4a536d6d8f5",
@@ -2536,8 +2536,8 @@
 "2026-11-12"
 ],
 "/changes/": [
-"14c42fe1ec42de65",
-"2026-11-16"
+"021d4f9e33b47f9e",
+"2026-11-23"
 ],
 "/charge-amps/": [
 "07c96a6b8b74b312",
@@ -3220,8 +3220,8 @@
 "2026-11-13"
 ],
 "/danfoss/tlx-pro-series/": [
-"e41d0548bc628d14",
-"2026-11-12"
+"efb76a8a1e29a637",
+"2026-11-23"
 ],
 "/danfoss/triplelynx-tlx-tlx-plus/": [
 "08a9240224b06219",
@@ -3504,32 +3504,32 @@
 "2026-11-12"
 ],
 "/deye/sun-g-string-inverters/": [
-"943eac688cec8ce9",
-"2026-11-16"
+"1dbb68dd694f1e93",
+"2026-11-23"
 ],
 "/deye/sun-m-sun-g3-microinverters/": [
-"67c5b238e5107fa9",
-"2026-11-16"
+"de83fca296f7abea",
+"2026-11-23"
 ],
 "/deye/sun-sg-hp3-three-phase-hv-hybrid/": [
-"c8f66a6457fc6f4d",
-"2026-11-16"
+"be4f9f021b1ba585",
+"2026-11-23"
 ],
 "/deye/sun-sg-lp1-single-phase-lv-hybrid/": [
-"cb1c019ad7a7ebda",
-"2026-11-16"
+"44bbd758e1d2ab1e",
+"2026-11-23"
 ],
 "/deye/sun-sg-lp3-three-phase-lv-hybrid/": [
-"926bccf31089a8b1",
-"2026-11-16"
+"59966a776e3cc1a2",
+"2026-11-23"
 ],
 "/dji/": [
 "82f966217ac7d69b",
 "2026-11-12"
 ],
 "/dji/dji-power-stations/": [
-"89354b407539efa2",
-"2026-11-16"
+"d43e636c32514a89",
+"2026-11-23"
 ],
 "/dmegc/": [
 "6409e54df680ad37",
@@ -3736,8 +3736,8 @@
 "2026-11-12"
 ],
 "/e3-dc/s10-s20-home-power-stations/": [
-"c66c8d14fb886f8b",
-"2026-11-16"
+"13ae2725fb294246",
+"2026-11-23"
 ],
 "/e4mobility/": [
 "f34fea8639bce01b",
@@ -3752,8 +3752,8 @@
 "2026-11-12"
 ],
 "/easee/home-charge-charge-lite-core-max-pro/": [
-"4d2d7b2949f5493e",
-"2026-11-16"
+"822b4c964cf8e3d4",
+"2026-11-23"
 ],
 "/eastron/": [
 "99f7bb43c1f47fb5",
@@ -3948,16 +3948,16 @@
 "2026-11-12"
 ],
 "/ecoflow/ecoflow-cloud-us-accounts/": [
-"1890a608d8021ade",
-"2026-11-12"
+"f7a290e2ed9dd34e",
+"2026-11-23"
 ],
 "/ecoflow/ecoflow-devices-over-bluetooth/": [
-"1bfdf1732731ca51",
-"2026-11-16"
+"978f4b6a1561f8bb",
+"2026-11-23"
 ],
 "/ecoflow/ecoflow-devices-via-developer-api/": [
-"043f1cd8e1eea852",
-"2026-11-16"
+"39052719b56c4c1c",
+"2026-11-23"
 ],
 "/ecoflow/model/efwn511/": [
 "c5363d3fca22fbd5",
@@ -3968,16 +3968,16 @@
 "2026-11-13"
 ],
 "/ecoflow/powerocean-hybrid/": [
-"107a8d240142dfac",
-"2026-11-16"
+"09caa0668478ed22",
+"2026-11-23"
 ],
 "/ecoflow/river-3-plus-over-usb/": [
 "531f8526e199a8a9",
 "2026-11-16"
 ],
 "/ecoflow/stream-powerstream-plug-in/": [
-"edbda183a956a6b8",
-"2026-11-16"
+"616fabe8e058ca7e",
+"2026-11-23"
 ],
 "/ecoharmony/": [
 "6e5032e6886fb341",
@@ -4016,8 +4016,8 @@
 "2026-11-12"
 ],
 "/eg4/eg4-and-luxpower-inverters-local-rs485-or-cloud/": [
-"5dc68c5dd4d0a79a",
-"2026-11-16"
+"77cadf54d069559f",
+"2026-11-23"
 ],
 "/eg4/eg4-inverters-via-modbus/": [
 "fb58ab3b10ec7e70",
@@ -4188,8 +4188,8 @@
 "2026-11-12"
 ],
 "/elli/elli-charger/": [
-"42afbda55a6a0baa",
-"2026-11-16"
+"2d30e244f2db289d",
+"2026-11-23"
 ],
 "/elpower-s-r-l/": [
 "b732a0cde9573ae8",
@@ -4412,8 +4412,8 @@
 "2026-11-12"
 ],
 "/enpal/enpal-systems/": [
-"eab8e7a0bdc88be1",
-"2026-11-16"
+"3bf86636302b5baa",
+"2026-11-23"
 ],
 "/enphase/": [
 "0b2eb508dba1f8b2",
@@ -4424,8 +4424,8 @@
 "2026-11-12"
 ],
 "/enphase/iq-ev-charger-2-cloud/": [
-"7dd2058e653bd89d",
-"2026-11-16"
+"883c5503ec62697d",
+"2026-11-23"
 ],
 "/enphase/iq-microinverters-with-iq-gateway/": [
 "0e9a056cc30347e6",
@@ -4452,64 +4452,56 @@
 "2026-11-12"
 ],
 "/envertech/": [
-"d2bf1520fd8b09bb",
-"2026-11-12"
+"be5cced72dca6c3c",
+"2026-11-23"
 ],
 "/envertech/envertech-evt800/": [
 "8fae2ed7b68804ab",
 "2026-11-12"
 ],
-"/envertech/envertech-microinverters-local/": [
-"4e7e7bab6942aceb",
-"2026-11-12"
-],
-"/envertech/envertech-microinverters/": [
-"184d6ff752af5203",
-"2026-11-12"
-],
 "/envertech/model/evt-1200-module/": [
-"148122595dde970d",
-"2026-11-13"
+"02eb67be321440a8",
+"2026-11-23"
 ],
 "/envertech/model/evt-1400-module/": [
-"8b94ada165aafbe6",
-"2026-11-13"
+"bf72edf30d4d33c9",
+"2026-11-23"
 ],
 "/envertech/model/evt-1500-module/": [
-"fadee69c7882f983",
-"2026-11-13"
+"7509bc96a13d917d",
+"2026-11-23"
 ],
 "/envertech/model/evt-300-module/": [
-"5db3e62d66e1d361",
-"2026-11-13"
+"53d3323a6c0f9f78",
+"2026-11-23"
 ],
 "/envertech/model/evt-360-module/": [
-"b37d83092bfaaf15",
-"2026-11-13"
+"44ec2da1b502bcbf",
+"2026-11-23"
 ],
 "/envertech/model/evt-560-module/": [
-"7b65990f48996b66",
-"2026-11-13"
+"3dc5c2f6ca07058c",
+"2026-11-23"
 ],
 "/envertech/model/evt-600-module/": [
-"dfb4a8a3b19d81e4",
-"2026-11-13"
+"7f42ea6aa719eefa",
+"2026-11-23"
 ],
 "/envertech/model/evt-660-module/": [
-"32b3afb42aee7529",
-"2026-11-13"
+"62238f649f5cba16",
+"2026-11-23"
 ],
 "/envertech/model/evt-720-module/": [
-"25f63bc54497ba71",
-"2026-11-13"
+"861bbcc7c36a3ed9",
+"2026-11-23"
 ],
 "/envertech/model/evt-800-module/": [
-"e1a37f29b87af994",
-"2026-11-13"
+"b0d42620afa2c9ae",
+"2026-11-23"
 ],
 "/envertech/model/evt400/": [
-"2cdca614efc85248",
-"2026-11-13"
+"2a10dc0db88e5f5f",
+"2026-11-23"
 ],
 "/envision-energy-co-ltd/": [
 "c8c8f97b1975c8a4",
@@ -4660,8 +4652,8 @@
 "2026-11-12"
 ],
 "/evsemaster/evsemaster-chargers/": [
-"cbc57e96b9ec76ea",
-"2026-11-12"
+"4fe788e424389c7b",
+"2026-11-23"
 ],
 "/evsemaster/evsemaster-morec-chargers/": [
 "81879b299bfdbe5b",
@@ -4708,12 +4700,12 @@
 "2026-11-12"
 ],
 "/felicity-solar/felicity-batteries-local/": [
-"a6ce277b0f0fcc86",
-"2026-11-16"
+"e1fd641b7d3feaa1",
+"2026-11-23"
 ],
 "/felicity-solar/felicity-inverters/": [
-"5e14e436a6ba4807",
-"2026-11-16"
+"b59dcf38d97baef1",
+"2026-11-23"
 ],
 "/felicity-solar/felicity-solar-cloud/": [
 "e7b3011a13b1e313",
@@ -4832,8 +4824,8 @@
 "2026-11-12"
 ],
 "/fenecon/fems-diagnostics/": [
-"2b70ba04f25eb44c",
-"2026-11-16"
+"50fc5e04a7cb386e",
+"2026-11-23"
 ],
 "/fenecon/modbus-api/": [
 "0823da24812152f4",
@@ -4964,16 +4956,16 @@
 "2026-11-12"
 ],
 "/fox-ess/avocado-mq2200/": [
-"0df4fba72c0de0d7",
-"2026-11-16"
+"b69361c29575255e",
+"2026-11-23"
 ],
 "/fox-ess/h1-ac1-aio-h1-single-phase/": [
-"952a40d85fe23d5a",
-"2026-11-16"
+"8a94f83859f0d900",
+"2026-11-23"
 ],
 "/fox-ess/h3-h3-pro-ac3-aio-h3-three-phase/": [
-"bb7d96d612d08b7f",
-"2026-11-16"
+"a7be1002bf820f20",
+"2026-11-23"
 ],
 "/fox-ess/model/avo-22-m-ac/": [
 "613f6461f693a1b6",
@@ -5080,16 +5072,16 @@
 "2026-11-13"
 ],
 "/fox-ess/t-s-f-string-inverters/": [
-"3792ec597467e8c9",
-"2026-11-16"
+"44b3e69fd23349bc",
+"2026-11-23"
 ],
 "/franklinwh/": [
 "52eed464769b3083",
 "2026-11-12"
 ],
 "/franklinwh/franklinwh-apower/": [
-"e9cb2f4bebeadbba",
-"2026-11-16"
+"dabdf64d1ea41c7f",
+"2026-11-23"
 ],
 "/free2move-esolutions/": [
 "48c8a63eb13d2254",
@@ -5136,24 +5128,24 @@
 "2026-11-12"
 ],
 "/fronius/symo-hybrid-legacy/": [
-"c8d05b142b0695dd",
-"2026-11-12"
+"0cfbb577772f9b17",
+"2026-11-23"
 ],
 "/fronius/symo-primo-gen24-hybrid/": [
-"f79ee136720ca924",
-"2026-11-12"
+"46375ce5d728351a",
+"2026-11-23"
 ],
 "/fronius/verto-plus-hybrid/": [
-"1038ffd7b68703b4",
-"2026-11-12"
+"8085a62a52f37b06",
+"2026-11-23"
 ],
 "/fronius/verto-tauro-symo-primo-string/": [
-"12d1f52cb06af18d",
-"2026-11-12"
+"1cf759a0c7a1b2ce",
+"2026-11-23"
 ],
 "/fronius/wattpilot/": [
-"57bd85b4b2274d0d",
-"2026-11-16"
+"e0ad14f5ef64e840",
+"2026-11-23"
 ],
 "/fsp-solar-power/": [
 "033c66f2f226c40a",
@@ -5280,8 +5272,8 @@
 "2026-11-12"
 ],
 "/go-e/go-e-charger-gemini-home-core-pro/": [
-"0deae10901ecf8d9",
-"2026-11-16"
+"38a09a65a4a113f0",
+"2026-11-23"
 ],
 "/golen/": [
 "caf71b2d37403266",
@@ -5372,20 +5364,20 @@
 "2026-11-12"
 ],
 "/goodwe/dt-sdt-ms-xs-dns-string-inverters/": [
-"e72c26f021fb0e4d",
-"2026-11-16"
+"e1a16bd9f53a55fc",
+"2026-11-23"
 ],
 "/goodwe/es-em-ems-hybrids/": [
-"28a378d12964c2b9",
-"2026-11-16"
+"529a584caa9ea984",
+"2026-11-23"
 ],
 "/goodwe/et-eh-bt-bh-etc-hybrids/": [
-"ae61660954705e8d",
-"2026-11-16"
+"dd2f18bb40b2db26",
+"2026-11-23"
 ],
 "/goodwe/hca-wallboxes/": [
-"9969c441d875e3c6",
-"2026-11-16"
+"5c2947c8d8598815",
+"2026-11-23"
 ],
 "/goodwe/model/gw100k-gt/": [
 "c3462c8c4c5f9dc1",
@@ -5608,8 +5600,8 @@
 "2026-11-12"
 ],
 "/growatt/min-mod-mid-mic-string-inverters/": [
-"67f663c0def23154",
-"2026-11-16"
+"20124f7e414251c6",
+"2026-11-23"
 ],
 "/growatt/model/1000-s/": [
 "a3967adeebadda04",
@@ -5772,12 +5764,12 @@
 "2026-11-13"
 ],
 "/growatt/sph-spa-mod-xh-min-xh-hybrids/": [
-"b471b5b405c4b3b3",
-"2026-11-16"
+"ec33c9f9d5c29127",
+"2026-11-23"
 ],
 "/growatt/thor-ev-charger/": [
-"b30340716d71e5da",
-"2026-11-16"
+"4a37de5c80002b40",
+"2026-11-23"
 ],
 "/gsstes/": [
 "894527ba51436ebd",
@@ -5804,8 +5796,8 @@
 "2026-11-12"
 ],
 "/hager/hagerflow-energy-manager/": [
-"7588fb25459196c9",
-"2026-11-12"
+"476a781626bbf69a",
+"2026-11-23"
 ],
 "/hager/witty-one/": [
 "877499179260c43c",
@@ -6344,8 +6336,8 @@
 "2026-11-12"
 ],
 "/homevolt/homevolt-local/": [
-"f44e2b4c507b044c",
-"2026-11-16"
+"0b6e1de3430a2244",
+"2026-11-23"
 ],
 "/homevolt/homevolt/": [
 "ef782ef3f5ce691c",
@@ -6492,8 +6484,8 @@
 "2026-11-12"
 ],
 "/huawei/luna2000-batteries/": [
-"e88f2ce94b2bf32a",
-"2026-11-16"
+"ce3c6cf5375cf2ef",
+"2026-11-23"
 ],
 "/huawei/model/100ktl-m1/": [
 "9a5e7b9a90aa0728",
@@ -6528,8 +6520,8 @@
 "2026-11-12"
 ],
 "/huawei/sun2000-inverters-string-and-hybrid/": [
-"5808ad72e89bc6b5",
-"2026-11-16"
+"72c3fdaf86b6156c",
+"2026-11-23"
 ],
 "/huayu/": [
 "38760ba1952e2726",
@@ -6548,8 +6540,8 @@
 "2026-11-12"
 ],
 "/hypervolt/hypervolt-chargers/": [
-"94eae0c9d9ae0933",
-"2026-11-16"
+"b57be0790cf3eecb",
+"2026-11-23"
 ],
 "/hypontech/": [
 "30aaf06ae3844804",
@@ -6868,8 +6860,8 @@
 "2026-11-12"
 ],
 "/hyxipower/hyxi-cloud/": [
-"6e9d16f80a442772",
-"2026-11-16"
+"edfefe0597c0745b",
+"2026-11-23"
 ],
 "/iammeter/": [
 "653eb3218ab856ee",
@@ -8192,8 +8184,8 @@
 "2026-11-12"
 ],
 "/kstar/inverters-with-a-solarman-wi-fi-lan-logger-stick/": [
-"6f25e95b70d5a09a",
-"2026-11-16"
+"6470806eab5aeec4",
+"2026-11-23"
 ],
 "/kstar/model/10kt-m1/": [
 "437b2c9b21c468dc",
@@ -8916,12 +8908,12 @@
 "2026-11-12"
 ],
 "/luxpower/eg4-and-luxpower-inverters-local-rs485-or-cloud/": [
-"006a48da01fe32e5",
-"2026-11-16"
+"77edc1ed165b46c7",
+"2026-11-23"
 ],
 "/luxpower/luxcloud-api/": [
-"b790b83e5315eb97",
-"2026-11-12"
+"013e547b2a0f25ee",
+"2026-11-23"
 ],
 "/luxpower/luxpower-inverters-via-dongle/": [
 "5c68b62df5dcf369",
@@ -9044,12 +9036,12 @@
 "2026-11-12"
 ],
 "/marstek/jupiter-micro-inverters/": [
-"e44881ff518714be",
-"2026-11-16"
+"4a41ee29f603b1b9",
+"2026-11-23"
 ],
 "/marstek/venus-plug-in-battery/": [
-"af811029eeb8e8d8",
-"2026-11-16"
+"240bc67cfd0b27d9",
+"2026-11-23"
 ],
 "/maschinenfabrik-reinhausen-gmbh/": [
 "aeae0d960e46c686",
@@ -9116,8 +9108,8 @@
 "2026-11-12"
 ],
 "/maxstorage/max-storage-ultimate/": [
-"bab2e64d0f7f4940",
-"2026-11-16"
+"887df384b4af3bc8",
+"2026-11-23"
 ],
 "/megarevo/": [
 "df468b8b09fb898e",
@@ -9344,8 +9336,8 @@
 "2026-11-12"
 ],
 "/mennekes/amtron-4business/": [
-"ffe621a86c46b30c",
-"2026-11-16"
+"6bfa1d8d629e4e98",
+"2026-11-23"
 ],
 "/mennekes/amtron-4you-300/": [
 "d1e8bcfb0719d7fe",
@@ -9620,8 +9612,8 @@
 "2026-11-12"
 ],
 "/monta/chargers-on-monta/": [
-"722b43d09f1130f2",
-"2026-11-16"
+"1cb68f8ab038437c",
+"2026-11-23"
 ],
 "/motoma/": [
 "ed7b34d79beaab98",
@@ -9764,8 +9756,8 @@
 "2026-11-12"
 ],
 "/myenergi/zappi-eddi-harvi-libbi/": [
-"843d0591585dea5e",
-"2026-11-12"
+"06eda81a955d40ac",
+"2026-11-23"
 ],
 "/mygrid/": [
 "4bf2a6aaf8ef9d27",
@@ -9864,8 +9856,8 @@
 "2026-11-12"
 ],
 "/nextenergy/nextenergy-battery/": [
-"83ab5f9bc8aae068",
-"2026-11-16"
+"878baba1d55159ef",
+"2026-11-23"
 ],
 "/ngen/": [
 "f2ddefb2acbb05e4",
@@ -9988,8 +9980,8 @@
 "2026-11-13"
 ],
 "/omnik/omnik-inverters/": [
-"91f52d80b58958ba",
-"2026-11-16"
+"c9fa99c7a679ddc8",
+"2026-11-23"
 ],
 "/omnik/omnik-trannergy-inverters/": [
 "ce28c1d49f448047",
@@ -10204,8 +10196,8 @@
 "2026-11-12"
 ],
 "/oukitel/oukitel-power-stations/": [
-"2f2daa0556e74328",
-"2026-11-16"
+"58125927f520f44a",
+"2026-11-23"
 ],
 "/p1monitor/": [
 "d18a5765a12c2192",
@@ -10448,8 +10440,8 @@
 "2026-11-12"
 ],
 "/powerfox/": [
-"c43fcbb868ac0392",
-"2026-11-12"
+"88309ccc1a7d2b26",
+"2026-11-23"
 ],
 "/powerfox/powerfox-cloud/": [
 "831817e8e12ec88f",
@@ -10458,6 +10450,10 @@
 "/powerfox/powerfox-local/": [
 "f90ac273b9b1d815",
 "2026-11-12"
+],
+"/powerfox/powerfox-poweropti-local/": [
+"b70cac1e2e5bd275",
+"2026-11-23"
 ],
 "/powerfox/poweropti/": [
 "572126c7720603f7",
@@ -11108,8 +11104,8 @@
 "2026-11-12"
 ],
 "/q-cells/solax-gen2-gen5-hybrids-ac-retrofit-x1-x3-string/": [
-"1854e3c3d087b67c",
-"2026-11-16"
+"3c1b3a459c900542",
+"2026-11-23"
 ],
 "/raedian/": [
 "39da20fcc752af2b",
@@ -11160,8 +11156,8 @@
 "2026-11-12"
 ],
 "/rct-power/power-inverter-power-storage/": [
-"37f761946c96c159",
-"2026-11-16"
+"10315b50480c339a",
+"2026-11-23"
 ],
 "/reco/": [
 "a12fc032eaf5eb3c",
@@ -11436,8 +11432,8 @@
 "2026-11-12"
 ],
 "/renogy/renogy-devices-over-ble/": [
-"1cf3f17b85d2d41d",
-"2026-11-16"
+"ea39fef23fc225b1",
+"2026-11-23"
 ],
 "/renon-power/": [
 "f813760519a0e982",
@@ -11564,8 +11560,8 @@
 "2026-11-13"
 ],
 "/saj/r5-r6-suntrio-sununo-string-inverters/": [
-"6c8bc59952e2178d",
-"2026-11-16"
+"2a83e40db77ec263",
+"2026-11-23"
 ],
 "/saj/r5-series-solar-inverter/": [
 "33f5667d08aaf9e3",
@@ -11772,8 +11768,8 @@
 "2026-11-12"
 ],
 "/senec/senec-home-v2-v3-v4-p4/": [
-"343057cb0aef1944",
-"2026-11-16"
+"553c2893796fba0f",
+"2026-11-23"
 ],
 "/senec/wallbox-pro-s/": [
 "123e160e47b3d300",
@@ -12036,16 +12032,16 @@
 "2026-11-12"
 ],
 "/sigenergy/sigen-pv-pv-max/": [
-"fc3becde940459ab",
-"2026-11-16"
+"b5c7abcdd18b529e",
+"2026-11-23"
 ],
 "/sigenergy/sigenstor-ec/": [
 "d54f1fa69d99b00c",
 "2026-11-12"
 ],
 "/sigenergy/sigenstor-sigen-hybrid/": [
-"2cabe48d350931e3",
-"2026-11-16"
+"423fc7e9682ef959",
+"2026-11-23"
 ],
 "/silla/": [
 "98e26bb75e3b6952",
@@ -12696,8 +12692,8 @@
 "2026-11-12"
 ],
 "/sma/ev-charger/": [
-"19638efc569add81",
-"2026-11-12"
+"3c4bc86d0261ca46",
+"2026-11-23"
 ],
 "/sma/model/shp-100-21/": [
 "c517a79960f8ef74",
@@ -12716,24 +12712,24 @@
 "2026-11-13"
 ],
 "/sma/sunny-boy-storage/": [
-"122bbde43dc29403",
-"2026-11-16"
+"1973dc362fc07452",
+"2026-11-23"
 ],
 "/sma/sunny-boy/": [
-"7af390134ba96f5b",
-"2026-11-16"
+"729f96631c34c01c",
+"2026-11-23"
 ],
 "/sma/sunny-home-manager-2-0/": [
 "cafdc271b6f4a80d",
 "2026-11-12"
 ],
 "/sma/sunny-island/": [
-"bdb6c29c84654428",
-"2026-11-16"
+"c776f7aa35453c05",
+"2026-11-23"
 ],
 "/sma/sunny-tripower-incl-smart-energy-x/": [
-"de3212bf06e241f7",
-"2026-11-16"
+"a8f732f5351d1ce3",
+"2026-11-23"
 ],
 "/sma/webbox/": [
 "38e9ec00ae99264d",
@@ -12744,8 +12740,8 @@
 "2026-11-12"
 ],
 "/smappee/smappee-ev-chargers/": [
-"b0864d77f7793ccd",
-"2026-11-16"
+"a94bdf3e74b276f7",
+"2026-11-23"
 ],
 "/smartevse/": [
 "4d47cb4a49d356d3",
@@ -12908,12 +12904,12 @@
 "2026-11-12"
 ],
 "/sofar/hyd-hybrids/": [
-"bd977cdcf44256c6",
-"2026-11-16"
+"68695cc39e74e482",
+"2026-11-23"
 ],
 "/sofar/ktlx-tl-string-inverters/": [
-"852ff2401221d2ee",
-"2026-11-16"
+"29db3b423226a7eb",
+"2026-11-23"
 ],
 "/sofar/model/me-10ktl-3ph/": [
 "b08d559b7e8ecb4f",
@@ -12944,8 +12940,8 @@
 "2026-11-13"
 ],
 "/sofar/powerall-esi-ebi-all-in-one/": [
-"f8300fb4fff4c7eb",
-"2026-11-16"
+"14bbd6c01d898d66",
+"2026-11-23"
 ],
 "/solakon/": [
 "d84db3aabf4e6c9c",
@@ -13008,16 +13004,16 @@
 "2026-11-12"
 ],
 "/solaredge/ev-chargers/": [
-"97f19637336438f8",
-"2026-11-16"
+"59d1eb90b3cb3b79",
+"2026-11-23"
 ],
 "/solaredge/hd-wave-se-nx-string-inverters/": [
-"054d608adaa3423f",
-"2026-11-16"
+"e0db6edbc535d9f8",
+"2026-11-23"
 ],
 "/solaredge/home-hub-storedge-hybrids/": [
-"4d4ee00f3d695d1d",
-"2026-11-16"
+"b0eb5df1629f3e02",
+"2026-11-23"
 ],
 "/solaredge/model/pcs050/": [
 "c294f797ee7b52f5",
@@ -13480,36 +13476,36 @@
 "2026-11-13"
 ],
 "/solax/q-volt-hyb-q-cells-edition/": [
-"87aeef584cb4f5c7",
-"2026-11-16"
+"ab22dca47985b3b5",
+"2026-11-23"
 ],
 "/solax/x1-micro-inverters/": [
 "8719749b4ff6e6ce",
 "2026-11-16"
 ],
 "/solax/x1-x3-fit-and-ac-retrofit/": [
-"72ef615b8b5eccd8",
-"2026-11-16"
+"1fa83e72db590d85",
+"2026-11-23"
 ],
 "/solax/x1-x3-hac-and-x3-evc-wallboxes/": [
 "1242d948e3bf21ce",
 "2026-11-16"
 ],
 "/solax/x1-x3-hybrid-g3-g4/": [
-"f9e49cf9f8b4cb1c",
-"2026-11-16"
+"c43d336e4d846a90",
+"2026-11-23"
 ],
 "/solax/x1-x3-ies/": [
-"848d695c621f441a",
-"2026-11-16"
+"b466b1b37d4ba95e",
+"2026-11-23"
 ],
 "/solax/x1-x3-string-inverters-boost-mini-smart-pro-mic/": [
-"13156d4a530e6dcb",
-"2026-11-16"
+"fb6e84961d7f2aa0",
+"2026-11-23"
 ],
 "/solax/x3-ultra/": [
-"5ede36da9eb8ada7",
-"2026-11-16"
+"8726379ca25128da",
+"2026-11-23"
 ],
 "/solenso/": [
 "c90821ef1ce8e66a",
@@ -13864,8 +13860,8 @@
 "2026-11-13"
 ],
 "/solinteg/solax-gen2-gen5-hybrids-ac-retrofit-x1-x3-string/": [
-"a75c661f11128c8b",
-"2026-11-16"
+"a969788da8759f25",
+"2026-11-23"
 ],
 "/solis/": [
 "d552628e94895dc8",
@@ -13876,12 +13872,12 @@
 "2026-11-13"
 ],
 "/solis/rhi-s5-eh-s6-eh-hybrids/": [
-"3b6d5263fe57f197",
-"2026-11-16"
+"4d971c228afa26df",
+"2026-11-23"
 ],
 "/solis/s5-s6-gr-and-solis-string-inverters/": [
-"8ca83dd26eec972a",
-"2026-11-16"
+"d3c7d7f22f067b1c",
+"2026-11-23"
 ],
 "/solis/solis-hybrid-inverter-rhi-series/": [
 "79114ddaaef4bb42",
@@ -14576,8 +14572,8 @@
 "2026-11-12"
 ],
 "/sunenergyxt/sunenergyxt-sunlit-batteries/": [
-"57b76e83040ee4e5",
-"2026-11-16"
+"0e8d84eff730e9a2",
+"2026-11-23"
 ],
 "/sunflower-solar/": [
 "95c887ee64aac96b",
@@ -14656,12 +14652,12 @@
 "2026-11-13"
 ],
 "/sungrow/sg-string-inverters/": [
-"e564f3e5666d20cd",
-"2026-11-16"
+"492041e9d88802ef",
+"2026-11-23"
 ],
 "/sungrow/sh-hybrid-inverters/": [
-"3e4f5d1c2402270a",
-"2026-11-16"
+"480f5a26f2722cf9",
+"2026-11-23"
 ],
 "/sunmaster/": [
 "ebb2ea7c4e438732",
@@ -14712,12 +14708,12 @@
 "2026-11-12"
 ],
 "/sunsynk/hybrid-inverters-on-sunsynk-cloud/": [
-"2030bd55ea168723",
-"2026-11-12"
+"ed2b7eb65a621fc4",
+"2026-11-23"
 ],
 "/sunsynk/inverters-with-a-solarman-wi-fi-lan-logger-stick/": [
-"07a44a47c96b0b8c",
-"2026-11-16"
+"980968586eaf2a97",
+"2026-11-23"
 ],
 "/sunsynk/micro-inverter/": [
 "a5c4c2a5da42decf",
@@ -15448,8 +15444,8 @@
 "2026-11-12"
 ],
 "/tesla/powerwall-gateway-or-cloud/": [
-"333bb4c67c5729c1",
-"2026-11-12"
+"7e949de7a5d7433c",
+"2026-11-23"
 ],
 "/tesla/powerwall-pypowerwall-server/": [
 "4525bbf543eadf48",
@@ -15812,8 +15808,8 @@
 "2026-11-13"
 ],
 "/tsun/tsun-microinverters-read-only/": [
-"bdcdc6e2dd4b69bc",
-"2026-11-16"
+"846ec37e84fa64bc",
+"2026-11-23"
 ],
 "/turbo-energy/": [
 "87119d335a9c474b",
@@ -15908,8 +15904,8 @@
 "2026-11-12"
 ],
 "/v2c/v2c-cloud/": [
-"4174714b18cdda97",
-"2026-11-16"
+"666adfd4ec64c66b",
+"2026-11-23"
 ],
 "/v2c/v2c/": [
 "370323f1c1e00d08",
@@ -16160,8 +16156,8 @@
 "2026-11-12"
 ],
 "/victron-energy/multiplus-multiplus-ii-quattro-easysolar-ess/": [
-"ed3181e874809622",
-"2026-11-16"
+"15e5d3ced38a4a17",
+"2026-11-23"
 ],
 "/victron-energy/victron-ble/": [
 "68162fbd8d828391",
@@ -16300,12 +16296,12 @@
 "2026-11-12"
 ],
 "/voltronic-power/inverters-on-dess-monitor/": [
-"d721137811cf559a",
-"2026-11-12"
+"ab5047cdc3556320",
+"2026-11-23"
 ],
 "/voltronic-power/inverters-on-dessmonitor/": [
-"470beb2fd7aead5c",
-"2026-11-12"
+"00a572c293e9bbed",
+"2026-11-23"
 ],
 "/voltronic-vision/": [
 "46472951a99a8c9a",
@@ -16420,8 +16416,8 @@
 "2026-11-12"
 ],
 "/wallbox/wallbox-chargers-via-ble-gateway/": [
-"6f6455c9204545ef",
-"2026-11-16"
+"13b186ebf29b762e",
+"2026-11-23"
 ],
 "/wallbox/wallbox/": [
 "b061e01758676ea0",
@@ -17288,8 +17284,8 @@
 "2026-11-12"
 ],
 "/zendure/solarflow-hyper-aio/": [
-"fea95ceb6a1affb8",
-"2026-11-16"
+"0baa06fcb33fd380",
+"2026-11-23"
 ],
 "/zerova-technologies/": [
 "e0dffb57a7df134a",

@@ -1,51 +1,35 @@
 # Datasheet harvest
 
-*2026-11-16. Written by `tools/specs/harvest.py`; recipes in `tools/specs/harvest.yaml`, the manifest in `data/specs/harvest.json` (+ `harvest-edge.json` from madis-pc). Drafts: `data/specs/_drafts/<brand>.yaml` - unreviewed, never read by the site.*
+*2026-11-23. Written by `tools/specs/harvest.py`; recipes in `tools/specs/harvest.yaml`, the manifest in `data/specs/harvest.json` (+ `harvest-edge.json` from madis-pc). Drafts: `data/specs/_drafts/<brand>.yaml` - unreviewed, never read by the site.*
 
 ## Sheets per maker
 
 | maker | route | run | listed | datasheets | in cache | new this run | changed | listed, not fetched (robots) | failed | table not read | register models a sheet covers |
 |---|---|---|---|---|---|---|---|---|---|---|---|
-| Deye | http | 2026-11-16 | 352 | 37 | 37 | 0 | 0 | 0 | 0 | 0 | 0 / 0 |
-| Fox ESS | http | 2026-11-16 | 446 | 91 | 104 | 23 | 0 | 0 | 0 | 19 | 0 / 0 |
-| GoodWe | http | 2026-11-16 | 13 | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 / 0 |
-| Growatt | http | 2026-11-16 | 461 | 356 | 0 | 0 | 0 | 356 | 0 | 0 | 0 / 0 |
-| Hoymiles | http | 2026-11-16 | 1095 | 148 | 0 | 0 | 0 | 148 | 0 | 0 | 0 / 0 |
-| Sofar | http | 2026-11-16 | 47 | 47 | 47 | 0 | 0 | 0 | 0 | 0 | 0 / 0 |
-| Solis | http | 2026-11-16 | - | - | 0 | - | - | - | **route failed**: RuntimeError: navbar API HTTP 500 | - | - |
-| Sungrow | http | 2026-11-16 | 51 | 51 | 52 | 1 | 0 | 0 | 0 | 1 | 0 / 0 |
+| Deye | http | 2026-11-23 | 352 | 37 | 37 | 0 | 0 | 0 | 0 | 0 | 0 / 0 |
+| Fox ESS | http | 2026-11-23 | 369 | 65 | 111 | 7 | 0 | 0 | 0 | 4 | 0 / 0 |
+| GoodWe | http | 2026-11-23 | 13 | 13 | 13 | 0 | 0 | 0 | 0 | 0 | 0 / 0 |
+| Growatt | http | 2026-11-23 | 462 | 357 | 0 | 0 | 0 | 357 | 0 | 0 | 0 / 0 |
+| Hoymiles | http | 2026-11-23 | 1067 | 143 | 0 | 0 | 0 | 143 | 0 | 0 | 0 / 0 |
+| Sofar | http | 2026-11-23 | 47 | 47 | 47 | 0 | 0 | 0 | 0 | 0 | 0 / 0 |
+| Solis | http | 2026-11-23 | - | - | 0 | - | - | - | **route failed**: RuntimeError: navbar API HTTP 500 | - | - |
+| Sungrow | http | 2026-11-23 | 52 | 52 | 53 | 1 | 0 | 0 | 0 | 1 | 0 / 0 |
 | Kostal | edge | 2026-11-01 | 1 | 1 | 1 | 1 | 0 | 0 | 0 | 1 | 0 / 119 |
 | SMA | edge | 2026-11-01 | 47 | 45 | 45 | 45 | 0 | 0 | 0 | 40 | 30 / 184 |
 | SolaX | edge | 2026-11-01 | 9 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 0 / 605 |
 
 "register models a sheet covers": models of that maker in the register snapshot (`web/.data/registers.json`) whose code matches a model column of any harvested sheet - what the drafts could give the site once reviewed. The live `data/specs/` numbers are in the README.
 
-## New sheets (70)
+## New sheets (54)
 
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251202/ENDlConversionModuleDatasheet20241224.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251202/ENVLdatasheetV1.520241227.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENHVjunctionboxDatasheetV1.520260414.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENHVjunctionboxwhiteDatasheetV1.120260414.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENP3PRODatasheetV1.320260605.pdf - 4 model columns, 0 register models
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENP3SDatasheetV1.320260605.pdf - 6 model columns, 0 register models
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENType2EVExtensionCableDatasheetV1.120260608.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEK12DatasheetV1.320260710.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEK6DatasheetV1.320260710.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENH3PlusDatasheetV2.920261022.pdf - 5 model columns, 0 register models
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261030/ENP3PlusDatasheetV1.320261028.pdf - 5 model columns, 0 register models
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261102/ENWLanWWDatasheetV1.220261024.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261103/ENAILinkDatasheetV2.220261103.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusACV1DatasheetV1.420261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusACV2DatasheetV1.320261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusHV1DatasheetV1.420261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusHV1EGM241DatasheetV1.420261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusHV2DatasheetV1.320261111.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusACV1DatasheetV1.420261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusACV2DatasheetV1.320261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusHV1DatasheetV1.420261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusHV1ETM241DatasheetV1.420261109.pdf - table not read
-- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusHV2DatasheetV1.320261109.pdf - table not read
-- Sungrow: https://info-support.sungrowpower.com/datasheet-material/a174a28e-ac5d-4211-bd22-a29532743b55.pdf - 1 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261118/ENPowerBeastH3PlusCQ7DatasheetV1.120261112.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261118/ENPowerBeastseparateP3PlusCQ20DatasheetV1.120261112.pdf - 5 model columns, 0 register models
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENMegaLinkDatasheetV1.120261030.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENPowerCubeHQ3PlusVQ11.0DQ7DQ5.5datasheetV1.120261118.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENPowerCubePQ1PlusVQ7.3CQ7wCQ5.5wdatasheetEUV1.120261118.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENPowerCubePQ3PlusVQ11.0CQ7CQ5.5datasheetEUV1.120261118.pdf - table not read
+- Fox ESS: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENS28datasheetV1.320261105.pdf - 5 model columns, 0 register models
+- Sungrow: https://info-support.sungrowpower.com/datasheet-material/3b213d98-3a8a-4de5-8c8f-89dfbfd11578.pdf - 1 model columns, 0 register models
 - Kostal: https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/KSEM-KEM/DB_KSEM-G2_en.pdf - table not read
 - SMA: https://files.sma.de/downloads/CELLULARMODEM-DS-en-19.pdf - table not read
 - SMA: https://files.sma.de/downloads/MC-Boxen-DS-en-20.pdf - table not read
@@ -102,28 +86,13 @@ none
 
 - Solis: route `solis`: RuntimeError: navbar API HTTP 500
 
-## Sheets whose table could not be read (61)
+## Sheets whose table could not be read (46)
 
-- Fox ESS: ENDlConversionModuleDatasheet20241224.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251202/ENDlConversionModuleDatasheet20241224.pdf) - no model columns found
-- Fox ESS: ENVLdatasheetV1.520241227.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20251202/ENVLdatasheetV1.520241227.pdf) - no model columns found
-- Fox ESS: ENHVjunctionboxDatasheetV1.520260414.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENHVjunctionboxDatasheetV1.520260414.pdf) - no model columns found
-- Fox ESS: ENHVjunctionboxwhiteDatasheetV1.120260414.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260415/ENHVjunctionboxwhiteDatasheetV1.120260414.pdf) - no model columns found
-- Fox ESS: ENType2EVExtensionCableDatasheetV1.120260608.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260612/ENType2EVExtensionCableDatasheetV1.120260608.pdf) - no model columns found
-- Fox ESS: ENEK12DatasheetV1.320260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEK12DatasheetV1.320260710.pdf) - no model columns found
-- Fox ESS: ENEK6DatasheetV1.320260710.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20260812/ENEK6DatasheetV1.320260710.pdf) - no model columns found
-- Fox ESS: ENWLanWWDatasheetV1.220261024.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261102/ENWLanWWDatasheetV1.220261024.pdf) - no model columns found
-- Fox ESS: ENAILinkDatasheetV2.220261103.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261103/ENAILinkDatasheetV2.220261103.pdf) - no model columns found
-- Fox ESS: ENGMAXPlusACV1DatasheetV1.420261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusACV1DatasheetV1.420261109.pdf) - no model columns found
-- Fox ESS: ENGMAXPlusACV2DatasheetV1.320261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusACV2DatasheetV1.320261109.pdf) - no model columns found
-- Fox ESS: ENGMAXPlusHV1DatasheetV1.420261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusHV1DatasheetV1.420261109.pdf) - no model columns found
-- Fox ESS: ENGMAXPlusHV1EGM241DatasheetV1.420261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusHV1EGM241DatasheetV1.420261109.pdf) - no model columns found
-- Fox ESS: ENGMAXPlusHV2DatasheetV1.320261111.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENGMAXPlusHV2DatasheetV1.320261111.pdf) - no model columns found
-- Fox ESS: ENTMAXPlusACV1DatasheetV1.420261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusACV1DatasheetV1.420261109.pdf) - no model columns found
-- Fox ESS: ENTMAXPlusACV2DatasheetV1.320261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusACV2DatasheetV1.320261109.pdf) - no model columns found
-- Fox ESS: ENTMAXPlusHV1DatasheetV1.420261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusHV1DatasheetV1.420261109.pdf) - no model columns found
-- Fox ESS: ENTMAXPlusHV1ETM241DatasheetV1.420261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusHV1ETM241DatasheetV1.420261109.pdf) - no model columns found
-- Fox ESS: ENTMAXPlusHV2DatasheetV1.320261109.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261112/ENTMAXPlusHV2DatasheetV1.320261109.pdf) - no model columns found
-- Sungrow: a174a28e-ac5d-4211-bd22-a29532743b55.pdf (https://info-support.sungrowpower.com/datasheet-material/a174a28e-ac5d-4211-bd22-a29532743b55.pdf) - title only, no table columns
+- Fox ESS: ENMegaLinkDatasheetV1.120261030.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENMegaLinkDatasheetV1.120261030.pdf) - no model columns found
+- Fox ESS: ENPowerCubeHQ3PlusVQ11.0DQ7DQ5.5datasheetV1.120261118.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENPowerCubeHQ3PlusVQ11.0DQ7DQ5.5datasheetV1.120261118.pdf) - no model columns found
+- Fox ESS: ENPowerCubePQ1PlusVQ7.3CQ7wCQ5.5wdatasheetEUV1.120261118.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENPowerCubePQ1PlusVQ7.3CQ7wCQ5.5wdatasheetEUV1.120261118.pdf) - no model columns found
+- Fox ESS: ENPowerCubePQ3PlusVQ11.0CQ7CQ5.5datasheetEUV1.120261118.pdf (https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENPowerCubePQ3PlusVQ11.0CQ7CQ5.5datasheetEUV1.120261118.pdf) - no model columns found
+- Sungrow: 3b213d98-3a8a-4de5-8c8f-89dfbfd11578.pdf (https://info-support.sungrowpower.com/datasheet-material/3b213d98-3a8a-4de5-8c8f-89dfbfd11578.pdf) - title only, no table columns
 - Kostal: DB_KSEM-G2_en.pdf (https://www.kostal-solar-electric.com/fileadmin/downloadcenter/kse/DB/KSEM-KEM/DB_KSEM-G2_en.pdf) - no model columns found
 - SMA: CELLULARMODEM-DS-en-19.pdf (https://files.sma.de/downloads/CELLULARMODEM-DS-en-19.pdf) - no model columns found
 - SMA: MC-Boxen-DS-en-20.pdf (https://files.sma.de/downloads/MC-Boxen-DS-en-20.pdf) - no model columns found
@@ -166,7 +135,7 @@ none
 - SMA: c91e26b2_STPxx-50-DS-en-24.pdf (https://files.sma.de/downloads/STPxx-50-DS-en-24.pdf) - no model columns found
 - SMA: STPxx-80-DS-en-11.pdf (https://files.sma.de/downloads/STPxx-80-DS-en-11.pdf) - no model columns found
 
-## Listed, not fetched (robots.txt) (504)
+## Listed, not fetched (robots.txt) (500)
 
 - Growatt: https://en.growatt.com/upload/file/20220808/4e89e43b3290828dc7f7f2edec0e0bbe.pdf
 - Growatt: https://en.growatt.com/upload/file/20220808/68d5ede867aea7484d9687e0745c0536.pdf
@@ -229,6 +198,7 @@ none
 - Growatt: https://en.growatt.com/upload/file/ALP_LV_Battery_Datasheet_EN_202408.pdf
 - Growatt: https://en.growatt.com/upload/file/ALP_LV_Battery_System_Datasheet_EN_202309.pdf
 - Growatt: https://en.growatt.com/upload/file/APX%205.0-30.0M-S3-2.0_Datasheet_202609_EN.pdf
+- Growatt: https://en.growatt.com/upload/file/APX%207.0-49.0M-S3-Datasheet_EN_202611.pdf
 - Growatt: https://en.growatt.com/upload/file/APX_129-200kWh_EU_Commercial_Battery_Datasheet_EN_202307.pdf
 - Growatt: https://en.growatt.com/upload/file/APX_129-200kWh_US_Datasheet_EN_202309.pdf
 - Growatt: https://en.growatt.com/upload/file/APX_129~200kWh_EU_Datasheet_EN_202309.pdf
@@ -467,8 +437,7 @@ none
 - Growatt: https://en.growatt.com/upload/file/ShineMaster_Datasheet_EN_202108.pdf
 - Growatt: https://en.growatt.com/upload/file/ShineSEM-X-RM_Datasheet_EN_202307.pdf
 - Growatt: https://en.growatt.com/upload/file/ShineSEM-X-RM_Datasheet_EN_202403.pdf
-- Growatt: https://en.growatt.com/upload/file/ShineSEM-XA-R_Datasheet_EN_202511.pdf
-- ... 204 more in the manifest
+- ... 200 more in the manifest
 
 ## Blocked, by rule
 
@@ -480,4 +449,5 @@ none
 
 ## Log
 
-- hoymiles: 22 series, 67 products, 1095 files listed
+- hoymiles: dr_getdownloadproducts eid=105 HTTP 504
+- hoymiles: 22 series, 64 products, 1067 files listed

@@ -1,5 +1,23 @@
 [
  {
+  "date": "2026-11-23",
+  "added": [
+   "evcc:powerfox-poweropti-local:Powerfox | Powerfox poweropti local"
+  ],
+  "removed": [
+   "hacs:jimmybonesde/Envertech_local:Envertech | Envertech microinverters (local)",
+   "hacs:jimmybonesde/envertech_solar:Envertech | Envertech microinverters"
+  ],
+  "changed": [
+   {
+    "row": "hacs:jerrit/ha-base-power:Base Power | Base Power home battery",
+    "field": "control",
+    "old": "write",
+    "new": "read"
+   }
+  ]
+ },
+ {
   "date": "2026-11-16",
   "added": [
    "evcc:kaco-nh3:blueplanet hybrid NH3:KACO | blueplanet hybrid NH3",

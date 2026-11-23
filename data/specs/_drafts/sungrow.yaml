@@ -124,6 +124,12 @@ sources:
   title: IDC480E Datasheet
   sha256: 744941c6095d8af95765b61b32639c212a419fcea0ecef26a5c181a993796bae
   seen: '2026-11-16'
+- id: 3b213d98-3a8a-4de5-8c8f-89dfbfd11578
+  url: https://info-support.sungrowpower.com/datasheet-material/3b213d98-3a8a-4de5-8c8f-89dfbfd11578.pdf
+  file: 3b213d98-3a8a-4de5-8c8f-89dfbfd11578.pdf
+  title: SG510HX
+  sha256: 0aafdd30a2e7842bc96ebfd4e8c39281d0f43c3cd2459bfdf162bd702cf643ea
+  seen: '2026-11-23'
 models:
 - code: SG320HX
   mppt: null
@@ -449,5 +455,15 @@ models:
   phases: null
   pv_kw: null
   source: a174a28e-ac5d-4211-bd22-a29532743b55
+  raw: {}
+  note: 'single-model sheet: the code is from the title, the values are to be read by hand'
+- code: SG510HX
+  mppt: null
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: 3b213d98-3a8a-4de5-8c8f-89dfbfd11578
   raw: {}
   note: 'single-model sheet: the code is from the title, the values are to be read by hand'

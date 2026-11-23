@@ -202,6 +202,24 @@ sources:
   title: H3 Plus Datasheet
   sha256: dac36146bb4872840196fd94ff91e4fc69be7e3dc911dacdd69f752d8acbf68b
   seen: '2026-11-16'
+- id: enpowerbeasth3pluscq7datasheetv1.120261112
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261118/ENPowerBeastH3PlusCQ7DatasheetV1.120261112.pdf
+  file: ENPowerBeastH3PlusCQ7DatasheetV1.120261112.pdf
+  title: Power Beast Datasheet - H3 Plus+CQ7
+  sha256: 5f73e6fb87ba4b83618a47b480621a376b958a91e2400567e8991e18522a6e85
+  seen: '2026-11-23'
+- id: enpowerbeastseparatep3pluscq20datasheetv1.120261112
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261118/ENPowerBeastseparateP3PlusCQ20DatasheetV1.120261112.pdf
+  file: ENPowerBeastseparateP3PlusCQ20DatasheetV1.120261112.pdf
+  title: Power Beast Datasheet - P3 Plus+CQ20
+  sha256: 14b1e0b7012e3fba0690f65d0789bd554d32e96d5a7ee1440bf996a46339740b
+  seen: '2026-11-23'
+- id: ens28datasheetv1.320261105
+  url: https://www.fox-ess.com/Public/Uploads/uploadfile/files/20261120/ENS28datasheetV1.320261105.pdf
+  file: ENS28datasheetV1.320261105.pdf
+  title: S28 Datasheet
+  sha256: 13193b55a4c6c1cfbcf9c09b0c1c55c397eb8cefb714f5b9899ad2d48fdf5202
+  seen: '2026-11-23'
 models:
 - code: EQ5000-P-L2
   mppt: null
@@ -2394,3 +2412,168 @@ models:
   raw:
     mppt: '40'
     phases: 76 91.2 121.6 152 190
+- code: H3-50-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeasth3pluscq7datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-60-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeasth3pluscq7datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-80-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeasth3pluscq7datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-100-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeasth3pluscq7datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: H3-125-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeasth3pluscq7datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-50-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparatep3pluscq20datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-60-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparatep3pluscq20datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-80-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparatep3pluscq20datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-100-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparatep3pluscq20datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: P3-125-Plus
+  mppt: 40
+  ac_kw: null
+  ac_kva: null
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: enpowerbeastseparatep3pluscq20datasheetv1.120261112
+  raw:
+    mppt: '40'
+    phases: 76 91.2 121.6 152 190
+- code: S28-0.6-M-H
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28datasheetv1.320261105
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: S28-0.8-M-H-IT
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28datasheetv1.320261105
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: S28-0.8-M-H
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28datasheetv1.320261105
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: S28-2.4-M-H
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28datasheetv1.320261105
+  raw:
+    mppt: '4'
+    ac_va: '2400'
+- code: S28-S
+  mppt: 4
+  ac_kw: null
+  ac_kva: 2.4
+  ac_a: null
+  phases: null
+  pv_kw: null
+  source: ens28datasheetv1.320261105
+  raw:
+    mppt: '4'
+    ac_va: '2400'
